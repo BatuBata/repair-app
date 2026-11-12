@@ -1,0 +1,35 @@
+# Example only: replace DOMAIN.invalid after Q-03; certificate must exist before enabling TLS.
+server {
+    listen 80;
+    listen [::]:80;
+    server_name DOMAIN.invalid;
+    location ^~ /.well-known/acme-challenge/ { root /var/www/letsencrypt; }
+    location / { return 301 https://DOMAIN.invalid$request_uri; }
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name DOMAIN.invalid;
+    ssl_certificate /etc/letsencrypt/live/DOMAIN.invalid/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/DOMAIN.invalid/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    root /srv/repair-app/current/public;
+    index index.php;
+    charset utf-8;
+    server_tokens off;
+    add_header X-Content-Type-Options nosniff always;
+    add_header X-Frame-Options SAMEORIGIN always;
+    location / { try_files $uri $uri/ /index.php?$query_string; }
+    location = /index.php {
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $realpath_root/index.php;
+        fastcgi_param DOCUMENT_ROOT $realpath_root;
+        fastcgi_pass unix:/run/php/repair-app.sock;
+        fastcgi_hide_header X-Powered-By;
+    }
+    location ~ \.php(?:/|$) { return 404; }
+    location ~ /\. { deny all; }
+    location ~* ^/(?:vendor|storage|bootstrap|config|database|deploy|docs)(?:/|$) { return 404; }
+    location ~* \.(?:env|sql|gz|bak|log|ini|ya?ml)$ { return 404; }
+}

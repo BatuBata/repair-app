@@ -1,0 +1,41 @@
+{
+  "id": "3a42a347-878b-4886-9c22-6352a6cc4e65",
+  "ok": true,
+  "result": {
+    "url": "http://127.0.0.1:8081/login",
+    "title": "Log in - Anugerah",
+    "effects": {
+      "settled": true,
+      "page": {
+        "lines": [
+          "- link \"Anugerah\" [ref=e34]",
+          "  - image",
+          "  - StaticText \"Anugerah\"",
+          "- heading \"Log in to your account\" [level=1, ref=e35]",
+          "- StaticText \"Enter your email and password below to log in\"",
+          "- button \"Sign in with a passkey\" [ref=e36]",
+          "  - StaticText \"Sign in with a passkey\"",
+          "- generic",
+          "  - StaticText \"OR CONTINUE WITH EMAIL\"",
+          "- form",
+          "  - textbox \"Email address\" [required, ref=e39]",
+          "  - generic",
+          "    - generic",
+          "      - textbox \"Password\" [required, ref=e41]",
+          "      - button \"Toggle password visibility\" [ref=e42]",
+          "    - link \"Forgot your password?\" [ref=e40]",
+          "  - checkbox \"Remember me\" [checked=false, ref=e37]",
+          "  - button \"Log in\" [ref=e38]",
+          "    - StaticText \"Log in\"",
+          "- status"
+        ],
+        "removedLines": 0,
+        "full": true,
+        "truncated": false
+      }
+    }
+  },
+  "_meta": {
+    "runtimeId": "ec11d260-b649-488d-bdca-467c1aceb1f7"
+  }
+}

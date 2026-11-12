@@ -1,0 +1,48 @@
+{
+  "id": "6a9d5484-ca73-4e36-b0b6-b6109ed999f3",
+  "ok": true,
+  "result": {
+    "clicked": "@e28",
+    "effects": {
+      "settled": true,
+      "page": {
+        "lines": [
+          "- banner",
+          "  - navigation",
+          "    - link \"Log in\" [ref=e30]",
+          "- main",
+          "  - heading \"Let's get started\" [level=1, ref=e29]",
+          "  - paragraph",
+          "    - StaticText \"Laravel has an incredibly rich ecosystem.\"",
+          "    - LineBreak \"\\n\"",
+          "    - StaticText \"We suggest starting with the following.\"",
+          "  - list",
+          "    - listitem [level=1]",
+          "      - StaticText \"Read the \"",
+          "      - link \"Documentation\" [ref=e31]",
+          "        - StaticText \"Documentation\"",
+          "        - image",
+          "    - listitem [level=1]",
+          "      - StaticText \"Watch video tutorials at \"",
+          "      - link \"Laracasts\" [ref=e32]",
+          "        - StaticText \"Laracasts\"",
+          "        - image",
+          "  - list",
+          "    - listitem [level=1]",
+          "      - link \"Deploy now\" [ref=e33]",
+          "  - generic",
+          "    - image",
+          "    - image"
+        ],
+        "removedLines": 0,
+        "full": true,
+        "truncated": false
+      },
+      "url": "http://127.0.0.1:8081/",
+      "title": "Welcome - Anugerah"
+    }
+  },
+  "_meta": {
+    "runtimeId": "ec11d260-b649-488d-bdca-467c1aceb1f7"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "34bf81b3-f0f8-4c01-abc8-b325cc617af7",
+  "ok": true,
+  "result": {
+    "origin": "http://127.0.0.1:8081/register",
+    "refs": {
+      "e18": {
+        "name": "404",
+        "role": "heading"
+      }
+    },
+    "removedRefs": [],
+    "snapshot": "- main\n  - heading \"404\" [level=1, ref=e18]\n  - StaticText \"Not Found\"",
+    "browserPageId": "eceb4151-591a-49ed-aefb-b631c5614c75",
+    "url": "http://127.0.0.1:8081/register",
+    "title": "Not Found"
+  },
+  "_meta": {
+    "runtimeId": "ec11d260-b649-488d-bdca-467c1aceb1f7"
+  }
+}

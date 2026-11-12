@@ -1,0 +1,6 @@
+laravel/framework v13.42.0
+livewire/livewire v4.4.8
+barryvdh/laravel-dompdf v3.1.2
+laravel/fortify v1.42.0
+livewire/flux v2.21.0
+phpunit/phpunit 12.5.43

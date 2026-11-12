@@ -1,0 +1,30 @@
+{
+  "observed_at": "2026-11-12T02:11:40.141220+00:00",
+  "source": "/Users/muzib/.codex/models_cache.json",
+  "catalog_fetched_at": "2026-11-12T02:09:59.313982Z",
+  "catalog_client_version": "0.164.0",
+  "models": [
+    {
+      "slug": "gpt-6.1-sol",
+      "display_name": "GPT-6.1-Sol",
+      "visibility": "list",
+      "supported_in_api": true
+    },
+    {
+      "slug": "gpt-6.1-terra",
+      "display_name": "GPT-6.1 Terra",
+      "visibility": "list",
+      "supported_in_api": true
+    },
+    {
+      "slug": "gpt-6-luna",
+      "display_name": "GPT-6-Luna",
+      "visibility": "list",
+      "supported_in_api": true
+    }
+  ],
+  "orca_version": "1.4.255",
+  "runtime_id": "ec11d260-b649-488d-bdca-467c1aceb1f7",
+  "worker_reconciliation": "orca orchestration worker-list --json: no repair-app workers; run-current runId null",
+  "routing": "Sol: backend/integration/high-risk QA/release; Terra: bounded UI; Luna: clear low-risk tasks. Effective worker model awaits runtime receipt."
+}

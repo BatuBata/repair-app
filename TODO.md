@@ -20,7 +20,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 <!-- GENERATED VIEW: regenerate from canonical JSON; do not edit statuses here. -->
 | ID | Hasil | Petugas / model | Kesulitan / risiko | Dependensi | Calon paralel | Status |
 |---|---|---|---|---|---|---|
-| T001 | Scaffold Laravel 13 + Livewire starter kit, MySQL, WITA, Git | developer / 6.1-sol | medium / medium | — | — | running |
+| T001 | Scaffold Laravel 13 + Livewire starter kit, MySQL, WITA, Git | developer / 6.1-sol | medium / medium | — | — | done |
 | T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | pending |
 | T003 | Layout lembar berbingkai, komponen UI dasar, dan web app manifest sesuai DESIGN.md | developer / 6.1-terra | medium / medium | T001 | T002, T006, T020 | pending |
 | T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | pending |
@@ -313,7 +313,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Catat versi PHP, Laravel, Livewire dari output perintah nyata; jalankan test suite dan buka halaman login di browser.",
         "Periksa git status dan isi commit tidak memuat .env."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -323,7 +323,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "ctx_5ce119d82763",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/T001-start.json"
         }
       ],
@@ -333,6 +333,21 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "dispatch_id": "ctx_5ce119d82763",
         "receipt_ref": "docs/evidence/coordinator/T001-start.json",
         "model_observation": "Start receipt records requested model gpt-6.1-sol; effective backend model not independently observed."
+      },
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T001/HANDOFF.md",
+        "revision": "4107c49d9098ab47c465773857fd5ee2811eb1b4",
+        "inputs": {},
+        "checked_revision": "4107c49d9098ab47c465773857fd5ee2811eb1b4",
+        "evidence": [
+          "docs/evidence/T001/final-checks.log",
+          "docs/evidence/T001/build.log",
+          "docs/evidence/T001/scaffold-final-config.log",
+          "docs/evidence/T001/login.png",
+          "docs/evidence/T001/dashboard-after-login.png"
+        ],
+        "summary": "Candidate scaffold siap untuk task dependen: Laravel 13.42.0/Livewire 4.4.8, build/Pint/PHPStan/40 tes 109 assertion lulus; browser login dan registrasi 404 terbukti. Coordinator memeriksa laporan/log, diff acuan utuh dan .env tidak tracked. Belum QA independen; MySQL, username dan desain final tetap gate T002/T003/T004/T008."
       }
     },
     {
@@ -367,7 +382,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "app/Services/**",
         "app/Support/**",
         "tests/Unit/**",
-        "tests/Feature/Domain/**"
+        "tests/Feature/Domain/**",
+        "docs/evidence/T002/**"
       ],
       "shared_resources": [
         {
@@ -392,7 +408,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Unit/feature test untuk penomoran (termasuk pergantian bulan 30 Nov → 1 Des WITA dan uji bersamaan di MySQL test), normalisasi HP, transisi status.",
         "Jalankan migrate:fresh --seed di MySQL lokal dan periksa skema."
       ],
-      "status": "pending"
+      "status": "pending",
+      "verification_revision": null
     },
     {
       "id": "T003",
@@ -429,9 +446,17 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "public/manifest.webmanifest",
         "public/icons/**",
         "tests/Feature/Layout/**",
-        "public/fonts/**"
+        "public/fonts/**",
+        "docs/evidence/T003/**",
+        "routes/modules/layout-preview.php",
+        "resources/views/pages/layout-preview.blade.php"
       ],
-      "shared_resources": [],
+      "shared_resources": [
+        {
+          "name": "browser:repair-app-visual",
+          "mode": "exclusive"
+        }
+      ],
       "conflicts_with": [],
       "parallel_candidates": [
         "T002",
@@ -450,7 +475,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot halaman contoh di 360/768/1280px disandingkan dengan screenshot mockup/ yang sama; selisih visual dicatat.",
         "Periksa manifest di tab Application Chrome DevTools (installable, ikon terbaca); uji menu ··· dengan mouse, sentuh, dan keyboard (Esc, panah)."
       ],
-      "status": "pending"
+      "status": "pending",
+      "verification_revision": null
     },
     {
       "id": "T004",
@@ -1651,3 +1677,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-11 | Tampilan mengikuti mockup yang disetujui (`mockup/`, `DESIGN.md`); PRD v1.2 (D-19): teks 16px HP / 14px laptop, menu bawah admin Beranda/Servis/Buat TTS/Laporan/Menu, tombol aksi baris di kolom kiri + menu pilihan. T003 dan task tampilan merujuk keduanya; hash PRD dipin ulang | User menyetujui mockup | T003, T004, T005, T009–T014, T017–T019 | Instruksi user "sudah oke tampilan nya" + jawaban pertanyaan 11 Nov |
 
 | 2026-11-12 | Eksekusi dilanjutkan untuk T001–T025 sesuai dependensi, maksimal dua worker. T001 menjadi satu-satunya penulis root untuk bootstrap repo sebelum worktree tersedia. Tidak ada izin baru push/deployment produksi. | Instruksi eksekusi user; repo belum ada | Semua | Instruksi user 12 Nov 2026 |
+
+| 2026-11-12 | T001 candidate diterima untuk dependency (4107c49); T002/T003 dibuka. T003 boleh menulis satu route + view contoh komponen lokal untuk membuktikan kontraknya; evidence task masuk write_scope. | Pemetaan folder kit nyata; QA fondasi tetap T008 | T001–T004 | Handoff T001 + review coordinator |

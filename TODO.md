@@ -21,7 +21,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | ID | Hasil | Petugas / model | Kesulitan / risiko | Dependensi | Calon paralel | Status |
 |---|---|---|---|---|---|---|
 | T001 | Scaffold Laravel 13 + Livewire starter kit, MySQL, WITA, Git | developer / 6.1-sol | medium / medium | — | — | done |
-| T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | blocked |
+| T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | running |
 | T003 | Layout lembar berbingkai, komponen UI dasar, dan web app manifest sesuai DESIGN.md | developer / 6.1-terra | medium / medium | T001 | T002, T006, T020 | done |
 | T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | pending |
 | T005 | Pengaturan toko dan master kategori | developer / 6-luna | easy / low | T004 | T006, T020 | pending |
@@ -416,7 +416,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Unit/feature test untuk penomoran (termasuk pergantian bulan 30 Nov → 1 Des WITA dan uji bersamaan di MySQL test), normalisasi HP, transisi status.",
         "Jalankan migrate:fresh --seed di MySQL lokal dan periksa skema."
       ],
-      "status": "blocked",
+      "status": "running",
       "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain",
       "attempts": [
         {
@@ -448,16 +448,26 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "dispatch_ref": "ctx_9ced09cfe782",
           "outcome": "fail",
           "receipt_ref": "docs/evidence/coordinator/T002-A3-start.json"
+        },
+        {
+          "id": "A4",
+          "kind": "implementation",
+          "worker_id": "task_792cb6f022fa",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "ctx_4ad437bf88ba",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/T002-A4-start.json"
         }
       ],
       "runtime_assignment": {
         "run_id": "run_729e02cff091",
-        "task_id": "task_593a1385cc0e",
-        "dispatch_id": "ctx_9ced09cfe782",
-        "receipt_ref": "docs/evidence/coordinator/T002-A3-start.json",
-        "base_revision": "b517ebedd31c0c8f9b013736b2f14d5c666be055",
-        "follow_up_of": "ctx_9cb9e1a0e185",
-        "model_observation": "Same Sol session reused; follow-up does not prove effective backend identity."
+        "task_id": "task_792cb6f022fa",
+        "dispatch_id": "ctx_4ad437bf88ba",
+        "receipt_ref": "docs/evidence/coordinator/T002-A4-start.json",
+        "base_revision": "e5706f31321d7540cdcaec5f2792248b9c324841",
+        "follow_up_of": "ctx_9ced09cfe782",
+        "model_observation": "Same Sol session reused; effective model identity not proven by follow-up receipt."
       },
       "result": {
         "verdict": "fail",
@@ -524,7 +534,10 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "failure_class": "evidence",
           "summary": "A3 guard schema terarah/Pint/lint PASS; MySQL migrate+seed dan 4 TTS child sukses dengan 4 nomor/token unik. Tes FAIL assertion overlap sebelum 12 writes berikut dan pemeriksaan akhir. Budget 2 code attempts habis (A1,A3; A2 verification-only). Dugaan timestamp entered di-reset callback retry belum dibuktikan. Source koreksi e5706f3 telah dipush; proposal koreksi harness tersedia tetapi belum diterapkan, perlu keputusan user. T002 belum done, T004 tetap terkunci."
         }
-      ]
+      ],
+      "implementation_attempt_limit": 3,
+      "implementation_attempt_limit_source_ref": "User 12 Nov 2026: setuju, menjawab permintaan satu attempt tambahan T002 khusus koreksi harness waktu/diagnostik retry dan bukti MySQL (proposal docs/evidence/coordinator/T002-proposed-overlap-check.diff).",
+      "next_attempt_kind": "implementation"
     },
     {
       "id": "T003",
@@ -2029,3 +2042,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-12 | T002 A3 gagal assertion overlap sesudah 4 TTS; 2 code attempts habis. Proposal timestamp+retry diagnostics dibuat sebagai diff review, belum diterapkan dan menunggu keputusan user. T020 dibuka verification-only memakai baseline fixture sintetis T002 e5706f3 (hasil FAIL T002 tidak diubah menjadi PASS/dependency gate). db:mysql-test eksklusif pindah ke T020; repair_app tidak disentuh. | 20 tabel/0 view seluruhnya berasal dari migrate/seed/test pada DB baru; bukti A3 inventory tersedia | T002, T020 | msg_afc5cf8e23eb + aturan attempt project-delivery |
 
 | 2026-11-12 | T020 verification A2 PASS pada source a5a9597, evidence6095a5c sudah dipush. Backup/import nyata dan semantic schema/row equality diperiksa; kegagalan literal SHOW CREATE tetap riwayat. db:mysql-test dilepas setelah assignment settled; fixture21 tabel dan arsip privat dipertahankan. T002 tetap blocked menunggu keputusan attempt tambahan; tidak ada task lain ready, eksekusi belum complete/paused. | Kontrak paket lokal terpenuhi; go-live masih gate terpisah | T020, T002 | msg_058b96bb93c5 + review coordinator |
+
+| 2026-11-12 | User menyetujui tepat satu code attempt tambahan T002, batas total3 (A1/A3 sudah dipakai; A2 verification). A4 untuk koreksi timestamp/retry harness dan pembuktian MySQL, tanpa perubahan domain. Riwayat gagal tetap. Uji ulang hanya fixture sintetis repair_app_test dari T002/T020 yang dipin, setelah validasi provenance dan backup privat; tidak menyentuh repair_app. | Jawaban setuju atas pertanyaan persetujuan tambahan; bukan reset budget | T002 | User: setuju |

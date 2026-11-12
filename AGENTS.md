@@ -36,7 +36,7 @@ Gunakan skill `project-delivery` (sumber: `~/.agents/skills/project-delivery/SKI
 ## Blocker yang diketahui
 
 - Eksekusi lokal serta commit/push branch diizinkan user 12 November 2026; deployment produksi belum diizinkan.
-- Akses MySQL pulih. T020 backup/restore lokal nyata sudah PASS (evidence6095a5c); repair_app_test berisi 21 tabel fixture sintetis dari T002/T020, bukan database kosong. T002 gagal bukti overlap konkurensi dan dua code attempts habis: perubahan kode berikut menunggu keputusan user, lihat TODO/proposal diff. Jangan reset/drop database atau mengulang migrate:fresh atas fixture existing tanpa scope/izin yang sesuai. Resource db:mysql-test tetap eksklusif per assignment. Password admin aplikasi masih menunggu user; seed tes sintetis tidak menetapkan password aplikasi.
+- Akses MySQL pulih. T020 backup/restore lokal nyata sudah PASS (evidence6095a5c); repair_app_test berisi 21 tabel fixture sintetis dari T002/T020, bukan database kosong. T002 menunggu pembuktian overlap konkurensi; user menyetujui satu code attempt tambahan (batas total3) untuk harness timestamp/retry, lihat TODO/proposal diff. Riwayat dua attempt sebelumnya tetap. Jangan reset/drop database atau mengulang migrate:fresh atas fixture existing tanpa scope/izin yang sesuai. Resource db:mysql-test tetap eksklusif per assignment. Password admin aplikasi masih menunggu user; seed tes sintetis tidak menetapkan password aplikasi.
 - PRD §19: Q-02 printer (uji cetak T025), Q-03 VPS/domain dan izin deploy (T024–T025), Q-04 lokasi backup (T024). Q-01, Q-05–Q-08 tidak menghambat; pakai nilai bawaan PRD.
 
 ## Batas

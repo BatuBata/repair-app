@@ -1,0 +1,64 @@
+{
+  "task": "T004",
+  "role": "developer",
+  "attempt": "A1",
+  "verdict": "developer_checks_pass",
+  "acceptance": "Menunggu QA independen M1 T008 dan integrasi; bukan penerimaan T007/main",
+  "artifact_ref": "origin/BatuBata/repair-t004-auth",
+  "revision": "Commit yang memuat report ini; hash aktual dilaporkan pada handoff runtime",
+  "checked_source_sha256": "5bc6e619f4013297e0d7369a27cc542d3cc878a10f21742b1ae4f6e0d6ebe23c",
+  "base_revision": "78e5a5f04864dac3aab917731562f4254ba75c28",
+  "inputs": {
+    "T002": "4a0667c302c979ab40641459bf9e7afac0655e09",
+    "T003": "a08d1d785b72199e1000840ea8e2afe1d7f38fbd"
+  },
+  "summary": "Username/password, role/akun aktif pada server, admin kelola akun dan reset, perlindungan admin terakhir serial, profil ganti password, serta layar login/pengguna/profil sesuai komponen T003",
+  "checks": {
+    "phpunit": {
+      "tool": "phpunit",
+      "result": "passed",
+      "tests": 62,
+      "passed": 61,
+      "assertions": 612,
+      "duration_ms": 3088,
+      "skipped": 1
+    },
+    "phpstan": "passed; 0 errors",
+    "pint": "passed",
+    "build": "passed; existing optional fontaine/font-resolution warnings; runtime Plex fonts loaded",
+    "design_source_lint": "0 FAIL, 0 WARN on four temporary .html copies of Blade sources",
+    "login_inspector": "0 FAIL, 1 WARN intentional centered-card whitespace per approved login mockup",
+    "responsive": "360/768/1280; no document horizontal overflow; body/input 16px mobile/tablet and 14px desktop"
+  },
+  "evidence": [
+    "suite-final-source.log",
+    "static-input-final.log",
+    "format-final-source.log",
+    "build-final.log",
+    "csrf.log",
+    "source-manifest.json",
+    "browser-checks.json",
+    "browser-final-flows.json",
+    "dropdown-final.json",
+    "form-scroll-final.json",
+    "design-inspector.log",
+    "design-lint-final.log",
+    "visual-review.md",
+    "phase-durations.json",
+    "routes-final.json",
+    "password-toggle-final.json"
+  ],
+  "unchecked_risks": [
+    "MySQL/InnoDB concurrency not run: assignment explicitly isolated SQLite and forbids MySQL access; concurrency behavior on MySQL remains for authorized QA",
+    "T009 /tts/baru module is absent and returns 404 after correct authenticated technician redirect",
+    "QA M1 independent, main integration, production deploy, HTTPS environment, hardware/printer and real admin initialization not performed",
+    "Existing T003 shell domain destinations depend on later modules; profile.edit now resolves /profil with no dead active settings route-name callers"
+  ],
+  "scope_exception": "Coordinator msg_aebdbe33315c approved only tests/Feature/ExampleTest.php guest-root assertion",
+  "skills": {
+    "ponytail": "full; /Users/muzib/.codex/plugins/cache/ponytail/ponytail/5.3.3/skills/ponytail/SKILL.md read",
+    "project_delivery": "worker rules read; no ledger writes or other agents",
+    "design": "existing DESIGN and mockup direction retained, no draw/redeal"
+  },
+  "private_environment": "Random key and browser credentials kept only in owner-only temp directory; SQLite fixtures private; no canonical .env/MySQL/admin password access; no secrets in evidence"
+}

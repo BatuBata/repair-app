@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Enums\UserRole;
 use Database\Factories\UserFactory;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,9 +11,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
-use Laravel\Fortify\Contracts\PasskeyUser;
-use Laravel\Fortify\PasskeyAuthenticatable;
-use Laravel\Fortify\TwoFactorAuthenticatable;
 
 /**
  * @property int $id
@@ -34,12 +30,12 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
  */
 #[Fillable(['name', 'username', 'email', 'password', 'role', 'is_active'])]
 #[Hidden(['password', 'two_factor_secret', 'two_factor_recovery_codes', 'remember_token'])]
-class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
+class User extends Authenticatable
 {
     protected $attributes = ['role' => 'teknisi', 'is_active' => true];
 
     /** @use HasFactory<UserFactory> */
-    use HasFactory, Notifiable, PasskeyAuthenticatable, TwoFactorAuthenticatable;
+    use HasFactory, Notifiable;
 
     /**
      * Get the attributes that should be cast.
@@ -54,6 +50,20 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
             'role' => UserRole::class,
             'is_active' => 'boolean',
         ];
+    }
+
+    public static function activeAccount(bool $admin = false): self
+    {
+        $user = auth()->id() ? self::query()->lockForUpdate()->find(auth()->id()) : null;
+        abort_unless($user && $user->is_active && (! $admin || $user->role === UserRole::Admin), 403, 'Akses ditolak. Akun aktif dengan izin yang sesuai diperlukan.');
+        auth()->setUser($user);
+
+        return $user;
+    }
+
+    public function homePath(): string
+    {
+        return $this->role === UserRole::Admin ? '/' : '/tts/baru';
     }
 
     /**

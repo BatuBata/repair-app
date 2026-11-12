@@ -4,39 +4,22 @@ namespace Tests\Feature\Auth;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Laravel\Fortify\Features;
 use Tests\TestCase;
 
 class TwoFactorChallengeTest extends TestCase
 {
     use RefreshDatabase;
 
-    protected function setUp(): void
+    public function test_two_factor_and_passkey_endpoints_are_absent(): void
     {
-        parent::setUp();
-
-        $this->skipUnlessFortifyHas(Features::twoFactorAuthentication());
-    }
-
-    public function test_two_factor_challenge_redirects_to_login_when_not_authenticated(): void
-    {
-        $response = $this->get(route('two-factor.login'));
-
-        $response->assertRedirect(route('login'));
-    }
-
-    public function test_two_factor_challenge_can_be_rendered(): void
-    {
-        Features::twoFactorAuthentication([
-            'confirm' => true,
-            'confirmPassword' => true,
-        ]);
-
-        $user = User::factory()->withTwoFactor()->create();
-
-        $this->post(route('login.store'), [
-            'email' => $user->email,
-            'password' => 'password',
-        ])->assertRedirect(route('two-factor.login'));
+        $this->get('/two-factor-challenge')->assertNotFound();
+        $this->post('/two-factor-challenge')->assertNotFound();
+        $this->actingAs(User::factory()->create());
+        foreach (['/user/two-factor-authentication', '/user/confirmed-two-factor-authentication', '/user/two-factor-recovery-codes', '/passkeys', '/passkeys/login', '/passkeys/confirm'] as $path) {
+            $this->post($path)->assertNotFound();
+        }
+        foreach (['/user/two-factor-qr-code', '/user/two-factor-secret-key', '/user/two-factor-recovery-codes', '/passkeys/login/options', '/passkeys/register/options', '/.well-known/passkey-endpoints'] as $path) {
+            $this->get($path)->assertNotFound();
+        }
     }
 }

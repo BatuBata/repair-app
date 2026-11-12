@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'welcome')->name('home');
-
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::view('dashboard', 'dashboard')->name('dashboard');
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::view('/', 'dashboard')->name('home');
+    Route::redirect('/dashboard', '/')->name('dashboard');
 });

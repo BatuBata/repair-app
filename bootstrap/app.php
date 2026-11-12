@@ -1,9 +1,14 @@
 <?php
 
+use App\Http\Middleware\EnsureActiveAccount;
+use App\Http\Middleware\EnsureAdmin;
+use App\Models\User;
+use Illuminate\Contracts\Session\Middleware\AuthenticatesSessions;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Request;
+use Illuminate\Session\Middleware\AuthenticateSession;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -12,7 +17,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        $middleware->web(append: [EnsureActiveAccount::class, AuthenticateSession::class]);
+        $middleware->prependToPriorityList(AuthenticatesSessions::class, EnsureActiveAccount::class);
+        $middleware->alias(['admin' => EnsureAdmin::class]);
+        $middleware->redirectUsersTo(fn () => User::activeAccount()->homePath());
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(

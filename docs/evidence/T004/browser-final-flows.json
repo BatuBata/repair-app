@@ -1,0 +1,31 @@
+[
+  {
+    "case": "technician_logout",
+    "actual": "/login"
+  },
+  {
+    "case": "admin_login_with_changed_password",
+    "actual": {
+      "path": "/",
+      "heading": "Beranda",
+      "error": false
+    }
+  },
+  {
+    "case": "admin_deactivate_budi",
+    "actual": {
+      "success": true,
+      "nonactive": [
+        true
+      ]
+    }
+  },
+  {
+    "case": "inactive_login_after_admin_reset",
+    "actual": {
+      "path": "/login",
+      "heading": "Masuk",
+      "error": true
+    }
+  }
+]

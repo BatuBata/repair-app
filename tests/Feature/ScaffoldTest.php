@@ -38,7 +38,7 @@ class ScaffoldTest extends TestCase
 
     public function test_routes_from_multiple_modules_are_loaded(): void
     {
-        $this->get(route('home'))->assertOk();
+        $this->get(route('home'))->assertRedirect(route('login'));
         $this->get(route('dashboard'))->assertRedirect(route('login'));
         $this->get(route('profile.edit'))->assertRedirect(route('login'));
     }

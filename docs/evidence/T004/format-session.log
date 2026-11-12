@@ -1,0 +1,1 @@
+{"tool":"pint","result":"fixed","files":[{"path":"tests\/Feature\/Auth\/AuthenticationTest.php","fixers":["fully_qualified_strict_types","ordered_imports"]}]}

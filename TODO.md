@@ -21,7 +21,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | ID | Hasil | Petugas / model | Kesulitan / risiko | Dependensi | Calon paralel | Status |
 |---|---|---|---|---|---|---|
 | T001 | Scaffold Laravel 13 + Livewire starter kit, MySQL, WITA, Git | developer / 6.1-sol | medium / medium | — | — | done |
-| T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | running |
+| T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | blocked |
 | T003 | Layout lembar berbingkai, komponen UI dasar, dan web app manifest sesuai DESIGN.md | developer / 6.1-terra | medium / medium | T001 | T002, T006, T020 | done |
 | T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | pending |
 | T005 | Pengaturan toko dan master kategori | developer / 6-luna | easy / low | T004 | T006, T020 | pending |
@@ -39,7 +39,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | pending |
 | T018 | Dashboard admin dan pengingat garansi | developer / 6.1-sol | medium / medium | T016 | T017, T019, T020 | pending |
 | T019 | Laporan omzet, modal, pengeluaran, dan laba per rentang tanggal | developer / 6.1-sol | medium / high | T016 | T017, T018, T020 | pending |
-| T020 | Paket deploy VPS: konfigurasi contoh, skrip deploy, backup dan restore | developer / 6.1-sol | medium / high | T001 | T002, T003, T004, T005, T006, T009, T012, T017, T018, T019 | blocked |
+| T020 | Paket deploy VPS: konfigurasi contoh, skrip deploy, backup dan restore | developer / 6.1-sol | medium / high | T001, T002 (artifact) | T002, T003, T004, T005, T006, T009, T012, T017, T018, T019 | running |
 | T021 | Panduan pengguna singkat untuk owner dan teknisi | developer / 6-luna | easy / low | T017, T018, T019 | T020 | pending |
 | T022 | Integrasi akhir v1 | integrator / 6.1-sol | medium / medium | T017, T018, T019, T020, T021 | — | pending |
 | T023 | QA akhir v1: regresi penuh dan uji responsif semua layar | tester / 6.1-sol | medium / high | T022 | — | pending |
@@ -416,7 +416,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Unit/feature test untuk penomoran (termasuk pergantian bulan 30 Nov → 1 Des WITA dan uji bersamaan di MySQL test), normalisasi HP, transisi status.",
         "Jalankan migrate:fresh --seed di MySQL lokal dan periksa skema."
       ],
-      "status": "running",
+      "status": "blocked",
       "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain",
       "attempts": [
         {
@@ -446,7 +446,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "ctx_9ced09cfe782",
-          "outcome": "running",
+          "outcome": "fail",
           "receipt_ref": "docs/evidence/coordinator/T002-A3-start.json"
         }
       ],
@@ -459,22 +459,21 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "follow_up_of": "ctx_9cb9e1a0e185",
         "model_observation": "Same Sol session reused; follow-up does not prove effective backend identity."
       },
-      "next_attempt_kind": "implementation",
       "result": {
         "verdict": "fail",
-        "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/mysql-verification-handoff.json",
-        "revision": "b517ebedd31c0c8f9b013736b2f14d5c666be055",
-        "checked_revision": "a199051700c613b5f1993e97cd9ba3a10c6b1db6",
+        "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/A3-handoff.json",
+        "revision": "e5706f31321d7540cdcaec5f2792248b9c324841",
+        "checked_revision": "e5706f31321d7540cdcaec5f2792248b9c324841",
         "inputs": {
           "T001": "4107c49d9098ab47c465773857fd5ee2811eb1b4"
         },
         "evidence": [
-          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/mysql-verification-handoff.json",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/mysql-verification-result.json",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/mysql-verification-inventory.json"
+          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/A3-handoff.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/A3-mysql-result.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/A3-mysql-inventory.json"
         ],
-        "failure_class": "product",
-        "summary": "Verification source sama gagal pada guard tes getTables/getViews tanpa parameter schema (Laravel 13 menginventaris lintas schema). Pemeriksaan PDO terbatas target memastikan repair_app_test 0 tabel/view, belum ada migrasi/seed/writes. Source tidak berubah dan bukti dipush b517ebe. Coordinator memeriksa API builder Laravel: dropAllTables sudah dibatasi current schema. Perbaikan test guard diperlukan; tersisa 1 dari 2 code attempts (A2 adalah verification-only)."
+        "failure_class": "evidence",
+        "summary": "A3 guard schema terarah/Pint/lint PASS; MySQL migrate+seed dan 4 TTS child sukses dengan 4 nomor/token unik. Tes FAIL assertion overlap sebelum 12 writes berikut dan pemeriksaan akhir. Budget 2 code attempts habis (A1,A3; A2 verification-only). Dugaan timestamp entered di-reset callback retry belum dibuktikan. Source koreksi e5706f3 telah dipush; proposal koreksi harness tersedia tetapi belum diterapkan, perlu keputusan user. T002 belum done, T004 tetap terkunci."
       },
       "prior_results": [
         {
@@ -508,6 +507,22 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           ],
           "failure_class": "product",
           "summary": "Verification source sama gagal pada guard tes getTables/getViews tanpa parameter schema (Laravel 13 menginventaris lintas schema). Pemeriksaan PDO terbatas target memastikan repair_app_test 0 tabel/view, belum ada migrasi/seed/writes. Source tidak berubah dan bukti dipush b517ebe. Coordinator memeriksa API builder Laravel: dropAllTables sudah dibatasi current schema. Perbaikan test guard diperlukan; tersisa 1 dari 2 code attempts (A2 adalah verification-only)."
+        },
+        {
+          "verdict": "fail",
+          "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/A3-handoff.json",
+          "revision": "e5706f31321d7540cdcaec5f2792248b9c324841",
+          "checked_revision": "e5706f31321d7540cdcaec5f2792248b9c324841",
+          "inputs": {
+            "T001": "4107c49d9098ab47c465773857fd5ee2811eb1b4"
+          },
+          "evidence": [
+            "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/A3-handoff.json",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/A3-mysql-result.json",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/A3-mysql-inventory.json"
+          ],
+          "failure_class": "evidence",
+          "summary": "A3 guard schema terarah/Pint/lint PASS; MySQL migrate+seed dan 4 TTS child sukses dengan 4 nomor/token unik. Tes FAIL assertion overlap sebelum 12 writes berikut dan pemeriksaan akhir. Budget 2 code attempts habis (A1,A3; A2 verification-only). Dugaan timestamp entered di-reset callback retry belum dibuktikan. Source koreksi e5706f3 telah dipush; proposal koreksi harness tersedia tetapi belum diterapkan, perlu keputusan user. T002 belum done, T004 tetap terkunci."
         }
       ]
     },
@@ -1580,7 +1595,12 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "docs/DEPLOYMENT.md",
         "docs/evidence/T020/**"
       ],
-      "shared_resources": [],
+      "shared_resources": [
+        {
+          "name": "db:mysql-test",
+          "mode": "exclusive"
+        }
+      ],
       "conflicts_with": [],
       "parallel_candidates": [
         "T002",
@@ -1603,7 +1623,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Jalankan skrip backup dan restore terhadap MySQL lokal dengan data sintetis; shellcheck bila tersedia.",
         "Review dokumen terhadap PRD §14."
       ],
-      "status": "blocked",
+      "status": "running",
       "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t020-operations",
       "attempts": [
         {
@@ -1615,15 +1635,26 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "dispatch_ref": "ctx_d74c71f70016",
           "outcome": "blocked",
           "receipt_ref": "docs/evidence/coordinator/T020-start.json"
+        },
+        {
+          "id": "A2",
+          "kind": "verification",
+          "worker_id": "task_0f5d4f1f1919",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "ctx_0079993d9539",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/T020-mysql-verification-start.json"
         }
       ],
       "runtime_assignment": {
         "run_id": "run_729e02cff091",
-        "task_id": "task_af3247e750f4",
-        "dispatch_id": "ctx_d74c71f70016",
-        "receipt_ref": "docs/evidence/coordinator/T020-start.json",
-        "base_revision": "c6799aceee695958ba176b06350ebaa0ed53711e",
-        "model_observation": "Launch records requested Sol; effective backend identity unverified."
+        "task_id": "task_0f5d4f1f1919",
+        "dispatch_id": "ctx_0079993d9539",
+        "receipt_ref": "docs/evidence/coordinator/T020-mysql-verification-start.json",
+        "base_revision": "a5a95970f5ff0caefdf8d85e89bc60604cd0638f",
+        "follow_up_of": "ctx_d74c71f70016",
+        "model_observation": "Same Sol session reused; follow-up does not prove effective backend identity."
       },
       "next_attempt_kind": "verification",
       "verification_revision": "a5a95970f5ff0caefdf8d85e89bc60604cd0638f",
@@ -1664,7 +1695,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "failure_class": "environment",
           "summary": "Candidate T020 tersedia: konfigurasi Nginx/FPM/cron dan skrip deploy/backup/restore, runbook/pemulihan. 3 bash syntax checks dan 31 kasus keselamatan stub PASS, coordinator meninjau handoff/log/runbook. Kontrak penuh BLOCKED karena DB_USERNAME kosong dan dedicated DB belum dikonfirmasi, sehingga MySQL round-trip belum dijalankan. ShellCheck tidak tersedia; Ubuntu/Nginx/FPM/cron/HTTPS/off-VPS/produksi NOT_RUN. Tidak ada SQL nyata/push/deploy. Verifikasi source sama dapat dilanjutkan setelah akses siap dan db:mysql-test direservasi."
         }
-      ]
+      ],
+      "artifact_inputs": {
+        "T002": {
+          "revision": "e5706f31321d7540cdcaec5f2792248b9c324841",
+          "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/A3-mysql-inventory.json",
+          "purpose": "baseline"
+        }
+      }
     },
     {
       "id": "T021",
@@ -1989,3 +2027,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-12 | Koneksi MySQL root lokal berhasil; repair_app kosong. Coordinator membuat repair_app_test yang sebelumnya tidak ada, terverifikasi kosong. T002 dibuka untuk verification-only pada a199051/source e59bf7c; admin seed tes memakai password sintetis privat, password admin aplikasi tetap menunggu user. T020 SQL dijadwalkan sesudah T002 agar db:mysql-test eksklusif. | User sudah mengisi akses DB; tidak ada data existing diubah | T002, T020 | User: sudah isi + docs/evidence/coordinator/mysql-preflight.json |
 
 | 2026-11-12 | T002 verification A2 FAIL pada guard metadata tes, bukan koneksi. Jadwalkan A3 kind implementation sebagai code attempt kedua/final untuk scope getTables/getViews eksplisit + assertCount agar aman/privat, lalu ulang MySQL. repair_app_test masih kosong; tidak ada DB aplikasi diubah. | Diagnosis API Laravel 13 dan inventory target; bukti b517ebe dipush | T002 | msg_44169a40efc5 + review coordinator |
+
+| 2026-11-12 | T002 A3 gagal assertion overlap sesudah 4 TTS; 2 code attempts habis. Proposal timestamp+retry diagnostics dibuat sebagai diff review, belum diterapkan dan menunggu keputusan user. T020 dibuka verification-only memakai baseline fixture sintetis T002 e5706f3 (hasil FAIL T002 tidak diubah menjadi PASS/dependency gate). db:mysql-test eksklusif pindah ke T020; repair_app tidak disentuh. | 20 tabel/0 view seluruhnya berasal dari migrate/seed/test pada DB baru; bukti A3 inventory tersedia | T002, T020 | msg_afc5cf8e23eb + aturan attempt project-delivery |

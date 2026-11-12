@@ -1,0 +1,22 @@
+--- a/tests/Feature/Domain/mysql-worker.php
++++ b/tests/Feature/Domain/mysql-worker.php
+@@ -20,9 +20,10 @@
+ while (microtime(true) < $start) {
+     usleep(1000);
+ }
+-$entered = 0;
+-$number = DB::transaction(function () use ($prefix, &$entered) {
+-    $entered = microtime(true);
++$entered = microtime(true);
++$attempts = 0;
++$number = DB::transaction(function () use ($prefix, &$attempts) {
++    ++$attempts;
+     if ($prefix === 'TTS') {
+         $number = app(CreateServiceOrder::class)->create([
+             'customer_name' => 'Concurrent synthetic', 'customer_phone' => '081234567890',
+@@ -36,4 +37,4 @@
+ 
+     return $number;
+ }, 5);
+-echo json_encode(['number' => $number, 'entered' => $entered, 'finished' => microtime(true)], JSON_THROW_ON_ERROR);
++echo json_encode(['number' => $number, 'entered' => $entered, 'attempts' => $attempts, 'finished' => microtime(true)], JSON_THROW_ON_ERROR);

@@ -1,0 +1,11 @@
+{
+  "delivery": "follow_up",
+  "followUpOf": "ctx_d74c71f70016",
+  "dispatchId": "ctx_0079993d9539",
+  "taskId": "task_0f5d4f1f1919",
+  "runId": "run_729e02cff091",
+  "state": "ready",
+  "terminal": "term_3dd5fc71-5cc5-44db-abda-d0cd51004e5e",
+  "workspace": "9e87b701-eabc-441f-a421-01986c47b99b::/Users/muzib/orca/workspaces/repair-app/repair-t020-operations",
+  "next": "Orca wakes you when workers report; end your turn when you're done."
+}

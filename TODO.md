@@ -23,7 +23,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T001 | Scaffold Laravel 13 + Livewire starter kit, MySQL, WITA, Git | developer / 6.1-sol | medium / medium | — | — | done |
 | T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | done |
 | T003 | Layout lembar berbingkai, komponen UI dasar, dan web app manifest sesuai DESIGN.md | developer / 6.1-terra | medium / medium | T001 | T002, T006, T020 | done |
-| T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | running |
+| T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | done |
 | T005 | Pengaturan toko dan master kategori | developer / 6-luna | easy / low | T004 | T006, T020 | pending |
 | T006 | Spike dokumen: PDF A5, struk 58mm, dan QR di dompdf | developer / 6.1-sol | medium / medium | T001 | T002, T003, T004, T005, T020 | done |
 | T007 | Integrasi fondasi M1 pada branch candidate sebelum QA dan merge main | integrator / 6.1-sol | medium / medium | T002, T003, T004, T005 | — | pending |
@@ -174,7 +174,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "gpt-6.1-terra",
         "gpt-6-luna"
       ],
-      "evidence_ref": "docs/evidence/coordinator/runtime-2026-11-12.json"
+      "evidence_ref": "docs/evidence/coordinator/models-T005.json"
     },
     "authorizations": [],
     "git": {
@@ -762,7 +762,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar untuk layar login, daftar pengguna, form pengguna.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth",
       "attempts": [
         {
@@ -772,7 +772,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "ctx_0166b401edc1",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/T004-start.json"
         }
       ],
@@ -783,6 +783,29 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "receipt_ref": "docs/evidence/coordinator/T004-start.json",
         "base_revision": "78e5a5f04864dac3aab917731562f4254ba75c28",
         "model_observation": "Launch records requested Sol high; effective backend identity unverified."
+      },
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/README.md",
+        "revision": "ebeb0b62f1a39720091026c1c3a0e8ec535c818e",
+        "checked_revision": "ebeb0b62f1a39720091026c1c3a0e8ec535c818e",
+        "inputs": {
+          "T002": "4a0667c302c979ab40641459bf9e7afac0655e09",
+          "T003": "a08d1d785b72199e1000840ea8e2afe1d7f38fbd"
+        },
+        "evidence": [
+          "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/README.md",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/report.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/source-manifest.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/suite-final-source.log",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/browser-checks.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/visual-review.md",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/login-360.png",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/users-list-360.png",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/users-create-1280.png",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/profile-technician-768.png"
+        ],
+        "summary": "Developer A1 PASS: username/role/active-session guard, users/profile, last-admin protections;61PASS1SKIP612assertions,static/Pint/build/browser proof. Coordinator read reports/source and inspected main screenshots. Commitebeb0b6 pushed. MySQL/InnoDB admin-race not tested (SQLite races covered), planned for independent T008; /tts/baru module still T009/404, no TTS behavior claimed. F001 awaits T007/T008; real app initialization/production not done."
       }
     },
     {
@@ -815,9 +838,15 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "app/Livewire/Settings/**",
         "resources/views/livewire/settings/**",
         "routes/modules/settings.php",
-        "tests/Feature/Settings/**"
+        "tests/Feature/Settings/**",
+        "docs/evidence/T005/**"
       ],
-      "shared_resources": [],
+      "shared_resources": [
+        {
+          "name": "browser:repair-app-visual",
+          "mode": "exclusive"
+        }
+      ],
       "conflicts_with": [],
       "parallel_candidates": [
         "T006",
@@ -1029,7 +1058,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Manifest installable di Chrome (emulasi Android) dan start_url mengarah ke halaman sesuai peran (AC-26 bagian yang bisa diuji tanpa HP nyata; HP nyata di T025)."
       ],
       "verification_plan": [
-        "Sesi tester terpisah memeriksa revisi T007: jalankan test suite, uji manual akses negatif, screenshot 3 lebar, cek manifest di DevTools."
+        "Sesi tester terpisah memeriksa revisi T007: jalankan test suite, uji manual akses negatif, screenshot 3 lebar, cek manifest di DevTools.",
+        "Uji race mutasi admin terakhir pada MySQL/InnoDB dengan fixture terisolasi dan resource db:mysql-test eksklusif: T004 membuktikan empat pasangan race di SQLite, bukan engine produksi. Pertahankan guard/provenance fixture dan jangan menyentuh repair_app; laporan failure tetap jika belum terbukti."
       ],
       "status": "pending",
       "qa_for": "T007"
@@ -2097,3 +2127,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-12 | T002 A4 PASS actual MySQL4a0667c; buka T004. Scope T004 diselaraskan dengan struktur Fortify/SFC/routes starter nyata dari handoff T001, termasuk mematikan auth/settings bawaan di luar PRD dan menguji caller terdampak. Snapshot input domain+UI boleh digabung untuk T004, bukan penyelesaian T007. T007 ditegaskan candidate-before-QA; main sesudah T008 sesuai workflow skill. | Task auth perlu menjangkau provider/config/views/routes aktual; tidak ada perluasan fitur | T002, T004, T007 | msg_1aae196b6186 + mapping T001 + Project Delivery Git workflow |
 
 | 2026-11-12 | Scope T004 ditambah hanya tests/Feature/ExampleTest.php: GET / tamu harus redirect/login setelah root admin dilindungi, bukan200 welcome starter. Tetap logical A1, tanpa perubahan fitur atau budget. | Assertion starter obsolete akibat autentikasi PRD | T004 | Permintaan worker msg_decdf5d36b6d, disetujui coordinator |
+
+| 2026-11-13 | T004 A1 developer checks PASS ebeb0b6, buka T005 Luna sesuai triase CRUD. T008 ditambah bukti race last-admin pada InnoDB; SQLite bukan bukti engine produksi. Katalog runtime Luna/Sol/Terra diverifikasi ulang dari cache terkini. | Kontrak auth tersedia, QA feature belum accepted | T004, T005, T008 | msg_add6c8daf1b2 + review coordinator |

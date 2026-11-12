@@ -1,0 +1,11 @@
+PHP Fatal error:  Uncaught AssertionError: nota-a5 must fit one page in /Users/muzib/orca/workspaces/repair-app/repair-t006-documents/spikes/documents/generate.php:115
+Stack trace:
+#0 /Users/muzib/orca/workspaces/repair-app/repair-t006-documents/spikes/documents/generate.php(115): assert(false, 'nota-a5 must fi...')
+#1 {main}
+  thrown in /Users/muzib/orca/workspaces/repair-app/repair-t006-documents/spikes/documents/generate.php on line 115
+
+Fatal error: Uncaught AssertionError: nota-a5 must fit one page in /Users/muzib/orca/workspaces/repair-app/repair-t006-documents/spikes/documents/generate.php:115
+Stack trace:
+#0 /Users/muzib/orca/workspaces/repair-app/repair-t006-documents/spikes/documents/generate.php(115): assert(false, 'nota-a5 must fi...')
+#1 {main}
+  thrown in /Users/muzib/orca/workspaces/repair-app/repair-t006-documents/spikes/documents/generate.php on line 115

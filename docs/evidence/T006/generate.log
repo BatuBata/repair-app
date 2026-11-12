@@ -1,0 +1,26 @@
+{
+    "tracking_url": "https://repair.example/t/SYNTHETIC_T006_0123456789abcdef0123456789abcdef",
+    "documents": {
+        "tts-a5": {
+            "width_mm": 148,
+            "height_mm": 210,
+            "pages": 1
+        },
+        "tts-58mm": {
+            "width_mm": 58,
+            "height_mm": 280,
+            "pages": 1
+        },
+        "nota-a5": {
+            "width_mm": 148,
+            "height_mm": 210,
+            "pages": 2
+        },
+        "nota-58mm": {
+            "width_mm": 58,
+            "height_mm": 400,
+            "pages": 1
+        }
+    },
+    "duration_seconds": 0.433
+}

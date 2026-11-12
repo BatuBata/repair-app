@@ -1,0 +1,37 @@
+CONTOH SINTETIS T006
+ANUGERAH
+Servis Elektronik
+Jl. Contoh No. 12
+0800-0000-0000 (contoh)
+Nota Servis
+TTS-2611-006
+Customer
+Pelanggan Contoh T006
+Barang
+Laptop Asus X441, adaptor dan tas
+kain abu-abu disertakan
+Tanggal nota
+12-11-2026 16:30 WITA
+Keluhan
+HP
+0800-0000-0000 (contoh)
+Tanggal terima
+10-11-2026 10:42 WITA
+Teknisi
+Teknisi Contoh
+Layar bergaris setelah menyala sekitar tiga puluh menit; gambar kadang
+hilang ketika engsel dibuka. Mohon periksa konektor dan uji kembali
+dengan adaptor bawaan.
+Pekerjaan Qty Harga Subtotal
+LCD 14 inci HD pengganti;
+pemeriksaan konektor dan
+pemasangan pada bingkai asli
+1 1.000.000 1.000.000
+Jasa pemasangan LCD
+Uji gambar dan engsel setelah
+pemasangan
+1 100.000 100.000
+Bantalan pelindung kabel engsel
+kiri dan kanan
+2 15.000 30.000
+Total Rp1.130.000

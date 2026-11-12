@@ -1,0 +1,55 @@
+{
+  "verdict": "PASS",
+  "scope": "synthetic discovery fixtures only",
+  "duration_seconds": 1.966,
+  "results": [
+    {
+      "document": "tts-a5",
+      "pages": 1,
+      "size_mm": [
+        148,
+        210
+      ],
+      "content": "PASS",
+      "private_cost_absent": "PASS",
+      "rendered_qr": "PASS",
+      "sha256": "b67b04785fd54bd37da52b956ed5cd038aa17f53a7c773b478392af1da9b1b67"
+    },
+    {
+      "document": "tts-58mm",
+      "pages": 1,
+      "size_mm": [
+        58,
+        280
+      ],
+      "content": "PASS",
+      "private_cost_absent": "PASS",
+      "rendered_qr": "PASS",
+      "sha256": "d624149c8f91fb491d30b4c7c5d15e54626dbbd2fc56acf5288f4bb94f103cf8"
+    },
+    {
+      "document": "nota-a5",
+      "pages": 2,
+      "size_mm": [
+        148,
+        210
+      ],
+      "content": "PASS",
+      "private_cost_absent": "PASS",
+      "rendered_qr": "PASS",
+      "sha256": "adb189cc124e57c801afd0fd61755fd2f5018d05b4f238d73578ad7bfc7e6496"
+    },
+    {
+      "document": "nota-58mm",
+      "pages": 1,
+      "size_mm": [
+        58,
+        400
+      ],
+      "content": "PASS",
+      "private_cost_absent": "PASS",
+      "rendered_qr": "PASS",
+      "sha256": "e8649d0ef618dcdd04ed7bb8d50425e5f3015611ab88c6eaf63db44d959e0ad5"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "decoder" : "macOS Core Image CIDetectorTypeQRCode",
+  "duration_seconds" : 0.3028409481048584,
+  "renderer" : "macOS PDFKit at 150 dpi",
+  "results" : [
+    {
+      "decoded" : [
+        "https://repair.example/t/SYNTHETIC_T006_0123456789abcdef0123456789abcdef"
+      ],
+      "document" : "tts-a5",
+      "height_mm" : 210.0001444444444,
+      "page" : 1,
+      "pages" : 1,
+      "render_pixels" : [
+        875,
+        1241
+      ],
+      "text_bounds_pt" : [
+        33.601937499999998,
+        254.2829375,
+        384.94621875000007,
+        557.49231250000003
+      ],
+      "width_mm" : 148.00015555555555
+    },
+    {
+      "decoded" : [
+        "https://repair.example/t/SYNTHETIC_T006_0123456789abcdef0123456789abcdef"
+      ],
+      "document" : "tts-58mm",
+      "height_mm" : 280.00007499999998,
+      "page" : 1,
+      "pages" : 1,
+      "render_pixels" : [
+        343,
+        1654
+      ],
+      "text_bounds_pt" : [
+        14.1495625,
+        170.6999375,
+        147.54478124999997,
+        777.87731250000002
+      ],
+      "width_mm" : 57.999841666666661
+    },
+    {
+      "decoded" : [
+
+      ],
+      "document" : "nota-a5",
+      "height_mm" : 210.0001444444444,
+      "page" : 1,
+      "pages" : 2,
+      "render_pixels" : [
+        875,
+        1241
+      ],
+      "text_bounds_pt" : [
+        33.550179687499998,
+        84.575914062500004,
+        384.98344140624999,
+        557.49231250000003
+      ],
+      "width_mm" : 148.00015555555555
+    },
+    {
+      "decoded" : [
+        "https://repair.example/t/SYNTHETIC_T006_0123456789abcdef0123456789abcdef"
+      ],
+      "document" : "nota-a5",
+      "height_mm" : 210.0001444444444,
+      "page" : 2,
+      "pages" : 2,
+      "render_pixels" : [
+        875,
+        1241
+      ],
+      "text_bounds_pt" : [
+        33.992562499999998,
+        442.9319375,
+        354.71032617187495,
+        549.83400781249998
+      ],
+      "width_mm" : 148.00015555555555
+    },
+    {
+      "decoded" : [
+        "https://repair.example/t/SYNTHETIC_T006_0123456789abcdef0123456789abcdef"
+      ],
+      "document" : "nota-58mm",
+      "height_mm" : 399.99990555555553,
+      "page" : 1,
+      "pages" : 1,
+      "render_pixels" : [
+        343,
+        2363
+      ],
+      "text_bounds_pt" : [
+        13.7071796875,
+        29.349937499999999,
+        149.70744140624998,
+        1118.0353124999999
+      ],
+      "width_mm" : 57.999841666666661
+    }
+  ]
+}

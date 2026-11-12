@@ -1,0 +1,29 @@
+CONTOH SINTETIS T006
+ANUGERAH
+Servis Elektronik
+Jl. Contoh No. 12
+0800-0000-0000 (contoh)
+Tanda Terima Servis
+TTS-2611-006
+Customer
+Pelanggan Contoh T006
+HP
+0800-0000-0000 (contoh)
+Barang
+Laptop Asus X441, adaptor
+dan tas kain abu-abu
+disertakan
+Tanggal terima
+10-11-2026 10:42 WITA
+Keluhan
+Layar bergaris setelah
+menyala sekitar tiga puluh
+menit; gambar kadang hilang
+ketika engsel dibuka. Mohon
+periksa konektor dan uji
+kembali dengan adaptor
+bawaan.
+Pindai untuk cek status servis.
+Simpan struk ini untuk
+pengambilan barang.
+CONTOH - bukan transaksi nyata

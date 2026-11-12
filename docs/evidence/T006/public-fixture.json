@@ -1,0 +1,29 @@
+{
+    "number": "TTS-2611-006",
+    "customer": "Pelanggan Contoh T006",
+    "phone": "0800-0000-0000 (contoh)",
+    "item": "Laptop Asus X441, adaptor dan tas kain abu-abu disertakan",
+    "complaint": "Layar bergaris setelah menyala sekitar tiga puluh menit; gambar kadang hilang ketika engsel dibuka. Mohon periksa konektor dan uji kembali dengan adaptor bawaan.",
+    "technician": "Teknisi Contoh",
+    "received": "10-11-2026 10:42 WITA",
+    "issued": "12-11-2026 16:30 WITA",
+    "lines": [
+        {
+            "description": "LCD 14 inci HD pengganti; pemeriksaan konektor dan pemasangan pada bingkai asli",
+            "qty": 1,
+            "sell": 1000000
+        },
+        {
+            "description": "Jasa pemasangan LCD\nUji gambar dan engsel setelah pemasangan",
+            "qty": 1,
+            "sell": 100000
+        },
+        {
+            "description": "Bantalan pelindung kabel engsel kiri dan kanan",
+            "qty": 2,
+            "sell": 15000
+        }
+    ],
+    "tracking_url": "https://repair.example/t/SYNTHETIC_T006_0123456789abcdef0123456789abcdef",
+    "total": 1130000
+}

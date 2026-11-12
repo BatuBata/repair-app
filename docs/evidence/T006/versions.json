@@ -1,0 +1,46 @@
+{
+  "bacon/bacon-qr-code": {
+    "version": "v3.1.1",
+    "license": [
+      "BSD-2-Clause"
+    ],
+    "source": {
+      "type": "git",
+      "url": "https://github.com/Bacon/BaconQrCode.git",
+      "reference": "4da2233e72eeecd9be3b62e0dc2cc9ed8e2e31c2"
+    }
+  },
+  "barryvdh/laravel-dompdf": {
+    "version": "v3.1.2",
+    "license": [
+      "MIT"
+    ],
+    "source": {
+      "type": "git",
+      "url": "https://github.com/barryvdh/laravel-dompdf.git",
+      "reference": "ee3b72b19ccdf57d0243116ecb2b90261344dedc"
+    }
+  },
+  "dompdf/dompdf": {
+    "version": "v3.1.6",
+    "license": [
+      "LGPL-2.1"
+    ],
+    "source": {
+      "type": "git",
+      "url": "https://github.com/dompdf/dompdf.git",
+      "reference": "6d4b4eb8500f7a786da8868ba463a71b725a4005"
+    }
+  },
+  "dompdf/php-svg-lib": {
+    "version": "1.0.2",
+    "license": [
+      "LGPL-3.0-or-later"
+    ],
+    "source": {
+      "type": "git",
+      "url": "https://github.com/dompdf/php-svg-lib.git",
+      "reference": "8259ffb930817e72b1ff1caef5d226501f3dfeb1"
+    }
+  }
+}

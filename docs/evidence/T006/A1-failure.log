@@ -1,0 +1,11 @@
+PHP Fatal error:  Uncaught AssertionError: tts-58mm must fit one page in /Users/muzib/orca/workspaces/repair-app/repair-t006-documents/spikes/documents/generate.php:109
+Stack trace:
+#0 /Users/muzib/orca/workspaces/repair-app/repair-t006-documents/spikes/documents/generate.php(109): assert(false, 'tts-58mm must f...')
+#1 {main}
+  thrown in /Users/muzib/orca/workspaces/repair-app/repair-t006-documents/spikes/documents/generate.php on line 109
+
+Fatal error: Uncaught AssertionError: tts-58mm must fit one page in /Users/muzib/orca/workspaces/repair-app/repair-t006-documents/spikes/documents/generate.php:109
+Stack trace:
+#0 /Users/muzib/orca/workspaces/repair-app/repair-t006-documents/spikes/documents/generate.php(109): assert(false, 'tts-58mm must f...')
+#1 {main}
+  thrown in /Users/muzib/orca/workspaces/repair-app/repair-t006-documents/spikes/documents/generate.php on line 109

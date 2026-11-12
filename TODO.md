@@ -736,7 +736,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "tests/Feature/Settings/**",
         "tests/Feature/DashboardTest.php",
         "tests/Feature/ScaffoldTest.php",
-        "docs/evidence/T004/**"
+        "docs/evidence/T004/**",
+        "tests/Feature/ExampleTest.php"
       ],
       "shared_resources": [
         {
@@ -2094,3 +2095,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-12 | User menyetujui tepat satu code attempt tambahan T002, batas total3 (A1/A3 sudah dipakai; A2 verification). A4 untuk koreksi timestamp/retry harness dan pembuktian MySQL, tanpa perubahan domain. Riwayat gagal tetap. Uji ulang hanya fixture sintetis repair_app_test dari T002/T020 yang dipin, setelah validasi provenance dan backup privat; tidak menyentuh repair_app. | Jawaban setuju atas pertanyaan persetujuan tambahan; bukan reset budget | T002 | User: setuju |
 
 | 2026-11-12 | T002 A4 PASS actual MySQL4a0667c; buka T004. Scope T004 diselaraskan dengan struktur Fortify/SFC/routes starter nyata dari handoff T001, termasuk mematikan auth/settings bawaan di luar PRD dan menguji caller terdampak. Snapshot input domain+UI boleh digabung untuk T004, bukan penyelesaian T007. T007 ditegaskan candidate-before-QA; main sesudah T008 sesuai workflow skill. | Task auth perlu menjangkau provider/config/views/routes aktual; tidak ada perluasan fitur | T002, T004, T007 | msg_1aae196b6186 + mapping T001 + Project Delivery Git workflow |
+
+| 2026-11-12 | Scope T004 ditambah hanya tests/Feature/ExampleTest.php: GET / tamu harus redirect/login setelah root admin dilindungi, bukan200 welcome starter. Tetap logical A1, tanpa perubahan fitur atau budget. | Assertion starter obsolete akibat autentikasi PRD | T004 | Permintaan worker msg_decdf5d36b6d, disetujui coordinator |

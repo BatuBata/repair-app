@@ -22,10 +22,10 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 |---|---|---|---|---|---|---|
 | T001 | Scaffold Laravel 13 + Livewire starter kit, MySQL, WITA, Git | developer / 6.1-sol | medium / medium | — | — | done |
 | T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | blocked |
-| T003 | Layout lembar berbingkai, komponen UI dasar, dan web app manifest sesuai DESIGN.md | developer / 6.1-terra | medium / medium | T001 | T002, T006, T020 | running |
+| T003 | Layout lembar berbingkai, komponen UI dasar, dan web app manifest sesuai DESIGN.md | developer / 6.1-terra | medium / medium | T001 | T002, T006, T020 | done |
 | T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | pending |
 | T005 | Pengaturan toko dan master kategori | developer / 6-luna | easy / low | T004 | T006, T020 | pending |
-| T006 | Spike dokumen: PDF A5, struk 58mm, dan QR di dompdf | developer / 6.1-sol | medium / medium | T001 | T002, T003, T004, T005, T020 | pending |
+| T006 | Spike dokumen: PDF A5, struk 58mm, dan QR di dompdf | developer / 6.1-sol | medium / medium | T001 | T002, T003, T004, T005, T020 | running |
 | T007 | Integrasi fondasi M1 ke main | integrator / 6.1-sol | medium / medium | T002, T003, T004, T005 | — | pending |
 | T008 | QA independen fondasi M1 | tester / 6.1-sol | medium / high | T007 | T006, T020 | pending |
 | T009 | TTS: form buat/edit, daftar dengan cari/filter, detail sesuai peran | developer / 6.1-sol | medium / high | T008 | T012, T013, T014, T020 | pending |
@@ -532,7 +532,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot halaman contoh di 360/768/1280px disandingkan dengan screenshot mockup/ yang sama; selisih visual dicatat.",
         "Periksa manifest di tab Application Chrome DevTools (installable, ikon terbaca); uji menu ··· dengan mouse, sentuh, dan keyboard (Esc, panah)."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t003-layout",
       "attempts": [
         {
@@ -552,7 +552,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-terra",
           "model_effective": null,
           "dispatch_ref": "ctx_f5237bf01a3e",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/T003-A2-start.json"
         }
       ],
@@ -566,19 +566,23 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "model_observation": "Same Terra worker reused; follow-up receipt does not prove new model selection or effective backend identity."
       },
       "result": {
-        "verdict": "fail",
-        "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t003-layout/docs/evidence/T003/handoff.md",
-        "revision": "e8f0553ccf64dab23dab4866e23fd8f17697c691",
+        "verdict": "pass",
+        "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t003-layout/docs/evidence/T003/A2/handoff.md",
+        "revision": "a08d1d785b72199e1000840ea8e2afe1d7f38fbd",
+        "checked_revision": "fb7fc2ad1bf5619c119a00f31522842d17205054",
         "inputs": {
           "T001": "4107c49d9098ab47c465773857fd5ee2811eb1b4"
         },
-        "checked_revision": "e8f0553ccf64dab23dab4866e23fd8f17697c691",
         "evidence": [
-          "/Users/muzib/orca/workspaces/repair-app/repair-t003-layout/docs/evidence/T003/handoff.md",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t003-layout/docs/evidence/T003/compare-360.png"
+          "/Users/muzib/orca/workspaces/repair-app/repair-t003-layout/docs/evidence/T003/A2/handoff.md",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t003-layout/docs/evidence/T003/A2/browser-results.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t003-layout/docs/evidence/T003/A2/target-results.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t003-layout/docs/evidence/T003/A2/contrast.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t003-layout/docs/evidence/T003/A2/contact-360.jpg",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t003-layout/docs/evidence/T003/A2/contact-768.jpg",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t003-layout/docs/evidence/T003/A2/contact-1280.jpg"
         ],
-        "failure_class": "product",
-        "summary": "A1 belum memenuhi kontrak: bukti sentuh/manifest dan perbandingan form/dialog/toast/empty belum lengkap; beberapa screenshot mendahului edit akhir. Review coordinator juga menemukan tautan Repository/Documentation starter di menu produk dan penanda menu aktif bawah belum diimplementasikan. Build/tests yang tercatat lulus tidak meluluskan kontrak. A2 diizinkan dalam budget dua attempt untuk koreksi dan bukti akhir."
+        "summary": "Implementer A2 lulus: build, 3 layout tests/22 assertion, 32 auth/settings tests/87 assertion, 23 browser checks termasuk trusted CDP touch dan manifest, perbandingan enam komponen 360/768/1280. Coordinator membaca laporan/JSON dan melihat ketiga contact sheet. Tautan starter dihapus dan role/nav aktif diperbaiki. Hanya komponen/shared shell yang diterima sebagai candidate, bukan seluruh layar domain; F001 belum accepted sampai T008, Android fisik tetap T025."
       },
       "prior_results": [
         {
@@ -759,7 +763,42 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Hasilkan berkas contoh, pindai QR dengan HP/kamera atau decoder, tulis temuan di docs/spikes/documents.md."
       ],
-      "status": "pending"
+      "status": "running",
+      "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t006-documents",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "task_11f8dbf5dc5e",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "ctx_9250f1c11cfd",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/T006-start.json",
+          "experiment_history": [
+            {
+              "local_label": "draft A1",
+              "scope": "initial renderer experiment within logical A1",
+              "observed": "58mm 210/270mm overflow; A5 long note two pages",
+              "evidence_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t006-documents/docs/evidence/T006/A1-failure.log"
+            },
+            {
+              "local_label": "draft A2",
+              "scope": "initial renderer experiment within logical A1, not a second correction assignment",
+              "observed": "58mm 280/400mm one page; A5 long note two pages; one-page assertion fails",
+              "evidence_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t006-documents/docs/evidence/T006/generate.log"
+            }
+          ]
+        }
+      ],
+      "runtime_assignment": {
+        "run_id": "run_729e02cff091",
+        "task_id": "task_11f8dbf5dc5e",
+        "dispatch_id": "ctx_9250f1c11cfd",
+        "receipt_ref": "docs/evidence/coordinator/T006-start.json",
+        "base_revision": "cd41c80c2b37be84b737470c92ab2f684a87db9f",
+        "model_observation": "Launch records requested Sol; effective backend model unverified. Discovery includes new spike code so attempt kind implementation is retained honestly."
+      }
     },
     {
       "id": "T007",
@@ -1470,7 +1509,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       },
       "write_scope": [
         "deploy/**",
-        "docs/DEPLOYMENT.md"
+        "docs/DEPLOYMENT.md",
+        "docs/evidence/T020/**"
       ],
       "shared_resources": [],
       "conflicts_with": [],
@@ -1806,3 +1846,7 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-12 | T003 A1 gagal kontrak pada e8f0553: bukti belum lengkap dan menu shell belum sepenuhnya sesuai mockup. T003 dibuka kembali untuk A2 di worktree sama; bukti A1 tetap disimpan. | Handoff worker msg_e5461cd246bc + review kode/gambar coordinator | T003 | Budget dua attempt project-delivery |
 
 | 2026-11-12 | T002 A1 candidate e59bf7c (bukti a199051) terblokir environment MySQL, belum PASS; lanjut kelak dengan verification-only source sama. Slot kosong dialokasikan T006, tanpa mengganggu browser T003. | DB_USERNAME kosong; tes berhenti sebelum koneksi/migrasi | T002, T006 | Handoff msg_ddaae50a5ed6 |
+
+| 2026-11-12 | Dua draft renderer T006 adalah eksperimen lokal dalam logical A1 spike awal, bukan dua putaran koreksi kandidat setelah handoff/QA; label dan kegagalan asli dipertahankan di experiment_history. A5 multipage boleh jika paginasi terbaca, dimensi benar, QR decode dan semua halaman dirender/diperiksa; kontrak tidak mensyaratkan satu halaman. | Klarifikasi msg_ed0eff509963; bukan reset budget atau penurunan acceptance | T006 | Interpretasi coordinator atas kontrak spike dan riwayat assignment |
+
+| 2026-11-12 | T003 A2 candidate a08d1d7 (source fb7fc2a) selesai implementasi; bukti komponen/browser direview coordinator, F001 tetap pending T008. T020 mengisi slot kosong untuk persiapan operasional; tidak ada izin deploy baru. | Gate implementasi lengkap, MySQL masih mengunci T002/T004 | T003, T020 | Handoff msg_2913e2be850a + review coordinator |

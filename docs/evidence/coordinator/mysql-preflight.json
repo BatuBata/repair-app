@@ -1,0 +1,22 @@
+{
+  "observed_at": "2026-11-12T14:49:15.191590+00:00",
+  "connection": "pass",
+  "server_version": "8.0.31",
+  "credential_values_recorded": false,
+  "repair_app": {
+    "exists": true,
+    "table_and_view_count": 0
+  },
+  "repair_app_test": {
+    "created_by_coordinator": true,
+    "table_and_view_count": 0,
+    "purpose": "dedicated synthetic domain and backup verification, not user data"
+  },
+  "admin_initial_password_configured": false,
+  "test_seed_strategy": "Use synthetic admin password in private temporary test fixture; real application initial admin password remains user-controlled in canonical .env.",
+  "commands": [
+    "/opt/homebrew/opt/php@8.3/bin/php /tmp/repair-app-mysql-preflight.php",
+    "/opt/homebrew/opt/php@8.3/bin/php /tmp/repair-app-mysql-preflight.php --create-test-db"
+  ],
+  "authorization_ref": "User confirms database repair_app, root account and .env configured; local project testing already authorized. Test database creation is additive and does not modify repair_app."
+}

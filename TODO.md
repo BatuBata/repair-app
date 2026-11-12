@@ -21,7 +21,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | ID | Hasil | Petugas / model | Kesulitan / risiko | Dependensi | Calon paralel | Status |
 |---|---|---|---|---|---|---|
 | T001 | Scaffold Laravel 13 + Livewire starter kit, MySQL, WITA, Git | developer / 6.1-sol | medium / medium | — | — | done |
-| T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | blocked |
+| T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | pending |
 | T003 | Layout lembar berbingkai, komponen UI dasar, dan web app manifest sesuai DESIGN.md | developer / 6.1-terra | medium / medium | T001 | T002, T006, T020 | done |
 | T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | pending |
 | T005 | Pengaturan toko dan master kategori | developer / 6-luna | easy / low | T004 | T006, T020 | pending |
@@ -416,7 +416,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Unit/feature test untuk penomoran (termasuk pergantian bulan 30 Nov → 1 Des WITA dan uji bersamaan di MySQL test), normalisasi HP, transisi status.",
         "Jalankan migrate:fresh --seed di MySQL lokal dan periksa skema."
       ],
-      "status": "blocked",
+      "status": "pending",
       "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain",
       "attempts": [
         {
@@ -439,7 +439,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "model_observation": "Requested model in launch receipt; effective backend model not independently observed."
       },
       "next_attempt_kind": "verification",
-      "verification_revision": "e59bf7c1ccd98a7165da04c91b6b522d4c374a79",
+      "verification_revision": "a199051700c613b5f1993e97cd9ba3a10c6b1db6",
       "result": {
         "verdict": "blocked",
         "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/handoff.json",
@@ -1949,3 +1949,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-12 | T020 A1 candidate a5a9597 terblokir environment untuk backup/restore MySQL nyata; 31 kasus keselamatan stub tidak menggantikan gate ini. Semua assignment telah melapor; tidak ada task siap. Eksekusi tetap diotorisasi/running, menunggu konfigurasi lokal user, bukan paused dan bukan proyek selesai. Checkout/bukti dipertahankan untuk konsumen QA/integrasi berikutnya. | DB_USERNAME masih kosong; Q-03/Q-04 produksi tetap terbuka | T002, T020 dan downstream | Handoff msg_6459b9296797 + review coordinator |
 
 | 2026-11-12 | Remote origin ditetapkan ke https://github.com/BatuBata/repair-app.git; commit dan push branch task/checkpoint setiap pekerjaan selesai diizinkan. Remote awal kosong; workflow push hanya main untuk tes dan tidak ada deployment. Merge aplikasi/main tetap gate review/QA; izin deployment tidak berubah. | Instruksi user eksplisit, tidak perlu persetujuan ulang per push | Semua task Git | User: push ke github ini; setiap pekerjaan selesai juga buat commit dan push |
+
+| 2026-11-12 | Koneksi MySQL root lokal berhasil; repair_app kosong. Coordinator membuat repair_app_test yang sebelumnya tidak ada, terverifikasi kosong. T002 dibuka untuk verification-only pada a199051/source e59bf7c; admin seed tes memakai password sintetis privat, password admin aplikasi tetap menunggu user. T020 SQL dijadwalkan sesudah T002 agar db:mysql-test eksklusif. | User sudah mengisi akses DB; tidak ada data existing diubah | T002, T020 | User: sudah isi + docs/evidence/coordinator/mysql-preflight.json |

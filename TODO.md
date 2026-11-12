@@ -21,12 +21,12 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | ID | Hasil | Petugas / model | Kesulitan / risiko | Dependensi | Calon paralel | Status |
 |---|---|---|---|---|---|---|
 | T001 | Scaffold Laravel 13 + Livewire starter kit, MySQL, WITA, Git | developer / 6.1-sol | medium / medium | — | — | done |
-| T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | running |
+| T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | done |
 | T003 | Layout lembar berbingkai, komponen UI dasar, dan web app manifest sesuai DESIGN.md | developer / 6.1-terra | medium / medium | T001 | T002, T006, T020 | done |
 | T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | pending |
 | T005 | Pengaturan toko dan master kategori | developer / 6-luna | easy / low | T004 | T006, T020 | pending |
 | T006 | Spike dokumen: PDF A5, struk 58mm, dan QR di dompdf | developer / 6.1-sol | medium / medium | T001 | T002, T003, T004, T005, T020 | done |
-| T007 | Integrasi fondasi M1 ke main | integrator / 6.1-sol | medium / medium | T002, T003, T004, T005 | — | pending |
+| T007 | Integrasi fondasi M1 pada branch candidate sebelum QA dan merge main | integrator / 6.1-sol | medium / medium | T002, T003, T004, T005 | — | pending |
 | T008 | QA independen fondasi M1 | tester / 6.1-sol | medium / high | T007 | T006, T020 | pending |
 | T009 | TTS: form buat/edit, daftar dengan cari/filter, detail sesuai peran | developer / 6.1-sol | medium / high | T008 | T012, T013, T014, T020 | pending |
 | T010 | Alur admin servis: tetapkan teknisi, rincian dan terbitkan nota, koreksi, diambil, batal | developer / 6.1-sol | complex / high | T009 | T012, T013, T014, T020 | pending |
@@ -416,7 +416,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Unit/feature test untuk penomoran (termasuk pergantian bulan 30 Nov → 1 Des WITA dan uji bersamaan di MySQL test), normalisasi HP, transisi status.",
         "Jalankan migrate:fresh --seed di MySQL lokal dan periksa skema."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain",
       "attempts": [
         {
@@ -456,7 +456,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "ctx_4ad437bf88ba",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/T002-A4-start.json"
         }
       ],
@@ -470,20 +470,21 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "model_observation": "Same Sol session reused; effective model identity not proven by follow-up receipt."
       },
       "result": {
-        "verdict": "fail",
-        "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/A3-handoff.json",
-        "revision": "e5706f31321d7540cdcaec5f2792248b9c324841",
-        "checked_revision": "e5706f31321d7540cdcaec5f2792248b9c324841",
+        "verdict": "pass",
+        "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/A4-handoff.json",
+        "revision": "4a0667c302c979ab40641459bf9e7afac0655e09",
+        "checked_revision": "4a0667c302c979ab40641459bf9e7afac0655e09",
         "inputs": {
           "T001": "4107c49d9098ab47c465773857fd5ee2811eb1b4"
         },
         "evidence": [
-          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/A3-handoff.json",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/A3-mysql-result.json",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/A3-mysql-inventory.json"
+          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/A4-handoff.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/A4-mysql-result.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/A4-timings.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/A4-fixture-reset.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/A4-mysql-inventory.json"
         ],
-        "failure_class": "evidence",
-        "summary": "A3 guard schema terarah/Pint/lint PASS; MySQL migrate+seed dan 4 TTS child sukses dengan 4 nomor/token unik. Tes FAIL assertion overlap sebelum 12 writes berikut dan pemeriksaan akhir. Budget 2 code attempts habis (A1,A3; A2 verification-only). Dugaan timestamp entered di-reset callback retry belum dibuktikan. Source koreksi e5706f3 telah dipush; proposal koreksi harness tersedia tetapi belum diterapkan, perlu keputusan user. T002 belum done, T004 tetap terkunci."
+        "summary": "PASS developer domain checks: uji MySQL nyata 1 test/41 assertion/16 writes/4 ronde overlap,33 attempts17 retries; diagnostic last-attempt timestamp membuktikan bug pengukuran sebelumnya. Semua nomor/token unik, counter dan indeks/unsigned sesuai. Domain source e59bf7c tetap, hanya harness diperbaiki dalam izin limit3, FAIL lama utuh. Bukti dipush4a0667c. Coordinator membaca handoff/results/timing. Belum QA integrasi; repair_app tetap tidak disentuh, DBtest20 tabel8TTS8sales sintetis, backup T020 privat dipertahankan."
       },
       "prior_results": [
         {
@@ -536,8 +537,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         }
       ],
       "implementation_attempt_limit": 3,
-      "implementation_attempt_limit_source_ref": "User 12 Nov 2026: setuju, menjawab permintaan satu attempt tambahan T002 khusus koreksi harness waktu/diagnostik retry dan bukti MySQL (proposal docs/evidence/coordinator/T002-proposed-overlap-check.diff).",
-      "next_attempt_kind": "implementation"
+      "implementation_attempt_limit_source_ref": "User 12 Nov 2026: setuju, menjawab permintaan satu attempt tambahan T002 khusus koreksi harness waktu/diagnostik retry dan bukti MySQL (proposal docs/evidence/coordinator/T002-proposed-overlap-check.diff)."
     },
     {
       "id": "T003",
@@ -714,9 +714,35 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "bootstrap/app.php",
         "config/auth.php",
         "tests/Feature/Auth/**",
-        "tests/Feature/Users/**"
+        "tests/Feature/Users/**",
+        "app/Providers/FortifyServiceProvider.php",
+        "app/Http/Responses/**",
+        "app/Models/User.php",
+        "app/Actions/Fortify/**",
+        "app/Concerns/**",
+        "config/fortify.php",
+        "resources/views/pages/auth/**",
+        "resources/views/pages/settings/**",
+        "resources/views/layouts/auth.blade.php",
+        "resources/views/layouts/auth/**",
+        "resources/views/components/auth-header.blade.php",
+        "resources/views/dashboard.blade.php",
+        "resources/views/welcome.blade.php",
+        "routes/modules/scaffold.php",
+        "routes/modules/settings.php",
+        "routes/modules/profile.php",
+        "tests/Feature/Profile/**",
+        "tests/Feature/Settings/**",
+        "tests/Feature/DashboardTest.php",
+        "tests/Feature/ScaffoldTest.php",
+        "docs/evidence/T004/**"
       ],
-      "shared_resources": [],
+      "shared_resources": [
+        {
+          "name": "browser:repair-app-visual",
+          "mode": "exclusive"
+        }
+      ],
       "conflicts_with": [],
       "parallel_candidates": [
         "T006",
@@ -897,7 +923,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
     },
     {
       "id": "T007",
-      "title": "Integrasi fondasi M1 ke main",
+      "title": "Integrasi fondasi M1 pada branch candidate sebelum QA dan merge main",
       "kind": "integration",
       "responsible_role": "integrator",
       "work_type": "integration",
@@ -933,7 +959,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "conflicts_with": [],
       "parallel_candidates": [],
       "acceptance_criteria": [
-        "main memuat candidate T002–T005 pada satu revisi; migrate:fresh --seed dan seluruh test lulus.",
+        "Branch candidate memuat T002–T005 pada satu revisi; migrasi/seed fixture sintetis dan seluruh test lulus. Merge aplikasi ke main setelah QA independen T008 PASS pada candidate yang sama.",
         "Login admin dan teknisi berjalan di atas layout T003."
       ],
       "verification_plan": [
@@ -2044,3 +2070,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-12 | T020 verification A2 PASS pada source a5a9597, evidence6095a5c sudah dipush. Backup/import nyata dan semantic schema/row equality diperiksa; kegagalan literal SHOW CREATE tetap riwayat. db:mysql-test dilepas setelah assignment settled; fixture21 tabel dan arsip privat dipertahankan. T002 tetap blocked menunggu keputusan attempt tambahan; tidak ada task lain ready, eksekusi belum complete/paused. | Kontrak paket lokal terpenuhi; go-live masih gate terpisah | T020, T002 | msg_058b96bb93c5 + review coordinator |
 
 | 2026-11-12 | User menyetujui tepat satu code attempt tambahan T002, batas total3 (A1/A3 sudah dipakai; A2 verification). A4 untuk koreksi timestamp/retry harness dan pembuktian MySQL, tanpa perubahan domain. Riwayat gagal tetap. Uji ulang hanya fixture sintetis repair_app_test dari T002/T020 yang dipin, setelah validasi provenance dan backup privat; tidak menyentuh repair_app. | Jawaban setuju atas pertanyaan persetujuan tambahan; bukan reset budget | T002 | User: setuju |
+
+| 2026-11-12 | T002 A4 PASS actual MySQL4a0667c; buka T004. Scope T004 diselaraskan dengan struktur Fortify/SFC/routes starter nyata dari handoff T001, termasuk mematikan auth/settings bawaan di luar PRD dan menguji caller terdampak. Snapshot input domain+UI boleh digabung untuk T004, bukan penyelesaian T007. T007 ditegaskan candidate-before-QA; main sesudah T008 sesuai workflow skill. | Task auth perlu menjangkau provider/config/views/routes aktual; tidak ada perluasan fitur | T002, T004, T007 | msg_1aae196b6186 + mapping T001 + Project Delivery Git workflow |

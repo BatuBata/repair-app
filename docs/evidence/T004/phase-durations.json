@@ -1,0 +1,15 @@
+{
+  "timestamps_utc_from_artifact_birthtime": {
+    "implementation_first_observed": "2026-11-12T15:30:02.705614+00:00",
+    "first_checks": "2026-11-12T15:34:50.710670+00:00",
+    "browser_first_capture": "2026-11-12T15:38:14.933173+00:00",
+    "final_suite": "2026-11-12T15:53:26.737634+00:00",
+    "browser_last_capture": "2026-11-12T15:56:47.813141+00:00"
+  },
+  "implementation_to_first_checks_seconds": 288.005,
+  "browser_capture_window_seconds": 1112.88,
+  "final_suite_phpunit_seconds": 3.088,
+  "build_transform_and_bundle_seconds": 0.334,
+  "note": "Jendela berdasarkan timestamp artifact yang teramati, saling tumpang tindih saat kode/uji/browser diiterasi; bukan tagihan, waktu inferensi model, atau total aktif kerja.",
+  "suite_log_first_to_last_write_window_seconds": 240.234
+}

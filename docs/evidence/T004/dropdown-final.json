@@ -1,0 +1,33 @@
+{
+  "touch": {
+    "open": true,
+    "coarse": true
+  },
+  "arrowDown": {
+    "focus": "Reset password",
+    "menus": [
+      {
+        "parent": "BODY",
+        "width": 208,
+        "items": [
+          {
+            "label": "Ubah pengguna",
+            "height": 44
+          },
+          {
+            "label": "Reset password",
+            "height": 44
+          },
+          {
+            "label": "Aktifkan akun",
+            "height": 44
+          }
+        ]
+      }
+    ]
+  },
+  "escape": {
+    "closed": true,
+    "focus": "Pilihan untuk Budi Santoso"
+  }
+}

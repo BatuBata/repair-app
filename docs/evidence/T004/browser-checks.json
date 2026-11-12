@@ -1,0 +1,60 @@
+[
+  {
+    "case": "admin_login_remember_logout",
+    "expected": "Username/password tanpa email, ingat saya, / lalu /login saat keluar",
+    "actual": "Admin sintetis berhasil masuk ke / dengan checkbox ingat saya; keluar ke /login; cookie recaller dan rotasi session juga lulus feature test"
+  },
+  {
+    "case": "technician_login_permissions",
+    "expected": "/tts/baru; root dan users 403; profil 200",
+    "actual": {
+      "redirect": "/tts/baru",
+      "downstream_status": 404,
+      "root_status": 403,
+      "users_status": 403,
+      "profile_status": 200
+    },
+    "note": "404 downstream adalah modul T009 yang belum tersedia; bukan bukti alur domain TTS"
+  },
+  {
+    "case": "create_and_validation",
+    "expected": "Username unik dan password valid; nilai bertahan saat error",
+    "actual": "Budi Santoso + username admin ditolak dengan pesan Indonesia; nama dan username tetap; username budi dengan password privat valid berhasil dibuat"
+  },
+  {
+    "case": "edit_and_reactivate",
+    "expected": "Perubahan akun tersimpan; akun nonaktif bisa diaktifkan admin",
+    "actual": "Nama Rizky Saputra berubah menjadi Rizky Setiawan; Dimas Wibowo berubah Nonaktif menjadi Aktif"
+  },
+  {
+    "case": "admin_reset",
+    "expected": "Admin dapat menetapkan password baru",
+    "actual": "Reset akun Budi Santoso berhasil disimpan; feature test memeriksa hash baru serta remember_token yang diganti"
+  },
+  {
+    "case": "profile_passwords",
+    "expected": "Admin/Teknisi memverifikasi password saat ini dan mengubah password sendiri",
+    "actual": "Password saat ini yang salah menampilkan Password saat ini salah; admin dan teknisi masing-masing berhasil mengganti ke nilai privat baru, form dikosongkan, logout dan login dengan nilai baru berhasil"
+  },
+  {
+    "case": "last_active_admin",
+    "expected": "Deaktivasi dan demosi admin aktif terakhir ditolak",
+    "actual": "Kedua aksi menampilkan Minimal harus ada satu admin aktif; akun admin tetap Aktif dan berperan Admin di DB; empat pasangan mutasi paralel SQLite juga lulus"
+  },
+  {
+    "case": "deactivate_and_inactive_login",
+    "expected": "Deaktivasi tersimpan dan kredensial valid tidak dapat login",
+    "actual": "Budi Santoso berubah Nonaktif; login memakai password privat hasil reset ditolak dengan error generik tanpa mengungkap status akun"
+  },
+  {
+    "case": "csrf",
+    "expected": "Proteksi pemalsuan request framework tetap aktif",
+    "actual": "POST curl tanpa token/Fetch Metadata memberi 419; fetch browser same-origin tanpa token lolos pemeriksaan origin bawaan Laravel 13 lalu validasi form (redirect diikuti menjadi 200)",
+    "source": "vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestForgery.php::hasValidOrigin"
+  },
+  {
+    "case": "dropdown_and_scroll",
+    "expected": "Target mobile 44px; keyboard dan sentuh; form tidak terhalang aksi tetap",
+    "actual": "Lihat dropdown-final.json dan form-scroll-final.json; klik pointer coarse membuka menu BODY 208px, item 44px, ArrowDown fokus Reset password, Escape menutup dan mengembalikan fokus, konfirmasi password dapat digulir ke y384–432 di atas actionbar y663"
+  }
+]

@@ -10,12 +10,12 @@ class PasswordConfirmationTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_confirm_password_screen_can_be_rendered(): void
+    public function test_starter_confirmation_and_password_update_endpoints_are_absent(): void
     {
-        $user = User::factory()->create();
-
-        $response = $this->actingAs($user)->get(route('password.confirm'));
-
-        $response->assertOk();
+        $this->actingAs(User::factory()->create());
+        $this->get('/user/confirm-password')->assertNotFound();
+        $this->post('/user/confirm-password')->assertNotFound();
+        $this->get('/user/confirmed-password-status')->assertNotFound();
+        $this->put('/user/password', [])->assertNotFound();
     }
 }

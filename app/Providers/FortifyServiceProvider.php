@@ -2,89 +2,83 @@
 
 namespace App\Providers;
 
-use App\Actions\Fortify\ResetUserPassword;
-use Illuminate\Auth\Middleware\RequirePassword;
+use App\Http\Middleware\EnsureActiveAccount;
+use App\Http\Middleware\EnsureAdmin;
+use App\Http\Responses\LoginResponse;
+use App\Models\User;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\MessageBag;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
+use Illuminate\Support\ViewErrorBag;
+use Illuminate\Translation\Translator;
+use Laravel\Fortify\Contracts\LoginResponse as LoginResponseContract;
+use Laravel\Fortify\Contracts\LogoutResponse;
 use Laravel\Fortify\Fortify;
 use Livewire\Livewire;
 
 class FortifyServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     */
     public function register(): void
     {
-        //
+        Fortify::ignoreRoutes();
+        $this->app->bind(LoginResponseContract::class, LoginResponse::class);
+        $this->app->bind(LogoutResponse::class, fn () => new class implements LogoutResponse
+        {
+            public function toResponse($request)
+            {
+                return redirect('/login');
+            }
+        });
     }
 
-    /**
-     * Bootstrap any application services.
-     */
     public function boot(): void
     {
-        $this->configureActions();
-        $this->configureViews();
-        $this->configureRateLimiting();
-        $this->configurePasswordConfirmation();
-    }
-
-    /**
-     * Require a recent password confirmation for Livewire requests from pages that require one.
-     */
-    private function configurePasswordConfirmation(): void
-    {
-        Livewire::addPersistentMiddleware([
-            RequirePassword::class,
-        ]);
-    }
-
-    /**
-     * Configure Fortify actions.
-     */
-    private function configureActions(): void
-    {
-        Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
-    }
-
-    /**
-     * Configure Fortify views.
-     */
-    private function configureViews(): void
-    {
         Fortify::loginView(fn () => view('pages::auth.login'));
-        Fortify::verifyEmailView(fn () => view('pages::auth.verify-email'));
-        Fortify::twoFactorChallengeView(fn () => view('pages::auth.two-factor-challenge'));
-        Fortify::confirmPasswordView(fn () => view('pages::auth.confirm-password'));
-        Fortify::resetPasswordView(fn () => view('pages::auth.reset-password'));
-        Fortify::requestPasswordResetLinkView(fn () => view('pages::auth.forgot-password'));
-    }
+        Fortify::authenticateUsing(function (Request $request) {
+            $user = User::where('username', $request->input('username'))->first();
 
-    /**
-     * Configure rate limiting.
-     */
-    private function configureRateLimiting(): void
-    {
-        RateLimiter::for('two-factor', function (Request $request) {
-            return Limit::perMinute(5)->by($request->session()->get('login.id'));
+            return $user && Hash::check($request->input('password'), $user->password) && $user->is_active ? $user : null;
         });
-
         RateLimiter::for('login', function (Request $request) {
-            $throttleKey = Str::transliterate(Str::lower($request->input(Fortify::username())).'|'.$request->ip());
+            $username = $request->input('username');
+            $key = is_string($username) ? Str::lower($username) : '';
 
-            return Limit::perMinute(5)->by($throttleKey);
+            return Limit::perMinute(5)->by(Str::transliterate($key.'|'.$request->ip()))->response(function (Request $request, array $headers) {
+                $request->flashExcept('password', 'password_confirmation');
+                $errors = (new ViewErrorBag)->put('default', new MessageBag([
+                    'username' => 'Terlalu banyak percobaan masuk. Coba lagi dalam satu menit.',
+                ]));
+
+                return response()->view('pages::auth.login', compact('errors'), 429, $headers);
+            });
         });
-
-        RateLimiter::for('passkeys', function (Request $request) {
-            $credentialId = $request->input('credential.id');
-
-            return Limit::perMinute(10)->by(
-                ($credentialId ?: $request->session()->getId()).'|'.$request->ip(),
-            );
-        });
+        Livewire::addPersistentMiddleware([EnsureActiveAccount::class, EnsureAdmin::class]);
+        app(Translator::class)->addLines([
+            'auth.failed' => 'Username atau password salah, atau akun tidak aktif.',
+            'auth.throttle' => 'Terlalu banyak percobaan masuk. Coba lagi dalam :seconds detik.',
+            'validation.required' => ':attribute wajib diisi.',
+            'validation.string' => ':attribute harus berupa teks.',
+            'validation.min.string' => ':attribute minimal :min karakter.',
+            'validation.max.string' => ':attribute maksimal :max karakter.',
+            'validation.confirmed' => 'Konfirmasi :attribute tidak cocok.',
+            'validation.current_password' => 'Password saat ini salah.',
+            'validation.unique' => ':attribute sudah digunakan.',
+            'validation.regex' => 'Format :attribute tidak valid.',
+            'validation.enum' => 'Peran tidak valid.',
+            'validation.password.letters' => 'Password harus mengandung huruf.',
+            'validation.password.mixed' => 'Password harus mengandung huruf besar dan huruf kecil.',
+            'validation.password.numbers' => 'Password harus mengandung angka.',
+            'validation.password.symbols' => 'Password harus mengandung simbol.',
+            'validation.password.uncompromised' => 'Password ini pernah bocor. Gunakan password lain.',
+            'validation.boolean' => 'Status aktif tidak valid.',
+            'validation.attributes.username' => 'Username',
+            'validation.attributes.name' => 'Nama',
+            'validation.attributes.password' => 'Password',
+            'validation.attributes.current_password' => 'Password saat ini',
+        ], 'id');
     }
 }

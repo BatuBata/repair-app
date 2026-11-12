@@ -1,0 +1,218 @@
+[
+  {
+    "width": 360,
+    "body": "16px",
+    "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+    "fonts": [
+      {
+        "family": "IBM Plex Sans",
+        "weight": "400",
+        "status": "loaded"
+      },
+      {
+        "family": "IBM Plex Sans",
+        "weight": "500",
+        "status": "loaded"
+      },
+      {
+        "family": "IBM Plex Sans",
+        "weight": "600",
+        "status": "loaded"
+      },
+      {
+        "family": "IBM Plex Mono",
+        "weight": "400",
+        "status": "unloaded"
+      },
+      {
+        "family": "IBM Plex Mono",
+        "weight": "500",
+        "status": "unloaded"
+      }
+    ],
+    "overflow": false,
+    "inputs": [
+      {
+        "type": "search",
+        "font": "16px",
+        "height": 0
+      }
+    ],
+    "targets": [
+      {
+        "label": "Pilihan untuk Arif Pratama",
+        "width": 44,
+        "height": 44
+      },
+      {
+        "label": "Pilihan untuk Budi Santoso",
+        "width": 44,
+        "height": 44
+      },
+      {
+        "label": "Pilihan untuk Dimas Wibowo",
+        "width": 44,
+        "height": 44
+      },
+      {
+        "label": "Pilihan untuk Rizky Setiawan",
+        "width": 44,
+        "height": 44
+      },
+      {
+        "label": "Tambah pengguna",
+        "width": 328,
+        "height": 48
+      },
+      {
+        "label": "Menu",
+        "width": 72,
+        "height": 63
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "body": "16px",
+    "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+    "fonts": [
+      {
+        "family": "IBM Plex Sans",
+        "weight": "400",
+        "status": "loaded"
+      },
+      {
+        "family": "IBM Plex Sans",
+        "weight": "500",
+        "status": "loaded"
+      },
+      {
+        "family": "IBM Plex Sans",
+        "weight": "600",
+        "status": "loaded"
+      },
+      {
+        "family": "IBM Plex Mono",
+        "weight": "400",
+        "status": "unloaded"
+      },
+      {
+        "family": "IBM Plex Mono",
+        "weight": "500",
+        "status": "unloaded"
+      }
+    ],
+    "overflow": false,
+    "inputs": [
+      {
+        "type": "search",
+        "font": "16px",
+        "height": 0
+      }
+    ],
+    "targets": [
+      {
+        "label": "Pilihan untuk Arif Pratama",
+        "width": 44,
+        "height": 44
+      },
+      {
+        "label": "Pilihan untuk Budi Santoso",
+        "width": 44,
+        "height": 44
+      },
+      {
+        "label": "Pilihan untuk Dimas Wibowo",
+        "width": 44,
+        "height": 44
+      },
+      {
+        "label": "Pilihan untuk Rizky Setiawan",
+        "width": 44,
+        "height": 44
+      },
+      {
+        "label": "Tambah pengguna",
+        "width": 736,
+        "height": 48
+      },
+      {
+        "label": "Menu",
+        "width": 153.6015625,
+        "height": 63
+      }
+    ]
+  },
+  {
+    "width": 1280,
+    "body": "14px",
+    "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+    "fonts": [
+      {
+        "family": "IBM Plex Sans",
+        "weight": "400",
+        "status": "loaded"
+      },
+      {
+        "family": "IBM Plex Sans",
+        "weight": "500",
+        "status": "loaded"
+      },
+      {
+        "family": "IBM Plex Sans",
+        "weight": "600",
+        "status": "loaded"
+      },
+      {
+        "family": "IBM Plex Mono",
+        "weight": "400",
+        "status": "unloaded"
+      },
+      {
+        "family": "IBM Plex Mono",
+        "weight": "500",
+        "status": "unloaded"
+      }
+    ],
+    "overflow": false,
+    "inputs": [
+      {
+        "type": "search",
+        "font": "14px",
+        "height": 32
+      }
+    ],
+    "targets": [
+      {
+        "label": "Keluar",
+        "width": 204,
+        "height": 32
+      },
+      {
+        "label": "Tambah pengguna",
+        "width": 147.703125,
+        "height": 36
+      },
+      {
+        "label": "Pilihan untuk Arif Pratama",
+        "width": 32,
+        "height": 32
+      },
+      {
+        "label": "Pilihan untuk Budi Santoso",
+        "width": 32,
+        "height": 32
+      },
+      {
+        "label": "Pilihan untuk Dimas Wibowo",
+        "width": 32,
+        "height": 32
+      },
+      {
+        "label": "Pilihan untuk Rizky Setiawan",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  }
+]

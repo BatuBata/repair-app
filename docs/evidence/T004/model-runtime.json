@@ -1,0 +1,8 @@
+{
+  "requested_model": "gpt-6.1-sol",
+  "requested_effort": "high",
+  "observed_terminal_label": "GPT-6.1-Sol high",
+  "observation_command": "orca terminal show --terminal term_9f8de334-1821-4a94-844d-38ca99e8bf9e --json",
+  "fallback_used": false,
+  "note": "Label runtime Orca teramati; tidak mengklaim identitas backend provider terpisah."
+}

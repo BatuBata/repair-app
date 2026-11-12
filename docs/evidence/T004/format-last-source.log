@@ -1,0 +1,1 @@
+{"tool":"pint","result":"fixed","files":[{"path":"bootstrap\/app.php","fixers":["fully_qualified_strict_types","ordered_imports"]},{"path":"tests\/Feature\/Users\/UsersTest.php","fixers":["class_attributes_separation"]}]}

@@ -33,7 +33,7 @@ document.addEventListener('click', (event) => {
     const notice = event.target.closest('[data-toast]');
     if (notice) {
         const toast = document.querySelector('.toast');
-        toast.textContent = notice.dataset.toast;
+        toast.querySelector('span').textContent = notice.dataset.toast;
         toast.classList.add('show');
         clearTimeout(window.repairToastTimer);
         window.repairToastTimer = setTimeout(() => toast.classList.remove('show'), 2600);

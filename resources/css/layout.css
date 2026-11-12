@@ -21,7 +21,6 @@
   --muted: #5d5f60;
   --faint: #6b6e70;
   --accent: #1b6c80;
-  --accent-soft: #e5f0f2;
   --primary: #131416;
   --primary-hover: #2b2d30;
   --primary-ink: #ffffff;
@@ -64,7 +63,7 @@ ul[class], ol[class] { margin: 0; padding: 0; list-style: none; }
 a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font: inherit; color: inherit; }
 img, svg { display: block; max-width: 100%; }
-::selection { background: #cfe3e8; }
+::selection { background: var(--active); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 [hidden] { display: none !important; }
 .num { font-variant-numeric: tabular-nums; }
@@ -540,3 +539,14 @@ dialog.sheet-dialog[open] { animation: rise .2s var(--ease); }
 @media(max-width:1023.98px) { .table tbody tr { grid-template-columns:72px minmax(0,1fr) auto; } .table td.act .btn { max-width:72px; } }
 .block > h2 { font-size:var(--fs-section); line-height:22px; font-weight:600; margin-bottom:16px; }
 @media(max-width:1023.98px) { .table tbody tr { grid-template-columns:44px minmax(0,1fr) auto; } .table tbody tr:has(.act .btn:not(.act-btn)) { grid-template-columns:72px minmax(0,1fr) auto; } .table td.c-who { font-weight:500; } }
+.avatar { background:var(--active); color:var(--text); }
+.bottom-menu[aria-current="page"] { color:var(--text); }
+.bottom-menu[aria-current="page"] .icon { stroke-width:2; }
+
+.field > span { font-weight:500; }
+dialog.sheet-dialog { background:var(--surface); color:var(--text); }
+@media(max-width:1023.98px) {
+  .tabs button { min-width:44px; }
+  .sheet:has(.actionbar) { padding-bottom:calc(var(--nav-h) + 112px); }
+}
+.dialog-body h2 { font-weight:600; }

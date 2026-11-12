@@ -1,0 +1,57 @@
+{
+  "teks": {
+    "foreground": "#131416",
+    "background": "#ffffff",
+    "ratio": 18.43
+  },
+  "sekunder": {
+    "foreground": "#5d5f60",
+    "background": "#ffffff",
+    "ratio": 6.42
+  },
+  "placeholder": {
+    "foreground": "#6b6e70",
+    "background": "#ffffff",
+    "ratio": 5.14
+  },
+  "field": {
+    "foreground": "#8a9296",
+    "background": "#ffffff",
+    "ratio": 3.17
+  },
+  "diterima": {
+    "foreground": "#1f4f8a",
+    "background": "#e8f0fa",
+    "ratio": 7.18
+  },
+  "dikerjakan": {
+    "foreground": "#92400e",
+    "background": "#fdf3dc",
+    "ratio": 6.43
+  },
+  "selesai": {
+    "foreground": "#04250e",
+    "background": "#dcfae5",
+    "ratio": 14.77
+  },
+  "diambil": {
+    "foreground": "#353736",
+    "background": "#ebedee",
+    "ratio": 10.21
+  },
+  "batal": {
+    "foreground": "#831c1e",
+    "background": "#ffedea",
+    "ratio": 8.63
+  },
+  "negatif": {
+    "foreground": "#c4242a",
+    "background": "#ffffff",
+    "ratio": 5.78
+  },
+  "toast": {
+    "foreground": "#ffffff",
+    "background": "#131416",
+    "ratio": 18.43
+  }
+}

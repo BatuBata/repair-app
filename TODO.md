@@ -25,7 +25,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T003 | Layout lembar berbingkai, komponen UI dasar, dan web app manifest sesuai DESIGN.md | developer / 6.1-terra | medium / medium | T001 | T002, T006, T020 | done |
 | T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | pending |
 | T005 | Pengaturan toko dan master kategori | developer / 6-luna | easy / low | T004 | T006, T020 | pending |
-| T006 | Spike dokumen: PDF A5, struk 58mm, dan QR di dompdf | developer / 6.1-sol | medium / medium | T001 | T002, T003, T004, T005, T020 | running |
+| T006 | Spike dokumen: PDF A5, struk 58mm, dan QR di dompdf | developer / 6.1-sol | medium / medium | T001 | T002, T003, T004, T005, T020 | done |
 | T007 | Integrasi fondasi M1 ke main | integrator / 6.1-sol | medium / medium | T002, T003, T004, T005 | — | pending |
 | T008 | QA independen fondasi M1 | tester / 6.1-sol | medium / high | T007 | T006, T020 | pending |
 | T009 | TTS: form buat/edit, daftar dengan cari/filter, detail sesuai peran | developer / 6.1-sol | medium / high | T008 | T012, T013, T014, T020 | pending |
@@ -39,7 +39,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | pending |
 | T018 | Dashboard admin dan pengingat garansi | developer / 6.1-sol | medium / medium | T016 | T017, T019, T020 | pending |
 | T019 | Laporan omzet, modal, pengeluaran, dan laba per rentang tanggal | developer / 6.1-sol | medium / high | T016 | T017, T018, T020 | pending |
-| T020 | Paket deploy VPS: konfigurasi contoh, skrip deploy, backup dan restore | developer / 6.1-sol | medium / high | T001 | T002, T003, T004, T005, T006, T009, T012, T017, T018, T019 | pending |
+| T020 | Paket deploy VPS: konfigurasi contoh, skrip deploy, backup dan restore | developer / 6.1-sol | medium / high | T001 | T002, T003, T004, T005, T006, T009, T012, T017, T018, T019 | running |
 | T021 | Panduan pengguna singkat untuk owner dan teknisi | developer / 6-luna | easy / low | T017, T018, T019 | T020 | pending |
 | T022 | Integrasi akhir v1 | integrator / 6.1-sol | medium / medium | T017, T018, T019, T020, T021 | — | pending |
 | T023 | QA akhir v1: regresi penuh dan uji responsif semua layar | tester / 6.1-sol | medium / high | T022 | — | pending |
@@ -763,7 +763,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Hasilkan berkas contoh, pindai QR dengan HP/kamera atau decoder, tulis temuan di docs/spikes/documents.md."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t006-documents",
       "attempts": [
         {
@@ -773,7 +773,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "ctx_9250f1c11cfd",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/T006-start.json",
           "experiment_history": [
             {
@@ -798,6 +798,30 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "receipt_ref": "docs/evidence/coordinator/T006-start.json",
         "base_revision": "cd41c80c2b37be84b737470c92ab2f684a87db9f",
         "model_observation": "Launch records requested Sol; effective backend model unverified. Discovery includes new spike code so attempt kind implementation is retained honestly."
+      },
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t006-documents/docs/spikes/documents.md",
+        "revision": "be717f38926cdb6cc0281c013882c0e204dbb86f",
+        "checked_revision": "be717f38926cdb6cc0281c013882c0e204dbb86f",
+        "inputs": {
+          "T001": "4107c49d9098ab47c465773857fd5ee2811eb1b4"
+        },
+        "evidence": [
+          "/Users/muzib/orca/workspaces/repair-app/repair-t006-documents/docs/evidence/T006/self-check.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t006-documents/docs/evidence/T006/render-check.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t006-documents/docs/evidence/T006/manifest.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t006-documents/docs/evidence/T006/versions.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t006-documents/docs/evidence/T006/source-hashes.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t006-documents/docs/evidence/T006/tts-a5-1.png",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t006-documents/docs/evidence/T006/tts-58mm-1.png",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t006-documents/docs/evidence/T006/nota-a5-1.png",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t006-documents/docs/evidence/T006/nota-a5-2.png",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t006-documents/docs/evidence/T006/nota-58mm-1.png",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t006-documents/docs/evidence/T006/A1-failure.log",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t006-documents/docs/evidence/T006/A1-experiment2-failure.log"
+        ],
+        "summary": "PASS discovery sintetis: 4 PDF+HTML dibuat, 5 halaman dirender dan dilihat coordinator, dimensi/konten lengkap/tanpa modal diperiksa; QR raster dari tiap PDF cocok ke URL contoh. BaconQrCode 3.1.1 existing dipilih. Bukan penerimaan dokumen produk: DejaVu belum Plex, thermal 280/400mm khusus fixture, nota A5 2 halaman dengan halaman lanjutan tanpa identitas ulang, Android/printer/browser HTML NOT_RUN. Temuan wajib dibawa T017/T023/T025."
       }
     },
     {
@@ -1372,7 +1396,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Feature test respons PDF/HTML, akses per peran, dan teks dokumen tidak memuat nilai modal.",
         "Simpan contoh PDF/struk dan screenshot; pindai QR. Uji printer fisik klien dilakukan di T025.",
-        "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
+        "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri.",
+        "Gunakan temuan T006 be717f3: buktikan font PDF sesuai DESIGN, paginasi A5 dengan identitas lanjutan dan total/garansi/QR terbaca, panjang thermal untuk konten nyata, serta decode QR dengan token tracking produksi (64 karakter pada kandidat T002), bukan hanya fixture spike. Bukti printer fisik tetap T025."
       ],
       "status": "pending"
     },
@@ -1535,7 +1560,28 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Jalankan skrip backup dan restore terhadap MySQL lokal dengan data sintetis; shellcheck bila tersedia.",
         "Review dokumen terhadap PRD §14."
       ],
-      "status": "pending"
+      "status": "running",
+      "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t020-operations",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "task_af3247e750f4",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "ctx_d74c71f70016",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/T020-start.json"
+        }
+      ],
+      "runtime_assignment": {
+        "run_id": "run_729e02cff091",
+        "task_id": "task_af3247e750f4",
+        "dispatch_id": "ctx_d74c71f70016",
+        "receipt_ref": "docs/evidence/coordinator/T020-start.json",
+        "base_revision": "c6799aceee695958ba176b06350ebaa0ed53711e",
+        "model_observation": "Launch records requested Sol; effective backend identity unverified."
+      }
     },
     {
       "id": "T021",
@@ -1850,3 +1896,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-12 | Dua draft renderer T006 adalah eksperimen lokal dalam logical A1 spike awal, bukan dua putaran koreksi kandidat setelah handoff/QA; label dan kegagalan asli dipertahankan di experiment_history. A5 multipage boleh jika paginasi terbaca, dimensi benar, QR decode dan semua halaman dirender/diperiksa; kontrak tidak mensyaratkan satu halaman. | Klarifikasi msg_ed0eff509963; bukan reset budget atau penurunan acceptance | T006 | Interpretasi coordinator atas kontrak spike dan riwayat assignment |
 
 | 2026-11-12 | T003 A2 candidate a08d1d7 (source fb7fc2a) selesai implementasi; bukti komponen/browser direview coordinator, F001 tetap pending T008. T020 mengisi slot kosong untuk persiapan operasional; tidak ada izin deploy baru. | Gate implementasi lengkap, MySQL masih mengunci T002/T004 | T003, T020 | Handoff msg_2913e2be850a + review coordinator |
+
+| 2026-11-12 | T006 discovery be717f3 PASS; coordinator memeriksa laporan/hasil self-check dan seluruh 5 render. Temuan font/paginasi/thermal/token QR dibawa ke rencana verifikasi T017, tanpa menerima layout spike sebagai layout produksi. T020 masih berjalan; task lain menunggu T002/MySQL. | Pengetahuan spike tersedia; acceptance produk tidak berubah | T006, T017 | Handoff msg_1e79b7679267 + review coordinator |

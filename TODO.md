@@ -23,11 +23,11 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T001 | Scaffold Laravel 13 + Livewire starter kit, MySQL, WITA, Git | developer / 6.1-sol | medium / medium | — | — | done |
 | T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | done |
 | T003 | Layout lembar berbingkai, komponen UI dasar, dan web app manifest sesuai DESIGN.md | developer / 6.1-terra | medium / medium | T001 | T002, T006, T020 | done |
-| T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | done |
-| T005 | Pengaturan toko dan master kategori | developer / 6-luna | easy / low | T004 | T006, T020 | done |
+| T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | running |
+| T005 | Pengaturan toko dan master kategori | developer / 6-luna | easy / low | T004 | T006, T020 | pending |
 | T006 | Spike dokumen: PDF A5, struk 58mm, dan QR di dompdf | developer / 6.1-sol | medium / medium | T001 | T002, T003, T004, T005, T020 | done |
-| T007 | Integrasi fondasi M1 pada branch candidate sebelum QA dan merge main | integrator / 6.1-sol | medium / medium | T002, T003, T004, T005 | — | done |
-| T008 | QA independen fondasi M1 | tester / 6.1-sol | medium / high | T007 | T006, T020 | running |
+| T007 | Integrasi fondasi M1 pada branch candidate sebelum QA dan merge main | integrator / 6.1-sol | medium / medium | T002, T003, T004, T005 | — | pending |
+| T008 | QA independen fondasi M1 | tester / 6.1-sol | medium / high | T007 | T006, T020 | failed |
 | T009 | TTS: form buat/edit, daftar dengan cari/filter, detail sesuai peran | developer / 6.1-sol | medium / high | T008 | T012, T013, T014, T020 | pending |
 | T010 | Alur admin servis: tetapkan teknisi, rincian dan terbitkan nota, koreksi, diambil, batal | developer / 6.1-sol | complex / high | T009 | T012, T013, T014, T020 | pending |
 | T011 | Halaman tracking publik dan tombol Kirim WA | developer / 6.1-terra | medium / medium | T010 | T012, T013, T014, T020 | pending |
@@ -199,7 +199,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "acceptance_tasks": [
         "T008"
       ],
-      "status": "pending"
+      "status": "blocked"
     },
     {
       "id": "F002",
@@ -738,7 +738,9 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "tests/Feature/DashboardTest.php",
         "tests/Feature/ScaffoldTest.php",
         "docs/evidence/T004/**",
-        "tests/Feature/ExampleTest.php"
+        "tests/Feature/ExampleTest.php",
+        "public/manifest.webmanifest",
+        "config/livewire.php"
       ],
       "shared_resources": [
         {
@@ -763,7 +765,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar untuk layar login, daftar pengguna, form pengguna.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "done",
+      "status": "running",
       "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth",
       "attempts": [
         {
@@ -775,15 +777,26 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "dispatch_ref": "ctx_0166b401edc1",
           "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/T004-start.json"
+        },
+        {
+          "id": "A2",
+          "kind": "implementation",
+          "worker_id": "task_72f0c571e239",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "ctx_68d80e45bfe3",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/T004-A2-start.json"
         }
       ],
       "runtime_assignment": {
         "run_id": "run_729e02cff091",
-        "task_id": "task_c45ef17a8450",
-        "dispatch_id": "ctx_0166b401edc1",
-        "receipt_ref": "docs/evidence/coordinator/T004-start.json",
-        "base_revision": "78e5a5f04864dac3aab917731562f4254ba75c28",
-        "model_observation": "Launch records requested Sol high; effective backend identity unverified."
+        "task_id": "task_72f0c571e239",
+        "dispatch_id": "ctx_68d80e45bfe3",
+        "receipt_ref": "docs/evidence/coordinator/T004-A2-start.json",
+        "base_revision": "f6b23c974b319520b80991d67200c05ddd5562f4",
+        "follow_up_of": "ctx_0166b401edc1",
+        "model_observation": "Same Sol high owner session reused; effective backend identity unverified. Historical candidate/QA snapshots in source_context do not create DAG dependencies."
       },
       "result": {
         "verdict": "pass",
@@ -807,6 +820,47 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/profile-technician-768.png"
         ],
         "summary": "Developer A1 PASS: username/role/active-session guard, users/profile, last-admin protections;61PASS1SKIP612assertions,static/Pint/build/browser proof. Coordinator read reports/source and inspected main screenshots. Commitebeb0b6 pushed. MySQL/InnoDB admin-race not tested (SQLite races covered), planned for independent T008; /tts/baru module still T009/404, no TTS behavior claimed. F001 awaits T007/T008; real app initialization/production not done."
+      },
+      "prior_results": [
+        {
+          "verdict": "pass",
+          "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/README.md",
+          "revision": "ebeb0b62f1a39720091026c1c3a0e8ec535c818e",
+          "checked_revision": "ebeb0b62f1a39720091026c1c3a0e8ec535c818e",
+          "inputs": {
+            "T002": "4a0667c302c979ab40641459bf9e7afac0655e09",
+            "T003": "a08d1d785b72199e1000840ea8e2afe1d7f38fbd"
+          },
+          "evidence": [
+            "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/README.md",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/report.json",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/source-manifest.json",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/suite-final-source.log",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/browser-checks.json",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/visual-review.md",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/login-360.png",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/users-list-360.png",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/users-create-1280.png",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/profile-technician-768.png"
+          ],
+          "summary": "Developer A1 PASS: username/role/active-session guard, users/profile, last-admin protections;61PASS1SKIP612assertions,static/Pint/build/browser proof. Coordinator read reports/source and inspected main screenshots. Commitebeb0b6 pushed. MySQL/InnoDB admin-race not tested (SQLite races covered), planned for independent T008; /tts/baru module still T009/404, no TTS behavior claimed. F001 awaits T007/T008; real app initialization/production not done."
+        }
+      ],
+      "next_attempt_kind": "implementation",
+      "source_context": {
+        "note": "Historical downstream snapshots for reproducing QA findings; not DAG prerequisites or accepted current results. Original hard inputs T002/T003 unchanged. Static task-ID edges here would create a cycle when reopening T004.",
+        "artifacts": {
+          "T007": {
+            "revision": "f6b23c974b319520b80991d67200c05ddd5562f4",
+            "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T007/README.md",
+            "purpose": "candidate"
+          },
+          "T008": {
+            "revision": "b5919d1ed35a3c7fd5702d877a2a80574e3d3529",
+            "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/README.md",
+            "purpose": "reference"
+          }
+        }
       }
     },
     {
@@ -863,7 +917,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar untuk pengaturan toko dan kategori.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "done",
+      "status": "pending",
       "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings",
       "attempts": [
         {
@@ -905,7 +959,30 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/categories-form-360.png"
         ],
         "summary": "Developer A1 PASS: toko/logo raster tervalidasi/kategori, guard per-route/action dan properti locked;24tes366assertions,Pint/PHPStan/build/browser proof. Coordinator membaca source/report dan melihat form/list penting; codepush ede491e tersedia. Belum QA integrasi/F001 accepted, suite full M1 masih T007, MySQL admin-race T008. Tidak ada MySQL/rahasia/data aplikasi yang disentuh."
-      }
+      },
+      "prior_results": [
+        {
+          "verdict": "pass",
+          "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/README.md",
+          "revision": "ede491e76cbed8000aaee6e86392dc58d2741210",
+          "checked_revision": "ede491e76cbed8000aaee6e86392dc58d2741210",
+          "inputs": {
+            "T004": "ebeb0b62f1a39720091026c1c3a0e8ec535c818e"
+          },
+          "evidence": [
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/README.md",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/tests-final.log",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/pint-final.log",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/phpstan-final.log",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/routes.json",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/store-form-360.png",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/store-form-1280.png",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/categories-list-768.png",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/categories-form-360.png"
+          ],
+          "summary": "Developer A1 PASS: toko/logo raster tervalidasi/kategori, guard per-route/action dan properti locked;24tes366assertions,Pint/PHPStan/build/browser proof. Coordinator membaca source/report dan melihat form/list penting; codepush ede491e tersedia. Belum QA integrasi/F001 accepted, suite full M1 masih T007, MySQL admin-race T008. Tidak ada MySQL/rahasia/data aplikasi yang disentuh."
+        }
+      ]
     },
     {
       "id": "T006",
@@ -1064,7 +1141,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Cocokkan revisi input dengan hasil task; jalankan test suite penuh dan smoke login di browser."
       ],
-      "status": "done",
+      "status": "pending",
       "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings",
       "attempts": [
         {
@@ -1108,7 +1185,32 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T007/resource-release.json"
         ],
         "summary": "PASS integrasi candidate/m1 finalf6b23c9; empat input ancestor,164 source hashes sama denganede491e;71PASS1MySQLSKIP698assertions,SQLite migrate/seed baru dan browser admin/teknisi/profile403 lulus. result.json mem-pin evidence commitdfcd5c3 sebelumnya; handoff/remote finalf6b23c9 berbeda hanya dokumen, kode/manifest identik. Coordinator membaca bukti dan remotehash. Satu pointerwaittimeout dicatat, full responsive/manifest/InnoDB adminrace tetapT008. Main belum digabung/F001 belum accepted; /tts/baru tetapM2/T009."
-      }
+      },
+      "prior_results": [
+        {
+          "verdict": "pass",
+          "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T007/README.md",
+          "revision": "f6b23c974b319520b80991d67200c05ddd5562f4",
+          "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4",
+          "inputs": {
+            "T002": "4a0667c302c979ab40641459bf9e7afac0655e09",
+            "T003": "a08d1d785b72199e1000840ea8e2afe1d7f38fbd",
+            "T004": "ebeb0b62f1a39720091026c1c3a0e8ec535c818e",
+            "T005": "ede491e76cbed8000aaee6e86392dc58d2741210"
+          },
+          "evidence": [
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T007/README.md",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T007/result.json",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T007/integration-proof.json",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T007/source-manifest.json",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T007/suite-summary.json",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T007/fixture-proof.json",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T007/browser-results.json",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T007/resource-release.json"
+          ],
+          "summary": "PASS integrasi candidate/m1 finalf6b23c9; empat input ancestor,164 source hashes sama denganede491e;71PASS1MySQLSKIP698assertions,SQLite migrate/seed baru dan browser admin/teknisi/profile403 lulus. result.json mem-pin evidence commitdfcd5c3 sebelumnya; handoff/remote finalf6b23c9 berbeda hanya dokumen, kode/manifest identik. Coordinator membaca bukti dan remotehash. Satu pointerwaittimeout dicatat, full responsive/manifest/InnoDB adminrace tetapT008. Main belum digabung/F001 belum accepted; /tts/baru tetapM2/T009."
+        }
+      ]
     },
     {
       "id": "T008",
@@ -1161,7 +1263,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Sesi tester terpisah mem-pin revisi T007, meninjau dan memakai ulang suite penuh integrator pada source/artifact sama, lalu menjalankan pemeriksaan independen kasus akses negatif/akun/kategori/unggah yang kritis, screenshot nyata 3 lebar, pointer, dan manifest termasuk tujuan start_url sesuai peran. Kasus baru/fail tetap diuji, bukan diasumsikan PASS.",
         "Uji race mutasi admin terakhir pada MySQL/InnoDB dengan fixture terisolasi dan resource db:mysql-qa-m1 eksklusif (database baru repair_app_qa_m1, wajib kosong sebelum fixture): T004 membuktikan empat pasangan race di SQLite, bukan engine produksi. Pertahankan guard/provenance fixture dan jangan menyentuh repair_app; laporan failure tetap jika belum terbukti."
       ],
-      "status": "running",
+      "status": "failed",
       "qa_for": "T007",
       "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings",
       "attempts": [
@@ -1172,7 +1274,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "ctx_dd91a4362474",
-          "outcome": "running",
+          "outcome": "fail",
           "receipt_ref": "docs/evidence/coordinator/T008-start.json"
         }
       ],
@@ -1183,7 +1285,49 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "receipt_ref": "docs/evidence/coordinator/T008-start.json",
         "base_revision": "f6b23c974b319520b80991d67200c05ddd5562f4",
         "model_observation": "New independent Sol high tester requested; effective backend model unverified. Previous integrator exited/released, immutable source pin retained."
-      }
+      },
+      "result": {
+        "verdict": "fail",
+        "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/README.md",
+        "revision": "b5919d1ed35a3c7fd5702d877a2a80574e3d3529",
+        "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4",
+        "inputs": {
+          "T007": "f6b23c974b319520b80991d67200c05ddd5562f4"
+        },
+        "evidence": [
+          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/README.md",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/cases.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/browser-results.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/upload-boundary.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/mysql-races.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/source-proof.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/resource-release.json"
+        ],
+        "failure_class": "product",
+        "summary": "Independent QA overall FAIL3findings: F01 manifest start technician root403; F02 login no manifest/Chrome no-manifest; F03 pre-demotion signed temp upload still200/file written though Store save403. PASS43tests363assertions,10HTTPsession cases,4actualInnoDB races,12screensx3width and extra input checks; T007suite reuse valid. Source164/build14unchanged; evidencefinalb5919d1pushed, core resultjson pins earliera5b34b6. Native worker reporting succeeded does not make productPASS. M1notaccepted. Follow-up reruns affected subsets on new integration pin, keep prior PASS/FAIL history."
+      },
+      "prior_results": [
+        {
+          "verdict": "fail",
+          "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/README.md",
+          "revision": "b5919d1ed35a3c7fd5702d877a2a80574e3d3529",
+          "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4",
+          "inputs": {
+            "T007": "f6b23c974b319520b80991d67200c05ddd5562f4"
+          },
+          "evidence": [
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/README.md",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/cases.json",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/browser-results.json",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/upload-boundary.json",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/mysql-races.json",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/source-proof.json",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/resource-release.json"
+          ],
+          "failure_class": "product",
+          "summary": "Independent QA overall FAIL3findings: F01 manifest start technician root403; F02 login no manifest/Chrome no-manifest; F03 pre-demotion signed temp upload still200/file written though Store save403. PASS43tests363assertions,10HTTPsession cases,4actualInnoDB races,12screensx3width and extra input checks; T007suite reuse valid. Source164/build14unchanged; evidencefinalb5919d1pushed, core resultjson pins earliera5b34b6. Native worker reporting succeeded does not make productPASS. M1notaccepted. Follow-up reruns affected subsets on new integration pin, keep prior PASS/FAIL history."
+        }
+      ]
     },
     {
       "id": "T009",
@@ -2254,3 +2398,7 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-13 | T005 developer checks PASS ede491e; buka integrasi T007. Workspace T005 bersih dan worker lama settled/idle, sehingga boleh dipakai ulang oleh sesi integrator Sol baru (branch candidate/m1 terpisah), tanpa checkout fisik tambahan. Prasyarat T002–T005 sudah menjadi ancestor source ede491e; integrator mem-pin dan memeriksa gabungan, main tetap menunggu T008. | Batas retensi workspace; independensi QA T008 tetap sesi berbeda | T005, T007 | msg_6dfb91be5fa2 + review coordinator + worker-show settled/idle |
 
 | 2026-11-13 | T007 PASS candidate/m1 finalf6b23c9, hanya evidence berubah terhadap sourceede491e. Buka QA independen T008 pada SHA final ini. Izolasi InnoDB QA di repair_app_qa_m1 yang dibuat hanya bila belum ada/terverifikasi kosong; bukan resetrepair_app_test. Workspace bersih dapat dipakai sesi tester Sol baru/branchqa/m1. | QA produk belum diterima; main menunggu gate T008 | T007,T008 | msg_a253a35515e7 + review coordinator/remotehash |
+
+| 2026-11-13 | T008 productFAIL3findings, evidenceb5919d1retained; PASSindependent cases retained for selective reuse. Reopen T004 A2 (1remaining codeattempt) for role-aware app launcher, login manifest link and global temp-upload active-admin guard. Add only publicmanifest/configlivewire scope; this is auth integration/security routing, no visualT003 redesign. Invalidate downstream T005/T007 completion for affected re-verification/reintegration; F001blocked/main unchanged. T004 consumes pinned candidate/QA artifacts, not FAILED QA as prerequisite. | QA reproduction + coordinator source/API review; framework temp middleware can retain throttle and add auth/admin | T004,T005,T007,T008 | msg_ed7ad49fa13e + docs/evidence/T008/README.md |
+
+| 2026-11-13 | Historical T007/T008 snapshot references for T004 fix are recorded under source_context with immutable SHA/path, not dependency edges. Validator rejected artifact edges as a cycle when reopening the original owner; no dispatch occurred while invalid. Hard prerequisites remain T002/T003 and FAILED QA remains only reproduction context. | Preserve version history without making repair wait on its own downstream integration | T004 | Validator feedback + coordinator correction |

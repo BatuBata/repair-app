@@ -1,0 +1,8 @@
+{
+  "purpose": "T005 dependent implementation input, not T007/T008 acceptance",
+  "snapshot_revision": "971b164a79b544279bc5b2a53a50db383e7f7301",
+  "input_T004": "ebeb0b62f1a39720091026c1c3a0e8ec535c818e",
+  "assembly": "No-ff merge of pinned T004 commit into candidate/foundation-inputs; no conflicts.",
+  "source_equality": "git diff --quiet ebeb0b6 971b164 over app/bootstrap/config/database/public/resources/routes/tests and dependency/config manifests: exit0; only coordination metadata differs. Existing T004 developer suite remains applicable to prerequisite source; no duplicate suite at assembly.",
+  "main_status": "unchanged baseline, final feature acceptance still T008"
+}

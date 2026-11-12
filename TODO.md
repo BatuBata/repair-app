@@ -24,7 +24,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | done |
 | T003 | Layout lembar berbingkai, komponen UI dasar, dan web app manifest sesuai DESIGN.md | developer / 6.1-terra | medium / medium | T001 | T002, T006, T020 | done |
 | T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | done |
-| T005 | Pengaturan toko dan master kategori | developer / 6-luna | easy / low | T004 | T006, T020 | pending |
+| T005 | Pengaturan toko dan master kategori | developer / 6-luna | easy / low | T004 | T006, T020 | running |
 | T006 | Spike dokumen: PDF A5, struk 58mm, dan QR di dompdf | developer / 6.1-sol | medium / medium | T001 | T002, T003, T004, T005, T020 | done |
 | T007 | Integrasi fondasi M1 pada branch candidate sebelum QA dan merge main | integrator / 6.1-sol | medium / medium | T002, T003, T004, T005 | — | pending |
 | T008 | QA independen fondasi M1 | tester / 6.1-sol | medium / high | T007 | T006, T020 | pending |
@@ -862,7 +862,28 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar untuk pengaturan toko dan kategori.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "pending"
+      "status": "running",
+      "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "task_71ec6a9aa256",
+          "model_requested": "gpt-6-luna",
+          "model_effective": null,
+          "dispatch_ref": "ctx_d2cbaa553e71",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/T005-start.json"
+        }
+      ],
+      "runtime_assignment": {
+        "run_id": "run_729e02cff091",
+        "task_id": "task_71ec6a9aa256",
+        "dispatch_id": "ctx_d2cbaa553e71",
+        "receipt_ref": "docs/evidence/coordinator/T005-start.json",
+        "base_revision": "971b164a79b544279bc5b2a53a50db383e7f7301",
+        "model_observation": "Launch receipt records requested Luna high; effective backend identity not independently observed."
+      }
     },
     {
       "id": "T006",

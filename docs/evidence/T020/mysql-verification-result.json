@@ -1,0 +1,126 @@
+{
+  "checked_revision": "a5a95970f5ff0caefdf8d85e89bc60604cd0638f",
+  "kind": "verification-only unchanged source",
+  "target": "repair_app_test",
+  "started_utc": "2026-11-12T15:06:22.364814+00:00",
+  "baseline_input_revision": "e5706f31321d7540cdcaec5f2792248b9c324841",
+  "baseline_inventory_sha256": "16e059297412c17bbf5950f652cf1ab3e4f59ab0813eda51a04527c26fd7e7e1",
+  "steps": [
+    {
+      "case": "mysql-client-target-readonly",
+      "command": [
+        "/usr/local/mysql/bin/mysql",
+        "--defaults-file=/tmp/repair-T020-actual-ldbh_q8h/client.cnf",
+        "--batch",
+        "--skip-column-names",
+        "--database=repair_app_test",
+        "--execute=SELECT DATABASE(), VERSION();"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "duration_seconds": 0.0868,
+      "stdout": "repair_app_test\t8.0.31",
+      "stderr": ""
+    },
+    {
+      "case": "prepare-single-synthetic-probe",
+      "command": [
+        "/opt/homebrew/opt/php@8.3/bin/php",
+        "/tmp/repair-T020-actual-ldbh_q8h/verify.php",
+        "prepare"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "duration_seconds": 0.4574,
+      "stdout": "{\"stage\":\"prepare\",\"status\":\"PASS\",\"selected_database\":\"repair_app_test\"}",
+      "stderr": ""
+    },
+    {
+      "case": "real-mysqldump-pending-offsite",
+      "command": [
+        "bash",
+        "deploy/backup.sh",
+        "/tmp/repair-T020-actual-ldbh_q8h/client.cnf",
+        "repair_app_test",
+        "/tmp/repair-T020-actual-ldbh_q8h/backups",
+        "-",
+        "-"
+      ],
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "duration_seconds": 0.2494,
+      "stdout": "",
+      "stderr": "Local archive saved; Q-04 off-VPS destination missing; retention skipped (NOT a successful daily backup)"
+    },
+    {
+      "case": "actual-gzip-integrity",
+      "command": [
+        "/usr/bin/gzip",
+        "-t",
+        "/tmp/repair-T020-actual-ldbh_q8h/backups/repair_app_test-20261112T150623Z-tg3a2f.sql.gz"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "duration_seconds": 0.0045,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "case": "mutate-only-probe",
+      "command": [
+        "/opt/homebrew/opt/php@8.3/bin/php",
+        "/tmp/repair-T020-actual-ldbh_q8h/verify.php",
+        "mutate"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "duration_seconds": 0.2868,
+      "stdout": "{\"stage\":\"mutate\",\"status\":\"PASS\",\"selected_database\":\"repair_app_test\"}",
+      "stderr": ""
+    },
+    {
+      "case": "actual-mysql-restore",
+      "command": [
+        "bash",
+        "deploy/restore.sh",
+        "/tmp/repair-T020-actual-ldbh_q8h/client.cnf",
+        "repair_app_test",
+        "/tmp/repair-T020-actual-ldbh_q8h/backups/repair_app_test-20261112T150623Z-tg3a2f.sql.gz",
+        "RESTORE:repair_app_test"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "duration_seconds": 0.4835,
+      "stdout": "Import complete for repair_app_test; validate data and application before reopening",
+      "stderr": ""
+    },
+    {
+      "case": "assert-restored-schema-and-identities",
+      "command": [
+        "/opt/homebrew/opt/php@8.3/bin/php",
+        "/tmp/repair-T020-actual-ldbh_q8h/verify.php",
+        "verify"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 1,
+      "duration_seconds": 0.3196,
+      "stdout": "",
+      "stderr": "STOP stage=verify class=RuntimeException code=0; details withheld to protect credentials/data\nRestored row identities or schema differ"
+    }
+  ],
+  "archive": {
+    "path": "/tmp/repair-T020-actual-ldbh_q8h/backups/repair_app_test-20261112T150623Z-tg3a2f.sql.gz",
+    "bytes": 3762,
+    "sha256": "05fbbd7822dcade66ae805ef5e88ae65a4c981f6ace646f79ede6c18dcfb26d8",
+    "exactly_one_new_archive": true,
+    "initial_directory_empty": true,
+    "offsite_attempted": false,
+    "retention_executed": false,
+    "daily_backup_success": false
+  },
+  "verdict": "fail",
+  "failure": "assert-restored-schema-and-identities unexpected exit; stop",
+  "generated_client_secret_removed": true,
+  "duration_seconds": 1.9511,
+  "finished_utc": "2026-11-12T15:06:24.316365+00:00"
+}

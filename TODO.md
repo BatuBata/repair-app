@@ -436,36 +436,45 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "ctx_9cb9e1a0e185",
-          "outcome": "running",
+          "outcome": "fail",
           "receipt_ref": "docs/evidence/coordinator/T002-mysql-verification-start.json"
+        },
+        {
+          "id": "A3",
+          "kind": "implementation",
+          "worker_id": "task_593a1385cc0e",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "ctx_9ced09cfe782",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/T002-A3-start.json"
         }
       ],
       "runtime_assignment": {
         "run_id": "run_729e02cff091",
-        "task_id": "task_1048dad74721",
-        "dispatch_id": "ctx_9cb9e1a0e185",
-        "receipt_ref": "docs/evidence/coordinator/T002-mysql-verification-start.json",
-        "base_revision": "a199051700c613b5f1993e97cd9ba3a10c6b1db6",
-        "follow_up_of": "ctx_15263c49ff79",
-        "model_observation": "Same Sol session reused; no new model selection/effective identity proof from follow-up receipt."
+        "task_id": "task_593a1385cc0e",
+        "dispatch_id": "ctx_9ced09cfe782",
+        "receipt_ref": "docs/evidence/coordinator/T002-A3-start.json",
+        "base_revision": "b517ebedd31c0c8f9b013736b2f14d5c666be055",
+        "follow_up_of": "ctx_9cb9e1a0e185",
+        "model_observation": "Same Sol session reused; follow-up does not prove effective backend identity."
       },
-      "next_attempt_kind": "verification",
-      "verification_revision": "a199051700c613b5f1993e97cd9ba3a10c6b1db6",
+      "next_attempt_kind": "implementation",
       "result": {
-        "verdict": "blocked",
-        "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/handoff.json",
-        "revision": "a199051700c613b5f1993e97cd9ba3a10c6b1db6",
-        "checked_revision": "e59bf7c1ccd98a7165da04c91b6b522d4c374a79",
+        "verdict": "fail",
+        "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/mysql-verification-handoff.json",
+        "revision": "b517ebedd31c0c8f9b013736b2f14d5c666be055",
+        "checked_revision": "a199051700c613b5f1993e97cd9ba3a10c6b1db6",
         "inputs": {
           "T001": "4107c49d9098ab47c465773857fd5ee2811eb1b4"
         },
         "evidence": [
-          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/handoff.json",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/suite-final.log",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/mysql-final-blocked.log"
+          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/mysql-verification-handoff.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/mysql-verification-result.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/mysql-verification-inventory.json"
         ],
-        "failure_class": "environment",
-        "summary": "Candidate domain A1 siap, 55 tes SQLite/regresi 396 assertion lulus (1 MySQL skipped), seed final 3/22 lulus, build/Pint/PHPStan lulus menurut laporan. MySQL eksplisit berhenti aman karena DB_USERNAME kosong sebelum koneksi/migrasi. T002 belum done dan T004/T007 tetap terkunci. Setelah konfigurasi user tersedia, verifikasi source sama tanpa attempt perubahan kode baru; MySQL hanya database repair_app_test khusus proyek yang kosong."
+        "failure_class": "product",
+        "summary": "Verification source sama gagal pada guard tes getTables/getViews tanpa parameter schema (Laravel 13 menginventaris lintas schema). Pemeriksaan PDO terbatas target memastikan repair_app_test 0 tabel/view, belum ada migrasi/seed/writes. Source tidak berubah dan bukti dipush b517ebe. Coordinator memeriksa API builder Laravel: dropAllTables sudah dibatasi current schema. Perbaikan test guard diperlukan; tersisa 1 dari 2 code attempts (A2 adalah verification-only)."
       },
       "prior_results": [
         {
@@ -483,6 +492,22 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           ],
           "failure_class": "environment",
           "summary": "Candidate domain A1 siap, 55 tes SQLite/regresi 396 assertion lulus (1 MySQL skipped), seed final 3/22 lulus, build/Pint/PHPStan lulus menurut laporan. MySQL eksplisit berhenti aman karena DB_USERNAME kosong sebelum koneksi/migrasi. T002 belum done dan T004/T007 tetap terkunci. Setelah konfigurasi user tersedia, verifikasi source sama tanpa attempt perubahan kode baru; MySQL hanya database repair_app_test khusus proyek yang kosong."
+        },
+        {
+          "verdict": "fail",
+          "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/mysql-verification-handoff.json",
+          "revision": "b517ebedd31c0c8f9b013736b2f14d5c666be055",
+          "checked_revision": "a199051700c613b5f1993e97cd9ba3a10c6b1db6",
+          "inputs": {
+            "T001": "4107c49d9098ab47c465773857fd5ee2811eb1b4"
+          },
+          "evidence": [
+            "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/mysql-verification-handoff.json",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/mysql-verification-result.json",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/mysql-verification-inventory.json"
+          ],
+          "failure_class": "product",
+          "summary": "Verification source sama gagal pada guard tes getTables/getViews tanpa parameter schema (Laravel 13 menginventaris lintas schema). Pemeriksaan PDO terbatas target memastikan repair_app_test 0 tabel/view, belum ada migrasi/seed/writes. Source tidak berubah dan bukti dipush b517ebe. Coordinator memeriksa API builder Laravel: dropAllTables sudah dibatasi current schema. Perbaikan test guard diperlukan; tersisa 1 dari 2 code attempts (A2 adalah verification-only)."
         }
       ]
     },
@@ -1962,3 +1987,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-12 | Remote origin ditetapkan ke https://github.com/BatuBata/repair-app.git; commit dan push branch task/checkpoint setiap pekerjaan selesai diizinkan. Remote awal kosong; workflow push hanya main untuk tes dan tidak ada deployment. Merge aplikasi/main tetap gate review/QA; izin deployment tidak berubah. | Instruksi user eksplisit, tidak perlu persetujuan ulang per push | Semua task Git | User: push ke github ini; setiap pekerjaan selesai juga buat commit dan push |
 
 | 2026-11-12 | Koneksi MySQL root lokal berhasil; repair_app kosong. Coordinator membuat repair_app_test yang sebelumnya tidak ada, terverifikasi kosong. T002 dibuka untuk verification-only pada a199051/source e59bf7c; admin seed tes memakai password sintetis privat, password admin aplikasi tetap menunggu user. T020 SQL dijadwalkan sesudah T002 agar db:mysql-test eksklusif. | User sudah mengisi akses DB; tidak ada data existing diubah | T002, T020 | User: sudah isi + docs/evidence/coordinator/mysql-preflight.json |
+
+| 2026-11-12 | T002 verification A2 FAIL pada guard metadata tes, bukan koneksi. Jadwalkan A3 kind implementation sebagai code attempt kedua/final untuk scope getTables/getViews eksplisit + assertCount agar aman/privat, lalu ulang MySQL. repair_app_test masih kosong; tidak ada DB aplikasi diubah. | Diagnosis API Laravel 13 dan inventory target; bukti b517ebe dipush | T002 | msg_44169a40efc5 + review coordinator |

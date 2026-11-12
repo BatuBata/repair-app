@@ -1,0 +1,9 @@
+{
+  "started_at": "2026-11-12T17:04:14Z",
+  "verification_completed_at": "2026-11-12T17:24:31Z",
+  "elapsed_seconds_through_verification": 1217.5935730934143,
+  "targeted_seconds": 1.72560715675354,
+  "independent_seconds": 0.6207811832427979,
+  "independent_extra_seconds": 0.8702383041381836,
+  "note": "Wall time observed, includes reading, tool/environment recovery and inspection; no model cost estimate. Publication/handoff duration recorded separately."
+}

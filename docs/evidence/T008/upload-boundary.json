@@ -1,0 +1,22 @@
+{
+  "id": "UPLOAD-STALE-GRANT",
+  "steps": [
+    "Active admin calls actual Store::_startUpload; capture signed URL privately",
+    "Second task-owned controller demotes actor through actual Users::edit/save",
+    "Same authenticated actor POSTs PNG to previously granted unexpired upload URL",
+    "Tampered signature POST and direct settings GET controls",
+    "Restore own synthetic actor role"
+  ],
+  "expected": "Demoted actor cannot write upload bytes (403); direct settings and further Store actions remain forbidden",
+  "actual": {
+    "upload_status": 200,
+    "temporary_files_written": 1,
+    "tampered_signature_status": 401,
+    "settings_status": 403,
+    "route": "/livewire-17828448/upload-file",
+    "public_logo_saved": false
+  },
+  "verdict": "fail",
+  "scope": "Temporary file only; no Store::save or public/logo mutation; signed capability itself is not logged",
+  "grant_source": "Actual Store::_startUpload event via privately bootstrapped component, inherited same app key; HTTP session and role transition are real"
+}

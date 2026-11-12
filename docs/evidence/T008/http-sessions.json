@@ -1,0 +1,121 @@
+{
+  "cases": [
+    {
+      "id": "HTTP-REMEMBER-RESTORE",
+      "request": "/profil",
+      "status": 200,
+      "actual_path": "/profil",
+      "expected": [
+        200,
+        "/profil"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "HTTP-SESSION-DEMOTED",
+      "request": "/",
+      "status": 403,
+      "actual_path": "/",
+      "expected": [
+        403,
+        "/"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "HTTP-REMEMBER-DEMOTED-PROFILE",
+      "request": "/profil",
+      "status": 200,
+      "actual_path": "/profil",
+      "expected": [
+        200,
+        "/profil"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "HTTP-REMEMBER-DEMOTED-ROOT",
+      "request": "/",
+      "status": 403,
+      "actual_path": "/",
+      "expected": [
+        403,
+        "/"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "HTTP-ACTIVE-SESSION-BEFORE",
+      "request": "/profil",
+      "status": 200,
+      "actual_path": "/profil",
+      "expected": [
+        200,
+        "/profil"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "HTTP-SESSION-DEACTIVATED",
+      "request": "/profil",
+      "status": 403,
+      "actual_path": "/profil",
+      "expected": [
+        403,
+        "/profil"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "HTTP-REMEMBER-DEACTIVATED",
+      "request": "/profil",
+      "status": 200,
+      "actual_path": "/login",
+      "expected": [
+        200,
+        "/login"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "HTTP-PASSWORD-RESET-IMMEDIATE-SESSION",
+      "request": "/profil",
+      "status": 200,
+      "actual_path": "/login",
+      "expected": [
+        200,
+        "/login"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "HTTP-PASSWORD-SESSION-BEFORE",
+      "request": "/profil",
+      "status": 200,
+      "actual_path": "/profil",
+      "expected": [
+        200,
+        "/profil"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "HTTP-PASSWORD-RESET-REMEMBER",
+      "request": "/profil",
+      "status": 200,
+      "actual_path": "/login",
+      "expected": [
+        200,
+        "/login"
+      ],
+      "verdict": "pass"
+    }
+  ],
+  "method": "Real HTTP requests, encrypted framework cookies held only in memory; remove session cookie while retaining recaller to simulate new browser session; all mutations through actual Users component methods with task-owned controller actor.",
+  "cookie_names": [
+    "XSRF-TOKEN",
+    "laravel-session",
+    "remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d"
+  ],
+  "secrets_logged": false
+}

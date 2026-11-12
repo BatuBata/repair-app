@@ -1,0 +1,10 @@
+{
+    "schema": "repair_app_qa_m1",
+    "ownership_prefix": "qa_t008_4e81730a",
+    "users_total": 8,
+    "active_admins": 1,
+    "task_owned_users": 8,
+    "preserved": true,
+    "private_provenance": "\/private\/var\/folders\/z3\/lllr0gjd35z5pplbyrcr_wf00000gn\/T\/repair-t008-gtjmdm87\/mysql-ownership.json",
+    "scope": "Root credentials used only in memory\/process environment for local isolated QA; not production least-privilege acceptance"
+}

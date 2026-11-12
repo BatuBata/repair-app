@@ -1,0 +1,18 @@
+{
+  "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4",
+  "product_files": 164,
+  "source_sha256": "11cbc71ccb63f910845ac4bd779244a090905de4723829554dfafe3c9740525f",
+  "source_matches_pin": true,
+  "build_assets_match_T007": true,
+  "branches": {
+    "qa/m1": "f6b23c974b319520b80991d67200c05ddd5562f4",
+    "candidate/m1": "f6b23c974b319520b80991d67200c05ddd5562f4",
+    "main": "38483300b34382e66e73d4f498e0e7c22b55ba58",
+    "BatuBata/repair-t004-auth": "ebeb0b62f1a39720091026c1c3a0e8ec535c818e",
+    "BatuBata/repair-t005-settings": "ede491e76cbed8000aaee6e86392dc58d2741210",
+    "muzib/repair-t002-domain": "4a0667c302c979ab40641459bf9e7afac0655e09",
+    "muzib/repair-t003-layout": "a08d1d785b72199e1000840ea8e2afe1d7f38fbd"
+  },
+  "only_untracked_evidence_directory": "?? docs/evidence/T008/",
+  "checked_at": "2026-11-12T17:24:31Z"
+}

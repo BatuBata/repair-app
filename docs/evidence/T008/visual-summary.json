@@ -1,0 +1,62 @@
+{
+  "source_revision": "f6b23c974b319520b80991d67200c05ddd5562f4",
+  "actual_viewports": {
+    "360": {
+      "states_observed": 52,
+      "body_fonts": [
+        "16px"
+      ],
+      "font_loaded_all": true,
+      "document_widths": [
+        360
+      ],
+      "minimum_visible_control_width": 44,
+      "minimum_visible_control_height": 44
+    },
+    "768": {
+      "states_observed": 40,
+      "body_fonts": [
+        "16px"
+      ],
+      "font_loaded_all": true,
+      "document_widths": [
+        768
+      ],
+      "minimum_visible_control_width": 44,
+      "minimum_visible_control_height": 44
+    },
+    "1280": {
+      "states_observed": 27,
+      "body_fonts": [
+        "14px"
+      ],
+      "font_loaded_all": true,
+      "document_widths": [
+        1280
+      ],
+      "minimum_visible_control_width": 32,
+      "minimum_visible_control_height": 32
+    }
+  },
+  "page_horizontal_overflow": [],
+  "mobile_targets_minimum_pass": true,
+  "contrast_sample": {
+    "observed_primary_ink_on_white": 18.431768149538414,
+    "observed_input_border_on_white": 3.166174340133861,
+    "scope": "Measured samples on 360/768 store; shared CSS tokens verified at all widths; not exhaustive per-pixel contrast certification"
+  },
+  "screenshots_opened": "All main contact sheets width-360-1..5, width-768-1..4, width-1280-1..4 and supplement sheets360/768-1..2 opened and inspected, plus native login original. Original full-page captures with fixed bars are composite evidence; viewport/lower supplementary captures determine actual occlusion/reachability.",
+  "design_critique": {
+    "direction": "Approved DESIGN.md framed sheet with IBM Plex Sans, teal service ticket mark; no new design draw or source change.",
+    "questions": {
+      "login": "How do I sign in?",
+      "home": "Where do I manage accounts or my password in M1?",
+      "users": "Which accounts are active and how do I change them?",
+      "profile": "How do I change my password?",
+      "store": "What store/warranty details will documents use?",
+      "categories": "Which service categories can be used?"
+    },
+    "judgment": "Login directly matches mockup/login at360/768/1280; lists/forms follow approved mockup/tts and tts-baru component patterns. Left actions, pale status, wraps, mobile bottom navigation/sticky save, desktop L-frame, loaded font observed. M1 home is intentionally a foundation shell; domain dashboard is T018. No permanent overlap/cut/unreachable action found in tested states; initial fields below fold are reachable by real scrolling.",
+    "limits": "Browser emulation only; operating-system keyboard and physical touch/installation remain T025."
+  }
+}

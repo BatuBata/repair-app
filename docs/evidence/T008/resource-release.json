@@ -1,0 +1,19 @@
+{
+  "server_port": 8088,
+  "port_free": true,
+  "server_group_stopped": 66672,
+  "native_page_closed": "009b9fc0-acb6-47a1-b792-2165ed95e50d",
+  "cdp": "All own Browser instances closed through Browser.close; profiles removed by existing client. No user profile or other tab used.",
+  "browser_fixture": {
+    "private_sqlite_path": "/var/folders/z3/lllr0gjd35z5pplbyrcr_wf00000gn/T/repair-t008-gtjmdm87/browser-repeat.sqlite",
+    "users": 4,
+    "categories": 3,
+    "store_settings": 1
+  },
+  "mysql_fixture": "Preserved repair_app_qa_m1; see mysql-inventory.json",
+  "shared_resources_released": [
+    "browser:repair-app-visual",
+    "db:mysql-qa-m1"
+  ],
+  "at": "2026-11-12T17:24:31Z"
+}

@@ -1,0 +1,6 @@
+{
+  "exact_private_key_password_matches": 0,
+  "files_checked": "All non-image T008 artifacts, against current private QA key/password and canonical APP_KEY/DB_PASSWORD values; values never emitted",
+  "screenshots": "Password inputs masked; no credential screenshots or environment dumps",
+  "result": "pass"
+}

@@ -1,0 +1,94 @@
+{
+    "schema": "repair_app_qa_m1",
+    "existed_before": false,
+    "tables_before": 0,
+    "created_only_if_absent": true,
+    "version": "8.0.31",
+    "loopback_only": true,
+    "started_at": "2026-11-12T17:06:58+00:00",
+    "migrate_exit": 0,
+    "migrate_ms": 560.8329772949219,
+    "tables": [
+        {
+            "TABLE_NAME": "cache",
+            "ENGINE": "InnoDB"
+        },
+        {
+            "TABLE_NAME": "cache_locks",
+            "ENGINE": "InnoDB"
+        },
+        {
+            "TABLE_NAME": "categories",
+            "ENGINE": "InnoDB"
+        },
+        {
+            "TABLE_NAME": "expenses",
+            "ENGINE": "InnoDB"
+        },
+        {
+            "TABLE_NAME": "failed_jobs",
+            "ENGINE": "InnoDB"
+        },
+        {
+            "TABLE_NAME": "job_batches",
+            "ENGINE": "InnoDB"
+        },
+        {
+            "TABLE_NAME": "jobs",
+            "ENGINE": "InnoDB"
+        },
+        {
+            "TABLE_NAME": "migrations",
+            "ENGINE": "InnoDB"
+        },
+        {
+            "TABLE_NAME": "number_sequences",
+            "ENGINE": "InnoDB"
+        },
+        {
+            "TABLE_NAME": "passkeys",
+            "ENGINE": "InnoDB"
+        },
+        {
+            "TABLE_NAME": "password_reset_tokens",
+            "ENGINE": "InnoDB"
+        },
+        {
+            "TABLE_NAME": "products",
+            "ENGINE": "InnoDB"
+        },
+        {
+            "TABLE_NAME": "sale_items",
+            "ENGINE": "InnoDB"
+        },
+        {
+            "TABLE_NAME": "sales",
+            "ENGINE": "InnoDB"
+        },
+        {
+            "TABLE_NAME": "service_order_items",
+            "ENGINE": "InnoDB"
+        },
+        {
+            "TABLE_NAME": "service_orders",
+            "ENGINE": "InnoDB"
+        },
+        {
+            "TABLE_NAME": "sessions",
+            "ENGINE": "InnoDB"
+        },
+        {
+            "TABLE_NAME": "stock_entries",
+            "ENGINE": "InnoDB"
+        },
+        {
+            "TABLE_NAME": "store_settings",
+            "ENGINE": "InnoDB"
+        },
+        {
+            "TABLE_NAME": "users",
+            "ENGINE": "InnoDB"
+        }
+    ],
+    "users_engine": "InnoDB"
+}

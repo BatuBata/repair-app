@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\Evidence\T008\IndependentTest" file="/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/IndependentTest.php" tests="2" assertions="3" errors="0" failures="0" skipped="0" time="0.406607">
+    <testcase name="test_category_mode_is_locked_against_forged_create_or_edit_state" file="/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/IndependentTest.php" line="81" class="Tests\Evidence\T008\IndependentTest" classname="Tests.Evidence.T008.IndependentTest" assertions="1" time="0.385036"/>
+    <testcase name="test_upload_error_callback_rechecks_current_status_and_role" file="/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/IndependentTest.php" line="88" class="Tests\Evidence\T008\IndependentTest" classname="Tests.Evidence.T008.IndependentTest" assertions="2" time="0.021571"/>
+  </testsuite>
+</testsuites>

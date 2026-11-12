@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/opt/homebrew/opt/php@8.3/bin/php",
+    "/var/folders/z3/lllr0gjd35z5pplbyrcr_wf00000gn/T/repair-t008-gtjmdm87/fixture.php",
+    "component-role",
+    "qa_admin",
+    "admin"
+  ],
+  "exit": 0,
+  "duration_s": 0.27396392822265625
+}

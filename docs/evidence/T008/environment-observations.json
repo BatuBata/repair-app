@@ -1,0 +1,69 @@
+{
+  "native_browser": {
+    "page": "009b9fc0-acb6-47a1-b792-2165ed95e50d",
+    "steps": [
+      "orca tab create --url http://127.0.0.1:8088/login --json",
+      "orca viewport --page <own-page> --width 360 --height 800 --mobile --json",
+      "orca snapshot --page <own-page> --interactive",
+      "orca click --page <own-page> --element @e13 --json",
+      "orca eval <observed dimensions and password type>",
+      "orca screenshot --page <own-page> --json",
+      "orca tab close --page <own-page> --json"
+    ],
+    "observed": {
+      "innerWidth": 360,
+      "innerHeight": 800,
+      "documentWidth": 360,
+      "passwordTypeAfterPointerClick": "text",
+      "pointerResult": "clicked; label became Sembunyikan password"
+    },
+    "screenshot": "screenshots/orca-native-login-360.png",
+    "closed": true
+  },
+  "cdp_reason": "Installed supported Chrome/CDP used for stable viewport matrix, explicit trusted touch/mouse events and Chrome manifest diagnostics; no dependencies installed or other browser profile reused. Native initial pointer worked after valid snapshot.",
+  "harness_events": [
+    {
+      "event": "First browser init refused existing SQLite file",
+      "classification": "environment fixture guard",
+      "reason": "Targeted/independent tests had generated their own private SQLite at the initially shared path. Init asserted missing file and stopped; new browser-http.sqlite was created instead; no application DB reset."
+    },
+    {
+      "event": "First dropdown keyboard wait timed out",
+      "classification": "tool/evidence sequencing",
+      "reason": "Full-page capture closed dropdown via layout/scroll. Viewport capture plus live open-state check then proved ArrowDown/Up/Escape/outside/scroll at all widths. Original first-run JSON retained."
+    },
+    {
+      "event": "First preview upload timed out under APP_ENV=testing",
+      "classification": "environment",
+      "reason": "Livewire FileUploadConfiguration uses per-request fake tmp-for-tests disk in testing mode. Preview server changed to local with same key/SQLite and debug=false; actual upload/preview passed at every width. Unit tests kept testing environment."
+    },
+    {
+      "event": "Manifest JSON parser saw empty Chrome manifest",
+      "classification": "diagnostic handling plus actual product defect",
+      "reason": "Guest login has no manifest link. Follow-up diagnostic handles absence, records no-manifest, fetches file only for independent parse/icon/start-url checks; absence remains FAIL."
+    },
+    {
+      "event": "Supplementary input hit sticky brand after scrollIntoView nearest",
+      "classification": "tool input targeting",
+      "reason": "Input was obscured by fixed top bar; actual navigation went home. Corrected QA input helper to center target and assert elementFromPoint before touching. Missing value assertion and error capture retained; successful subset then completed."
+    },
+    {
+      "event": "Two added PHPUnit cases reused browser-http SQLite via harness environment",
+      "classification": "QA fixture isolation limitation",
+      "reason": "RefreshDatabase cleared only task-owned private browser-http.sqlite after its HTTP/visual runs were complete. New empty browser-repeat.sqlite baseline was created for repeat/remaining diagnostics. No repair_app, repair_app_test, or MySQL QA race fixture affected. Runner now gives future PHPUnit processes :memory:."
+    },
+    {
+      "event": "Manifest response list retained mutable navigation array",
+      "classification": "evidence serialization",
+      "reason": "First diagnostic list included later role logins; original retained as manifest-first-diagnostics.json. Corrected array copy and repeated only manifest diagnostics; final immutable per-role lists stored."
+    },
+    {
+      "event": "First manifest diagnostics used desktop UA with touch emulation",
+      "classification": "environment coverage gap",
+      "reason": "Retained desktop diagnostics; repeated only manifest under explicit Android UA/client hints/touch emulation. Physical Android remains NOT_RUN."
+    }
+  ],
+  "server_mode": "APP_ENV=local for actual browser uploads; APP_DEBUG=false; loopback8088; process-only keys/passwords, privateSQLite",
+  "test_mode": "PHPUnit testing, BCRYPT_ROUNDS4, private synthetic SQLite; no real admin initialization",
+  "model": "New independent Sol high requested; no fallback or helper worker launched; effective backend model not exposed in worker-show."
+}

@@ -1,0 +1,976 @@
+{
+  "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4",
+  "inputs": {
+    "T007": "f6b23c974b319520b80991d67200c05ddd5562f4"
+  },
+  "cases": [
+    {
+      "id": "SOURCE-PIN",
+      "verdict": "pass",
+      "expected": "Exact FINAL pin, clean initial checkout; evidence branch only",
+      "actual": "HEAD f6b23c9; clean candidate/m1 -> qa/m1;164 source hashes and14 build hashes match immutable T007/T005",
+      "evidence": [
+        "source-proof.json",
+        "assets-proof.json",
+        "ancestry.json"
+      ],
+      "command": "git status --short; git rev-parse HEAD; git switch -c qa/m1 <FINAL>; SHA256 file comparisons",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "REUSE-FULL-SUITE",
+      "verdict": "reused",
+      "expected": "Reuse source-identical T007 full suite; do not rerun build/suite needlessly",
+      "actual": "71 PASS,1 MySQL SKIP,698 assertions; producer integrator T007, FINAL f6b23c9; underlying source ede491e",
+      "evidence": [
+        "../T007/suite.log",
+        "../T007/suite-junit.xml",
+        "../T007/suite-execution.json",
+        "source-proof.json"
+      ],
+      "command": "Read T007 evidence; compare every164 source file and14 artifact hashes",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "AUTH-ROUTES",
+      "verdict": "pass",
+      "expected": "Guest302login/JSON401 and technician403 on root/dashboard/users/store/categories",
+      "actual": "Independent route matrix all five paths enforced; profile remains both-role",
+      "evidence": [
+        "IndependentTest.php",
+        "independent.log",
+        "targeted.log"
+      ],
+      "command": "PHP8.3 vendor/bin/phpunit docs/evidence/T008/IndependentTest.php + focused existing filter",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "AUTH-TRANSITIONS",
+      "verdict": "pass",
+      "expected": "Current role/status/password applied to existing sessions and retained recaller cookies",
+      "actual": "36 focused existing tests296assertions; actual HTTP10cases PASS using real encrypted cookies and Users actions",
+      "evidence": [
+        "targeted.xml",
+        "http-sessions.json"
+      ],
+      "command": "python3 <private>/runner.py targeted; python3 <private>/http-sessions.py",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "LIVEWIRE-ACTIONS",
+      "verdict": "pass",
+      "expected": "Public Users/Store/Categories/Profile actions reject demoted/deactivated actors and forged IDs/locked state",
+      "actual": "Focused existing tests plus independent5tests64assertions and extra2tests3assertions; upload start/finish/remove/error callbacks reject stale actors; missing/negative/array IDs rejected",
+      "evidence": [
+        "IndependentTest.php",
+        "independent.xml",
+        "independent-extra.xml",
+        "targeted.xml"
+      ],
+      "command": "python3 <private>/runner.py independent; python3 <private>/runner.py extra",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "CATEGORY-HISTORY",
+      "verdict": "pass",
+      "expected": "Nonactive category excluded from new order validation, historic category/creator relations retained",
+      "actual": "Actual CreateServiceOrder rejects category_id after deactivate; prior order retains category name and inactive technician name",
+      "evidence": [
+        "IndependentTest.php",
+        "independent.xml",
+        "targeted.xml"
+      ],
+      "command": "IndependentTest::test_inactive_category_is_rejected_for_new_order_but_old_category_and_creator_survive",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "LOGO-VALIDATION",
+      "verdict": "pass",
+      "expected": "Accept raster <=2MB; reject SVG/spoof/oversize; random logos path; failed write preserves old logo",
+      "actual": "Focused Settings tests pass; actual logo preview loaded192PNG at3widths",
+      "evidence": [
+        "targeted.xml",
+        "browser-results.json",
+        "screenshots/store-logo-360-lower.png"
+      ],
+      "command": "SettingsTest image/write-failure cases; real Chrome file selection/preview",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "UPLOAD-STALE-GRANT",
+      "verdict": "fail",
+      "expected": "A demoted actor cannot write upload bytes with an earlier signed grant",
+      "actual": "Unexpired URL from actual Store::_startUpload still accepts same actor PNG POST200 and writes1temporaryfile after Users demotion; tampered signature401; direct store403; no public logo/settings mutation",
+      "evidence": [
+        "upload-boundary.json",
+        "upload-grant.log"
+      ],
+      "command": "python3 <private>/upload-boundary.py",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4",
+      "owner_source": "T004/T005 shared upload route authorization: bootstrap/app.php; app/Livewire/Settings/Store.php; Livewire FileUploadController default web middleware/signature boundary"
+    },
+    {
+      "id": "LAST-ADMIN-SERIAL",
+      "verdict": "pass",
+      "expected": "Last active admin cannot be deactivated/demoted via toggle or combined form edits",
+      "actual": "Focused Users tests plus independentcombinedrole/status negativecases pass",
+      "evidence": [
+        "targeted.xml",
+        "independent.xml"
+      ],
+      "command": "UsersTest last-admin cases and IndependentTest combined changes",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "MYSQL-RACE-1",
+      "verdict": "pass",
+      "expected": "Two concurrent self/peer mutations leave exactly1active admin; one success and valid constraint/403 denial",
+      "actual": {
+        "operations": [
+          "deactivate",
+          "deactivate"
+        ],
+        "active_admins_after": 1,
+        "outcomes": [
+          "protected",
+          "succeeded"
+        ],
+        "start_skew_ms": 0.064849853515625,
+        "action_overlap_ms": 18.65410804748535
+      },
+      "evidence": [
+        "mysql-baseline.json",
+        "mysql-races.json",
+        "mysql-inventory.json"
+      ],
+      "command": "PHP8.3 <private>/mysql.php; two PHP8.3 mysql-race-worker processes with shared ready/start barrier",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "MYSQL-RACE-2",
+      "verdict": "pass",
+      "expected": "Two concurrent self/peer mutations leave exactly1active admin; one success and valid constraint/403 denial",
+      "actual": {
+        "operations": [
+          "demote",
+          "demote"
+        ],
+        "active_admins_after": 1,
+        "outcomes": [
+          "protected",
+          "succeeded"
+        ],
+        "start_skew_ms": 0.47397613525390625,
+        "action_overlap_ms": 19.680023193359375
+      },
+      "evidence": [
+        "mysql-baseline.json",
+        "mysql-races.json",
+        "mysql-inventory.json"
+      ],
+      "command": "PHP8.3 <private>/mysql.php; two PHP8.3 mysql-race-worker processes with shared ready/start barrier",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "MYSQL-RACE-3",
+      "verdict": "pass",
+      "expected": "Two concurrent self/peer mutations leave exactly1active admin; one success and valid constraint/403 denial",
+      "actual": {
+        "operations": [
+          "deactivate",
+          "demote"
+        ],
+        "active_admins_after": 1,
+        "outcomes": [
+          "succeeded",
+          "forbidden"
+        ],
+        "start_skew_ms": 0.0021457672119140625,
+        "action_overlap_ms": 16.839981079101562
+      },
+      "evidence": [
+        "mysql-baseline.json",
+        "mysql-races.json",
+        "mysql-inventory.json"
+      ],
+      "command": "PHP8.3 <private>/mysql.php; two PHP8.3 mysql-race-worker processes with shared ready/start barrier",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "MYSQL-RACE-4",
+      "verdict": "pass",
+      "expected": "Two concurrent self/peer mutations leave exactly1active admin; one success and valid constraint/403 denial",
+      "actual": {
+        "operations": [
+          "demote",
+          "deactivate"
+        ],
+        "active_admins_after": 1,
+        "outcomes": [
+          "protected",
+          "succeeded"
+        ],
+        "start_skew_ms": 0.08296966552734375,
+        "action_overlap_ms": 11.56306266784668
+      },
+      "evidence": [
+        "mysql-baseline.json",
+        "mysql-races.json",
+        "mysql-inventory.json"
+      ],
+      "command": "PHP8.3 <private>/mysql.php; two PHP8.3 mysql-race-worker processes with shared ready/start barrier",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "VISUAL-login",
+      "verdict": "pass",
+      "expected": "Actual360/768/1280; no page overflow/permanent clipping; controls and typography meet DESIGN",
+      "actual": {
+        "viewports": [
+          {
+            "width": 360,
+            "height": 800,
+            "documentWidth": 360,
+            "scrollY": 0
+          },
+          {
+            "width": 768,
+            "height": 800,
+            "documentWidth": 768,
+            "scrollY": 0
+          },
+          {
+            "width": 1280,
+            "height": 800,
+            "documentWidth": 1280,
+            "scrollY": 0
+          }
+        ],
+        "screenshots": [
+          "screenshots/login-360.png",
+          "screenshots/login-768.png",
+          "screenshots/login-1280.png"
+        ]
+      },
+      "evidence": [
+        "browser-results.json",
+        "visual-summary.json",
+        "screenshots/login-360.png",
+        "screenshots/login-768.png",
+        "screenshots/login-1280.png"
+      ],
+      "command": "node docs/evidence/T008/browser-qa.mjs (staged completion after documented tool/environment corrections)",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "VISUAL-admin-home",
+      "verdict": "pass",
+      "expected": "Actual360/768/1280; no page overflow/permanent clipping; controls and typography meet DESIGN",
+      "actual": {
+        "viewports": [
+          {
+            "width": 360,
+            "height": 800,
+            "documentWidth": 360,
+            "scrollY": 0
+          },
+          {
+            "width": 768,
+            "height": 800,
+            "documentWidth": 768,
+            "scrollY": 0
+          },
+          {
+            "width": 1280,
+            "height": 800,
+            "documentWidth": 1280,
+            "scrollY": 0
+          }
+        ],
+        "screenshots": [
+          "screenshots/admin-home-360.png",
+          "screenshots/admin-home-768.png",
+          "screenshots/admin-home-1280.png"
+        ]
+      },
+      "evidence": [
+        "browser-results.json",
+        "visual-summary.json",
+        "screenshots/admin-home-360.png",
+        "screenshots/admin-home-768.png",
+        "screenshots/admin-home-1280.png"
+      ],
+      "command": "node docs/evidence/T008/browser-qa.mjs (staged completion after documented tool/environment corrections)",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "VISUAL-users-list",
+      "verdict": "pass",
+      "expected": "Actual360/768/1280; no page overflow/permanent clipping; controls and typography meet DESIGN",
+      "actual": {
+        "viewports": [
+          {
+            "width": 360,
+            "height": 800,
+            "documentWidth": 360,
+            "scrollY": 0
+          },
+          {
+            "width": 768,
+            "height": 800,
+            "documentWidth": 768,
+            "scrollY": 0
+          },
+          {
+            "width": 1280,
+            "height": 800,
+            "documentWidth": 1280,
+            "scrollY": 0
+          }
+        ],
+        "screenshots": [
+          "screenshots/users-list-360.png",
+          "screenshots/users-list-768.png",
+          "screenshots/users-list-1280.png"
+        ]
+      },
+      "evidence": [
+        "browser-results.json",
+        "visual-summary.json",
+        "screenshots/users-list-360.png",
+        "screenshots/users-list-768.png",
+        "screenshots/users-list-1280.png"
+      ],
+      "command": "node docs/evidence/T008/browser-qa.mjs (staged completion after documented tool/environment corrections)",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "VISUAL-users-create",
+      "verdict": "pass",
+      "expected": "Actual360/768/1280; no page overflow/permanent clipping; controls and typography meet DESIGN",
+      "actual": {
+        "viewports": [
+          {
+            "width": 360,
+            "height": 800,
+            "documentWidth": 360,
+            "scrollY": 15
+          },
+          {
+            "width": 360,
+            "height": 800,
+            "documentWidth": 360,
+            "scrollY": 266
+          },
+          {
+            "width": 768,
+            "height": 800,
+            "documentWidth": 768,
+            "scrollY": 9
+          },
+          {
+            "width": 768,
+            "height": 800,
+            "documentWidth": 768,
+            "scrollY": 266
+          },
+          {
+            "width": 1280,
+            "height": 800,
+            "documentWidth": 1280,
+            "scrollY": 0
+          },
+          {
+            "width": 1280,
+            "height": 800,
+            "documentWidth": 1280,
+            "scrollY": 0
+          }
+        ],
+        "screenshots": [
+          "screenshots/users-create-360.png",
+          "screenshots/users-create-360-lower.png",
+          "screenshots/users-create-768.png",
+          "screenshots/users-create-768-lower.png",
+          "screenshots/users-create-1280.png",
+          "screenshots/users-create-1280-lower.png"
+        ]
+      },
+      "evidence": [
+        "browser-results.json",
+        "visual-summary.json",
+        "screenshots/users-create-360.png",
+        "screenshots/users-create-360-lower.png",
+        "screenshots/users-create-768.png",
+        "screenshots/users-create-768-lower.png",
+        "screenshots/users-create-1280.png",
+        "screenshots/users-create-1280-lower.png"
+      ],
+      "command": "node docs/evidence/T008/browser-qa.mjs (staged completion after documented tool/environment corrections)",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "VISUAL-users-edit",
+      "verdict": "pass",
+      "expected": "Actual360/768/1280; no page overflow/permanent clipping; controls and typography meet DESIGN",
+      "actual": {
+        "viewports": [
+          {
+            "width": 360,
+            "height": 800,
+            "documentWidth": 360,
+            "scrollY": 0
+          },
+          {
+            "width": 768,
+            "height": 800,
+            "documentWidth": 768,
+            "scrollY": 0
+          },
+          {
+            "width": 1280,
+            "height": 800,
+            "documentWidth": 1280,
+            "scrollY": 0
+          }
+        ],
+        "screenshots": [
+          "screenshots/users-edit-360.png",
+          "screenshots/users-edit-768.png",
+          "screenshots/users-edit-1280.png"
+        ]
+      },
+      "evidence": [
+        "browser-results.json",
+        "visual-summary.json",
+        "screenshots/users-edit-360.png",
+        "screenshots/users-edit-768.png",
+        "screenshots/users-edit-1280.png"
+      ],
+      "command": "node docs/evidence/T008/browser-qa.mjs (staged completion after documented tool/environment corrections)",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "VISUAL-users-reset",
+      "verdict": "pass",
+      "expected": "Actual360/768/1280; no page overflow/permanent clipping; controls and typography meet DESIGN",
+      "actual": {
+        "viewports": [
+          {
+            "width": 360,
+            "height": 800,
+            "documentWidth": 360,
+            "scrollY": 0
+          },
+          {
+            "width": 768,
+            "height": 800,
+            "documentWidth": 768,
+            "scrollY": 0
+          },
+          {
+            "width": 1280,
+            "height": 800,
+            "documentWidth": 1280,
+            "scrollY": 0
+          }
+        ],
+        "screenshots": [
+          "screenshots/users-reset-360.png",
+          "screenshots/users-reset-768.png",
+          "screenshots/users-reset-1280.png"
+        ]
+      },
+      "evidence": [
+        "browser-results.json",
+        "visual-summary.json",
+        "screenshots/users-reset-360.png",
+        "screenshots/users-reset-768.png",
+        "screenshots/users-reset-1280.png"
+      ],
+      "command": "node docs/evidence/T008/browser-qa.mjs (staged completion after documented tool/environment corrections)",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "VISUAL-profile-admin",
+      "verdict": "pass",
+      "expected": "Actual360/768/1280; no page overflow/permanent clipping; controls and typography meet DESIGN",
+      "actual": {
+        "viewports": [
+          {
+            "width": 360,
+            "height": 800,
+            "documentWidth": 360,
+            "scrollY": 0
+          },
+          {
+            "width": 360,
+            "height": 800,
+            "documentWidth": 360,
+            "scrollY": 50
+          },
+          {
+            "width": 768,
+            "height": 800,
+            "documentWidth": 768,
+            "scrollY": 0
+          },
+          {
+            "width": 768,
+            "height": 800,
+            "documentWidth": 768,
+            "scrollY": 50
+          },
+          {
+            "width": 1280,
+            "height": 800,
+            "documentWidth": 1280,
+            "scrollY": 0
+          },
+          {
+            "width": 1280,
+            "height": 800,
+            "documentWidth": 1280,
+            "scrollY": 0
+          }
+        ],
+        "screenshots": [
+          "screenshots/profile-admin-360.png",
+          "screenshots/profile-admin-360-lower.png",
+          "screenshots/profile-admin-768.png",
+          "screenshots/profile-admin-768-lower.png",
+          "screenshots/profile-admin-1280.png",
+          "screenshots/profile-admin-1280-lower.png"
+        ]
+      },
+      "evidence": [
+        "browser-results.json",
+        "visual-summary.json",
+        "screenshots/profile-admin-360.png",
+        "screenshots/profile-admin-360-lower.png",
+        "screenshots/profile-admin-768.png",
+        "screenshots/profile-admin-768-lower.png",
+        "screenshots/profile-admin-1280.png",
+        "screenshots/profile-admin-1280-lower.png"
+      ],
+      "command": "node docs/evidence/T008/browser-qa.mjs (staged completion after documented tool/environment corrections)",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "VISUAL-profile-technician",
+      "verdict": "pass",
+      "expected": "Actual360/768/1280; no page overflow/permanent clipping; controls and typography meet DESIGN",
+      "actual": {
+        "viewports": [
+          {
+            "width": 360,
+            "height": 800,
+            "documentWidth": 360,
+            "scrollY": 0
+          },
+          {
+            "width": 360,
+            "height": 800,
+            "documentWidth": 360,
+            "scrollY": 50
+          },
+          {
+            "width": 768,
+            "height": 800,
+            "documentWidth": 768,
+            "scrollY": 0
+          },
+          {
+            "width": 768,
+            "height": 800,
+            "documentWidth": 768,
+            "scrollY": 50
+          },
+          {
+            "width": 1280,
+            "height": 800,
+            "documentWidth": 1280,
+            "scrollY": 0
+          },
+          {
+            "width": 1280,
+            "height": 800,
+            "documentWidth": 1280,
+            "scrollY": 0
+          }
+        ],
+        "screenshots": [
+          "screenshots/profile-technician-360.png",
+          "screenshots/profile-technician-360-lower.png",
+          "screenshots/profile-technician-768.png",
+          "screenshots/profile-technician-768-lower.png",
+          "screenshots/profile-technician-1280.png",
+          "screenshots/profile-technician-1280-lower.png"
+        ]
+      },
+      "evidence": [
+        "browser-results.json",
+        "visual-summary.json",
+        "screenshots/profile-technician-360.png",
+        "screenshots/profile-technician-360-lower.png",
+        "screenshots/profile-technician-768.png",
+        "screenshots/profile-technician-768-lower.png",
+        "screenshots/profile-technician-1280.png",
+        "screenshots/profile-technician-1280-lower.png"
+      ],
+      "command": "node docs/evidence/T008/browser-qa.mjs (staged completion after documented tool/environment corrections)",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "VISUAL-store",
+      "verdict": "pass",
+      "expected": "Actual360/768/1280; no page overflow/permanent clipping; controls and typography meet DESIGN",
+      "actual": {
+        "viewports": [
+          {
+            "width": 360,
+            "height": 800,
+            "documentWidth": 360,
+            "scrollY": 0
+          },
+          {
+            "width": 360,
+            "height": 800,
+            "documentWidth": 360,
+            "scrollY": 374
+          },
+          {
+            "width": 768,
+            "height": 800,
+            "documentWidth": 768,
+            "scrollY": 0
+          },
+          {
+            "width": 768,
+            "height": 800,
+            "documentWidth": 768,
+            "scrollY": 374
+          },
+          {
+            "width": 1280,
+            "height": 800,
+            "documentWidth": 1280,
+            "scrollY": 0
+          },
+          {
+            "width": 1280,
+            "height": 800,
+            "documentWidth": 1280,
+            "scrollY": 144
+          }
+        ],
+        "screenshots": [
+          "screenshots/store-360.png",
+          "screenshots/store-360-lower.png",
+          "screenshots/store-768.png",
+          "screenshots/store-768-lower.png",
+          "screenshots/store-1280.png",
+          "screenshots/store-1280-lower.png"
+        ]
+      },
+      "evidence": [
+        "browser-results.json",
+        "visual-summary.json",
+        "screenshots/store-360.png",
+        "screenshots/store-360-lower.png",
+        "screenshots/store-768.png",
+        "screenshots/store-768-lower.png",
+        "screenshots/store-1280.png",
+        "screenshots/store-1280-lower.png"
+      ],
+      "command": "node docs/evidence/T008/browser-qa.mjs (staged completion after documented tool/environment corrections)",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "VISUAL-categories-list",
+      "verdict": "pass",
+      "expected": "Actual360/768/1280; no page overflow/permanent clipping; controls and typography meet DESIGN",
+      "actual": {
+        "viewports": [
+          {
+            "width": 360,
+            "height": 800,
+            "documentWidth": 360,
+            "scrollY": 0
+          },
+          {
+            "width": 768,
+            "height": 800,
+            "documentWidth": 768,
+            "scrollY": 0
+          },
+          {
+            "width": 1280,
+            "height": 800,
+            "documentWidth": 1280,
+            "scrollY": 0
+          }
+        ],
+        "screenshots": [
+          "screenshots/categories-list-360.png",
+          "screenshots/categories-list-768.png",
+          "screenshots/categories-list-1280.png"
+        ]
+      },
+      "evidence": [
+        "browser-results.json",
+        "visual-summary.json",
+        "screenshots/categories-list-360.png",
+        "screenshots/categories-list-768.png",
+        "screenshots/categories-list-1280.png"
+      ],
+      "command": "node docs/evidence/T008/browser-qa.mjs (staged completion after documented tool/environment corrections)",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "VISUAL-categories-create",
+      "verdict": "pass",
+      "expected": "Actual360/768/1280; no page overflow/permanent clipping; controls and typography meet DESIGN",
+      "actual": {
+        "viewports": [
+          {
+            "width": 360,
+            "height": 800,
+            "documentWidth": 360,
+            "scrollY": 0
+          },
+          {
+            "width": 768,
+            "height": 800,
+            "documentWidth": 768,
+            "scrollY": 0
+          },
+          {
+            "width": 1280,
+            "height": 800,
+            "documentWidth": 1280,
+            "scrollY": 0
+          }
+        ],
+        "screenshots": [
+          "screenshots/categories-create-360.png",
+          "screenshots/categories-create-768.png",
+          "screenshots/categories-create-1280.png"
+        ]
+      },
+      "evidence": [
+        "browser-results.json",
+        "visual-summary.json",
+        "screenshots/categories-create-360.png",
+        "screenshots/categories-create-768.png",
+        "screenshots/categories-create-1280.png"
+      ],
+      "command": "node docs/evidence/T008/browser-qa.mjs (staged completion after documented tool/environment corrections)",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "VISUAL-categories-edit",
+      "verdict": "pass",
+      "expected": "Actual360/768/1280; no page overflow/permanent clipping; controls and typography meet DESIGN",
+      "actual": {
+        "viewports": [
+          {
+            "width": 360,
+            "height": 800,
+            "documentWidth": 360,
+            "scrollY": 0
+          },
+          {
+            "width": 768,
+            "height": 800,
+            "documentWidth": 768,
+            "scrollY": 0
+          },
+          {
+            "width": 1280,
+            "height": 800,
+            "documentWidth": 1280,
+            "scrollY": 0
+          }
+        ],
+        "screenshots": [
+          "screenshots/categories-edit-360.png",
+          "screenshots/categories-edit-768.png",
+          "screenshots/categories-edit-1280.png"
+        ]
+      },
+      "evidence": [
+        "browser-results.json",
+        "visual-summary.json",
+        "screenshots/categories-edit-360.png",
+        "screenshots/categories-edit-768.png",
+        "screenshots/categories-edit-1280.png"
+      ],
+      "command": "node docs/evidence/T008/browser-qa.mjs (staged completion after documented tool/environment corrections)",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "VISUAL-INTERACTION-STATES",
+      "verdict": "pass",
+      "expected": "Reach lower fields and sticky save; left menus support pointer/keyboard/outside/scroll; errors preserve inputs; long values wrap; logo preview",
+      "actual": "Trusted touch/mouse events recorded; all six final users/category menu matrices pass; valid bottom user/category/store saves360/768 and own password save360; failed-login recovery passes; supplemental viewport captures resolve full-page composition artifacts",
+      "evidence": [
+        "browser-results.json",
+        "supplement-results.json",
+        "visual-summary.json",
+        "contact/"
+      ],
+      "command": "node browser-qa.mjs; node supplement-qa.mjs; original first-run failures retained",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "MANIFEST-guest",
+      "verdict": "fail",
+      "expected": "Chrome parses linked manifest;192/512icons/theme/standalone valid; actual start navigation reaches role destination",
+      "actual": {
+        "link": null,
+        "chromeErrors": {
+          "installabilityErrors": [
+            {
+              "errorId": "no-manifest",
+              "errorArguments": []
+            }
+          ]
+        },
+        "expected": "/login",
+        "actual": {
+          "width": 360,
+          "height": 800,
+          "doc": 360,
+          "coarse": true,
+          "touch": 1,
+          "url": "/login"
+        },
+        "documents": [
+          {
+            "path": "/login",
+            "status": 200
+          }
+        ]
+      },
+      "evidence": [
+        "browser-results.json",
+        "screenshots/manifest-launch-guest-360.png"
+      ],
+      "command": "node docs/evidence/T008/manifest-qa.mjs under Android UA/client hints/touch emulation",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4",
+      "owner_source": "T003 public/manifest.webmanifest + layouts/auth/simple; T004 admin-only root routing"
+    },
+    {
+      "id": "MANIFEST-admin",
+      "verdict": "pass",
+      "expected": "Chrome parses linked manifest;192/512icons/theme/standalone valid; actual start navigation reaches role destination",
+      "actual": {
+        "link": "/manifest.webmanifest",
+        "chromeErrors": {
+          "installabilityErrors": []
+        },
+        "expected": "/",
+        "actual": {
+          "width": 360,
+          "height": 800,
+          "doc": 360,
+          "coarse": true,
+          "touch": 1,
+          "url": "/"
+        },
+        "documents": [
+          {
+            "path": "/",
+            "status": 200
+          }
+        ]
+      },
+      "evidence": [
+        "browser-results.json",
+        "screenshots/manifest-launch-admin-360.png"
+      ],
+      "command": "node docs/evidence/T008/manifest-qa.mjs under Android UA/client hints/touch emulation",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4",
+      "owner_source": "T003 public/manifest.webmanifest + layouts/auth/simple; T004 admin-only root routing"
+    },
+    {
+      "id": "MANIFEST-teknisi",
+      "verdict": "fail",
+      "expected": "Chrome parses linked manifest;192/512icons/theme/standalone valid; actual start navigation reaches role destination",
+      "actual": {
+        "link": "/manifest.webmanifest",
+        "chromeErrors": {
+          "installabilityErrors": []
+        },
+        "expected": "/tts/baru",
+        "actual": {
+          "width": 360,
+          "height": 800,
+          "doc": 360,
+          "coarse": true,
+          "touch": 1,
+          "url": "/"
+        },
+        "documents": [
+          {
+            "path": "/",
+            "status": 403
+          }
+        ]
+      },
+      "evidence": [
+        "browser-results.json",
+        "screenshots/manifest-launch-teknisi-360.png"
+      ],
+      "command": "node docs/evidence/T008/manifest-qa.mjs under Android UA/client hints/touch emulation",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4",
+      "owner_source": "T003 public/manifest.webmanifest + layouts/auth/simple; T004 admin-only root routing"
+    },
+    {
+      "id": "PHYSICAL-ANDROID",
+      "verdict": "not_run",
+      "expected": "Outside this local M1 independent QA scope",
+      "actual": "Real installation, hardware touch, OS keyboard and standalone address bar require T025",
+      "evidence": [],
+      "command": "Not run",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "PRODUCTION",
+      "verdict": "not_run",
+      "expected": "Outside this local M1 independent QA scope",
+      "actual": "HTTPS, production least privilege, deployment and actual VPS not authorized/T024\u2013T025",
+      "evidence": [],
+      "command": "Not run",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "PRINT",
+      "verdict": "not_run",
+      "expected": "Outside this local M1 independent QA scope",
+      "actual": "Actual printer and print readability remain T025",
+      "evidence": [],
+      "command": "Not run",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "FUTURE-TTS-FORM",
+      "verdict": "not_run",
+      "expected": "Outside this local M1 independent QA scope",
+      "actual": "/tts/baru form itself is T009/404; service validation tested separately",
+      "evidence": [],
+      "command": "Not run",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    },
+    {
+      "id": "REMOTE-CI",
+      "verdict": "not_run",
+      "expected": "Outside this local M1 independent QA scope",
+      "actual": "Branch push has no matching main/PR workflow trigger; no new remote CI run claimed",
+      "evidence": [],
+      "command": "Not run",
+      "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4"
+    }
+  ]
+}

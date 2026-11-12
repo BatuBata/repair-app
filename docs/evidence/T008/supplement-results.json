@@ -1,0 +1,6371 @@
+{
+  "tool": "Installed Chrome via design-taste-frontend zero-dependency CDP client",
+  "version": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/157.0.8103.52",
+    "revision": "@0985600c06a688b9c669e74afde7dacd5aaed047",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "jsVersion": "15.7.112.23"
+  },
+  "states": [
+    {
+      "id": "users-create-viewport",
+      "width": 360,
+      "screenshot": "screenshots/users-create-viewport-360.png",
+      "metrics": {
+        "viewport": {
+          "width": 360,
+          "height": 800,
+          "documentWidth": 360,
+          "scrollY": 0
+        },
+        "h1": "Tambah pengguna",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 280,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 308,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "name",
+            "x": 16,
+            "y": 186,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "username",
+            "x": 16,
+            "y": 286,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "SELECT",
+            "text": "Teknisi\nAdmin",
+            "x": 16,
+            "y": 386,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "LABEL",
+            "text": "Akun aktif",
+            "x": 16,
+            "y": 454,
+            "width": 328,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password",
+            "x": 16,
+            "y": 550,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password_confirmation",
+            "x": 16,
+            "y": 650,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Batal",
+            "x": 16,
+            "y": 762,
+            "width": 68.46875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan pengguna",
+            "x": 16,
+            "y": 676,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 72,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 144,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 216,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 288,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [],
+        "focus": "",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan pengguna",
+            "x": 0,
+            "y": 663,
+            "width": 360,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "users-error-viewport",
+      "width": 360,
+      "screenshot": "screenshots/users-error-viewport-360.png",
+      "metrics": {
+        "viewport": {
+          "width": 360,
+          "height": 800,
+          "documentWidth": 360,
+          "scrollY": 0
+        },
+        "h1": "Tambah pengguna",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 280,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 308,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "name",
+            "x": 16,
+            "y": 250,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "username",
+            "x": 16,
+            "y": 378,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "SELECT",
+            "text": "Teknisi\nAdmin",
+            "x": 16,
+            "y": 506,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "LABEL",
+            "text": "Akun aktif",
+            "x": 16,
+            "y": 574,
+            "width": 328,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password",
+            "x": 16,
+            "y": 670,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password_confirmation",
+            "x": 16,
+            "y": 798,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Batal",
+            "x": 16,
+            "y": 910,
+            "width": 68.46875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan pengguna",
+            "x": 16,
+            "y": 676,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 72,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 144,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 216,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 288,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [
+          "name",
+          "username",
+          "password"
+        ],
+        "focus": "name",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan pengguna",
+            "x": 0,
+            "y": 663,
+            "width": 360,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "users-error-bottom-viewport",
+      "width": 360,
+      "screenshot": "screenshots/users-error-bottom-viewport-360.png",
+      "metrics": {
+        "viewport": {
+          "width": 360,
+          "height": 800,
+          "documentWidth": 360,
+          "scrollY": 414
+        },
+        "h1": "Tambah pengguna",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 280,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 308,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "name",
+            "x": 16,
+            "y": -164,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "username",
+            "x": 16,
+            "y": -36,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "SELECT",
+            "text": "Teknisi\nAdmin",
+            "x": 16,
+            "y": 92,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "LABEL",
+            "text": "Akun aktif",
+            "x": 16,
+            "y": 160,
+            "width": 328,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password",
+            "x": 16,
+            "y": 256,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password_confirmation",
+            "x": 16,
+            "y": 384,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Batal",
+            "x": 16,
+            "y": 496,
+            "width": 68.46875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan pengguna",
+            "x": 16,
+            "y": 676,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 72,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 144,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 216,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 288,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [
+          "name",
+          "username",
+          "password"
+        ],
+        "focus": "name",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan pengguna",
+            "x": 0,
+            "y": 663,
+            "width": 360,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "supplement-error",
+      "width": 360,
+      "screenshot": "screenshots/supplement-error-360.png",
+      "metrics": {
+        "viewport": {
+          "width": 360,
+          "height": 800,
+          "documentWidth": 360,
+          "scrollY": 0
+        },
+        "h1": "Beranda",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 280,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 308,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Kelola pengguna",
+            "x": 16,
+            "y": 170,
+            "width": 151.90625,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Ganti password",
+            "x": 167.90625,
+            "y": 170,
+            "width": 144.21875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 72,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 144,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 216,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 288,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [],
+        "focus": "",
+        "actionbar": [],
+        "logo": []
+      }
+    },
+    {
+      "id": "users-filled-bottom-viewport",
+      "width": 360,
+      "screenshot": "screenshots/users-filled-bottom-viewport-360.png",
+      "metrics": {
+        "viewport": {
+          "width": 360,
+          "height": 800,
+          "documentWidth": 360,
+          "scrollY": 414
+        },
+        "h1": "Tambah pengguna",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 280,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 308,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "name",
+            "x": 16,
+            "y": -164,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "username",
+            "x": 16,
+            "y": -36,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "SELECT",
+            "text": "Teknisi\nAdmin",
+            "x": 16,
+            "y": 92,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "LABEL",
+            "text": "Akun aktif",
+            "x": 16,
+            "y": 160,
+            "width": 328,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password",
+            "x": 16,
+            "y": 256,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password_confirmation",
+            "x": 16,
+            "y": 384,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Batal",
+            "x": 16,
+            "y": 496,
+            "width": 68.46875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan pengguna",
+            "x": 16,
+            "y": 676,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 72,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 144,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 216,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 288,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [
+          "name",
+          "username",
+          "password"
+        ],
+        "focus": "password_confirmation",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan pengguna",
+            "x": 0,
+            "y": 663,
+            "width": 360,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "users-save-success",
+      "width": 360,
+      "screenshot": "screenshots/users-save-success-360.png",
+      "metrics": {
+        "viewport": {
+          "width": 360,
+          "height": 800,
+          "documentWidth": 360,
+          "scrollY": 312
+        },
+        "h1": "Pengguna",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 280,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 308,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Pilihan untuk Admin Sintetis T008",
+            "x": 16,
+            "y": -86,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Pilihan untuk Controller Sintetis T008",
+            "x": 16,
+            "y": 13,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Pilihan untuk Nama panjang sintetis Nama panjang sintetis Nama panjang sint",
+            "x": 16,
+            "y": 112,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Pilihan untuk Pengguna sentuh T008 360",
+            "x": 16,
+            "y": 355,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Pilihan untuk Teknisi Sintetis T008",
+            "x": 16,
+            "y": 454,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Tambah pengguna",
+            "x": 16,
+            "y": 676,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 72,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 144,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 216,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 288,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [],
+        "focus": "",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Tambah pengguna",
+            "x": 0,
+            "y": 663,
+            "width": 360,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "store-error-viewport",
+      "width": 360,
+      "screenshot": "screenshots/store-error-viewport-360.png",
+      "metrics": {
+        "viewport": {
+          "width": 360,
+          "height": 800,
+          "documentWidth": 360,
+          "scrollY": 438
+        },
+        "h1": "Pengaturan toko",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 280,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 308,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Toko",
+            "x": 16,
+            "y": -288,
+            "width": 58.609375,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Kategori",
+            "x": 82.609375,
+            "y": -288,
+            "width": 83.96875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Pengguna",
+            "x": 174.578125,
+            "y": -288,
+            "width": 94.84375,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "name",
+            "x": 16,
+            "y": -124,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "TEXTAREA",
+            "text": "address",
+            "x": 16,
+            "y": -24,
+            "width": 328,
+            "height": 96,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "phone",
+            "x": 16,
+            "y": 124,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "file",
+            "x": 16,
+            "y": 224,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "TEXTAREA",
+            "text": "warranty_terms",
+            "x": 16,
+            "y": 324,
+            "width": 328,
+            "height": 96,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "default_warranty_days",
+            "x": 16,
+            "y": 472,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan pengaturan toko",
+            "x": 16,
+            "y": 676,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 72,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 144,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 216,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 288,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [
+          "default_warranty_days"
+        ],
+        "focus": "default_warranty_days",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan pengaturan toko",
+            "x": 0,
+            "y": 663,
+            "width": 360,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "store-error-bottom-viewport",
+      "width": 360,
+      "screenshot": "screenshots/store-error-bottom-viewport-360.png",
+      "metrics": {
+        "viewport": {
+          "width": 360,
+          "height": 800,
+          "documentWidth": 360,
+          "scrollY": 466
+        },
+        "h1": "Pengaturan toko",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 280,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 308,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Toko",
+            "x": 16,
+            "y": -316,
+            "width": 58.609375,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Kategori",
+            "x": 82.609375,
+            "y": -316,
+            "width": 83.96875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Pengguna",
+            "x": 174.578125,
+            "y": -316,
+            "width": 94.84375,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "name",
+            "x": 16,
+            "y": -152,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "TEXTAREA",
+            "text": "address",
+            "x": 16,
+            "y": -52,
+            "width": 328,
+            "height": 96,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "phone",
+            "x": 16,
+            "y": 96,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "file",
+            "x": 16,
+            "y": 196,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "TEXTAREA",
+            "text": "warranty_terms",
+            "x": 16,
+            "y": 296,
+            "width": 328,
+            "height": 96,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "default_warranty_days",
+            "x": 16,
+            "y": 444,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan pengaturan toko",
+            "x": 16,
+            "y": 676,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 72,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 144,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 216,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 288,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [
+          "default_warranty_days"
+        ],
+        "focus": "default_warranty_days",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan pengaturan toko",
+            "x": 0,
+            "y": 663,
+            "width": 360,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "store-save-success",
+      "width": 360,
+      "screenshot": "screenshots/store-save-success-360.png",
+      "metrics": {
+        "viewport": {
+          "width": 360,
+          "height": 800,
+          "documentWidth": 360,
+          "scrollY": 438
+        },
+        "h1": "Pengaturan toko",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 280,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 308,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Toko",
+            "x": 16,
+            "y": -288,
+            "width": 58.609375,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Kategori",
+            "x": 82.609375,
+            "y": -288,
+            "width": 83.96875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Pengguna",
+            "x": 174.578125,
+            "y": -288,
+            "width": 94.84375,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "name",
+            "x": 16,
+            "y": -124,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "TEXTAREA",
+            "text": "address",
+            "x": 16,
+            "y": -24,
+            "width": 328,
+            "height": 96,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "phone",
+            "x": 16,
+            "y": 124,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "file",
+            "x": 16,
+            "y": 224,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "TEXTAREA",
+            "text": "warranty_terms",
+            "x": 16,
+            "y": 324,
+            "width": 328,
+            "height": 96,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "default_warranty_days",
+            "x": 16,
+            "y": 472,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan pengaturan toko",
+            "x": 16,
+            "y": 676,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 72,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 144,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 216,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 288,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [],
+        "focus": "",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan pengaturan toko",
+            "x": 0,
+            "y": 663,
+            "width": 360,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "profile-admin-error-viewport",
+      "width": 360,
+      "screenshot": "screenshots/profile-admin-error-viewport-360.png",
+      "metrics": {
+        "viewport": {
+          "width": 360,
+          "height": 800,
+          "documentWidth": 360,
+          "scrollY": 0
+        },
+        "h1": "Profil",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 280,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 308,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "current_password",
+            "x": 16,
+            "y": 294,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password",
+            "x": 16,
+            "y": 422,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password_confirmation",
+            "x": 16,
+            "y": 550,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan password",
+            "x": 16,
+            "y": 676,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Keluar",
+            "x": 16,
+            "y": 666,
+            "width": 77.796875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 72,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 144,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 216,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 288,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [
+          "current_password",
+          "password"
+        ],
+        "focus": "current_password",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan password",
+            "x": 0,
+            "y": 663,
+            "width": 360,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "profile-admin-error-bottom-viewport",
+      "width": 360,
+      "screenshot": "screenshots/profile-admin-error-bottom-viewport-360.png",
+      "metrics": {
+        "viewport": {
+          "width": 360,
+          "height": 800,
+          "documentWidth": 360,
+          "scrollY": 170
+        },
+        "h1": "Profil",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 280,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 308,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "current_password",
+            "x": 16,
+            "y": 124,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password",
+            "x": 16,
+            "y": 252,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password_confirmation",
+            "x": 16,
+            "y": 380,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan password",
+            "x": 16,
+            "y": 676,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Keluar",
+            "x": 16,
+            "y": 496,
+            "width": 77.796875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 72,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 144,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 216,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 288,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [
+          "current_password",
+          "password"
+        ],
+        "focus": "current_password",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan password",
+            "x": 0,
+            "y": 663,
+            "width": 360,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "category-save-success",
+      "width": 360,
+      "screenshot": "screenshots/category-save-success-360.png",
+      "metrics": {
+        "viewport": {
+          "width": 360,
+          "height": 800,
+          "documentWidth": 360,
+          "scrollY": 0
+        },
+        "h1": "Kategori",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 280,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 308,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Toko",
+            "x": 16,
+            "y": 150,
+            "width": 58.203125,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Kategori",
+            "x": 82.203125,
+            "y": 150,
+            "width": 85.625,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Pengguna",
+            "x": 175.828125,
+            "y": 150,
+            "width": 94.84375,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Pilihan untuk Kategori panjang Kategori panjang Kategori panjang Kategori p",
+            "x": 16,
+            "y": 294,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Pilihan untuk Kategori sentuh T008 360",
+            "x": 16,
+            "y": 467,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Pilihan untuk Laptop",
+            "x": 16,
+            "y": 544,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Pilihan untuk TV",
+            "x": 16,
+            "y": 621,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Tambah kategori",
+            "x": 16,
+            "y": 676,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 72,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 144,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 216,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 288,
+            "y": 737,
+            "width": 72,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [],
+        "focus": "",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Tambah kategori",
+            "x": 0,
+            "y": 663,
+            "width": 360,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "profile-technician-error-viewport",
+      "width": 360,
+      "screenshot": "screenshots/profile-technician-error-viewport-360.png",
+      "metrics": {
+        "viewport": {
+          "width": 360,
+          "height": 800,
+          "documentWidth": 360,
+          "scrollY": 0
+        },
+        "h1": "Profil",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 280,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 308,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "current_password",
+            "x": 16,
+            "y": 294,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password",
+            "x": 16,
+            "y": 422,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password_confirmation",
+            "x": 16,
+            "y": 550,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan password",
+            "x": 16,
+            "y": 676,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Keluar",
+            "x": 16,
+            "y": 666,
+            "width": 77.796875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 0,
+            "y": 737,
+            "width": 120,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Daftar TTS",
+            "x": 120,
+            "y": 737,
+            "width": 120,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Profil",
+            "x": 240,
+            "y": 737,
+            "width": 120,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [
+          "current_password",
+          "password"
+        ],
+        "focus": "current_password",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan password",
+            "x": 0,
+            "y": 663,
+            "width": 360,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "profile-technician-error-bottom-viewport",
+      "width": 360,
+      "screenshot": "screenshots/profile-technician-error-bottom-viewport-360.png",
+      "metrics": {
+        "viewport": {
+          "width": 360,
+          "height": 800,
+          "documentWidth": 360,
+          "scrollY": 170
+        },
+        "h1": "Profil",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 280,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 308,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "current_password",
+            "x": 16,
+            "y": 124,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password",
+            "x": 16,
+            "y": 252,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password_confirmation",
+            "x": 16,
+            "y": 380,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan password",
+            "x": 16,
+            "y": 676,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Keluar",
+            "x": 16,
+            "y": 496,
+            "width": 77.796875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 0,
+            "y": 737,
+            "width": 120,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Daftar TTS",
+            "x": 120,
+            "y": 737,
+            "width": 120,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Profil",
+            "x": 240,
+            "y": 737,
+            "width": 120,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [
+          "current_password",
+          "password"
+        ],
+        "focus": "current_password",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan password",
+            "x": 0,
+            "y": 663,
+            "width": 360,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "users-create-viewport",
+      "width": 768,
+      "screenshot": "screenshots/users-create-viewport-768.png",
+      "metrics": {
+        "viewport": {
+          "width": 768,
+          "height": 800,
+          "documentWidth": 768,
+          "scrollY": 0
+        },
+        "h1": "Tambah pengguna",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 688,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 716,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "name",
+            "x": 24,
+            "y": 186,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "username",
+            "x": 24,
+            "y": 286,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "SELECT",
+            "text": "Teknisi\nAdmin",
+            "x": 24,
+            "y": 386,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "LABEL",
+            "text": "Akun aktif",
+            "x": 24,
+            "y": 454,
+            "width": 560,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password",
+            "x": 24,
+            "y": 550,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password_confirmation",
+            "x": 24,
+            "y": 650,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Batal",
+            "x": 24,
+            "y": 762,
+            "width": 68.46875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan pengguna",
+            "x": 16,
+            "y": 676,
+            "width": 736,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 153.59375,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 307.1875,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 460.796875,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 614.390625,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [],
+        "focus": "",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan pengguna",
+            "x": 0,
+            "y": 663,
+            "width": 768,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "users-error-viewport",
+      "width": 768,
+      "screenshot": "screenshots/users-error-viewport-768.png",
+      "metrics": {
+        "viewport": {
+          "width": 768,
+          "height": 800,
+          "documentWidth": 768,
+          "scrollY": 0
+        },
+        "h1": "Tambah pengguna",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 688,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 716,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "name",
+            "x": 24,
+            "y": 250,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "username",
+            "x": 24,
+            "y": 378,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "SELECT",
+            "text": "Teknisi\nAdmin",
+            "x": 24,
+            "y": 506,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "LABEL",
+            "text": "Akun aktif",
+            "x": 24,
+            "y": 574,
+            "width": 560,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password",
+            "x": 24,
+            "y": 670,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password_confirmation",
+            "x": 24,
+            "y": 798,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Batal",
+            "x": 24,
+            "y": 910,
+            "width": 68.46875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan pengguna",
+            "x": 16,
+            "y": 676,
+            "width": 736,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 153.59375,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 307.1875,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 460.796875,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 614.390625,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [
+          "name",
+          "username",
+          "password"
+        ],
+        "focus": "name",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan pengguna",
+            "x": 0,
+            "y": 663,
+            "width": 768,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "users-error-bottom-viewport",
+      "width": 768,
+      "screenshot": "screenshots/users-error-bottom-viewport-768.png",
+      "metrics": {
+        "viewport": {
+          "width": 768,
+          "height": 800,
+          "documentWidth": 768,
+          "scrollY": 414
+        },
+        "h1": "Tambah pengguna",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 688,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 716,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "name",
+            "x": 24,
+            "y": -164,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "username",
+            "x": 24,
+            "y": -36,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "SELECT",
+            "text": "Teknisi\nAdmin",
+            "x": 24,
+            "y": 92,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "LABEL",
+            "text": "Akun aktif",
+            "x": 24,
+            "y": 160,
+            "width": 560,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password",
+            "x": 24,
+            "y": 256,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password_confirmation",
+            "x": 24,
+            "y": 384,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Batal",
+            "x": 24,
+            "y": 496,
+            "width": 68.46875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan pengguna",
+            "x": 16,
+            "y": 676,
+            "width": 736,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 153.59375,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 307.1875,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 460.796875,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 614.390625,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [
+          "name",
+          "username",
+          "password"
+        ],
+        "focus": "name",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan pengguna",
+            "x": 0,
+            "y": 663,
+            "width": 768,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "users-filled-bottom-viewport",
+      "width": 768,
+      "screenshot": "screenshots/users-filled-bottom-viewport-768.png",
+      "metrics": {
+        "viewport": {
+          "width": 768,
+          "height": 800,
+          "documentWidth": 768,
+          "scrollY": 414
+        },
+        "h1": "Tambah pengguna",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 688,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 716,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "name",
+            "x": 24,
+            "y": -164,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "username",
+            "x": 24,
+            "y": -36,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "SELECT",
+            "text": "Teknisi\nAdmin",
+            "x": 24,
+            "y": 92,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "LABEL",
+            "text": "Akun aktif",
+            "x": 24,
+            "y": 160,
+            "width": 560,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password",
+            "x": 24,
+            "y": 256,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password_confirmation",
+            "x": 24,
+            "y": 384,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Batal",
+            "x": 24,
+            "y": 496,
+            "width": 68.46875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan pengguna",
+            "x": 16,
+            "y": 676,
+            "width": 736,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 153.59375,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 307.1875,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 460.796875,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 614.390625,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [
+          "name",
+          "username",
+          "password"
+        ],
+        "focus": "password_confirmation",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan pengguna",
+            "x": 0,
+            "y": 663,
+            "width": 768,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "users-save-success",
+      "width": 768,
+      "screenshot": "screenshots/users-save-success-768.png",
+      "metrics": {
+        "viewport": {
+          "width": 768,
+          "height": 800,
+          "documentWidth": 768,
+          "scrollY": 315
+        },
+        "h1": "Pengguna",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 688,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 716,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Pilihan untuk Admin Sintetis T008",
+            "x": 24,
+            "y": -89,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Pilihan untuk Controller Sintetis T008",
+            "x": 24,
+            "y": 10,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Pilihan untuk Nama panjang sintetis Nama panjang sintetis Nama panjang sint",
+            "x": 24,
+            "y": 109,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Pilihan untuk Pengguna sentuh T008 360",
+            "x": 24,
+            "y": 256,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Pilihan untuk Pengguna sentuh T008 768",
+            "x": 24,
+            "y": 355,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Pilihan untuk Teknisi Sintetis T008",
+            "x": 24,
+            "y": 454,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Tambah pengguna",
+            "x": 16,
+            "y": 676,
+            "width": 736,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 153.59375,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 307.1875,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 460.796875,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 614.390625,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [],
+        "focus": "",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Tambah pengguna",
+            "x": 0,
+            "y": 663,
+            "width": 768,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "store-error-viewport",
+      "width": 768,
+      "screenshot": "screenshots/store-error-viewport-768.png",
+      "metrics": {
+        "viewport": {
+          "width": 768,
+          "height": 800,
+          "documentWidth": 768,
+          "scrollY": 438
+        },
+        "h1": "Pengaturan toko",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 688,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 716,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Toko",
+            "x": 24,
+            "y": -288,
+            "width": 58.609375,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Kategori",
+            "x": 90.609375,
+            "y": -288,
+            "width": 83.96875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Pengguna",
+            "x": 182.578125,
+            "y": -288,
+            "width": 94.84375,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "name",
+            "x": 24,
+            "y": -124,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "TEXTAREA",
+            "text": "address",
+            "x": 24,
+            "y": -24,
+            "width": 560,
+            "height": 96,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "phone",
+            "x": 24,
+            "y": 124,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "file",
+            "x": 24,
+            "y": 224,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "TEXTAREA",
+            "text": "warranty_terms",
+            "x": 24,
+            "y": 324,
+            "width": 560,
+            "height": 96,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "default_warranty_days",
+            "x": 24,
+            "y": 472,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan pengaturan toko",
+            "x": 16,
+            "y": 676,
+            "width": 736,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 153.59375,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 307.1875,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 460.796875,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 614.390625,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [
+          "default_warranty_days"
+        ],
+        "focus": "default_warranty_days",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan pengaturan toko",
+            "x": 0,
+            "y": 663,
+            "width": 768,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "store-error-bottom-viewport",
+      "width": 768,
+      "screenshot": "screenshots/store-error-bottom-viewport-768.png",
+      "metrics": {
+        "viewport": {
+          "width": 768,
+          "height": 800,
+          "documentWidth": 768,
+          "scrollY": 466
+        },
+        "h1": "Pengaturan toko",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 688,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 716,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Toko",
+            "x": 24,
+            "y": -316,
+            "width": 58.609375,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Kategori",
+            "x": 90.609375,
+            "y": -316,
+            "width": 83.96875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Pengguna",
+            "x": 182.578125,
+            "y": -316,
+            "width": 94.84375,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "name",
+            "x": 24,
+            "y": -152,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "TEXTAREA",
+            "text": "address",
+            "x": 24,
+            "y": -52,
+            "width": 560,
+            "height": 96,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "phone",
+            "x": 24,
+            "y": 96,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "file",
+            "x": 24,
+            "y": 196,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "TEXTAREA",
+            "text": "warranty_terms",
+            "x": 24,
+            "y": 296,
+            "width": 560,
+            "height": 96,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "default_warranty_days",
+            "x": 24,
+            "y": 444,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan pengaturan toko",
+            "x": 16,
+            "y": 676,
+            "width": 736,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 153.59375,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 307.1875,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 460.796875,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 614.390625,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [
+          "default_warranty_days"
+        ],
+        "focus": "default_warranty_days",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan pengaturan toko",
+            "x": 0,
+            "y": 663,
+            "width": 768,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "store-save-success",
+      "width": 768,
+      "screenshot": "screenshots/store-save-success-768.png",
+      "metrics": {
+        "viewport": {
+          "width": 768,
+          "height": 800,
+          "documentWidth": 768,
+          "scrollY": 438
+        },
+        "h1": "Pengaturan toko",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 688,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 716,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Toko",
+            "x": 24,
+            "y": -288,
+            "width": 58.609375,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Kategori",
+            "x": 90.609375,
+            "y": -288,
+            "width": 83.96875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Pengguna",
+            "x": 182.578125,
+            "y": -288,
+            "width": 94.84375,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "name",
+            "x": 24,
+            "y": -124,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "TEXTAREA",
+            "text": "address",
+            "x": 24,
+            "y": -24,
+            "width": 560,
+            "height": 96,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "phone",
+            "x": 24,
+            "y": 124,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "file",
+            "x": 24,
+            "y": 224,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "TEXTAREA",
+            "text": "warranty_terms",
+            "x": 24,
+            "y": 324,
+            "width": 560,
+            "height": 96,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "default_warranty_days",
+            "x": 24,
+            "y": 472,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan pengaturan toko",
+            "x": 16,
+            "y": 676,
+            "width": 736,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 153.59375,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 307.1875,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 460.796875,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 614.390625,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [],
+        "focus": "",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan pengaturan toko",
+            "x": 0,
+            "y": 663,
+            "width": 768,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "profile-admin-error-viewport",
+      "width": 768,
+      "screenshot": "screenshots/profile-admin-error-viewport-768.png",
+      "metrics": {
+        "viewport": {
+          "width": 768,
+          "height": 800,
+          "documentWidth": 768,
+          "scrollY": 0
+        },
+        "h1": "Profil",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 688,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 716,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "current_password",
+            "x": 24,
+            "y": 294,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password",
+            "x": 24,
+            "y": 422,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password_confirmation",
+            "x": 24,
+            "y": 550,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan password",
+            "x": 16,
+            "y": 676,
+            "width": 736,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Keluar",
+            "x": 24,
+            "y": 666,
+            "width": 77.796875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 153.59375,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 307.1875,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 460.796875,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 614.390625,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [
+          "current_password",
+          "password"
+        ],
+        "focus": "current_password",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan password",
+            "x": 0,
+            "y": 663,
+            "width": 768,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "profile-admin-error-bottom-viewport",
+      "width": 768,
+      "screenshot": "screenshots/profile-admin-error-bottom-viewport-768.png",
+      "metrics": {
+        "viewport": {
+          "width": 768,
+          "height": 800,
+          "documentWidth": 768,
+          "scrollY": 170
+        },
+        "h1": "Profil",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 688,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 716,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "current_password",
+            "x": 24,
+            "y": 124,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password",
+            "x": 24,
+            "y": 252,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password_confirmation",
+            "x": 24,
+            "y": 380,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan password",
+            "x": 16,
+            "y": 676,
+            "width": 736,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Keluar",
+            "x": 24,
+            "y": 496,
+            "width": 77.796875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 153.59375,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 307.1875,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 460.796875,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 614.390625,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [
+          "current_password",
+          "password"
+        ],
+        "focus": "current_password",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan password",
+            "x": 0,
+            "y": 663,
+            "width": 768,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "category-save-success",
+      "width": 768,
+      "screenshot": "screenshots/category-save-success-768.png",
+      "metrics": {
+        "viewport": {
+          "width": 768,
+          "height": 800,
+          "documentWidth": 768,
+          "scrollY": 0
+        },
+        "h1": "Kategori",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 688,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 716,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Toko",
+            "x": 24,
+            "y": 150,
+            "width": 58.203125,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Kategori",
+            "x": 90.203125,
+            "y": 150,
+            "width": 85.625,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Pengguna",
+            "x": 183.828125,
+            "y": 150,
+            "width": 94.84375,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Pilihan untuk Kategori panjang Kategori panjang Kategori panjang Kategori p",
+            "x": 24,
+            "y": 294,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Pilihan untuk Kategori sentuh T008 360",
+            "x": 24,
+            "y": 395,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Pilihan untuk Kategori sentuh T008 768",
+            "x": 24,
+            "y": 472,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Pilihan untuk Laptop",
+            "x": 24,
+            "y": 549,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Pilihan untuk TV",
+            "x": 24,
+            "y": 626,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Tambah kategori",
+            "x": 16,
+            "y": 676,
+            "width": 736,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Beranda",
+            "x": 0,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Servis",
+            "x": 153.59375,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 307.1875,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Laporan",
+            "x": 460.796875,
+            "y": 737,
+            "width": 153.59375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "x": 614.390625,
+            "y": 737,
+            "width": 153.609375,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [],
+        "focus": "",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Tambah kategori",
+            "x": 0,
+            "y": 663,
+            "width": 768,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "profile-technician-error-viewport",
+      "width": 768,
+      "screenshot": "screenshots/profile-technician-error-viewport-768.png",
+      "metrics": {
+        "viewport": {
+          "width": 768,
+          "height": 800,
+          "documentWidth": 768,
+          "scrollY": 0
+        },
+        "h1": "Profil",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 688,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 716,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "current_password",
+            "x": 24,
+            "y": 294,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password",
+            "x": 24,
+            "y": 422,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password_confirmation",
+            "x": 24,
+            "y": 550,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan password",
+            "x": 16,
+            "y": 676,
+            "width": 736,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Keluar",
+            "x": 24,
+            "y": 666,
+            "width": 77.796875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 0,
+            "y": 737,
+            "width": 256,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Daftar TTS",
+            "x": 256,
+            "y": 737,
+            "width": 256,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Profil",
+            "x": 512,
+            "y": 737,
+            "width": 256,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [
+          "current_password",
+          "password"
+        ],
+        "focus": "current_password",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan password",
+            "x": 0,
+            "y": 663,
+            "width": 768,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "profile-technician-error-bottom-viewport",
+      "width": 768,
+      "screenshot": "screenshots/profile-technician-error-bottom-viewport-768.png",
+      "metrics": {
+        "viewport": {
+          "width": 768,
+          "height": 800,
+          "documentWidth": 768,
+          "scrollY": 170
+        },
+        "h1": "Profil",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 688,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 716,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "current_password",
+            "x": 24,
+            "y": 124,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password",
+            "x": 24,
+            "y": 252,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password_confirmation",
+            "x": 24,
+            "y": 380,
+            "width": 560,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan password",
+            "x": 16,
+            "y": 676,
+            "width": 736,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Keluar",
+            "x": 24,
+            "y": 496,
+            "width": 77.796875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 0,
+            "y": 737,
+            "width": 256,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Daftar TTS",
+            "x": 256,
+            "y": 737,
+            "width": 256,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Profil",
+            "x": 512,
+            "y": 737,
+            "width": 256,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [
+          "current_password",
+          "password"
+        ],
+        "focus": "current_password",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan password",
+            "x": 0,
+            "y": 663,
+            "width": 768,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    },
+    {
+      "id": "profile-save-success",
+      "width": 360,
+      "screenshot": "screenshots/profile-save-success-360.png",
+      "metrics": {
+        "viewport": {
+          "width": 360,
+          "height": 800,
+          "documentWidth": 360,
+          "scrollY": 50
+        },
+        "h1": "Profil",
+        "bodyFont": "16px",
+        "fontLoaded": true,
+        "fonts": [
+          {
+            "family": "IBM Plex Sans",
+            "weight": "400"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "500"
+          },
+          {
+            "family": "IBM Plex Sans",
+            "weight": "600"
+          }
+        ],
+        "tokens": {
+          "--ground": "#f2f5f6",
+          "--surface": "#fff",
+          "--text": "#131416",
+          "--field": "#8a9296",
+          "--primary": "#131416",
+          "--fs-body": "16px"
+        },
+        "targets": [
+          {
+            "tag": "A",
+            "text": "Anugerah",
+            "x": 16,
+            "y": 4,
+            "width": 280,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Akun",
+            "x": 308,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "current_password",
+            "x": 16,
+            "y": 244,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password",
+            "x": 16,
+            "y": 344,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "INPUT",
+            "text": "password_confirmation",
+            "x": 16,
+            "y": 444,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Simpan password",
+            "x": 16,
+            "y": 676,
+            "width": 328,
+            "height": 48,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Keluar",
+            "x": 16,
+            "y": 560,
+            "width": 77.796875,
+            "height": 44,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Buat TTS",
+            "x": 0,
+            "y": 737,
+            "width": 120,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Daftar TTS",
+            "x": 120,
+            "y": 737,
+            "width": 120,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          },
+          {
+            "tag": "A",
+            "text": "Profil",
+            "x": 240,
+            "y": 737,
+            "width": 120,
+            "height": 63,
+            "font": "12px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "overflow": [],
+        "invalid": [],
+        "focus": "",
+        "actionbar": [
+          {
+            "tag": "DIV",
+            "text": "Simpan password",
+            "x": 0,
+            "y": 663,
+            "width": 360,
+            "height": 73,
+            "font": "16px",
+            "fontFamily": "\"IBM Plex Sans\", system-ui, sans-serif"
+          }
+        ],
+        "logo": []
+      }
+    }
+  ],
+  "interactions": [
+    {
+      "viewport": 360,
+      "selector": "[name=username]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=password]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=remember]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "button[type=submit]",
+      "kind": "touch",
+      "label": "Masuk",
+      "events": []
+    },
+    {
+      "viewport": 360,
+      "selector": "button[wire\\:click=\"create\"]",
+      "kind": "touch",
+      "label": "Tambah pengguna",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "form[wire\\:submit] button[type=submit]",
+      "kind": "touch",
+      "label": "Simpan penggunaMenyimpan…",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=name]",
+      "kind": "touch",
+      "label": "",
+      "events": []
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=username]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=password]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=remember]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "button[type=submit]",
+      "kind": "touch",
+      "label": "Masuk",
+      "events": []
+    },
+    {
+      "viewport": 360,
+      "selector": "button[wire\\:click=\"create\"]",
+      "kind": "touch",
+      "label": "Tambah pengguna",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "form[wire\\:submit] button[type=submit]",
+      "kind": "touch",
+      "label": "Simpan penggunaMenyimpan…",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=name]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=username]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=password]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=password_confirmation]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "form[wire\\:submit] button[type=submit]",
+      "kind": "touch",
+      "label": "Simpan penggunaMenyimpan…",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "case": "contrast-store",
+      "viewport": 360,
+      "data": {
+        "input": {
+          "ink": "rgb(19, 20, 22)",
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(138, 146, 150)",
+          "size": "16px"
+        },
+        "body": {
+          "ink": "rgb(19, 20, 22)",
+          "background": "rgb(255, 255, 255)",
+          "size": "16px"
+        }
+      }
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=default_warranty_days]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "form[wire\\:submit] button[type=submit]",
+      "kind": "touch",
+      "label": "Simpan pengaturan tokoMenyimpan…",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=default_warranty_days]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "form[wire\\:submit] button[type=submit]",
+      "kind": "touch",
+      "label": "Simpan pengaturan tokoMenyimpan…",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "form[wire\\:submit] button[type=submit]",
+      "kind": "touch",
+      "label": "Simpan passwordMenyimpan…",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "button[wire\\:click=\"create\"]",
+      "kind": "touch",
+      "label": "Tambah kategori",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=name]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "form[wire\\:submit] button[type=submit]",
+      "kind": "touch",
+      "label": "Simpan kategoriMenyimpan…",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=username]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=password]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=remember]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "button[type=submit]",
+      "kind": "touch",
+      "label": "Masuk",
+      "events": []
+    },
+    {
+      "viewport": 360,
+      "selector": "form[wire\\:submit] button[type=submit]",
+      "kind": "touch",
+      "label": "Simpan passwordMenyimpan…",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "selector": "[name=username]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "selector": "[name=password]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "selector": "[name=remember]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "selector": "button[type=submit]",
+      "kind": "touch",
+      "label": "Masuk",
+      "events": []
+    },
+    {
+      "viewport": 768,
+      "selector": "button[wire\\:click=\"create\"]",
+      "kind": "touch",
+      "label": "Tambah pengguna",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "selector": "form[wire\\:submit] button[type=submit]",
+      "kind": "touch",
+      "label": "Simpan penggunaMenyimpan…",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "selector": "[name=name]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "selector": "[name=username]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "selector": "[name=password]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "selector": "[name=password_confirmation]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "selector": "form[wire\\:submit] button[type=submit]",
+      "kind": "touch",
+      "label": "Simpan penggunaMenyimpan…",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "case": "contrast-store",
+      "viewport": 768,
+      "data": {
+        "input": {
+          "ink": "rgb(19, 20, 22)",
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(138, 146, 150)",
+          "size": "16px"
+        },
+        "body": {
+          "ink": "rgb(19, 20, 22)",
+          "background": "rgb(255, 255, 255)",
+          "size": "16px"
+        }
+      }
+    },
+    {
+      "viewport": 768,
+      "selector": "[name=default_warranty_days]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "selector": "form[wire\\:submit] button[type=submit]",
+      "kind": "touch",
+      "label": "Simpan pengaturan tokoMenyimpan…",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "selector": "[name=default_warranty_days]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "selector": "form[wire\\:submit] button[type=submit]",
+      "kind": "touch",
+      "label": "Simpan pengaturan tokoMenyimpan…",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "selector": "form[wire\\:submit] button[type=submit]",
+      "kind": "touch",
+      "label": "Simpan passwordMenyimpan…",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "selector": "button[wire\\:click=\"create\"]",
+      "kind": "touch",
+      "label": "Tambah kategori",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "selector": "[name=name]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "selector": "form[wire\\:submit] button[type=submit]",
+      "kind": "touch",
+      "label": "Simpan kategoriMenyimpan…",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "selector": "[name=username]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "selector": "[name=password]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "selector": "[name=remember]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "selector": "button[type=submit]",
+      "kind": "touch",
+      "label": "Masuk",
+      "events": []
+    },
+    {
+      "viewport": 768,
+      "selector": "form[wire\\:submit] button[type=submit]",
+      "kind": "touch",
+      "label": "Simpan passwordMenyimpan…",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=username]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=password]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=remember]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "button[type=submit]",
+      "kind": "touch",
+      "label": "Masuk",
+      "events": []
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=current_password]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=password]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=password_confirmation]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "form[wire\\:submit] button[type=submit]",
+      "kind": "touch",
+      "label": "Simpan passwordMenyimpan…",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=username]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "button[type=submit]",
+      "kind": "touch",
+      "label": "Masuk",
+      "events": []
+    },
+    {
+      "viewport": 360,
+      "selector": "[name=password]",
+      "kind": "touch",
+      "label": "",
+      "events": [
+        {
+          "type": "click",
+          "isTrusted": true,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    {
+      "viewport": 360,
+      "selector": "button[type=submit]",
+      "kind": "touch",
+      "label": "Masuk",
+      "events": []
+    },
+    {
+      "case": "login-error-recovery",
+      "verdict": "pass",
+      "actual": {
+        "width": 360,
+        "height": 800,
+        "doc": 360,
+        "coarse": true,
+        "touch": 1,
+        "url": "/"
+      }
+    }
+  ],
+  "manifest": [],
+  "sessionCases": [],
+  "errors": [
+    {
+      "phase": "supplement",
+      "message": "page eval: TypeError: Cannot read properties of null (reading 'value')\n    at <anonymous>:1:30\n    at <anonymous>:1:37",
+      "viewport": 360
+    }
+  ],
+  "started_at": "2026-11-12T17:15:56.882Z",
+  "finished_at": "2026-11-12T17:16:22.685Z"
+}

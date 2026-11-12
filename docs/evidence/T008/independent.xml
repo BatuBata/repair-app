@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\Evidence\T008\IndependentTest" file="/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/IndependentTest.php" tests="5" assertions="64" errors="0" failures="0" skipped="0" time="0.359580">
+    <testcase name="test_all_admin_routes_enforce_guest_and_technician_boundaries" file="/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/IndependentTest.php" line="20" class="Tests\Evidence\T008\IndependentTest" classname="Tests.Evidence.T008.IndependentTest" assertions="20" time="0.195229"/>
+    <testcase name="test_all_public_admin_actions_reject_stale_inactive_actor_including_upload_protocol" file="/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/IndependentTest.php" line="31" class="Tests\Evidence\T008\IndependentTest" classname="Tests.Evidence.T008.IndependentTest" assertions="18" time="0.075700"/>
+    <testcase name="test_upload_protocol_rejects_demoted_actor_and_cannot_write_public_storage" file="/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/IndependentTest.php" line="44" class="Tests\Evidence\T008\IndependentTest" classname="Tests.Evidence.T008.IndependentTest" assertions="4" time="0.021981"/>
+    <testcase name="test_inactive_category_is_rejected_for_new_order_but_old_category_and_creator_survive" file="/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/IndependentTest.php" line="56" class="Tests\Evidence\T008\IndependentTest" classname="Tests.Evidence.T008.IndependentTest" assertions="7" time="0.025897"/>
+    <testcase name="test_form_save_cannot_remove_last_admin_via_combined_role_status_changes" file="/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/IndependentTest.php" line="73" class="Tests\Evidence\T008\IndependentTest" classname="Tests.Evidence.T008.IndependentTest" assertions="15" time="0.040773"/>
+  </testsuite>
+</testsuites>

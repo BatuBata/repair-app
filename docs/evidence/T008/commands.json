@@ -1,0 +1,21 @@
+{
+  "php": "/opt/homebrew/opt/php@8.3/bin/php",
+  "private_root": "/var/folders/z3/lllr0gjd35z5pplbyrcr_wf00000gn/T/repair-t008-gtjmdm87",
+  "commands": [
+    "git switch -c qa/m1 f6b23c974b319520b80991d67200c05ddd5562f4",
+    "python3 <private>/runner.py targeted",
+    "python3 <private>/runner.py independent",
+    "python3 <private>/runner.py init",
+    "python3 <private>/runner.py serve",
+    "PHP8.3 <private>/mysql.php",
+    "node docs/evidence/T008/browser-qa.mjs (3stages)",
+    "python3 <private>/http-sessions.py",
+    "node docs/evidence/T008/manifest-qa.mjs (diagnostic stages, finalAndroid)",
+    "node docs/evidence/T008/supplement-qa.mjs (2stages)",
+    "python3 <private>/runner.py extra",
+    "python3 <private>/upload-boundary.py",
+    "python3 <private>/runner.py stop"
+  ],
+  "credentials": "Only memory/private files/process environment; never argv or committed artifact values",
+  "note": "private runner modes wrap exact PHP commands with exit/duration records; docs browser scripts retain stage inputs, so consult environment-observations before any replay."
+}

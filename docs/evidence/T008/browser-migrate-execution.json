@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/opt/homebrew/opt/php@8.3/bin/php",
+    "artisan",
+    "migrate",
+    "--force",
+    "--no-interaction",
+    "--no-ansi"
+  ],
+  "exit": 0,
+  "duration_s": 0.4567999839782715
+}

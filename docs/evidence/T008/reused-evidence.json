@@ -1,0 +1,32 @@
+{
+  "T007": {
+    "origin": "Integrator, not this independent tester",
+    "result_revision": "f6b23c974b319520b80991d67200c05ddd5562f4",
+    "source_revision": "ede491e76cbed8000aaee6e86392dc58d2741210",
+    "cases": [
+      "71full-suitePASS",
+      "1MySQLnumberingSKIP"
+    ],
+    "assertions": 698,
+    "evidence": [
+      "../T007/suite.log",
+      "../T007/suite-junit.xml",
+      "../T007/suite-execution.json"
+    ],
+    "validity": "All164product/test/schema/config files and14asset hashes match. No product edits. New critical independent subset and previously unproved browser/manifest/InnoDB cases run here. No full-suite/build repetition."
+  },
+  "T002": {
+    "origin": "Developer, not independent QA",
+    "revision": "4a0667c302c979ab40641459bf9e7afac0655e09",
+    "scope": "16MySQL numbering saves retained only as unchanged developer evidence; services/schema/harness unchanged per T007 diff proof. repair_app_test not touched.",
+    "evidence": [
+      "../T002/A4-mysql-result.json",
+      "../T007/reused-evidence.json"
+    ]
+  },
+  "same_session_stages": {
+    "rule": "Completed independent source-identical subsets retained; only missing/failed evidence paths or changed environment diagnostics repeated. Every initial failure retained in environment-observations and first-run JSON.",
+    "visual_core": "Completed across three browser stages; no source fixes",
+    "manifest": "Explicit missing-link handling, immutable per-role navigation lists and Android emulation filled earlier diagnostic gaps"
+  }
+}

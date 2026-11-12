@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/opt/homebrew/opt/php@8.3/bin/php",
+    "vendor/bin/phpunit",
+    "docs/evidence/T008/IndependentTest.php",
+    "--log-junit=/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/independent.xml"
+  ],
+  "exit": 0,
+  "duration_s": 0.6207811832427979
+}

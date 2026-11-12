@@ -1,0 +1,8 @@
+{
+  "command": [
+    "/opt/homebrew/opt/php@8.3/bin/php",
+    "/var/folders/z3/lllr0gjd35z5pplbyrcr_wf00000gn/T/repair-t008-gtjmdm87/sign-upload.php"
+  ],
+  "exit": 0,
+  "duration_s": 0.3109118938446045
+}

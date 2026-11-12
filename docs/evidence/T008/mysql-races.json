@@ -1,0 +1,190 @@
+[
+  {
+    "case": "MYSQL-RACE-1",
+    "operations": [
+      "deactivate",
+      "deactivate"
+    ],
+    "actor": "first admin for both workers; self target then peer target",
+    "barrier_release": 1794503219.959491,
+    "synchronization": "ready files from two bootstrapped independent processes, one shared start file; 1ms poll",
+    "workers": [
+      {
+        "exit": 0,
+        "result": {
+          "actor": 1,
+          "target": 1,
+          "operation": "deactivate",
+          "start": 1794503219.960148,
+          "outcome": "protected",
+          "correct_constraint": true,
+          "end": 1794503219.987535,
+          "duration_ms": 27.38785743713379,
+          "queries": 6,
+          "query_ms": 20.919999999999998,
+          "transaction_attempts": 1
+        }
+      },
+      {
+        "exit": 0,
+        "result": {
+          "actor": 1,
+          "target": 2,
+          "operation": "deactivate",
+          "start": 1794503219.960213,
+          "outcome": "succeeded",
+          "end": 1794503219.978867,
+          "duration_ms": 18.65410804748535,
+          "queries": 7,
+          "query_ms": 6.54,
+          "transaction_attempts": 1
+        }
+      }
+    ],
+    "active_admins_after": 1,
+    "verdict": "pass",
+    "observed_start_skew_ms": 0.064849853515625,
+    "observed_action_overlap_ms": 18.65410804748535
+  },
+  {
+    "case": "MYSQL-RACE-2",
+    "operations": [
+      "demote",
+      "demote"
+    ],
+    "actor": "first admin for both workers; self target then peer target",
+    "barrier_release": 1794503220.27728,
+    "synchronization": "ready files from two bootstrapped independent processes, one shared start file; 1ms poll",
+    "workers": [
+      {
+        "exit": 0,
+        "result": {
+          "actor": 3,
+          "target": 3,
+          "operation": "demote",
+          "start": 1794503220.277559,
+          "outcome": "protected",
+          "correct_constraint": true,
+          "end": 1794503220.30525,
+          "duration_ms": 27.690887451171875,
+          "queries": 9,
+          "query_ms": 17.04,
+          "transaction_attempts": 1
+        }
+      },
+      {
+        "exit": 0,
+        "result": {
+          "actor": 3,
+          "target": 4,
+          "operation": "demote",
+          "start": 1794503220.278033,
+          "outcome": "succeeded",
+          "end": 1794503220.297713,
+          "duration_ms": 19.680023193359375,
+          "queries": 10,
+          "query_ms": 8.4,
+          "transaction_attempts": 1
+        }
+      }
+    ],
+    "active_admins_after": 1,
+    "verdict": "pass",
+    "observed_start_skew_ms": 0.47397613525390625,
+    "observed_action_overlap_ms": 19.680023193359375
+  },
+  {
+    "case": "MYSQL-RACE-3",
+    "operations": [
+      "deactivate",
+      "demote"
+    ],
+    "actor": "first admin for both workers; self target then peer target",
+    "barrier_release": 1794503220.587282,
+    "synchronization": "ready files from two bootstrapped independent processes, one shared start file; 1ms poll",
+    "workers": [
+      {
+        "exit": 0,
+        "result": {
+          "actor": 5,
+          "target": 5,
+          "operation": "deactivate",
+          "start": 1794503220.588193,
+          "outcome": "succeeded",
+          "end": 1794503220.605035,
+          "duration_ms": 16.842126846313477,
+          "queries": 7,
+          "query_ms": 8.700000000000001,
+          "transaction_attempts": 1
+        }
+      },
+      {
+        "exit": 0,
+        "result": {
+          "actor": 5,
+          "target": 6,
+          "operation": "demote",
+          "start": 1794503220.588195,
+          "outcome": "forbidden",
+          "status": 403,
+          "end": 1794503220.605571,
+          "duration_ms": 17.375946044921875,
+          "queries": 3,
+          "query_ms": 11.52,
+          "transaction_attempts": 0
+        }
+      }
+    ],
+    "active_admins_after": 1,
+    "verdict": "pass",
+    "observed_start_skew_ms": 0.0021457672119140625,
+    "observed_action_overlap_ms": 16.839981079101562
+  },
+  {
+    "case": "MYSQL-RACE-4",
+    "operations": [
+      "demote",
+      "deactivate"
+    ],
+    "actor": "first admin for both workers; self target then peer target",
+    "barrier_release": 1794503220.906395,
+    "synchronization": "ready files from two bootstrapped independent processes, one shared start file; 1ms poll",
+    "workers": [
+      {
+        "exit": 0,
+        "result": {
+          "actor": 7,
+          "target": 7,
+          "operation": "demote",
+          "start": 1794503220.906591,
+          "outcome": "protected",
+          "correct_constraint": true,
+          "end": 1794503220.928577,
+          "duration_ms": 21.986007690429688,
+          "queries": 9,
+          "query_ms": 13.39,
+          "transaction_attempts": 1
+        }
+      },
+      {
+        "exit": 0,
+        "result": {
+          "actor": 7,
+          "target": 8,
+          "operation": "deactivate",
+          "start": 1794503220.906508,
+          "outcome": "succeeded",
+          "end": 1794503220.918154,
+          "duration_ms": 11.646032333374023,
+          "queries": 7,
+          "query_ms": 3.29,
+          "transaction_attempts": 1
+        }
+      }
+    ],
+    "active_admins_after": 1,
+    "verdict": "pass",
+    "observed_start_skew_ms": 0.08296966552734375,
+    "observed_action_overlap_ms": 11.56306266784668
+  }
+]

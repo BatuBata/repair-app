@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/opt/homebrew/opt/php@8.3/bin/php",
+    "vendor/bin/phpunit",
+    "--filter",
+    "AuthenticationTest|UsersTest|SettingsTest|ChangePasswordTest|DashboardTest",
+    "--log-junit=/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/targeted.xml"
+  ],
+  "exit": 0,
+  "duration_s": 1.72560715675354
+}

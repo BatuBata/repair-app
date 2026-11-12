@@ -1,0 +1,165 @@
+{
+  "widths": {
+    "360": {
+      "input": 16,
+      "body": 16,
+      "bad": []
+    },
+    "768": {
+      "input": 16,
+      "body": 16,
+      "bad": []
+    },
+    "1280": {
+      "input": 14,
+      "body": 14,
+      "bad": [
+        {
+          "name": "Anugerah",
+          "w": 204,
+          "h": 36
+        },
+        {
+          "name": "Beranda",
+          "w": 204,
+          "h": 32
+        },
+        {
+          "name": "Servis",
+          "w": 204,
+          "h": 32
+        },
+        {
+          "name": "Penjualan",
+          "w": 204,
+          "h": 32
+        },
+        {
+          "name": "Stok barang",
+          "w": 204,
+          "h": 32
+        },
+        {
+          "name": "Pengeluaran",
+          "w": 204,
+          "h": 32
+        },
+        {
+          "name": "Laporan",
+          "w": 204,
+          "h": 32
+        },
+        {
+          "name": "Pengaturan",
+          "w": 204,
+          "h": 32
+        },
+        {
+          "name": "Keluar",
+          "w": 204,
+          "h": 32
+        },
+        {
+          "name": "",
+          "w": 518,
+          "h": 32
+        },
+        {
+          "name": "Buat TTS",
+          "w": 88.078125,
+          "h": 36
+        },
+        {
+          "name": "Semua 2",
+          "w": 62.03125,
+          "h": 40
+        },
+        {
+          "name": "Diterima",
+          "w": 53.78125,
+          "h": 40
+        },
+        {
+          "name": "Dikerjakan",
+          "w": 66.578125,
+          "h": 40
+        },
+        {
+          "name": "Selesai",
+          "w": 45.109375,
+          "h": 40
+        },
+        {
+          "name": "Diambil",
+          "w": 48.03125,
+          "h": 40
+        },
+        {
+          "name": "Batal",
+          "w": 32.828125,
+          "h": 40
+        },
+        {
+          "name": "",
+          "w": 300,
+          "h": 34
+        },
+        {
+          "name": "",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "name": "Lihat",
+          "w": 53.78125,
+          "h": 32
+        },
+        {
+          "name": "",
+          "w": 479,
+          "h": 40
+        },
+        {
+          "name": "",
+          "w": 479,
+          "h": 40
+        },
+        {
+          "name": "",
+          "w": 479,
+          "h": 40
+        },
+        {
+          "name": "Buka dialog",
+          "w": 105.046875,
+          "h": 36
+        },
+        {
+          "name": "Tampilkan toast",
+          "w": 132.40625,
+          "h": 36
+        }
+      ]
+    }
+  },
+  "dialog": [
+    {
+      "name": "alasan",
+      "width": 282,
+      "height": 48
+    },
+    {
+      "name": "Kembali",
+      "width": 90.21875,
+      "height": 44
+    },
+    {
+      "name": "Batalkan TTS",
+      "width": 127.21875,
+      "height": 44
+    }
+  ],
+  "toast": false,
+  "desktopMenu": true,
+  "desktopOutside": true
+}

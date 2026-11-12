@@ -1,0 +1,263 @@
+{
+  "checks": [
+    {
+      "name": "CDP touch input targets button, trusted and opens menu",
+      "pass": true
+    },
+    {
+      "name": "ArrowDown focuses second item",
+      "pass": true
+    },
+    {
+      "name": "ArrowUp focuses first item",
+      "pass": true
+    },
+    {
+      "name": "Escape closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "outside touch closes",
+      "pass": true
+    },
+    {
+      "name": "scroll closes",
+      "pass": true
+    },
+    {
+      "name": "empty, zero, non-digit and grouping money",
+      "pass": true
+    },
+    {
+      "name": "dialog opens",
+      "pass": true
+    },
+    {
+      "name": "dialog Escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "manifest loaded by Chrome without parse errors",
+      "pass": true
+    },
+    {
+      "name": "Chrome reports no installability errors",
+      "pass": true
+    },
+    {
+      "name": "Chrome decodes manifest icons at declared sizes",
+      "pass": true
+    },
+    {
+      "name": "viewport allows zoom and fonts loaded",
+      "pass": true
+    },
+    {
+      "name": "mobile input at least 16px",
+      "pass": true
+    },
+    {
+      "name": "visible mobile targets at least 44px",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 360",
+      "pass": true
+    },
+    {
+      "name": "active navigation 360",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 768",
+      "pass": true
+    },
+    {
+      "name": "active navigation 768",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1280",
+      "pass": true
+    },
+    {
+      "name": "active navigation 1280",
+      "pass": true
+    },
+    {
+      "name": "technician active and no admin destinations",
+      "pass": true
+    },
+    {
+      "name": "no runtime exceptions",
+      "pass": true
+    }
+  ],
+  "diagnostics": {
+    "chrome": "Chrome/157.0.8103.52",
+    "touch": {
+      "events": [
+        {
+          "target": "pilihan-14",
+          "trusted": true
+        }
+      ],
+      "open": true,
+      "focus": "Lihat TTS"
+    },
+    "money": [
+      [
+        "",
+        "",
+        ""
+      ],
+      [
+        "000",
+        "0",
+        "0"
+      ],
+      [
+        "-1234567",
+        "1.234.567",
+        "1234567"
+      ],
+      [
+        "99a999",
+        "99.999",
+        "99999"
+      ]
+    ],
+    "manifest": {
+      "url": "http://127.0.0.1:8083/manifest.webmanifest",
+      "errors": [],
+      "data": "{\"name\":\"Toko Anugerah\",\"short_name\":\"Anugerah\",\"start_url\":\"/\",\"display\":\"standalone\",\"background_color\":\"#f2f5f6\",\"theme_color\":\"#f2f5f6\",\"icons\":[{\"src\":\"/icons/ticket-192.png\",\"sizes\":\"192x192\",\"type\":\"image/png\"},{\"src\":\"/icons/ticket-512.png\",\"sizes\":\"512x512\",\"type\":\"image/png\"}]}\n",
+      "parsed": {
+        "scope": "http://127.0.0.1:8083/"
+      },
+      "manifest": {
+        "backgroundColor": "rgba(242,245,246,1)",
+        "display": "kStandalone",
+        "icons": [
+          {
+            "url": "http://127.0.0.1:8083/icons/ticket-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+          },
+          {
+            "url": "http://127.0.0.1:8083/icons/ticket-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+          }
+        ],
+        "id": "http://127.0.0.1:8083/",
+        "name": "Toko Anugerah",
+        "orientation": "DEFAULT",
+        "preferRelatedApplications": false,
+        "scope": "http://127.0.0.1:8083/",
+        "startUrl": "http://127.0.0.1:8083/",
+        "themeColor": "rgba(242,245,246,1)"
+      }
+    },
+    "installability": {
+      "installabilityErrors": []
+    },
+    "decodedIcons": [
+      [
+        192,
+        192
+      ],
+      [
+        512,
+        512
+      ]
+    ],
+    "mobileAudit": {
+      "viewport": "width=device-width, initial-scale=1",
+      "sans": true,
+      "mono": true,
+      "input": "16px",
+      "border": "rgb(138, 146, 150)",
+      "targets": []
+    },
+    "width360": {
+      "width": 360,
+      "scroll": 360,
+      "sidebar": 0,
+      "top": 52,
+      "body": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "nav": [
+        "Servis"
+      ]
+    },
+    "width768": {
+      "width": 768,
+      "scroll": 768,
+      "sidebar": 0,
+      "top": 52,
+      "body": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "nav": [
+        "Servis"
+      ]
+    },
+    "width1280": {
+      "width": 1280,
+      "scroll": 1280,
+      "sidebar": 228,
+      "top": 48,
+      "body": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "nav": [
+        "Servis"
+      ]
+    },
+    "technician": {
+      "name": "Rizky",
+      "role": "Teknisi",
+      "active": [
+        "Buat TTS"
+      ],
+      "items": [
+        "Buat TTS",
+        "Daftar TTS",
+        "Profil"
+      ]
+    }
+  },
+  "screens": [
+    "docs/evidence/T003/A2/preview-list-360.png",
+    "docs/evidence/T003/A2/preview-form-360.png",
+    "docs/evidence/T003/A2/preview-empty-360.png",
+    "docs/evidence/T003/A2/preview-dialog-360.png",
+    "docs/evidence/T003/A2/preview-toast-360.png",
+    "docs/evidence/T003/A2/mockup-list-360.png",
+    "docs/evidence/T003/A2/mockup-empty-360.png",
+    "docs/evidence/T003/A2/mockup-form-360.png",
+    "docs/evidence/T003/A2/mockup-money-360.png",
+    "docs/evidence/T003/A2/mockup-dialog-360.png",
+    "docs/evidence/T003/A2/mockup-toast-360.png",
+    "docs/evidence/T003/A2/preview-list-768.png",
+    "docs/evidence/T003/A2/preview-form-768.png",
+    "docs/evidence/T003/A2/preview-empty-768.png",
+    "docs/evidence/T003/A2/preview-dialog-768.png",
+    "docs/evidence/T003/A2/preview-toast-768.png",
+    "docs/evidence/T003/A2/mockup-list-768.png",
+    "docs/evidence/T003/A2/mockup-empty-768.png",
+    "docs/evidence/T003/A2/mockup-form-768.png",
+    "docs/evidence/T003/A2/mockup-money-768.png",
+    "docs/evidence/T003/A2/mockup-dialog-768.png",
+    "docs/evidence/T003/A2/mockup-toast-768.png",
+    "docs/evidence/T003/A2/preview-list-1280.png",
+    "docs/evidence/T003/A2/preview-form-1280.png",
+    "docs/evidence/T003/A2/preview-empty-1280.png",
+    "docs/evidence/T003/A2/preview-dialog-1280.png",
+    "docs/evidence/T003/A2/preview-toast-1280.png",
+    "docs/evidence/T003/A2/mockup-list-1280.png",
+    "docs/evidence/T003/A2/mockup-empty-1280.png",
+    "docs/evidence/T003/A2/mockup-form-1280.png",
+    "docs/evidence/T003/A2/mockup-money-1280.png",
+    "docs/evidence/T003/A2/mockup-dialog-1280.png",
+    "docs/evidence/T003/A2/mockup-toast-1280.png",
+    "docs/evidence/T003/A2/technician-1280.png",
+    "docs/evidence/T003/A2/technician-360.png"
+  ],
+  "errors": []
+}

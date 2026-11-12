@@ -1,0 +1,1 @@
+<svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 5h16a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-3a2 2 0 0 0 0-4V7a2 2 0 0 1 2-2z"/><path d="M15.5 6.5v11" stroke="#fff" stroke-width="1.5" stroke-dasharray="1.6 1.9" stroke-linecap="round"/></svg>

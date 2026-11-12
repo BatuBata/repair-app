@@ -1,0 +1,2 @@
+@props(['name', 'label', 'value' => ''])
+<label class="field"><span>{{ $label }}</span><span class="prefix"><span>Rp</span><input class="input money" type="text" inputmode="numeric" data-money="money-{{ $name }}" value="{{ $value === '' ? '' : number_format((int) $value, 0, ',', '.') }}" {{ $attributes }}></span><input type="hidden" name="{{ $name }}" id="money-{{ $name }}" value="{{ $value }}"></label>

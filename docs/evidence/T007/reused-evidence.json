@@ -1,0 +1,46 @@
+{
+  "T005": {
+    "pin": "ede491e76cbed8000aaee6e86392dc58d2741210",
+    "evidence": [
+      "docs/evidence/T005/README.md",
+      "docs/evidence/T005/phpstan-final.log",
+      "docs/evidence/T005/pint-final.log"
+    ],
+    "scope": "PHPStan entire union source:0 errors; Pint Settings classes/settings route/settings tests. Exact candidate source unchanged; no rerun needed."
+  },
+  "T004": {
+    "pin": "ebeb0b62f1a39720091026c1c3a0e8ec535c818e",
+    "evidence": [
+      "docs/evidence/T004/README.md",
+      "docs/evidence/T004/format-final-source.log",
+      "docs/evidence/T004/source-manifest.json",
+      "docs/evidence/T004/build-final.log"
+    ],
+    "scope": "T004 auth/users/profile/shared-shell formatting unchanged; T005 added only Settings classes/views/route/tests. T004 full suite NOT reused as final suite; new72-case suite run here."
+  },
+  "T002": {
+    "pin": "4a0667c302c979ab40641459bf9e7afac0655e09",
+    "evidence": [
+      "docs/evidence/T002/A4-handoff.json",
+      "docs/evidence/T002/A4-mysql-result.json",
+      "docs/evidence/T002/A4-timings.json"
+    ],
+    "unchanged_paths": [
+      "app/Services",
+      "app/Support",
+      "app/Enums",
+      "database/migrations",
+      "tests/Feature/Domain/MySqlConcurrencyTest.php",
+      "tests/Feature/Domain/mysql-worker.php"
+    ],
+    "git_diff_empty": true,
+    "scope": "Prior developer16 real MySQL numbering saves/4 overlapping rounds retained for unchanged numbering/schema/harness. No new MySQL PASS claimed; MySQL/InnoDB admin race reserved independent T008."
+  },
+  "T001_T003": {
+    "evidence": [
+      "docs/evidence/T001/HANDOFF.md",
+      "docs/evidence/T003/A2/handoff.md"
+    ],
+    "scope": "Historical scaffold/layout prerequisites; not substituted for integrated full suite or T008 independent responsive/manifest QA."
+  }
+}

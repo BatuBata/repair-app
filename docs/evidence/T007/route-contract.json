@@ -1,0 +1,72 @@
+{
+  "result": "pass",
+  "expected_and_actual": {
+    "home": {
+      "domain": null,
+      "method": "GET|HEAD",
+      "uri": "/",
+      "name": "home",
+      "action": "Illuminate\\Routing\\ViewController",
+      "middleware": [
+        "web",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "App\\Http\\Middleware\\EnsureAdmin"
+      ],
+      "path": null
+    },
+    "users.index": {
+      "domain": null,
+      "method": "GET|HEAD",
+      "uri": "pengaturan/pengguna",
+      "name": "users.index",
+      "action": "App\\Livewire\\Users\\Index",
+      "middleware": [
+        "web",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "App\\Http\\Middleware\\EnsureAdmin"
+      ],
+      "path": null
+    },
+    "settings.store": {
+      "domain": null,
+      "method": "GET|HEAD",
+      "uri": "pengaturan/toko",
+      "name": "settings.store",
+      "action": "App\\Livewire\\Settings\\Store",
+      "middleware": [
+        "web",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "App\\Http\\Middleware\\EnsureAdmin"
+      ],
+      "path": null
+    },
+    "settings.categories": {
+      "domain": null,
+      "method": "GET|HEAD",
+      "uri": "pengaturan/kategori",
+      "name": "settings.categories",
+      "action": "App\\Livewire\\Settings\\Categories",
+      "middleware": [
+        "web",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "App\\Http\\Middleware\\EnsureAdmin"
+      ],
+      "path": null
+    },
+    "profile.edit": {
+      "domain": null,
+      "method": "GET|HEAD",
+      "uri": "profil",
+      "name": "profile.edit",
+      "action": "App\\Livewire\\Profile\\ChangePassword",
+      "middleware": [
+        "web",
+        "Illuminate\\Auth\\Middleware\\Authenticate"
+      ],
+      "path": null
+    }
+  },
+  "downstream_tts_route_exists": false,
+  "route_command": "PHP8.3 artisan route:list --json; output routes.log",
+  "livewire_persistent_guards": "FortifyServiceProvider registers EnsureActiveAccount and EnsureAdmin; all protected component boot/render/actions recheck User::activeAccount; suite covers direct and stale component actions."
+}

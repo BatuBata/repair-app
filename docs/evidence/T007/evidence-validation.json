@@ -1,0 +1,5 @@
+{
+  "first_staged_git_diff_check": "failed: framework trailing spaces in migrate-seed.log/server.log and blank EOF in migrate-seed.log",
+  "correction": "normalize only trailing log whitespace; test/HTTP results unchanged",
+  "product_failure": false
+}

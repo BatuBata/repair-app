@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/opt/homebrew/opt/php@8.3/bin/php",
+    "artisan",
+    "migrate:fresh",
+    "--seed",
+    "--force",
+    "--no-interaction",
+    "--no-ansi"
+  ],
+  "exit_code": 0,
+  "duration_seconds": 0.339,
+  "DB_CONNECTION": "sqlite",
+  "DB_DATABASE": "/var/folders/z3/lllr0gjd35z5pplbyrcr_wf00000gn/T/repair-t007-mhikya2r/m1-synthetic.sqlite",
+  "RUN_MYSQL_DOMAIN": "0"
+}

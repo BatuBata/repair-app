@@ -1,0 +1,28 @@
+{
+  "source_revision": "ede491e76cbed8000aaee6e86392dc58d2741210",
+  "provenance": "Reused T005 public/build from same safe worktree and exact T005 source; T005 README records successful build and no subsequent asset/CSS changes. All tracked source bytes verified equal pinned T005; all manifest files exist. Category Blade timestamp later than build, but its component styling is inline; runtime navigation/style smoke still required. This records current artifact hashes, not an invented historical build hash.",
+  "files": {
+    "public/build/assets/app-CDn1G0_W.css": "63d14283ee0b6e1c6b07bee2a3478b8f935739643343c4df0eca71a15acaaeba",
+    "public/build/assets/app-TKBAM3lN.js": "e0084906357a1e8dbae007de03328ce94f9b3fd02415f17b40fe16175ea9170f",
+    "public/build/assets/fonts-C9MNnjVw.css": "3846a9bb60bfad92960eadcccaf0b4e129d74b11d48791506c8d1a827a385cc8",
+    "public/build/assets/instrument-sans-400-normal-D1W7dsQl.woff": "797bd3eaa70edbd4757650ab44dad75fbfbfdf18bacedb4b71022c04621d30ad",
+    "public/build/assets/instrument-sans-400-normal-DRC__1Mx.woff2": "9a91efaa3599a6ef01b2f49e9ec670e3a2f39baeef09c73198f1052cf3bb0850",
+    "public/build/assets/instrument-sans-500-normal-Dk9ku72i.woff2": "9d3547da16d950d12a677c772a3ff9b69846e60e7dcd1b5efd540993f7286532",
+    "public/build/assets/instrument-sans-500-normal-Z6ESRlEs.woff": "bd6a8dc8b0dc0cced0c32d3eda93f0e0e82c58ddefea8b53b3307b0c48da3089",
+    "public/build/assets/instrument-sans-600-normal-B7fBEWYG.woff2": "efb770916eda95a0e31d80cccde9651d4e8617010b21220e9f227c4820d675da",
+    "public/build/assets/instrument-sans-600-normal-B9e8oLYv.woff": "9b4ce1f2b26be7cb087fd87d6f99a202136292ec820af75bd38ab9e53895cf28",
+    "public/build/assets/layout-DAFmGKay.css": "6b76534c3551b13f83b69959c988520f92d09ac7a13770287af8b35cfd3aa6bb",
+    "public/build/assets/layout-VbftPR1Q.js": "c341bb7b6164371637f1c9a6732012308af41f20f51e2c1462f235c122bfa0d6",
+    "public/build/assets/passkeys-CsxEE3hN.js": "ad776e742af479bdb7ac39623fb121e0046c181de471cdda0a1c57c7f7f57e72",
+    "public/build/fonts-manifest.json": "66edf17c93351fe01158be7414a441a762f106417c74351881876b405b8b10ca",
+    "public/build/manifest.json": "5b6607d5a0edb876e2a6c62714c355a55b84a9a2cd084a0502183beb685e6836"
+  },
+  "rebuild": false,
+  "additional_reuse_proof": {
+    "T004_pin": "ebeb0b62f1a39720091026c1c3a0e8ec535c818e",
+    "T004_build_log": "docs/evidence/T004/build-final.log",
+    "all_content_hashed_asset_filenames_equal_T004_log": true,
+    "diff_of_T004_to_T005_shared_css_js_vite_package_locks": "empty (git diff --name-only ... -- resources/css resources/js vite.config.js package.json package-lock.json)",
+    "T005_category_component": "Uses inline component CSS and existing shared named classes; later Blade mtime does not change bundled CSS/JS inputs. Runtime CSS/JS requests all200 and desktop screenshots styled."
+  }
+}

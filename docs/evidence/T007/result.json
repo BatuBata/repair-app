@@ -1,0 +1,90 @@
+{
+  "task_id": "T007",
+  "role": "integrator",
+  "attempt": "A1",
+  "verdict": "pass",
+  "artifact_ref": "origin/candidate/m1@dfcd5c36e4424fb67f6430340f6d9fd6b5da8abd",
+  "revision": "dfcd5c36e4424fb67f6430340f6d9fd6b5da8abd",
+  "checked_revision": "dfcd5c36e4424fb67f6430340f6d9fd6b5da8abd",
+  "checked_product_source_revision": "ede491e76cbed8000aaee6e86392dc58d2741210",
+  "source_sha256": "11cbc71ccb63f910845ac4bd779244a090905de4723829554dfafe3c9740525f",
+  "inputs": {
+    "T002": "4a0667c302c979ab40641459bf9e7afac0655e09",
+    "T003": "a08d1d785b72199e1000840ea8e2afe1d7f38fbd",
+    "T004": "ebeb0b62f1a39720091026c1c3a0e8ec535c818e",
+    "T005": "ede491e76cbed8000aaee6e86392dc58d2741210"
+  },
+  "evidence": [
+    "docs/evidence/T007/README.md",
+    "docs/evidence/T007/integration-proof.json",
+    "docs/evidence/T007/source-manifest.json",
+    "docs/evidence/T007/assets-manifest.json",
+    "docs/evidence/T007/suite.log",
+    "docs/evidence/T007/suite-junit.xml",
+    "docs/evidence/T007/suite-summary.json",
+    "docs/evidence/T007/suite-execution.json",
+    "docs/evidence/T007/fixture-proof.json",
+    "docs/evidence/T007/migrate-seed.log",
+    "docs/evidence/T007/migrate-seed-execution.json",
+    "docs/evidence/T007/fixture-technician.log",
+    "docs/evidence/T007/route-contract.json",
+    "docs/evidence/T007/routes.log",
+    "docs/evidence/T007/browser-results.json",
+    "docs/evidence/T007/browser-events.jsonl",
+    "docs/evidence/T007/admin-home.png",
+    "docs/evidence/T007/admin-users.png",
+    "docs/evidence/T007/admin-store.png",
+    "docs/evidence/T007/admin-categories.png",
+    "docs/evidence/T007/admin-profile.png",
+    "docs/evidence/T007/technician-pending-tts.png",
+    "docs/evidence/T007/technician-profile.png",
+    "docs/evidence/T007/technician-forbidden.png",
+    "docs/evidence/T007/resource-release.json",
+    "docs/evidence/T007/reused-evidence.json",
+    "docs/evidence/T007/evidence-validation.json"
+  ],
+  "summary": "Kandidat M1 memuat keempat pin tanpa merge tambahan atau perubahan kode; 71 tes PASS/1 MySQL SKIP/698 assertion, migrasi seed SQLite baru serta smoke admin/teknisi/profil/403 berhasil, T009 redirect404 dicatat; siap handoff QA independen T008, bukan acceptance F001 atau merge main.",
+  "checks": {
+    "ancestry": "4/4 pass",
+    "product_source_equal_T005": true,
+    "full_suite": {
+      "tests": 72,
+      "passed": 71,
+      "skipped": 1,
+      "assertions": 698,
+      "errors": 0,
+      "failures": 0
+    },
+    "migrate_seed": "pass on verified new empty private SQLite",
+    "browser": "pass within integration smoke scope",
+    "livewire_action_guards": "pass in full automated suite",
+    "assets": "reused existing14 files; hashes recorded,12 content filenames equal T004 build output; source unchanged",
+    "static_lint": "reused T005 PHPStan plus T005/T004 Pint on unchanged respective scopes",
+    "mysql_this_assignment": "not_run; RUN_MYSQL_DOMAIN=0, existing test skipped",
+    "independent_qa": "pending T008"
+  },
+  "skills": {
+    "ponytail": "full; read /Users/muzib/.codex/plugins/cache/ponytail/ponytail/5.3.3/skills/ponytail/SKILL.md",
+    "project_delivery": "read SKILL.md + qa-and-release.md + coordination worker/Git rules",
+    "orca": "installed orchestration and orca-cli guides + browser reference read"
+  },
+  "model": {
+    "requested": "gpt-6.1-sol",
+    "effort_requested": "high",
+    "fallback_selected": false,
+    "effective_backend_identity": "unverified"
+  },
+  "publication": {
+    "branch": "candidate/m1",
+    "remote": "https://github.com/BatuBata/repair-app.git",
+    "authorization": "User12Nov2026 normal task-branch commit/push permitted",
+    "immutable_pin_note": "This file is added by a following evidence-only publication commit to avoid a self-referential hash; its product bytes remain identical to revision/checked_revision. Exact final HEAD and verified remote SHA are supplied by runtime handoff and retained publication receipt.",
+    "receipt_path": "/var/folders/z3/lllr0gjd35z5pplbyrcr_wf00000gn/T/repair-t007-mhikya2r/publication.json"
+  },
+  "unchecked_risks": [
+    "T008 independent responsive/negative/manifest and InnoDB admin-race remain; no MySQL access in this assignment.",
+    "T009 /tts/baru and later domain/dashboard T018 screens are absent; authenticated technician destination404 is not a TTS success.",
+    "One first click after viewport returned unchanged and URL wait timed out25000ms; keyboard and subsequent mouse flows succeeded, retained as input-automation/evidence uncertainty for T008 pointer checks.",
+    "No Android/physical printer/production HTTPS/deploy/remote CI claims; no main merge, F001 acceptance or canonical ledger edits."
+  ]
+}

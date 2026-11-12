@@ -57,6 +57,7 @@ class MySqlConcurrencyTest extends TestCase
                     $processes[] = $process;
                 }
                 $actual = [];
+                $timings = [];
                 $entered = [];
                 $finished = [];
                 foreach ($processes as $process) {
@@ -66,6 +67,13 @@ class MySqlConcurrencyTest extends TestCase
                     $actual[] = $result['number'];
                     $entered[] = $result['entered'];
                     $finished[] = $result['finished'];
+                    $timings[] = [
+                        'entered' => $result['entered'], 'attempts' => $result['attempts'],
+                        'last_attempt_entered' => $result['last_attempt_entered'], 'finished' => $result['finished'],
+                    ];
+                }
+                if ($diagnostics = getenv('T002_MYSQL_DIAGNOSTICS')) {
+                    file_put_contents($diagnostics, json_encode(['prefix' => $prefix, 'offset' => $offset, 'workers' => $timings], JSON_THROW_ON_ERROR).PHP_EOL, FILE_APPEND);
                 }
                 $this->assertLessThan(min($finished), max($entered), 'All four transaction attempts must overlap.');
                 sort($actual);

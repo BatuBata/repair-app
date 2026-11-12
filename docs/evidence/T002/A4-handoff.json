@@ -1,0 +1,190 @@
+{
+  "task_id": "T002",
+  "runtime_task_id": "task_792cb6f022fa",
+  "dispatch_id": "ctx_4ad437bf88ba",
+  "attempt": "A4 implementation, user-approved third/final code attempt; A2 was unchanged-source verification",
+  "verdict": "PASS_DEVELOPER_DOMAIN_CHECKS",
+  "artifact_ref": "origin/muzib/repair-t002-domain",
+  "revision": "Actual candidate/evidence commit hash in final worker result and verified push receipt",
+  "checked_revision": "Same final commit source bytes; exact harness hashes below",
+  "inputs": {
+    "T001": "4107c49d9098ab47c465773857fd5ee2811eb1b4",
+    "base": "e5706f31321d7540cdcaec5f2792248b9c324841",
+    "unchanged_product_source": "e59bf7c1ccd98a7165da04c91b6b522d4c374a79",
+    "T020_fixture_provenance": "a5a95970f5ff0caefdf8d85e89bc60604cd0638f source, 6095a5c evidence",
+    "authorization": "User setuju; canonical T002 implementation_attempt_limit=3 and /tmp/repair-app-t002-a4-approved.md"
+  },
+  "skills": "Ponytail full — read /Users/muzib/.codex/plugins/cache/ponytail/ponytail/5.3.3/skills/ponytail/SKILL.md; Project Delivery worker/QA rules applied.",
+  "model": "Requested same Sol gpt-6.1-sol/high session; effective backend model unverified; no fallback selected.",
+  "summary": "All focused MySQL acceptance checks now pass: migration/secure synthetic seed, 16 real child saves in 4 overlapping rounds, both empty/existing counters and both prefixes, expected unique document numbers/tokens, unsigned money and indexes. Actual retry timings demonstrate that the prior timestamp reset made every round fail the old overlap comparison. Production domain bytes remain unchanged; this is developer self-check, not independent integrated feature acceptance.",
+  "diff": {
+    "source_files": [
+      "tests/Feature/Domain/mysql-worker.php",
+      "tests/Feature/Domain/MySqlConcurrencyTest.php"
+    ],
+    "changes": [
+      "Capture entered once before the retryable transaction, count closure attempts, and record the last attempt timestamp for diagnosis.",
+      "Collect numeric-only four-worker timings per round when an explicit diagnostic path is supplied by the private test wrapper."
+    ],
+    "preserved": [
+      "All database/loopback/empty-target guards",
+      "Transaction retry count and production locking/numbering services",
+      "Exact same overlap and expected-number assertions",
+      "All token/unsigned/index checks",
+      "All A1/A2/A3 failure evidence; no erased history"
+    ]
+  },
+  "harness_sha256": {
+    "tests/Feature/Domain/mysql-worker.php": "c6857a167263f33d2e5bc5a8d3e27596398d7bb0ecad13e76e9b8cc4d5b6e484",
+    "tests/Feature/Domain/MySqlConcurrencyTest.php": "d48c9e88dfd262078d43b4bcf5cf023368313f1c42a35856d896b55e3b1e348e"
+  },
+  "checks": [
+    {
+      "command": "rg mysql-worker/entered/finished/attempts in tests/Feature/Domain and app/Services; read coordinator proposed diff and installed test callers",
+      "expected": "find caller/schema and preserve production contract",
+      "actual": "Only two approved test harness files changed."
+    },
+    {
+      "command": "PHP 8.3 -l tests/Feature/Domain/mysql-worker.php and MySqlConcurrencyTest.php",
+      "expected": "both valid syntax",
+      "actual": "PASS",
+      "evidence": "A4-php-lint.log"
+    },
+    {
+      "command": "PHP 8.3 vendor/bin/pint <both harness files>, then focused --test on both files",
+      "expected": "format valid",
+      "actual": "PASS",
+      "evidence": [
+        "A4-pint.log",
+        "A4-pint-check.log"
+      ]
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php /tmp/repair-t002-A4-fixture-reset.php",
+      "expected": "verify target21 known synthetic tables, exact row/schema fingerprints, archive hash/permissions before approved fixture-only reset; preserve backup/database",
+      "actual": "PASS; all 21 fingerprints/counts/provenance verified, private archive hash matched, only explicit repair_app_test table names removed, zero tables/views after reset, FK checks restored; archive unchanged",
+      "reset_duration_ms": 161,
+      "evidence": "A4-fixture-reset.json"
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php /tmp/repair-t002-A4-verify.php",
+      "child": "PHP 8.3 artisan test tests/Feature/Domain/MySqlConcurrencyTest.php --log-junit=<private path>",
+      "expected": "all 16 concurrent saves and all unchanged assertions PASS",
+      "actual": "PASS 1 test/41 assertions/0 failures/0 errors/0 skipped; all 4 overlapping rounds, 33 transaction attempts",
+      "test_duration_seconds": "12.425957",
+      "wrapper_duration_ms": 13700,
+      "evidence": [
+        "A4-mysql-result.json",
+        "A4-timings.json"
+      ]
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php /tmp/repair-t002-A4-inventory.php",
+      "expected": "target-only synthetic inventory; fixtures left without hashes/credentials export",
+      "actual": "PASS, 20 tables/0 views, 8 TTS with 8 unique tokens/numbers, 8 sales with unique numbers, both counters at8, 1 admin/9 categories/1 blank store setting/default30, 6 migrations; other tables empty",
+      "evidence": "A4-mysql-inventory.json"
+    },
+    {
+      "command": "git diff --name-only e59bf7c1ccd98a7165da04c91b6b522d4c374a79 -- app database config composer.lock package-lock.json; git diff --check",
+      "expected": "no production/dependency changes or whitespace errors",
+      "actual": "PASS"
+    }
+  ],
+  "numeric_retry_proof": {
+    "transaction_submissions": 16,
+    "total_attempts": 33,
+    "retries": 17,
+    "rounds": [
+      {
+        "prefix": "TTS",
+        "offset": 0,
+        "worker_attempt_counts": [
+          1,
+          2,
+          1,
+          3
+        ],
+        "overlap_window_ms": 248.177,
+        "old_timestamp_overlap_would_pass": false
+      },
+      {
+        "prefix": "TTS",
+        "offset": 4,
+        "worker_attempt_counts": [
+          1,
+          4,
+          2,
+          3
+        ],
+        "overlap_window_ms": 265.964,
+        "old_timestamp_overlap_would_pass": false
+      },
+      {
+        "prefix": "JL",
+        "offset": 0,
+        "worker_attempt_counts": [
+          2,
+          1,
+          3,
+          1
+        ],
+        "overlap_window_ms": 219.07,
+        "old_timestamp_overlap_would_pass": false
+      },
+      {
+        "prefix": "JL",
+        "offset": 4,
+        "worker_attempt_counts": [
+          2,
+          3,
+          3,
+          1
+        ],
+        "overlap_window_ms": 191.514,
+        "old_timestamp_overlap_would_pass": false
+      }
+    ],
+    "interpretation": "All four original request submissions occurred before the first completion in each round. Retries were observed (not inferred); last-attempt timestamps reproduce the old false overlap failure in every round. Critical row-lock sections intentionally serialize; concurrency is measured from submission through completion including waits/retries."
+  },
+  "fixture_reset_and_retention": {
+    "scope": "Only the known21 disposable T002/T020 fixture tables in repair_app_test; no database drop/create, no repair_app or other schema operations.",
+    "preflight": "All21 row/schema fingerprints equal private T020 post-restore snapshot, exact counts and marker/order provenance, no views/triggers/routines/events, loopback MySQL8.0.31.",
+    "archive_sha256": "05fbbd7822dcade66ae805ef5e88ae65a4c981f6ace646f79ede6c18dcfb26d8",
+    "archive_preserved": true,
+    "archive_privacy": "Private gzip remains mode600 under700 outside Git; dump/hash contents never copied to repo.",
+    "current_fixture_provenance": "After approved reset, only this test migration/seed and16 synthetic workers wrote the target; old T020 probe is absent in current20-table schema but preserved in existing private snapshot.",
+    "final_inventory": "A4-mysql-inventory.json",
+    "temporary_secrets": "Only synthetic admin password in private generated dotenv; canonical credentials passed in child environment memory, APP_KEY process-only, own fixture/JUnit/timing file cleaned in finally; real admin password/canonical .env unchanged."
+  },
+  "reused_evidence": {
+    "pins": [
+      "e59bf7c1ccd98a7165da04c91b6b522d4c374a79",
+      "a199051700c613b5f1993e97cd9ba3a10c6b1db6"
+    ],
+    "items": [
+      "suite-final.log: 55 passed/396 assertions, 1 MySQL skipped at that time",
+      "seed-final.log: 3 passed/22 assertions and1 MySQL skip after final Password::default change",
+      "domain-final.log:15 passed/287 assertions and1 MySQL skip",
+      "phpstan-final.log",
+      "production Pint/build logs"
+    ],
+    "impact_rationale": "Domain/app/config/database/locks identical; harness-only correction does not affect SQLite domain/scaffold behavior, PHPStan configured production paths, or frontend build. Prior skips are retained history and newly supplemented by this actual MySQL PASS. No full-suite/build or T020 rerun."
+  },
+  "evidence": [
+    "docs/evidence/T002/A4-fixture-reset.json",
+    "docs/evidence/T002/A4-mysql-inventory.json",
+    "docs/evidence/T002/A4-mysql-result.json",
+    "docs/evidence/T002/A4-php-lint.log",
+    "docs/evidence/T002/A4-pint-check.log",
+    "docs/evidence/T002/A4-pint.log",
+    "docs/evidence/T002/A4-timings.json",
+    "docs/evidence/T002/A4-handoff.json"
+  ],
+  "push_authority": "User commit/push authorized; normal muzib/repair-t002-domain to origin, no force/main merge/deploy; unchanged workflow only main push/PR tests.",
+  "unchecked_and_risks": [
+    "Independent integrated QA still required; developer checks do not accept the final feature.",
+    "Real application initialization/admin password remains user-controlled and not performed; no production deployment.",
+    "Fixtures and preserved private T020 archive remain; next destructive test requires checking current8+8 fixture state and authorization, not assuming an empty database.",
+    "A4 uses the user-approved third code attempt; no extra source change is authorized by this PASS."
+  ]
+}

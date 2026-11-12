@@ -1,0 +1,134 @@
+[
+    {
+        "prefix": "TTS",
+        "offset": 0,
+        "workers": [
+            {
+                "entered": 1794496605.282796,
+                "attempts": 1,
+                "last_attempt_entered": 1794496605.300877,
+                "finished": 1794496605.699391
+            },
+            {
+                "entered": 1794496605.284647,
+                "attempts": 2,
+                "last_attempt_entered": 1794496605.544264,
+                "finished": 1794496605.872572
+            },
+            {
+                "entered": 1794496605.278605,
+                "attempts": 1,
+                "last_attempt_entered": 1794496605.304089,
+                "finished": 1794496605.532824
+            },
+            {
+                "entered": 1794496605.279597,
+                "attempts": 3,
+                "last_attempt_entered": 1794496605.712757,
+                "finished": 1794496606.030865
+            }
+        ],
+        "overlap_window_ms": 248.17705154418945,
+        "old_timestamp_overlap_would_pass": false,
+        "total_attempts": 7
+    },
+    {
+        "prefix": "TTS",
+        "offset": 4,
+        "workers": [
+            {
+                "entered": 1794496608.060468,
+                "attempts": 1,
+                "last_attempt_entered": 1794496608.076489,
+                "finished": 1794496608.337779
+            },
+            {
+                "entered": 1794496608.070748,
+                "attempts": 4,
+                "last_attempt_entered": 1794496608.508808,
+                "finished": 1794496608.848035
+            },
+            {
+                "entered": 1794496608.059346,
+                "attempts": 2,
+                "last_attempt_entered": 1794496608.168707,
+                "finished": 1794496608.505377
+            },
+            {
+                "entered": 1794496608.071815,
+                "attempts": 3,
+                "last_attempt_entered": 1794496608.342853,
+                "finished": 1794496608.674903
+            }
+        ],
+        "overlap_window_ms": 265.9640312194824,
+        "old_timestamp_overlap_would_pass": false,
+        "total_attempts": 10
+    },
+    {
+        "prefix": "JL",
+        "offset": 0,
+        "workers": [
+            {
+                "entered": 1794496610.884965,
+                "attempts": 2,
+                "last_attempt_entered": 1794496611.1154,
+                "finished": 1794496611.472785
+            },
+            {
+                "entered": 1794496610.884529,
+                "attempts": 1,
+                "last_attempt_entered": 1794496610.889583,
+                "finished": 1794496611.104035
+            },
+            {
+                "entered": 1794496610.881428,
+                "attempts": 3,
+                "last_attempt_entered": 1794496611.305867,
+                "finished": 1794496611.654278
+            },
+            {
+                "entered": 1794496610.882709,
+                "attempts": 1,
+                "last_attempt_entered": 1794496610.890327,
+                "finished": 1794496611.29937
+            }
+        ],
+        "overlap_window_ms": 219.0699577331543,
+        "old_timestamp_overlap_would_pass": false,
+        "total_attempts": 7
+    },
+    {
+        "prefix": "JL",
+        "offset": 4,
+        "workers": [
+            {
+                "entered": 1794496613.687528,
+                "attempts": 2,
+                "last_attempt_entered": 1794496613.703976,
+                "finished": 1794496614.075326
+            },
+            {
+                "entered": 1794496613.689575,
+                "attempts": 3,
+                "last_attempt_entered": 1794496614.078061,
+                "finished": 1794496614.453922
+            },
+            {
+                "entered": 1794496613.687435,
+                "attempts": 3,
+                "last_attempt_entered": 1794496613.890104,
+                "finished": 1794496614.258324
+            },
+            {
+                "entered": 1794496613.685989,
+                "attempts": 1,
+                "last_attempt_entered": 1794496613.695328,
+                "finished": 1794496613.881089
+            }
+        ],
+        "overlap_window_ms": 191.5140151977539,
+        "old_timestamp_overlap_would_pass": false,
+        "total_attempts": 9
+    }
+]

@@ -383,7 +383,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "app/Support/**",
         "tests/Unit/**",
         "tests/Feature/Domain/**",
-        "docs/evidence/T002/**"
+        "docs/evidence/T002/**",
+        "config/repair.php"
       ],
       "shared_resources": [
         {
@@ -505,18 +506,61 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-terra",
           "model_effective": null,
           "dispatch_ref": "ctx_203bd11773d4",
-          "outcome": "running",
+          "outcome": "fail",
           "receipt_ref": "docs/evidence/coordinator/T003-start.json"
+        },
+        {
+          "id": "A2",
+          "kind": "implementation",
+          "worker_id": "task_ab2f4f674517",
+          "model_requested": "gpt-6.1-terra",
+          "model_effective": null,
+          "dispatch_ref": "ctx_f5237bf01a3e",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/T003-A2-start.json"
         }
       ],
       "runtime_assignment": {
         "run_id": "run_729e02cff091",
-        "task_id": "task_95fae78ebc88",
-        "dispatch_id": "ctx_203bd11773d4",
-        "receipt_ref": "docs/evidence/coordinator/T003-start.json",
-        "base_revision": "8601b54a1302f03bea98b51e7e033b097599dc7c",
-        "model_observation": "Requested model in launch receipt; effective backend model not independently observed."
-      }
+        "task_id": "task_ab2f4f674517",
+        "dispatch_id": "ctx_f5237bf01a3e",
+        "receipt_ref": "docs/evidence/coordinator/T003-A2-start.json",
+        "base_revision": "e8f0553ccf64dab23dab4866e23fd8f17697c691",
+        "follow_up_of": "ctx_203bd11773d4",
+        "model_observation": "Same Terra worker reused; follow-up receipt does not prove new model selection or effective backend identity."
+      },
+      "result": {
+        "verdict": "fail",
+        "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t003-layout/docs/evidence/T003/handoff.md",
+        "revision": "e8f0553ccf64dab23dab4866e23fd8f17697c691",
+        "inputs": {
+          "T001": "4107c49d9098ab47c465773857fd5ee2811eb1b4"
+        },
+        "checked_revision": "e8f0553ccf64dab23dab4866e23fd8f17697c691",
+        "evidence": [
+          "/Users/muzib/orca/workspaces/repair-app/repair-t003-layout/docs/evidence/T003/handoff.md",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t003-layout/docs/evidence/T003/compare-360.png"
+        ],
+        "failure_class": "product",
+        "summary": "A1 belum memenuhi kontrak: bukti sentuh/manifest dan perbandingan form/dialog/toast/empty belum lengkap; beberapa screenshot mendahului edit akhir. Review coordinator juga menemukan tautan Repository/Documentation starter di menu produk dan penanda menu aktif bawah belum diimplementasikan. Build/tests yang tercatat lulus tidak meluluskan kontrak. A2 diizinkan dalam budget dua attempt untuk koreksi dan bukti akhir."
+      },
+      "prior_results": [
+        {
+          "verdict": "fail",
+          "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t003-layout/docs/evidence/T003/handoff.md",
+          "revision": "e8f0553ccf64dab23dab4866e23fd8f17697c691",
+          "inputs": {
+            "T001": "4107c49d9098ab47c465773857fd5ee2811eb1b4"
+          },
+          "checked_revision": "e8f0553ccf64dab23dab4866e23fd8f17697c691",
+          "evidence": [
+            "/Users/muzib/orca/workspaces/repair-app/repair-t003-layout/docs/evidence/T003/handoff.md",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t003-layout/docs/evidence/T003/compare-360.png"
+          ],
+          "failure_class": "product",
+          "summary": "A1 belum memenuhi kontrak: bukti sentuh/manifest dan perbandingan form/dialog/toast/empty belum lengkap; beberapa screenshot mendahului edit akhir. Review coordinator juga menemukan tautan Repository/Documentation starter di menu produk dan penanda menu aktif bawah belum diimplementasikan. Build/tests yang tercatat lulus tidak meluluskan kontrak. A2 diizinkan dalam budget dua attempt untuk koreksi dan bukti akhir."
+        }
+      ]
     },
     {
       "id": "T004",
@@ -1719,3 +1763,7 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-12 | Eksekusi dilanjutkan untuk T001–T025 sesuai dependensi, maksimal dua worker. T001 menjadi satu-satunya penulis root untuk bootstrap repo sebelum worktree tersedia. Tidak ada izin baru push/deployment produksi. | Instruksi eksekusi user; repo belum ada | Semua | Instruksi user 12 Nov 2026 |
 
 | 2026-11-12 | T001 candidate diterima untuk dependency (4107c49); T002/T003 dibuka. T003 boleh menulis satu route + view contoh komponen lokal untuk membuktikan kontraknya; evidence task masuk write_scope. | Pemetaan folder kit nyata; QA fondasi tetap T008 | T001–T004 | Handoff T001 + review coordinator |
+
+| 2026-11-12 | Scope T002 ditambah config/repair.php untuk ADMIN_INITIAL_PASSWORD melalui config() agar seed tetap valid saat config dicache; tanpa dependency/lockfile baru atau rahasia hardcode. Masih A1 yang sama. | Permintaan worker msg_01062130ebec; tidak konflik T003 | T002 | Keputusan coordinator dalam scope seed admin PRD §11 |
+
+| 2026-11-12 | T003 A1 gagal kontrak pada e8f0553: bukti belum lengkap dan menu shell belum sepenuhnya sesuai mockup. T003 dibuka kembali untuk A2 di worktree sama; bukti A1 tetap disimpan. | Handoff worker msg_e5461cd246bc + review kode/gambar coordinator | T003 | Budget dua attempt project-delivery |

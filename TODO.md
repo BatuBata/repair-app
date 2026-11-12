@@ -24,9 +24,9 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | done |
 | T003 | Layout lembar berbingkai, komponen UI dasar, dan web app manifest sesuai DESIGN.md | developer / 6.1-terra | medium / medium | T001 | T002, T006, T020 | done |
 | T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | done |
-| T005 | Pengaturan toko dan master kategori | developer / 6-luna | easy / low | T004 | T006, T020 | running |
+| T005 | Pengaturan toko dan master kategori | developer / 6-luna | easy / low | T004 | T006, T020 | done |
 | T006 | Spike dokumen: PDF A5, struk 58mm, dan QR di dompdf | developer / 6.1-sol | medium / medium | T001 | T002, T003, T004, T005, T020 | done |
-| T007 | Integrasi fondasi M1 pada branch candidate sebelum QA dan merge main | integrator / 6.1-sol | medium / medium | T002, T003, T004, T005 | — | pending |
+| T007 | Integrasi fondasi M1 pada branch candidate sebelum QA dan merge main | integrator / 6.1-sol | medium / medium | T002, T003, T004, T005 | — | running |
 | T008 | QA independen fondasi M1 | tester / 6.1-sol | medium / high | T007 | T006, T020 | pending |
 | T009 | TTS: form buat/edit, daftar dengan cari/filter, detail sesuai peran | developer / 6.1-sol | medium / high | T008 | T012, T013, T014, T020 | pending |
 | T010 | Alur admin servis: tetapkan teknisi, rincian dan terbitkan nota, koreksi, diambil, batal | developer / 6.1-sol | complex / high | T009 | T012, T013, T014, T020 | pending |
@@ -862,7 +862,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar untuk pengaturan toko dan kategori.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings",
       "attempts": [
         {
@@ -872,7 +872,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6-luna",
           "model_effective": null,
           "dispatch_ref": "ctx_d2cbaa553e71",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/T005-start.json"
         }
       ],
@@ -883,6 +883,27 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "receipt_ref": "docs/evidence/coordinator/T005-start.json",
         "base_revision": "971b164a79b544279bc5b2a53a50db383e7f7301",
         "model_observation": "Launch receipt records requested Luna high; effective backend identity not independently observed."
+      },
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/README.md",
+        "revision": "ede491e76cbed8000aaee6e86392dc58d2741210",
+        "checked_revision": "ede491e76cbed8000aaee6e86392dc58d2741210",
+        "inputs": {
+          "T004": "ebeb0b62f1a39720091026c1c3a0e8ec535c818e"
+        },
+        "evidence": [
+          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/README.md",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/tests-final.log",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/pint-final.log",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/phpstan-final.log",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/routes.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/store-form-360.png",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/store-form-1280.png",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/categories-list-768.png",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/categories-form-360.png"
+        ],
+        "summary": "Developer A1 PASS: toko/logo raster tervalidasi/kategori, guard per-route/action dan properti locked;24tes366assertions,Pint/PHPStan/build/browser proof. Coordinator membaca source/report dan melihat form/list penting; codepush ede491e tersedia. Belum QA integrasi/F001 accepted, suite full M1 masih T007, MySQL admin-race T008. Tidak ada MySQL/rahasia/data aplikasi yang disentuh."
       }
     },
     {
@@ -1027,6 +1048,10 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         {
           "name": "branch:main",
           "mode": "exclusive"
+        },
+        {
+          "name": "browser:repair-app-visual",
+          "mode": "exclusive"
         }
       ],
       "conflicts_with": [],
@@ -1038,7 +1063,28 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Cocokkan revisi input dengan hasil task; jalankan test suite penuh dan smoke login di browser."
       ],
-      "status": "pending"
+      "status": "running",
+      "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "verification",
+          "worker_id": "task_ad597c68c480",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "ctx_823381684830",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/T007-start.json"
+        }
+      ],
+      "runtime_assignment": {
+        "run_id": "run_729e02cff091",
+        "task_id": "task_ad597c68c480",
+        "dispatch_id": "ctx_823381684830",
+        "receipt_ref": "docs/evidence/coordinator/T007-start.json",
+        "base_revision": "ede491e76cbed8000aaee6e86392dc58d2741210",
+        "model_observation": "New Sol high integrator requested; effective backend identity unverified. Source already assembles all prerequisites; assignment verifies/pins candidate and writes evidence only."
+      }
     },
     {
       "id": "T008",
@@ -2150,3 +2196,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-12 | Scope T004 ditambah hanya tests/Feature/ExampleTest.php: GET / tamu harus redirect/login setelah root admin dilindungi, bukan200 welcome starter. Tetap logical A1, tanpa perubahan fitur atau budget. | Assertion starter obsolete akibat autentikasi PRD | T004 | Permintaan worker msg_decdf5d36b6d, disetujui coordinator |
 
 | 2026-11-13 | T004 A1 developer checks PASS ebeb0b6, buka T005 Luna sesuai triase CRUD. T008 ditambah bukti race last-admin pada InnoDB; SQLite bukan bukti engine produksi. Katalog runtime Luna/Sol/Terra diverifikasi ulang dari cache terkini. | Kontrak auth tersedia, QA feature belum accepted | T004, T005, T008 | msg_add6c8daf1b2 + review coordinator |
+
+| 2026-11-13 | T005 developer checks PASS ede491e; buka integrasi T007. Workspace T005 bersih dan worker lama settled/idle, sehingga boleh dipakai ulang oleh sesi integrator Sol baru (branch candidate/m1 terpisah), tanpa checkout fisik tambahan. Prasyarat T002–T005 sudah menjadi ancestor source ede491e; integrator mem-pin dan memeriksa gabungan, main tetap menunggu T008. | Batas retensi workspace; independensi QA T008 tetap sesi berbeda | T005, T007 | msg_6dfb91be5fa2 + review coordinator + worker-show settled/idle |

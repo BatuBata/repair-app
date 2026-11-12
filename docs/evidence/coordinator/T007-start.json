@@ -1,0 +1,13 @@
+{
+  "dispatchId": "ctx_823381684830",
+  "taskId": "task_ad597c68c480",
+  "runId": "run_729e02cff091",
+  "state": "ready",
+  "agent": "codex",
+  "model": "gpt-6.1-sol",
+  "effort": "high",
+  "mode": "terminal",
+  "terminal": "term_25a1bbda-1e5c-4cd4-af2a-8d5c81c863b6",
+  "workspace": "9e87b701-eabc-441f-a421-01986c47b99b::/Users/muzib/orca/workspaces/repair-app/repair-t005-settings",
+  "next": "Orca wakes you when workers report; end your turn when you're done."
+}

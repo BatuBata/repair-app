@@ -1,0 +1,9 @@
+{
+    "database": "repair_app_test",
+    "server_version": "8.0.31",
+    "table_count": 0,
+    "view_count": 0,
+    "objects": [],
+    "fixture_inventory": [],
+    "provenance": "Committed test failed at empty-database guard before migrate:fresh/seed and parallel workers; zero application/test fixtures were created."
+}

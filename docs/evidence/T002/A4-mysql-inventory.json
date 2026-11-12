@@ -1,0 +1,62 @@
+{
+    "database": "repair_app_test",
+    "server_version": "8.0.31",
+    "table_count": 20,
+    "view_count": 0,
+    "rows_by_table": {
+        "cache": 0,
+        "cache_locks": 0,
+        "categories": 9,
+        "expenses": 0,
+        "failed_jobs": 0,
+        "job_batches": 0,
+        "jobs": 0,
+        "migrations": 6,
+        "number_sequences": 2,
+        "passkeys": 0,
+        "password_reset_tokens": 0,
+        "products": 0,
+        "sale_items": 0,
+        "sales": 8,
+        "service_order_items": 0,
+        "service_orders": 8,
+        "sessions": 0,
+        "stock_entries": 0,
+        "store_settings": 1,
+        "users": 1
+    },
+    "tts_identity_summary": {
+        "total": 8,
+        "unique_numbers": 8,
+        "unique_tracking_tokens": 8,
+        "first_number": "TTS-2611-001",
+        "last_number": "TTS-2611-008"
+    },
+    "sale_identity_summary": {
+        "total": 8,
+        "unique_numbers": 8,
+        "first_number": "JL-2611-001",
+        "last_number": "JL-2611-008"
+    },
+    "counter_rows": [
+        {
+            "prefix": "JL",
+            "period": "2611",
+            "last_seq": 8
+        },
+        {
+            "prefix": "TTS",
+            "period": "2611",
+            "last_seq": 8
+        }
+    ],
+    "store_setting_summary": {
+        "rows_count": 1,
+        "default_warranty_days": 30,
+        "blank_store_rows": "1"
+    },
+    "known_synthetic_order_count": 8,
+    "admin_count": 1,
+    "completed_scope": "Migration and seed plus all four rounds passed: TTS/JL each first-counter and existing-counter, 16 child writes, overlap/uniqueness/token/unsigned/index checks.",
+    "provenance": "Authorized reset verified all 21 prior fixture fingerprints and backup hash before removing only those fixture tables; target then verified empty. Current rows created by migrate:fresh --seed and sixteen synthetic mysql-worker.php processes under exclusive db:mysql-test reservation. Initial admin password was a private generated synthetic value, removed with the temporary dotenv fixture; no password hashes exported."
+}

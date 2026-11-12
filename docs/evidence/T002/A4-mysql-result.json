@@ -1,0 +1,20 @@
+{
+    "task_id": "T002",
+    "attempt": "A4",
+    "runtime_task_id": "task_792cb6f022fa",
+    "base_revision": "e5706f31321d7540cdcaec5f2792248b9c324841",
+    "test_file_sha256": "d48c9e88dfd262078d43b4bcf5cf023368313f1c42a35856d896b55e3b1e348e",
+    "command": "/opt/homebrew/opt/php@8.3/bin/php /tmp/repair-t002-A4-verify.php (child: PHP 8.3 artisan test tests/Feature/Domain/MySqlConcurrencyTest.php --log-junit=<private-generated-path>)",
+    "exit_code": 0,
+    "wall_duration_ms": 13700,
+    "tests": "1",
+    "assertions": "41",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "time": "12.425957",
+    "rounds_recorded": 4,
+    "all_rounds_overlap": true,
+    "total_transaction_attempts": 33,
+    "rounds_old_timestamp_would_fail": 4
+}

@@ -1,0 +1,154 @@
+{
+  "task_id": "T002",
+  "runtime_task_id": "task_5396149f0f67",
+  "dispatch_id": "ctx_15263c49ff79",
+  "attempt": "A1",
+  "verdict": "BLOCKED_MYSQL_ACCEPTANCE",
+  "artifact_ref": "muzib/repair-t002-domain",
+  "revision": "e59bf7c1ccd98a7165da04c91b6b522d4c374a79",
+  "checked_revision": "e59bf7c1ccd98a7165da04c91b6b522d4c374a79",
+  "inputs": {
+    "base_snapshot": "8601b54a1302f03bea98b51e7e033b097599dc7c",
+    "T001": "4107c49d9098ab47c465773857fd5ee2811eb1b4",
+    "canonical_task": "/Users/muzib/Projects/web/repair-app/TODO.md T002 (read only; includes approved config/repair.php scope)",
+    "prd": "PRD.md v1.2 §8/11",
+    "scope_approval": "Orca msg_3038c8f29741: config/repair.php only, same A1"
+  },
+  "skills": {
+    "ponytail": "full — read /Users/muzib/.codex/plugins/cache/ponytail/ponytail/5.3.3/skills/ponytail/SKILL.md",
+    "project_delivery": "read /Users/muzib/.agents/skills/project-delivery/SKILL.md plus worker coordination and QA/release guidance",
+    "orchestration": "read local SKILL.md and orca skills get orchestration"
+  },
+  "model": {
+    "requested": "gpt-6.1-sol / high",
+    "effective": "Runtime receipt not exposed to this worker; coordinator must retain dispatch receipt. No fallback selected by worker."
+  },
+  "summary": "Candidate domain lengkap tersedia untuk QA; penerimaan penuh T002 masih BLOCKED karena MySQL lokal belum dikonfigurasi. Tidak ada push, merge main, deploy, edit ledger, perubahan lockfile, atau pembacaan/penyalinan isi rahasia ke laporan.",
+  "diff": [
+    "Satu migrasi domain: semua tabel/field §11, unique/FK/index, uang unsigned integer, tanggal DATE dan waktu WITA; kolom email/auth scaffold dipertahankan, email dibuat nullable agar admin tidak membutuhkan email.",
+    "Model dan relasi untuk kategori, TTS/rincian, produk/restok, penjualan/rincian, pengeluaran, pengaturan; User role enum/is_active/username dan factory kompatibel.",
+    "Enum UserRole, ServiceOrderStatus, ServiceItemType, ExpenseCategory; graph status lengkap dan guard admin tersedia untuk modul berikut.",
+    "DocumentNumber::next mengharuskan transaksi caller, insertOrIgnore atas PK gabungan sebelum lockForUpdate melindungi counter pertama; reset WITA, minimal tiga digit, >999, rollback bersama dokumen.",
+    "CreateServiceOrder memvalidasi empat input wajib/kategori aktif, normalisasi HP, menyaring input tambahan, membuat nomor dan dokumen dalam transaksi dengan lima percobaan deadlock; model membuat token random 64 karakter dengan unique DB.",
+    "Validasi uang/qty model, subtotal integer dan modal Jasa dipaksa nol; pengaturan id=1 dijaga pada model.",
+    "Seeder transaksional/idempotent: satu admin awal dengan hash Laravel dan Password::default dari konfigurasi env, sembilan kategori Q-06, pengaturan kosong/garansi 30; tidak mengubah password/pengaturan yang sudah ada.",
+    "Test MySQL nyata memakai empat proses paralel per putaran, counter kosong dan sudah ada untuk kedua prefiks, memeriksa overlap transaksi, nomor tersimpan, token unik dan tipe/index MySQL."
+  ],
+  "integration_contract": [
+    "Pembuatan TTS: app(CreateServiceOrder::class)->create($input, $creator); input status/nomor/token dari request diabaikan.",
+    "Penjualan T013 harus memanggil DocumentNumber::next(\"JL\", $createdAt) dalam DB::transaction(callback, 5) yang juga menyimpan penjualan; jangan commit nomor secara terpisah.",
+    "Status tersimpan huruf kecil; gunakan ServiceOrderStatus enum. assertTransitionTo memeriksa graph dan peran; precondition teknisi/nota serta otorisasi pengguna aktif diterapkan modul T004/T009/T010.",
+    "Model/service adalah jalur validasi aplikasi; update query builder langsung melewati event model. T004 melanjutkan autentikasi username; admin seed belum dimaksudkan login melalui email scaffold.",
+    "Config cache memuat password awal sebagai rahasia konfigurasi; lindungi cache seperti .env. Cache sintetis pengujian dibersihkan dan tidak di-commit."
+  ],
+  "checks": [
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php $(command -v composer) install --no-interaction --prefer-dist --no-scripts",
+      "expected": "dependency dari lock, tanpa setup/migrasi",
+      "actual": "PASS; cache paket dipakai, lock tidak berubah",
+      "evidence": "dependencies.log"
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php artisan test tests/Feature/Domain",
+      "expected": "domain SQLite pass; MySQL dilaporkan skipped/BLOCKED",
+      "actual": "15 passed, 287 assertions, 1 skipped; 1012 ms",
+      "evidence": "domain-final.log"
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php artisan test tests/Feature/Domain/SeederCacheTest.php",
+      "expected": "cache konfigurasi sintetis tetap menyediakan password setelah environment password dihapus",
+      "actual": "PASS 1 test/7 assertions; 754 ms; temporary SQLite dan cache sintetis dibersihkan",
+      "evidence": "config-cache.log"
+    },
+    {
+      "command": "PHP 8.3 wrapper mengisi APP_KEY acak di environment proses lalu menjalankan artisan test (lihat catatan perintah di bawah)",
+      "expected": "regresi scaffold dan domain pass, MySQL bukan PASS",
+      "actual": "55 passed, 396 assertions, 1 skipped; 3593 ms",
+      "evidence": "suite-final.log",
+      "reuse": "Suite dijalankan sebelum seeder mengganti min:12 menjadi Password::default; seluruh jalur seed yang berubah kemudian diuji ulang terarah pada candidate final, sehingga suite penuh tidak diulang."
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php artisan test tests/Feature/Domain --filter 'seed|Seed'",
+      "expected": "seed/config-cache setelah memakai aturan password framework pass",
+      "actual": "3 passed, 22 assertions, 1 skipped (MySQL); 922 ms",
+      "evidence": "seed-final.log"
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php vendor/bin/phpstan analyse --memory-limit=512M --no-progress",
+      "expected": "nol error",
+      "actual": "PASS, nol error pada source final",
+      "evidence": "phpstan-final.log"
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php vendor/bin/pint --test",
+      "expected": "format pass",
+      "actual": "PASS; file seeder/MySQL yang berubah setelahnya diformat terarah",
+      "evidence": [
+        "lint-final.log",
+        "pint-seed.log",
+        "pint-mysql.log"
+      ]
+    },
+    {
+      "command": "npm ci --ignore-scripts; npm run build (dijalankan berurutan)",
+      "expected": "paket locked dan aset untuk regresi tampilan scaffold tersedia",
+      "actual": "PASS; npm 0 vulnerabilities; build 912 ms; warning optional fontaine sudah ada di scaffold, dependency tidak ditambah",
+      "evidence": [
+        "npm-install.log",
+        "build.log"
+      ]
+    },
+    {
+      "command": "RUN_MYSQL_DOMAIN=1 REPAIR_MYSQL_ENV_FILE=/Users/muzib/Projects/web/repair-app/.env /opt/homebrew/opt/php@8.3/bin/php artisan test tests/Feature/Domain/MySqlConcurrencyTest.php",
+      "expected": "MySQL migrate:fresh --seed + 16 penyimpanan paralel + inspeksi skema",
+      "actual": "BLOCKED/exit 1: DB_USERNAME kosong; gagal pada pemeriksaan awal sebelum koneksi/migrasi; 105 ms pada percobaan awal, hasil final sama",
+      "evidence": "mysql-final-blocked.log"
+    },
+    {
+      "command": "git diff --check; git diff --name-only composer.lock package-lock.json AGENTS.md PRD.md DESIGN.md PRODUCT.md TODO.md",
+      "expected": "tidak ada whitespace error atau perubahan di luar scope",
+      "actual": "PASS; dokumen acuan/mockup dan lock tetap utuh"
+    }
+  ],
+  "suite_wrapper_command": "/opt/homebrew/opt/php@8.3/bin/php -r 'putenv(\"APP_KEY=base64:\".base64_encode(random_bytes(32))); passthru(PHP_BINARY.\" artisan test\", $status); exit($status);' ",
+  "earlier_failures": [
+    "phpstan-initial.log: 2 error (perbandingan enum yang ditafsir salah oleh analisis schema, dan env di seeder); diperbaiki dengan membaca nilai raw enum dan konfigurasi yang disetujui.",
+    "suite-initial.log: 37 error karena APP_KEY belum tersedia pada worktree; dipulihkan dengan kunci sintetis environment proses, tidak menyalin .env atau mengubah konfigurasi global.",
+    "Tes cache pertama: 1 failure (12 pass/1 fail/1 skip, 590 ms) karena placeholder tempnam kosong dianggap config cache; fixture diperbaiki dengan menghapus placeholder miliknya sebelum config:cache. Hasil kegagalan direkam di sini; log domain-final kemudian berisi hasil akhir.",
+    "MySQL sengaja tidak dilabeli PASS; skipped default bukan bukti konkurensi."
+  ],
+  "mysql_resume": [
+    "User mengisi DB_USERNAME/DB_PASSWORD dan ADMIN_INITIAL_PASSWORD di file lokal canonical .env; jangan kirim nilainya lewat chat.",
+    "Coordinator reservasi db:mysql-test secara eksklusif sebelum menjalankan command MySQL di atas. Source candidate dapat diverifikasi ulang tanpa attempt implementasi baru.",
+    "Runner hanya menerima host loopback dan database repair_app_test; menolak tabel/view existing sebelum migrate:fresh --seed. repair_app tidak disentuh. Database test harus sudah ada dan kosong; jangan menjalankan drop/clean pada data existing tanpa pemeriksaan/izin.",
+    "Runner meninggalkan hanya fixture sintetis jika berhasil. Rerun akan berhenti jika database tidak kosong; coordinator/QA harus memastikan disposabilitas sebelum membersihkan, bukan menghapus otomatis.",
+    "Saat akses tersedia, jalankan MySQL acceptance dan QA independen/integrasi. Jangan menandai fitur diterima dari self-check ini."
+  ],
+  "unchecked_and_risks": [
+    "MySQL migrate:fresh --seed, tipe/constraint nyata MySQL dan konkurensi belum terbukti; belum ada koneksi DB atau penggunaan data user.",
+    "Belum QA independen/integrasi/UI; tidak menggunakan browser atau screenshot karena task backend dan browser dilarang.",
+    "Migrasi ditujukan instalasi baru dari scaffold; migrasi data pengguna lama username belum diuji karena tidak ada data user yang diotorisasi.",
+    "Workflow nota/garansi/stok/laporan dan autentikasi username final merupakan task lanjutan, bukan penerimaan T002.",
+    "Tidak ada push/deploy/global PHP change, ledger edit, atau worker tambahan."
+  ],
+  "evidence": [
+    "docs/evidence/T002/build.log",
+    "docs/evidence/T002/config-cache.log",
+    "docs/evidence/T002/dependencies.log",
+    "docs/evidence/T002/domain-final.log",
+    "docs/evidence/T002/domain-initial.log",
+    "docs/evidence/T002/lint-final.log",
+    "docs/evidence/T002/mysql-blocked.log",
+    "docs/evidence/T002/mysql-final-blocked.log",
+    "docs/evidence/T002/npm-install.log",
+    "docs/evidence/T002/phpstan-final.log",
+    "docs/evidence/T002/phpstan-initial.log",
+    "docs/evidence/T002/pint-final.log",
+    "docs/evidence/T002/pint-mysql.log",
+    "docs/evidence/T002/pint-seed.log",
+    "docs/evidence/T002/pint.log",
+    "docs/evidence/T002/seed-final.log",
+    "docs/evidence/T002/suite-final.log",
+    "docs/evidence/T002/suite-initial.log"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "task_id": "T002",
+  "runtime_task_id": "task_1048dad74721",
+  "checked_revision": "a199051700c613b5f1993e97cd9ba3a10c6b1db6",
+  "command": "/opt/homebrew/opt/php@8.3/bin/php /tmp/repair-t002-mysql-verify.php (child: PHP 8.3 artisan test tests/Feature/Domain/MySqlConcurrencyTest.php --log-junit=<private-generated-path>)",
+  "exit_code": 1,
+  "wall_duration_ms": 4989,
+  "tests": "1",
+  "assertions": "6",
+  "failures": "1",
+  "errors": "0",
+  "skipped": "0",
+  "time": "4.126979",
+  "failure_summary": {
+    "test": "MySqlConcurrencyTest::test_mysql_fresh_seed_and_parallel_document_creation",
+    "line": 39,
+    "type": "PHPUnit\\Framework\\ExpectationFailedException",
+    "expected": "Schema::getTables() returns an empty array for repair_app_test",
+    "actual": "The committed call is unscoped and returns metadata for other accessible schemas; empty-database guard failed before migrate:fresh or writes.",
+    "privacy": "Raw unrelated schema metadata excluded from evidence."
+  }
+}

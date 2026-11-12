@@ -1,0 +1,102 @@
+{
+  "task_id": "T002",
+  "runtime_task_id": "task_1048dad74721",
+  "dispatch_id": "ctx_9cb9e1a0e185",
+  "attempt_kind": "verification-only; no implementation attempt consumed",
+  "verdict": "FAIL_TEST_GUARD_SCOPE",
+  "artifact_ref": "muzib/repair-t002-domain",
+  "revision": "Evidence commit containing this report (actual hash returned in worker_done/push receipt)",
+  "checked_revision": "a199051700c613b5f1993e97cd9ba3a10c6b1db6",
+  "inputs": {
+    "T001": "4107c49d9098ab47c465773857fd5ee2811eb1b4",
+    "product_source": "e59bf7c1ccd98a7165da04c91b6b522d4c374a79",
+    "previous_evidence": "a199051700c613b5f1993e97cd9ba3a10c6b1db6",
+    "contract": "/tmp/repair-app-t002-mysql-verification.md; canonical root AGENTS/TODO read before work"
+  },
+  "skills": "Ponytail full — read /Users/muzib/.codex/plugins/cache/ponytail/ponytail/5.3.3/skills/ponytail/SKILL.md; Project Delivery worker/QA and Orca orchestration guidance applied.",
+  "model": "Requested same gpt-6.1-sol/high session; effective backend identity not independently observed; no fallback chosen.",
+  "summary": "Koneksi MySQL pulih, tetapi tes committed gagal pada pemeriksaan database kosong yang tidak dibatasi skema. Pemeriksaan langsung yang dibatasi repair_app_test membuktikan target masih kosong. Tidak ada migrasi/seed atau 16 penulisan paralel yang dijalankan, sehingga penerimaan MySQL tetap belum terbukti.",
+  "commands": [
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php /tmp/repair-t002-mysql-verify.php",
+      "child": "PHP 8.3 artisan test tests/Feature/Domain/MySqlConcurrencyTest.php --log-junit=<private-generated-path>",
+      "expected": "1 test PASS, migrate:fresh --seed hanya repair_app_test, 16 parallel writes/unique numbers and schema checks",
+      "actual": "exit 1; 1 test, 6 assertions, 1 failure, 0 errors, 0 skipped; safety guard failed at test line 39 before migrations/writes",
+      "duration_test_seconds": "4.126979",
+      "duration_wrapper_ms": 4989
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php /tmp/repair-t002-mysql-inventory.php",
+      "expected": "inventory restricted to repair_app_test",
+      "actual": "PASS read-only; MySQL 8.0.31; target has 0 tables, 0 views, no fixtures"
+    },
+    {
+      "command": "git diff --name-only a199051700c613b5f1993e97cd9ba3a10c6b1db6 -- app database config tests composer.lock package-lock.json",
+      "expected": "no product/test/config/dependency changes",
+      "actual": "PASS, empty output"
+    },
+    {
+      "command": "Read .github/workflows/tests.yml",
+      "expected": "normal task branch push has no deployment side effects",
+      "actual": "Only tests workflow for push to main and pull_request; no deployment job; task branch will be pushed normally without main merge"
+    }
+  ],
+  "diagnosis": {
+    "location": "tests/Feature/Domain/MySqlConcurrencyTest.php:39; the analogous getViews call at line 40 is also unscoped",
+    "actual_api": "Laravel 13.42.0 Builder::getTables($schema=null) passes null to MySqlGrammar::compileTables; compileSchemaWhereClause(null) excludes system schemas but enumerates accessible application schemas, not just the selected database.",
+    "consequence": "An empty repair_app_test is rejected when the MySQL user can see tables in other databases. assertSame([], metadata) also produces unrelated schema metadata in the failure output.",
+    "local_primary_sources": [
+      "vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php:215",
+      "vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php:243",
+      "vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/MySqlGrammar.php:95",
+      "vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/MySqlGrammar.php:128"
+    ],
+    "recommended_separate_assignment": "Bind both metadata calls to the already-verified current target schema repair_app_test and assert a zero count, preserving the empty-target guard while avoiding dumping metadata. Do not change or skip the guard in a verification-only run."
+  },
+  "source_equality": {
+    "checked_revision": "a199051700c613b5f1993e97cd9ba3a10c6b1db6",
+    "git_diff": "empty for app/database/config/tests/lockfiles",
+    "tracked_files_hashed": 64,
+    "path_and_content_sha256": "acdc48e048be2a5facfefb29652c473e59d2dc744a3ab30907da70c0afa5d7c5",
+    "product_and_test_source_edited": false
+  },
+  "fixture_inventory": {
+    "database": "repair_app_test",
+    "tables": 0,
+    "views": 0,
+    "application_rows": 0,
+    "test_fixture_rows": 0,
+    "counter_rows": 0,
+    "temporary_secret_fixture": "Generated privately with random synthetic ADMIN_INITIAL_PASSWORD; canonical credentials stayed in child environment memory; fixture and private JUnit removed in finally. No real admin password or canonical .env changed.",
+    "repair_app": "Not queried or mutated by this worker; test stopped before migration or writes."
+  },
+  "evidence_reused": [
+    {
+      "from_revision": "e59bf7c1ccd98a7165da04c91b6b522d4c374a79",
+      "paths": [
+        "suite-final.log",
+        "domain-final.log",
+        "seed-final.log",
+        "phpstan-final.log",
+        "lint-final.log",
+        "pint-seed.log",
+        "build.log"
+      ],
+      "basis": "Product/test/dependency bytes unchanged from a199051 and e59bf7c; follow-up only supplied private synthetic environment for MySQL. Prior 55-test/396-assertion SQLite/regression and targeted final seed results remain self-check evidence; no full suite/build/lint repeat."
+    }
+  ],
+  "privacy_handling": "The first private wrapper output was too detailed and included unrelated schema metadata in tool output. Before commit its new evidence JSON was replaced with only counts, fixed test location and a generic failure summary; no unrelated schema identifiers, raw exceptions, credentials, synthetic password/key, or application data are included in committed evidence.",
+  "evidence": [
+    "docs/evidence/T002/mysql-verification-result.json",
+    "docs/evidence/T002/mysql-verification-inventory.json",
+    "docs/evidence/T002/mysql-verification-handoff.json"
+  ],
+  "push_authority": "User 12 Nov 2026 commit/push authority recorded in canonical AGENTS and follow-up brief; origin https://github.com/BatuBata/repair-app.git, task branch only, normal push, no force/main merge/deploy.",
+  "unchecked_and_risks": [
+    "MySQL migrations, seed, unsigned/index validation and true concurrency remain NOT_RUN because the guard failed; no numbering PASS is claimed.",
+    "A separate coordinator assignment is needed for test source correction within remaining candidate-changing attempt budget; this follow-up changed no source.",
+    "Independent integrated QA and real application initialization remain pending; ADMIN_INITIAL_PASSWORD for real app still user-owned.",
+    "Fixture inventory is empty, so T020 has no T002 synthetic data yet; resource can be released after worker_done.",
+    "No full-suite rerun, unrelated database writes, cleanup/drop, subagents, canonical ledger edits, main merge or deployment."
+  ]
+}

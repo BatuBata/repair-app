@@ -1,0 +1,23 @@
+{
+    "task_id": "T002",
+    "attempt": "A3",
+    "runtime_task_id": "task_593a1385cc0e",
+    "base_revision": "b517ebedd31c0c8f9b013736b2f14d5c666be055",
+    "test_file_sha256": "7f74603864eea59187c9bc73110302451e79f1e19d12d4322fa65d36e19bd1fb",
+    "command": "/opt/homebrew/opt/php@8.3/bin/php /tmp/repair-t002-A3-verify.php (child: PHP 8.3 artisan test tests/Feature/Domain/MySqlConcurrencyTest.php --log-junit=<private-generated-path>)",
+    "exit_code": 1,
+    "wall_duration_ms": 4643,
+    "tests": "1",
+    "assertions": "13",
+    "failures": "1",
+    "errors": "0",
+    "skipped": "0",
+    "time": "3.645146",
+    "failure_summaries": [
+        {
+            "type": "PHPUnit\\Framework\\ExpectationFailedException",
+            "known_assertion": "All four transaction attempts must overlap",
+            "test_line": 70
+        }
+    ]
+}

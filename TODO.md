@@ -21,7 +21,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | ID | Hasil | Petugas / model | Kesulitan / risiko | Dependensi | Calon paralel | Status |
 |---|---|---|---|---|---|---|
 | T001 | Scaffold Laravel 13 + Livewire starter kit, MySQL, WITA, Git | developer / 6.1-sol | medium / medium | — | — | done |
-| T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | running |
+| T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | blocked |
 | T003 | Layout lembar berbingkai, komponen UI dasar, dan web app manifest sesuai DESIGN.md | developer / 6.1-terra | medium / medium | T001 | T002, T006, T020 | running |
 | T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | pending |
 | T005 | Pengaturan toko dan master kategori | developer / 6-luna | easy / low | T004 | T006, T020 | pending |
@@ -409,7 +409,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Unit/feature test untuk penomoran (termasuk pergantian bulan 30 Nov → 1 Des WITA dan uji bersamaan di MySQL test), normalisasi HP, transisi status.",
         "Jalankan migrate:fresh --seed di MySQL lokal dan periksa skema."
       ],
-      "status": "running",
+      "status": "blocked",
       "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain",
       "attempts": [
         {
@@ -419,7 +419,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "ctx_15263c49ff79",
-          "outcome": "running",
+          "outcome": "blocked",
           "receipt_ref": "docs/evidence/coordinator/T002-start.json"
         }
       ],
@@ -430,7 +430,43 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "receipt_ref": "docs/evidence/coordinator/T002-start.json",
         "base_revision": "8601b54a1302f03bea98b51e7e033b097599dc7c",
         "model_observation": "Requested model in launch receipt; effective backend model not independently observed."
-      }
+      },
+      "next_attempt_kind": "verification",
+      "verification_revision": "e59bf7c1ccd98a7165da04c91b6b522d4c374a79",
+      "result": {
+        "verdict": "blocked",
+        "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/handoff.json",
+        "revision": "a199051700c613b5f1993e97cd9ba3a10c6b1db6",
+        "checked_revision": "e59bf7c1ccd98a7165da04c91b6b522d4c374a79",
+        "inputs": {
+          "T001": "4107c49d9098ab47c465773857fd5ee2811eb1b4"
+        },
+        "evidence": [
+          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/handoff.json",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/suite-final.log",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/mysql-final-blocked.log"
+        ],
+        "failure_class": "environment",
+        "summary": "Candidate domain A1 siap, 55 tes SQLite/regresi 396 assertion lulus (1 MySQL skipped), seed final 3/22 lulus, build/Pint/PHPStan lulus menurut laporan. MySQL eksplisit berhenti aman karena DB_USERNAME kosong sebelum koneksi/migrasi. T002 belum done dan T004/T007 tetap terkunci. Setelah konfigurasi user tersedia, verifikasi source sama tanpa attempt perubahan kode baru; MySQL hanya database repair_app_test khusus proyek yang kosong."
+      },
+      "prior_results": [
+        {
+          "verdict": "blocked",
+          "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/handoff.json",
+          "revision": "a199051700c613b5f1993e97cd9ba3a10c6b1db6",
+          "checked_revision": "e59bf7c1ccd98a7165da04c91b6b522d4c374a79",
+          "inputs": {
+            "T001": "4107c49d9098ab47c465773857fd5ee2811eb1b4"
+          },
+          "evidence": [
+            "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/handoff.json",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/suite-final.log",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain/docs/evidence/T002/mysql-final-blocked.log"
+          ],
+          "failure_class": "environment",
+          "summary": "Candidate domain A1 siap, 55 tes SQLite/regresi 396 assertion lulus (1 MySQL skipped), seed final 3/22 lulus, build/Pint/PHPStan lulus menurut laporan. MySQL eksplisit berhenti aman karena DB_USERNAME kosong sebelum koneksi/migrasi. T002 belum done dan T004/T007 tetap terkunci. Setelah konfigurasi user tersedia, verifikasi source sama tanpa attempt perubahan kode baru; MySQL hanya database repair_app_test khusus proyek yang kosong."
+        }
+      ]
     },
     {
       "id": "T003",
@@ -703,7 +739,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       },
       "write_scope": [
         "docs/spikes/**",
-        "spikes/**"
+        "spikes/**",
+        "docs/evidence/T006/**"
       ],
       "shared_resources": [],
       "conflicts_with": [],
@@ -1767,3 +1804,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-12 | Scope T002 ditambah config/repair.php untuk ADMIN_INITIAL_PASSWORD melalui config() agar seed tetap valid saat config dicache; tanpa dependency/lockfile baru atau rahasia hardcode. Masih A1 yang sama. | Permintaan worker msg_01062130ebec; tidak konflik T003 | T002 | Keputusan coordinator dalam scope seed admin PRD §11 |
 
 | 2026-11-12 | T003 A1 gagal kontrak pada e8f0553: bukti belum lengkap dan menu shell belum sepenuhnya sesuai mockup. T003 dibuka kembali untuk A2 di worktree sama; bukti A1 tetap disimpan. | Handoff worker msg_e5461cd246bc + review kode/gambar coordinator | T003 | Budget dua attempt project-delivery |
+
+| 2026-11-12 | T002 A1 candidate e59bf7c (bukti a199051) terblokir environment MySQL, belum PASS; lanjut kelak dengan verification-only source sama. Slot kosong dialokasikan T006, tanpa mengganggu browser T003. | DB_USERNAME kosong; tes berhenti sebelum koneksi/migrasi | T002, T006 | Handoff msg_ddaae50a5ed6 |

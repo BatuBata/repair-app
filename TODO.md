@@ -13,7 +13,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 - Maksimal **dua worker aktif** (tester/integrator/deployer ikut dihitung).
 - Maksimal **dua attempt implementasi** per task; perubahan kode setelah itu perlu keputusan user.
 - Task implementation `done` = siap QA, **bukan** fitur diterima. Fitur diterima setelah QA atas hasil integrasi lulus.
-- Status eksekusi saat ini: **running**, sesuai instruksi user 12 November 2026. T001–T025 dalam cakupan eksekusi; dependensi, akses, QA, dan izin deployment tetap menjadi gate. Belum ada izin push atau deployment produksi.
+- Status eksekusi saat ini: **running**, sesuai instruksi user 12 November 2026. T001–T025 dalam cakupan eksekusi; dependensi, akses, QA, dan izin deployment tetap menjadi gate. Push branch ke origin diizinkan user 12 November 2026; deployment produksi belum diizinkan.
 
 ## Overview pekerjaan
 
@@ -108,7 +108,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
 | Akses | Otorisasi dicek di server per rute/aksi (PRD §13). Teknisi tidak boleh menerima angka harga/modal di HTML |
 | Test | Feature test Pest/PHPUnit memakai SQLite in-memory (default). Test konkurensi (penomoran, stok) memakai database MySQL test (`db:mysql-test`, eksklusif) |
 | Data uji | Sintetis; tidak memakai data customer nyata |
-| Git | Repo lokal dibuat di T001. Satu branch per task (`task/T0xx-...`) dalam worktree terpisah; commit memuat ID task. Merge ke `main` hanya oleh task integrasi. Belum ada remote; push tidak diizinkan |
+| Git | Repo lokal dibuat di T001. Satu branch per task (`task/T0xx-...`) dalam worktree terpisah; commit memuat ID task. Merge ke `main` hanya oleh task integrasi. Remote origin: https://github.com/BatuBata/repair-app.git; commit dan push setiap pekerjaan selesai diizinkan user 12 Nov 2026 |
 | Rahasia | `.env` tidak masuk Git; tidak menulis kredensial ke laporan/bukti |
 | Bukti | Disimpan di `docs/evidence/<ID task>/` (laporan ringkas, output test, screenshot penting) |
 
@@ -176,7 +176,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       ],
       "evidence_ref": "docs/evidence/coordinator/runtime-2026-11-12.json"
     },
-    "authorizations": []
+    "authorizations": [],
+    "git": {
+      "remote": "origin",
+      "url": "https://github.com/BatuBata/repair-app.git",
+      "push_authorized": true,
+      "source_ref": "Instruksi user 12 Nov 2026: push ke GitHub BatuBata/repair-app, setiap pekerjaan selesai buat commit dan push",
+      "policy": "Commit pekerjaan selesai dan push branch task/checkpoint setelah periksa perubahan; merge ke main tetap setelah QA/review relevan; tanpa force-push. Kandidat blocked disimpan sebagai checkpoint, bukan fitur diterima."
+    }
   },
   "deliverables": [
     {
@@ -1879,7 +1886,7 @@ Pemetaan Definisi Selesai v1 (PRD §18) ke gate di ledger. Status tetap dibaca d
 | Panduan dan akun diserahkan ke owner | T021, T025 |
 | Fitur diterima / rilis diterima | F001–F006 / R001 |
 
-**Git:** repo lokal dibuat di T001, branch tujuan `main`. Belum ada remote; push, PR, dan merge ke remote tidak diizinkan sampai user memberi izin. Commit lokal per task dan merge ke `main` oleh task integrasi diperbolehkan sebagai bagian eksekusi yang nanti diotorisasi.
+**Git:** repo lokal dibuat di T001, branch tujuan `main`. Remote `origin`: https://github.com/BatuBata/repair-app.git. User 12 Nov 2026 mengizinkan commit dan push setiap pekerjaan selesai; branch kandidat/checkpoint dipush tanpa force. Merge aplikasi ke `main` tetap oleh integrator setelah review dan QA relevan; deployment produksi memerlukan kewenangan terpisah.
 
 ## Retensi workspace dan artifact
 
@@ -1940,3 +1947,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-12 | T006 discovery be717f3 PASS; coordinator memeriksa laporan/hasil self-check dan seluruh 5 render. Temuan font/paginasi/thermal/token QR dibawa ke rencana verifikasi T017, tanpa menerima layout spike sebagai layout produksi. T020 masih berjalan; task lain menunggu T002/MySQL. | Pengetahuan spike tersedia; acceptance produk tidak berubah | T006, T017 | Handoff msg_1e79b7679267 + review coordinator |
 
 | 2026-11-12 | T020 A1 candidate a5a9597 terblokir environment untuk backup/restore MySQL nyata; 31 kasus keselamatan stub tidak menggantikan gate ini. Semua assignment telah melapor; tidak ada task siap. Eksekusi tetap diotorisasi/running, menunggu konfigurasi lokal user, bukan paused dan bukan proyek selesai. Checkout/bukti dipertahankan untuk konsumen QA/integrasi berikutnya. | DB_USERNAME masih kosong; Q-03/Q-04 produksi tetap terbuka | T002, T020 dan downstream | Handoff msg_6459b9296797 + review coordinator |
+
+| 2026-11-12 | Remote origin ditetapkan ke https://github.com/BatuBata/repair-app.git; commit dan push branch task/checkpoint setiap pekerjaan selesai diizinkan. Remote awal kosong; workflow push hanya main untuk tes dan tidak ada deployment. Merge aplikasi/main tetap gate review/QA; izin deployment tidak berubah. | Instruksi user eksplisit, tidak perlu persetujuan ulang per push | Semua task Git | User: push ke github ini; setiap pekerjaan selesai juga buat commit dan push |

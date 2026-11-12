@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f2f5f6">
+<title>Struk 58mm — Anugerah</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  body { background: var(--ground); }
+  .doc-bar { display: flex; align-items: center; gap: 16px; max-width: 1120px; margin: 0 auto; padding: 16px 24px; }
+  .doc-title { flex: 1; display: grid; }
+  .doc-title strong { font-weight: 600; }
+  .doc-title span { color: var(--muted); font-size: 13px; line-height: 18px; }
+  .doc-wrap { max-width: 1120px; margin: 0 auto; padding: 8px 24px 48px; }
+  @media (max-width: 1023.98px) { .doc-bar { padding: 12px 16px; gap: 8px; } .doc-wrap { padding: 4px 12px 32px; } .doc-title span { display: none; } }
+
+  .receipts { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; align-items: flex-start; }
+  .receipt-wrap { display: grid; gap: 8px; justify-items: center; }
+  .receipt-wrap > p { font-weight: 600; }
+  .receipt {
+    width: 58mm; padding: 4mm 5mm 6mm; background: #fff; color: #000;
+    font-size: 12px; line-height: 1.35; font-variant-numeric: tabular-nums;
+    border: 1px solid var(--border);
+  }
+  .receipt .c { text-align: center; }
+  .receipt .shop { font-size: 14px; font-weight: 600; }
+  .receipt .big { font: 600 17px/22px "IBM Plex Mono", monospace; }
+  .receipt hr { border: 0; border-top: 1px dashed #000; margin: 6px 0; }
+  .receipt .kv2 { display: grid; grid-template-columns: auto 1fr; gap: 1px 6px; }
+  .receipt .kv2 span:nth-child(odd) { color: #333; }
+  .receipt .ln { display: flex; justify-content: space-between; gap: 6px; }
+  .receipt .ln.total { font-size: 14px; font-weight: 600; }
+  .receipt .qr { width: 26mm; height: 26mm; margin: 4px auto 2px; display: block; }
+  .receipt .note { font-size: 11px; }
+  .receipt .rev { background: #000; color: #fff; padding: 1px 4px; font-weight: 600; }
+  @media print {
+    @page { size: 58mm auto; margin: 0; }
+    body { background: #fff; }
+    .doc-bar, .print-hide, .bottomnav, .sidebar { display: none !important; }
+    .receipt { box-shadow: none; }
+    .receipt-wrap > p { display: none; }
+  }
+</style>
+</head>
+<body class="no-shell">
+<header class="doc-bar">
+  <a class="crumb" href="tts-detail.html" style="margin:0"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"></use></svg>Kembali</a>
+  <div class="doc-title"><strong>Cetak struk 58 mm</strong><span>Ukuran asli kertas thermal</span></div>
+  <button class="btn primary" type="button" onclick="print()"><svg class="icon" aria-hidden="true"><use href="#i-printer"></use></svg>Cetak</button>
+</header>
+<main class="doc-wrap">
+        <p class="notice print-hide" style="max-width:560px;margin:0 auto 24px"><svg class="icon" aria-hidden="true"><use href="#i-info"></use></svg><span>Biasanya dicetak 2 lembar: satu ditempel di barang, satu untuk customer. Struk tidak pernah memuat harga modal.</span></p>
+        <div class="receipts">
+          <div class="receipt-wrap">
+            <p>Tanda terima (TTS)</p>
+            <div class="receipt">
+              <div class="c shop">ANUGERAH</div>
+              <div class="c">Servis Elektronik</div>
+              <div class="c">Jl. Contoh No. 12 · 0812-0000-1234</div>
+              <hr>
+              <div class="c">TANDA TERIMA SERVIS</div>
+              <div class="c big">TTS-2611-014</div>
+              <div class="c">11-11-2026 10:42</div>
+              <hr>
+              <div class="kv2">
+                <span>Nama</span><span>Bu Ratna Sari</span>
+                <span>HP</span><span>0812-5531-2097</span>
+                <span>Barang</span><span>Mesin cuci, Sharp 2 tabung 8 kg</span>
+                <span>Keluhan</span><span>Pengering tidak berputar</span>
+              </div>
+              <hr>
+              <img class="qr" src="assets/qr-tracking.svg" alt="QR link status servis">
+              <div class="c note">Pindai untuk cek status servis</div>
+              <hr>
+              <div class="c note">Simpan struk ini untuk mengambil barang.</div>
+            </div>
+          </div>
+
+          <div class="receipt-wrap">
+            <p>Nota servis</p>
+            <div class="receipt">
+              <div class="c shop">ANUGERAH</div>
+              <div class="c">Servis Elektronik</div>
+              <div class="c">Jl. Contoh No. 12 · 0812-0000-1234</div>
+              <hr>
+              <div class="c">NOTA SERVIS</div>
+              <div class="c big">TTS-2611-013</div>
+              <div class="kv2">
+                <span>Terima</span><span>10-11-2026</span>
+                <span>Nota</span><span>11-11-2026</span>
+                <span>Nama</span><span>Pak Hendra Wijaya</span>
+                <span>Barang</span><span>Laptop Asus X441</span>
+                <span>Teknisi</span><span>Rizky</span>
+              </div>
+              <hr>
+              <div>LCD 14 inci HD</div>
+              <div class="ln"><span>1 x 1.000.000</span><span>1.000.000</span></div>
+              <div>Jasa ganti LCD</div>
+              <div class="ln"><span>1 x 100.000</span><span>100.000</span></div>
+              <hr>
+              <div class="ln total"><span>TOTAL</span><span>Rp1.100.000</span></div>
+              <hr>
+              <div class="c"><span class="rev">GARANSI 30 HARI</span></div>
+              <div class="c">s.d. 11-12-2026</div>
+              <div class="c note" style="margin-top:4px">Garansi berlaku untuk kerusakan yang sama dan tidak berlaku untuk kerusakan karena jatuh atau air.</div>
+              <hr>
+              <div class="c note">Terima kasih.</div>
+            </div>
+          </div>
+        </div>
+</main>
+<script src="assets/icons.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

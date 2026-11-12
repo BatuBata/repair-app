@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f2f5f6">
+<title>TTS baru — Anugerah</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .compose { display: grid; grid-template-columns: minmax(0, 560px) minmax(0, 1fr); gap: 48px; align-items: start; }
+  .preview { position: sticky; top: 24px; display: grid; gap: 12px; }
+  .preview .paper { width: 260px; padding: 16px 16px 20px; background: #fff; border: 1px solid var(--border); border-radius: 4px; font-size: 12px; line-height: 17px; font-variant-numeric: tabular-nums; }
+  .preview .paper .c { text-align: center; }
+  .preview .paper hr { border: 0; border-top: 1px dashed #9aa1a5; margin: 8px 0; }
+  .preview .paper .big { font: 500 17px/22px var(--mono); }
+  .preview .paper .kv2 { display: grid; grid-template-columns: 56px 1fr; gap: 2px 8px; }
+  .preview .paper .kv2 span:nth-child(odd) { color: var(--muted); }
+  .preview .paper .ph { color: var(--faint); }
+  .preview-bed { padding: 24px; background: var(--raised); border-radius: var(--radius-card); display: grid; justify-items: center; gap: 12px; }
+  .form-end { display: flex; gap: 8px; }
+  @media (max-width: 1023.98px) { .compose { display: block; } }
+</style>
+</head>
+<body data-role="teknisi" data-nav="buat" class="has-actionbar">
+<div class="app">
+  <div class="main">
+    <main class="sheet">
+      <div class="title-row">
+        <div>
+          <h1>TTS baru</h1>
+          <p class="sub desktop-only">Empat isian wajib. Nomor TTS dibuat otomatis saat disimpan.</p>
+        </div>
+      </div>
+
+      <div class="compose">
+        <form id="tts-form" class="form" data-go="tts-sukses.html" novalidate>
+          <div class="field" data-error="Isi nama customer.">
+            <label for="nama">Nama customer</label>
+            <input class="input" id="nama" autocomplete="off" required placeholder="mis. Bu Ratna Sari" data-p="nama">
+          </div>
+          <div class="field" data-error="Isi nomor HP, minimal 10 angka.">
+            <label for="hp">Nomor HP / WhatsApp</label>
+            <input class="input num" id="hp" type="tel" inputmode="tel" autocomplete="off" required placeholder="0812 3456 7890" data-p="hp">
+          </div>
+          <fieldset class="field" data-error="Pilih jenis barang.">
+            <legend class="label" style="margin-bottom:8px">Barang</legend>
+            <div class="choices">
+              <div class="choice"><input type="radio" name="kat" id="k1" value="Mesin cuci" required><label for="k1"><svg class="icon" aria-hidden="true"><use href="#i-washing-machine"></use></svg>Mesin cuci</label></div>
+              <div class="choice"><input type="radio" name="kat" id="k2" value="TV"><label for="k2"><svg class="icon" aria-hidden="true"><use href="#i-tv"></use></svg>TV</label></div>
+              <div class="choice"><input type="radio" name="kat" id="k3" value="Laptop"><label for="k3"><svg class="icon" aria-hidden="true"><use href="#i-laptop"></use></svg>Laptop</label></div>
+              <div class="choice"><input type="radio" name="kat" id="k4" value="Komputer"><label for="k4"><svg class="icon" aria-hidden="true"><use href="#i-pc-case"></use></svg>Komputer</label></div>
+              <div class="choice"><input type="radio" name="kat" id="k5" value="Monitor"><label for="k5"><svg class="icon" aria-hidden="true"><use href="#i-monitor"></use></svg>Monitor</label></div>
+              <div class="choice"><input type="radio" name="kat" id="k6" value="Printer"><label for="k6"><svg class="icon" aria-hidden="true"><use href="#i-printer"></use></svg>Printer</label></div>
+              <div class="choice"><input type="radio" name="kat" id="k7" value="HP"><label for="k7"><svg class="icon" aria-hidden="true"><use href="#i-smartphone"></use></svg>HP</label></div>
+              <div class="choice"><input type="radio" name="kat" id="k8" value="Catokan"><label for="k8"><svg class="icon" aria-hidden="true"><use href="#i-wind"></use></svg>Catokan</label></div>
+              <div class="choice"><input type="radio" name="kat" id="k9" value="Lainnya"><label for="k9"><svg class="icon" aria-hidden="true"><use href="#i-package"></use></svg>Lainnya</label></div>
+            </div>
+          </fieldset>
+          <div class="field" data-error="Tulis keluhan atau kerusakannya.">
+            <label for="keluhan">Keluhan / kerusakan</label>
+            <textarea class="textarea" id="keluhan" required placeholder="mis. Pengering tidak berputar" data-p="keluhan"></textarea>
+          </div>
+          <details class="more">
+            <summary><svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg>Keterangan barang &amp; alamat <span class="opt">opsional</span></summary>
+            <div class="more-body">
+              <div class="field"><label for="ket">Keterangan barang</label><input class="input" id="ket" placeholder="mis. Sharp 2 tabung, 8 kg" data-p="ket"></div>
+              <div class="field"><label for="alamat">Alamat <span class="opt">untuk servis di rumah</span></label><textarea class="textarea" id="alamat" placeholder="mis. Jl. A. Yani Km 4, Gg. Melati 2"></textarea></div>
+            </div>
+          </details>
+          <div class="form-end desktop-only"><button class="btn primary" type="submit">Simpan TTS</button><a class="btn ghost" href="tts.html" data-keep-role>Batal</a></div>
+        </form>
+
+        <aside class="preview desktop-only" aria-label="Pratinjau struk">
+          <div class="preview-bed">
+            <div class="paper" aria-live="polite">
+              <div class="c" style="font-weight:600">ANUGERAH</div>
+              <div class="c">Servis Elektronik</div>
+              <hr>
+              <div class="c">TANDA TERIMA SERVIS</div>
+              <div class="c big">TTS-2611-014</div>
+              <div class="c">11-11-2026 10:42</div>
+              <hr>
+              <div class="kv2">
+                <span>Nama</span><span id="p-nama" class="ph">—</span>
+                <span>HP</span><span id="p-hp" class="ph">—</span>
+                <span>Barang</span><span id="p-kat" class="ph">—</span>
+                <span>Keluhan</span><span id="p-keluhan" class="ph">—</span>
+              </div>
+            </div>
+            <p class="small muted" style="text-align:center;max-width:280px">Struk ini dicetak 58 mm dan link-nya dikirim ke WhatsApp customer.</p>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="actionbar"><button class="btn primary" type="submit" form="tts-form">Simpan TTS</button></div>
+<script src="assets/icons.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  // Pratinjau struk mengikuti isian
+  const set = (id, v) => { const el = document.getElementById(id); el.textContent = v || "—"; el.classList.toggle("ph", !v); };
+  document.querySelectorAll("[data-p]").forEach((el) => el.addEventListener("input", () => {
+    if (el.dataset.p === "ket") return render();
+    set("p-" + el.dataset.p, el.value.trim());
+  }));
+  const render = () => {
+    const k = document.querySelector('[name="kat"]:checked')?.value || "";
+    const ket = document.getElementById("ket").value.trim();
+    set("p-kat", [k, ket].filter(Boolean).join(", "));
+  };
+  document.querySelectorAll('[name="kat"]').forEach((r) => r.addEventListener("change", render));
+</script>
+</body>
+</html>

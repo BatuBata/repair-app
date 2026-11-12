@@ -1,0 +1,6 @@
+cramped-padding laporan.html <div> "tabs": children flush against border-bottom on bottom (no inset)
+tiny-text nota-a5.html 11.5px body text
+tiny-text struk.html 11px body text
+tiny-text struk.html 11px body text
+tiny-text struk.html 11px body text
+cramped-padding tracking.html <div> "grand": children flush against border-top/bottom on bottom (no inset)

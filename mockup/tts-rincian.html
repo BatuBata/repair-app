@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f2f5f6">
+<title>Rincian nota TTS-2611-013 — Anugerah</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .summary { position: sticky; top: 24px; display: grid; gap: 16px; }
+  .admin-note { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: var(--fs-small); }
+  .warranty { display: grid; gap: 16px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--rule); }
+  .warranty > * { max-width: 560px; }
+  .warranty .row2 { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .warranty .row2 .input { width: 96px; }
+</style>
+</head>
+<body data-role="admin" data-nav="tts" class="has-actionbar">
+<div class="app">
+  <div class="main">
+    <main class="sheet">
+      <a class="crumb" href="tts-detail.html"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"></use></svg>TTS-2611-013</a>
+      <div class="title-row">
+        <div>
+          <h1>Rincian &amp; nota</h1>
+          <p class="sub">Laptop Asus X441 · Pak Hendra Wijaya · dikerjakan Rizky</p>
+        </div>
+      </div>
+
+      <form id="nota-form" class="grid" data-go="nota-a5.html" novalidate>
+        <div class="span-8">
+          <div class="section-head"><h2>Pekerjaan</h2><span class="admin-note"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg>Modal hanya terlihat oleh admin</span></div>
+          <div class="lines-head" aria-hidden="true"><span></span><span>Jenis</span><span>Deskripsi</span><span class="n">Qty</span><span class="n">Harga jual</span><span class="n">Modal</span></div>
+          <div class="lines" id="lines">
+            <div class="line">
+              <div class="f-del"><button class="icon-btn" type="button" data-remove aria-label="Hapus baris 1"><svg class="icon" aria-hidden="true"><use href="#i-trash-2"></use></svg></button></div>
+              <div class="f-type"><div class="segmented" role="group" aria-label="Jenis baris 1"><button type="button" data-type="part" aria-pressed="true">Part</button><button type="button" data-type="jasa" aria-pressed="false">Jasa</button></div></div>
+              <label class="f-desc"><span class="f-label">Deskripsi</span><input class="input" value="LCD 14 inci HD" aria-label="Deskripsi baris 1"></label>
+              <label class="f-qty"><span class="f-label">Qty</span><input class="input num" inputmode="numeric" value="1" style="text-align:right" aria-label="Qty baris 1"></label>
+              <label class="f-price"><span class="f-label">Harga jual</span><span class="prefix"><span>Rp</span><input class="input money" inputmode="numeric" value="1.000.000" aria-label="Harga jual baris 1"></span></label>
+              <label class="f-cost"><span class="f-label">Modal</span><span class="prefix"><span>Rp</span><input class="input money" inputmode="numeric" value="700.000" aria-label="Modal baris 1"></span><span class="na">—</span></label>
+              <p class="sub"><span>Subtotal</span><strong class="line-sub">Rp1.000.000</strong></p>
+            </div>
+            <div class="line is-jasa">
+              <div class="f-del"><button class="icon-btn" type="button" data-remove aria-label="Hapus baris 2"><svg class="icon" aria-hidden="true"><use href="#i-trash-2"></use></svg></button></div>
+              <div class="f-type"><div class="segmented" role="group" aria-label="Jenis baris 2"><button type="button" data-type="part" aria-pressed="false">Part</button><button type="button" data-type="jasa" aria-pressed="true">Jasa</button></div></div>
+              <label class="f-desc"><span class="f-label">Deskripsi</span><input class="input" value="Jasa ganti LCD" aria-label="Deskripsi baris 2"></label>
+              <label class="f-qty"><span class="f-label">Qty</span><input class="input num" inputmode="numeric" value="1" style="text-align:right" aria-label="Qty baris 2"></label>
+              <label class="f-price"><span class="f-label">Harga jual</span><span class="prefix"><span>Rp</span><input class="input money" inputmode="numeric" value="100.000" aria-label="Harga jual baris 2"></span></label>
+              <label class="f-cost"><span class="f-label">Modal</span><span class="prefix"><span>Rp</span><input class="input money" inputmode="numeric" value="0" aria-label="Modal baris 2"></span><span class="na">—</span></label>
+              <p class="sub"><span>Subtotal</span><strong class="line-sub">Rp100.000</strong></p>
+            </div>
+          </div>
+          <button class="btn ghost" type="button" id="add-line" style="margin-top:8px;padding-left:0"><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>Tambah baris</button>
+
+          <div class="warranty">
+            <h2 style="font-size:16px;font-weight:600">Garansi</h2>
+            <div class="field">
+              <label for="garansi">Lama garansi</label>
+              <div class="row2"><input class="input num" id="garansi" inputmode="numeric" value="30" style="text-align:right"><span>hari, berlaku sampai <strong style="font-weight:500">11 Des 2026</strong></span></div>
+              <p class="hint">Dihitung dari tanggal nota hari ini, bukan dari tanggal barang diambil.</p>
+            </div>
+            <label class="check"><input type="checkbox"><span><span style="font-weight:500">Tidak dapat diperbaiki</span><span class="hint" style="display:block">Tercetak di nota. Biaya cek tetap boleh ditagih.</span></span></label>
+          </div>
+        </div>
+
+        <aside class="span-4">
+          <section class="panel summary" aria-labelledby="h-sum">
+            <h2 id="h-sum">Ringkasan</h2>
+            <dl class="totals">
+              <div class="grand"><dt>Total untuk customer</dt><dd data-total="jual">Rp1.100.000</dd></div>
+              <div><dt>Modal</dt><dd data-total="modal">Rp700.000</dd></div>
+              <div class="laba"><dt>Laba</dt><dd data-total="laba">Rp400.000</dd></div>
+            </dl>
+            <p class="small muted">Nota, struk, dan halaman status customer hanya menampilkan harga jual.</p>
+            <button class="btn primary block desktop-only" type="submit">Terbitkan nota</button>
+          </section>
+        </aside>
+      </form>
+    </main>
+  </div>
+</div>
+<div class="actionbar">
+  <div class="total"><span>Total</span><strong data-total="jual">Rp1.100.000</strong></div>
+  <button class="btn primary" type="submit" form="nota-form">Terbitkan nota</button>
+</div>
+
+<template id="line-tpl">
+  <div class="line">
+    <div class="f-del"><button class="icon-btn" type="button" data-remove aria-label="Hapus baris"><svg class="icon" aria-hidden="true"><use href="#i-trash-2"></use></svg></button></div>
+    <div class="f-type"><div class="segmented" role="group" aria-label="Jenis baris"><button type="button" data-type="part" aria-pressed="true">Part</button><button type="button" data-type="jasa" aria-pressed="false">Jasa</button></div></div>
+    <label class="f-desc"><span class="f-label">Deskripsi</span><input class="input" placeholder="mis. Kapasitor 10 µF" aria-label="Deskripsi"></label>
+    <label class="f-qty"><span class="f-label">Qty</span><input class="input num" inputmode="numeric" value="1" style="text-align:right" aria-label="Qty"></label>
+    <label class="f-price"><span class="f-label">Harga jual</span><span class="prefix"><span>Rp</span><input class="input money" inputmode="numeric" placeholder="0" aria-label="Harga jual"></span></label>
+    <label class="f-cost"><span class="f-label">Modal</span><span class="prefix"><span>Rp</span><input class="input money" inputmode="numeric" placeholder="0" aria-label="Modal"></span><span class="na">—</span></label>
+    <p class="sub"><span>Subtotal</span><strong class="line-sub">Rp0</strong></p>
+  </div>
+</template>
+<script src="assets/icons.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+{
+  "title": "Pilih arah visual mockup (undian ke-4, lebih familier)",
+  "question": "Ini pilihan yang lebih familier. Pilih satu. Kalau masih belum pas, tulis di kolom Steer apa yang kurang (mis. 'lebih seperti aplikasi bank', 'lebih berwarna', 'lebih polos').",
+  "options": [
+    {
+      "id": "grounded-mbanking",
+      "label": "Gaya Mobile Banking",
+      "lineage": "Aplikasi mobile banking yang dipakai owner setiap hari untuk transfer dan cek saldo",
+      "thesis": "Rapi dan dipercaya seperti aplikasi bank: pita warna di atas, angka besar, dan layar bukti 'berhasil' yang siap dibagikan.",
+      "palette": [
+        "#FFFFFF",
+        "#0A4D8C",
+        "#F28C00",
+        "#16A34A",
+        "#111827"
+      ],
+      "materials": [
+        "pita warna penuh di kepala layar",
+        "nominal besar dengan pemisah ribuan, layar bukti transaksi"
+      ],
+      "viewport": "Di HP 360px: pita biru berisi nama toko, form 4 kolom putih, tombol Simpan oranye menempel; setelah simpan muncul layar bukti seperti bukti transfer dengan nomor TTS besar dan tombol Kirim WA.",
+      "risk": "Sangat familier sehingga cepat dipahami, tetapi bisa terasa seperti aplikasi bank dan kurang berkarakter sendiri.",
+      "comp": ".impeccable/mocks/decision/r3-mbanking.webp",
+      "wireframe": {
+        "cols": 6,
+        "rows": 12,
+        "regions": [
+          { "label": "pita warna: toko + judul", "x": 0, "y": 0, "w": 6, "h": 2, "accent": true },
+          { "label": "Nama customer", "x": 0, "y": 2, "w": 6, "h": 1 },
+          { "label": "Nomor HP", "x": 0, "y": 3, "w": 6, "h": 1 },
+          { "label": "Kategori (pilihan berikon)", "x": 0, "y": 4, "w": 6, "h": 2 },
+          { "label": "Keluhan", "x": 0, "y": 6, "w": 6, "h": 2 },
+          { "label": "Simpan (oranye, menempel)", "x": 0, "y": 10, "w": 6, "h": 1, "accent": true },
+          { "label": "navigasi bawah", "x": 0, "y": 11, "w": 6, "h": 1 }
+        ]
+      }
+    },
+    {
+      "id": "grounded-whiteboard",
+      "label": "Papan Kerja Bengkel",
+      "lineage": "Papan tulis putih di dinding toko dengan kolom pekerjaan dan magnet berwarna",
+      "thesis": "Seperti papan kerja di dinding toko: judul tebal, kolom per status, dan magnet warna yang langsung menunjukkan keadaan barang.",
+      "palette": [
+        "#FAFAF7",
+        "#111111",
+        "#E53935",
+        "#FDD835",
+        "#43A047",
+        "#1E88E5"
+      ],
+      "materials": [
+        "papan putih dengan judul tebal hitam",
+        "magnet bulat berwarna sebagai penanda status (selalu disertai label)"
+      ],
+      "viewport": "Di HP 360px: judul tebal 'TTS Baru', 4 kolom berbingkai hitam tegas, tombol Simpan hitam; daftar TTS memakai chip kolom Diterima / Dikerjakan / Selesai dengan magnet warna.",
+      "risk": "Pola papan kolom umum di aplikasi proyek; gaya spidol harus dihindari agar tidak terasa mainan.",
+      "comp": ".impeccable/mocks/decision/r3-whiteboard.webp",
+      "wireframe": {
+        "cols": 6,
+        "rows": 12,
+        "regions": [
+          { "label": "judul tebal + magnet status", "x": 0, "y": 0, "w": 6, "h": 2, "accent": true },
+          { "label": "Nama", "x": 0, "y": 2, "w": 6, "h": 1 },
+          { "label": "HP", "x": 0, "y": 3, "w": 6, "h": 1 },
+          { "label": "Kategori", "x": 0, "y": 4, "w": 6, "h": 2 },
+          { "label": "Keluhan", "x": 0, "y": 6, "w": 6, "h": 2 },
+          { "label": "Simpan", "x": 0, "y": 10, "w": 6, "h": 1, "accent": true },
+          { "label": "navigasi bawah", "x": 0, "y": 11, "w": 6, "h": 1 }
+        ]
+      }
+    },
+    {
+      "id": "grounded-multimeter",
+      "label": "Alat Ukur Teknisi",
+      "lineage": "Multimeter digital berbodi kuning yang ada di tas setiap teknisi",
+      "thesis": "Setangguh alat ukur: bingkai kuning keselamatan, panel angka bergaya LCD reflektif yang justru makin jelas di bawah matahari.",
+      "palette": [
+        "#FFC20E",
+        "#1B1B1B",
+        "#C9D3C0",
+        "#FFFFFF",
+        "#D32F2F"
+      ],
+      "materials": [
+        "bingkai kuning keselamatan berbodi hitam",
+        "panel angka reflektif untuk nomor TTS dan nominal"
+      ],
+      "viewport": "Di HP 360px: bingkai kuning di atas dengan nomor TTS di panel angka, 4 kolom putih berbingkai hitam tebal, tombol SIMPAN hitam besar.",
+      "risk": "Kuning penuh bisa melelahkan bila terlalu luas; huruf bergaya LCD hanya untuk angka, bukan teks.",
+      "comp": ".impeccable/mocks/decision/r3-multimeter.webp",
+      "wireframe": {
+        "cols": 6,
+        "rows": 12,
+        "regions": [
+          { "label": "bingkai kuning + panel nomor", "x": 0, "y": 0, "w": 6, "h": 3, "accent": true },
+          { "label": "Nama", "x": 0, "y": 3, "w": 6, "h": 1 },
+          { "label": "HP", "x": 0, "y": 4, "w": 6, "h": 1 },
+          { "label": "Kategori", "x": 0, "y": 5, "w": 6, "h": 2 },
+          { "label": "Keluhan", "x": 0, "y": 7, "w": 6, "h": 2 },
+          { "label": "SIMPAN hitam besar", "x": 0, "y": 10, "w": 6, "h": 1, "accent": true },
+          { "label": "navigasi bawah", "x": 0, "y": 11, "w": 6, "h": 1 }
+        ]
+      }
+    }
+  ],
+  "reroll": {
+    "registers": [
+      "safer",
+      "bolder"
+    ]
+  },
+  "buildPath": {
+    "value": "code",
+    "toggle": true
+  },
+  "canon": true,
+  "canonCard": {
+    "label": "Standar kategori (setara Moka POS, Majoo, Olsera)",
+    "thesis": "Aplikasi kasir/servis seperti yang biasa dipakai toko di Indonesia, dikerjakan serapi aplikasi-aplikasi itu.",
+    "palette": [
+      "#FFFFFF",
+      "#111827",
+      "#2563EB",
+      "#F3F4F6"
+    ],
+    "materials": [
+      "kartu putih berbayang tipis di atas abu-abu muda",
+      "ikon garis dan satu warna merek"
+    ],
+    "viewport": "Header putih dengan nama toko, kartu form, tombol biru penuh, navigasi bawah berikon.",
+    "risk": "Paling aman dan dikenal, tapi mirip aplikasi lain dan mendekati 'template generik' yang tadi ingin dihindari.",
+    "comp": ".impeccable/mocks/decision/r3-canon.webp",
+    "wireframe": {
+      "cols": 6,
+      "rows": 12,
+      "regions": [
+        { "label": "header aplikasi", "x": 0, "y": 0, "w": 6, "h": 1, "accent": true },
+        { "label": "kartu form TTS", "x": 0, "y": 1, "w": 6, "h": 8 },
+        { "label": "Simpan", "x": 0, "y": 9, "w": 6, "h": 1, "accent": true },
+        { "label": "navigasi bawah", "x": 0, "y": 11, "w": 6, "h": 1 }
+      ]
+    }
+  },
+  "steer": true
+}

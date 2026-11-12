@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f2f5f6">
+<title>Nota PDF A5 — Anugerah</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  body { background: var(--ground); }
+  .doc-bar { display: flex; align-items: center; gap: 16px; max-width: 1120px; margin: 0 auto; padding: 16px 24px; }
+  .doc-title { flex: 1; display: grid; }
+  .doc-title strong { font-weight: 600; }
+  .doc-title span { color: var(--muted); font-size: 13px; line-height: 18px; }
+  .doc-wrap { max-width: 1120px; margin: 0 auto; padding: 8px 24px 48px; }
+  @media (max-width: 1023.98px) { .doc-bar { padding: 12px 16px; gap: 8px; } .doc-wrap { padding: 4px 12px 32px; } .doc-title span { display: none; } }
+
+  .sheet-a5 {
+    width: min(100%, 148mm); aspect-ratio: 148 / 210; margin: 0 auto;
+    background: #fff; color: var(--ink); padding: clamp(16px, 5%, 12mm);
+    border: 1px solid var(--border);
+    display: flex; flex-direction: column; gap: 14px; font-size: 13px; line-height: 1.45;
+  }
+  .a5-head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; padding-bottom: 12px; border-bottom: 1px solid var(--text); }
+  .a5-head .brandmark { display: flex; gap: 10px; }
+  .a5-head .brandmark strong { display: block; font-size: 15px; }
+  .a5-head .brandmark span span { display: block; color: var(--muted); font-size: 11.5px; line-height: 16px; }
+  .a5-head .brandmark { min-width: 0; align-items: flex-start; }
+  .a5-head .brandmark span { line-height: 1.4; }
+  .a5-title { flex: none; }
+  .a5-title { text-align: right; }
+  .a5-title strong { display: block; font-size: 16px; }
+  .a5-title span { font: 500 18px/24px "IBM Plex Mono", monospace; }
+  .a5-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; }
+  .a5-meta dt { color: var(--muted); font-size: 11.5px; }
+  .a5-meta dd { margin: 0 0 6px; font-weight: 600; }
+  .a5-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  .a5-table th { text-align: left; font-size: 11.5px; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); padding: 6px 0; }
+  .a5-table td { padding: 8px 0; border-bottom: 1px solid var(--rule); }
+  .a5-table .r { text-align: right; }
+  .a5-table tfoot td { border-bottom: 0; font-weight: 600; font-size: 15px; padding-top: 10px; }
+  .a5-foot { margin-top: auto; display: flex; justify-content: space-between; gap: 16px; align-items: flex-end; font-size: 11.5px; color: var(--muted); }
+  .a5-warranty { background: var(--raised); color: var(--text); border-radius: 8px; padding: 8px 10px; font-size: 12.5px; }
+  .a5-foot img { width: 22mm; height: 22mm; }
+  @media print { @page { size: A5; margin: 0; } .doc-bar { display: none; } .sheet-a5 { box-shadow: none; width: 148mm; } body { background: #fff; } }
+</style>
+</head>
+<body class="no-shell">
+<header class="doc-bar">
+  <a class="crumb" href="tts-detail.html" style="margin:0"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"></use></svg>Kembali</a>
+  <div class="doc-title"><strong>Nota PDF (A5)</strong><span>Dikirim lewat WhatsApp</span></div>
+  <a class="btn" href="#" data-toast="Mengunduh nota-TTS-2611-013.pdf (contoh)…"><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>Unduh PDF</a>
+</header>
+<main class="doc-wrap">
+        <article class="sheet-a5" aria-label="Pratinjau nota A5">
+          <header class="a5-head">
+            <div class="brandmark"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:28px;height:28px;color:var(--accent);flex:none"><path fill="currentColor" d="M4 5h16a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-3a2 2 0 0 0 0-4V7a2 2 0 0 1 2-2z"/><path d="M15.5 6.5v11" stroke="#fff" stroke-width="1.5" stroke-dasharray="1.6 1.9" stroke-linecap="round"/></svg><span><strong>Anugerah</strong><span>Servis Elektronik<br>Jl. Contoh No. 12 · 0812-0000-1234</span></span></div>
+            <div class="a5-title"><strong>Nota Servis</strong><span>TTS-2611-013</span></div>
+          </header>
+          <dl class="a5-meta">
+            <div><dt>Customer</dt><dd>Pak Hendra Wijaya</dd></div>
+            <div><dt>Barang</dt><dd>Laptop · Asus X441</dd></div>
+            <div><dt>Tanggal terima</dt><dd>10 Nov 2026</dd></div>
+            <div><dt>Tanggal nota</dt><dd>11 Nov 2026</dd></div>
+            <div><dt>Keluhan</dt><dd>LCD bergaris, kadang mati sendiri</dd></div>
+            <div><dt>Teknisi</dt><dd>Rizky</dd></div>
+          </dl>
+          <table class="a5-table">
+            <thead><tr><th>Pekerjaan</th><th class="r">Qty</th><th class="r">Harga</th><th class="r">Subtotal</th></tr></thead>
+            <tbody>
+              <tr><td>LCD 14 inci HD</td><td class="r">1</td><td class="r">1.000.000</td><td class="r">1.000.000</td></tr>
+              <tr><td>Jasa ganti LCD</td><td class="r">1</td><td class="r">100.000</td><td class="r">100.000</td></tr>
+            </tbody>
+            <tfoot><tr><td colspan="3">Total</td><td class="r">Rp1.100.000</td></tr></tfoot>
+          </table>
+          <p class="a5-warranty"><strong>Garansi 30 hari</strong>, berlaku sampai 11 Desember 2026. Berlaku untuk kerusakan yang sama; tidak berlaku untuk kerusakan karena jatuh atau terkena air.</p>
+          <footer class="a5-foot">
+            <span>Cek status dan unduh ulang nota dengan memindai kode ini.<br>Terima kasih telah mempercayakan servis kepada kami.</span>
+            <img src="assets/qr-tracking.svg" alt="QR link status servis">
+          </footer>
+        </article>
+</main>
+<script src="assets/icons.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f2f5f6">
+<title>TTS-2611-013 — Anugerah</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .obj-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .obj h1 { font: 500 26px/34px var(--mono); letter-spacing: -0.02em; }
+  .track.detail-track { margin-bottom: 32px; max-width: 760px; }
+  .blk + .blk { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--rule); }
+  .assign { display: grid; gap: 12px; }
+  .assign .now { display: flex; align-items: center; gap: 10px; }
+  @media (max-width: 1023.98px) { .obj h1 { font-size: 24px; line-height: 32px; } .track.detail-track { margin-bottom: 24px; } }
+</style>
+</head>
+<body data-role="admin" data-nav="tts" class="has-actionbar">
+<div class="app">
+  <div class="main">
+    <main class="sheet">
+      <a class="crumb" href="tts.html" data-keep-role><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"></use></svg>Servis</a>
+      <div class="title-row obj">
+        <div>
+          <div class="obj-head"><h1>TTS-2611-013</h1><span class="pill st-dikerjakan">Dikerjakan</span></div>
+          <p class="sub">Laptop Asus X441 · Pak Hendra Wijaya · masuk 10 Nov, 09.15</p>
+        </div>
+        <div class="actions desktop-only">
+          <a class="btn" href="#" data-toast="Membuka WhatsApp: kabar TTS-2611-013 untuk Pak Hendra…"><svg class="icon" aria-hidden="true"><use href="#i-message-circle"></use></svg>Kirim WA</a>
+          <a class="btn" href="struk.html"><svg class="icon" aria-hidden="true"><use href="#i-printer"></use></svg>Cetak</a>
+          <button class="btn" type="button" data-open="more" aria-label="Aksi lain" data-role-only="admin"><svg class="icon" aria-hidden="true"><use href="#i-ellipsis"></use></svg></button>
+          <a class="btn primary" href="tts-rincian.html" data-role-only="admin"><svg class="icon" aria-hidden="true"><use href="#i-receipt"></use></svg>Isi rincian &amp; nota</a>
+        </div>
+      </div>
+
+      <ol class="track detail-track" aria-label="Tahap servis">
+        <li class="done">Diterima<time>10 Nov 09.15</time></li>
+        <li class="now">Dikerjakan<time>sejak 10 Nov 13.02</time></li>
+        <li>Selesai</li>
+        <li>Diambil</li>
+      </ol>
+
+      <div class="grid">
+        <div class="span-8">
+          <section class="blk" aria-labelledby="h-info">
+            <div class="section-head"><h2 id="h-info">Barang &amp; customer</h2></div>
+            <dl class="kv" style="margin-top:12px">
+              <dt>Barang</dt><dd>Laptop · Asus X441, hitam</dd>
+              <dt>Keluhan</dt><dd>LCD bergaris, kadang mati sendiri</dd>
+              <dt>Customer</dt><dd>Pak Hendra Wijaya</dd>
+              <dt>Nomor HP</dt><dd class="num">0813-4720-1186</dd>
+              <dt>Alamat</dt><dd class="dash">—</dd>
+            </dl>
+          </section>
+          <section class="blk" aria-labelledby="h-log">
+            <div class="section-head"><h2 id="h-log">Riwayat</h2></div>
+            <ol class="timeline" style="margin-top:12px">
+              <li><strong style="font-weight:500">Ditetapkan ke Rizky</strong><time>10 Nov 2026, 13.02 · oleh Pak Arif</time></li>
+              <li><strong style="font-weight:500">TTS dibuat</strong><time>10 Nov 2026, 09.15 · oleh Agus</time></li>
+            </ol>
+          </section>
+        </div>
+
+        <aside class="span-4">
+          <section class="panel assign" aria-labelledby="h-tek" data-role-only="admin">
+            <h2 id="h-tek">Teknisi</h2>
+            <div class="now"><span class="avatar" style="background:#dbe6f7">R</span><div><strong style="font-weight:500">Rizky</strong><span class="small muted" style="display:block">mengerjakan sejak 1 hari</span></div></div>
+            <div class="field"><label for="tek">Ganti teknisi</label><select class="select" id="tek"><option>Rizky</option><option>Dimas</option><option>Agus</option></select></div>
+            <p class="small muted">Setelah QC, isi rincian biaya lalu terbitkan nota. Status berubah menjadi Selesai.</p>
+          </section>
+          <section class="panel assign" data-role-only="teknisi">
+            <p class="notice"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg><span>TTS hanya bisa diedit saat statusnya Diterima. Hubungi admin untuk perubahan.</span></p>
+            <a class="btn block" href="struk.html"><svg class="icon" aria-hidden="true"><use href="#i-printer"></use></svg>Cetak struk TTS</a>
+          </section>
+        </aside>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="actionbar" data-role-only="admin">
+  <a class="btn icon-only" href="#" data-toast="Membuka WhatsApp: kabar TTS-2611-013…" aria-label="Kirim WA" style="width:48px;height:48px;padding:0"><svg class="icon icon-20" aria-hidden="true"><use href="#i-message-circle"></use></svg></a>
+  <button class="btn" type="button" data-open="more" aria-label="Aksi lain" style="width:48px;height:48px;padding:0"><svg class="icon icon-20" aria-hidden="true"><use href="#i-ellipsis"></use></svg></button>
+  <a class="btn primary" href="tts-rincian.html">Isi rincian &amp; nota</a>
+</div>
+
+<dialog class="sheet-dialog" id="more" aria-labelledby="more-t">
+  <div class="dialog-body">
+    <h2 id="more-t">Aksi lain</h2>
+    <div style="display:grid;gap:8px">
+      <a class="btn block" href="struk.html"><svg class="icon" aria-hidden="true"><use href="#i-printer"></use></svg>Cetak struk TTS</a>
+      <a class="btn block" href="tracking.html"><svg class="icon" aria-hidden="true"><use href="#i-qr-code"></use></svg>Lihat halaman status customer</a>
+      <button class="btn block danger" type="button" data-open="batal"><svg class="icon" aria-hidden="true"><use href="#i-ban"></use></svg>Batalkan TTS</button>
+    </div>
+    <div class="dialog-actions"><button class="btn ghost" type="button" data-close>Tutup</button></div>
+  </div>
+</dialog>
+<dialog class="sheet-dialog" id="batal" aria-labelledby="batal-t">
+  <div class="dialog-body">
+    <h2 id="batal-t">Batalkan TTS-2611-013?</h2>
+    <p class="muted">TTS yang dibatalkan tidak masuk laporan dan tidak bisa diaktifkan lagi.</p>
+    <div class="field"><label for="alasan">Alasan <span class="opt">opsional</span></label><input class="input" id="alasan" placeholder="mis. Customer tidak jadi servis"></div>
+    <div class="dialog-actions"><button class="btn ghost" type="button" data-close>Kembali</button><button class="btn danger" type="button" data-close data-toast="TTS-2611-013 dibatalkan (contoh).">Batalkan TTS</button></div>
+  </div>
+</dialog>
+<script src="assets/icons.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f2f5f6">
+<title>Masuk — Anugerah</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  body { min-height: 100svh; display: grid; place-items: center; padding: 24px 16px; }
+  .login { width: 100%; max-width: 380px; display: grid; gap: 24px; }
+  .login .brand { padding: 0; height: auto; gap: 10px; }
+  .login .brand-mark { width: 28px; height: 28px; }
+  .login .brand strong { font-size: 18px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sheet); padding: 28px; display: grid; gap: 20px; }
+  .card h1 { font-size: 20px; line-height: 28px; font-weight: 600; }
+  .pw { position: relative; }
+  .pw .input { padding-right: 48px; }
+  .pw .icon-btn { position: absolute; right: 4px; top: 50%; translate: 0 -50%; width: 40px; height: 40px; }
+  .card .btn.primary { height: 44px; }
+  @media (max-width: 1023.98px) { body { background: var(--ground); } .card { padding: 24px 20px; } }
+</style>
+</head>
+<body class="no-shell public">
+<main class="login">
+  <div class="brand"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 5h16a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-3a2 2 0 0 0 0-4V7a2 2 0 0 1 2-2z"/><path d="M15.5 6.5v11" stroke="#fff" stroke-width="1.5" stroke-dasharray="1.6 1.9" stroke-linecap="round"/></svg><strong>Anugerah</strong></div>
+  <form class="card" data-go="tts-baru.html" novalidate>
+    <div><h1>Masuk</h1><p class="muted" style="margin-top:4px">Aplikasi servis Toko Anugerah</p></div>
+    <div class="field" data-error="Isi username.">
+      <label for="u">Username</label>
+      <input class="input" id="u" autocomplete="username" autocapitalize="none" required value="rizky">
+    </div>
+    <div class="field" data-error="Isi password.">
+      <label for="p">Password</label>
+      <div class="pw">
+        <input class="input" id="p" type="password" autocomplete="current-password" required value="contoh123">
+        <button class="icon-btn" type="button" aria-label="Tampilkan password" onclick="const i=document.getElementById('p');const s=i.type==='password';i.type=s?'text':'password';this.setAttribute('aria-label',s?'Sembunyikan password':'Tampilkan password');this.querySelector('use').setAttribute('href',s?'#i-eye-off':'#i-eye')"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg></button>
+      </div>
+    </div>
+    <label class="check"><input type="checkbox" checked><span>Ingat saya di HP ini</span></label>
+    <button class="btn primary block" type="submit">Masuk</button>
+  </form>
+  <p class="small muted" style="text-align:center">Lupa password? Minta admin toko untuk mengatur ulang.</p>
+</main>
+<script src="assets/icons.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

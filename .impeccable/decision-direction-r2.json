@@ -1,0 +1,228 @@
+{
+  "title": "Pilih arah visual mockup (undian ke-3, lebih berani)",
+  "question": "Undian berani dipimpin 'Buku Manual Bertab'. Pertahankan, ambil alternatif, atau undi ulang.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Buku Manual Bertab",
+      "kicker": "THE ROLL",
+      "lineage": "Buku manual software dengan papan pembatas berwarna penuh dan lembaran asetat berlubang",
+      "thesis": "Setiap modul adalah satu bab berwarna penuh; isi berada di lembar asetat susu yang diengsel di atasnya, dan navigasi adalah tab bertingkat.",
+      "palette": [
+        "#F2B600",
+        "#D9531E",
+        "#3F9B3A",
+        "#0F7C80",
+        "#2846B8",
+        "#F4F6F2",
+        "#E3221B"
+      ],
+      "materials": [
+        "papan pembatas satu warna per bab (TTS kuning krom, Jual hijau, Stok teal, Kas oranye, Laporan ultramarin)",
+        "lembar asetat susu dengan dua lubang pons dan bayangan tegas pendek"
+      ],
+      "viewport": "Di HP 360px: papan kuning krom memenuhi layar, lembar asetat berisi 4 kolom TTS terengsel di tepi berlubang, tab bertingkat di bawah dengan tab TTS memanjang, tombol SIMPAN sebagai pelat hitam terbalik.",
+      "risk": "Warna bab penuh bisa terasa ramai bila dua warna tampil bersamaan; gaya manual software lama bisa terasa asing sebelum terbiasa.",
+      "raised": [
+        {
+          "from": "challenger-timetable",
+          "raise": "Hanya satu elemen per layar yang menjadi pelat hitam terbalik: aksi utama layar itu."
+        },
+        {
+          "from": "challenger-annual",
+          "raise": "Satu cap 'Lulus QC' bertanda tangan owner di setiap nota, bukti manusia sudah memeriksa."
+        },
+        {
+          "from": "challenger-emission",
+          "raise": "Status juga dibedakan bentuk garis (penuh = aktif, putus = menunggu, coret = batal), bukan warna saja."
+        }
+      ],
+      "comp": ".impeccable/mocks/decision/r2-assigned.webp",
+      "hero": "https://impeccable.style/worlds/cards/rw-manual-acetate-tab-board-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/rw-manual-acetate-tab-board.webp",
+      "wireframe": {
+        "cols": 6,
+        "rows": 12,
+        "regions": [
+          { "label": "papan bab TTS (kuning krom)", "x": 0, "y": 0, "w": 6, "h": 1, "accent": true },
+          { "label": "lembar asetat: nomor + 4 kolom", "x": 0, "y": 1, "w": 6, "h": 8 },
+          { "label": "SIMPAN (pelat hitam terbalik)", "x": 0, "y": 9, "w": 6, "h": 1, "accent": true },
+          { "label": "tab bertingkat: TTS · Jual · Stok · Kas · Laporan", "x": 0, "y": 10, "w": 6, "h": 2 }
+        ]
+      }
+    },
+    {
+      "id": "challenger-transit",
+      "label": "Peta Jalur Servis",
+      "verdict": "competitive",
+      "lineage": "Peta jalur kereta kota berlapis enamel biru malam",
+      "thesis": "Setiap TTS adalah perjalanan di satu jalur; status adalah stasiun, kategori barang adalah warna jalur.",
+      "palette": [
+        "#14213D",
+        "#F5F3EE",
+        "#E63946",
+        "#2F6FDE",
+        "#F4A300",
+        "#2A9D57"
+      ],
+      "materials": [
+        "enamel biru malam dengan tanda stasiun porselen",
+        "garis berwarna yang hanya berbelok 45° dan 90°"
+      ],
+      "viewport": "Di HP 360px: diagram jalur Diterima → Dikerjakan → Selesai → Diambil di atas, stasiun aktif menyala; 4 kolom di bawahnya; tombol Simpan pada warna jalur.",
+      "case": "Unggul di kejelasan status (stasiun mudah dipahami), tapi kalah di identifikasi: peta kereta bukan dunia sehari-hari toko di WITA.",
+      "risk": "Latar biru malam lebih sulit dibaca di bawah terik matahari.",
+      "comp": ".impeccable/mocks/decision/r2-transit.webp",
+      "hero": "https://impeccable.style/worlds/cards/wayfinding-cartography-signage-midnight-transit-diagram-hero.webp",
+      "wireframe": {
+        "cols": 6,
+        "rows": 12,
+        "regions": [
+          { "label": "jalur status: 4 stasiun", "x": 0, "y": 0, "w": 6, "h": 3, "accent": true },
+          { "label": "Nama", "x": 0, "y": 3, "w": 6, "h": 1 },
+          { "label": "HP", "x": 0, "y": 4, "w": 6, "h": 1 },
+          { "label": "Kategori = warna jalur", "x": 0, "y": 5, "w": 6, "h": 2 },
+          { "label": "Keluhan", "x": 0, "y": 7, "w": 6, "h": 2 },
+          { "label": "Simpan", "x": 0, "y": 10, "w": 6, "h": 1, "accent": true },
+          { "label": "navigasi bawah", "x": 0, "y": 11, "w": 6, "h": 1 }
+        ]
+      }
+    },
+    {
+      "id": "challenger-feed",
+      "label": "Satu TTS Satu Layar",
+      "verdict": "competitive",
+      "lineage": "Feed video vertikal: satu item memenuhi layar, rel aksi di kanan",
+      "thesis": "Saat owner mengirim WA jam 18.00, setiap TTS memenuhi layar dengan rel aksi di kanan; geser ke atas untuk TTS berikutnya.",
+      "palette": [
+        "#0B0B0C",
+        "#FFFFFF",
+        "#25D366",
+        "#FFD23F"
+      ],
+      "materials": [
+        "kartu penuh layar dengan nomor raksasa",
+        "rel ikon putih: Kirim WA, Cetak, Teknisi, Nota"
+      ],
+      "viewport": "Di HP 360px: satu TTS memenuhi layar (nomor raksasa, customer, barang, status), rel aksi di kanan, TTS berikutnya satu geseran di bawah.",
+      "case": "Unggul di identifikasi (semua orang paham gestur geser), tapi kalah di kejelasan untuk mencari, membandingkan, dan laporan.",
+      "risk": "Terasa seperti media sosial; tidak ada gambaran keseluruhan daftar.",
+      "comp": ".impeccable/mocks/decision/r2-feed.webp",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-vertical-video-feed-surface-hero.webp",
+      "wireframe": {
+        "cols": 6,
+        "rows": 12,
+        "regions": [
+          { "label": "nomor TTS raksasa", "x": 0, "y": 1, "w": 5, "h": 3, "accent": true },
+          { "label": "customer + barang + keluhan", "x": 0, "y": 6, "w": 5, "h": 4 },
+          { "label": "rel aksi: WA · Cetak · Teknisi · Nota", "x": 5, "y": 3, "w": 1, "h": 7, "accent": true },
+          { "label": "petunjuk geser ke TTS berikutnya", "x": 0, "y": 11, "w": 6, "h": 1 }
+        ]
+      }
+    },
+    {
+      "id": "challenger-timetable",
+      "label": "Rak Slide Jadwal",
+      "verdict": "declined",
+      "lineage": "Jadwal maskapai saku di atas meja lampu goldenrod",
+      "thesis": "Satu ukuran huruf untuk semua; peringkat dibawa ketebalan, huruf kapital, dan pelat terbalik.",
+      "palette": [
+        "#DAA520",
+        "#2F3640",
+        "#F7F2E3",
+        "#D7331F",
+        "#1E6B3A"
+      ],
+      "materials": [
+        "slide kaca miring 11°",
+        "kertas goldenrod bercahaya"
+      ],
+      "viewport": "Daftar TTS sebagai kolom jadwal miring.",
+      "case": "Kalah di dua sumbu: wadah miring menyulitkan form di HP, dan dunia jadwal maskapai asing.",
+      "risk": "Wadah miring mengganggu input di layar kecil.",
+      "kept": "Hanya satu pelat terbalik per layar untuk aksi utama.",
+      "hero": "https://impeccable.style/worlds/cards/rw-timetable-slide-rack-hero.webp"
+    },
+    {
+      "id": "challenger-annual",
+      "label": "Pelat Buku Tahunan Desain",
+      "verdict": "declined",
+      "lineage": "Halaman pelat buku tahunan desain dengan tanda registrasi dan cap",
+      "thesis": "Lembar hampir putih, tanda registrasi di sudut, satu cap bertanda tangan.",
+      "palette": [
+        "#F5F4F6",
+        "#16181A",
+        "#DCDDF3",
+        "#C9C7C4"
+      ],
+      "materials": [
+        "kertas tanpa lapisan",
+        "garis rambut dan tanda silang registrasi"
+      ],
+      "viewport": "Nota sebagai pelat dengan cap di sudut.",
+      "case": "Kalah di dua sumbu: estetika galeri desain, bukan toko servis; garis rambut sulit dibaca di luar.",
+      "risk": "Terlalu halus untuk kerja lapangan.",
+      "kept": "Satu cap 'Lulus QC' sebagai bukti pemeriksaan manusia.",
+      "hero": "https://impeccable.style/worlds/cards/design-annual-s-plate-section-hero.webp"
+    },
+    {
+      "id": "challenger-emission",
+      "label": "Rel Garis Emisi",
+      "verdict": "declined",
+      "lineage": "Spektrogram kaca dengan garis emisi tipis",
+      "thesis": "Status dibawa bentuk garis: penuh, putus, setengah, dicoret.",
+      "palette": [
+        "#2A2A2C",
+        "#E8E2D6",
+        "#FFD54A"
+      ],
+      "materials": [
+        "latar arang bergaris",
+        "garis warna setipis rambut"
+      ],
+      "viewport": "Daftar TTS sebagai garis pada rel.",
+      "case": "Kalah di dua sumbu: latar gelap dan garis tipis tidak terbaca di luar ruangan.",
+      "risk": "Terlalu abstrak untuk teknisi.",
+      "kept": "Status dibedakan bentuk garis, bukan warna saja.",
+      "hero": "https://impeccable.style/worlds/cards/operate-c-emission-line-rail-hero.webp"
+    }
+  ],
+  "reroll": {
+    "registers": [
+      "safer",
+      "bolder"
+    ]
+  },
+  "buildPath": {
+    "value": "code",
+    "toggle": true
+  },
+  "canon": true,
+  "canonCard": {
+    "label": "Standar kategori",
+    "thesis": "Aplikasi admin servis seperti yang biasa dipakai, dikerjakan dengan rapi.",
+    "palette": [
+      "#FFFFFF",
+      "#0F172A",
+      "#2563EB"
+    ],
+    "materials": [
+      "kartu putih berbayang tipis",
+      "ikon garis"
+    ],
+    "viewport": "Header biru, form putih, tombol biru, navigasi bawah berikon.",
+    "risk": "Tidak bisa dibedakan dari aplikasi lain, dan inilah 'template admin generik' yang ingin dihindari.",
+    "comp": ".impeccable/mocks/decision/r2-canon.webp",
+    "wireframe": {
+      "cols": 6,
+      "rows": 12,
+      "regions": [
+        { "label": "header aplikasi", "x": 0, "y": 0, "w": 6, "h": 1, "accent": true },
+        { "label": "kartu form TTS", "x": 0, "y": 1, "w": 6, "h": 8 },
+        { "label": "Simpan", "x": 0, "y": 9, "w": 6, "h": 1, "accent": true },
+        { "label": "navigasi bawah", "x": 0, "y": 11, "w": 6, "h": 1 }
+      ]
+    }
+  },
+  "steer": true
+}

@@ -1,0 +1,882 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-11T14:58:21.655Z",
+  "title": "Design System: Anugerah Servis",
+  "extensions": {
+    "provenance": {
+      "source": "tasteskill app sheet",
+      "style": "framed-sheet",
+      "seed": 1526667476,
+      "direction": ".taste-skill/app/direction.json",
+      "surfaceBrief": ".impeccable/surfaces/mockup-index-html.md",
+      "builtFrom": [
+        "mockup/assets/styles.css",
+        "mockup/assets/app.js",
+        "mockup/assets/charts.js",
+        "mockup/*.html"
+      ],
+      "replaces": "Sistem versi pertama (brand hijau, Public Sans) yang ditolak user pada 11 Nov 2026."
+    },
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Bingkai Abu-Biru",
+        "canonical": "#f2f5f6",
+        "oklch": "oklch(96.8% 0.003 219.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.003 219.5)",
+          "oklch(26.0% 0.003 219.5)",
+          "oklch(37.0% 0.003 219.5)",
+          "oklch(48.0% 0.003 219.5)",
+          "oklch(60.0% 0.003 219.5)",
+          "oklch(72.0% 0.003 219.5)",
+          "oklch(84.0% 0.003 219.5)",
+          "oklch(95.0% 0.003 219.5)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Lembar Putih",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 0)",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 0)",
+          "oklch(26.0% 0.000 0)",
+          "oklch(37.0% 0.000 0)",
+          "oklch(48.0% 0.000 0)",
+          "oklch(60.0% 0.000 0)",
+          "oklch(72.0% 0.000 0)",
+          "oklch(84.0% 0.000 0)",
+          "oklch(95.0% 0.000 0)"
+        ]
+      },
+      "raised": {
+        "role": "neutral",
+        "displayName": "Angkat Tipis",
+        "canonical": "#f5f7f8",
+        "oklch": "oklch(97.5% 0.003 228.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.003 228.8)",
+          "oklch(26.0% 0.003 228.8)",
+          "oklch(37.0% 0.003 228.8)",
+          "oklch(48.0% 0.003 228.8)",
+          "oklch(60.0% 0.003 228.8)",
+          "oklch(72.0% 0.003 228.8)",
+          "oklch(84.0% 0.003 228.8)",
+          "oklch(95.0% 0.003 228.8)"
+        ]
+      },
+      "active": {
+        "role": "neutral",
+        "displayName": "Aktif",
+        "canonical": "#e6eaec",
+        "oklch": "oklch(93.5% 0.005 228.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.005 228.8)",
+          "oklch(26.0% 0.005 228.8)",
+          "oklch(37.0% 0.005 228.8)",
+          "oklch(48.0% 0.005 228.8)",
+          "oklch(60.0% 0.005 228.8)",
+          "oklch(72.0% 0.005 228.8)",
+          "oklch(84.0% 0.005 228.8)",
+          "oklch(95.0% 0.005 228.8)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Tepi",
+        "canonical": "#e3e7e9",
+        "oklch": "oklch(92.5% 0.005 228.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.005 228.8)",
+          "oklch(26.0% 0.005 228.8)",
+          "oklch(37.0% 0.005 228.8)",
+          "oklch(48.0% 0.005 228.8)",
+          "oklch(60.0% 0.005 228.8)",
+          "oklch(72.0% 0.005 228.8)",
+          "oklch(84.0% 0.005 228.8)",
+          "oklch(95.0% 0.005 228.8)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Garis Baris",
+        "canonical": "#eef1f2",
+        "oklch": "oklch(95.6% 0.003 219.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.003 219.5)",
+          "oklch(26.0% 0.003 219.5)",
+          "oklch(37.0% 0.003 219.5)",
+          "oklch(48.0% 0.003 219.5)",
+          "oklch(60.0% 0.003 219.5)",
+          "oklch(72.0% 0.003 219.5)",
+          "oklch(84.0% 0.003 219.5)",
+          "oklch(95.0% 0.003 219.5)"
+        ]
+      },
+      "control": {
+        "role": "neutral",
+        "displayName": "Garis Tombol",
+        "canonical": "#cfd4d7",
+        "oklch": "oklch(86.7% 0.007 233.7)",
+        "tonalRamp": [
+          "oklch(15.0% 0.007 233.7)",
+          "oklch(26.0% 0.007 233.7)",
+          "oklch(37.0% 0.007 233.7)",
+          "oklch(48.0% 0.007 233.7)",
+          "oklch(60.0% 0.007 233.7)",
+          "oklch(72.0% 0.007 233.7)",
+          "oklch(84.0% 0.007 233.7)",
+          "oklch(95.0% 0.007 233.7)"
+        ]
+      },
+      "field": {
+        "role": "neutral",
+        "displayName": "Garis Isian",
+        "canonical": "#8a9296",
+        "oklch": "oklch(65.5% 0.011 229.0)",
+        "tonalRamp": [
+          "oklch(15.0% 0.011 229.0)",
+          "oklch(26.0% 0.011 229.0)",
+          "oklch(37.0% 0.011 229.0)",
+          "oklch(48.0% 0.011 229.0)",
+          "oklch(60.0% 0.011 229.0)",
+          "oklch(72.0% 0.011 229.0)",
+          "oklch(84.0% 0.011 229.0)",
+          "oklch(95.0% 0.011 229.0)"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "canonical": "#131416",
+        "oklch": "oklch(19.1% 0.004 264.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.004 264.5)",
+          "oklch(26.0% 0.004 264.5)",
+          "oklch(37.0% 0.004 264.5)",
+          "oklch(48.0% 0.004 264.5)",
+          "oklch(60.0% 0.004 264.5)",
+          "oklch(72.0% 0.004 264.5)",
+          "oklch(84.0% 0.004 264.5)",
+          "oklch(95.0% 0.004 264.5)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Abu Sekunder",
+        "canonical": "#5d5f60",
+        "oklch": "oklch(48.4% 0.003 228.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.003 228.8)",
+          "oklch(26.0% 0.003 228.8)",
+          "oklch(37.0% 0.003 228.8)",
+          "oklch(48.0% 0.003 228.8)",
+          "oklch(60.0% 0.003 228.8)",
+          "oklch(72.0% 0.003 228.8)",
+          "oklch(84.0% 0.003 228.8)",
+          "oklch(95.0% 0.003 228.8)"
+        ]
+      },
+      "faint": {
+        "role": "neutral",
+        "displayName": "Abu Pucat",
+        "canonical": "#6b6e70",
+        "oklch": "oklch(53.6% 0.005 236.6)",
+        "tonalRamp": [
+          "oklch(15.0% 0.005 236.6)",
+          "oklch(26.0% 0.005 236.6)",
+          "oklch(37.0% 0.005 236.6)",
+          "oklch(48.0% 0.005 236.6)",
+          "oklch(60.0% 0.005 236.6)",
+          "oklch(72.0% 0.005 236.6)",
+          "oklch(84.0% 0.005 236.6)",
+          "oklch(95.0% 0.005 236.6)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Teal Bengkel",
+        "canonical": "#1b6c80",
+        "oklch": "oklch(49.4% 0.080 218.6)",
+        "tonalRamp": [
+          "oklch(15.0% 0.080 218.6)",
+          "oklch(26.0% 0.080 218.6)",
+          "oklch(37.0% 0.080 218.6)",
+          "oklch(48.0% 0.080 218.6)",
+          "oklch(60.0% 0.080 218.6)",
+          "oklch(72.0% 0.080 218.6)",
+          "oklch(84.0% 0.080 218.6)",
+          "oklch(95.0% 0.080 218.6)"
+        ]
+      },
+      "primary": {
+        "role": "primary",
+        "displayName": "Tinta Hampir Hitam",
+        "canonical": "#131416",
+        "oklch": "oklch(19.1% 0.004 264.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.004 264.5)",
+          "oklch(26.0% 0.004 264.5)",
+          "oklch(37.0% 0.004 264.5)",
+          "oklch(48.0% 0.004 264.5)",
+          "oklch(60.0% 0.004 264.5)",
+          "oklch(72.0% 0.004 264.5)",
+          "oklch(84.0% 0.004 264.5)",
+          "oklch(95.0% 0.004 264.5)"
+        ]
+      },
+      "primary-hover": {
+        "role": "primary",
+        "displayName": "Tinta Hover",
+        "canonical": "#2b2d30",
+        "oklch": "oklch(29.6% 0.006 258.4)",
+        "tonalRamp": [
+          "oklch(15.0% 0.006 258.4)",
+          "oklch(26.0% 0.006 258.4)",
+          "oklch(37.0% 0.006 258.4)",
+          "oklch(48.0% 0.006 258.4)",
+          "oklch(60.0% 0.006 258.4)",
+          "oklch(72.0% 0.006 258.4)",
+          "oklch(84.0% 0.006 258.4)",
+          "oklch(95.0% 0.006 258.4)"
+        ]
+      },
+      "primary-ink": {
+        "role": "primary",
+        "displayName": "Teks di Atas Hitam",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 0)",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 0)",
+          "oklch(26.0% 0.000 0)",
+          "oklch(37.0% 0.000 0)",
+          "oklch(48.0% 0.000 0)",
+          "oklch(60.0% 0.000 0)",
+          "oklch(72.0% 0.000 0)",
+          "oklch(84.0% 0.000 0)",
+          "oklch(95.0% 0.000 0)"
+        ]
+      },
+      "positive": {
+        "role": "status",
+        "displayName": "Positif",
+        "canonical": "#1e7b4f",
+        "oklch": "oklch(51.8% 0.110 157.7)",
+        "tonalRamp": [
+          "oklch(15.0% 0.110 157.7)",
+          "oklch(26.0% 0.110 157.7)",
+          "oklch(37.0% 0.110 157.7)",
+          "oklch(48.0% 0.110 157.7)",
+          "oklch(60.0% 0.110 157.7)",
+          "oklch(72.0% 0.110 157.7)",
+          "oklch(84.0% 0.110 157.7)",
+          "oklch(95.0% 0.110 157.7)"
+        ]
+      },
+      "negative": {
+        "role": "status",
+        "displayName": "Negatif",
+        "canonical": "#c4242a",
+        "oklch": "oklch(53.2% 0.194 25.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.130 25.5)",
+          "oklch(26.0% 0.130 25.5)",
+          "oklch(37.0% 0.130 25.5)",
+          "oklch(48.0% 0.130 25.5)",
+          "oklch(60.0% 0.130 25.5)",
+          "oklch(72.0% 0.130 25.5)",
+          "oklch(84.0% 0.130 25.5)",
+          "oklch(95.0% 0.130 25.5)"
+        ]
+      },
+      "warning": {
+        "role": "status",
+        "displayName": "Peringatan",
+        "canonical": "#92400e",
+        "oklch": "oklch(47.3% 0.125 46.2)",
+        "tonalRamp": [
+          "oklch(15.0% 0.125 46.2)",
+          "oklch(26.0% 0.125 46.2)",
+          "oklch(37.0% 0.125 46.2)",
+          "oklch(48.0% 0.125 46.2)",
+          "oklch(60.0% 0.125 46.2)",
+          "oklch(72.0% 0.125 46.2)",
+          "oklch(84.0% 0.125 46.2)",
+          "oklch(95.0% 0.125 46.2)"
+        ]
+      },
+      "pill-info-bg": {
+        "role": "status",
+        "displayName": "Pil Diterima (latar)",
+        "canonical": "#e8f0fa",
+        "oklch": "oklch(95.2% 0.016 253.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.016 253.9)",
+          "oklch(26.0% 0.016 253.9)",
+          "oklch(37.0% 0.016 253.9)",
+          "oklch(48.0% 0.016 253.9)",
+          "oklch(60.0% 0.016 253.9)",
+          "oklch(72.0% 0.016 253.9)",
+          "oklch(84.0% 0.016 253.9)",
+          "oklch(95.0% 0.016 253.9)"
+        ]
+      },
+      "pill-info-ink": {
+        "role": "status",
+        "displayName": "Pil Diterima (teks)",
+        "canonical": "#1f4f8a",
+        "oklch": "oklch(42.7% 0.111 255.4)",
+        "tonalRamp": [
+          "oklch(15.0% 0.111 255.4)",
+          "oklch(26.0% 0.111 255.4)",
+          "oklch(37.0% 0.111 255.4)",
+          "oklch(48.0% 0.111 255.4)",
+          "oklch(60.0% 0.111 255.4)",
+          "oklch(72.0% 0.111 255.4)",
+          "oklch(84.0% 0.111 255.4)",
+          "oklch(95.0% 0.111 255.4)"
+        ]
+      },
+      "pill-warning-bg": {
+        "role": "status",
+        "displayName": "Pil Dikerjakan (latar)",
+        "canonical": "#fdf3dc",
+        "oklch": "oklch(96.6% 0.032 87.3)",
+        "tonalRamp": [
+          "oklch(15.0% 0.032 87.3)",
+          "oklch(26.0% 0.032 87.3)",
+          "oklch(37.0% 0.032 87.3)",
+          "oklch(48.0% 0.032 87.3)",
+          "oklch(60.0% 0.032 87.3)",
+          "oklch(72.0% 0.032 87.3)",
+          "oklch(84.0% 0.032 87.3)",
+          "oklch(95.0% 0.032 87.3)"
+        ]
+      },
+      "pill-warning-ink": {
+        "role": "status",
+        "displayName": "Pil Dikerjakan (teks)",
+        "canonical": "#92400e",
+        "oklch": "oklch(47.3% 0.125 46.2)",
+        "tonalRamp": [
+          "oklch(15.0% 0.125 46.2)",
+          "oklch(26.0% 0.125 46.2)",
+          "oklch(37.0% 0.125 46.2)",
+          "oklch(48.0% 0.125 46.2)",
+          "oklch(60.0% 0.125 46.2)",
+          "oklch(72.0% 0.125 46.2)",
+          "oklch(84.0% 0.125 46.2)",
+          "oklch(95.0% 0.125 46.2)"
+        ]
+      },
+      "pill-positive-bg": {
+        "role": "status",
+        "displayName": "Pil Selesai (latar)",
+        "canonical": "#dcfae5",
+        "oklch": "oklch(95.8% 0.042 155.0)",
+        "tonalRamp": [
+          "oklch(15.0% 0.042 155.0)",
+          "oklch(26.0% 0.042 155.0)",
+          "oklch(37.0% 0.042 155.0)",
+          "oklch(48.0% 0.042 155.0)",
+          "oklch(60.0% 0.042 155.0)",
+          "oklch(72.0% 0.042 155.0)",
+          "oklch(84.0% 0.042 155.0)",
+          "oklch(95.0% 0.042 155.0)"
+        ]
+      },
+      "pill-positive-ink": {
+        "role": "status",
+        "displayName": "Pil Selesai (teks)",
+        "canonical": "#04250e",
+        "oklch": "oklch(23.4% 0.058 150.0)",
+        "tonalRamp": [
+          "oklch(15.0% 0.058 150.0)",
+          "oklch(26.0% 0.058 150.0)",
+          "oklch(37.0% 0.058 150.0)",
+          "oklch(48.0% 0.058 150.0)",
+          "oklch(60.0% 0.058 150.0)",
+          "oklch(72.0% 0.058 150.0)",
+          "oklch(84.0% 0.058 150.0)",
+          "oklch(95.0% 0.058 150.0)"
+        ]
+      },
+      "pill-neutral-bg": {
+        "role": "status",
+        "displayName": "Pil Diambil (latar)",
+        "canonical": "#ebedee",
+        "oklch": "oklch(94.5% 0.003 228.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.003 228.8)",
+          "oklch(26.0% 0.003 228.8)",
+          "oklch(37.0% 0.003 228.8)",
+          "oklch(48.0% 0.003 228.8)",
+          "oklch(60.0% 0.003 228.8)",
+          "oklch(72.0% 0.003 228.8)",
+          "oklch(84.0% 0.003 228.8)",
+          "oklch(95.0% 0.003 228.8)"
+        ]
+      },
+      "pill-neutral-ink": {
+        "role": "status",
+        "displayName": "Pil Diambil (teks)",
+        "canonical": "#353736",
+        "oklch": "oklch(33.4% 0.003 164.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.003 164.9)",
+          "oklch(26.0% 0.003 164.9)",
+          "oklch(37.0% 0.003 164.9)",
+          "oklch(48.0% 0.003 164.9)",
+          "oklch(60.0% 0.003 164.9)",
+          "oklch(72.0% 0.003 164.9)",
+          "oklch(84.0% 0.003 164.9)",
+          "oklch(95.0% 0.003 164.9)"
+        ]
+      },
+      "pill-negative-bg": {
+        "role": "status",
+        "displayName": "Pil Batal (latar)",
+        "canonical": "#ffedea",
+        "oklch": "oklch(96.0% 0.020 28.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.020 28.9)",
+          "oklch(26.0% 0.020 28.9)",
+          "oklch(37.0% 0.020 28.9)",
+          "oklch(48.0% 0.020 28.9)",
+          "oklch(60.0% 0.020 28.9)",
+          "oklch(72.0% 0.020 28.9)",
+          "oklch(84.0% 0.020 28.9)",
+          "oklch(95.0% 0.020 28.9)"
+        ]
+      },
+      "pill-negative-ink": {
+        "role": "status",
+        "displayName": "Pil Batal (teks)",
+        "canonical": "#831c1e",
+        "oklch": "oklch(40.3% 0.138 25.1)",
+        "tonalRamp": [
+          "oklch(15.0% 0.130 25.1)",
+          "oklch(26.0% 0.130 25.1)",
+          "oklch(37.0% 0.130 25.1)",
+          "oklch(48.0% 0.130 25.1)",
+          "oklch(60.0% 0.130 25.1)",
+          "oklch(72.0% 0.130 25.1)",
+          "oklch(84.0% 0.130 25.1)",
+          "oklch(95.0% 0.130 25.1)"
+        ]
+      },
+      "chart-1": {
+        "role": "chart",
+        "displayName": "Seri Utama",
+        "canonical": "#1b6c80",
+        "oklch": "oklch(49.4% 0.080 218.6)",
+        "tonalRamp": [
+          "oklch(15.0% 0.080 218.6)",
+          "oklch(26.0% 0.080 218.6)",
+          "oklch(37.0% 0.080 218.6)",
+          "oklch(48.0% 0.080 218.6)",
+          "oklch(60.0% 0.080 218.6)",
+          "oklch(72.0% 0.080 218.6)",
+          "oklch(84.0% 0.080 218.6)",
+          "oklch(95.0% 0.080 218.6)"
+        ]
+      },
+      "chart-2": {
+        "role": "chart",
+        "displayName": "Seri Kedua",
+        "canonical": "#2f70bb",
+        "oklch": "oklch(54.1% 0.135 254.2)",
+        "tonalRamp": [
+          "oklch(15.0% 0.130 254.2)",
+          "oklch(26.0% 0.130 254.2)",
+          "oklch(37.0% 0.130 254.2)",
+          "oklch(48.0% 0.130 254.2)",
+          "oklch(60.0% 0.130 254.2)",
+          "oklch(72.0% 0.130 254.2)",
+          "oklch(84.0% 0.130 254.2)",
+          "oklch(95.0% 0.130 254.2)"
+        ]
+      },
+      "chart-3": {
+        "role": "chart",
+        "displayName": "Seri Ketiga",
+        "canonical": "#a86f0c",
+        "oklch": "oklch(58.8% 0.122 72.7)",
+        "tonalRamp": [
+          "oklch(15.0% 0.122 72.7)",
+          "oklch(26.0% 0.122 72.7)",
+          "oklch(37.0% 0.122 72.7)",
+          "oklch(48.0% 0.122 72.7)",
+          "oklch(60.0% 0.122 72.7)",
+          "oklch(72.0% 0.122 72.7)",
+          "oklch(84.0% 0.122 72.7)",
+          "oklch(95.0% 0.122 72.7)"
+        ]
+      },
+      "chart-muted": {
+        "role": "chart",
+        "displayName": "Seri Lain",
+        "canonical": "#c9ced2",
+        "oklch": "oklch(84.9% 0.008 241.7)",
+        "tonalRamp": [
+          "oklch(15.0% 0.008 241.7)",
+          "oklch(26.0% 0.008 241.7)",
+          "oklch(37.0% 0.008 241.7)",
+          "oklch(48.0% 0.008 241.7)",
+          "oklch(60.0% 0.008 241.7)",
+          "oklch(72.0% 0.008 241.7)",
+          "oklch(84.0% 0.008 241.7)",
+          "oklch(95.0% 0.008 241.7)"
+        ]
+      },
+      "grid": {
+        "role": "chart",
+        "displayName": "Garis Bantu",
+        "canonical": "#eef1f2",
+        "oklch": "oklch(95.6% 0.003 219.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.003 219.5)",
+          "oklch(26.0% 0.003 219.5)",
+          "oklch(37.0% 0.003 219.5)",
+          "oklch(48.0% 0.003 219.5)",
+          "oklch(60.0% 0.003 219.5)",
+          "oklch(72.0% 0.003 219.5)",
+          "oklch(84.0% 0.003 219.5)",
+          "oklch(95.0% 0.003 219.5)"
+        ]
+      },
+      "axis-ink": {
+        "role": "chart",
+        "displayName": "Label Sumbu",
+        "canonical": "#5d5f60",
+        "oklch": "oklch(48.4% 0.003 228.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.003 228.8)",
+          "oklch(26.0% 0.003 228.8)",
+          "oklch(37.0% 0.003 228.8)",
+          "oklch(48.0% 0.003 228.8)",
+          "oklch(60.0% 0.003 228.8)",
+          "oklch(72.0% 0.003 228.8)",
+          "oklch(84.0% 0.003 228.8)",
+          "oklch(95.0% 0.003 228.8)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "title": {
+        "displayName": "Title",
+        "purpose": "Judul halaman di baris judul; 22px di desktop dan HP."
+      },
+      "section": {
+        "displayName": "Section",
+        "purpose": "Judul panel, bagian, dan dialog."
+      },
+      "kpi": {
+        "displayName": "KPI",
+        "purpose": "Jumlah jalur servis, nilai tab KPI, total besar; 400, terpilih 500."
+      },
+      "kpi-phone": {
+        "displayName": "KPI (HP)",
+        "purpose": "Nilai tab KPI yang bertumpuk di bawah 1024px."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Teks umum desktop."
+      },
+      "body-phone": {
+        "displayName": "Body (HP)",
+        "purpose": "Teks umum dan isian di bawah 1024px."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Label isian, tombol, tab aktif, nav aktif."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Kepala tabel, meta, petunjuk, pil, tag (desktop)."
+      },
+      "small-phone": {
+        "displayName": "Small (HP)",
+        "purpose": "Teks kecil di bawah 1024px."
+      },
+      "brand": {
+        "displayName": "Brand",
+        "purpose": "Nama Anugerah di sidebar."
+      },
+      "id": {
+        "displayName": "ID",
+        "purpose": "Nomor TTS/JL di tabel, daftar, tag; ikut ukuran sekitarnya."
+      },
+      "id-title": {
+        "displayName": "ID Title",
+        "purpose": "Nomor TTS sebagai judul halaman detail (28px status customer, 34px halaman sukses)."
+      }
+    },
+    "shadows": [
+      {
+        "name": "dialog",
+        "value": "0 16px 40px -12px rgb(19 20 22 / .28)",
+        "purpose": "Dialog melayang; backdrop rgb(19 20 22 / .36)."
+      },
+      {
+        "name": "toast",
+        "value": "0 12px 28px -12px rgb(19 20 22 / .4)",
+        "purpose": "Toast di bawah tengah."
+      },
+      {
+        "name": "focus-field",
+        "value": "0 0 0 3px rgb(27 108 128 / .18)",
+        "purpose": "Glow fokus isian bersama tepi tinta."
+      },
+      {
+        "name": "choice-selected",
+        "value": "inset 0 0 0 1px #131416",
+        "purpose": "Tepi 2px pilihan barang terpilih, tanpa menggeser ukuran."
+      }
+    ],
+    "focus": {
+      "outline": "2px solid var(--accent)",
+      "outlineOffset": "2px",
+      "radius": "4px"
+    },
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Tekan tombol, naiknya dialog dan toast."
+      },
+      {
+        "name": "hover",
+        "value": "background-color .15s ease",
+        "purpose": "Hover nav, baris, tombol, sel jalur."
+      },
+      {
+        "name": "press",
+        "value": "transform .12s var(--ease); translateY(1px)",
+        "purpose": "Tombol ditekan."
+      },
+      {
+        "name": "rise",
+        "value": "from { translate: 0 8px; opacity: .6 } .2s var(--ease)",
+        "purpose": "Dialog dan toast muncul."
+      },
+      {
+        "name": "toast-duration",
+        "value": "2600ms",
+        "purpose": "Lama toast tampil."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation: none; transition: none",
+        "purpose": "prefers-reduced-motion mematikan semua gerak."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "< 640px",
+        "purpose": "Lembar = layar, pad 16, jalur 2×2, pilihan 3 kolom, bilah atas 52, navigasi bawah."
+      },
+      {
+        "name": "tablet",
+        "value": "640px – 1023.98px",
+        "purpose": "Kerangka HP, pad 24, jalur 4 kolom, pilihan 5 kolom."
+      },
+      {
+        "name": "desktop",
+        "value": ">= 1024px",
+        "purpose": "Bingkai L: sidebar 228, bilah atas 48, lembar inset 8 sudut 16, grid 12 kolom jarak 24."
+      }
+    ],
+    "layout": {
+      "sidebarWidth": "228px",
+      "topBar": "48px",
+      "topBarPhone": "52px",
+      "bottomNav": "64px + env(safe-area-inset-bottom)",
+      "sheetInset": "8px (kanan dan bawah)",
+      "sheetPadding": "24px 32px 40px; HP 20px 16px (64+32)px",
+      "grid": "12 kolom, jarak 24px; semua bentang lebar penuh di bawah 1024px",
+      "formMax": "560px",
+      "publicSheetMax": "640px",
+      "touchTarget": "44px minimum di bawah 1024px",
+      "controlHeight": "36px desktop / 44px HP",
+      "fieldHeight": "40px desktop / 48px HP"
+    },
+    "charts": {
+      "line": "2px chart-1, lurus, tanpa isian dan titik; tinggi 220px",
+      "grid": "1px var(--grid), 4 tick bulat",
+      "ticks": "12px var(--axis-ink)",
+      "annotation": "11px di atas plot, garis penunjuk 1px opasitas .45",
+      "hover": "garis tegak .35, titik r3.5 putih bergaris seri, tooltip putih bergaris grid sudut 6px",
+      "library": "mockup/assets/charts.js (tasteskill)"
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Satu aksi utama per layar (Buat TTS, Simpan TTS, Terbitkan nota).",
+      "html": "<button class=\"ds-btn-primary\" type=\"button\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"M12 5v14\"/></svg>Buat TTS</button>",
+      "css": ".ds-btn-primary { font-family: \"IBM Plex Sans\", system-ui, sans-serif; display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 14px; border: 1px solid transparent; border-radius: 6px; background: var(--primary, #131416); color: var(--primary-ink, #ffffff); font-size: 14px; font-weight: 500; cursor: pointer; transition: background-color .15s ease, transform .12s cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-primary:hover { background: var(--primary-hover, #2b2d30); } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: 2px solid var(--accent, #1b6c80); outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Aksi pendamping putih bergaris; versi kecil 32px di dalam baris, 44px di HP.",
+      "html": "<button class=\"ds-btn-secondary\" type=\"button\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719\"/></svg>Kabari</button>",
+      "css": ".ds-btn-secondary { font-family: \"IBM Plex Sans\", system-ui, sans-serif; display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 14px; border: 1px solid var(--control, #cfd4d7); border-radius: 6px; background: var(--surface, #ffffff); color: var(--text, #131416); font-size: 14px; font-weight: 500; cursor: pointer; transition: background-color .15s ease, transform .12s cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-secondary:hover { background: var(--raised, #f5f7f8); } .ds-btn-secondary:active { transform: translateY(1px); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--accent, #1b6c80); outline-offset: 2px; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Isian kerja bergaris field 3.17:1; 48px dan 16px di HP; fokus tepi tinta + glow teal.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Nama customer</span><input class=\"ds-input\" placeholder=\"mis. Bu Ratna Sari\"></label>",
+      "css": ".ds-field { font-family: \"IBM Plex Sans\", system-ui, sans-serif; display: grid; gap: 8px; width: 320px; font-size: 14px; color: var(--text, #131416); } .ds-field-label { font-weight: 500; } .ds-input { font: inherit; height: 40px; padding: 0 12px; border: 1px solid var(--field, #8a9296); border-radius: 6px; background: var(--surface, #ffffff); color: inherit; transition: border-color .15s ease, box-shadow .15s ease; } .ds-input::placeholder { color: var(--faint, #6b6e70); } .ds-input:hover { border-color: var(--muted, #5d5f60); } .ds-input:focus, .ds-input:focus-visible { outline: none; border-color: var(--text, #131416); box-shadow: 0 0 0 3px rgb(27 108 128 / .18); }"
+    },
+    {
+      "name": "Underline Tabs",
+      "kind": "nav",
+      "refersTo": "tab",
+      "description": "Tab status daftar: label abu, aktif tinta 500 dengan garis bawah teal 2px; di HP baris bisa digeser.",
+      "html": "<div class=\"ds-tabs\" role=\"tablist\"><button role=\"tab\" aria-selected=\"true\">Semua<span>14</span></button><button role=\"tab\" aria-selected=\"false\">Diterima<span>1</span></button><button role=\"tab\" aria-selected=\"false\">Dikerjakan<span>2</span></button><button role=\"tab\" aria-selected=\"false\">Selesai<span>2</span></button></div>",
+      "css": ".ds-tabs { font-family: \"IBM Plex Sans\", system-ui, sans-serif; display: flex; gap: 24px; border-bottom: 1px solid var(--border, #e3e7e9); font-size: 14px; } .ds-tabs button { position: relative; height: 40px; padding: 0; border: 0; background: none; color: var(--muted, #5d5f60); font: inherit; cursor: pointer; } .ds-tabs button span { margin-left: 6px; color: var(--faint, #6b6e70); font-variant-numeric: tabular-nums; } .ds-tabs button:hover { color: var(--text, #131416); } .ds-tabs button:focus-visible { outline: 2px solid var(--accent, #1b6c80); outline-offset: 2px; } .ds-tabs button[aria-selected=\"true\"] { color: var(--text, #131416); font-weight: 500; } .ds-tabs button[aria-selected=\"true\"] span { color: var(--text, #131416); } .ds-tabs button[aria-selected=\"true\"]::after { content: \"\"; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--accent, #1b6c80); }"
+    },
+    {
+      "name": "Status Pills",
+      "kind": "chip",
+      "refersTo": "pill",
+      "description": "Status TTS sebagai kata di pil pucat; Batal dicoret.",
+      "html": "<div class=\"ds-pills\"><span class=\"ds-pill ds-st-diterima\">Diterima</span><span class=\"ds-pill ds-st-dikerjakan\">Dikerjakan</span><span class=\"ds-pill ds-st-selesai\">Selesai</span><span class=\"ds-pill ds-st-diambil\">Diambil</span><span class=\"ds-pill ds-st-batal\">Batal</span></div>",
+      "css": ".ds-pills { font-family: \"IBM Plex Sans\", system-ui, sans-serif; display: flex; gap: 8px; flex-wrap: wrap; } .ds-pill { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: 999px; font-size: 12px; font-weight: 500; } .ds-st-diterima { background: var(--pill-info-bg, #e8f0fa); color: var(--pill-info-ink, #1f4f8a); } .ds-st-dikerjakan { background: var(--pill-warning-bg, #fdf3dc); color: var(--pill-warning-ink, #92400e); } .ds-st-selesai { background: var(--pill-positive-bg, #dcfae5); color: var(--pill-positive-ink, #04250e); } .ds-st-diambil { background: var(--pill-neutral-bg, #ebedee); color: var(--pill-neutral-ink, #353736); } .ds-st-batal { background: var(--pill-negative-bg, #ffedea); color: var(--pill-negative-ink, #831c1e); text-decoration: line-through; text-decoration-thickness: 1px; }"
+    },
+    {
+      "name": "Sidebar Navigation",
+      "kind": "nav",
+      "refersTo": "nav-item",
+      "description": "Item nav di bingkai ground: abu, hover raised, halaman aktif active + tinta 500.",
+      "html": "<nav class=\"ds-side\"><a href=\"#\" aria-current=\"page\">Beranda</a><a href=\"#\">Servis</a><a href=\"#\">Penjualan</a><a href=\"#\">Laporan</a></nav>",
+      "css": ".ds-side { font-family: \"IBM Plex Sans\", system-ui, sans-serif; display: grid; gap: 2px; width: 228px; padding: 12px; background: var(--ground, #f2f5f6); font-size: 14px; } .ds-side a { display: flex; align-items: center; height: 32px; padding: 0 8px; border-radius: 6px; color: var(--muted, #5d5f60); text-decoration: none; transition: background-color .15s ease, color .15s ease; } .ds-side a:hover { background: var(--raised, #f5f7f8); color: var(--text, #131416); } .ds-side a:focus-visible { outline: 2px solid var(--accent, #1b6c80); outline-offset: 2px; } .ds-side a[aria-current=\"page\"] { background: var(--active, #e6eaec); color: var(--text, #131416); font-weight: 500; }"
+    },
+    {
+      "name": "Framed Sheet Shell",
+      "kind": "card",
+      "refersTo": "sheet",
+      "description": "Bingkai L ground dengan bilah atas 48px dan cari di tengah; lembar putih inset 8px, sudut 16px, garis 1px, tanpa bayangan.",
+      "html": "<div class=\"ds-frame\"><div class=\"ds-frame-top\"><label class=\"ds-frame-search\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m21 21-4.34-4.34\"/><circle cx=\"11\" cy=\"11\" r=\"8\"/></svg><input placeholder=\"Cari nomor TTS, nama, atau HP\"><kbd>/</kbd></label></div><div class=\"ds-frame-sheet\"><h1>Beranda</h1><p>Rabu, 11 Nov · <strong>3 servis menunggu tindakan</strong></p></div></div>",
+      "css": ".ds-frame { font-family: \"IBM Plex Sans\", system-ui, sans-serif; display: grid; grid-template-rows: 48px 1fr; width: 560px; height: 240px; background: var(--ground, #f2f5f6); color: var(--text, #131416); font-size: 14px; } .ds-frame-top { display: flex; align-items: center; justify-content: center; } .ds-frame-search { position: relative; width: 60%; color: var(--faint, #6b6e70); } .ds-frame-search svg { position: absolute; left: 10px; top: 8px; } .ds-frame-search input { font: inherit; width: 100%; height: 32px; padding: 0 44px 0 32px; border: 1px solid var(--border, #e3e7e9); border-radius: 6px; background: var(--surface, #ffffff); } .ds-frame-search input:focus-visible { outline: 2px solid var(--accent, #1b6c80); outline-offset: 2px; } .ds-frame-search kbd { position: absolute; right: 8px; top: 7px; padding: 0 6px; font: 500 11px/18px \"IBM Plex Mono\", monospace; color: var(--muted, #5d5f60); border: 1px solid var(--border, #e3e7e9); border-radius: 4px; background: var(--raised, #f5f7f8); } .ds-frame-sheet { margin: 0 8px 8px 8px; padding: 24px 32px; background: var(--surface, #ffffff); border: 1px solid var(--border, #e3e7e9); border-radius: 16px; } .ds-frame-sheet h1 { margin: 0; font-size: 22px; line-height: 30px; font-weight: 600; letter-spacing: -0.01em; } .ds-frame-sheet p { margin: 4px 0 0; color: var(--muted, #5d5f60); } .ds-frame-sheet strong { color: var(--text, #131416); font-weight: 500; }"
+    },
+    {
+      "name": "Service Lane",
+      "kind": "custom",
+      "refersTo": "lane-cell",
+      "description": "Elemen khas Beranda: sel tahap bergaris pembagi, jumlah 28px 400, tag nomor TTS Mono dan umurnya.",
+      "html": "<div class=\"ds-lane\"><a href=\"#\"><span class=\"ds-stage\">Belum ada teknisi</span><span class=\"ds-count\">1 <b>perlu ditetapkan</b></span><span class=\"ds-tags\"><span class=\"ds-tag\"><i>014</i>hari ini</span></span></a><a href=\"#\"><span class=\"ds-stage\">Dikerjakan</span><span class=\"ds-count\">2</span><span class=\"ds-tags\"><span class=\"ds-tag\"><i>013</i>1 hari</span><span class=\"ds-tag ds-late\"><i>012</i>2 hari</span></span></a><a href=\"#\"><span class=\"ds-stage\">Siap diambil</span><span class=\"ds-count\">2 <b>perlu dikabari</b></span><span class=\"ds-tags\"><span class=\"ds-tag\"><i>011</i>1 hari</span></span></a></div>",
+      "css": ".ds-lane { font-family: \"IBM Plex Sans\", system-ui, sans-serif; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 640px; border: 1px solid var(--border, #e3e7e9); border-radius: 8px; background: var(--surface, #ffffff); color: var(--text, #131416); font-size: 14px; } .ds-lane a { display: grid; align-content: start; gap: 4px; padding: 16px 20px 18px; color: inherit; text-decoration: none; transition: background-color .15s ease; } .ds-lane a + a { border-left: 1px solid var(--border, #e3e7e9); } .ds-lane a:first-child { border-radius: 8px 0 0 8px; } .ds-lane a:last-child { border-radius: 0 8px 8px 0; } .ds-lane a:hover { background: var(--raised, #f5f7f8); } .ds-lane a:focus-visible { outline: 2px solid var(--accent, #1b6c80); outline-offset: 2px; } .ds-stage { color: var(--muted, #5d5f60); } .ds-count { font-size: 28px; line-height: 34px; font-weight: 400; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; } .ds-count b { font-size: 12px; font-weight: 500; letter-spacing: 0; } .ds-tags { display: flex; flex-wrap: wrap; gap: 4px 6px; margin-top: 4px; } .ds-tag { display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 7px; border-radius: 4px; background: var(--raised, #f5f7f8); color: var(--muted, #5d5f60); font-size: 12px; } .ds-tag i { font-family: \"IBM Plex Mono\", ui-monospace, monospace; font-style: normal; font-weight: 500; color: var(--text, #131416); } .ds-late { background: var(--pill-warning-bg, #fdf3dc); color: var(--pill-warning-ink, #92400e); } .ds-late i { color: inherit; }"
+    },
+    {
+      "name": "KPI Tabs",
+      "kind": "custom",
+      "refersTo": "kpi-tab",
+      "description": "KPI sebagai tab seri grafik: terpilih label tinta 500, nilai 500, garis bawah teal 2px; lainnya nilai tetap tinta 400.",
+      "html": "<div class=\"ds-kpis\" role=\"tablist\"><button role=\"tab\" aria-selected=\"true\"><span class=\"ds-kl\">Omzet</span><span class=\"ds-kv\"><small>Rp</small>6.160.000</span><span class=\"ds-kd\">hari ini Rp1.575.000</span></button><button role=\"tab\" aria-selected=\"false\"><span class=\"ds-kl\">Laba kotor</span><span class=\"ds-kv\"><small>Rp</small>2.460.000</span><span class=\"ds-kd\">40% dari omzet</span></button></div>",
+      "css": ".ds-kpis { font-family: \"IBM Plex Sans\", system-ui, sans-serif; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); width: 560px; border: 1px solid var(--border, #e3e7e9); border-radius: 8px; background: var(--surface, #ffffff); color: var(--text, #131416); font-size: 14px; } .ds-kpis button { position: relative; display: grid; gap: 4px; padding: 16px 20px 14px; text-align: left; border: 0; background: none; color: inherit; font: inherit; cursor: pointer; } .ds-kpis button + button { border-left: 1px solid var(--border, #e3e7e9); } .ds-kpis button:hover { background: var(--raised, #f5f7f8); } .ds-kpis button:focus-visible { outline: 2px solid var(--accent, #1b6c80); outline-offset: -2px; } .ds-kl { color: var(--muted, #5d5f60); } .ds-kv { font-size: 28px; line-height: 34px; font-weight: 400; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; } .ds-kv small { font-size: 14px; color: var(--muted, #5d5f60); margin-right: 2px; letter-spacing: 0; } .ds-kd { font-size: 12px; color: var(--muted, #5d5f60); } .ds-kpis [aria-selected=\"true\"] .ds-kl { color: var(--text, #131416); font-weight: 500; } .ds-kpis [aria-selected=\"true\"] .ds-kv { font-weight: 500; } .ds-kpis [aria-selected=\"true\"]::after { content: \"\"; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--accent, #1b6c80); }"
+    },
+    {
+      "name": "Action Row",
+      "kind": "custom",
+      "refersTo": "row",
+      "description": "Baris Perlu tindakan: nomor TTS Mono + pil, detail abu, tombol sekunder kecil di kanan.",
+      "html": "<ul class=\"ds-rows\"><li><div><div class=\"ds-l1\"><span class=\"ds-id\">TTS-2611-014</span><span class=\"ds-pill2\">Diterima</span></div><div class=\"ds-l2\">Bu Ratna Sari · Mesin cuci · masuk 10.42</div></div><a class=\"ds-rowbtn\" href=\"#\">Tetapkan teknisi</a></li><li><div><div class=\"ds-l1\"><span class=\"ds-id\">TTS-2611-011</span><span class=\"ds-pill2 ds-ok\">Selesai</span></div><div class=\"ds-l2\">Andi Pratama · Printer · nota Rp185.000</div></div><a class=\"ds-rowbtn\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719\"/></svg>Kabari</a></li></ul>",
+      "css": ".ds-rows { font-family: \"IBM Plex Sans\", system-ui, sans-serif; list-style: none; margin: 0; padding: 0; width: 560px; font-size: 14px; color: var(--text, #131416); } .ds-rows li { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; padding: 10px 0; } .ds-rows li + li { border-top: 1px solid var(--rule, #eef1f2); } .ds-l1 { display: flex; align-items: center; gap: 8px; } .ds-id { font-family: \"IBM Plex Mono\", ui-monospace, monospace; font-weight: 500; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; } .ds-pill2 { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: 999px; font-size: 12px; font-weight: 500; background: var(--pill-info-bg, #e8f0fa); color: var(--pill-info-ink, #1f4f8a); } .ds-ok { background: var(--pill-positive-bg, #dcfae5); color: var(--pill-positive-ink, #04250e); } .ds-l2 { color: var(--muted, #5d5f60); margin-top: 2px; } .ds-rowbtn { display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 10px; border: 1px solid var(--control, #cfd4d7); border-radius: 6px; background: var(--surface, #ffffff); color: inherit; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background-color .15s ease; } .ds-rowbtn:hover { background: var(--raised, #f5f7f8); } .ds-rowbtn:focus-visible { outline: 2px solid var(--accent, #1b6c80); outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Lembar di Atas Bingkai",
+    "overview": "Aplikasi ini adalah alat kerja toko yang tenang dan rapi. Kerangka aplikasi (sidebar dan bilah atas) adalah satu bingkai abu-biru tipis berbentuk huruf L. Semua pekerjaan diletakkan di atas satu lembar putih yang \"duduk\" di dalam bingkai itu: menjorok 8px dari tepi kanan dan bawah jendela, bersudut 16px, bertepi garis 1px, tanpa bayangan. Kedalaman hanya datang dari satu langkah warna (bingkai → lembar), bukan dari bayangan atau kartu bertumpuk.\n\nWarna dihemat. Hampir semua yang terlihat adalah tinta gelap, abu-abu, dan putih. Warna hanya muncul di tiga tempat: data (garis grafik), status (pil pucat dengan teks gelap senada), dan satu aksi utama per layar yang berwarna hitam. Satu aksen teal dipakai sangat sedikit, sebagai penanda pilihan dan kemajuan, bukan sebagai warna merek yang ditempel di mana-mana. Ini sengaja menolak dua hal yang sudah ditolak user: versi pertama yang hijau di mana-mana, dan gaya \"dashboard kit\" (kartu statistik berikon, aksen di setiap tombol, kartu di dalam kartu).\n\nGaya ini dibagikan oleh tasteskill app sheet `framed-sheet` (seed 1526667476, `.taste-skill/app/direction.json`) dan dipilih user. Bingkainya diwarnai satu langkah abu-biru dari aksen teal. Elemen khas produk adalah **jalur servis**: empat sel bergaris pembagi berisi jumlah TTS per tahap dan tag nomor TTS beserta umurnya. Di HP bingkai hilang, lembar menjadi layar penuh, dan navigasi pindah ke bawah.",
+    "keyCharacteristics": [
+      "Bingkai L abu-biru (`ground`) tanpa garis antara sidebar dan bilah atas; lembar putih inset 8px, sudut 16px, tepi 1px, tanpa bayangan.",
+      "IBM Plex Sans 400/500/600 untuk semua teks; IBM Plex Mono khusus nomor TTS/JL.",
+      "Angka besar ditulis ringan (400); tebal diletakkan pada label dan keadaan aktif.",
+      "Satu aksi utama hitam per layar; aksi lain putih bergaris.",
+      "Teal hanya pada garis grafik, garis bawah tab/KPI aktif, batang tahapan, logo tiket, dan cincin fokus.",
+      "Status selalu ditulis sebagai kata di dalam pil pucat.",
+      "HP dulu: lembar jadi layar, bilah atas 52px, navigasi bawah, bilah aksi menempel di bawah, target sentuh 44px."
+    ],
+    "rules": [
+      {
+        "name": "The One Teal Rule",
+        "body": "Teal hanya boleh muncul pada garis grafik, garis bawah 2px tab/KPI aktif, batang tahapan, logo tiket, dan cincin fokus. Tidak pernah pada tombol, teks paragraf, atau latar bidang besar.",
+        "section": "colors"
+      },
+      {
+        "name": "The Black Action Rule",
+        "body": "Satu layar punya paling banyak satu tombol hitam; semua aksi lain adalah tombol putih bergaris atau tombol hantu.",
+        "section": "colors"
+      },
+      {
+        "name": "The Status In Words Rule",
+        "body": "Status selalu ditulis sebagai kata di dalam pil (Diterima, Dikerjakan, Selesai, Diambil, Batal); warna hanya membantu, tidak pernah menjadi satu-satunya penanda.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mono Is For Numbers Rule",
+        "body": "IBM Plex Mono hanya untuk nomor TTS/JL (termasuk tag tiga digit dan nomor besar di struk/nota). Nama, harga, tanggal, dan label tetap Plex Sans.",
+        "section": "typography"
+      },
+      {
+        "name": "The Light Big Number Rule",
+        "body": "Angka besar ditulis 400; tebal diberikan ke label dan keadaan terpilih. Nilai yang tidak terpilih tetap tinta (bukan abu), karena angka abu terbaca seperti nonaktif.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "Semua uang, jumlah, tanggal, dan nomor memakai `font-variant-numeric: tabular-nums`; angka uang rata kanan.",
+        "section": "typography"
+      },
+      {
+        "name": "The L-Frame Rule",
+        "body": "Sidebar dan bilah atas adalah satu bidang `ground`; tidak ada garis atau beda warna di antara keduanya.",
+        "section": "layout"
+      },
+      {
+        "name": "The One Gutter Rule",
+        "body": "Satu jarak untuk semua baris grid di satu ukuran layar: 24px di desktop, 16px di HP. Baris KPI dan baris grafik tidak boleh punya jarak berbeda.",
+        "section": "layout"
+      },
+      {
+        "name": "The One Tone Step Rule",
+        "body": "Lembar dibedakan dari bingkai hanya oleh warna dan garis 1px; tidak ada bayangan di bawah lembar, panel, atau kartu.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Three Levels Rule",
+        "body": "Bingkai → lembar → panel sudah cukup. Jangan ada tingkat keempat (kartu di dalam panel di dalam lembar).",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do letakkan semua pekerjaan di lembar putih yang menjorok 8px dengan sudut 16px dan garis 1px `border` di atas bingkai `ground`.",
+      "Do pakai tepat satu tombol `primary` hitam per layar; aksi lain putih bergaris `control` atau ghost.",
+      "Do tulis nomor TTS/JL dengan IBM Plex Mono 500 dan semua angka dengan tabular figures, uang rata kanan dengan format `Rp1.100.000`.",
+      "Do tulis status sebagai kata di dalam pil pucat dengan pasangan `pill-*-bg`/`pill-*-ink`.",
+      "Do beri isian garis `field` (3.17:1) dan tinggi 48px dengan teks 16px di HP.",
+      "Do jaga target sentuh minimal 44 × 44px di HP (tombol, tab, tautan, ikon hapus, item navigasi).",
+      "Do ubah tabel menjadi daftar dua baris dan baris tab yang bisa digeser di bawah 1024px.",
+      "Do taruh aksi utama HP di bilah aksi yang menempel di atas navigasi bawah."
+    ],
+    "donts": [
+      "Don't pakai teal untuk tombol, teks, atau latar bidang besar; teal hanya untuk garis grafik, garis bawah tab/KPI aktif, batang tahapan, logo, dan fokus.",
+      "Don't kembalikan hijau sebagai warna merek seperti versi pertama yang ditolak; hijau hanya `positive` (laba, sukses) dan pil Selesai.",
+      "Don't beri bayangan pada lembar, panel, atau jalur servis; bayangan hanya untuk dialog, toast, dan fokus.",
+      "Don't pasang garis antara sidebar dan bilah atas.",
+      "Don't buat kartu statistik berikon, aksen di setiap tombol, atau kartu di dalam kartu (tingkat keempat).",
+      "Don't pakai IBM Plex Mono untuk nama, harga, tanggal, atau label.",
+      "Don't tulis nilai KPI yang tidak terpilih dengan warna abu; tetap tinta dengan berat 400.",
+      "Don't bedakan status hanya dengan warna."
+    ]
+  }
+}

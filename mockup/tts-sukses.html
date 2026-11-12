@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f2f5f6">
+<title>TTS-2611-014 tersimpan — Anugerah</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .wrap2 { display: grid; grid-template-columns: minmax(0, 560px) minmax(0, 1fr); gap: 48px; align-items: start; }
+  .done { display: grid; gap: 24px; }
+  .bed { padding: 24px; background: var(--raised); border-radius: var(--radius-card); display: grid; justify-items: center; gap: 12px; }
+  .paper { width: 260px; padding: 16px 16px 20px; background: #fff; border: 1px solid var(--border); border-radius: 4px; font-size: 12px; line-height: 17px; font-variant-numeric: tabular-nums; }
+  .paper .c { text-align: center; }
+  .paper hr { border: 0; border-top: 1px dashed #9aa1a5; margin: 8px 0; }
+  .paper .big { font: 500 17px/22px var(--mono); }
+  .paper .kv2 { display: grid; grid-template-columns: 56px 1fr; gap: 2px 8px; }
+  .paper .kv2 span:nth-child(odd) { color: var(--muted); }
+  .paper img { width: 96px; height: 96px; margin: 6px auto 2px; }
+  @media (max-width: 1023.98px) { .wrap2 { display: block; } }
+  .done-head { display: grid; gap: 8px; }
+  .done-head .ok { display: inline-flex; align-items: center; gap: 6px; color: var(--positive); font-weight: 500; }
+  .done-head .ok .icon { width: 18px; height: 18px; stroke-width: 2; }
+  .done-head h1 { font: 500 34px/44px var(--mono); letter-spacing: -0.02em; }
+  .stack { display: grid; gap: 8px; }
+  .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  @media (max-width: 1023.98px) { .done-head h1 { font-size: 28px; line-height: 36px; } }
+</style>
+</head>
+<body data-role="teknisi" data-nav="buat">
+<div class="app">
+  <div class="main">
+    <main class="sheet">
+      <div class="wrap2">
+      <div class="done">
+        <div class="done-head">
+          <span class="ok"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"></use></svg>Tanda terima tersimpan</span>
+          <h1>TTS-2611-014</h1>
+          <p class="muted">Tulis atau sebutkan nomor ini ke customer. Admin akan menetapkan teknisi.</p>
+        </div>
+
+        <ol class="track" aria-label="Tahap servis">
+          <li class="now">Diterima<time>11 Nov 10.42</time></li>
+          <li>Dikerjakan</li>
+          <li>Selesai</li>
+          <li>Diambil</li>
+        </ol>
+
+        <dl class="kv">
+          <dt>Customer</dt><dd>Bu Ratna Sari</dd>
+          <dt>Nomor HP</dt><dd class="num">0812-5531-2097</dd>
+          <dt>Barang</dt><dd>Mesin cuci · Sharp 2 tabung, 8 kg</dd>
+          <dt>Keluhan</dt><dd>Pengering tidak berputar</dd>
+          <dt>Alamat</dt><dd>Jl. A. Yani Km 4, Gg. Melati 2</dd>
+          <dt>Dicatat oleh</dt><dd>Rizky</dd>
+        </dl>
+
+        <div class="stack">
+          <div class="pair">
+            <a class="btn" href="#" data-toast="Membuka WhatsApp: pesan TTS-2611-014 dan link status untuk Bu Ratna…"><svg class="icon" aria-hidden="true"><use href="#i-message-circle"></use></svg>Kirim WA</a>
+            <a class="btn" href="struk.html"><svg class="icon" aria-hidden="true"><use href="#i-printer"></use></svg>Cetak struk</a>
+          </div>
+          <a class="btn primary block" href="tts-baru.html"><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>Buat TTS lagi</a>
+        </div>
+      </div>
+      <aside class="bed desktop-only" aria-label="Struk yang akan dicetak">
+        <div class="paper">
+          <div class="c" style="font-weight:600">ANUGERAH</div>
+          <div class="c">Servis Elektronik</div>
+          <hr>
+          <div class="c">TANDA TERIMA SERVIS</div>
+          <div class="c big">TTS-2611-014</div>
+          <div class="c">11-11-2026 10:42</div>
+          <hr>
+          <div class="kv2"><span>Nama</span><span>Bu Ratna Sari</span><span>HP</span><span>0812-5531-2097</span><span>Barang</span><span>Mesin cuci, Sharp 2 tabung 8 kg</span><span>Keluhan</span><span>Pengering tidak berputar</span></div>
+          <hr>
+          <img src="assets/qr-tracking.svg" alt="QR menuju halaman status servis">
+          <div class="c">Pindai untuk cek status</div>
+        </div>
+        <p class="small muted" style="text-align:center;max-width:280px">Struk 58 mm. Cetak dua lembar: satu ditempel di barang, satu untuk customer.</p>
+      </aside>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="assets/icons.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

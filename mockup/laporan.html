@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f2f5f6">
+<title>Laporan — Anugerah</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-role="admin" data-nav="laporan">
+<div class="app">
+  <div class="main">
+    <main class="sheet">
+      <div class="title-row">
+        <div>
+          <h1>Laporan</h1>
+          <p class="sub">Laba bersih 1–11 Nov <strong>Rp2.145.000</strong> dari omzet Rp6.160.000.</p>
+        </div>
+      </div>
+
+      <div class="period" role="group" aria-label="Periode laporan">
+        <div class="segmented" role="group" aria-label="Pilihan cepat">
+          <button type="button" aria-pressed="false" data-toast="Contoh: data mockup hanya 1–11 Nov.">Hari ini</button>
+          <button type="button" aria-pressed="false" data-toast="Contoh: data mockup hanya 1–11 Nov.">7 hari</button>
+          <button type="button" aria-pressed="true">Bulan ini</button>
+        </div>
+        <div class="dates">
+          <label class="sr-only" for="dari">Dari tanggal</label><input class="input num" id="dari" type="date" value="2026-11-01">
+          <span class="muted">–</span>
+          <label class="sr-only" for="sampai">Sampai tanggal</label><input class="input num" id="sampai" type="date" value="2026-11-11">
+        </div>
+      </div>
+
+      <div class="grid">
+        <section class="span-5" aria-labelledby="h-lr">
+          <div class="section-head"><h2 id="h-lr">Laba rugi</h2><span class="meta">1–11 Nov 2026 · WITA</span></div>
+          <dl class="statement" id="report"></dl>
+          <p class="small muted" style="margin-top:8px">TTS yang dibatalkan dan pembelian stok tidak dihitung.</p>
+        </section>
+
+        <section class="span-7" aria-labelledby="h-day">
+          <div class="section-head"><h2 id="h-day">Omzet per hari</h2><span class="meta" id="day-meta"></span></div>
+          <p class="small muted" style="margin-top:2px" id="day-note"></p>
+          <div class="chart" id="day-chart" style="margin-top:16px"></div>
+        </section>
+
+        <section class="span-12" aria-labelledby="h-trx" style="margin-top:16px">
+          <div class="section-head"><h2 id="h-trx">Transaksi</h2><span class="meta" id="trx-count"></span></div>
+          <div class="tabs" role="tablist" id="trx-tabs" aria-label="Jenis transaksi">
+            <button type="button" role="tab" data-value="semua" aria-selected="true">Semua</button>
+            <button type="button" role="tab" data-value="servis" aria-selected="false">Servis</button>
+            <button type="button" role="tab" data-value="jual" aria-selected="false">Penjualan</button>
+            <button type="button" role="tab" data-value="keluar" aria-selected="false">Pengeluaran</button>
+          </div>
+          <table class="table money-first">
+            <thead><tr><th class="act"><span class="sr-only">Aksi</span></th><th class="desktop-only">Tanggal</th><th>Nomor</th><th class="desktop-only">Jenis</th><th>Keterangan</th><th class="n">Jumlah</th><th class="n desktop-only">Modal</th><th class="n desktop-only">Laba</th></tr></thead>
+            <tbody id="trx"></tbody>
+            <tfoot id="trx-foot"></tfoot>
+          </table>
+          <div class="more-rows" id="trx-more"><button class="btn" type="button">Tampilkan semua</button></div>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="assets/icons.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+{
+  "title": "Pilih arah visual mockup Aplikasi Servis Anugerah",
+  "question": "Undian menetapkan arah 'Rambu Jalan'. Pertahankan, ambil alternatif, atau undi ulang.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Rambu Jalan",
+      "kicker": "THE ROLL",
+      "lineage": "Rambu dan papan petunjuk jalan Indonesia yang dibaca teknisi setiap hari dari atas motor",
+      "thesis": "Setiap layar dibaca seperti rambu: satu pesan, kontras penuh, terbaca sekilas di bawah terik matahari.",
+      "palette": [
+        "#FFFFFF",
+        "#111111",
+        "#00704A",
+        "#FFCC00",
+        "#C8102E",
+        "#0057A8"
+      ],
+      "materials": [
+        "pelat aluminium putih bertepi hitam tebal",
+        "huruf ala Highway Gothic (Overpass)"
+      ],
+      "viewport": "Di HP 360px: pelat hijau berisi nomor TTS besar dan jalur status, di bawahnya 4 kolom sebesar pelat, tombol Simpan kuning menempel di bawah.",
+      "risk": "Bisa jadi tema jalan raya yang norak bila motif rambu dipakai sebagai hiasan, bukan sebagai sistem status.",
+      "raised": [
+        {
+          "from": "challenger-mono-canon",
+          "raise": "Warna rambu dijatah: hanya status dan satu aksi utama per layar yang berwarna; kerangka sisanya hitam-putih."
+        },
+        {
+          "from": "challenger-crouwel",
+          "raise": "Nomor TTS tampil monumental di grid yang tegas, karena customer datang menyebut 'nomor 5'."
+        },
+        {
+          "from": "challenger-botanical",
+          "raise": "Jalur status Diterima → Dikerjakan → Selesai → Diambil selalu di posisi dan skala yang sama di setiap layar."
+        }
+      ],
+      "comp": ".impeccable/mocks/decision/assigned.webp",
+      "wireframe": {
+        "cols": 6,
+        "rows": 12,
+        "regions": [
+          { "label": "pelat hijau: nomor TTS + jalur status", "x": 0, "y": 0, "w": 6, "h": 3, "accent": true },
+          { "label": "Nama customer", "x": 0, "y": 3, "w": 6, "h": 1 },
+          { "label": "Nomor HP", "x": 0, "y": 4, "w": 6, "h": 1 },
+          { "label": "Kategori: pelat pilihan", "x": 0, "y": 5, "w": 6, "h": 2 },
+          { "label": "Keluhan", "x": 0, "y": 7, "w": 6, "h": 2 },
+          { "label": "Simpan (pelat kuning, menempel)", "x": 0, "y": 10, "w": 6, "h": 1, "accent": true },
+          { "label": "navigasi bawah", "x": 0, "y": 11, "w": 6, "h": 1 }
+        ]
+      }
+    },
+    {
+      "id": "model-pick",
+      "label": "Tag Servis Gantung",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Label gantung bernomor yang diikat ke barang servis di toko-toko servis",
+      "thesis": "Setiap TTS adalah tag yang diikat ke barang: nomor dicap besar, status dicap seperti stempel karet.",
+      "palette": [
+        "#D9B97A",
+        "#1A1A1A",
+        "#B3261E",
+        "#1D4E89",
+        "#F7F4EC"
+      ],
+      "materials": [
+        "karton manila dengan lubang tali",
+        "tinta stempel karet merah dan biru"
+      ],
+      "viewport": "Di HP 360px: tag manila berlubang tali berisi nomor TTS besar, 4 kolom tertulis di garis tag, stempel status di pojok.",
+      "risk": "Paling dekat dengan dunia toko servis, tapi kertas manila mendekati gaya krem-nostalgia yang sering muncul di desain buatan AI, dan bisa kurang kontras di luar ruangan.",
+      "comp": ".impeccable/mocks/decision/model-pick.webp",
+      "wireframe": {
+        "cols": 6,
+        "rows": 12,
+        "regions": [
+          { "label": "tag: lubang tali + nomor dicap", "x": 0, "y": 0, "w": 6, "h": 3, "accent": true },
+          { "label": "Nama customer (garis tag)", "x": 0, "y": 3, "w": 6, "h": 1 },
+          { "label": "Nomor HP", "x": 0, "y": 4, "w": 6, "h": 1 },
+          { "label": "Kategori", "x": 0, "y": 5, "w": 6, "h": 1 },
+          { "label": "Keluhan", "x": 0, "y": 6, "w": 6, "h": 2 },
+          { "label": "stempel status", "x": 3, "y": 8, "w": 3, "h": 2, "accent": true },
+          { "label": "Simpan", "x": 0, "y": 10, "w": 6, "h": 1 },
+          { "label": "navigasi bawah", "x": 0, "y": 11, "w": 6, "h": 1 }
+        ]
+      }
+    },
+    {
+      "id": "challenger-mono-canon",
+      "label": "Produk Monokrom",
+      "verdict": "declined",
+      "lineage": "Halaman produk software satu skala netral dengan satu aksen",
+      "thesis": "Hampir tanpa warna; satu aksen dipakai sangat jarang dan setiap klaim dibuktikan tangkapan layar.",
+      "palette": [
+        "#FAFAFA",
+        "#18181B",
+        "#2563EB"
+      ],
+      "materials": [
+        "skala abu-abu halus",
+        "tombol garis tipis"
+      ],
+      "viewport": "Form TTS abu-abu netral dengan satu tombol biru.",
+      "case": "Tergabung dengan rapi tapi kalah di identifikasi audiens: terasa seperti template SaaS yang ditolak user.",
+      "risk": "Garis tipis dan abu-abu muda sulit dibaca di bawah matahari.",
+      "kept": "Disiplin menjatah warna: hanya satu aksi utama yang berwarna per layar.",
+      "hero": "https://impeccable.style/worlds/cards/digital-design-canon-monochrome-product-marketing-hero.webp"
+    },
+    {
+      "id": "challenger-crouwel",
+      "label": "Spesimen Grid Crouwel",
+      "verdict": "declined",
+      "lineage": "Poster tipografi Wim Crouwel dengan grid konstruksi terlihat",
+      "thesis": "Huruf raksasa dibangun sel demi sel di atas grid yang terlihat.",
+      "palette": [
+        "#FFFFFF",
+        "#111111",
+        "#1E5BFF"
+      ],
+      "materials": [
+        "kertas grafik",
+        "huruf grid raksasa"
+      ],
+      "viewport": "Nomor TTS raksasa tersusun dari sel grid di atas form.",
+      "case": "Tergabung untuk nomor TTS, tapi kalah di kejelasan: grid hiasan menambah kepadatan yang ingin dihindari.",
+      "risk": "Terasa seperti poster desain, bukan alat kerja teknisi.",
+      "kept": "Nomor TTS monumental di atas grid yang tegas.",
+      "hero": "https://impeccable.style/worlds/cards/crouwel-grid-specimen-hero.webp"
+    },
+    {
+      "id": "challenger-botanical",
+      "label": "Folio Botani",
+      "verdict": "declined",
+      "lineage": "Folio botani yang mengikuti satu tanaman dari biji sampai layu",
+      "thesis": "Satu subjek diikuti tahap demi tahap pada skala dan posisi yang sama.",
+      "palette": [
+        "#F3EBDD",
+        "#3F5F3A",
+        "#B3261E",
+        "#5A4A3A"
+      ],
+      "materials": [
+        "pelat krem",
+        "garis sepia tipis"
+      ],
+      "viewport": "Tahap servis sebagai lima pelat berjajar pada satu garis dasar.",
+      "case": "Gagasan tahapan cocok dengan siklus TTS, tapi kalah di dua sumbu: dunia botani asing bagi teknisi dan krem pucat kurang terbaca di luar.",
+      "risk": "Terasa seperti buku seni, bukan aplikasi toko.",
+      "kept": "Jalur status selalu di posisi dan skala yang sama di setiap layar.",
+      "hero": "https://impeccable.style/worlds/cards/editorial-sequence-montage-botanical-folio-season-hero.webp"
+    }
+  ],
+  "reroll": {
+    "registers": [
+      "safer",
+      "bolder"
+    ]
+  },
+  "buildPath": {
+    "value": "code",
+    "toggle": true
+  },
+  "canon": true,
+  "canonCard": {
+    "label": "Standar kategori",
+    "thesis": "Aplikasi admin servis seperti yang biasa dipakai, dikerjakan dengan rapi.",
+    "palette": [
+      "#FFFFFF",
+      "#0F172A",
+      "#2563EB"
+    ],
+    "materials": [
+      "kartu putih berbayang tipis",
+      "ikon garis"
+    ],
+    "viewport": "Header biru, form putih, tombol biru, navigasi bawah berikon.",
+    "risk": "Tidak bisa dibedakan dari aplikasi lain, dan inilah 'template admin generik' yang ingin dihindari.",
+    "comp": ".impeccable/mocks/decision/canon.webp",
+    "wireframe": {
+      "cols": 6,
+      "rows": 12,
+      "regions": [
+        { "label": "header aplikasi", "x": 0, "y": 0, "w": 6, "h": 1, "accent": true },
+        { "label": "kartu form TTS", "x": 0, "y": 1, "w": 6, "h": 8 },
+        { "label": "Simpan", "x": 0, "y": 9, "w": 6, "h": 1, "accent": true },
+        { "label": "navigasi bawah", "x": 0, "y": 11, "w": 6, "h": 1 }
+      ]
+    }
+  },
+  "steer": true
+}

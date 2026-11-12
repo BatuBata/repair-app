@@ -1,0 +1,236 @@
+{
+  "title": "Pilih arah visual mockup Aplikasi Servis Anugerah (undian ke-2)",
+  "question": "Undian ulang menetapkan arah 'Struk Thermal'. Pertahankan, ambil alternatif, atau undi ulang lagi.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Struk Thermal",
+      "kicker": "THE ROLL",
+      "lineage": "Struk printer thermal 58mm yang ditempel di barang servis dan dibawa customer saat mengambil",
+      "thesis": "Aplikasi dibaca seperti struk toko: hitam di atas putih, baris rapi, angka rata kanan, yang penting dicetak tebal atau terbalik.",
+      "palette": [
+        "#FBFBF8",
+        "#1C1C1C",
+        "#6E6E6E",
+        "#D0021B"
+      ],
+      "materials": [
+        "kertas thermal putih, tinta hitam dan merah (kertas thermal dua warna)",
+        "cetak terbalik putih-di-atas-hitam, garis putus-putus, huruf cetak dobel tinggi"
+      ],
+      "viewport": "Di HP 360px: kepala struk toko, nomor TTS dicetak dobel tinggi, 4 kolom sebagai baris struk bergaris putus, tombol SIMPAN hitam penuh menempel di bawah.",
+      "risk": "Bisa terasa kaku bila semua teks memakai huruf monospace; sobekan bergerigi berisiko jadi hiasan, bukan fungsi.",
+      "raised": [
+        {
+          "from": "challenger-centre-rail",
+          "raise": "Status adalah tanda cetak: aktif dicetak terbalik, Batal dicoret, selesai bercap; tanpa sudut membulat dan tanpa bayangan."
+        },
+        {
+          "from": "challenger-saville",
+          "raise": "Nomor TTS menjadi satu-satunya judul di layar detail; semua informasi lain tunduk padanya."
+        }
+      ],
+      "comp": ".impeccable/mocks/decision/r1-assigned.webp",
+      "wireframe": {
+        "cols": 6,
+        "rows": 12,
+        "regions": [
+          { "label": "kepala struk: toko + tanggal", "x": 0, "y": 0, "w": 6, "h": 1 },
+          { "label": "nomor TTS dobel tinggi (cetak terbalik)", "x": 0, "y": 1, "w": 6, "h": 2, "accent": true },
+          { "label": "baris: Nama customer", "x": 0, "y": 3, "w": 6, "h": 1 },
+          { "label": "baris: No. HP", "x": 0, "y": 4, "w": 6, "h": 1 },
+          { "label": "baris: Kategori (pilihan)", "x": 0, "y": 5, "w": 6, "h": 2 },
+          { "label": "baris: Keluhan", "x": 0, "y": 7, "w": 6, "h": 2 },
+          { "label": "garis putus + catatan", "x": 0, "y": 9, "w": 6, "h": 1 },
+          { "label": "SIMPAN (hitam penuh, menempel)", "x": 0, "y": 10, "w": 6, "h": 1, "accent": true },
+          { "label": "navigasi bawah", "x": 0, "y": 11, "w": 6, "h": 1 }
+        ]
+      }
+    },
+    {
+      "id": "model-pick",
+      "label": "Buku Nota Rangkap",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Buku nota bercarbon bernomor seri merah yang dipakai hampir semua toko di Indonesia",
+      "thesis": "Setiap TTS adalah lembar nota bernomor seri; salinan putih untuk toko, merah muda untuk customer, kuning untuk arsip.",
+      "palette": [
+        "#FFFFFF",
+        "#F7C9D4",
+        "#FFE58A",
+        "#1F3A93",
+        "#C8102E"
+      ],
+      "materials": [
+        "kertas rangkap bercarbon dengan perforasi sobekan",
+        "nomor seri merah tercetak, tulisan tangan tinta carbon biru"
+      ],
+      "viewport": "Di HP 360px: lembar nota dengan nomor seri merah di pojok, 4 baris isian bergaris, tepi perforasi di atas tombol Simpan.",
+      "risk": "Paling dikenal pemilik toko, tapi warna salinan pastel bisa terasa kuno dan kurang kontras di luar ruangan.",
+      "comp": ".impeccable/mocks/decision/r1-model-pick.webp",
+      "wireframe": {
+        "cols": 6,
+        "rows": 12,
+        "regions": [
+          { "label": "kop nota + nomor seri merah", "x": 0, "y": 0, "w": 6, "h": 2, "accent": true },
+          { "label": "baris isian: Nama", "x": 0, "y": 2, "w": 6, "h": 1 },
+          { "label": "baris isian: HP", "x": 0, "y": 3, "w": 6, "h": 1 },
+          { "label": "baris isian: Barang", "x": 0, "y": 4, "w": 6, "h": 2 },
+          { "label": "baris isian: Keluhan", "x": 0, "y": 6, "w": 6, "h": 2 },
+          { "label": "tab salinan (putih / merah muda / kuning)", "x": 0, "y": 8, "w": 6, "h": 1 },
+          { "label": "perforasi + Simpan", "x": 0, "y": 10, "w": 6, "h": 1, "accent": true },
+          { "label": "navigasi bawah", "x": 0, "y": 11, "w": 6, "h": 1 }
+        ]
+      }
+    },
+    {
+      "id": "challenger-warm-app",
+      "label": "Aplikasi Ramah",
+      "verdict": "competitive",
+      "lineage": "Aplikasi konsumen dengan kartu lembut dan satu warna aksi",
+      "thesis": "Kartu bersudut lembut, label seperti ditulis orang, dan satu warna terang hanya untuk yang bisa ditekan.",
+      "palette": [
+        "#F2EEE8",
+        "#FFFFFF",
+        "#1F2937",
+        "#0F8B8D"
+      ],
+      "materials": [
+        "kartu putih bersudut besar",
+        "tombol bawah yang mudah dijangkau jempol"
+      ],
+      "viewport": "Di HP 360px: satu kartu per kolom isian, tombol Simpan teal penuh, navigasi bawah.",
+      "case": "Unggul di kejelasan untuk pemakai HP, tetapi kalah di identifikasi: terasa seperti aplikasi belanja, bukan alat toko servis.",
+      "risk": "Mudah tergelincir menjadi tampilan aplikasi umum yang ingin dihindari user.",
+      "comp": ".impeccable/mocks/decision/r1-warm-app.webp",
+      "hero": "https://impeccable.style/worlds/cards/digital-design-canon-warm-consumer-app-surface-hero.webp",
+      "wireframe": {
+        "cols": 6,
+        "rows": 12,
+        "regions": [
+          { "label": "judul ramah", "x": 0, "y": 0, "w": 6, "h": 1 },
+          { "label": "kartu: Nama", "x": 0, "y": 1, "w": 6, "h": 2 },
+          { "label": "kartu: HP", "x": 0, "y": 3, "w": 6, "h": 2 },
+          { "label": "kartu: Kategori", "x": 0, "y": 5, "w": 6, "h": 2 },
+          { "label": "kartu: Keluhan", "x": 0, "y": 7, "w": 6, "h": 2 },
+          { "label": "Simpan (warna aksi)", "x": 0, "y": 10, "w": 6, "h": 1, "accent": true },
+          { "label": "navigasi bawah", "x": 0, "y": 11, "w": 6, "h": 1 }
+        ]
+      }
+    },
+    {
+      "id": "challenger-boarding",
+      "label": "Boarding Pass & Papan Keberangkatan",
+      "verdict": "competitive",
+      "lineage": "Boarding pass bersegmen dan papan jadwal bandara",
+      "thesis": "TTS sebagai boarding pass bersegmen; daftar TTS sebagai papan keberangkatan yang menyala saat status berubah.",
+      "palette": [
+        "#FFFFFF",
+        "#101418",
+        "#2B2F36",
+        "#FFB000"
+      ],
+      "materials": [
+        "panel netral kontras tinggi",
+        "angka tabular dan blok kode pindai"
+      ],
+      "viewport": "Di HP 360px: kartu TTS bersegmen (nomor, customer, barang, status) dengan QR, di bawahnya papan status.",
+      "case": "Unggul di kejelasan status dan perubahan, tetapi kalah di identifikasi: bandara bukan dunia sehari-hari teknisi.",
+      "risk": "Bisa terasa seperti tema perjalanan yang dipaksakan.",
+      "comp": ".impeccable/mocks/decision/r1-boarding.webp",
+      "hero": "https://impeccable.style/worlds/cards/vernacular-ephemera-boarding-pass-and-gate-board-hero.webp",
+      "wireframe": {
+        "cols": 6,
+        "rows": 12,
+        "regions": [
+          { "label": "pass: nomor TTS + QR", "x": 0, "y": 0, "w": 6, "h": 3, "accent": true },
+          { "label": "segmen: Nama | HP", "x": 0, "y": 3, "w": 6, "h": 1 },
+          { "label": "segmen: Kategori | Keluhan", "x": 0, "y": 4, "w": 6, "h": 2 },
+          { "label": "papan status", "x": 0, "y": 6, "w": 6, "h": 4 },
+          { "label": "Simpan", "x": 0, "y": 10, "w": 6, "h": 1 },
+          { "label": "navigasi bawah", "x": 0, "y": 11, "w": 6, "h": 1 }
+        ]
+      }
+    },
+    {
+      "id": "challenger-centre-rail",
+      "label": "Halaman Referensi Rel Tengah",
+      "verdict": "declined",
+      "lineage": "Edisi referensi dua kolom dengan rel kunci di tengah",
+      "thesis": "Dua kolom rapat di sekitar rel kunci; status berupa tanda cetak.",
+      "palette": [
+        "#EFE9DD",
+        "#151515",
+        "#C23B22"
+      ],
+      "materials": [
+        "garis rambut satu piksel",
+        "huruf serif kecil"
+      ],
+      "viewport": "Detail TTS sebagai dua kolom rapat dengan rel status di tengah.",
+      "case": "Kalah di dua sumbu: terlalu rapat dan akademis untuk HP di lapangan.",
+      "risk": "Teks kecil dan garis tipis sulit dibaca di luar ruangan.",
+      "kept": "Status sebagai tanda cetak: terbalik, dicoret, bercap.",
+      "hero": "https://impeccable.style/worlds/cards/rw-centre-rail-reference-setting-hero.webp"
+    },
+    {
+      "id": "challenger-saville",
+      "label": "Katalog Sampul Pabrik",
+      "verdict": "declined",
+      "lineage": "Identitas katalog rekaman dengan nomor FAC",
+      "thesis": "Setiap artefak punya nomor katalog; nomor adalah satu-satunya judul.",
+      "palette": [
+        "#0E0E0E",
+        "#FFFFFF",
+        "#E94B3C",
+        "#2E86AB"
+      ],
+      "materials": [
+        "hitam doff",
+        "garis putih dan blok kode warna"
+      ],
+      "viewport": "Detail TTS dengan nomor kecil di atas latar hitam luas.",
+      "case": "Kalah di dua sumbu: kode warna menggantikan kata, membingungkan teknisi.",
+      "risk": "Latar hitam luas memantulkan cahaya dan menyembunyikan informasi.",
+      "kept": "Nomor TTS sebagai satu-satunya judul di layar detail.",
+      "hero": "https://impeccable.style/worlds/cards/brand-identity-canon-saville-catalog-sleeve-hero.webp"
+    }
+  ],
+  "reroll": {
+    "registers": [
+      "safer",
+      "bolder"
+    ]
+  },
+  "buildPath": {
+    "value": "code",
+    "toggle": true
+  },
+  "canon": true,
+  "canonCard": {
+    "label": "Standar kategori",
+    "thesis": "Aplikasi admin servis seperti yang biasa dipakai, dikerjakan dengan rapi.",
+    "palette": [
+      "#FFFFFF",
+      "#0F172A",
+      "#2563EB"
+    ],
+    "materials": [
+      "kartu putih berbayang tipis",
+      "ikon garis"
+    ],
+    "viewport": "Header biru, form putih, tombol biru, navigasi bawah berikon.",
+    "risk": "Tidak bisa dibedakan dari aplikasi lain, dan inilah 'template admin generik' yang ingin dihindari.",
+    "comp": ".impeccable/mocks/decision/r1-canon.webp",
+    "wireframe": {
+      "cols": 6,
+      "rows": 12,
+      "regions": [
+        { "label": "header aplikasi", "x": 0, "y": 0, "w": 6, "h": 1, "accent": true },
+        { "label": "kartu form TTS", "x": 0, "y": 1, "w": 6, "h": 8 },
+        { "label": "Simpan", "x": 0, "y": 9, "w": 6, "h": 1, "accent": true },
+        { "label": "navigasi bawah", "x": 0, "y": 11, "w": 6, "h": 1 }
+      ]
+    }
+  },
+  "steer": true
+}

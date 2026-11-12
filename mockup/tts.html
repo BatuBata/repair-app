@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f2f5f6">
+<title>Servis — Anugerah</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-role="admin" data-nav="tts">
+<div class="app">
+  <div class="main">
+    <main class="sheet">
+      <div class="title-row">
+        <div>
+          <h1>Servis</h1>
+          <p class="sub">November 2026 · TTS yang masuk sejak 1 Nov</p>
+        </div>
+        <div class="actions desktop-only" data-role-only="admin"><a class="btn primary" href="tts-baru.html?peran=admin"><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>Buat TTS</a></div>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Status" id="tts-tabs"></div>
+      <div class="toolbar">
+        <label class="search"><span class="sr-only">Cari TTS</span><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg><input id="tts-q" type="search" placeholder="Cari nomor, nama, atau HP"></label>
+        <span class="total" id="tts-total"></span>
+      </div>
+      <table class="table">
+        <thead id="tts-head"></thead>
+        <tbody id="tts-list"></tbody>
+      </table>
+      <div class="empty" id="tts-empty" hidden><strong>Tidak ada TTS yang cocok</strong><span class="small">Coba kata lain, atau pilih tab Semua.</span></div>
+    </main>
+  </div>
+</div>
+<script src="assets/icons.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

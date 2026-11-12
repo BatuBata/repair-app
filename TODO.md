@@ -21,7 +21,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | ID | Hasil | Petugas / model | Kesulitan / risiko | Dependensi | Calon paralel | Status |
 |---|---|---|---|---|---|---|
 | T001 | Scaffold Laravel 13 + Livewire starter kit, MySQL, WITA, Git | developer / 6.1-sol | medium / medium | — | — | done |
-| T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | pending |
+| T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | running |
 | T003 | Layout lembar berbingkai, komponen UI dasar, dan web app manifest sesuai DESIGN.md | developer / 6.1-terra | medium / medium | T001 | T002, T006, T020 | done |
 | T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | pending |
 | T005 | Pengaturan toko dan master kategori | developer / 6-luna | easy / low | T004 | T006, T020 | pending |
@@ -416,7 +416,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Unit/feature test untuk penomoran (termasuk pergantian bulan 30 Nov → 1 Des WITA dan uji bersamaan di MySQL test), normalisasi HP, transisi status.",
         "Jalankan migrate:fresh --seed di MySQL lokal dan periksa skema."
       ],
-      "status": "pending",
+      "status": "running",
       "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t002-domain",
       "attempts": [
         {
@@ -428,15 +428,26 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "dispatch_ref": "ctx_15263c49ff79",
           "outcome": "blocked",
           "receipt_ref": "docs/evidence/coordinator/T002-start.json"
+        },
+        {
+          "id": "A2",
+          "kind": "verification",
+          "worker_id": "task_1048dad74721",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "ctx_9cb9e1a0e185",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/T002-mysql-verification-start.json"
         }
       ],
       "runtime_assignment": {
         "run_id": "run_729e02cff091",
-        "task_id": "task_5396149f0f67",
-        "dispatch_id": "ctx_15263c49ff79",
-        "receipt_ref": "docs/evidence/coordinator/T002-start.json",
-        "base_revision": "8601b54a1302f03bea98b51e7e033b097599dc7c",
-        "model_observation": "Requested model in launch receipt; effective backend model not independently observed."
+        "task_id": "task_1048dad74721",
+        "dispatch_id": "ctx_9cb9e1a0e185",
+        "receipt_ref": "docs/evidence/coordinator/T002-mysql-verification-start.json",
+        "base_revision": "a199051700c613b5f1993e97cd9ba3a10c6b1db6",
+        "follow_up_of": "ctx_15263c49ff79",
+        "model_observation": "Same Sol session reused; no new model selection/effective identity proof from follow-up receipt."
       },
       "next_attempt_kind": "verification",
       "verification_revision": "a199051700c613b5f1993e97cd9ba3a10c6b1db6",

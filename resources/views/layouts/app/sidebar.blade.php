@@ -1,101 +1,60 @@
+@php
+    $user = auth()->user();
+    $role = strtolower((string) ($user->role->value ?? $user->role ?? 'admin'));
+    $technician = $role === 'teknisi';
+    $items = $technician
+        ? [['Buat TTS', '/tts/baru', 'plus'], ['Daftar TTS', '/tts', 'clipboard-list'], ['Profil', '/profil', 'user-round']]
+        : [['Beranda', '/', 'layout-dashboard'], ['Servis', '/tts', 'clipboard-list'], ['Penjualan', '/penjualan', 'shopping-bag'], ['Stok barang', '/stok', 'boxes'], ['Pengeluaran', '/pengeluaran', 'wallet'], ['Laporan', '/laporan', 'chart-column']];
+    $bottom = $technician ? $items : [['Beranda', '/', 'layout-dashboard'], ['Servis', '/tts', 'clipboard-list'], ['Buat TTS', '/tts/baru', 'plus'], ['Laporan', '/laporan', 'chart-column']];
+@endphp
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
-    <head>
-        @include('partials.head')
-    </head>
-    <body class="min-h-screen bg-white dark:bg-zinc-800">
-        <flux:sidebar sticky collapsible="mobile" class="border-e border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
-            <flux:sidebar.header>
-                <x-app-logo :sidebar="true" href="{{ route('dashboard') }}" wire:navigate />
-                <flux:sidebar.collapse class="lg:hidden" />
-            </flux:sidebar.header>
-
-            <flux:sidebar.nav>
-                <flux:sidebar.group :heading="__('Platform')" class="grid">
-                    <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
-                        {{ __('Dashboard') }}
-                    </flux:sidebar.item>
-                </flux:sidebar.group>
-            </flux:sidebar.nav>
-
-            <flux:spacer />
-
-            <flux:sidebar.nav>
-                <flux:sidebar.item icon="folder-git-2" href="https://github.com/laravel/livewire-starter-kit" target="_blank">
-                    {{ __('Repository') }}
-                </flux:sidebar.item>
-
-                <flux:sidebar.item icon="book-open-text" href="https://laravel.com/docs/starter-kits#livewire" target="_blank">
-                    {{ __('Documentation') }}
-                </flux:sidebar.item>
-            </flux:sidebar.nav>
-
-            <x-desktop-user-menu class="hidden lg:block" :name="auth()->user()->name" />
-        </flux:sidebar>
-
-        <!-- Mobile User Menu -->
-        <flux:header class="lg:hidden">
-            <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left" />
-
-            <flux:spacer />
-
-            <flux:dropdown position="top" align="end">
-                <flux:profile
-                    :initials="auth()->user()->initials()"
-                    icon-trailing="chevron-down"
-                />
-
-                <flux:menu>
-                    <flux:menu.radio.group>
-                        <div class="p-0 text-sm font-normal">
-                            <div class="flex items-center gap-2 px-1 py-1.5 text-start text-sm">
-                                <flux:avatar
-                                    :name="auth()->user()->name"
-                                    :initials="auth()->user()->initials()"
-                                />
-
-                                <div class="grid flex-1 text-start text-sm leading-tight">
-                                    <flux:heading class="truncate">{{ auth()->user()->name }}</flux:heading>
-                                    <flux:text class="truncate">{{ auth()->user()->email }}</flux:text>
-                                </div>
-                            </div>
-                        </div>
-                    </flux:menu.radio.group>
-
-                    <flux:menu.separator />
-
-                    <flux:menu.radio.group>
-                        <flux:menu.item :href="route('profile.edit')" icon="cog" wire:navigate>
-                            {{ __('Settings') }}
-                        </flux:menu.item>
-                    </flux:menu.radio.group>
-
-                    <flux:menu.separator />
-
-                    <form method="POST" action="{{ route('logout') }}" class="w-full">
-                        @csrf
-                        <flux:menu.item
-                            as="button"
-                            type="submit"
-                            icon="arrow-right-start-on-rectangle"
-                            class="w-full cursor-pointer"
-                            data-test="logout-button"
-                        >
-                            {{ __('Log out') }}
-                        </flux:menu.item>
-                    </form>
-                </flux:menu>
-            </flux:dropdown>
-        </flux:header>
-
-        {{ $slot }}
-
-        @persist('toast')
-            <flux:toast.group>
-                <flux:toast />
-            </flux:toast.group>
-        @endpersist
-
-        @fluxScripts
-    </body>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ filled($title ?? null) ? $title.' — Anugerah' : 'Anugerah' }}</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @fluxAppearance
+    <meta name="theme-color" content="#f2f5f6">
+    <link rel="manifest" href="/manifest.webmanifest">
+</head>
+<body data-repair-shell>
+<div class="app">
+    <nav class="sidebar" aria-label="Menu utama">
+        <a class="brand" href="/"><x-ui.mark /><strong>Anugerah</strong></a>
+        <div class="scope"><x-ui.icon name="store" />Toko Anugerah</div>
+        @foreach ($items as [$label, $href, $icon])
+            <a class="nav-item" href="{{ $href }}" @if(request()->path() === ltrim($href, '/') || ($href === '/' && request()->is('/'))) aria-current="page" @endif><x-ui.icon :name="$icon" />{{ $label }}</a>
+        @endforeach
+        <div class="bottom">
+            @unless($technician)<a class="nav-item" href="/pengaturan/toko"><x-ui.icon name="settings" />Pengaturan</a>@endunless
+            @auth
+                <a class="nav-item" href="https://github.com/laravel/livewire-starter-kit" target="_blank" rel="noopener">Repository</a>
+                <a class="nav-item" href="https://laravel.com/docs/starter-kits#livewire" target="_blank" rel="noopener">Documentation</a>
+                <a class="nav-item" href="{{ route('profile.edit') }}"><x-ui.icon name="user-round" />{{ $user->name }}</a>
+                <form method="POST" action="{{ route('logout') }}">@csrf<button class="nav-item" type="submit" data-test="logout-button">Keluar</button></form>
+            @endauth
+        </div>
+    </nav>
+    <div class="main">
+        <header class="topbar">
+            <a class="phone-brand" href="/"><x-ui.mark /><span>Anugerah</span></a>
+            <form class="search" action="/tts"><label><span class="sr-only">Cari nomor TTS, nama, atau HP</span><x-ui.icon name="search" /><input name="q" type="search" placeholder="Cari nomor TTS, nama, atau HP"><kbd>/</kbd></label></form>
+            @auth<a class="icon-btn phone-only" href="{{ route('profile.edit') }}" aria-label="Akun"><x-ui.icon name="user-round" /></a>@endauth
+        </header>
+        <main class="sheet">{{ $slot }}</main>
+    </div>
+</div>
+<nav class="bottomnav" aria-label="Menu utama">
+    @foreach ($bottom as [$label, $href, $icon])
+        <a href="{{ $href }}" @class(['create' => !$technician && $label === 'Buat TTS'])>@if(!$technician && $label === 'Buat TTS')<span class="bubble"><x-ui.icon :name="$icon" /></span>@else<x-ui.icon :name="$icon" />@endif{{ $label }}</a>
+    @endforeach
+    @unless($technician)<button type="button" class="bottom-menu" data-open="navigation-menu"><x-ui.icon name="menu" />Menu</button>@endunless
+</nav>
+@unless($technician)
+<dialog class="sheet-dialog" id="navigation-menu" aria-labelledby="navigation-title"><div class="dialog-body"><h2 id="navigation-title">Menu</h2><nav class="menu-links"><a href="/penjualan">Penjualan</a><a href="/stok">Stok</a><a href="/pengeluaran">Pengeluaran</a><a href="/pengaturan/toko">Pengaturan</a><a href="/profil">Profil</a>@auth<a href="https://github.com/laravel/livewire-starter-kit" target="_blank" rel="noopener">Repository</a><a href="https://laravel.com/docs/starter-kits#livewire" target="_blank" rel="noopener">Documentation</a><a href="{{ route('profile.edit') }}">Pengaturan akun</a><form method="POST" action="{{ route('logout') }}">@csrf<button type="submit">Keluar</button></form>@endauth</nav><button class="btn" type="button" data-close>Tutup</button></div></dialog>
+@endunless
+<div class="toast" role="status" aria-live="polite"></div>
+@fluxScripts
+</body>
 </html>

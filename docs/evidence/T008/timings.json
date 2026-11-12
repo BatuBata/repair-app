@@ -5,5 +5,7 @@
   "targeted_seconds": 1.72560715675354,
   "independent_seconds": 0.6207811832427979,
   "independent_extra_seconds": 0.8702383041381836,
-  "note": "Wall time observed, includes reading, tool/environment recovery and inspection; no model cost estimate. Publication/handoff duration recorded separately."
+  "note": "Wall time observed, includes reading, tool/environment recovery and inspection; no model cost estimate. Publication/handoff duration recorded separately.",
+  "core_push_completed_at": "2026-11-12T17:25:35Z",
+  "elapsed_seconds_through_core_push": 1281.0463268756866
 }

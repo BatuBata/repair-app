@@ -1,0 +1,33 @@
+{
+  "verdict": "fail",
+  "artifact_ref": "docs/evidence/T008/README.md",
+  "revision": "a5b34b6221873016fd409c0823edad3106452290",
+  "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4",
+  "inputs": {
+    "T007": "f6b23c974b319520b80991d67200c05ddd5562f4"
+  },
+  "evidence": [
+    "docs/evidence/T008/cases.json",
+    "docs/evidence/T008/source-proof.json",
+    "docs/evidence/T008/source-unchanged.json",
+    "docs/evidence/T008/targeted.xml",
+    "docs/evidence/T008/independent.xml",
+    "docs/evidence/T008/independent-extra.xml",
+    "docs/evidence/T008/http-sessions.json",
+    "docs/evidence/T008/mysql-baseline.json",
+    "docs/evidence/T008/mysql-races.json",
+    "docs/evidence/T008/mysql-inventory.json",
+    "docs/evidence/T008/browser-results.json",
+    "docs/evidence/T008/supplement-results.json",
+    "docs/evidence/T008/visual-summary.json",
+    "docs/evidence/T008/upload-boundary.json",
+    "docs/evidence/T008/reused-evidence.json",
+    "docs/evidence/T008/resource-release.json",
+    "docs/evidence/T008/publication.json",
+    "docs/evidence/T008/timings.json"
+  ],
+  "summary": "Independent QA completed; product FAIL: technician manifest launch / returns403 instead of role destination; guest login lacks manifest link (Chrome no-manifest); pre-issued signed temporary upload URL accepts200 after demotion, while Store actions/save remain forbidden. PASS43focused/adversarial tests363assertions,10realHTTPsession/recaller cases,4actualMySQL8.0.31InnoDBlast-admin pairs,12M1screensat360/768/1280 with input/error/scroll/logo evidence. T00771PASS1SKIP698assertions validly reused on164identicalsource/14identicalbuildfiles. No source/ledger edits, no merge/deploy; hardware/HTTPS/production/printing NOT_RUN; QA DB preserved and browser/server released.",
+  "revision_note": "revision pins immutable core evidence commit; final publication-only HEAD/remote pin supplied in runtime handoff. checked_revision is always T007 FINAL, not evidence commit.",
+  "runtime_task": "task_a7fb2081803a",
+  "runtime_dispatch": "ctx_dd91a4362474"
+}

@@ -1,0 +1,11 @@
+{
+  "core_evidence_revision": "a5b34b6221873016fd409c0823edad3106452290",
+  "remote_core_revision": "a5b34b6221873016fd409c0823edad3106452290",
+  "core_push_exit": 0,
+  "core_push_receipt": "branch 'qa/m1' set up to track 'origin/qa/m1'.\nremote: \nremote: Create a pull request for 'qa/m1' on GitHub by visiting:        \nremote:      https://github.com/BatuBata/repair-app/pull/new/qa/m1        \nremote: \nTo https://github.com/BatuBata/repair-app.git\n * [new branch]      qa/m1 -> qa/m1",
+  "remote": "https://github.com/BatuBata/repair-app.git",
+  "branch": "qa/m1",
+  "force": false,
+  "published_at": "2026-11-12T17:25:35Z",
+  "note": "Publication commit after this receipt adds only result/publication documents; final remote SHA verified and sent through runtime handoff, avoiding self-reference."
+}

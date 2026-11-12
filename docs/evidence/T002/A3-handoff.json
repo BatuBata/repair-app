@@ -1,0 +1,119 @@
+{
+  "task_id": "T002",
+  "runtime_task_id": "task_593a1385cc0e",
+  "dispatch_id": "ctx_9ced09cfe782",
+  "attempt": "A3 implementation; second/final code attempt (A2 was verification-only)",
+  "verdict": "FAIL_CONCURRENCY_OVERLAP_ASSERTION",
+  "artifact_ref": "muzib/repair-t002-domain",
+  "revision": "Actual correction/evidence commit hash is in final worker result and push receipt",
+  "checked_revision": "Same final commit source bytes; test SHA256 recorded below",
+  "inputs": {
+    "base": "b517ebedd31c0c8f9b013736b2f14d5c666be055",
+    "T001": "4107c49d9098ab47c465773857fd5ee2811eb1b4",
+    "product_source": "e59bf7c1ccd98a7165da04c91b6b522d4c374a79",
+    "contract": "/tmp/repair-app-t002-guard-correction.md; current root AGENTS/TODO read"
+  },
+  "skills": "Ponytail full — read /Users/muzib/.codex/plugins/cache/ponytail/ponytail/5.3.3/skills/ponytail/SKILL.md; Project Delivery worker and QA rules retained.",
+  "model": "Same requested gpt-6.1-sol/high session; effective identity not independently observed; no fallback chosen.",
+  "summary": "Only both schema guards were corrected to explicit verified database and zero-count assertions. Real MySQL test now reaches migrate:fresh --seed and four successful TTS child processes, but fails its transaction-overlap assertion, so full domain MySQL acceptance remains FAIL. No further source change or rerun was made.",
+  "diff": {
+    "file": "tests/Feature/Domain/MySqlConcurrencyTest.php",
+    "lines_changed": "39–40 only",
+    "changes": [
+      "Schema::getTables and getViews both receive DB::connection()->getDatabaseName() after existing exact repair_app_test/mysql checks.",
+      "assertCount(0, metadata, same stop message) preserves empty-target guard without dumping metadata arrays."
+    ],
+    "unchanged": [
+      "loopback/exact-target/driver checks",
+      "migration command and seeder",
+      "parallel worker logic, expected numbers and overlap assertion",
+      "all production source, factories, config and locks",
+      "previous evidence and failure history"
+    ]
+  },
+  "test_sha256": "7f74603864eea59187c9bc73110302451e79f1e19d12d4322fa65d36e19bd1fb",
+  "checks": [
+    {
+      "command": "rg -n getTables/getViews across app tests database config; inspect installed Laravel Builder API",
+      "expected": "identify all callers and compatible explicit schema argument",
+      "actual": "Only the two scoped test callers need correction; vendor API accepts schema string."
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php -l tests/Feature/Domain/MySqlConcurrencyTest.php",
+      "expected": "syntax valid",
+      "actual": "PASS",
+      "evidence": "A3-php-lint.log"
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php vendor/bin/pint --test tests/Feature/Domain/MySqlConcurrencyTest.php",
+      "expected": "format pass",
+      "actual": "PASS",
+      "evidence": "A3-pint.log"
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php /tmp/repair-t002-A3-verify.php",
+      "child": "PHP 8.3 artisan test tests/Feature/Domain/MySqlConcurrencyTest.php --log-junit=<private-generated-path>",
+      "expected": "PASS 16 parallel document saves plus unsigned/index/schema checks",
+      "actual": "exit 1, 1 test/13 assertions/1 failure/0 errors/0 skipped; All four transaction attempts must overlap at line 70",
+      "duration_test_seconds": "3.645146",
+      "duration_wrapper_ms": 4643,
+      "evidence": "A3-mysql-result.json"
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php /tmp/repair-t002-A3-inventory.php",
+      "expected": "target-only inventory/provenance; no cleanup or hashes exported",
+      "actual": "PASS, 20 tables/0 views; synthetic 1 admin, 9 categories, 1 blank setting/default warranty 30, 4 TTS, 1 TTS counter; 6 migration rows; other tables empty",
+      "evidence": "A3-mysql-inventory.json"
+    },
+    {
+      "command": "git diff --name-only b517ebedd31c0c8f9b013736b2f14d5c666be055 -- app database config composer.lock package-lock.json; git diff --check",
+      "expected": "no changes outside approved test/evidence, no whitespace issue",
+      "actual": "PASS"
+    }
+  ],
+  "observations": [
+    "Both guards and migrate:fresh --seed passed. All four first-round TTS subprocesses returned successfully.",
+    "Read-only inventory confirms four unique TTS numbers TTS-2611-001 through 004 and four distinct tracking tokens; counter last_seq=4.",
+    "The test stops at overlap before its expected-number comparison, existing-counter TTS round, JL rounds and final unsigned/index checks. Only 4 of planned 16 concurrent document writes were reached.",
+    "The overlap failure alone does not establish duplicate numbering or prove the transaction-locking implementation defective.",
+    "Hypothesis for coordinator review only: mysql-worker.php resets entered inside the retried transaction closure; a retry may replace its first-attempt start with a later start, invalidating this all-four overlap comparison. Retry telemetry was not collected, so cause is unconfirmed; no worker/source expansion performed."
+  ],
+  "fixture_inventory": {
+    "target": "repair_app_test",
+    "source": "A3-mysql-inventory.json",
+    "classification": "Known synthetic task data created from empty target during this exclusive assignment",
+    "admin": 1,
+    "categories": 9,
+    "store_settings": 1,
+    "service_orders": 4,
+    "number_sequences": 1,
+    "migration_rows": 6,
+    "other_rows": 0,
+    "cleanup": "None; leave schema/fixtures for T020. Do not rerun empty-target test or reset database without coordinator decisions about this known fixture.",
+    "password_handling": "Private random synthetic password only; fixture/JUnit removed in finally; real app password and canonical .env unchanged; no hashes, credentials, keys or unrelated schema identifiers emitted."
+  },
+  "evidence_reuse": {
+    "from": "e59bf7c1ccd98a7165da04c91b6b522d4c374a79 / a199051700c613b5f1993e97cd9ba3a10c6b1db6",
+    "items": [
+      "55-test/396-assertion SQLite/regression suite",
+      "final targeted seed/config-cache checks",
+      "PHPStan production analysis",
+      "build and Pint production checks"
+    ],
+    "impact": "Only two MySQL test guards changed; all production/dependency bytes are identical. Full suite/build not repeated; PHPStan excludes tests and explicit schema type is confirmed in installed API."
+  },
+  "evidence": [
+    "docs/evidence/T002/A3-mysql-result.json",
+    "docs/evidence/T002/A3-mysql-inventory.json",
+    "docs/evidence/T002/A3-php-lint.log",
+    "docs/evidence/T002/A3-pint.log",
+    "docs/evidence/T002/A3-handoff.json"
+  ],
+  "push_authority": "Normal task branch push to origin authorized by current user/root AGENTS; unchanged workflow only tests main push/PR, no deploy side effects.",
+  "unchecked_and_risks": [
+    "Full MySQL acceptance FAIL; remaining 12 concurrent writes and final unsigned/index checks not reached.",
+    "Second code attempt used; further source correction requires coordinator/user decision, not a silent additional change.",
+    "Independent integrated QA, real application initialization and real admin password remain pending.",
+    "No full-suite/build repeat, subagents, ledger edits, main merge, deploy, production data use, or database cleanup."
+  ]
+}

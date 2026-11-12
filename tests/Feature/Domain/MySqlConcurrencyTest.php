@@ -36,8 +36,8 @@ class MySqlConcurrencyTest extends TestCase
         DB::purge('mysql');
         $this->assertSame('repair_app_test', DB::connection()->getDatabaseName());
         $this->assertSame('mysql', DB::connection()->getDriverName());
-        $this->assertSame([], Schema::getTables(), 'STOP: test database must be empty; no existing data will be dropped.');
-        $this->assertSame([], Schema::getViews(), 'STOP: test database must have no existing views.');
+        $this->assertCount(0, Schema::getTables(DB::connection()->getDatabaseName()), 'STOP: test database must be empty; no existing data will be dropped.');
+        $this->assertCount(0, Schema::getViews(DB::connection()->getDatabaseName()), 'STOP: test database must have no existing views.');
         $oldPassword = config('repair.admin_initial_password');
         config(['repair.admin_initial_password' => $password]);
         try {

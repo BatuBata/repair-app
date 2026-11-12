@@ -23,7 +23,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T001 | Scaffold Laravel 13 + Livewire starter kit, MySQL, WITA, Git | developer / 6.1-sol | medium / medium | — | — | done |
 | T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | done |
 | T003 | Layout lembar berbingkai, komponen UI dasar, dan web app manifest sesuai DESIGN.md | developer / 6.1-terra | medium / medium | T001 | T002, T006, T020 | done |
-| T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | pending |
+| T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | running |
 | T005 | Pengaturan toko dan master kategori | developer / 6-luna | easy / low | T004 | T006, T020 | pending |
 | T006 | Spike dokumen: PDF A5, struk 58mm, dan QR di dompdf | developer / 6.1-sol | medium / medium | T001 | T002, T003, T004, T005, T020 | done |
 | T007 | Integrasi fondasi M1 pada branch candidate sebelum QA dan merge main | integrator / 6.1-sol | medium / medium | T002, T003, T004, T005 | — | pending |
@@ -182,7 +182,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "url": "https://github.com/BatuBata/repair-app.git",
       "push_authorized": true,
       "source_ref": "Instruksi user 12 Nov 2026: push ke GitHub BatuBata/repair-app, setiap pekerjaan selesai buat commit dan push",
-      "policy": "Commit pekerjaan selesai dan push branch task/checkpoint setelah periksa perubahan; merge ke main tetap setelah QA/review relevan; tanpa force-push. Kandidat blocked disimpan sebagai checkpoint, bukan fitur diterima."
+      "policy": "Commit pekerjaan selesai dan push branch task/checkpoint setelah periksa perubahan; merge ke main tetap setelah QA/review relevan; tanpa force-push. Kandidat blocked disimpan sebagai checkpoint, bukan fitur diterima.",
+      "coordination_branch": "candidate/foundation-inputs"
     }
   },
   "deliverables": [
@@ -760,7 +761,28 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar untuk layar login, daftar pengguna, form pengguna.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "pending"
+      "status": "running",
+      "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "task_c45ef17a8450",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "ctx_0166b401edc1",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/T004-start.json"
+        }
+      ],
+      "runtime_assignment": {
+        "run_id": "run_729e02cff091",
+        "task_id": "task_c45ef17a8450",
+        "dispatch_id": "ctx_0166b401edc1",
+        "receipt_ref": "docs/evidence/coordinator/T004-start.json",
+        "base_revision": "78e5a5f04864dac3aab917731562f4254ba75c28",
+        "model_observation": "Launch records requested Sol high; effective backend identity unverified."
+      }
     },
     {
       "id": "T005",

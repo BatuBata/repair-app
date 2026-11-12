@@ -1,0 +1,11 @@
+{
+  "purpose": "prerequisite snapshot for dependent T004 implementation; NOT T007 integration acceptance",
+  "snapshot_revision": "78e5a5f04864dac3aab917731562f4254ba75c28",
+  "branch": "candidate/foundation-inputs",
+  "inputs": {
+    "T002": "4a0667c302c979ab40641459bf9e7afac0655e09",
+    "T003": "a08d1d785b72199e1000840ea8e2afe1d7f38fbd"
+  },
+  "assembly": "Two no-ff local merges, no conflicts; main remains baseline pending integration and independent QA.",
+  "testing": "No redundant suite at assembly; T004 tests affected combined auth/User/layout callers and T007/T008 retain integration gates."
+}

@@ -31,12 +31,12 @@ Gunakan skill `project-delivery` (sumber: `~/.agents/skills/project-delivery/SKI
 - Composer 2.8.6, Node 22, npm 10, Git 2.50.
 - MySQL 8.0.31 berjalan, tetapi akses user `muzib` tanpa password ditolak. User mengisi kredensial MySQL dan password admin awal sendiri di `.env`; jangan meminta nilai rahasia lewat chat dan jangan menulisnya ke file yang di-commit.
 - Database yang dibutuhkan: `repair_app` (lokal) dan `repair_app_test` (uji konkurensi, resource `db:mysql-test` eksklusif). Feature test lain memakai SQLite in-memory.
-- Folder belum menjadi repo Git; T001 membuat repo dan commit awal. Belum ada remote; push tidak diizinkan.
+- Repo Git lokal sudah dibuat T001; main masih baseline dokumen. Kandidat aplikasi ada di branch/task dan worktree Orca, menunggu integrasi + QA sesuai TODO. Belum ada remote; push tidak diizinkan.
 
 ## Blocker yang diketahui
 
 - Eksekusi lokal diizinkan user 12 November 2026; push dan deployment produksi belum diizinkan.
-- Kredensial MySQL dan password admin awal belum diisi di `.env` (menghambat T002 dan T007).
+- Kredensial MySQL dan password admin awal belum siap di `.env` (DB_USERNAME kosong pada pemeriksaan T020 12 Nov). Ini memblokir penerimaan T002, uji round-trip T020 dan task downstream. Siapkan `repair_app` dan `repair_app_test` khusus proyek; jangan menebak kredensial atau menghapus data existing. Verifikasi MySQL dan backup/restore dijalankan bergiliran memakai resource `db:mysql-test`.
 - PRD §19: Q-02 printer (uji cetak T025), Q-03 VPS/domain dan izin deploy (T024–T025), Q-04 lokasi backup (T024). Q-01, Q-05–Q-08 tidak menghambat; pakai nilai bawaan PRD.
 
 ## Batas

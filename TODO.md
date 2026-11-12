@@ -39,7 +39,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | pending |
 | T018 | Dashboard admin dan pengingat garansi | developer / 6.1-sol | medium / medium | T016 | T017, T019, T020 | pending |
 | T019 | Laporan omzet, modal, pengeluaran, dan laba per rentang tanggal | developer / 6.1-sol | medium / high | T016 | T017, T018, T020 | pending |
-| T020 | Paket deploy VPS: konfigurasi contoh, skrip deploy, backup dan restore | developer / 6.1-sol | medium / high | T001 | T002, T003, T004, T005, T006, T009, T012, T017, T018, T019 | running |
+| T020 | Paket deploy VPS: konfigurasi contoh, skrip deploy, backup dan restore | developer / 6.1-sol | medium / high | T001 | T002, T003, T004, T005, T006, T009, T012, T017, T018, T019 | blocked |
 | T021 | Panduan pengguna singkat untuk owner dan teknisi | developer / 6-luna | easy / low | T017, T018, T019 | T020 | pending |
 | T022 | Integrasi akhir v1 | integrator / 6.1-sol | medium / medium | T017, T018, T019, T020, T021 | — | pending |
 | T023 | QA akhir v1: regresi penuh dan uji responsif semua layar | tester / 6.1-sol | medium / high | T022 | — | pending |
@@ -1560,7 +1560,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Jalankan skrip backup dan restore terhadap MySQL lokal dengan data sintetis; shellcheck bila tersedia.",
         "Review dokumen terhadap PRD §14."
       ],
-      "status": "running",
+      "status": "blocked",
       "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t020-operations",
       "attempts": [
         {
@@ -1570,7 +1570,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "ctx_d74c71f70016",
-          "outcome": "running",
+          "outcome": "blocked",
           "receipt_ref": "docs/evidence/coordinator/T020-start.json"
         }
       ],
@@ -1581,7 +1581,47 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "receipt_ref": "docs/evidence/coordinator/T020-start.json",
         "base_revision": "c6799aceee695958ba176b06350ebaa0ed53711e",
         "model_observation": "Launch records requested Sol; effective backend identity unverified."
-      }
+      },
+      "next_attempt_kind": "verification",
+      "verification_revision": "a5a95970f5ff0caefdf8d85e89bc60604cd0638f",
+      "result": {
+        "verdict": "blocked",
+        "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t020-operations/docs/evidence/T020/HANDOFF.md",
+        "revision": "a5a95970f5ff0caefdf8d85e89bc60604cd0638f",
+        "checked_revision": "a5a95970f5ff0caefdf8d85e89bc60604cd0638f",
+        "inputs": {
+          "T001": "4107c49d9098ab47c465773857fd5ee2811eb1b4"
+        },
+        "evidence": [
+          "/Users/muzib/orca/workspaces/repair-app/repair-t020-operations/docs/evidence/T020/HANDOFF.md",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t020-operations/docs/evidence/T020/host-check-A1.log",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t020-operations/docs/evidence/T020/host-check-final.log",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t020-operations/docs/evidence/T020/source-sha256.txt",
+          "/Users/muzib/orca/workspaces/repair-app/repair-t020-operations/docs/DEPLOYMENT.md"
+        ],
+        "failure_class": "environment",
+        "summary": "Candidate T020 tersedia: konfigurasi Nginx/FPM/cron dan skrip deploy/backup/restore, runbook/pemulihan. 3 bash syntax checks dan 31 kasus keselamatan stub PASS, coordinator meninjau handoff/log/runbook. Kontrak penuh BLOCKED karena DB_USERNAME kosong dan dedicated DB belum dikonfirmasi, sehingga MySQL round-trip belum dijalankan. ShellCheck tidak tersedia; Ubuntu/Nginx/FPM/cron/HTTPS/off-VPS/produksi NOT_RUN. Tidak ada SQL nyata/push/deploy. Verifikasi source sama dapat dilanjutkan setelah akses siap dan db:mysql-test direservasi."
+      },
+      "prior_results": [
+        {
+          "verdict": "blocked",
+          "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t020-operations/docs/evidence/T020/HANDOFF.md",
+          "revision": "a5a95970f5ff0caefdf8d85e89bc60604cd0638f",
+          "checked_revision": "a5a95970f5ff0caefdf8d85e89bc60604cd0638f",
+          "inputs": {
+            "T001": "4107c49d9098ab47c465773857fd5ee2811eb1b4"
+          },
+          "evidence": [
+            "/Users/muzib/orca/workspaces/repair-app/repair-t020-operations/docs/evidence/T020/HANDOFF.md",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t020-operations/docs/evidence/T020/host-check-A1.log",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t020-operations/docs/evidence/T020/host-check-final.log",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t020-operations/docs/evidence/T020/source-sha256.txt",
+            "/Users/muzib/orca/workspaces/repair-app/repair-t020-operations/docs/DEPLOYMENT.md"
+          ],
+          "failure_class": "environment",
+          "summary": "Candidate T020 tersedia: konfigurasi Nginx/FPM/cron dan skrip deploy/backup/restore, runbook/pemulihan. 3 bash syntax checks dan 31 kasus keselamatan stub PASS, coordinator meninjau handoff/log/runbook. Kontrak penuh BLOCKED karena DB_USERNAME kosong dan dedicated DB belum dikonfirmasi, sehingga MySQL round-trip belum dijalankan. ShellCheck tidak tersedia; Ubuntu/Nginx/FPM/cron/HTTPS/off-VPS/produksi NOT_RUN. Tidak ada SQL nyata/push/deploy. Verifikasi source sama dapat dilanjutkan setelah akses siap dan db:mysql-test direservasi."
+        }
+      ]
     },
     {
       "id": "T021",
@@ -1898,3 +1938,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-12 | T003 A2 candidate a08d1d7 (source fb7fc2a) selesai implementasi; bukti komponen/browser direview coordinator, F001 tetap pending T008. T020 mengisi slot kosong untuk persiapan operasional; tidak ada izin deploy baru. | Gate implementasi lengkap, MySQL masih mengunci T002/T004 | T003, T020 | Handoff msg_2913e2be850a + review coordinator |
 
 | 2026-11-12 | T006 discovery be717f3 PASS; coordinator memeriksa laporan/hasil self-check dan seluruh 5 render. Temuan font/paginasi/thermal/token QR dibawa ke rencana verifikasi T017, tanpa menerima layout spike sebagai layout produksi. T020 masih berjalan; task lain menunggu T002/MySQL. | Pengetahuan spike tersedia; acceptance produk tidak berubah | T006, T017 | Handoff msg_1e79b7679267 + review coordinator |
+
+| 2026-11-12 | T020 A1 candidate a5a9597 terblokir environment untuk backup/restore MySQL nyata; 31 kasus keselamatan stub tidak menggantikan gate ini. Semua assignment telah melapor; tidak ada task siap. Eksekusi tetap diotorisasi/running, menunggu konfigurasi lokal user, bukan paused dan bukan proyek selesai. Checkout/bukti dipertahankan untuk konsumen QA/integrasi berikutnya. | DB_USERNAME masih kosong; Q-03/Q-04 produksi tetap terbuka | T002, T020 dan downstream | Handoff msg_6459b9296797 + review coordinator |

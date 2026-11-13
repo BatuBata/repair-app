@@ -1,0 +1,12 @@
+import Foundation
+import CoreImage
+let token = try String(contentsOfFile:"/private/tmp/t017-browser/token", encoding:.utf8)
+let expected = "http://127.0.0.1:8189/t/" + token
+precondition(token.count == 64)
+let detector = CIDetector(ofType:CIDetectorTypeQRCode, context:nil, options:[CIDetectorAccuracy:CIDetectorAccuracyHigh])!
+for paper in ["letter", "58mm"] {
+ let image=CIImage(contentsOf:URL(fileURLWithPath:"/private/tmp/t017-browser/final-nota-\(paper)-1.png"))!
+ let found=detector.features(in:image).compactMap{($0 as? CIQRCodeFeature)?.messageString}
+ precondition(found == [expected],"QR mismatch: \(paper) \(found)")
+ print("HTML print \(paper): QR model token 64 exact PASS")
+}

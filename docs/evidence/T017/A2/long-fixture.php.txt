@@ -1,0 +1,31 @@
+<?php
+use App\Models\Category;
+use App\Models\Sale;
+use App\Models\User;
+use App\Services\CreateServiceOrder;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
+class T017LongRenderTest extends TestCase {
+ use RefreshDatabase;
+ public function test_render(): void {
+  config(['app.url' => 'https://repair.example', 'filesystems.disks.public.root' => '/private/tmp/t017-public']);
+  \Illuminate\Support\Facades\Storage::forgetDisk('public');
+  @mkdir('/private/tmp/t017-public', 0777, true);
+  $logo=imagecreatetruecolor(80,40); $white=imagecolorallocate($logo,255,255,255); imagefill($logo,0,0,$white); $black=imagecolorallocate($logo,0,0,0); imagestring($logo,4,4,10,'LOGO',$black); imagewebp($logo,'/private/tmp/t017-public/logo.webp'); imagedestroy($logo);
+  \App\Models\StoreSetting::create(['id'=>1,'name'=>'TOKO ANUGERAH SINTETIS','address'=>"Jalan Mawar No. 123\nKelurahan Harapan\nKota Makassar",'phone'=>'081234567890','logo_path'=>'logo.webp','warranty_terms'=>'Syarat garansi sintetis','default_warranty_days'=>30]);
+  $tech = User::factory()->create(['role'=>'teknisi']); $admin=User::factory()->create(['role'=>'admin']);
+  $order=app(CreateServiceOrder::class)->create(['customer_name'=>'SYNTHETIC CUSTOMER','customer_phone'=>'081234567890','customer_address'=>'SECRET ADDRESS','category_id'=>Category::firstOrCreate(['name'=>'Laptop'])->id,'item_description'=>'Model X','complaint'=>str_repeat('Layar rusak dan tidak menyala. ', 12)],$tech);
+  file_put_contents('/private/tmp/t017-token', $order->tracking_token);
+  $this->actingAs($admin);
+  foreach (['tts-a5'=>'tts.pdf','tts-thermal'=>'tts.receipt.pdf'] as $name=>$route) file_put_contents('/private/tmp/'.$name.'.pdf',$this->get(route($route,$order->id))->getContent());
+  $order->update(['status'=>'selesai','invoiced_on'=>'2026-11-10','warranty_days'=>30,'warranty_until'=>'2026-12-10','technician_id'=>$tech->id]);
+  for($i=0;$i<40;$i++) $order->items()->create(['type'=>'part','description'=>$i === 3 ? 'Baris 3 '.str_repeat('panjang ', 30).'AKHIR' : 'Baris '.$i.' '.str_repeat('deskripsi panjang ',4),'qty'=>2,'price'=>100000,'cost'=>734567]);
+  foreach (['nota-a5'=>'tts.pdf','nota-thermal'=>'tts.receipt.pdf'] as $name=>$route) file_put_contents('/private/tmp/'.$name.'.pdf',$this->get(route($route,$order->id))->getContent());
+  file_put_contents('/private/tmp/public-a5.pdf',$this->get(route('tracking.pdf',$order->tracking_token))->getContent());
+  $sale=Sale::create(['number'=>'JL-2611-999','sold_on'=>'2026-11-10','created_by'=>$admin->id,'warranty_days'=>0]);
+  $product=\App\Models\Product::create(['name'=>'SYNTHETIC ITEM','cost_price'=>65432,'sell_price'=>123456,'stock'=>1]);
+  $sale->items()->create(['product_id'=>$product->id,'product_name'=>'SYNTHETIC ITEM','qty'=>2147483648,'price'=>4294967295,'cost'=>65432]);
+  foreach (['sale-a5'=>'sales.pdf','sale-thermal'=>'sales.receipt.pdf'] as $name=>$route) file_put_contents('/private/tmp/'.$name.'.pdf',$this->get(route($route,$sale->id))->getContent());
+  $this->assertTrue(true);
+ }
+}

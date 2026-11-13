@@ -1,0 +1,19 @@
+{
+  "task": "T019",
+  "attempt": "A1",
+  "runtime": "Codex native collaboration",
+  "dispatch_tool": "collaboration.spawn_agent",
+  "requested_model": "gpt-6.1-sol",
+  "requested_reasoning": "high",
+  "fork_turns": "none",
+  "actual_receipt": {
+    "task_name": "/root/t019_reports"
+  },
+  "effective_model": null,
+  "observation": "Tool returned canonical taskname only; backend model unproven.",
+  "workspace": "/Users/muzib/Projects/web/repair-app",
+  "branch": "codex/t019-reports",
+  "input_T016": "c66d038ea448910e3cc8a8529f170f72ac064306",
+  "source_base": "66359012ac0e4febec1f21c4154ba23085212333",
+  "dispatch_head": "c2ecfb1"
+}

@@ -38,7 +38,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T016 | QA independen alur servis, penjualan, dan pengeluaran | tester / 6.1-sol | medium / high | T015 | T020 | done |
 | T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | done |
 | T018 | Dashboard admin dan pengingat garansi | developer / 6.1-sol | medium / medium | T016 | T017, T019, T020 | running |
-| T019 | Laporan omzet, modal, pengeluaran, dan laba per rentang tanggal | developer / 6.1-sol | medium / high | T016 | T017, T018, T020 | running |
+| T019 | Laporan omzet, modal, pengeluaran, dan laba per rentang tanggal | developer / 6.1-sol | medium / high | T016 | T017, T018, T020 | done |
 | T020 | Paket deploy VPS: konfigurasi contoh, skrip deploy, backup dan restore | developer / 6.1-sol | medium / high | T001, T002 (artifact) | T002, T003, T004, T005, T006, T009, T012, T017, T018, T019 | done |
 | T021 | Panduan pengguna singkat untuk owner dan teknisi | developer / 6-luna | easy / low | T017, T018, T019 | T020 | pending |
 | T022 | Integrasi akhir v1 | integrator / 6.1-sol | medium / medium | T017, T018, T019, T020, T021 | — | pending |
@@ -358,7 +358,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "push_authorized": true,
       "source_ref": "Instruksi user 12 Nov 2026: push ke GitHub BatuBata/repair-app, setiap pekerjaan selesai buat commit dan push",
       "policy": "Commit pekerjaan selesai dan push branch task/checkpoint setelah periksa perubahan; merge ke main tetap setelah QA/review relevan; tanpa force-push. Kandidat blocked disimpan sebagai checkpoint, bukan fitur diterima.",
-      "coordination_branch": "codex/t010-invoice"
+      "coordination_branch": "codex/t019-reports"
     },
     "browser_isolation_policy": {
       "source_ref": "Coordinator13Nov2026 verified existing scripts/lib/cdp.mjs Browser.launch: fresh headless Chrome process, unique user-data-dir and remote-debugging-port0; T010 uses private TASTE_SKILL_TMP.",
@@ -2774,7 +2774,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Buktikan default awal bulan/hari ini WITA, rentang inklusif dan invalid/empty, contoh PRD, koreksi/hapus transaksi, restok info, fresh role guard, serta jumlah agregat legal di atas PHP_INT_MAX tanpa float/SQLite SUM overflow. Brick\\Math\\BigInteger sudah terpasang; gunakan dependency existing tanpa menambah paket. Screenshot3width termasuk nilai panjang/negatif dan error.",
         "Bandingkan chart daily buckets/sum terhadap uang exact dan sample, tooltip/keyboard/tap, hari nol/empty/negatif; default awal bulan–hariini dan tanggal bebas. Kartu/daftar/tabel sesuai DESIGN.md bila beda PRD tabel."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -2784,20 +2784,38 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native:collaboration.spawn_agent:/root/t019_reports:T019",
-          "outcome": "running",
-          "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/coordinator/t019-dispatch.json"
         }
       ],
       "runtime_assignment": {
         "runtime": "Codex native collaboration",
         "task_id": "/root/t019_reports",
         "base_revision": "66359012ac0e4febec1f21c4154ba23085212333",
-        "phase": "implementation",
+        "phase": "closed",
         "branch": "codex/t019-reports",
-        "browser_reservation": "conditional private headless8191 after isolation preflight; noGUI/CUA/Orca/MySQL",
-        "model_observation": "Native catalog supports Sol high; new spawn requested Sol high, effective model remains unproven until receipt."
+        "browser_reservation": "released; server8191/profile closed per resource-release.json",
+        "model_observation": "Spawn requested Sol high; actual receipt task_name=/root/t019_reports only. Effective backend unknown.",
+        "receipt_ref": "docs/evidence/coordinator/t019-dispatch.json"
       },
-      "resource_phase_policy": "Coding/host test no shared browser/MySQL resource. Private headless phase8191 only after own recorded process/profile/CDP/TASTE/SQLite/config/cache/session/views/storage preflight. Max2workers includingT018. NoGUI/CUA/Orca."
+      "resource_phase_policy": "Coding/host test no shared browser/MySQL resource. Private headless phase8191 only after own recorded process/profile/CDP/TASTE/SQLite/config/cache/session/views/storage preflight. Max2workers includingT018. NoGUI/CUA/Orca.",
+      "result": {
+        "verdict": "pass",
+        "revision": "7b7a438fcde75185c2160b642a02fbb2c6ed3ff1",
+        "artifact_ref": "docs/evidence/T019/A1/README.md",
+        "inputs": {
+          "T016": "c66d038ea448910e3cc8a8529f170f72ac064306"
+        },
+        "evidence": [
+          "docs/evidence/T019/A1/README.md",
+          "docs/evidence/T019/A1/feature-tests.log",
+          "docs/evidence/T019/A1/view-money-tests.log",
+          "docs/evidence/T019/A1/browser-results.json",
+          "docs/evidence/T019/A1/source-manifest.json",
+          "docs/evidence/T019/A1/resource-release.json"
+        ],
+        "summary": "7tests99assert PASS plus2relevant32assert aftermoney markup; PHPStan/Pint PASS; browser32assert 3width+controls. Coordinator reviewed source/sample/negative/mobile/dialog PNG and6source hashes matched. Wholeperiod exacttotals with31day chartwindow; bigvolume untested. T022/T023 finalgate pending."
+      }
     },
     {
       "id": "T020",
@@ -3021,7 +3039,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Branch candidate gabungan memuat hasil T017–T021 pada satu revisi; seluruh test lulus; build aset produksi berhasil. Merge main hanya sesudah QA independen T023 PASS dan review relevan, sesuai AGENTS.md; integrasi tidak melepas gate QA."
       ],
       "verification_plan": [
-        "Cocokkan revisi input; jalankan test suite penuh, build aset, dan smoke alur utama."
+        "Cocokkan revisi input; jalankan test suite penuh, build aset, dan smoke alur utama.",
+        "T020 source6095a5ca34a5b28bf65a481007d69b21a8bc7084 belum digabung. Integrasikan deploy/**,docs/DEPLOYMENT.md,docs/evidence/T020/** dari pin itu tanpa metadata/task lama. Runbook opening masih menyebut MySQLrestore BLOCKED walau verifikasi nyata6095a5c PASS; rekonsiliasi kalimat status dan tautkan bukti, pertahankan sumberFAIL/lokalPASS serta gateQ03/Q04 produksi. Jangan mengulang DBrestore/menghapusfixture yang sudahterbukti. Jalankan shellchecks sesuai perubahan/pin."
       ],
       "status": "pending"
     },
@@ -3067,7 +3086,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       ],
       "verification_plan": [
         "Sesi tester terpisah: test suite penuh, skenario manual end-to-end, screenshot semua layar 3 lebar, contoh PDF/struk, laporan di docs/evidence/T023/.",
-        "Revalidasi bagian software AC-01, AC-25 dan AC-26 pada revisi akhir: remember-me/launcher peran, keyboard/inputmode dan aksi form menempel, manifest/nama/ikon toko. Bukti fondasi boleh dipakai ulang hanya dengan pin/hash sumber dan kondisi relevan tetap cocok; pemasangan Android/keyboard nyata/printer fisik tetap T025, tidak diklaim PASS lewat emulasi."
+        "Revalidasi bagian software AC-01, AC-25 dan AC-26 pada revisi akhir: remember-me/launcher peran, keyboard/inputmode dan aksi form menempel, manifest/nama/ikon toko. Bukti fondasi boleh dipakai ulang hanya dengan pin/hash sumber dan kondisi relevan tetap cocok; pemasangan Android/keyboard nyata/printer fisik tetap T025, tidak diklaim PASS lewat emulasi.",
+        "T017 menyatakan batas belum terbukti: periksa nama toko legal255 karakter (termasuk kata panjang), alamat/syarat65535 karakter dan thermal melewati14000pt dengan fixture privat; buktikan isi akhir/QR tidak hilang dan batas halaman, bukan hanya HTTP200. Cek PDF dengan font-cache privat kosong dan data exactsource; F01 printwidth58mm serta F02 paginasi pairedlines harus tetapPASS. Field limits diverifikasi pada Store.php57–60 dan Dompdf mendukung overflow_wrap. Pertahankan fail; jangan patch candidate dalam sesi tester."
       ],
       "status": "pending",
       "qa_for": "T022"

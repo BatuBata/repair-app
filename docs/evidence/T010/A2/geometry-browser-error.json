@@ -1,0 +1,3539 @@
+{
+  "error": "Expected values to be strictly equal:\n\n240 !== 234\n",
+  "cases": [
+    {
+      "id": "issue-normal-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualViewportWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp1.000.000",
+          "x": 163.078125,
+          "right": 327,
+          "y": 492,
+          "bottom": 526,
+          "width": 163.921875,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp700.000",
+          "x": 244.828125,
+          "right": 327,
+          "y": 551,
+          "bottom": 575,
+          "width": 82.171875,
+          "height": 24,
+          "scrollWidth": 82,
+          "clientWidth": 82,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "",
+          "text": "Rp300.000",
+          "x": 244.828125,
+          "right": 327,
+          "y": 583,
+          "bottom": 607,
+          "width": 82.171875,
+          "height": 24,
+          "scrollWidth": 82,
+          "clientWidth": 82,
+          "whiteSpace": "normal",
+          "color": "rgb(30, 123, 79)",
+          "fontSize": "16px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn primary",
+          "text": "Terbitkan nota",
+          "x": 136.421875,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "width": 207.578125,
+          "height": 48,
+          "scrollWidth": 206,
+          "clientWidth": 206,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "16px"
+        }
+      ],
+      "actionbar": [
+        {
+          "class": "actionbar",
+          "text": "Total\nRp1.000.000\nTerbitkan nota",
+          "x": 0,
+          "right": 360,
+          "y": 763,
+          "bottom": 836,
+          "width": 360,
+          "height": 73,
+          "scrollWidth": 360,
+          "clientWidth": 360,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "table": [],
+      "cells": [],
+      "nav": [
+        {
+          "class": "bottomnav",
+          "text": "Beranda\nServis\nBuat TTS\nLaporan\nMenu",
+          "x": 0,
+          "right": 360,
+          "y": 836,
+          "bottom": 900,
+          "width": 360,
+          "height": 64,
+          "scrollWidth": 360,
+          "clientWidth": 360,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ]
+    },
+    {
+      "id": "issue-normal-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualViewportWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp1.000.000",
+          "x": 563.078125,
+          "right": 727,
+          "y": 510,
+          "bottom": 544,
+          "width": 163.921875,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp700.000",
+          "x": 644.828125,
+          "right": 727,
+          "y": 569,
+          "bottom": 593,
+          "width": 82.171875,
+          "height": 24,
+          "scrollWidth": 82,
+          "clientWidth": 82,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "",
+          "text": "Rp300.000",
+          "x": 644.828125,
+          "right": 727,
+          "y": 601,
+          "bottom": 625,
+          "width": 82.171875,
+          "height": 24,
+          "scrollWidth": 82,
+          "clientWidth": 82,
+          "whiteSpace": "normal",
+          "color": "rgb(30, 123, 79)",
+          "fontSize": "16px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn primary",
+          "text": "Terbitkan nota",
+          "x": 136.421875,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "width": 615.578125,
+          "height": 48,
+          "scrollWidth": 614,
+          "clientWidth": 614,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "16px"
+        }
+      ],
+      "actionbar": [
+        {
+          "class": "actionbar",
+          "text": "Total\nRp1.000.000\nTerbitkan nota",
+          "x": 0,
+          "right": 768,
+          "y": 763,
+          "bottom": 836,
+          "width": 768,
+          "height": 73,
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "table": [],
+      "cells": [],
+      "nav": [
+        {
+          "class": "bottomnav",
+          "text": "Beranda\nServis\nBuat TTS\nLaporan\nMenu",
+          "x": 0,
+          "right": 768,
+          "y": 836,
+          "bottom": 900,
+          "width": 768,
+          "height": 64,
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ]
+    },
+    {
+      "id": "issue-normal-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualViewportWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp1.000.000",
+          "x": 1054.078125,
+          "right": 1218,
+          "y": 270,
+          "bottom": 304,
+          "width": 163.921875,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp700.000",
+          "x": 1146.109375,
+          "right": 1218,
+          "y": 329,
+          "bottom": 349,
+          "width": 71.890625,
+          "height": 20,
+          "scrollWidth": 72,
+          "clientWidth": 72,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "",
+          "text": "Rp300.000",
+          "x": 1146.109375,
+          "right": 1218,
+          "y": 357,
+          "bottom": 377,
+          "width": 71.890625,
+          "height": 20,
+          "scrollWidth": 72,
+          "clientWidth": 72,
+          "whiteSpace": "normal",
+          "color": "rgb(30, 123, 79)",
+          "fontSize": "14px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn primary desktop-only",
+          "text": "Terbitkan nota",
+          "x": 950,
+          "right": 1218,
+          "y": 445,
+          "bottom": 481,
+          "width": 268,
+          "height": 36,
+          "scrollWidth": 266,
+          "clientWidth": 266,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "14px"
+        }
+      ],
+      "actionbar": [],
+      "table": [],
+      "cells": [],
+      "nav": []
+    },
+    {
+      "id": "issue-large-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualViewportWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 33,
+          "right": 327,
+          "y": 458,
+          "bottom": 526,
+          "width": 294,
+          "height": 68,
+          "scrollWidth": 294,
+          "clientWidth": 294,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 97,
+          "right": 327,
+          "y": 551,
+          "bottom": 575,
+          "width": 230,
+          "height": 24,
+          "scrollWidth": 230,
+          "clientWidth": 230,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "",
+          "text": "Rp0",
+          "x": 297.4375,
+          "right": 327,
+          "y": 583,
+          "bottom": 607,
+          "width": 29.5625,
+          "height": 24,
+          "scrollWidth": 30,
+          "clientWidth": 30,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn primary",
+          "text": "Terbitkan nota",
+          "x": 16,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "width": 328,
+          "height": 48,
+          "scrollWidth": 326,
+          "clientWidth": 326,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "16px"
+        }
+      ],
+      "actionbar": [
+        {
+          "class": "actionbar",
+          "text": "Total\nRp9.223.372.034.707.292.160\nTerbitkan nota",
+          "x": 0,
+          "right": 360,
+          "y": 709,
+          "bottom": 836,
+          "width": 360,
+          "height": 127,
+          "scrollWidth": 360,
+          "clientWidth": 360,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "table": [],
+      "cells": [],
+      "nav": [
+        {
+          "class": "bottomnav",
+          "text": "Beranda\nServis\nBuat TTS\nLaporan\nMenu",
+          "x": 0,
+          "right": 360,
+          "y": 836,
+          "bottom": 900,
+          "width": 360,
+          "height": 64,
+          "scrollWidth": 360,
+          "clientWidth": 360,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ]
+    },
+    {
+      "id": "issue-large-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualViewportWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 335.5,
+          "right": 727,
+          "y": 510,
+          "bottom": 544,
+          "width": 391.5,
+          "height": 34,
+          "scrollWidth": 392,
+          "clientWidth": 392,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 497,
+          "right": 727,
+          "y": 569,
+          "bottom": 593,
+          "width": 230,
+          "height": 24,
+          "scrollWidth": 230,
+          "clientWidth": 230,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "",
+          "text": "Rp0",
+          "x": 697.4375,
+          "right": 727,
+          "y": 601,
+          "bottom": 625,
+          "width": 29.5625,
+          "height": 24,
+          "scrollWidth": 30,
+          "clientWidth": 30,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn primary",
+          "text": "Terbitkan nota",
+          "x": 286.75,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "width": 465.25,
+          "height": 48,
+          "scrollWidth": 463,
+          "clientWidth": 463,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "16px"
+        }
+      ],
+      "actionbar": [
+        {
+          "class": "actionbar",
+          "text": "Total\nRp9.223.372.034.707.292.160\nTerbitkan nota",
+          "x": 0,
+          "right": 768,
+          "y": 763,
+          "bottom": 836,
+          "width": 768,
+          "height": 73,
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "table": [],
+      "cells": [],
+      "nav": [
+        {
+          "class": "bottomnav",
+          "text": "Beranda\nServis\nBuat TTS\nLaporan\nMenu",
+          "x": 0,
+          "right": 768,
+          "y": 836,
+          "bottom": 900,
+          "width": 768,
+          "height": 64,
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ]
+    },
+    {
+      "id": "issue-large-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualViewportWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 950,
+          "right": 1218,
+          "y": 270,
+          "bottom": 338,
+          "width": 268,
+          "height": 68,
+          "scrollWidth": 268,
+          "clientWidth": 268,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 1016.75,
+          "right": 1218,
+          "y": 363,
+          "bottom": 383,
+          "width": 201.25,
+          "height": 20,
+          "scrollWidth": 201,
+          "clientWidth": 201,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "",
+          "text": "Rp0",
+          "x": 1192.140625,
+          "right": 1218,
+          "y": 391,
+          "bottom": 411,
+          "width": 25.859375,
+          "height": 20,
+          "scrollWidth": 26,
+          "clientWidth": 26,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn primary desktop-only",
+          "text": "Terbitkan nota",
+          "x": 950,
+          "right": 1218,
+          "y": 479,
+          "bottom": 515,
+          "width": 268,
+          "height": 36,
+          "scrollWidth": 266,
+          "clientWidth": 266,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "14px"
+        }
+      ],
+      "actionbar": [],
+      "table": [],
+      "cells": [],
+      "nav": []
+    },
+    {
+      "id": "issue-negative-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualViewportWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp0",
+          "x": 276.875,
+          "right": 327,
+          "y": 492,
+          "bottom": 526,
+          "width": 50.125,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 97,
+          "right": 327,
+          "y": 551,
+          "bottom": 575,
+          "width": 230,
+          "height": 24,
+          "scrollWidth": 230,
+          "clientWidth": 230,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "",
+          "text": "Rp-9.223.372.034.707.292.160",
+          "x": 90.421875,
+          "right": 327,
+          "y": 583,
+          "bottom": 607,
+          "width": 236.578125,
+          "height": 24,
+          "scrollWidth": 237,
+          "clientWidth": 237,
+          "whiteSpace": "normal",
+          "color": "rgb(196, 36, 42)",
+          "fontSize": "16px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn primary",
+          "text": "Terbitkan nota",
+          "x": 61.25,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "width": 282.75,
+          "height": 48,
+          "scrollWidth": 281,
+          "clientWidth": 281,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "16px"
+        }
+      ],
+      "actionbar": [
+        {
+          "class": "actionbar",
+          "text": "Total\nRp0\nTerbitkan nota",
+          "x": 0,
+          "right": 360,
+          "y": 763,
+          "bottom": 836,
+          "width": 360,
+          "height": 73,
+          "scrollWidth": 360,
+          "clientWidth": 360,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "table": [],
+      "cells": [],
+      "nav": [
+        {
+          "class": "bottomnav",
+          "text": "Beranda\nServis\nBuat TTS\nLaporan\nMenu",
+          "x": 0,
+          "right": 360,
+          "y": 836,
+          "bottom": 900,
+          "width": 360,
+          "height": 64,
+          "scrollWidth": 360,
+          "clientWidth": 360,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ]
+    },
+    {
+      "id": "issue-negative-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualViewportWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp0",
+          "x": 676.875,
+          "right": 727,
+          "y": 510,
+          "bottom": 544,
+          "width": 50.125,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 497,
+          "right": 727,
+          "y": 569,
+          "bottom": 593,
+          "width": 230,
+          "height": 24,
+          "scrollWidth": 230,
+          "clientWidth": 230,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "",
+          "text": "Rp-9.223.372.034.707.292.160",
+          "x": 490.421875,
+          "right": 727,
+          "y": 601,
+          "bottom": 625,
+          "width": 236.578125,
+          "height": 24,
+          "scrollWidth": 237,
+          "clientWidth": 237,
+          "whiteSpace": "normal",
+          "color": "rgb(196, 36, 42)",
+          "fontSize": "16px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn primary",
+          "text": "Terbitkan nota",
+          "x": 61.25,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "width": 690.75,
+          "height": 48,
+          "scrollWidth": 689,
+          "clientWidth": 689,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "16px"
+        }
+      ],
+      "actionbar": [
+        {
+          "class": "actionbar",
+          "text": "Total\nRp0\nTerbitkan nota",
+          "x": 0,
+          "right": 768,
+          "y": 763,
+          "bottom": 836,
+          "width": 768,
+          "height": 73,
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "table": [],
+      "cells": [],
+      "nav": [
+        {
+          "class": "bottomnav",
+          "text": "Beranda\nServis\nBuat TTS\nLaporan\nMenu",
+          "x": 0,
+          "right": 768,
+          "y": 836,
+          "bottom": 900,
+          "width": 768,
+          "height": 64,
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ]
+    },
+    {
+      "id": "issue-negative-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualViewportWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp0",
+          "x": 1167.875,
+          "right": 1218,
+          "y": 238,
+          "bottom": 272,
+          "width": 50.125,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 1016.75,
+          "right": 1218,
+          "y": 297,
+          "bottom": 317,
+          "width": 201.25,
+          "height": 20,
+          "scrollWidth": 201,
+          "clientWidth": 201,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "",
+          "text": "Rp-9.223.372.034.707.292.160",
+          "x": 1010.984375,
+          "right": 1218,
+          "y": 325,
+          "bottom": 345,
+          "width": 207.015625,
+          "height": 20,
+          "scrollWidth": 207,
+          "clientWidth": 207,
+          "whiteSpace": "normal",
+          "color": "rgb(196, 36, 42)",
+          "fontSize": "14px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn primary desktop-only",
+          "text": "Terbitkan nota",
+          "x": 950,
+          "right": 1218,
+          "y": 413,
+          "bottom": 449,
+          "width": 268,
+          "height": 36,
+          "scrollWidth": 266,
+          "clientWidth": 266,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "14px"
+        }
+      ],
+      "actionbar": [],
+      "table": [],
+      "cells": [],
+      "nav": []
+    },
+    {
+      "id": "published-large-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualViewportWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 16,
+          "right": 344,
+          "y": 606,
+          "bottom": 674,
+          "width": 328,
+          "height": 68,
+          "scrollWidth": 328,
+          "clientWidth": 328,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 114,
+          "right": 344,
+          "y": 699,
+          "bottom": 723,
+          "width": 230,
+          "height": 24,
+          "scrollWidth": 230,
+          "clientWidth": 230,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "",
+          "text": "Rp0",
+          "x": 314.4375,
+          "right": 344,
+          "y": 731,
+          "bottom": 755,
+          "width": 29.5625,
+          "height": 24,
+          "scrollWidth": 30,
+          "clientWidth": 30,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn sm act-btn",
+          "text": "",
+          "x": 16,
+          "right": 60,
+          "y": 778,
+          "bottom": 822,
+          "width": 44,
+          "height": 44,
+          "scrollWidth": 42,
+          "clientWidth": 42,
+          "whiteSpace": "nowrap",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "btn primary",
+          "text": "Tandai Diambil",
+          "x": 72,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "width": 272,
+          "height": 48,
+          "scrollWidth": 270,
+          "clientWidth": 270,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "16px"
+        }
+      ],
+      "actionbar": [
+        {
+          "class": "actionbar",
+          "text": "Tandai Diambil",
+          "x": 0,
+          "right": 360,
+          "y": 763,
+          "bottom": 836,
+          "width": 360,
+          "height": 73,
+          "scrollWidth": 360,
+          "clientWidth": 360,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "table": [
+        {
+          "class": "table",
+          "text": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Part\n2147483648 ×\nRp4.294.967.295\nModal Rp4.294.967.295",
+          "x": 16,
+          "right": 344,
+          "y": 330,
+          "bottom": 546,
+          "width": 328,
+          "height": 216,
+          "scrollWidth": 328,
+          "clientWidth": 328,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "cells": [
+        {
+          "class": "c-who",
+          "text": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Part",
+          "x": 16,
+          "right": 344,
+          "y": 342,
+          "bottom": 486,
+          "width": 328,
+          "height": 144,
+          "scrollWidth": 328,
+          "clientWidth": 328,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "c-meta",
+          "text": "2147483648 ×",
+          "x": 16,
+          "right": 203.421875,
+          "y": 488,
+          "bottom": 512,
+          "width": 187.421875,
+          "height": 24,
+          "scrollWidth": 187,
+          "clientWidth": 187,
+          "whiteSpace": "nowrap",
+          "color": "rgb(93, 95, 96)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "c-amt n",
+          "text": "Rp4.294.967.295",
+          "x": 215.421875,
+          "right": 344,
+          "y": 488,
+          "bottom": 512,
+          "width": 128.578125,
+          "height": 24,
+          "scrollWidth": 129,
+          "clientWidth": 129,
+          "whiteSpace": "nowrap",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "c-what n",
+          "text": "Modal Rp4.294.967.295",
+          "x": 16,
+          "right": 344,
+          "y": 514,
+          "bottom": 534,
+          "width": 328,
+          "height": 20,
+          "scrollWidth": 328,
+          "clientWidth": 328,
+          "whiteSpace": "nowrap",
+          "color": "rgb(93, 95, 96)",
+          "fontSize": "14px"
+        }
+      ],
+      "nav": [
+        {
+          "class": "bottomnav",
+          "text": "Beranda\nServis\nBuat TTS\nLaporan\nMenu",
+          "x": 0,
+          "right": 360,
+          "y": 836,
+          "bottom": 900,
+          "width": 360,
+          "height": 64,
+          "scrollWidth": 360,
+          "clientWidth": 360,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ]
+    },
+    {
+      "id": "published-large-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualViewportWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 352.5,
+          "right": 744,
+          "y": 557,
+          "bottom": 591,
+          "width": 391.5,
+          "height": 34,
+          "scrollWidth": 392,
+          "clientWidth": 392,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 514,
+          "right": 744,
+          "y": 616,
+          "bottom": 640,
+          "width": 230,
+          "height": 24,
+          "scrollWidth": 230,
+          "clientWidth": 230,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "",
+          "text": "Rp0",
+          "x": 714.4375,
+          "right": 744,
+          "y": 648,
+          "bottom": 672,
+          "width": 29.5625,
+          "height": 24,
+          "scrollWidth": 30,
+          "clientWidth": 30,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn sm act-btn",
+          "text": "",
+          "x": 16,
+          "right": 60,
+          "y": 778,
+          "bottom": 822,
+          "width": 44,
+          "height": 44,
+          "scrollWidth": 42,
+          "clientWidth": 42,
+          "whiteSpace": "nowrap",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "btn primary",
+          "text": "Tandai Diambil",
+          "x": 72,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "width": 680,
+          "height": 48,
+          "scrollWidth": 678,
+          "clientWidth": 678,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "16px"
+        }
+      ],
+      "actionbar": [
+        {
+          "class": "actionbar",
+          "text": "Tandai Diambil",
+          "x": 0,
+          "right": 768,
+          "y": 763,
+          "bottom": 836,
+          "width": 768,
+          "height": 73,
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "table": [
+        {
+          "class": "table",
+          "text": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Part\n2147483648 ×\nRp4.294.967.295\nModal Rp4.294.967.295",
+          "x": 24,
+          "right": 744,
+          "y": 389,
+          "bottom": 533,
+          "width": 720,
+          "height": 144,
+          "scrollWidth": 720,
+          "clientWidth": 720,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "cells": [
+        {
+          "class": "c-who",
+          "text": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Part",
+          "x": 24,
+          "right": 744,
+          "y": 401,
+          "bottom": 473,
+          "width": 720,
+          "height": 72,
+          "scrollWidth": 720,
+          "clientWidth": 720,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "c-meta",
+          "text": "2147483648 ×",
+          "x": 24,
+          "right": 603.421875,
+          "y": 475,
+          "bottom": 499,
+          "width": 579.421875,
+          "height": 24,
+          "scrollWidth": 579,
+          "clientWidth": 579,
+          "whiteSpace": "nowrap",
+          "color": "rgb(93, 95, 96)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "c-amt n",
+          "text": "Rp4.294.967.295",
+          "x": 615.421875,
+          "right": 744,
+          "y": 475,
+          "bottom": 499,
+          "width": 128.578125,
+          "height": 24,
+          "scrollWidth": 129,
+          "clientWidth": 129,
+          "whiteSpace": "nowrap",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "c-what n",
+          "text": "Modal Rp4.294.967.295",
+          "x": 24,
+          "right": 744,
+          "y": 501,
+          "bottom": 521,
+          "width": 720,
+          "height": 20,
+          "scrollWidth": 720,
+          "clientWidth": 720,
+          "whiteSpace": "nowrap",
+          "color": "rgb(93, 95, 96)",
+          "fontSize": "14px"
+        }
+      ],
+      "nav": [
+        {
+          "class": "bottomnav",
+          "text": "Beranda\nServis\nBuat TTS\nLaporan\nMenu",
+          "x": 0,
+          "right": 768,
+          "y": 836,
+          "bottom": 900,
+          "width": 768,
+          "height": 64,
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ]
+    },
+    {
+      "id": "published-large-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualViewportWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 513.5,
+          "right": 905,
+          "y": 683.5,
+          "bottom": 717.5,
+          "width": 391.5,
+          "height": 34,
+          "scrollWidth": 392,
+          "clientWidth": 392,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 703.75,
+          "right": 905,
+          "y": 742.5,
+          "bottom": 762.5,
+          "width": 201.25,
+          "height": 20,
+          "scrollWidth": 201,
+          "clientWidth": 201,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "",
+          "text": "Rp0",
+          "x": 879.140625,
+          "right": 905,
+          "y": 770.5,
+          "bottom": 790.5,
+          "width": 25.859375,
+          "height": 20,
+          "scrollWidth": 26,
+          "clientWidth": 26,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        }
+      ],
+      "buttons": [],
+      "actionbar": [],
+      "table": [
+        {
+          "class": "table",
+          "text": "Deskripsi\tQty\tHarga jual\tModal\nDeskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis\nPart\n\t2147483648 ×\tRp4.294.967.295\tModal Rp4.294.967.295",
+          "x": 261,
+          "right": 905,
+          "y": 429,
+          "bottom": 659.5,
+          "width": 644,
+          "height": 230.5,
+          "scrollWidth": 644,
+          "clientWidth": 644,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        }
+      ],
+      "cells": [
+        {
+          "class": "c-who",
+          "text": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis\nPart",
+          "x": 261,
+          "right": 482.34375,
+          "y": 465,
+          "bottom": 659.5,
+          "width": 221.34375,
+          "height": 194.5,
+          "scrollWidth": 221,
+          "clientWidth": 221,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "c-meta",
+          "text": "2147483648 ×",
+          "x": 482.34375,
+          "right": 602.0625,
+          "y": 465,
+          "bottom": 659.5,
+          "width": 119.71875,
+          "height": 194.5,
+          "scrollWidth": 120,
+          "clientWidth": 120,
+          "whiteSpace": "nowrap",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "c-amt n",
+          "text": "Rp4.294.967.295",
+          "x": 602.0625,
+          "right": 738.578125,
+          "y": 465,
+          "bottom": 659.5,
+          "width": 136.515625,
+          "height": 194.5,
+          "scrollWidth": 137,
+          "clientWidth": 137,
+          "whiteSpace": "nowrap",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "c-what n",
+          "text": "Modal Rp4.294.967.295",
+          "x": 738.578125,
+          "right": 905,
+          "y": 465,
+          "bottom": 659.5,
+          "width": 166.421875,
+          "height": 194.5,
+          "scrollWidth": 166,
+          "clientWidth": 166,
+          "whiteSpace": "nowrap",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        }
+      ],
+      "nav": []
+    },
+    {
+      "id": "published-normal-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualViewportWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp1.000.000",
+          "x": 180.078125,
+          "right": 344,
+          "y": 563,
+          "bottom": 597,
+          "width": 163.921875,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp700.000",
+          "x": 261.828125,
+          "right": 344,
+          "y": 622,
+          "bottom": 646,
+          "width": 82.171875,
+          "height": 24,
+          "scrollWidth": 82,
+          "clientWidth": 82,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "",
+          "text": "Rp300.000",
+          "x": 261.828125,
+          "right": 344,
+          "y": 654,
+          "bottom": 678,
+          "width": 82.171875,
+          "height": 24,
+          "scrollWidth": 82,
+          "clientWidth": 82,
+          "whiteSpace": "normal",
+          "color": "rgb(30, 123, 79)",
+          "fontSize": "16px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn sm act-btn",
+          "text": "",
+          "x": 16,
+          "right": 60,
+          "y": 778,
+          "bottom": 822,
+          "width": 44,
+          "height": 44,
+          "scrollWidth": 42,
+          "clientWidth": 42,
+          "whiteSpace": "nowrap",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "btn primary",
+          "text": "Tandai Diambil",
+          "x": 72,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "width": 272,
+          "height": 48,
+          "scrollWidth": 270,
+          "clientWidth": 270,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "16px"
+        }
+      ],
+      "actionbar": [
+        {
+          "class": "actionbar",
+          "text": "Tandai Diambil",
+          "x": 0,
+          "right": 360,
+          "y": 763,
+          "bottom": 836,
+          "width": 360,
+          "height": 73,
+          "scrollWidth": 360,
+          "clientWidth": 360,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "table": [
+        {
+          "class": "table",
+          "text": "LCD 14 inci HD Part\n1 ×\nRp1.000.000\nModal Rp700.000",
+          "x": 16,
+          "right": 344,
+          "y": 407,
+          "bottom": 503,
+          "width": 328,
+          "height": 96,
+          "scrollWidth": 328,
+          "clientWidth": 328,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "cells": [
+        {
+          "class": "c-who",
+          "text": "LCD 14 inci HD Part",
+          "x": 16,
+          "right": 344,
+          "y": 419,
+          "bottom": 443,
+          "width": 328,
+          "height": 24,
+          "scrollWidth": 328,
+          "clientWidth": 328,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "c-meta",
+          "text": "1 ×",
+          "x": 16,
+          "right": 236.5625,
+          "y": 445,
+          "bottom": 469,
+          "width": 220.5625,
+          "height": 24,
+          "scrollWidth": 221,
+          "clientWidth": 221,
+          "whiteSpace": "nowrap",
+          "color": "rgb(93, 95, 96)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "c-amt n",
+          "text": "Rp1.000.000",
+          "x": 248.5625,
+          "right": 344,
+          "y": 445,
+          "bottom": 469,
+          "width": 95.4375,
+          "height": 24,
+          "scrollWidth": 95,
+          "clientWidth": 95,
+          "whiteSpace": "nowrap",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "c-what n",
+          "text": "Modal Rp700.000",
+          "x": 16,
+          "right": 344,
+          "y": 471,
+          "bottom": 491,
+          "width": 328,
+          "height": 20,
+          "scrollWidth": 328,
+          "clientWidth": 328,
+          "whiteSpace": "nowrap",
+          "color": "rgb(93, 95, 96)",
+          "fontSize": "14px"
+        }
+      ],
+      "nav": [
+        {
+          "class": "bottomnav",
+          "text": "Beranda\nServis\nBuat TTS\nLaporan\nMenu",
+          "x": 0,
+          "right": 360,
+          "y": 836,
+          "bottom": 900,
+          "width": 360,
+          "height": 64,
+          "scrollWidth": 360,
+          "clientWidth": 360,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ]
+    },
+    {
+      "id": "published-normal-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualViewportWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp1.000.000",
+          "x": 580.078125,
+          "right": 744,
+          "y": 533,
+          "bottom": 567,
+          "width": 163.921875,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp700.000",
+          "x": 661.828125,
+          "right": 744,
+          "y": 592,
+          "bottom": 616,
+          "width": 82.171875,
+          "height": 24,
+          "scrollWidth": 82,
+          "clientWidth": 82,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "",
+          "text": "Rp300.000",
+          "x": 661.828125,
+          "right": 744,
+          "y": 624,
+          "bottom": 648,
+          "width": 82.171875,
+          "height": 24,
+          "scrollWidth": 82,
+          "clientWidth": 82,
+          "whiteSpace": "normal",
+          "color": "rgb(30, 123, 79)",
+          "fontSize": "16px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn sm act-btn",
+          "text": "",
+          "x": 16,
+          "right": 60,
+          "y": 778,
+          "bottom": 822,
+          "width": 44,
+          "height": 44,
+          "scrollWidth": 42,
+          "clientWidth": 42,
+          "whiteSpace": "nowrap",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "btn primary",
+          "text": "Tandai Diambil",
+          "x": 72,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "width": 680,
+          "height": 48,
+          "scrollWidth": 678,
+          "clientWidth": 678,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "16px"
+        }
+      ],
+      "actionbar": [
+        {
+          "class": "actionbar",
+          "text": "Tandai Diambil",
+          "x": 0,
+          "right": 768,
+          "y": 763,
+          "bottom": 836,
+          "width": 768,
+          "height": 73,
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "table": [
+        {
+          "class": "table",
+          "text": "LCD 14 inci HD Part\n1 ×\nRp1.000.000\nModal Rp700.000",
+          "x": 24,
+          "right": 744,
+          "y": 413,
+          "bottom": 509,
+          "width": 720,
+          "height": 96,
+          "scrollWidth": 720,
+          "clientWidth": 720,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "cells": [
+        {
+          "class": "c-who",
+          "text": "LCD 14 inci HD Part",
+          "x": 24,
+          "right": 744,
+          "y": 425,
+          "bottom": 449,
+          "width": 720,
+          "height": 24,
+          "scrollWidth": 720,
+          "clientWidth": 720,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "c-meta",
+          "text": "1 ×",
+          "x": 24,
+          "right": 636.5625,
+          "y": 451,
+          "bottom": 475,
+          "width": 612.5625,
+          "height": 24,
+          "scrollWidth": 613,
+          "clientWidth": 613,
+          "whiteSpace": "nowrap",
+          "color": "rgb(93, 95, 96)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "c-amt n",
+          "text": "Rp1.000.000",
+          "x": 648.5625,
+          "right": 744,
+          "y": 451,
+          "bottom": 475,
+          "width": 95.4375,
+          "height": 24,
+          "scrollWidth": 95,
+          "clientWidth": 95,
+          "whiteSpace": "nowrap",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "c-what n",
+          "text": "Modal Rp700.000",
+          "x": 24,
+          "right": 744,
+          "y": 477,
+          "bottom": 497,
+          "width": 720,
+          "height": 20,
+          "scrollWidth": 720,
+          "clientWidth": 720,
+          "whiteSpace": "nowrap",
+          "color": "rgb(93, 95, 96)",
+          "fontSize": "14px"
+        }
+      ],
+      "nav": [
+        {
+          "class": "bottomnav",
+          "text": "Beranda\nServis\nBuat TTS\nLaporan\nMenu",
+          "x": 0,
+          "right": 768,
+          "y": 836,
+          "bottom": 900,
+          "width": 768,
+          "height": 64,
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ]
+    },
+    {
+      "id": "published-normal-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualViewportWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp1.000.000",
+          "x": 741.078125,
+          "right": 905,
+          "y": 683.5,
+          "bottom": 717.5,
+          "width": 163.921875,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp700.000",
+          "x": 833.109375,
+          "right": 905,
+          "y": 742.5,
+          "bottom": 762.5,
+          "width": 71.890625,
+          "height": 20,
+          "scrollWidth": 72,
+          "clientWidth": 72,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "",
+          "text": "Rp300.000",
+          "x": 833.109375,
+          "right": 905,
+          "y": 770.5,
+          "bottom": 790.5,
+          "width": 71.890625,
+          "height": 20,
+          "scrollWidth": 72,
+          "clientWidth": 72,
+          "whiteSpace": "normal",
+          "color": "rgb(30, 123, 79)",
+          "fontSize": "14px"
+        }
+      ],
+      "buttons": [],
+      "actionbar": [],
+      "table": [
+        {
+          "class": "table",
+          "text": "Deskripsi\tQty\tHarga jual\tModal\nLCD 14 inci HD\nPart\n\t1 ×\tRp1.000.000\tModal Rp700.000",
+          "x": 261,
+          "right": 905,
+          "y": 569,
+          "bottom": 659.5,
+          "width": 644,
+          "height": 90.5,
+          "scrollWidth": 644,
+          "clientWidth": 644,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        }
+      ],
+      "cells": [
+        {
+          "class": "c-who",
+          "text": "LCD 14 inci HD\nPart",
+          "x": 261,
+          "right": 437.703125,
+          "y": 605,
+          "bottom": 659.5,
+          "width": 176.703125,
+          "height": 54.5,
+          "scrollWidth": 177,
+          "clientWidth": 177,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "c-meta",
+          "text": "1 ×",
+          "x": 437.703125,
+          "right": 512.15625,
+          "y": 605,
+          "bottom": 659.5,
+          "width": 74.453125,
+          "height": 54.5,
+          "scrollWidth": 74,
+          "clientWidth": 74,
+          "whiteSpace": "nowrap",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "c-amt n",
+          "text": "Rp1.000.000",
+          "x": 512.15625,
+          "right": 693.609375,
+          "y": 605,
+          "bottom": 659.5,
+          "width": 181.453125,
+          "height": 54.5,
+          "scrollWidth": 181,
+          "clientWidth": 181,
+          "whiteSpace": "nowrap",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "c-what n",
+          "text": "Modal Rp700.000",
+          "x": 693.609375,
+          "right": 905,
+          "y": 605,
+          "bottom": 659.5,
+          "width": 211.390625,
+          "height": 54.5,
+          "scrollWidth": 211,
+          "clientWidth": 211,
+          "whiteSpace": "nowrap",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        }
+      ],
+      "nav": []
+    },
+    {
+      "id": "published-negative-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualViewportWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp0",
+          "x": 293.875,
+          "right": 344,
+          "y": 605,
+          "bottom": 639,
+          "width": 50.125,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 114,
+          "right": 344,
+          "y": 664,
+          "bottom": 688,
+          "width": 230,
+          "height": 24,
+          "scrollWidth": 230,
+          "clientWidth": 230,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "",
+          "text": "Rp-9.223.372.034.707.292.160",
+          "x": 107.421875,
+          "right": 344,
+          "y": 696,
+          "bottom": 720,
+          "width": 236.578125,
+          "height": 24,
+          "scrollWidth": 237,
+          "clientWidth": 237,
+          "whiteSpace": "normal",
+          "color": "rgb(196, 36, 42)",
+          "fontSize": "16px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn sm act-btn",
+          "text": "",
+          "x": 16,
+          "right": 60,
+          "y": 778,
+          "bottom": 822,
+          "width": 44,
+          "height": 44,
+          "scrollWidth": 42,
+          "clientWidth": 42,
+          "whiteSpace": "nowrap",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "btn primary",
+          "text": "Tandai Diambil",
+          "x": 72,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "width": 272,
+          "height": 48,
+          "scrollWidth": 270,
+          "clientWidth": 270,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "16px"
+        }
+      ],
+      "actionbar": [
+        {
+          "class": "actionbar",
+          "text": "Tandai Diambil",
+          "x": 0,
+          "right": 360,
+          "y": 763,
+          "bottom": 836,
+          "width": 360,
+          "height": 73,
+          "scrollWidth": 360,
+          "clientWidth": 360,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "table": [
+        {
+          "class": "table",
+          "text": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Part\n2147483648 ×\nRp0\nModal Rp4.294.967.295",
+          "x": 16,
+          "right": 344,
+          "y": 365,
+          "bottom": 581,
+          "width": 328,
+          "height": 216,
+          "scrollWidth": 328,
+          "clientWidth": 328,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "cells": [
+        {
+          "class": "c-who",
+          "text": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Part",
+          "x": 16,
+          "right": 344,
+          "y": 377,
+          "bottom": 521,
+          "width": 328,
+          "height": 144,
+          "scrollWidth": 328,
+          "clientWidth": 328,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "c-meta",
+          "text": "2147483648 ×",
+          "x": 16,
+          "right": 302.875,
+          "y": 523,
+          "bottom": 547,
+          "width": 286.875,
+          "height": 24,
+          "scrollWidth": 287,
+          "clientWidth": 287,
+          "whiteSpace": "nowrap",
+          "color": "rgb(93, 95, 96)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "c-amt n",
+          "text": "Rp0",
+          "x": 314.875,
+          "right": 344,
+          "y": 523,
+          "bottom": 547,
+          "width": 29.125,
+          "height": 24,
+          "scrollWidth": 29,
+          "clientWidth": 29,
+          "whiteSpace": "nowrap",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "c-what n",
+          "text": "Modal Rp4.294.967.295",
+          "x": 16,
+          "right": 344,
+          "y": 549,
+          "bottom": 569,
+          "width": 328,
+          "height": 20,
+          "scrollWidth": 328,
+          "clientWidth": 328,
+          "whiteSpace": "nowrap",
+          "color": "rgb(93, 95, 96)",
+          "fontSize": "14px"
+        }
+      ],
+      "nav": [
+        {
+          "class": "bottomnav",
+          "text": "Beranda\nServis\nBuat TTS\nLaporan\nMenu",
+          "x": 0,
+          "right": 360,
+          "y": 836,
+          "bottom": 900,
+          "width": 360,
+          "height": 64,
+          "scrollWidth": 360,
+          "clientWidth": 360,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ]
+    },
+    {
+      "id": "published-negative-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualViewportWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp0",
+          "x": 693.875,
+          "right": 744,
+          "y": 557,
+          "bottom": 591,
+          "width": 50.125,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 514,
+          "right": 744,
+          "y": 616,
+          "bottom": 640,
+          "width": 230,
+          "height": 24,
+          "scrollWidth": 230,
+          "clientWidth": 230,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "",
+          "text": "Rp-9.223.372.034.707.292.160",
+          "x": 507.421875,
+          "right": 744,
+          "y": 648,
+          "bottom": 672,
+          "width": 236.578125,
+          "height": 24,
+          "scrollWidth": 237,
+          "clientWidth": 237,
+          "whiteSpace": "normal",
+          "color": "rgb(196, 36, 42)",
+          "fontSize": "16px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn sm act-btn",
+          "text": "",
+          "x": 16,
+          "right": 60,
+          "y": 778,
+          "bottom": 822,
+          "width": 44,
+          "height": 44,
+          "scrollWidth": 42,
+          "clientWidth": 42,
+          "whiteSpace": "nowrap",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "btn primary",
+          "text": "Tandai Diambil",
+          "x": 72,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "width": 680,
+          "height": 48,
+          "scrollWidth": 678,
+          "clientWidth": 678,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "16px"
+        }
+      ],
+      "actionbar": [
+        {
+          "class": "actionbar",
+          "text": "Tandai Diambil",
+          "x": 0,
+          "right": 768,
+          "y": 763,
+          "bottom": 836,
+          "width": 768,
+          "height": 73,
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "table": [
+        {
+          "class": "table",
+          "text": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Part\n2147483648 ×\nRp0\nModal Rp4.294.967.295",
+          "x": 24,
+          "right": 744,
+          "y": 389,
+          "bottom": 533,
+          "width": 720,
+          "height": 144,
+          "scrollWidth": 720,
+          "clientWidth": 720,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "cells": [
+        {
+          "class": "c-who",
+          "text": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Part",
+          "x": 24,
+          "right": 744,
+          "y": 401,
+          "bottom": 473,
+          "width": 720,
+          "height": 72,
+          "scrollWidth": 720,
+          "clientWidth": 720,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "c-meta",
+          "text": "2147483648 ×",
+          "x": 24,
+          "right": 702.875,
+          "y": 475,
+          "bottom": 499,
+          "width": 678.875,
+          "height": 24,
+          "scrollWidth": 679,
+          "clientWidth": 679,
+          "whiteSpace": "nowrap",
+          "color": "rgb(93, 95, 96)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "c-amt n",
+          "text": "Rp0",
+          "x": 714.875,
+          "right": 744,
+          "y": 475,
+          "bottom": 499,
+          "width": 29.125,
+          "height": 24,
+          "scrollWidth": 29,
+          "clientWidth": 29,
+          "whiteSpace": "nowrap",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "c-what n",
+          "text": "Modal Rp4.294.967.295",
+          "x": 24,
+          "right": 744,
+          "y": 501,
+          "bottom": 521,
+          "width": 720,
+          "height": 20,
+          "scrollWidth": 720,
+          "clientWidth": 720,
+          "whiteSpace": "nowrap",
+          "color": "rgb(93, 95, 96)",
+          "fontSize": "14px"
+        }
+      ],
+      "nav": [
+        {
+          "class": "bottomnav",
+          "text": "Beranda\nServis\nBuat TTS\nLaporan\nMenu",
+          "x": 0,
+          "right": 768,
+          "y": 836,
+          "bottom": 900,
+          "width": 768,
+          "height": 64,
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ]
+    },
+    {
+      "id": "published-negative-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualViewportWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp0",
+          "x": 854.875,
+          "right": 905,
+          "y": 683.5,
+          "bottom": 717.5,
+          "width": 50.125,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 703.75,
+          "right": 905,
+          "y": 742.5,
+          "bottom": 762.5,
+          "width": 201.25,
+          "height": 20,
+          "scrollWidth": 201,
+          "clientWidth": 201,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "",
+          "text": "Rp-9.223.372.034.707.292.160",
+          "x": 697.984375,
+          "right": 905,
+          "y": 770.5,
+          "bottom": 790.5,
+          "width": 207.015625,
+          "height": 20,
+          "scrollWidth": 207,
+          "clientWidth": 207,
+          "whiteSpace": "normal",
+          "color": "rgb(196, 36, 42)",
+          "fontSize": "14px"
+        }
+      ],
+      "buttons": [],
+      "actionbar": [],
+      "table": [
+        {
+          "class": "table",
+          "text": "Deskripsi\tQty\tHarga jual\tModal\nDeskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis\nPart\n\t2147483648 ×\tRp0\tModal Rp4.294.967.295",
+          "x": 261,
+          "right": 905,
+          "y": 469,
+          "bottom": 659.5,
+          "width": 644,
+          "height": 190.5,
+          "scrollWidth": 644,
+          "clientWidth": 644,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        }
+      ],
+      "cells": [
+        {
+          "class": "c-who",
+          "text": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis\nPart",
+          "x": 261,
+          "right": 540.796875,
+          "y": 505,
+          "bottom": 659.5,
+          "width": 279.796875,
+          "height": 154.5,
+          "scrollWidth": 280,
+          "clientWidth": 280,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "c-meta",
+          "text": "2147483648 ×",
+          "x": 540.796875,
+          "right": 660.515625,
+          "y": 505,
+          "bottom": 659.5,
+          "width": 119.71875,
+          "height": 154.5,
+          "scrollWidth": 120,
+          "clientWidth": 120,
+          "whiteSpace": "nowrap",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "c-amt n",
+          "text": "Rp0",
+          "x": 660.515625,
+          "right": 738.578125,
+          "y": 505,
+          "bottom": 659.5,
+          "width": 78.0625,
+          "height": 154.5,
+          "scrollWidth": 78,
+          "clientWidth": 78,
+          "whiteSpace": "nowrap",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "c-what n",
+          "text": "Modal Rp4.294.967.295",
+          "x": 738.578125,
+          "right": 905,
+          "y": 505,
+          "bottom": 659.5,
+          "width": 166.421875,
+          "height": 154.5,
+          "scrollWidth": 166,
+          "clientWidth": 166,
+          "whiteSpace": "nowrap",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        }
+      ],
+      "nav": []
+    },
+    {
+      "id": "correction-normal-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualViewportWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp1.000.000",
+          "x": 163.078125,
+          "right": 327,
+          "y": 492,
+          "bottom": 526,
+          "width": 163.921875,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp700.000",
+          "x": 244.828125,
+          "right": 327,
+          "y": 551,
+          "bottom": 575,
+          "width": 82.171875,
+          "height": 24,
+          "scrollWidth": 82,
+          "clientWidth": 82,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "",
+          "text": "Rp300.000",
+          "x": 244.828125,
+          "right": 327,
+          "y": 583,
+          "bottom": 607,
+          "width": 82.171875,
+          "height": 24,
+          "scrollWidth": 82,
+          "clientWidth": 82,
+          "whiteSpace": "normal",
+          "color": "rgb(30, 123, 79)",
+          "fontSize": "16px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn primary",
+          "text": "Simpan koreksi",
+          "x": 136.421875,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "width": 207.578125,
+          "height": 48,
+          "scrollWidth": 206,
+          "clientWidth": 206,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "16px"
+        }
+      ],
+      "actionbar": [
+        {
+          "class": "actionbar",
+          "text": "Total\nRp1.000.000\nSimpan koreksi",
+          "x": 0,
+          "right": 360,
+          "y": 763,
+          "bottom": 836,
+          "width": 360,
+          "height": 73,
+          "scrollWidth": 360,
+          "clientWidth": 360,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "table": [],
+      "cells": [],
+      "nav": [
+        {
+          "class": "bottomnav",
+          "text": "Beranda\nServis\nBuat TTS\nLaporan\nMenu",
+          "x": 0,
+          "right": 360,
+          "y": 836,
+          "bottom": 900,
+          "width": 360,
+          "height": 64,
+          "scrollWidth": 360,
+          "clientWidth": 360,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ]
+    },
+    {
+      "id": "correction-normal-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualViewportWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp1.000.000",
+          "x": 563.078125,
+          "right": 727,
+          "y": 510,
+          "bottom": 544,
+          "width": 163.921875,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp700.000",
+          "x": 644.828125,
+          "right": 727,
+          "y": 569,
+          "bottom": 593,
+          "width": 82.171875,
+          "height": 24,
+          "scrollWidth": 82,
+          "clientWidth": 82,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "",
+          "text": "Rp300.000",
+          "x": 644.828125,
+          "right": 727,
+          "y": 601,
+          "bottom": 625,
+          "width": 82.171875,
+          "height": 24,
+          "scrollWidth": 82,
+          "clientWidth": 82,
+          "whiteSpace": "normal",
+          "color": "rgb(30, 123, 79)",
+          "fontSize": "16px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn primary",
+          "text": "Simpan koreksi",
+          "x": 136.421875,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "width": 615.578125,
+          "height": 48,
+          "scrollWidth": 614,
+          "clientWidth": 614,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "16px"
+        }
+      ],
+      "actionbar": [
+        {
+          "class": "actionbar",
+          "text": "Total\nRp1.000.000\nSimpan koreksi",
+          "x": 0,
+          "right": 768,
+          "y": 763,
+          "bottom": 836,
+          "width": 768,
+          "height": 73,
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "table": [],
+      "cells": [],
+      "nav": [
+        {
+          "class": "bottomnav",
+          "text": "Beranda\nServis\nBuat TTS\nLaporan\nMenu",
+          "x": 0,
+          "right": 768,
+          "y": 836,
+          "bottom": 900,
+          "width": 768,
+          "height": 64,
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ]
+    },
+    {
+      "id": "correction-normal-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualViewportWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp1.000.000",
+          "x": 1054.078125,
+          "right": 1218,
+          "y": 270,
+          "bottom": 304,
+          "width": 163.921875,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp700.000",
+          "x": 1146.109375,
+          "right": 1218,
+          "y": 329,
+          "bottom": 349,
+          "width": 71.890625,
+          "height": 20,
+          "scrollWidth": 72,
+          "clientWidth": 72,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "",
+          "text": "Rp300.000",
+          "x": 1146.109375,
+          "right": 1218,
+          "y": 357,
+          "bottom": 377,
+          "width": 71.890625,
+          "height": 20,
+          "scrollWidth": 72,
+          "clientWidth": 72,
+          "whiteSpace": "normal",
+          "color": "rgb(30, 123, 79)",
+          "fontSize": "14px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn primary desktop-only",
+          "text": "Simpan koreksi",
+          "x": 950,
+          "right": 1218,
+          "y": 445,
+          "bottom": 481,
+          "width": 268,
+          "height": 36,
+          "scrollWidth": 266,
+          "clientWidth": 266,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "14px"
+        }
+      ],
+      "actionbar": [],
+      "table": [],
+      "cells": [],
+      "nav": []
+    },
+    {
+      "id": "correction-negative-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualViewportWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp0",
+          "x": 276.875,
+          "right": 327,
+          "y": 492,
+          "bottom": 526,
+          "width": 50.125,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 97,
+          "right": 327,
+          "y": 551,
+          "bottom": 575,
+          "width": 230,
+          "height": 24,
+          "scrollWidth": 230,
+          "clientWidth": 230,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "",
+          "text": "Rp-9.223.372.034.707.292.160",
+          "x": 90.421875,
+          "right": 327,
+          "y": 583,
+          "bottom": 607,
+          "width": 236.578125,
+          "height": 24,
+          "scrollWidth": 237,
+          "clientWidth": 237,
+          "whiteSpace": "normal",
+          "color": "rgb(196, 36, 42)",
+          "fontSize": "16px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn primary",
+          "text": "Simpan koreksi",
+          "x": 61.25,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "width": 282.75,
+          "height": 48,
+          "scrollWidth": 281,
+          "clientWidth": 281,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "16px"
+        }
+      ],
+      "actionbar": [
+        {
+          "class": "actionbar",
+          "text": "Total\nRp0\nSimpan koreksi",
+          "x": 0,
+          "right": 360,
+          "y": 763,
+          "bottom": 836,
+          "width": 360,
+          "height": 73,
+          "scrollWidth": 360,
+          "clientWidth": 360,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "table": [],
+      "cells": [],
+      "nav": [
+        {
+          "class": "bottomnav",
+          "text": "Beranda\nServis\nBuat TTS\nLaporan\nMenu",
+          "x": 0,
+          "right": 360,
+          "y": 836,
+          "bottom": 900,
+          "width": 360,
+          "height": 64,
+          "scrollWidth": 360,
+          "clientWidth": 360,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ]
+    },
+    {
+      "id": "correction-negative-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualViewportWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp0",
+          "x": 676.875,
+          "right": 727,
+          "y": 510,
+          "bottom": 544,
+          "width": 50.125,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 497,
+          "right": 727,
+          "y": 569,
+          "bottom": 593,
+          "width": 230,
+          "height": 24,
+          "scrollWidth": 230,
+          "clientWidth": 230,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "",
+          "text": "Rp-9.223.372.034.707.292.160",
+          "x": 490.421875,
+          "right": 727,
+          "y": 601,
+          "bottom": 625,
+          "width": 236.578125,
+          "height": 24,
+          "scrollWidth": 237,
+          "clientWidth": 237,
+          "whiteSpace": "normal",
+          "color": "rgb(196, 36, 42)",
+          "fontSize": "16px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn primary",
+          "text": "Simpan koreksi",
+          "x": 61.25,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "width": 690.75,
+          "height": 48,
+          "scrollWidth": 689,
+          "clientWidth": 689,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "16px"
+        }
+      ],
+      "actionbar": [
+        {
+          "class": "actionbar",
+          "text": "Total\nRp0\nSimpan koreksi",
+          "x": 0,
+          "right": 768,
+          "y": 763,
+          "bottom": 836,
+          "width": 768,
+          "height": 73,
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "table": [],
+      "cells": [],
+      "nav": [
+        {
+          "class": "bottomnav",
+          "text": "Beranda\nServis\nBuat TTS\nLaporan\nMenu",
+          "x": 0,
+          "right": 768,
+          "y": 836,
+          "bottom": 900,
+          "width": 768,
+          "height": 64,
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ]
+    },
+    {
+      "id": "correction-negative-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualViewportWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp0",
+          "x": 1167.875,
+          "right": 1218,
+          "y": 238,
+          "bottom": 272,
+          "width": 50.125,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 1016.75,
+          "right": 1218,
+          "y": 297,
+          "bottom": 317,
+          "width": 201.25,
+          "height": 20,
+          "scrollWidth": 201,
+          "clientWidth": 201,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "",
+          "text": "Rp-9.223.372.034.707.292.160",
+          "x": 1010.984375,
+          "right": 1218,
+          "y": 325,
+          "bottom": 345,
+          "width": 207.015625,
+          "height": 20,
+          "scrollWidth": 207,
+          "clientWidth": 207,
+          "whiteSpace": "normal",
+          "color": "rgb(196, 36, 42)",
+          "fontSize": "14px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn primary desktop-only",
+          "text": "Simpan koreksi",
+          "x": 950,
+          "right": 1218,
+          "y": 413,
+          "bottom": 449,
+          "width": 268,
+          "height": 36,
+          "scrollWidth": 266,
+          "clientWidth": 266,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "14px"
+        }
+      ],
+      "actionbar": [],
+      "table": [],
+      "cells": [],
+      "nav": []
+    },
+    {
+      "id": "correction-large-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualViewportWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 33,
+          "right": 327,
+          "y": 458,
+          "bottom": 526,
+          "width": 294,
+          "height": 68,
+          "scrollWidth": 294,
+          "clientWidth": 294,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 97,
+          "right": 327,
+          "y": 551,
+          "bottom": 575,
+          "width": 230,
+          "height": 24,
+          "scrollWidth": 230,
+          "clientWidth": 230,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "",
+          "text": "Rp0",
+          "x": 297.4375,
+          "right": 327,
+          "y": 583,
+          "bottom": 607,
+          "width": 29.5625,
+          "height": 24,
+          "scrollWidth": 30,
+          "clientWidth": 30,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn primary",
+          "text": "Simpan koreksi",
+          "x": 16,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "width": 328,
+          "height": 48,
+          "scrollWidth": 326,
+          "clientWidth": 326,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "16px"
+        }
+      ],
+      "actionbar": [
+        {
+          "class": "actionbar",
+          "text": "Total\nRp9.223.372.034.707.292.160\nSimpan koreksi",
+          "x": 0,
+          "right": 360,
+          "y": 709,
+          "bottom": 836,
+          "width": 360,
+          "height": 127,
+          "scrollWidth": 360,
+          "clientWidth": 360,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "table": [],
+      "cells": [],
+      "nav": [
+        {
+          "class": "bottomnav",
+          "text": "Beranda\nServis\nBuat TTS\nLaporan\nMenu",
+          "x": 0,
+          "right": 360,
+          "y": 836,
+          "bottom": 900,
+          "width": 360,
+          "height": 64,
+          "scrollWidth": 360,
+          "clientWidth": 360,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ]
+    },
+    {
+      "id": "correction-large-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualViewportWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 335.5,
+          "right": 727,
+          "y": 510,
+          "bottom": 544,
+          "width": 391.5,
+          "height": 34,
+          "scrollWidth": 392,
+          "clientWidth": 392,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 497,
+          "right": 727,
+          "y": 569,
+          "bottom": 593,
+          "width": 230,
+          "height": 24,
+          "scrollWidth": 230,
+          "clientWidth": 230,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        },
+        {
+          "class": "",
+          "text": "Rp0",
+          "x": 697.4375,
+          "right": 727,
+          "y": 601,
+          "bottom": 625,
+          "width": 29.5625,
+          "height": 24,
+          "scrollWidth": 30,
+          "clientWidth": 30,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn primary",
+          "text": "Simpan koreksi",
+          "x": 286.75,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "width": 465.25,
+          "height": 48,
+          "scrollWidth": 463,
+          "clientWidth": 463,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "16px"
+        }
+      ],
+      "actionbar": [
+        {
+          "class": "actionbar",
+          "text": "Total\nRp9.223.372.034.707.292.160\nSimpan koreksi",
+          "x": 0,
+          "right": 768,
+          "y": 763,
+          "bottom": 836,
+          "width": 768,
+          "height": 73,
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ],
+      "table": [],
+      "cells": [],
+      "nav": [
+        {
+          "class": "bottomnav",
+          "text": "Beranda\nServis\nBuat TTS\nLaporan\nMenu",
+          "x": 0,
+          "right": 768,
+          "y": 836,
+          "bottom": 900,
+          "width": 768,
+          "height": 64,
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "16px"
+        }
+      ]
+    },
+    {
+      "id": "correction-large-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualViewportWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "totals": [
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 950,
+          "right": 1218,
+          "y": 270,
+          "bottom": 338,
+          "width": 268,
+          "height": 68,
+          "scrollWidth": 268,
+          "clientWidth": 268,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "28px"
+        },
+        {
+          "class": "",
+          "text": "Rp9.223.372.034.707.292.160",
+          "x": 1016.75,
+          "right": 1218,
+          "y": 363,
+          "bottom": 383,
+          "width": 201.25,
+          "height": 20,
+          "scrollWidth": 201,
+          "clientWidth": 201,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        },
+        {
+          "class": "",
+          "text": "Rp0",
+          "x": 1192.140625,
+          "right": 1218,
+          "y": 391,
+          "bottom": 411,
+          "width": 25.859375,
+          "height": 20,
+          "scrollWidth": 26,
+          "clientWidth": 26,
+          "whiteSpace": "normal",
+          "color": "rgb(19, 20, 22)",
+          "fontSize": "14px"
+        }
+      ],
+      "buttons": [
+        {
+          "class": "btn primary desktop-only",
+          "text": "Simpan koreksi",
+          "x": 950,
+          "right": 1218,
+          "y": 479,
+          "bottom": 515,
+          "width": 268,
+          "height": 36,
+          "scrollWidth": 266,
+          "clientWidth": 266,
+          "whiteSpace": "nowrap",
+          "color": "rgb(255, 255, 255)",
+          "fontSize": "14px"
+        }
+      ],
+      "actionbar": [],
+      "table": [],
+      "cells": [],
+      "nav": []
+    }
+  ],
+  "inputs": [
+    {
+      "label": "Harga jual",
+      "baseline": "0",
+      "target": "0",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Modal",
+      "baseline": "0",
+      "target": "0",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Harga jual",
+      "baseline": "0",
+      "target": "1000000",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Modal",
+      "baseline": "0",
+      "target": "700000",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Harga jual",
+      "baseline": "0",
+      "target": "0",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Modal",
+      "baseline": "0",
+      "target": "0",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Harga jual",
+      "baseline": "0",
+      "target": "4294967295",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Modal",
+      "baseline": "0",
+      "target": "4294967295",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Harga jual",
+      "baseline": "0",
+      "target": "0",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Modal",
+      "baseline": "0",
+      "target": "0",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Harga jual",
+      "baseline": "0",
+      "target": "0",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Modal",
+      "baseline": "0",
+      "target": "4294967295",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Harga jual",
+      "baseline": "0",
+      "target": "0",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Modal",
+      "baseline": "0",
+      "target": "0",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Harga jual",
+      "baseline": "0",
+      "target": "4294967295",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Modal",
+      "baseline": "0",
+      "target": "4294967295",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Harga jual",
+      "baseline": "0",
+      "target": "0",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Modal",
+      "baseline": "0",
+      "target": "0",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Harga jual",
+      "baseline": "0",
+      "target": "1000000",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Modal",
+      "baseline": "0",
+      "target": "700000",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Harga jual",
+      "baseline": "0",
+      "target": "0",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Modal",
+      "baseline": "0",
+      "target": "0",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Harga jual",
+      "baseline": "0",
+      "target": "0",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Modal",
+      "baseline": "0",
+      "target": "4294967295",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Harga jual",
+      "baseline": "0",
+      "target": "0",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Modal",
+      "baseline": "0",
+      "target": "0",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Harga jual",
+      "baseline": "0",
+      "target": "4294967295",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Modal",
+      "baseline": "0",
+      "target": "4294967295",
+      "method": "CDP Input.insertText after visible click/select"
+    }
+  ],
+  "exceptions": []
+}

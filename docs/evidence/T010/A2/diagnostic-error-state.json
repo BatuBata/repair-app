@@ -1,0 +1,33 @@
+{
+  "url": "/tts/1/rincian",
+  "inputs": [
+    {
+      "label": "Deskripsi baris 1",
+      "value": "LCD 14 inci HD"
+    },
+    {
+      "label": "Qty baris 1",
+      "value": "1"
+    },
+    {
+      "label": "Harga jual baris 1",
+      "value": "1.000.000"
+    },
+    {
+      "label": "Modal baris 1",
+      "value": "700.000"
+    },
+    {
+      "label": null,
+      "value": "30"
+    },
+    {
+      "label": null,
+      "value": "on"
+    }
+  ],
+  "totals": "Total untuk customer\nRp1.000.000\nModal\nRp700.000\nLaba\nRp300.000",
+  "rows": {
+    "0": {}
+  }
+}

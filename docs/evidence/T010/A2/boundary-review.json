@@ -1,0 +1,8 @@
+{
+  "phase": "before final breakpoint constant correction",
+  "grand_geometry": "PASS4cases/84probes",
+  "manual_review": "FAIL form description heading/input usability at1200",
+  "image": "boundary-correction-large-1200.png",
+  "cause": "existing two-column layout started1200 with fixed invoice line columns",
+  "repair": "existing stacking max1199 changed1279; final evidence breakpoint-final-results.json"
+}

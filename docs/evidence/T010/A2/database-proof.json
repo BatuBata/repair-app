@@ -1,0 +1,77 @@
+{
+  "before_extra_correction": {
+    "id": 1,
+    "status": "selesai",
+    "invoiced_on": "2026-11-13",
+    "rows": [
+      {
+        "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis ",
+        "qty": 2147483648,
+        "price": 4294967295,
+        "cost": 4294967295
+      }
+    ],
+    "totals_decimal": {
+      "price": "9223372034707292160",
+      "cost": "9223372034707292160",
+      "profit": "0"
+    }
+  },
+  "after_extra_correction": [
+    {
+      "id": 1,
+      "status": "selesai",
+      "invoiced_on": "2026-11-13",
+      "rows": [
+        {
+          "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis ",
+          "qty": 2147483648,
+          "price": 4294967295,
+          "cost": 4294967295
+        }
+      ],
+      "totals_decimal": {
+        "price": "9223372034707292160",
+        "cost": "9223372034707292160",
+        "profit": "0"
+      }
+    },
+    {
+      "id": 2,
+      "status": "selesai",
+      "invoiced_on": "2026-11-13",
+      "rows": [
+        {
+          "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis ",
+          "qty": 2147483648,
+          "price": 0,
+          "cost": 4294967295
+        }
+      ],
+      "totals_decimal": {
+        "price": "0",
+        "cost": "9223372034707292160",
+        "profit": "-9223372034707292160"
+      }
+    },
+    {
+      "id": 3,
+      "status": "selesai",
+      "invoiced_on": "2026-11-13",
+      "rows": [
+        {
+          "description": "LCD 14 inci HD",
+          "qty": 1,
+          "price": 1000000,
+          "cost": 700000
+        }
+      ],
+      "totals_decimal": {
+        "price": "1000000",
+        "cost": "700000",
+        "profit": "300000"
+      }
+    }
+  ],
+  "assertion": "exact integer decimals and original invoice date/status/rows preserved"
+}

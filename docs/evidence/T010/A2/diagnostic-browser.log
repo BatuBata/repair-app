@@ -1,0 +1,4 @@
+Error: Timeout total normal
+    at wait (file:///Users/muzib/Projects/web/repair-app/docs/evidence/T010/A2/browser.mjs:12:117)
+    at async values (file:///Users/muzib/Projects/web/repair-app/docs/evidence/T010/A2/browser.mjs:18:461)
+    at async file:///Users/muzib/Projects/web/repair-app/docs/evidence/T010/A2/browser.mjs:30:47

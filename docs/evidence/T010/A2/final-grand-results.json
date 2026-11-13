@@ -1,0 +1,3836 @@
+{
+  "cases": [
+    {
+      "id": "final2-issue-normal-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "grand": {
+        "text": "Rp1.000.000",
+        "x": 163.078125,
+        "right": 327,
+        "y": 492,
+        "bottom": 526,
+        "width": 163.921875,
+        "height": 34,
+        "scrollWidth": 164,
+        "clientWidth": 164,
+        "fontSize": "28px",
+        "whiteSpace": "nowrap"
+      },
+      "buttons": [
+        {
+          "text": "Terbitkan nota",
+          "x": 136.421875,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "width": 207.578125,
+          "height": 48,
+          "scrollWidth": 206,
+          "clientWidth": 206,
+          "fontSize": "16px",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "nav": 836,
+      "cells": []
+    },
+    {
+      "id": "final2-issue-normal-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "grand": {
+        "text": "Rp1.000.000",
+        "x": 563.078125,
+        "right": 727,
+        "y": 510,
+        "bottom": 544,
+        "width": 163.921875,
+        "height": 34,
+        "scrollWidth": 164,
+        "clientWidth": 164,
+        "fontSize": "28px",
+        "whiteSpace": "nowrap"
+      },
+      "buttons": [
+        {
+          "text": "Terbitkan nota",
+          "x": 136.421875,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "width": 615.578125,
+          "height": 48,
+          "scrollWidth": 614,
+          "clientWidth": 614,
+          "fontSize": "16px",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "nav": 836,
+      "cells": []
+    },
+    {
+      "id": "final2-issue-normal-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "grand": {
+        "text": "Rp1.000.000",
+        "x": 1054.078125,
+        "right": 1218,
+        "y": 270,
+        "bottom": 304,
+        "width": 163.921875,
+        "height": 34,
+        "scrollWidth": 164,
+        "clientWidth": 164,
+        "fontSize": "28px",
+        "whiteSpace": "nowrap"
+      },
+      "buttons": [
+        {
+          "text": "Terbitkan nota",
+          "x": 950,
+          "right": 1218,
+          "y": 445,
+          "bottom": 481,
+          "width": 268,
+          "height": 36,
+          "scrollWidth": 266,
+          "clientWidth": 266,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "nav": 0,
+      "cells": []
+    },
+    {
+      "id": "final2-issue-large-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "grand": {
+        "text": "Rp9.223.372.034.707.292.160",
+        "x": 83.421875,
+        "right": 327,
+        "y": 492,
+        "bottom": 526,
+        "width": 243.578125,
+        "height": 34,
+        "scrollWidth": 244,
+        "clientWidth": 244,
+        "fontSize": "17.4222px",
+        "whiteSpace": "nowrap"
+      },
+      "buttons": [
+        {
+          "text": "Terbitkan nota",
+          "x": 16,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "width": 328,
+          "height": 48,
+          "scrollWidth": 326,
+          "clientWidth": 326,
+          "fontSize": "16px",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "nav": 836,
+      "cells": []
+    },
+    {
+      "id": "final2-issue-large-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "grand": {
+        "text": "Rp9.223.372.034.707.292.160",
+        "x": 335.5,
+        "right": 727,
+        "y": 510,
+        "bottom": 544,
+        "width": 391.5,
+        "height": 34,
+        "scrollWidth": 392,
+        "clientWidth": 392,
+        "fontSize": "28px",
+        "whiteSpace": "nowrap"
+      },
+      "buttons": [
+        {
+          "text": "Terbitkan nota",
+          "x": 286.75,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "width": 465.25,
+          "height": 48,
+          "scrollWidth": 463,
+          "clientWidth": 463,
+          "fontSize": "16px",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "nav": 836,
+      "cells": []
+    },
+    {
+      "id": "final2-issue-large-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "grand": {
+        "text": "Rp9.223.372.034.707.292.160",
+        "x": 994.28125,
+        "right": 1218,
+        "y": 270,
+        "bottom": 304,
+        "width": 223.71875,
+        "height": 34,
+        "scrollWidth": 224,
+        "clientWidth": 224,
+        "fontSize": "16px",
+        "whiteSpace": "nowrap"
+      },
+      "buttons": [
+        {
+          "text": "Terbitkan nota",
+          "x": 950,
+          "right": 1218,
+          "y": 445,
+          "bottom": 481,
+          "width": 268,
+          "height": 36,
+          "scrollWidth": 266,
+          "clientWidth": 266,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "nav": 0,
+      "cells": []
+    },
+    {
+      "id": "final2-correction-large-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "grand": {
+        "text": "Rp9.223.372.034.707.292.160",
+        "x": 83.421875,
+        "right": 327,
+        "y": 492,
+        "bottom": 526,
+        "width": 243.578125,
+        "height": 34,
+        "scrollWidth": 244,
+        "clientWidth": 244,
+        "fontSize": "17.4222px",
+        "whiteSpace": "nowrap"
+      },
+      "buttons": [
+        {
+          "text": "Simpan koreksi",
+          "x": 16,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "width": 328,
+          "height": 48,
+          "scrollWidth": 326,
+          "clientWidth": 326,
+          "fontSize": "16px",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "nav": 836,
+      "cells": []
+    },
+    {
+      "id": "final2-correction-large-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "grand": {
+        "text": "Rp9.223.372.034.707.292.160",
+        "x": 335.5,
+        "right": 727,
+        "y": 510,
+        "bottom": 544,
+        "width": 391.5,
+        "height": 34,
+        "scrollWidth": 392,
+        "clientWidth": 392,
+        "fontSize": "28px",
+        "whiteSpace": "nowrap"
+      },
+      "buttons": [
+        {
+          "text": "Simpan koreksi",
+          "x": 286.75,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "width": 465.25,
+          "height": 48,
+          "scrollWidth": 463,
+          "clientWidth": 463,
+          "fontSize": "16px",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "nav": 836,
+      "cells": []
+    },
+    {
+      "id": "final2-correction-large-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "grand": {
+        "text": "Rp9.223.372.034.707.292.160",
+        "x": 994.28125,
+        "right": 1218,
+        "y": 270,
+        "bottom": 304,
+        "width": 223.71875,
+        "height": 34,
+        "scrollWidth": 224,
+        "clientWidth": 224,
+        "fontSize": "16px",
+        "whiteSpace": "nowrap"
+      },
+      "buttons": [
+        {
+          "text": "Simpan koreksi",
+          "x": 950,
+          "right": 1218,
+          "y": 445,
+          "bottom": 481,
+          "width": 268,
+          "height": 36,
+          "scrollWidth": 266,
+          "clientWidth": 266,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "nav": 0,
+      "cells": []
+    },
+    {
+      "id": "final2-published-large-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "grand": {
+        "text": "Rp9.223.372.034.707.292.160",
+        "x": 72.328125,
+        "right": 344,
+        "y": 623,
+        "bottom": 657,
+        "width": 271.671875,
+        "height": 34,
+        "scrollWidth": 272,
+        "clientWidth": 272,
+        "fontSize": "19.437px",
+        "whiteSpace": "nowrap"
+      },
+      "buttons": [
+        {
+          "text": "",
+          "x": 16,
+          "right": 60,
+          "y": 778,
+          "bottom": 822,
+          "width": 44,
+          "height": 44,
+          "scrollWidth": 42,
+          "clientWidth": 42,
+          "fontSize": "16px",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Tandai Diambil",
+          "x": 72,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "width": 272,
+          "height": 48,
+          "scrollWidth": 270,
+          "clientWidth": 270,
+          "fontSize": "16px",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "nav": 836,
+      "cells": [
+        {
+          "text": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Part",
+          "x": 16,
+          "right": 344,
+          "y": 359,
+          "bottom": 503,
+          "width": 328,
+          "height": 144,
+          "scrollWidth": 328,
+          "clientWidth": 328,
+          "fontSize": "16px",
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "2147483648 ×",
+          "x": 16,
+          "right": 203.421875,
+          "y": 505,
+          "bottom": 529,
+          "width": 187.421875,
+          "height": 24,
+          "scrollWidth": 187,
+          "clientWidth": 187,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Rp4.294.967.295",
+          "x": 215.421875,
+          "right": 344,
+          "y": 505,
+          "bottom": 529,
+          "width": 128.578125,
+          "height": 24,
+          "scrollWidth": 129,
+          "clientWidth": 129,
+          "fontSize": "16px",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Modal Rp4.294.967.295",
+          "x": 16,
+          "right": 344,
+          "y": 531,
+          "bottom": 551,
+          "width": 328,
+          "height": 20,
+          "scrollWidth": 328,
+          "clientWidth": 328,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        }
+      ]
+    },
+    {
+      "id": "final2-published-large-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "grand": {
+        "text": "Rp9.223.372.034.707.292.160",
+        "x": 352.5,
+        "right": 744,
+        "y": 557,
+        "bottom": 591,
+        "width": 391.5,
+        "height": 34,
+        "scrollWidth": 392,
+        "clientWidth": 392,
+        "fontSize": "28px",
+        "whiteSpace": "nowrap"
+      },
+      "buttons": [
+        {
+          "text": "",
+          "x": 16,
+          "right": 60,
+          "y": 778,
+          "bottom": 822,
+          "width": 44,
+          "height": 44,
+          "scrollWidth": 42,
+          "clientWidth": 42,
+          "fontSize": "16px",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Tandai Diambil",
+          "x": 72,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "width": 680,
+          "height": 48,
+          "scrollWidth": 678,
+          "clientWidth": 678,
+          "fontSize": "16px",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "nav": 836,
+      "cells": [
+        {
+          "text": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Part",
+          "x": 24,
+          "right": 744,
+          "y": 401,
+          "bottom": 473,
+          "width": 720,
+          "height": 72,
+          "scrollWidth": 720,
+          "clientWidth": 720,
+          "fontSize": "16px",
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "2147483648 ×",
+          "x": 24,
+          "right": 603.421875,
+          "y": 475,
+          "bottom": 499,
+          "width": 579.421875,
+          "height": 24,
+          "scrollWidth": 579,
+          "clientWidth": 579,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Rp4.294.967.295",
+          "x": 615.421875,
+          "right": 744,
+          "y": 475,
+          "bottom": 499,
+          "width": 128.578125,
+          "height": 24,
+          "scrollWidth": 129,
+          "clientWidth": 129,
+          "fontSize": "16px",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Modal Rp4.294.967.295",
+          "x": 24,
+          "right": 744,
+          "y": 501,
+          "bottom": 521,
+          "width": 720,
+          "height": 20,
+          "scrollWidth": 720,
+          "clientWidth": 720,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        }
+      ]
+    },
+    {
+      "id": "final2-published-large-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "grand": {
+        "text": "Rp9.223.372.034.707.292.160",
+        "x": 513.5,
+        "right": 905,
+        "y": 683.5,
+        "bottom": 717.5,
+        "width": 391.5,
+        "height": 34,
+        "scrollWidth": 392,
+        "clientWidth": 392,
+        "fontSize": "28px",
+        "whiteSpace": "nowrap"
+      },
+      "buttons": [],
+      "nav": 0,
+      "cells": [
+        {
+          "text": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis\nPart",
+          "x": 261,
+          "right": 482.34375,
+          "y": 465,
+          "bottom": 659.5,
+          "width": 221.34375,
+          "height": 194.5,
+          "scrollWidth": 221,
+          "clientWidth": 221,
+          "fontSize": "14px",
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "2147483648 ×",
+          "x": 482.34375,
+          "right": 602.0625,
+          "y": 465,
+          "bottom": 659.5,
+          "width": 119.71875,
+          "height": 194.5,
+          "scrollWidth": 120,
+          "clientWidth": 120,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Rp4.294.967.295",
+          "x": 602.0625,
+          "right": 738.578125,
+          "y": 465,
+          "bottom": 659.5,
+          "width": 136.515625,
+          "height": 194.5,
+          "scrollWidth": 137,
+          "clientWidth": 137,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Modal Rp4.294.967.295",
+          "x": 738.578125,
+          "right": 905,
+          "y": 465,
+          "bottom": 659.5,
+          "width": 166.421875,
+          "height": 194.5,
+          "scrollWidth": 166,
+          "clientWidth": 166,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        }
+      ]
+    },
+    {
+      "id": "final2-published-normal-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "grand": {
+        "text": "Rp1.000.000",
+        "x": 180.078125,
+        "right": 344,
+        "y": 563,
+        "bottom": 597,
+        "width": 163.921875,
+        "height": 34,
+        "scrollWidth": 164,
+        "clientWidth": 164,
+        "fontSize": "28px",
+        "whiteSpace": "nowrap"
+      },
+      "buttons": [
+        {
+          "text": "",
+          "x": 16,
+          "right": 60,
+          "y": 778,
+          "bottom": 822,
+          "width": 44,
+          "height": 44,
+          "scrollWidth": 42,
+          "clientWidth": 42,
+          "fontSize": "16px",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Tandai Diambil",
+          "x": 72,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "width": 272,
+          "height": 48,
+          "scrollWidth": 270,
+          "clientWidth": 270,
+          "fontSize": "16px",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "nav": 836,
+      "cells": [
+        {
+          "text": "LCD 14 inci HD Part",
+          "x": 16,
+          "right": 344,
+          "y": 419,
+          "bottom": 443,
+          "width": 328,
+          "height": 24,
+          "scrollWidth": 328,
+          "clientWidth": 328,
+          "fontSize": "16px",
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "1 ×",
+          "x": 16,
+          "right": 236.5625,
+          "y": 445,
+          "bottom": 469,
+          "width": 220.5625,
+          "height": 24,
+          "scrollWidth": 221,
+          "clientWidth": 221,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Rp1.000.000",
+          "x": 248.5625,
+          "right": 344,
+          "y": 445,
+          "bottom": 469,
+          "width": 95.4375,
+          "height": 24,
+          "scrollWidth": 95,
+          "clientWidth": 95,
+          "fontSize": "16px",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Modal Rp700.000",
+          "x": 16,
+          "right": 344,
+          "y": 471,
+          "bottom": 491,
+          "width": 328,
+          "height": 20,
+          "scrollWidth": 328,
+          "clientWidth": 328,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        }
+      ]
+    },
+    {
+      "id": "final2-published-normal-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "grand": {
+        "text": "Rp1.000.000",
+        "x": 580.078125,
+        "right": 744,
+        "y": 533,
+        "bottom": 567,
+        "width": 163.921875,
+        "height": 34,
+        "scrollWidth": 164,
+        "clientWidth": 164,
+        "fontSize": "28px",
+        "whiteSpace": "nowrap"
+      },
+      "buttons": [
+        {
+          "text": "",
+          "x": 16,
+          "right": 60,
+          "y": 778,
+          "bottom": 822,
+          "width": 44,
+          "height": 44,
+          "scrollWidth": 42,
+          "clientWidth": 42,
+          "fontSize": "16px",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Tandai Diambil",
+          "x": 72,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "width": 680,
+          "height": 48,
+          "scrollWidth": 678,
+          "clientWidth": 678,
+          "fontSize": "16px",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "nav": 836,
+      "cells": [
+        {
+          "text": "LCD 14 inci HD Part",
+          "x": 24,
+          "right": 744,
+          "y": 425,
+          "bottom": 449,
+          "width": 720,
+          "height": 24,
+          "scrollWidth": 720,
+          "clientWidth": 720,
+          "fontSize": "16px",
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "1 ×",
+          "x": 24,
+          "right": 636.5625,
+          "y": 451,
+          "bottom": 475,
+          "width": 612.5625,
+          "height": 24,
+          "scrollWidth": 613,
+          "clientWidth": 613,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Rp1.000.000",
+          "x": 648.5625,
+          "right": 744,
+          "y": 451,
+          "bottom": 475,
+          "width": 95.4375,
+          "height": 24,
+          "scrollWidth": 95,
+          "clientWidth": 95,
+          "fontSize": "16px",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Modal Rp700.000",
+          "x": 24,
+          "right": 744,
+          "y": 477,
+          "bottom": 497,
+          "width": 720,
+          "height": 20,
+          "scrollWidth": 720,
+          "clientWidth": 720,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        }
+      ]
+    },
+    {
+      "id": "final2-published-normal-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "grand": {
+        "text": "Rp1.000.000",
+        "x": 741.078125,
+        "right": 905,
+        "y": 683.5,
+        "bottom": 717.5,
+        "width": 163.921875,
+        "height": 34,
+        "scrollWidth": 164,
+        "clientWidth": 164,
+        "fontSize": "28px",
+        "whiteSpace": "nowrap"
+      },
+      "buttons": [],
+      "nav": 0,
+      "cells": [
+        {
+          "text": "LCD 14 inci HD\nPart",
+          "x": 261,
+          "right": 437.703125,
+          "y": 605,
+          "bottom": 659.5,
+          "width": 176.703125,
+          "height": 54.5,
+          "scrollWidth": 177,
+          "clientWidth": 177,
+          "fontSize": "14px",
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "1 ×",
+          "x": 437.703125,
+          "right": 512.15625,
+          "y": 605,
+          "bottom": 659.5,
+          "width": 74.453125,
+          "height": 54.5,
+          "scrollWidth": 74,
+          "clientWidth": 74,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Rp1.000.000",
+          "x": 512.15625,
+          "right": 693.609375,
+          "y": 605,
+          "bottom": 659.5,
+          "width": 181.453125,
+          "height": 54.5,
+          "scrollWidth": 181,
+          "clientWidth": 181,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Modal Rp700.000",
+          "x": 693.609375,
+          "right": 905,
+          "y": 605,
+          "bottom": 659.5,
+          "width": 211.390625,
+          "height": 54.5,
+          "scrollWidth": 211,
+          "clientWidth": 211,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        }
+      ]
+    }
+  ],
+  "probes": [
+    {
+      "case": "final2-issue-normal-360",
+      "kind": "CSS layout probe only, not transaction",
+      "values": [
+        {
+          "value": "Rp0",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp1.000.000",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp9",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp99",
+          "fontSize": "28px",
+          "width": 66.640625,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        {
+          "value": "Rp999",
+          "fontSize": "28px",
+          "width": 83.171875,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "value": "Rp9.999",
+          "fontSize": "28px",
+          "width": 107.03125,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 107,
+          "clientWidth": 107
+        },
+        {
+          "value": "Rp99.999",
+          "fontSize": "28px",
+          "width": 123.546875,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 124,
+          "clientWidth": 124
+        },
+        {
+          "value": "Rp999.999",
+          "fontSize": "28px",
+          "width": 140.0625,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 140,
+          "clientWidth": 140
+        },
+        {
+          "value": "Rp9.999.999",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp99.999.999",
+          "fontSize": "28px",
+          "width": 180.4375,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        {
+          "value": "Rp999.999.999",
+          "fontSize": "28px",
+          "width": 196.953125,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "value": "Rp9.999.999.999",
+          "fontSize": "28px",
+          "width": 220.8125,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 221,
+          "clientWidth": 221
+        },
+        {
+          "value": "Rp99.999.999.999",
+          "fontSize": "28px",
+          "width": 237.328125,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 237,
+          "clientWidth": 237
+        },
+        {
+          "value": "Rp999.999.999.999",
+          "fontSize": "27.6706px",
+          "width": 250.859375,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 251,
+          "clientWidth": 251
+        },
+        {
+          "value": "Rp9.999.999.999.999",
+          "fontSize": "24.7579px",
+          "width": 245.484375,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 245,
+          "clientWidth": 245
+        },
+        {
+          "value": "Rp99.999.999.999.999",
+          "fontSize": "23.52px",
+          "width": 247.15625,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 247,
+          "clientWidth": 247
+        },
+        {
+          "value": "Rp999.999.999.999.999",
+          "fontSize": "22.4px",
+          "width": 248.609375,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 249,
+          "clientWidth": 249
+        },
+        {
+          "value": "Rp9.999.999.999.999.999",
+          "fontSize": "20.4522px",
+          "width": 244.390625,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 244,
+          "clientWidth": 244
+        },
+        {
+          "value": "Rp99.999.999.999.999.999",
+          "fontSize": "19.6px",
+          "width": 245.796875,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 246,
+          "clientWidth": 246
+        },
+        {
+          "value": "Rp999.999.999.999.999.999",
+          "fontSize": "18.816px",
+          "width": 246.984375,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 247,
+          "clientWidth": 247
+        },
+        {
+          "value": "Rp9.223.372.036.854.775.807",
+          "fontSize": "17.4222px",
+          "width": 243.578125,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 244,
+          "clientWidth": 244
+        }
+      ]
+    },
+    {
+      "case": "final2-issue-normal-768",
+      "kind": "CSS layout probe only, not transaction",
+      "values": [
+        {
+          "value": "Rp0",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp1.000.000",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp9",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp99",
+          "fontSize": "28px",
+          "width": 66.640625,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        {
+          "value": "Rp999",
+          "fontSize": "28px",
+          "width": 83.171875,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "value": "Rp9.999",
+          "fontSize": "28px",
+          "width": 107.03125,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 107,
+          "clientWidth": 107
+        },
+        {
+          "value": "Rp99.999",
+          "fontSize": "28px",
+          "width": 123.546875,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 124,
+          "clientWidth": 124
+        },
+        {
+          "value": "Rp999.999",
+          "fontSize": "28px",
+          "width": 140.0625,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 140,
+          "clientWidth": 140
+        },
+        {
+          "value": "Rp9.999.999",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp99.999.999",
+          "fontSize": "28px",
+          "width": 180.4375,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        {
+          "value": "Rp999.999.999",
+          "fontSize": "28px",
+          "width": 196.953125,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "value": "Rp9.999.999.999",
+          "fontSize": "28px",
+          "width": 220.8125,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 221,
+          "clientWidth": 221
+        },
+        {
+          "value": "Rp99.999.999.999",
+          "fontSize": "28px",
+          "width": 237.328125,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 237,
+          "clientWidth": 237
+        },
+        {
+          "value": "Rp999.999.999.999",
+          "fontSize": "28px",
+          "width": 253.859375,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        {
+          "value": "Rp9.999.999.999.999",
+          "fontSize": "28px",
+          "width": 277.71875,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 278,
+          "clientWidth": 278
+        },
+        {
+          "value": "Rp99.999.999.999.999",
+          "fontSize": "28px",
+          "width": 294.234375,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 294,
+          "clientWidth": 294
+        },
+        {
+          "value": "Rp999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 310.75,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 311,
+          "clientWidth": 311
+        },
+        {
+          "value": "Rp9.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 334.609375,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 335,
+          "clientWidth": 335
+        },
+        {
+          "value": "Rp99.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 351.125,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 351,
+          "clientWidth": 351
+        },
+        {
+          "value": "Rp999.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 367.640625,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 368,
+          "clientWidth": 368
+        },
+        {
+          "value": "Rp9.223.372.036.854.775.807",
+          "fontSize": "28px",
+          "width": 391.5,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 392,
+          "clientWidth": 392
+        }
+      ]
+    },
+    {
+      "case": "final2-issue-normal-1280",
+      "kind": "CSS layout probe only, not transaction",
+      "values": [
+        {
+          "value": "Rp0",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp1.000.000",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp9",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp99",
+          "fontSize": "28px",
+          "width": 66.640625,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        {
+          "value": "Rp999",
+          "fontSize": "28px",
+          "width": 83.171875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "value": "Rp9.999",
+          "fontSize": "28px",
+          "width": 107.03125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 107,
+          "clientWidth": 107
+        },
+        {
+          "value": "Rp99.999",
+          "fontSize": "28px",
+          "width": 123.546875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 124,
+          "clientWidth": 124
+        },
+        {
+          "value": "Rp999.999",
+          "fontSize": "28px",
+          "width": 140.0625,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 140,
+          "clientWidth": 140
+        },
+        {
+          "value": "Rp9.999.999",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp99.999.999",
+          "fontSize": "28px",
+          "width": 180.4375,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        {
+          "value": "Rp999.999.999",
+          "fontSize": "28px",
+          "width": 196.953125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "value": "Rp9.999.999.999",
+          "fontSize": "28px",
+          "width": 220.8125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 221,
+          "clientWidth": 221
+        },
+        {
+          "value": "Rp99.999.999.999",
+          "fontSize": "26.8px",
+          "width": 227.171875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 227,
+          "clientWidth": 227
+        },
+        {
+          "value": "Rp999.999.999.999",
+          "fontSize": "25.2235px",
+          "width": 228.65625,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 229,
+          "clientWidth": 229
+        },
+        {
+          "value": "Rp9.999.999.999.999",
+          "fontSize": "22.5684px",
+          "width": 223.75,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 224,
+          "clientWidth": 224
+        },
+        {
+          "value": "Rp99.999.999.999.999",
+          "fontSize": "21.44px",
+          "width": 225.296875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 225,
+          "clientWidth": 225
+        },
+        {
+          "value": "Rp999.999.999.999.999",
+          "fontSize": "20.419px",
+          "width": 226.515625,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 227,
+          "clientWidth": 227
+        },
+        {
+          "value": "Rp9.999.999.999.999.999",
+          "fontSize": "18.6435px",
+          "width": 222.75,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 223,
+          "clientWidth": 223
+        },
+        {
+          "value": "Rp99.999.999.999.999.999",
+          "fontSize": "17.8667px",
+          "width": 223.96875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 224,
+          "clientWidth": 224
+        },
+        {
+          "value": "Rp999.999.999.999.999.999",
+          "fontSize": "17.152px",
+          "width": 225.1875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 225,
+          "clientWidth": 225
+        },
+        {
+          "value": "Rp9.223.372.036.854.775.807",
+          "fontSize": "16px",
+          "width": 223.71875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 224,
+          "clientWidth": 224
+        }
+      ]
+    },
+    {
+      "case": "final2-issue-large-360",
+      "kind": "CSS layout probe only, not transaction",
+      "values": [
+        {
+          "value": "Rp0",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp1.000.000",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp9",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp99",
+          "fontSize": "28px",
+          "width": 66.640625,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        {
+          "value": "Rp999",
+          "fontSize": "28px",
+          "width": 83.171875,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "value": "Rp9.999",
+          "fontSize": "28px",
+          "width": 107.03125,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 107,
+          "clientWidth": 107
+        },
+        {
+          "value": "Rp99.999",
+          "fontSize": "28px",
+          "width": 123.546875,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 124,
+          "clientWidth": 124
+        },
+        {
+          "value": "Rp999.999",
+          "fontSize": "28px",
+          "width": 140.0625,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 140,
+          "clientWidth": 140
+        },
+        {
+          "value": "Rp9.999.999",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp99.999.999",
+          "fontSize": "28px",
+          "width": 180.4375,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        {
+          "value": "Rp999.999.999",
+          "fontSize": "28px",
+          "width": 196.953125,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "value": "Rp9.999.999.999",
+          "fontSize": "28px",
+          "width": 220.8125,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 221,
+          "clientWidth": 221
+        },
+        {
+          "value": "Rp99.999.999.999",
+          "fontSize": "28px",
+          "width": 237.328125,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 237,
+          "clientWidth": 237
+        },
+        {
+          "value": "Rp999.999.999.999",
+          "fontSize": "27.6706px",
+          "width": 250.859375,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 251,
+          "clientWidth": 251
+        },
+        {
+          "value": "Rp9.999.999.999.999",
+          "fontSize": "24.7579px",
+          "width": 245.484375,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 245,
+          "clientWidth": 245
+        },
+        {
+          "value": "Rp99.999.999.999.999",
+          "fontSize": "23.52px",
+          "width": 247.15625,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 247,
+          "clientWidth": 247
+        },
+        {
+          "value": "Rp999.999.999.999.999",
+          "fontSize": "22.4px",
+          "width": 248.609375,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 249,
+          "clientWidth": 249
+        },
+        {
+          "value": "Rp9.999.999.999.999.999",
+          "fontSize": "20.4522px",
+          "width": 244.390625,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 244,
+          "clientWidth": 244
+        },
+        {
+          "value": "Rp99.999.999.999.999.999",
+          "fontSize": "19.6px",
+          "width": 245.796875,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 246,
+          "clientWidth": 246
+        },
+        {
+          "value": "Rp999.999.999.999.999.999",
+          "fontSize": "18.816px",
+          "width": 246.984375,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 247,
+          "clientWidth": 247
+        },
+        {
+          "value": "Rp9.223.372.036.854.775.807",
+          "fontSize": "17.4222px",
+          "width": 243.578125,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 244,
+          "clientWidth": 244
+        }
+      ]
+    },
+    {
+      "case": "final2-issue-large-768",
+      "kind": "CSS layout probe only, not transaction",
+      "values": [
+        {
+          "value": "Rp0",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp1.000.000",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp9",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp99",
+          "fontSize": "28px",
+          "width": 66.640625,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        {
+          "value": "Rp999",
+          "fontSize": "28px",
+          "width": 83.171875,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "value": "Rp9.999",
+          "fontSize": "28px",
+          "width": 107.03125,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 107,
+          "clientWidth": 107
+        },
+        {
+          "value": "Rp99.999",
+          "fontSize": "28px",
+          "width": 123.546875,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 124,
+          "clientWidth": 124
+        },
+        {
+          "value": "Rp999.999",
+          "fontSize": "28px",
+          "width": 140.0625,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 140,
+          "clientWidth": 140
+        },
+        {
+          "value": "Rp9.999.999",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp99.999.999",
+          "fontSize": "28px",
+          "width": 180.4375,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        {
+          "value": "Rp999.999.999",
+          "fontSize": "28px",
+          "width": 196.953125,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "value": "Rp9.999.999.999",
+          "fontSize": "28px",
+          "width": 220.8125,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 221,
+          "clientWidth": 221
+        },
+        {
+          "value": "Rp99.999.999.999",
+          "fontSize": "28px",
+          "width": 237.328125,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 237,
+          "clientWidth": 237
+        },
+        {
+          "value": "Rp999.999.999.999",
+          "fontSize": "28px",
+          "width": 253.859375,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        {
+          "value": "Rp9.999.999.999.999",
+          "fontSize": "28px",
+          "width": 277.71875,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 278,
+          "clientWidth": 278
+        },
+        {
+          "value": "Rp99.999.999.999.999",
+          "fontSize": "28px",
+          "width": 294.234375,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 294,
+          "clientWidth": 294
+        },
+        {
+          "value": "Rp999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 310.75,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 311,
+          "clientWidth": 311
+        },
+        {
+          "value": "Rp9.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 334.609375,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 335,
+          "clientWidth": 335
+        },
+        {
+          "value": "Rp99.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 351.125,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 351,
+          "clientWidth": 351
+        },
+        {
+          "value": "Rp999.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 367.640625,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 368,
+          "clientWidth": 368
+        },
+        {
+          "value": "Rp9.223.372.036.854.775.807",
+          "fontSize": "28px",
+          "width": 391.5,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 392,
+          "clientWidth": 392
+        }
+      ]
+    },
+    {
+      "case": "final2-issue-large-1280",
+      "kind": "CSS layout probe only, not transaction",
+      "values": [
+        {
+          "value": "Rp0",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp1.000.000",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp9",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp99",
+          "fontSize": "28px",
+          "width": 66.640625,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        {
+          "value": "Rp999",
+          "fontSize": "28px",
+          "width": 83.171875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "value": "Rp9.999",
+          "fontSize": "28px",
+          "width": 107.03125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 107,
+          "clientWidth": 107
+        },
+        {
+          "value": "Rp99.999",
+          "fontSize": "28px",
+          "width": 123.546875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 124,
+          "clientWidth": 124
+        },
+        {
+          "value": "Rp999.999",
+          "fontSize": "28px",
+          "width": 140.0625,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 140,
+          "clientWidth": 140
+        },
+        {
+          "value": "Rp9.999.999",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp99.999.999",
+          "fontSize": "28px",
+          "width": 180.4375,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        {
+          "value": "Rp999.999.999",
+          "fontSize": "28px",
+          "width": 196.953125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "value": "Rp9.999.999.999",
+          "fontSize": "28px",
+          "width": 220.8125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 221,
+          "clientWidth": 221
+        },
+        {
+          "value": "Rp99.999.999.999",
+          "fontSize": "26.8px",
+          "width": 227.171875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 227,
+          "clientWidth": 227
+        },
+        {
+          "value": "Rp999.999.999.999",
+          "fontSize": "25.2235px",
+          "width": 228.65625,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 229,
+          "clientWidth": 229
+        },
+        {
+          "value": "Rp9.999.999.999.999",
+          "fontSize": "22.5684px",
+          "width": 223.75,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 224,
+          "clientWidth": 224
+        },
+        {
+          "value": "Rp99.999.999.999.999",
+          "fontSize": "21.44px",
+          "width": 225.296875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 225,
+          "clientWidth": 225
+        },
+        {
+          "value": "Rp999.999.999.999.999",
+          "fontSize": "20.419px",
+          "width": 226.515625,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 227,
+          "clientWidth": 227
+        },
+        {
+          "value": "Rp9.999.999.999.999.999",
+          "fontSize": "18.6435px",
+          "width": 222.75,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 223,
+          "clientWidth": 223
+        },
+        {
+          "value": "Rp99.999.999.999.999.999",
+          "fontSize": "17.8667px",
+          "width": 223.96875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 224,
+          "clientWidth": 224
+        },
+        {
+          "value": "Rp999.999.999.999.999.999",
+          "fontSize": "17.152px",
+          "width": 225.1875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 225,
+          "clientWidth": 225
+        },
+        {
+          "value": "Rp9.223.372.036.854.775.807",
+          "fontSize": "16px",
+          "width": 223.71875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 224,
+          "clientWidth": 224
+        }
+      ]
+    },
+    {
+      "case": "final2-correction-large-360",
+      "kind": "CSS layout probe only, not transaction",
+      "values": [
+        {
+          "value": "Rp0",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp1.000.000",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp9",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp99",
+          "fontSize": "28px",
+          "width": 66.640625,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        {
+          "value": "Rp999",
+          "fontSize": "28px",
+          "width": 83.171875,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "value": "Rp9.999",
+          "fontSize": "28px",
+          "width": 107.03125,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 107,
+          "clientWidth": 107
+        },
+        {
+          "value": "Rp99.999",
+          "fontSize": "28px",
+          "width": 123.546875,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 124,
+          "clientWidth": 124
+        },
+        {
+          "value": "Rp999.999",
+          "fontSize": "28px",
+          "width": 140.0625,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 140,
+          "clientWidth": 140
+        },
+        {
+          "value": "Rp9.999.999",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp99.999.999",
+          "fontSize": "28px",
+          "width": 180.4375,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        {
+          "value": "Rp999.999.999",
+          "fontSize": "28px",
+          "width": 196.953125,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "value": "Rp9.999.999.999",
+          "fontSize": "28px",
+          "width": 220.8125,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 221,
+          "clientWidth": 221
+        },
+        {
+          "value": "Rp99.999.999.999",
+          "fontSize": "28px",
+          "width": 237.328125,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 237,
+          "clientWidth": 237
+        },
+        {
+          "value": "Rp999.999.999.999",
+          "fontSize": "27.6706px",
+          "width": 250.859375,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 251,
+          "clientWidth": 251
+        },
+        {
+          "value": "Rp9.999.999.999.999",
+          "fontSize": "24.7579px",
+          "width": 245.484375,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 245,
+          "clientWidth": 245
+        },
+        {
+          "value": "Rp99.999.999.999.999",
+          "fontSize": "23.52px",
+          "width": 247.15625,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 247,
+          "clientWidth": 247
+        },
+        {
+          "value": "Rp999.999.999.999.999",
+          "fontSize": "22.4px",
+          "width": 248.609375,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 249,
+          "clientWidth": 249
+        },
+        {
+          "value": "Rp9.999.999.999.999.999",
+          "fontSize": "20.4522px",
+          "width": 244.390625,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 244,
+          "clientWidth": 244
+        },
+        {
+          "value": "Rp99.999.999.999.999.999",
+          "fontSize": "19.6px",
+          "width": 245.796875,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 246,
+          "clientWidth": 246
+        },
+        {
+          "value": "Rp999.999.999.999.999.999",
+          "fontSize": "18.816px",
+          "width": 246.984375,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 247,
+          "clientWidth": 247
+        },
+        {
+          "value": "Rp9.223.372.036.854.775.807",
+          "fontSize": "17.4222px",
+          "width": 243.578125,
+          "right": 327,
+          "height": 34,
+          "scrollWidth": 244,
+          "clientWidth": 244
+        }
+      ]
+    },
+    {
+      "case": "final2-correction-large-768",
+      "kind": "CSS layout probe only, not transaction",
+      "values": [
+        {
+          "value": "Rp0",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp1.000.000",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp9",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp99",
+          "fontSize": "28px",
+          "width": 66.640625,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        {
+          "value": "Rp999",
+          "fontSize": "28px",
+          "width": 83.171875,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "value": "Rp9.999",
+          "fontSize": "28px",
+          "width": 107.03125,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 107,
+          "clientWidth": 107
+        },
+        {
+          "value": "Rp99.999",
+          "fontSize": "28px",
+          "width": 123.546875,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 124,
+          "clientWidth": 124
+        },
+        {
+          "value": "Rp999.999",
+          "fontSize": "28px",
+          "width": 140.0625,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 140,
+          "clientWidth": 140
+        },
+        {
+          "value": "Rp9.999.999",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp99.999.999",
+          "fontSize": "28px",
+          "width": 180.4375,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        {
+          "value": "Rp999.999.999",
+          "fontSize": "28px",
+          "width": 196.953125,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "value": "Rp9.999.999.999",
+          "fontSize": "28px",
+          "width": 220.8125,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 221,
+          "clientWidth": 221
+        },
+        {
+          "value": "Rp99.999.999.999",
+          "fontSize": "28px",
+          "width": 237.328125,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 237,
+          "clientWidth": 237
+        },
+        {
+          "value": "Rp999.999.999.999",
+          "fontSize": "28px",
+          "width": 253.859375,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        {
+          "value": "Rp9.999.999.999.999",
+          "fontSize": "28px",
+          "width": 277.71875,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 278,
+          "clientWidth": 278
+        },
+        {
+          "value": "Rp99.999.999.999.999",
+          "fontSize": "28px",
+          "width": 294.234375,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 294,
+          "clientWidth": 294
+        },
+        {
+          "value": "Rp999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 310.75,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 311,
+          "clientWidth": 311
+        },
+        {
+          "value": "Rp9.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 334.609375,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 335,
+          "clientWidth": 335
+        },
+        {
+          "value": "Rp99.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 351.125,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 351,
+          "clientWidth": 351
+        },
+        {
+          "value": "Rp999.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 367.640625,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 368,
+          "clientWidth": 368
+        },
+        {
+          "value": "Rp9.223.372.036.854.775.807",
+          "fontSize": "28px",
+          "width": 391.5,
+          "right": 727,
+          "height": 34,
+          "scrollWidth": 392,
+          "clientWidth": 392
+        }
+      ]
+    },
+    {
+      "case": "final2-correction-large-1280",
+      "kind": "CSS layout probe only, not transaction",
+      "values": [
+        {
+          "value": "Rp0",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp1.000.000",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp9",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp99",
+          "fontSize": "28px",
+          "width": 66.640625,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        {
+          "value": "Rp999",
+          "fontSize": "28px",
+          "width": 83.171875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "value": "Rp9.999",
+          "fontSize": "28px",
+          "width": 107.03125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 107,
+          "clientWidth": 107
+        },
+        {
+          "value": "Rp99.999",
+          "fontSize": "28px",
+          "width": 123.546875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 124,
+          "clientWidth": 124
+        },
+        {
+          "value": "Rp999.999",
+          "fontSize": "28px",
+          "width": 140.0625,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 140,
+          "clientWidth": 140
+        },
+        {
+          "value": "Rp9.999.999",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp99.999.999",
+          "fontSize": "28px",
+          "width": 180.4375,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        {
+          "value": "Rp999.999.999",
+          "fontSize": "28px",
+          "width": 196.953125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "value": "Rp9.999.999.999",
+          "fontSize": "28px",
+          "width": 220.8125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 221,
+          "clientWidth": 221
+        },
+        {
+          "value": "Rp99.999.999.999",
+          "fontSize": "26.8px",
+          "width": 227.171875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 227,
+          "clientWidth": 227
+        },
+        {
+          "value": "Rp999.999.999.999",
+          "fontSize": "25.2235px",
+          "width": 228.65625,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 229,
+          "clientWidth": 229
+        },
+        {
+          "value": "Rp9.999.999.999.999",
+          "fontSize": "22.5684px",
+          "width": 223.75,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 224,
+          "clientWidth": 224
+        },
+        {
+          "value": "Rp99.999.999.999.999",
+          "fontSize": "21.44px",
+          "width": 225.296875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 225,
+          "clientWidth": 225
+        },
+        {
+          "value": "Rp999.999.999.999.999",
+          "fontSize": "20.419px",
+          "width": 226.515625,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 227,
+          "clientWidth": 227
+        },
+        {
+          "value": "Rp9.999.999.999.999.999",
+          "fontSize": "18.6435px",
+          "width": 222.75,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 223,
+          "clientWidth": 223
+        },
+        {
+          "value": "Rp99.999.999.999.999.999",
+          "fontSize": "17.8667px",
+          "width": 223.96875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 224,
+          "clientWidth": 224
+        },
+        {
+          "value": "Rp999.999.999.999.999.999",
+          "fontSize": "17.152px",
+          "width": 225.1875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 225,
+          "clientWidth": 225
+        },
+        {
+          "value": "Rp9.223.372.036.854.775.807",
+          "fontSize": "16px",
+          "width": 223.71875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 224,
+          "clientWidth": 224
+        }
+      ]
+    },
+    {
+      "case": "final2-published-large-360",
+      "kind": "CSS layout probe only, not transaction",
+      "values": [
+        {
+          "value": "Rp0",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp1.000.000",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp9",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp99",
+          "fontSize": "28px",
+          "width": 66.640625,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        {
+          "value": "Rp999",
+          "fontSize": "28px",
+          "width": 83.171875,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "value": "Rp9.999",
+          "fontSize": "28px",
+          "width": 107.03125,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 107,
+          "clientWidth": 107
+        },
+        {
+          "value": "Rp99.999",
+          "fontSize": "28px",
+          "width": 123.546875,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 124,
+          "clientWidth": 124
+        },
+        {
+          "value": "Rp999.999",
+          "fontSize": "28px",
+          "width": 140.0625,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 140,
+          "clientWidth": 140
+        },
+        {
+          "value": "Rp9.999.999",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp99.999.999",
+          "fontSize": "28px",
+          "width": 180.4375,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        {
+          "value": "Rp999.999.999",
+          "fontSize": "28px",
+          "width": 196.953125,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "value": "Rp9.999.999.999",
+          "fontSize": "28px",
+          "width": 220.8125,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 221,
+          "clientWidth": 221
+        },
+        {
+          "value": "Rp99.999.999.999",
+          "fontSize": "28px",
+          "width": 237.328125,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 237,
+          "clientWidth": 237
+        },
+        {
+          "value": "Rp999.999.999.999",
+          "fontSize": "28px",
+          "width": 253.859375,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        {
+          "value": "Rp9.999.999.999.999",
+          "fontSize": "27.6211px",
+          "width": 273.9375,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 274,
+          "clientWidth": 274
+        },
+        {
+          "value": "Rp99.999.999.999.999",
+          "fontSize": "26.24px",
+          "width": 275.734375,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 276,
+          "clientWidth": 276
+        },
+        {
+          "value": "Rp999.999.999.999.999",
+          "fontSize": "24.9905px",
+          "width": 277.34375,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 277,
+          "clientWidth": 277
+        },
+        {
+          "value": "Rp9.999.999.999.999.999",
+          "fontSize": "22.8174px",
+          "width": 272.578125,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 273,
+          "clientWidth": 273
+        },
+        {
+          "value": "Rp99.999.999.999.999.999",
+          "fontSize": "21.8667px",
+          "width": 274.125,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 274,
+          "clientWidth": 274
+        },
+        {
+          "value": "Rp999.999.999.999.999.999",
+          "fontSize": "20.992px",
+          "width": 275.609375,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 276,
+          "clientWidth": 276
+        },
+        {
+          "value": "Rp9.223.372.036.854.775.807",
+          "fontSize": "19.437px",
+          "width": 271.671875,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 272,
+          "clientWidth": 272
+        }
+      ]
+    },
+    {
+      "case": "final2-published-large-768",
+      "kind": "CSS layout probe only, not transaction",
+      "values": [
+        {
+          "value": "Rp0",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp1.000.000",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp9",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp99",
+          "fontSize": "28px",
+          "width": 66.640625,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        {
+          "value": "Rp999",
+          "fontSize": "28px",
+          "width": 83.171875,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "value": "Rp9.999",
+          "fontSize": "28px",
+          "width": 107.03125,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 107,
+          "clientWidth": 107
+        },
+        {
+          "value": "Rp99.999",
+          "fontSize": "28px",
+          "width": 123.546875,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 124,
+          "clientWidth": 124
+        },
+        {
+          "value": "Rp999.999",
+          "fontSize": "28px",
+          "width": 140.0625,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 140,
+          "clientWidth": 140
+        },
+        {
+          "value": "Rp9.999.999",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp99.999.999",
+          "fontSize": "28px",
+          "width": 180.4375,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        {
+          "value": "Rp999.999.999",
+          "fontSize": "28px",
+          "width": 196.953125,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "value": "Rp9.999.999.999",
+          "fontSize": "28px",
+          "width": 220.8125,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 221,
+          "clientWidth": 221
+        },
+        {
+          "value": "Rp99.999.999.999",
+          "fontSize": "28px",
+          "width": 237.328125,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 237,
+          "clientWidth": 237
+        },
+        {
+          "value": "Rp999.999.999.999",
+          "fontSize": "28px",
+          "width": 253.859375,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        {
+          "value": "Rp9.999.999.999.999",
+          "fontSize": "28px",
+          "width": 277.71875,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 278,
+          "clientWidth": 278
+        },
+        {
+          "value": "Rp99.999.999.999.999",
+          "fontSize": "28px",
+          "width": 294.234375,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 294,
+          "clientWidth": 294
+        },
+        {
+          "value": "Rp999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 310.75,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 311,
+          "clientWidth": 311
+        },
+        {
+          "value": "Rp9.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 334.609375,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 335,
+          "clientWidth": 335
+        },
+        {
+          "value": "Rp99.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 351.125,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 351,
+          "clientWidth": 351
+        },
+        {
+          "value": "Rp999.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 367.640625,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 368,
+          "clientWidth": 368
+        },
+        {
+          "value": "Rp9.223.372.036.854.775.807",
+          "fontSize": "28px",
+          "width": 391.5,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 392,
+          "clientWidth": 392
+        }
+      ]
+    },
+    {
+      "case": "final2-published-large-1280",
+      "kind": "CSS layout probe only, not transaction",
+      "values": [
+        {
+          "value": "Rp0",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp1.000.000",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp9",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp99",
+          "fontSize": "28px",
+          "width": 66.640625,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        {
+          "value": "Rp999",
+          "fontSize": "28px",
+          "width": 83.171875,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "value": "Rp9.999",
+          "fontSize": "28px",
+          "width": 107.03125,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 107,
+          "clientWidth": 107
+        },
+        {
+          "value": "Rp99.999",
+          "fontSize": "28px",
+          "width": 123.546875,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 124,
+          "clientWidth": 124
+        },
+        {
+          "value": "Rp999.999",
+          "fontSize": "28px",
+          "width": 140.0625,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 140,
+          "clientWidth": 140
+        },
+        {
+          "value": "Rp9.999.999",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp99.999.999",
+          "fontSize": "28px",
+          "width": 180.4375,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        {
+          "value": "Rp999.999.999",
+          "fontSize": "28px",
+          "width": 196.953125,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "value": "Rp9.999.999.999",
+          "fontSize": "28px",
+          "width": 220.8125,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 221,
+          "clientWidth": 221
+        },
+        {
+          "value": "Rp99.999.999.999",
+          "fontSize": "28px",
+          "width": 237.328125,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 237,
+          "clientWidth": 237
+        },
+        {
+          "value": "Rp999.999.999.999",
+          "fontSize": "28px",
+          "width": 253.859375,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        {
+          "value": "Rp9.999.999.999.999",
+          "fontSize": "28px",
+          "width": 277.71875,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 278,
+          "clientWidth": 278
+        },
+        {
+          "value": "Rp99.999.999.999.999",
+          "fontSize": "28px",
+          "width": 294.234375,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 294,
+          "clientWidth": 294
+        },
+        {
+          "value": "Rp999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 310.75,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 311,
+          "clientWidth": 311
+        },
+        {
+          "value": "Rp9.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 334.609375,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 335,
+          "clientWidth": 335
+        },
+        {
+          "value": "Rp99.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 351.125,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 351,
+          "clientWidth": 351
+        },
+        {
+          "value": "Rp999.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 367.640625,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 368,
+          "clientWidth": 368
+        },
+        {
+          "value": "Rp9.223.372.036.854.775.807",
+          "fontSize": "28px",
+          "width": 391.5,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 392,
+          "clientWidth": 392
+        }
+      ]
+    },
+    {
+      "case": "final2-published-normal-360",
+      "kind": "CSS layout probe only, not transaction",
+      "values": [
+        {
+          "value": "Rp0",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp1.000.000",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp9",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp99",
+          "fontSize": "28px",
+          "width": 66.640625,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        {
+          "value": "Rp999",
+          "fontSize": "28px",
+          "width": 83.171875,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "value": "Rp9.999",
+          "fontSize": "28px",
+          "width": 107.03125,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 107,
+          "clientWidth": 107
+        },
+        {
+          "value": "Rp99.999",
+          "fontSize": "28px",
+          "width": 123.546875,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 124,
+          "clientWidth": 124
+        },
+        {
+          "value": "Rp999.999",
+          "fontSize": "28px",
+          "width": 140.0625,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 140,
+          "clientWidth": 140
+        },
+        {
+          "value": "Rp9.999.999",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp99.999.999",
+          "fontSize": "28px",
+          "width": 180.4375,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        {
+          "value": "Rp999.999.999",
+          "fontSize": "28px",
+          "width": 196.953125,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "value": "Rp9.999.999.999",
+          "fontSize": "28px",
+          "width": 220.8125,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 221,
+          "clientWidth": 221
+        },
+        {
+          "value": "Rp99.999.999.999",
+          "fontSize": "28px",
+          "width": 237.328125,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 237,
+          "clientWidth": 237
+        },
+        {
+          "value": "Rp999.999.999.999",
+          "fontSize": "28px",
+          "width": 253.859375,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        {
+          "value": "Rp9.999.999.999.999",
+          "fontSize": "27.6211px",
+          "width": 273.9375,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 274,
+          "clientWidth": 274
+        },
+        {
+          "value": "Rp99.999.999.999.999",
+          "fontSize": "26.24px",
+          "width": 275.734375,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 276,
+          "clientWidth": 276
+        },
+        {
+          "value": "Rp999.999.999.999.999",
+          "fontSize": "24.9905px",
+          "width": 277.34375,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 277,
+          "clientWidth": 277
+        },
+        {
+          "value": "Rp9.999.999.999.999.999",
+          "fontSize": "22.8174px",
+          "width": 272.578125,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 273,
+          "clientWidth": 273
+        },
+        {
+          "value": "Rp99.999.999.999.999.999",
+          "fontSize": "21.8667px",
+          "width": 274.125,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 274,
+          "clientWidth": 274
+        },
+        {
+          "value": "Rp999.999.999.999.999.999",
+          "fontSize": "20.992px",
+          "width": 275.609375,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 276,
+          "clientWidth": 276
+        },
+        {
+          "value": "Rp9.223.372.036.854.775.807",
+          "fontSize": "19.437px",
+          "width": 271.671875,
+          "right": 344,
+          "height": 34,
+          "scrollWidth": 272,
+          "clientWidth": 272
+        }
+      ]
+    },
+    {
+      "case": "final2-published-normal-768",
+      "kind": "CSS layout probe only, not transaction",
+      "values": [
+        {
+          "value": "Rp0",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp1.000.000",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp9",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp99",
+          "fontSize": "28px",
+          "width": 66.640625,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        {
+          "value": "Rp999",
+          "fontSize": "28px",
+          "width": 83.171875,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "value": "Rp9.999",
+          "fontSize": "28px",
+          "width": 107.03125,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 107,
+          "clientWidth": 107
+        },
+        {
+          "value": "Rp99.999",
+          "fontSize": "28px",
+          "width": 123.546875,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 124,
+          "clientWidth": 124
+        },
+        {
+          "value": "Rp999.999",
+          "fontSize": "28px",
+          "width": 140.0625,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 140,
+          "clientWidth": 140
+        },
+        {
+          "value": "Rp9.999.999",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp99.999.999",
+          "fontSize": "28px",
+          "width": 180.4375,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        {
+          "value": "Rp999.999.999",
+          "fontSize": "28px",
+          "width": 196.953125,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "value": "Rp9.999.999.999",
+          "fontSize": "28px",
+          "width": 220.8125,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 221,
+          "clientWidth": 221
+        },
+        {
+          "value": "Rp99.999.999.999",
+          "fontSize": "28px",
+          "width": 237.328125,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 237,
+          "clientWidth": 237
+        },
+        {
+          "value": "Rp999.999.999.999",
+          "fontSize": "28px",
+          "width": 253.859375,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        {
+          "value": "Rp9.999.999.999.999",
+          "fontSize": "28px",
+          "width": 277.71875,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 278,
+          "clientWidth": 278
+        },
+        {
+          "value": "Rp99.999.999.999.999",
+          "fontSize": "28px",
+          "width": 294.234375,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 294,
+          "clientWidth": 294
+        },
+        {
+          "value": "Rp999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 310.75,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 311,
+          "clientWidth": 311
+        },
+        {
+          "value": "Rp9.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 334.609375,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 335,
+          "clientWidth": 335
+        },
+        {
+          "value": "Rp99.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 351.125,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 351,
+          "clientWidth": 351
+        },
+        {
+          "value": "Rp999.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 367.640625,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 368,
+          "clientWidth": 368
+        },
+        {
+          "value": "Rp9.223.372.036.854.775.807",
+          "fontSize": "28px",
+          "width": 391.5,
+          "right": 744,
+          "height": 34,
+          "scrollWidth": 392,
+          "clientWidth": 392
+        }
+      ]
+    },
+    {
+      "case": "final2-published-normal-1280",
+      "kind": "CSS layout probe only, not transaction",
+      "values": [
+        {
+          "value": "Rp0",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp1.000.000",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp9",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp99",
+          "fontSize": "28px",
+          "width": 66.640625,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        {
+          "value": "Rp999",
+          "fontSize": "28px",
+          "width": 83.171875,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "value": "Rp9.999",
+          "fontSize": "28px",
+          "width": 107.03125,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 107,
+          "clientWidth": 107
+        },
+        {
+          "value": "Rp99.999",
+          "fontSize": "28px",
+          "width": 123.546875,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 124,
+          "clientWidth": 124
+        },
+        {
+          "value": "Rp999.999",
+          "fontSize": "28px",
+          "width": 140.0625,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 140,
+          "clientWidth": 140
+        },
+        {
+          "value": "Rp9.999.999",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp99.999.999",
+          "fontSize": "28px",
+          "width": 180.4375,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        {
+          "value": "Rp999.999.999",
+          "fontSize": "28px",
+          "width": 196.953125,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "value": "Rp9.999.999.999",
+          "fontSize": "28px",
+          "width": 220.8125,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 221,
+          "clientWidth": 221
+        },
+        {
+          "value": "Rp99.999.999.999",
+          "fontSize": "28px",
+          "width": 237.328125,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 237,
+          "clientWidth": 237
+        },
+        {
+          "value": "Rp999.999.999.999",
+          "fontSize": "28px",
+          "width": 253.859375,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        {
+          "value": "Rp9.999.999.999.999",
+          "fontSize": "28px",
+          "width": 277.71875,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 278,
+          "clientWidth": 278
+        },
+        {
+          "value": "Rp99.999.999.999.999",
+          "fontSize": "28px",
+          "width": 294.234375,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 294,
+          "clientWidth": 294
+        },
+        {
+          "value": "Rp999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 310.75,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 311,
+          "clientWidth": 311
+        },
+        {
+          "value": "Rp9.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 334.609375,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 335,
+          "clientWidth": 335
+        },
+        {
+          "value": "Rp99.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 351.125,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 351,
+          "clientWidth": 351
+        },
+        {
+          "value": "Rp999.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 367.640625,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 368,
+          "clientWidth": 368
+        },
+        {
+          "value": "Rp9.223.372.036.854.775.807",
+          "fontSize": "28px",
+          "width": 391.5,
+          "right": 905,
+          "height": 34,
+          "scrollWidth": 392,
+          "clientWidth": 392
+        }
+      ]
+    }
+  ],
+  "exceptions": [],
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/157.0.8103.79",
+    "revision": "@6dc9bc3bdaea5c35ed6d41fceab2f7a3a2227c4f",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "jsVersion": "15.7.112.43"
+  }
+}

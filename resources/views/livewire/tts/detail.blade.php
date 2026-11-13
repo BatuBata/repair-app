@@ -9,7 +9,7 @@
         .tts-detail .success-actions { display:grid; gap:8px; margin-top:24px; }
         .tts-detail .paper-bed { padding:24px; background:var(--raised); border-radius:var(--radius-card); display:grid; justify-items:center; }
         .tts-detail .paper { width:260px; background:white; padding:16px; border:1px solid var(--border); border-radius:4px; font-size:12px; line-height:17px; }
-        .tts-detail .totals > div { flex-wrap:wrap; } .tts-detail .totals dd { white-space:nowrap; }
+        .tts-detail .totals > div { flex-wrap:wrap; } .tts-detail .totals dt { min-width:0; } .tts-detail .totals dd { max-width:100%; margin-left:auto; text-align:right; }
         .tts-detail .paper hr { border:0; border-top:1px dashed var(--control); margin:8px 0; }
         @media(max-width:1023.98px) { .tts-detail h1 { font-size:24px; line-height:32px; } .tts-detail .done-head h1 { font-size:28px; line-height:36px; } .tts-detail .success-layout { display:block; } }
     </style>

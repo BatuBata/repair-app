@@ -1,0 +1,9 @@
+{
+  "listener8189": false,
+  "owned_chrome_count": 0,
+  "owned_profiles_remaining": 0,
+  "server_exit": 130,
+  "browser_finally_closed": true,
+  "private_sqlite_preserved": true,
+  "final_phase": "after breakpoint regrant/6case check"
+}

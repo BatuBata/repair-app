@@ -1,0 +1,31 @@
+{
+  "error": "Timeout total normal",
+  "cases": [],
+  "inputs": [
+    {
+      "label": "Harga jual",
+      "baseline": "0",
+      "target": "0",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Modal",
+      "baseline": "0",
+      "target": "0",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Harga jual",
+      "baseline": "0",
+      "target": "1000000",
+      "method": "CDP Input.insertText after visible click/select"
+    },
+    {
+      "label": "Modal",
+      "baseline": "0",
+      "target": "700000",
+      "method": "CDP Input.insertText after visible click/select"
+    }
+  ],
+  "exceptions": []
+}

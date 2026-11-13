@@ -1,0 +1,39 @@
+issue-normal 360 PASS
+issue-normal 768 PASS
+issue-normal 1280 PASS
+issue-large 360 PASS
+issue-large 768 PASS
+issue-large 1280 PASS
+issue-negative 360 PASS
+issue-negative 768 PASS
+issue-negative 1280 PASS
+published-large 360 PASS
+published-large 768 PASS
+published-large 1280 PASS
+published-normal 360 PASS
+published-normal 768 PASS
+published-normal 1280 PASS
+published-negative 360 PASS
+published-negative 768 PASS
+published-negative 1280 PASS
+correction-normal 360 PASS
+correction-normal 768 PASS
+correction-normal 1280 PASS
+correction-negative 360 PASS
+correction-negative 768 PASS
+correction-negative 1280 PASS
+correction-large 360 PASS
+correction-large 768 PASS
+correction-large 1280 PASS
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+240 !== 234
+
+    at file:///Users/muzib/Projects/web/repair-app/docs/evidence/T010/A2/browser.mjs:38:229 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 240,
+  expected: 234,
+  operator: 'strictEqual',
+  diff: 'simple'
+}

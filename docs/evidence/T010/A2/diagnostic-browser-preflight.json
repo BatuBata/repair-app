@@ -1,0 +1,10 @@
+{
+  "runtime": "/private/tmp/repair-t010-a2-7xejwhtu",
+  "profile": "/private/tmp/repair-t010-a2-7xejwhtu/chrome/ad-chrome-RgmiRL",
+  "pid": 41976,
+  "port": 8189,
+  "isolated": true,
+  "headless": true,
+  "CDP": "owned port0",
+  "storage": "private SQLite/config/cache/session/views/storage"
+}

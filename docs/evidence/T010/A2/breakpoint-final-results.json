@@ -1,0 +1,1562 @@
+{
+  "cases": [
+    {
+      "id": "final-breakpoint-normal-1200",
+      "requestedWidth": 1200,
+      "innerWidth": 1200,
+      "visualWidth": 1200,
+      "documentWidth": 1200,
+      "grand": {
+        "text": "Rp1.000.000",
+        "x": 636.078125,
+        "right": 800,
+        "y": 637,
+        "bottom": 671,
+        "width": 163.921875,
+        "height": 34,
+        "scrollWidth": 164,
+        "clientWidth": 164,
+        "fontSize": "28px",
+        "whiteSpace": "nowrap"
+      },
+      "descriptionHeading": {
+        "text": "Deskripsi",
+        "x": 437,
+        "right": 771,
+        "y": 125,
+        "bottom": 145,
+        "width": 334,
+        "height": 20,
+        "scrollWidth": 334,
+        "clientWidth": 334,
+        "fontSize": "12px",
+        "whiteSpace": "normal"
+      },
+      "descriptionInput": {
+        "text": "",
+        "x": 437,
+        "right": 771,
+        "y": 168,
+        "bottom": 208,
+        "width": 334,
+        "height": 40,
+        "scrollWidth": 308,
+        "clientWidth": 308,
+        "fontSize": "14px",
+        "whiteSpace": "normal"
+      },
+      "buttons": [
+        {
+          "text": "Terbitkan nota",
+          "x": 282,
+          "right": 800,
+          "y": 794,
+          "bottom": 830,
+          "width": 518,
+          "height": 36,
+          "scrollWidth": 516,
+          "clientWidth": 516,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "nav": 0,
+      "cells": []
+    },
+    {
+      "id": "final-breakpoint-normal-1279",
+      "requestedWidth": 1279,
+      "innerWidth": 1279,
+      "visualWidth": 1279,
+      "documentWidth": 1279,
+      "grand": {
+        "text": "Rp1.000.000",
+        "x": 636.078125,
+        "right": 800,
+        "y": 637,
+        "bottom": 671,
+        "width": 163.921875,
+        "height": 34,
+        "scrollWidth": 164,
+        "clientWidth": 164,
+        "fontSize": "28px",
+        "whiteSpace": "nowrap"
+      },
+      "descriptionHeading": {
+        "text": "Deskripsi",
+        "x": 437,
+        "right": 850,
+        "y": 125,
+        "bottom": 145,
+        "width": 413,
+        "height": 20,
+        "scrollWidth": 413,
+        "clientWidth": 413,
+        "fontSize": "12px",
+        "whiteSpace": "normal"
+      },
+      "descriptionInput": {
+        "text": "",
+        "x": 437,
+        "right": 850,
+        "y": 168,
+        "bottom": 208,
+        "width": 413,
+        "height": 40,
+        "scrollWidth": 387,
+        "clientWidth": 387,
+        "fontSize": "14px",
+        "whiteSpace": "normal"
+      },
+      "buttons": [
+        {
+          "text": "Terbitkan nota",
+          "x": 282,
+          "right": 800,
+          "y": 794,
+          "bottom": 830,
+          "width": 518,
+          "height": 36,
+          "scrollWidth": 516,
+          "clientWidth": 516,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "nav": 0,
+      "cells": []
+    },
+    {
+      "id": "final-breakpoint-normal-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "grand": {
+        "text": "Rp1.000.000",
+        "x": 1054.078125,
+        "right": 1218,
+        "y": 270,
+        "bottom": 304,
+        "width": 163.921875,
+        "height": 34,
+        "scrollWidth": 164,
+        "clientWidth": 164,
+        "fontSize": "28px",
+        "whiteSpace": "nowrap"
+      },
+      "descriptionHeading": {
+        "text": "Deskripsi",
+        "x": 437,
+        "right": 517,
+        "y": 218,
+        "bottom": 238,
+        "width": 80,
+        "height": 20,
+        "scrollWidth": 80,
+        "clientWidth": 80,
+        "fontSize": "12px",
+        "whiteSpace": "normal"
+      },
+      "descriptionInput": {
+        "text": "",
+        "x": 437,
+        "right": 517,
+        "y": 261,
+        "bottom": 301,
+        "width": 80,
+        "height": 40,
+        "scrollWidth": 54,
+        "clientWidth": 54,
+        "fontSize": "14px",
+        "whiteSpace": "normal"
+      },
+      "buttons": [
+        {
+          "text": "Terbitkan nota",
+          "x": 950,
+          "right": 1218,
+          "y": 445,
+          "bottom": 481,
+          "width": 268,
+          "height": 36,
+          "scrollWidth": 266,
+          "clientWidth": 266,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "nav": 0,
+      "cells": []
+    },
+    {
+      "id": "final-breakpoint-large-1200",
+      "requestedWidth": 1200,
+      "innerWidth": 1200,
+      "visualWidth": 1200,
+      "documentWidth": 1200,
+      "grand": {
+        "text": "Rp9.223.372.034.707.292.160",
+        "x": 408.5,
+        "right": 800,
+        "y": 637,
+        "bottom": 671,
+        "width": 391.5,
+        "height": 34,
+        "scrollWidth": 392,
+        "clientWidth": 392,
+        "fontSize": "28px",
+        "whiteSpace": "nowrap"
+      },
+      "descriptionHeading": {
+        "text": "Deskripsi",
+        "x": 437,
+        "right": 771,
+        "y": 93,
+        "bottom": 113,
+        "width": 334,
+        "height": 20,
+        "scrollWidth": 334,
+        "clientWidth": 334,
+        "fontSize": "12px",
+        "whiteSpace": "normal"
+      },
+      "descriptionInput": {
+        "text": "",
+        "x": 437,
+        "right": 771,
+        "y": 136,
+        "bottom": 176,
+        "width": 334,
+        "height": 40,
+        "scrollWidth": 308,
+        "clientWidth": 308,
+        "fontSize": "14px",
+        "whiteSpace": "normal"
+      },
+      "buttons": [
+        {
+          "text": "Terbitkan nota",
+          "x": 282,
+          "right": 800,
+          "y": 794,
+          "bottom": 830,
+          "width": 518,
+          "height": 36,
+          "scrollWidth": 516,
+          "clientWidth": 516,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "nav": 0,
+      "cells": []
+    },
+    {
+      "id": "final-breakpoint-large-1279",
+      "requestedWidth": 1279,
+      "innerWidth": 1279,
+      "visualWidth": 1279,
+      "documentWidth": 1279,
+      "grand": {
+        "text": "Rp9.223.372.034.707.292.160",
+        "x": 408.5,
+        "right": 800,
+        "y": 637,
+        "bottom": 671,
+        "width": 391.5,
+        "height": 34,
+        "scrollWidth": 392,
+        "clientWidth": 392,
+        "fontSize": "28px",
+        "whiteSpace": "nowrap"
+      },
+      "descriptionHeading": {
+        "text": "Deskripsi",
+        "x": 437,
+        "right": 850,
+        "y": 93,
+        "bottom": 113,
+        "width": 413,
+        "height": 20,
+        "scrollWidth": 413,
+        "clientWidth": 413,
+        "fontSize": "12px",
+        "whiteSpace": "normal"
+      },
+      "descriptionInput": {
+        "text": "",
+        "x": 437,
+        "right": 850,
+        "y": 136,
+        "bottom": 176,
+        "width": 413,
+        "height": 40,
+        "scrollWidth": 387,
+        "clientWidth": 387,
+        "fontSize": "14px",
+        "whiteSpace": "normal"
+      },
+      "buttons": [
+        {
+          "text": "Terbitkan nota",
+          "x": 282,
+          "right": 800,
+          "y": 794,
+          "bottom": 830,
+          "width": 518,
+          "height": 36,
+          "scrollWidth": 516,
+          "clientWidth": 516,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "nav": 0,
+      "cells": []
+    },
+    {
+      "id": "final-breakpoint-large-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "grand": {
+        "text": "Rp9.223.372.034.707.292.160",
+        "x": 994.28125,
+        "right": 1218,
+        "y": 270,
+        "bottom": 304,
+        "width": 223.71875,
+        "height": 34,
+        "scrollWidth": 224,
+        "clientWidth": 224,
+        "fontSize": "16px",
+        "whiteSpace": "nowrap"
+      },
+      "descriptionHeading": {
+        "text": "Deskripsi",
+        "x": 437,
+        "right": 517,
+        "y": 218,
+        "bottom": 238,
+        "width": 80,
+        "height": 20,
+        "scrollWidth": 80,
+        "clientWidth": 80,
+        "fontSize": "12px",
+        "whiteSpace": "normal"
+      },
+      "descriptionInput": {
+        "text": "",
+        "x": 437,
+        "right": 517,
+        "y": 261,
+        "bottom": 301,
+        "width": 80,
+        "height": 40,
+        "scrollWidth": 54,
+        "clientWidth": 54,
+        "fontSize": "14px",
+        "whiteSpace": "normal"
+      },
+      "buttons": [
+        {
+          "text": "Terbitkan nota",
+          "x": 950,
+          "right": 1218,
+          "y": 445,
+          "bottom": 481,
+          "width": 268,
+          "height": 36,
+          "scrollWidth": 266,
+          "clientWidth": 266,
+          "fontSize": "14px",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "nav": 0,
+      "cells": []
+    }
+  ],
+  "probes": [
+    {
+      "case": "final-breakpoint-normal-1200",
+      "kind": "CSS layout probe only, not transaction",
+      "values": [
+        {
+          "value": "Rp0",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp1.000.000",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp9",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp99",
+          "fontSize": "28px",
+          "width": 66.640625,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        {
+          "value": "Rp999",
+          "fontSize": "28px",
+          "width": 83.171875,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "value": "Rp9.999",
+          "fontSize": "28px",
+          "width": 107.03125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 107,
+          "clientWidth": 107
+        },
+        {
+          "value": "Rp99.999",
+          "fontSize": "28px",
+          "width": 123.546875,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 124,
+          "clientWidth": 124
+        },
+        {
+          "value": "Rp999.999",
+          "fontSize": "28px",
+          "width": 140.0625,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 140,
+          "clientWidth": 140
+        },
+        {
+          "value": "Rp9.999.999",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp99.999.999",
+          "fontSize": "28px",
+          "width": 180.4375,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        {
+          "value": "Rp999.999.999",
+          "fontSize": "28px",
+          "width": 196.953125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "value": "Rp9.999.999.999",
+          "fontSize": "28px",
+          "width": 220.8125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 221,
+          "clientWidth": 221
+        },
+        {
+          "value": "Rp99.999.999.999",
+          "fontSize": "28px",
+          "width": 237.328125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 237,
+          "clientWidth": 237
+        },
+        {
+          "value": "Rp999.999.999.999",
+          "fontSize": "28px",
+          "width": 253.859375,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        {
+          "value": "Rp9.999.999.999.999",
+          "fontSize": "28px",
+          "width": 277.71875,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 278,
+          "clientWidth": 278
+        },
+        {
+          "value": "Rp99.999.999.999.999",
+          "fontSize": "28px",
+          "width": 294.234375,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 294,
+          "clientWidth": 294
+        },
+        {
+          "value": "Rp999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 310.75,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 311,
+          "clientWidth": 311
+        },
+        {
+          "value": "Rp9.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 334.609375,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 335,
+          "clientWidth": 335
+        },
+        {
+          "value": "Rp99.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 351.125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 351,
+          "clientWidth": 351
+        },
+        {
+          "value": "Rp999.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 367.640625,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 368,
+          "clientWidth": 368
+        },
+        {
+          "value": "Rp9.223.372.036.854.775.807",
+          "fontSize": "28px",
+          "width": 391.5,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 392,
+          "clientWidth": 392
+        }
+      ]
+    },
+    {
+      "case": "final-breakpoint-normal-1279",
+      "kind": "CSS layout probe only, not transaction",
+      "values": [
+        {
+          "value": "Rp0",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp1.000.000",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp9",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp99",
+          "fontSize": "28px",
+          "width": 66.640625,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        {
+          "value": "Rp999",
+          "fontSize": "28px",
+          "width": 83.171875,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "value": "Rp9.999",
+          "fontSize": "28px",
+          "width": 107.03125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 107,
+          "clientWidth": 107
+        },
+        {
+          "value": "Rp99.999",
+          "fontSize": "28px",
+          "width": 123.546875,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 124,
+          "clientWidth": 124
+        },
+        {
+          "value": "Rp999.999",
+          "fontSize": "28px",
+          "width": 140.0625,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 140,
+          "clientWidth": 140
+        },
+        {
+          "value": "Rp9.999.999",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp99.999.999",
+          "fontSize": "28px",
+          "width": 180.4375,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        {
+          "value": "Rp999.999.999",
+          "fontSize": "28px",
+          "width": 196.953125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "value": "Rp9.999.999.999",
+          "fontSize": "28px",
+          "width": 220.8125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 221,
+          "clientWidth": 221
+        },
+        {
+          "value": "Rp99.999.999.999",
+          "fontSize": "28px",
+          "width": 237.328125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 237,
+          "clientWidth": 237
+        },
+        {
+          "value": "Rp999.999.999.999",
+          "fontSize": "28px",
+          "width": 253.859375,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        {
+          "value": "Rp9.999.999.999.999",
+          "fontSize": "28px",
+          "width": 277.71875,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 278,
+          "clientWidth": 278
+        },
+        {
+          "value": "Rp99.999.999.999.999",
+          "fontSize": "28px",
+          "width": 294.234375,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 294,
+          "clientWidth": 294
+        },
+        {
+          "value": "Rp999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 310.75,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 311,
+          "clientWidth": 311
+        },
+        {
+          "value": "Rp9.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 334.609375,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 335,
+          "clientWidth": 335
+        },
+        {
+          "value": "Rp99.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 351.125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 351,
+          "clientWidth": 351
+        },
+        {
+          "value": "Rp999.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 367.640625,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 368,
+          "clientWidth": 368
+        },
+        {
+          "value": "Rp9.223.372.036.854.775.807",
+          "fontSize": "28px",
+          "width": 391.5,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 392,
+          "clientWidth": 392
+        }
+      ]
+    },
+    {
+      "case": "final-breakpoint-normal-1280",
+      "kind": "CSS layout probe only, not transaction",
+      "values": [
+        {
+          "value": "Rp0",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp1.000.000",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp9",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp99",
+          "fontSize": "28px",
+          "width": 66.640625,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        {
+          "value": "Rp999",
+          "fontSize": "28px",
+          "width": 83.171875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "value": "Rp9.999",
+          "fontSize": "28px",
+          "width": 107.03125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 107,
+          "clientWidth": 107
+        },
+        {
+          "value": "Rp99.999",
+          "fontSize": "28px",
+          "width": 123.546875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 124,
+          "clientWidth": 124
+        },
+        {
+          "value": "Rp999.999",
+          "fontSize": "28px",
+          "width": 140.0625,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 140,
+          "clientWidth": 140
+        },
+        {
+          "value": "Rp9.999.999",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp99.999.999",
+          "fontSize": "28px",
+          "width": 180.4375,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        {
+          "value": "Rp999.999.999",
+          "fontSize": "28px",
+          "width": 196.953125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "value": "Rp9.999.999.999",
+          "fontSize": "28px",
+          "width": 220.8125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 221,
+          "clientWidth": 221
+        },
+        {
+          "value": "Rp99.999.999.999",
+          "fontSize": "26.8px",
+          "width": 227.171875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 227,
+          "clientWidth": 227
+        },
+        {
+          "value": "Rp999.999.999.999",
+          "fontSize": "25.2235px",
+          "width": 228.65625,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 229,
+          "clientWidth": 229
+        },
+        {
+          "value": "Rp9.999.999.999.999",
+          "fontSize": "22.5684px",
+          "width": 223.75,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 224,
+          "clientWidth": 224
+        },
+        {
+          "value": "Rp99.999.999.999.999",
+          "fontSize": "21.44px",
+          "width": 225.296875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 225,
+          "clientWidth": 225
+        },
+        {
+          "value": "Rp999.999.999.999.999",
+          "fontSize": "20.419px",
+          "width": 226.515625,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 227,
+          "clientWidth": 227
+        },
+        {
+          "value": "Rp9.999.999.999.999.999",
+          "fontSize": "18.6435px",
+          "width": 222.75,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 223,
+          "clientWidth": 223
+        },
+        {
+          "value": "Rp99.999.999.999.999.999",
+          "fontSize": "17.8667px",
+          "width": 223.96875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 224,
+          "clientWidth": 224
+        },
+        {
+          "value": "Rp999.999.999.999.999.999",
+          "fontSize": "17.152px",
+          "width": 225.1875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 225,
+          "clientWidth": 225
+        },
+        {
+          "value": "Rp9.223.372.036.854.775.807",
+          "fontSize": "16px",
+          "width": 223.71875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 224,
+          "clientWidth": 224
+        }
+      ]
+    },
+    {
+      "case": "final-breakpoint-large-1200",
+      "kind": "CSS layout probe only, not transaction",
+      "values": [
+        {
+          "value": "Rp0",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp1.000.000",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp9",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp99",
+          "fontSize": "28px",
+          "width": 66.640625,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        {
+          "value": "Rp999",
+          "fontSize": "28px",
+          "width": 83.171875,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "value": "Rp9.999",
+          "fontSize": "28px",
+          "width": 107.03125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 107,
+          "clientWidth": 107
+        },
+        {
+          "value": "Rp99.999",
+          "fontSize": "28px",
+          "width": 123.546875,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 124,
+          "clientWidth": 124
+        },
+        {
+          "value": "Rp999.999",
+          "fontSize": "28px",
+          "width": 140.0625,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 140,
+          "clientWidth": 140
+        },
+        {
+          "value": "Rp9.999.999",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp99.999.999",
+          "fontSize": "28px",
+          "width": 180.4375,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        {
+          "value": "Rp999.999.999",
+          "fontSize": "28px",
+          "width": 196.953125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "value": "Rp9.999.999.999",
+          "fontSize": "28px",
+          "width": 220.8125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 221,
+          "clientWidth": 221
+        },
+        {
+          "value": "Rp99.999.999.999",
+          "fontSize": "28px",
+          "width": 237.328125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 237,
+          "clientWidth": 237
+        },
+        {
+          "value": "Rp999.999.999.999",
+          "fontSize": "28px",
+          "width": 253.859375,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        {
+          "value": "Rp9.999.999.999.999",
+          "fontSize": "28px",
+          "width": 277.71875,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 278,
+          "clientWidth": 278
+        },
+        {
+          "value": "Rp99.999.999.999.999",
+          "fontSize": "28px",
+          "width": 294.234375,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 294,
+          "clientWidth": 294
+        },
+        {
+          "value": "Rp999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 310.75,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 311,
+          "clientWidth": 311
+        },
+        {
+          "value": "Rp9.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 334.609375,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 335,
+          "clientWidth": 335
+        },
+        {
+          "value": "Rp99.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 351.125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 351,
+          "clientWidth": 351
+        },
+        {
+          "value": "Rp999.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 367.640625,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 368,
+          "clientWidth": 368
+        },
+        {
+          "value": "Rp9.223.372.036.854.775.807",
+          "fontSize": "28px",
+          "width": 391.5,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 392,
+          "clientWidth": 392
+        }
+      ]
+    },
+    {
+      "case": "final-breakpoint-large-1279",
+      "kind": "CSS layout probe only, not transaction",
+      "values": [
+        {
+          "value": "Rp0",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp1.000.000",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp9",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp99",
+          "fontSize": "28px",
+          "width": 66.640625,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        {
+          "value": "Rp999",
+          "fontSize": "28px",
+          "width": 83.171875,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "value": "Rp9.999",
+          "fontSize": "28px",
+          "width": 107.03125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 107,
+          "clientWidth": 107
+        },
+        {
+          "value": "Rp99.999",
+          "fontSize": "28px",
+          "width": 123.546875,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 124,
+          "clientWidth": 124
+        },
+        {
+          "value": "Rp999.999",
+          "fontSize": "28px",
+          "width": 140.0625,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 140,
+          "clientWidth": 140
+        },
+        {
+          "value": "Rp9.999.999",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp99.999.999",
+          "fontSize": "28px",
+          "width": 180.4375,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        {
+          "value": "Rp999.999.999",
+          "fontSize": "28px",
+          "width": 196.953125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "value": "Rp9.999.999.999",
+          "fontSize": "28px",
+          "width": 220.8125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 221,
+          "clientWidth": 221
+        },
+        {
+          "value": "Rp99.999.999.999",
+          "fontSize": "28px",
+          "width": 237.328125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 237,
+          "clientWidth": 237
+        },
+        {
+          "value": "Rp999.999.999.999",
+          "fontSize": "28px",
+          "width": 253.859375,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        {
+          "value": "Rp9.999.999.999.999",
+          "fontSize": "28px",
+          "width": 277.71875,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 278,
+          "clientWidth": 278
+        },
+        {
+          "value": "Rp99.999.999.999.999",
+          "fontSize": "28px",
+          "width": 294.234375,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 294,
+          "clientWidth": 294
+        },
+        {
+          "value": "Rp999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 310.75,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 311,
+          "clientWidth": 311
+        },
+        {
+          "value": "Rp9.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 334.609375,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 335,
+          "clientWidth": 335
+        },
+        {
+          "value": "Rp99.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 351.125,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 351,
+          "clientWidth": 351
+        },
+        {
+          "value": "Rp999.999.999.999.999.999",
+          "fontSize": "28px",
+          "width": 367.640625,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 368,
+          "clientWidth": 368
+        },
+        {
+          "value": "Rp9.223.372.036.854.775.807",
+          "fontSize": "28px",
+          "width": 391.5,
+          "right": 800,
+          "height": 34,
+          "scrollWidth": 392,
+          "clientWidth": 392
+        }
+      ]
+    },
+    {
+      "case": "final-breakpoint-large-1280",
+      "kind": "CSS layout probe only, not transaction",
+      "values": [
+        {
+          "value": "Rp0",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp1.000.000",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp9",
+          "fontSize": "28px",
+          "width": 50.125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 50,
+          "clientWidth": 50
+        },
+        {
+          "value": "Rp99",
+          "fontSize": "28px",
+          "width": 66.640625,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        {
+          "value": "Rp999",
+          "fontSize": "28px",
+          "width": 83.171875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "value": "Rp9.999",
+          "fontSize": "28px",
+          "width": 107.03125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 107,
+          "clientWidth": 107
+        },
+        {
+          "value": "Rp99.999",
+          "fontSize": "28px",
+          "width": 123.546875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 124,
+          "clientWidth": 124
+        },
+        {
+          "value": "Rp999.999",
+          "fontSize": "28px",
+          "width": 140.0625,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 140,
+          "clientWidth": 140
+        },
+        {
+          "value": "Rp9.999.999",
+          "fontSize": "28px",
+          "width": 163.921875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "value": "Rp99.999.999",
+          "fontSize": "28px",
+          "width": 180.4375,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        {
+          "value": "Rp999.999.999",
+          "fontSize": "28px",
+          "width": 196.953125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "value": "Rp9.999.999.999",
+          "fontSize": "28px",
+          "width": 220.8125,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 221,
+          "clientWidth": 221
+        },
+        {
+          "value": "Rp99.999.999.999",
+          "fontSize": "26.8px",
+          "width": 227.171875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 227,
+          "clientWidth": 227
+        },
+        {
+          "value": "Rp999.999.999.999",
+          "fontSize": "25.2235px",
+          "width": 228.65625,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 229,
+          "clientWidth": 229
+        },
+        {
+          "value": "Rp9.999.999.999.999",
+          "fontSize": "22.5684px",
+          "width": 223.75,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 224,
+          "clientWidth": 224
+        },
+        {
+          "value": "Rp99.999.999.999.999",
+          "fontSize": "21.44px",
+          "width": 225.296875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 225,
+          "clientWidth": 225
+        },
+        {
+          "value": "Rp999.999.999.999.999",
+          "fontSize": "20.419px",
+          "width": 226.515625,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 227,
+          "clientWidth": 227
+        },
+        {
+          "value": "Rp9.999.999.999.999.999",
+          "fontSize": "18.6435px",
+          "width": 222.75,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 223,
+          "clientWidth": 223
+        },
+        {
+          "value": "Rp99.999.999.999.999.999",
+          "fontSize": "17.8667px",
+          "width": 223.96875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 224,
+          "clientWidth": 224
+        },
+        {
+          "value": "Rp999.999.999.999.999.999",
+          "fontSize": "17.152px",
+          "width": 225.1875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 225,
+          "clientWidth": 225
+        },
+        {
+          "value": "Rp9.223.372.036.854.775.807",
+          "fontSize": "16px",
+          "width": 223.71875,
+          "right": 1218,
+          "height": 34,
+          "scrollWidth": 224,
+          "clientWidth": 224
+        }
+      ]
+    }
+  ],
+  "exceptions": [],
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/157.0.8103.79",
+    "revision": "@6dc9bc3bdaea5c35ed6d41fceab2f7a3a2227c4f",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "jsVersion": "15.7.112.43"
+  }
+}

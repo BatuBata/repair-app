@@ -1,0 +1,45 @@
+{
+  "base_revision": "49a9891ef607284fc31f0338330358aca084731f",
+  "sha256": {
+    ".env": "78134d22410053522907eb15a15cc35e9e9aba008a74f07b73c98cc39624b5e3",
+    "AGENTS.md": "4a4bb7985dddeb3a3c05a5fb20db8883f6140cc813910dcd254d3e9fd29c780b",
+    "resources/views/livewire/invoice/form.blade.php": "06b31cdb8fec054d3be18bf595ab2492e440ced9e77c27ed6c8fd917690236af",
+    "resources/views/livewire/invoice/published.blade.php": "bc4def310ba19d22247a30f725cd8568cc5265f84111fca7f90eaf7fd6edd3bd",
+    "resources/views/livewire/tts/detail.blade.php": "f40b7807aeb4698ee1453d70c06ce47e4091c1a939951a0e1095d5639af8ad41",
+    "app/Http/Controllers/TrackingController.php": "9a3872954ac689e00af7b3e00d76e5dc17aa2ec4230c0b427d8c4f4ac5bfafe3",
+    "routes/modules/tracking.php": "d9c08c259a5fd134b4ba8a6440f11e9b68870d8f14fd5f4098856212758548fe",
+    "resources/views/tracking/show.blade.php": "5abe162727c7832c94f7c6364d13a5198acf2913fc288d5ee4ac7775cb00a8aa",
+    "public/build/fonts-manifest.json": "66edf17c93351fe01158be7414a441a762f106417c74351881876b405b8b10ca",
+    "public/build/manifest.json": "1fd4bdbb0416546f5c671711a99fc4a2f86d2e50bc5ef6dbd7a1ca50dfd81628",
+    "public/build/assets/layout-VbftPR1Q.js": "c341bb7b6164371637f1c9a6732012308af41f20f51e2c1462f235c122bfa0d6",
+    "public/build/assets/fonts-C9MNnjVw.css": "3846a9bb60bfad92960eadcccaf0b4e129d74b11d48791506c8d1a827a385cc8",
+    "public/build/assets/instrument-sans-600-normal-B7fBEWYG.woff2": "efb770916eda95a0e31d80cccde9651d4e8617010b21220e9f227c4820d675da",
+    "public/build/assets/app-CxA26Lmt.css": "e9b5daa85ec4e4ab1a5de9da36b2c370d65620aec90a775833220f4544321588",
+    "public/build/assets/app-TKBAM3lN.js": "e0084906357a1e8dbae007de03328ce94f9b3fd02415f17b40fe16175ea9170f",
+    "public/build/assets/instrument-sans-500-normal-Z6ESRlEs.woff": "bd6a8dc8b0dc0cced0c32d3eda93f0e0e82c58ddefea8b53b3307b0c48da3089",
+    "public/build/assets/instrument-sans-500-normal-Dk9ku72i.woff2": "9d3547da16d950d12a677c772a3ff9b69846e60e7dcd1b5efd540993f7286532",
+    "public/build/assets/passkeys-CsxEE3hN.js": "ad776e742af479bdb7ac39623fb121e0046c181de471cdda0a1c57c7f7f57e72",
+    "public/build/assets/layout-DAFmGKay.css": "6b76534c3551b13f83b69959c988520f92d09ac7a13770287af8b35cfd3aa6bb",
+    "public/build/assets/instrument-sans-600-normal-B9e8oLYv.woff": "9b4ce1f2b26be7cb087fd87d6f99a202136292ec820af75bd38ab9e53895cf28",
+    "public/build/assets/instrument-sans-400-normal-DRC__1Mx.woff2": "9a91efaa3599a6ef01b2f49e9ec670e3a2f39baeef09c73198f1052cf3bb0850",
+    "public/build/assets/instrument-sans-400-normal-D1W7dsQl.woff": "797bd3eaa70edbd4757650ab44dad75fbfbfdf18bacedb4b71022c04621d30ad",
+    "app/Support/WhatsApp.php": "036ab69bc5c3d0493d879ceb4545c6efd31e746428c4f0fb68074f9b327b08f6"
+  },
+  "changed_sources": [
+    "resources/views/livewire/invoice/form.blade.php",
+    "resources/views/livewire/invoice/published.blade.php",
+    "resources/views/livewire/tts/detail.blade.php"
+  ],
+  "tts_detail_outside_style_identical": true,
+  "whatsapp_admin_hook_identical": true,
+  "tracking_unchanged": [
+    "app/Http/Controllers/TrackingController.php",
+    "app/Support/WhatsApp.php",
+    "routes/modules/tracking.php",
+    "resources/views/tracking/show.blade.php"
+  ],
+  "build14_identical_to_T015_A1": true,
+  "build_artifact_sha256": "6e43a91e8f08f49aae6ab334fa46dde48fcc52c1900d1a0e11f60344e2556f36",
+  "root_env_and_agents_unchanged": true,
+  "final_breakpoint_max_width": 1279
+}

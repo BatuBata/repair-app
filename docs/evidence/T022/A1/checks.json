@@ -1,0 +1,82 @@
+[
+  {
+    "id": "pint",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "vendor/bin/pint",
+      "--test"
+    ],
+    "exit": 0,
+    "seconds": 1.086,
+    "environment": "private paths; sqlite :memory: DB_URL empty RUN_MYSQL_DOMAIN0"
+  },
+  {
+    "id": "phpstan",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "vendor/bin/phpstan",
+      "analyse",
+      "--memory-limit=512M",
+      "--no-progress"
+    ],
+    "exit": 0,
+    "seconds": 2.581,
+    "environment": "private paths; sqlite :memory: DB_URL empty RUN_MYSQL_DOMAIN0"
+  },
+  {
+    "id": "full-suite",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "artisan",
+      "test",
+      "--no-ansi"
+    ],
+    "exit": 1,
+    "seconds": 7.995,
+    "environment": "private paths; sqlite :memory: DB_URL empty RUN_MYSQL_DOMAIN0"
+  },
+  {
+    "id": "build",
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "exit": 0,
+    "seconds": 0.972,
+    "environment": "private paths; sqlite :memory: DB_URL empty RUN_MYSQL_DOMAIN0"
+  },
+  {
+    "id": "ops-syntax",
+    "command": [
+      "bash",
+      "-n",
+      "deploy/backup.sh"
+    ],
+    "exit": 0,
+    "seconds": 0.004,
+    "environment": "private paths; sqlite :memory: DB_URL empty RUN_MYSQL_DOMAIN0"
+  },
+  {
+    "id": "restore-syntax",
+    "command": [
+      "bash",
+      "-n",
+      "deploy/restore.sh"
+    ],
+    "exit": 0,
+    "seconds": 0.004,
+    "environment": "private paths; sqlite :memory: DB_URL empty RUN_MYSQL_DOMAIN0"
+  },
+  {
+    "id": "deploy-syntax",
+    "command": [
+      "bash",
+      "-n",
+      "deploy/deploy.sh"
+    ],
+    "exit": 0,
+    "seconds": 0.004,
+    "environment": "private paths; sqlite :memory: DB_URL empty RUN_MYSQL_DOMAIN0"
+  }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "id": "auth-isolation-repro",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "artisan",
+      "test",
+      "--filter=TemporaryUploadAuthorizationTest",
+      "--no-ansi"
+    ],
+    "exit": 0,
+    "seconds": 1.032
+  },
+  {
+    "id": "fixture-config",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "docs/evidence/T018/A1/fixture.php",
+      "config"
+    ],
+    "exit": 0,
+    "seconds": 0.264
+  },
+  {
+    "id": "fixture-seed",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "docs/evidence/T018/A1/fixture.php",
+      "seed"
+    ],
+    "exit": 0,
+    "seconds": 1.098
+  },
+  {
+    "id": "fixture-populate",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "docs/evidence/T018/A1/fixture.php",
+      "populate"
+    ],
+    "exit": 0,
+    "seconds": 0.299
+  },
+  {
+    "id": "route-cache",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "artisan",
+      "route:cache"
+    ],
+    "exit": 0,
+    "seconds": 0.284
+  },
+  {
+    "id": "view-cache",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "artisan",
+      "view:cache"
+    ],
+    "exit": 0,
+    "seconds": 1.445
+  }
+]

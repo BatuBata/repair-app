@@ -1,0 +1,188 @@
+{
+  "verdict": "pass",
+  "cases": [
+    {
+      "id": "tts-required-fields",
+      "invalidFields": 4
+    },
+    {
+      "id": "technician-create",
+      "orderId": 7,
+      "phoneNormalized": true,
+      "receiptAllowed": true,
+      "A5hidden": true,
+      "WAhidden": true
+    },
+    {
+      "id": "dashboard-to-reports",
+      "href": "/laporan",
+      "expectedTodayRevenue": "Rp1.350.000",
+      "passed": true
+    },
+    {
+      "id": "assign-and-publish-invoice",
+      "total": "Rp1.000.000",
+      "status": "Selesai",
+      "passed": true,
+      "proof": "UI plus private-runtime-proof.log"
+    },
+    {
+      "id": "admin-a5",
+      "status": 200,
+      "contentType": "application/pdf",
+      "cache": "no-store, private",
+      "bytes": 23422
+    },
+    {
+      "id": "admin-thermal",
+      "status": 200,
+      "contentType": "application/pdf",
+      "cache": "no-store, private",
+      "bytes": 23398
+    },
+    {
+      "id": "receipt-html",
+      "status": 200,
+      "salePrice": true,
+      "costAbsent": true
+    },
+    {
+      "id": "collect",
+      "status": "Diambil",
+      "passed": true
+    },
+    {
+      "id": "invoice-dashboard-reports-consistency",
+      "todayRevenue": "Rp2.350.000",
+      "passed": true
+    },
+    {
+      "id": "admin-route",
+      "path": "/stok",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "id": "admin-route",
+      "path": "/penjualan",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "id": "admin-route",
+      "path": "/penjualan/1",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "id": "admin-route",
+      "path": "/pengeluaran",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "id": "admin-route",
+      "path": "/pengaturan/toko",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "id": "admin-route",
+      "path": "/pengaturan/pengguna",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "id": "admin-route",
+      "path": "/pengaturan/kategori",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "id": "admin-route",
+      "path": "/profil",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "id": "sale-a5",
+      "status": 200,
+      "contentType": "application/pdf",
+      "cache": "no-store, private",
+      "bytes": 20566
+    },
+    {
+      "id": "sale-thermal",
+      "status": 200,
+      "contentType": "application/pdf",
+      "cache": "no-store, private",
+      "bytes": 20541
+    },
+    {
+      "id": "anonymous-tracking",
+      "status": "Laptop Anda sudah diambil.",
+      "priceVisible": true,
+      "costAndIdentityAbsent": true
+    },
+    {
+      "id": "public-a5",
+      "status": 200,
+      "contentType": "application/pdf",
+      "cache": "no-store, private",
+      "bytes": 22821
+    },
+    {
+      "id": "technician-post-invoice",
+      "priceAndCostAbsent": true,
+      "A5hidden": true
+    },
+    {
+      "id": "technician-forbidden",
+      "path": "/",
+      "status": 403
+    },
+    {
+      "id": "technician-forbidden",
+      "path": "/laporan",
+      "status": 403
+    },
+    {
+      "id": "technician-forbidden",
+      "path": "/tts/7/pdf",
+      "status": 403
+    },
+    {
+      "id": "technician-forbidden",
+      "path": "/penjualan/1/pdf",
+      "status": 403
+    }
+  ],
+  "statuses": [
+    {
+      "status": 403,
+      "url": "http://127.0.0.1:8192/"
+    },
+    {
+      "status": 403,
+      "url": "http://127.0.0.1:8192/laporan"
+    },
+    {
+      "status": 403,
+      "url": "http://127.0.0.1:8192/tts/7/pdf"
+    },
+    {
+      "status": 403,
+      "url": "http://127.0.0.1:8192/penjualan/1/pdf"
+    }
+  ],
+  "consoleErrors": [],
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/157.0.8103.79",
+    "revision": "@6dc9bc3bdaea5c35ed6d41fceab2f7a3a2227c4f",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "jsVersion": "15.7.112.43"
+  },
+  "createdId": 7,
+  "continuation": "Evidence assembled from actual successful cases in retained runs, same owned fixture, no product changes or reset; last harness assertion made case-insensitive to actual lowercase status sentence."
+}

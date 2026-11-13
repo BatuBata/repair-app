@@ -1,0 +1,72 @@
+{
+  "verdict": "pass",
+  "tool": "pypdf + Poppler render",
+  "documents": [
+    {
+      "file": "admin-a5.pdf",
+      "pages": 1,
+      "sizes_points": [
+        {
+          "width": 419.53,
+          "height": 595.28
+        }
+      ],
+      "costAbsent": true,
+      "pricePresent": true,
+      "publicIdentityAbsent": false
+    },
+    {
+      "file": "admin-thermal.pdf",
+      "pages": 1,
+      "sizes_points": [
+        {
+          "width": 164.409,
+          "height": 529.32
+        }
+      ],
+      "costAbsent": true,
+      "pricePresent": true,
+      "publicIdentityAbsent": false
+    },
+    {
+      "file": "public-a5.pdf",
+      "pages": 1,
+      "sizes_points": [
+        {
+          "width": 419.53,
+          "height": 595.28
+        }
+      ],
+      "costAbsent": true,
+      "pricePresent": true,
+      "publicIdentityAbsent": true
+    },
+    {
+      "file": "sale-a5.pdf",
+      "pages": 1,
+      "sizes_points": [
+        {
+          "width": 419.53,
+          "height": 595.28
+        }
+      ],
+      "costAbsent": true,
+      "pricePresent": true,
+      "publicIdentityAbsent": false
+    },
+    {
+      "file": "sale-thermal.pdf",
+      "pages": 1,
+      "sizes_points": [
+        {
+          "width": 164.409,
+          "height": 348.399
+        }
+      ],
+      "costAbsent": true,
+      "pricePresent": true,
+      "publicIdentityAbsent": false
+    }
+  ],
+  "limits": "Small smoke samples; extreme pagination/QR and all visual matrix belong T023; no physical printer checked"
+}

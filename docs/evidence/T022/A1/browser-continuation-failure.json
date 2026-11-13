@@ -1,0 +1,125 @@
+{
+  "error": "The input did not match the regular expression /Sudah diambil/. Input:\n\n'Anugerah\\n' +\n  'Servis Elektronik\\n' +\n  'TTS-2611-005\\n' +\n  '\\n' +\n  'Laptop Anda sudah diambil.\\n' +\n  '\\n' +\n  'Diterima\\n' +\n  '13 Nov\\n' +\n  'Dikerjakan\\n' +\n  '13 Nov\\n' +\n  'Selesai\\n' +\n  '13 Nov\\n' +\n  'Diambil\\n' +\n  '13 Nov\\n' +\n  'Barang\\n' +\n  'Laptop\\n' +\n  'Keluhan\\n' +\n  'Smoke T022 layar rusak\\n' +\n  'Tanggal nota\\n' +\n  '13 Nov 2026\\n' +\n  'LCD smoke T022 × 1\\n' +\n  'Rp1.000.000\\n' +\n  'Total\\n' +\n  'Rp1.000.000\\n' +\n  '\\n' +\n  'Garansi 30 hari, berlaku sampai 13 Des 2026.\\n' +\n  '\\n' +\n  'Unduh nota (PDF)\\n' +\n  '\\n' +\n  'Saat mengambil, sebutkan nomor TTS atau tunjukkan struk Anda.'\n",
+  "cases": [
+    {
+      "id": "tts-required-fields",
+      "invalidFields": 4
+    },
+    {
+      "id": "technician-create",
+      "orderId": 7,
+      "phoneNormalized": true,
+      "receiptAllowed": true,
+      "A5hidden": true,
+      "WAhidden": true
+    },
+    {
+      "id": "dashboard-to-reports",
+      "href": "/laporan",
+      "expectedTodayRevenue": "Rp1.350.000",
+      "passed": true
+    },
+    {
+      "id": "assign-and-publish-invoice",
+      "total": "Rp1.000.000",
+      "status": "Selesai",
+      "passed": true,
+      "proof": "UI plus private-runtime-proof.log"
+    },
+    {
+      "id": "admin-a5",
+      "status": 200,
+      "contentType": "application/pdf",
+      "cache": "no-store, private",
+      "bytes": 23422
+    },
+    {
+      "id": "admin-thermal",
+      "status": 200,
+      "contentType": "application/pdf",
+      "cache": "no-store, private",
+      "bytes": 23398
+    },
+    {
+      "id": "receipt-html",
+      "status": 200,
+      "salePrice": true,
+      "costAbsent": true
+    },
+    {
+      "id": "collect",
+      "status": "Diambil",
+      "passed": true
+    },
+    {
+      "id": "invoice-dashboard-reports-consistency",
+      "todayRevenue": "Rp2.350.000",
+      "passed": true
+    },
+    {
+      "id": "admin-route",
+      "path": "/stok",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "id": "admin-route",
+      "path": "/penjualan",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "id": "admin-route",
+      "path": "/penjualan/1",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "id": "admin-route",
+      "path": "/pengeluaran",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "id": "admin-route",
+      "path": "/pengaturan/toko",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "id": "admin-route",
+      "path": "/pengaturan/pengguna",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "id": "admin-route",
+      "path": "/pengaturan/kategori",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "id": "admin-route",
+      "path": "/profil",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "id": "sale-a5",
+      "status": 200,
+      "contentType": "application/pdf",
+      "cache": "no-store, private",
+      "bytes": 20566
+    },
+    {
+      "id": "sale-thermal",
+      "status": 200,
+      "contentType": "application/pdf",
+      "cache": "no-store, private",
+      "bytes": 20541
+    }
+  ],
+  "statuses": [],
+  "createdId": 7,
+  "consoleErrors": []
+}

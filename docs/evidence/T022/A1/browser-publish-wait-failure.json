@@ -1,0 +1,26 @@
+{
+  "error": "Timeout publish",
+  "cases": [
+    {
+      "id": "tts-required-fields",
+      "invalidFields": 4
+    },
+    {
+      "id": "technician-create",
+      "orderId": 7,
+      "phoneNormalized": true,
+      "receiptAllowed": true,
+      "A5hidden": true,
+      "WAhidden": true
+    },
+    {
+      "id": "dashboard-to-reports",
+      "href": "/laporan",
+      "expectedTodayRevenue": "Rp1.350.000",
+      "passed": true
+    }
+  ],
+  "statuses": [],
+  "createdId": 7,
+  "consoleErrors": []
+}

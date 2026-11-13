@@ -1,0 +1,25 @@
+{
+  "verdict": "pass",
+  "artifact_ref": "branch:codex/t022-release",
+  "revision": "44154b674393e7d4c8a715131b13cae3e863cca7",
+  "checked_revision": "44154b674393e7d4c8a715131b13cae3e863cca7",
+  "inputs": {
+    "T017": "2d7e613d5592ff169cb7743ff6fd086ec06fe58c",
+    "T018": "c9d1f429056676576310e88e524a75c9bc897c83",
+    "T019": "7b7a438fcde75185c2160b642a02fbb2c6ed3ff1",
+    "T020": "6095a5ca34a5b28bf65a481007d69b21a8bc7084",
+    "T021": "9d011685cde0f75ce676091cceca598978cdcf6a"
+  },
+  "evidence": [
+    "docs/evidence/T022/A1/README.md",
+    "docs/evidence/T022/A1/checked-source.json",
+    "docs/evidence/T022/A1/full-suite-final.log",
+    "docs/evidence/T022/A1/checks-final.json",
+    "docs/evidence/T022/A1/build.log",
+    "docs/evidence/T022/A1/browser-results.json",
+    "docs/evidence/T022/A1/pdf-check.json",
+    "docs/evidence/T022/A1/asset-http-check.json",
+    "docs/evidence/T022/A1/resource-release.json"
+  ],
+  "summary": "T017\u2013T021 integrated;181 tests PASS,1 explicit MySQL skip,1913 assertions; production build/static/26smoke cases/5PDF/23assets PASS; independent T023 remains gate. Final evidence-only revision can be checked against source-manifest to extend this result."
+}

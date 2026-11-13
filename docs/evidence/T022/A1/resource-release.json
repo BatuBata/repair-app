@@ -1,0 +1,33 @@
+{
+  "privateRuntime": "/private/tmp/repair-t022-a1-l9_4fb7n",
+  "fixturePreserved": true,
+  "oldBuildPreserved": "/private/tmp/repair-t022-a1-l9_4fb7n/old-build",
+  "candidateBuildPreserved": "/private/tmp/repair-t022-a1-l9_4fb7n/candidate-build",
+  "mysqlAccessed": false,
+  "server": {
+    "pid": 97064,
+    "command": "php -S 127.0.0.1:8192 -t public /private/tmp/repair-t022-a1-l9_4fb7n/router.php",
+    "terminatedOwnedProcess": true,
+    "port8192Released": true
+  },
+  "browsers": [
+    {
+      "evidence": "browser-preflight.json",
+      "pid": 97984,
+      "alive": false,
+      "profileExists": false
+    },
+    {
+      "evidence": "browser-initial-preflight.json",
+      "pid": 97210,
+      "alive": false,
+      "profileExists": false
+    },
+    {
+      "evidence": "browser-publish-wait-preflight.json",
+      "pid": 97382,
+      "alive": false,
+      "profileExists": false
+    }
+  ]
+}

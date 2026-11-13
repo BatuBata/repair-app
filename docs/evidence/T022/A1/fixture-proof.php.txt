@@ -1,0 +1,10 @@
+<?php
+require getcwd().'/vendor/autoload.php';
+$root=getenv('QA_RUNTIME');
+$app=require getcwd().'/bootstrap/app.php';
+$app->useStoragePath($root.'/storage');
+$app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+if(config('database.default')!=='sqlite'||config('database.connections.sqlite.database')!==$root.'/fixture.sqlite')throw new RuntimeException('Unsafe DB');
+$order=App\Models\ServiceOrder::where('customer_name','Customer smoke T022')->whereNotNull('invoiced_on')->latest('id')->firstOrFail();
+file_put_contents($root.'/smoke-order.json',json_encode(['id'=>$order->id,'token'=>$order->tracking_token]));chmod($root.'/smoke-order.json',0600);
+echo json_encode(['database'=>'private SQLite','storagePrivate'=>storage_path()===$root.'/storage','sessionPathPrivate'=>str_starts_with(config('session.files'),$root),'viewsPrivate'=>str_starts_with(config('view.compiled'),$root),'cachePrivate'=>str_starts_with(config('cache.stores.file.path'),$root),'appEnv'=>config('app.env'),'configCached'=>$app->configurationIsCached(),'routesCached'=>$app->routesAreCached(),'id'=>$order->id,'number'=>$order->number,'status'=>$order->status->value,'items'=>$order->items->map->only(['type','description','qty','price','cost']),'serviceCount'=>App\Models\ServiceOrder::count(),'saleCount'=>App\Models\Sale::count(),'productStock'=>App\Models\Product::first()->stock]).PHP_EOL;

@@ -1,0 +1,14 @@
+{
+  "task": "T022 A1",
+  "root": "/Users/muzib/Projects/web/repair-app",
+  "branch": "codex/t022-release",
+  "runtime": "/private/tmp/repair-t022-a1-l9_4fb7n",
+  "permission": "0700 directory,0600 DB/config/env",
+  "port8192_free": true,
+  "db": "new private SQLite only; full suite SQLite memory; MySQL guarded off",
+  "isolation": "private config/route/service/package/event/cache/session/view/storage paths, pinned config + explicit storage before HTTP bootstrap",
+  "browser": "conditional grant; new own headless Chrome process/profile/CDP port0 after this preflight; no GUI",
+  "old_build_preserved": "/private/tmp/repair-t022-a1-l9_4fb7n/old-build",
+  "requested_model": "gpt-6.1-sol high",
+  "effective_model": null
+}

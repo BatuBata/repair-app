@@ -1,0 +1,25 @@
+[
+  {
+    "id": "pint-final",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "vendor/bin/pint",
+      "--test"
+    ],
+    "exit": 0,
+    "seconds": 0.622,
+    "environment": "SQLite memory DB_URL empty RUN_MYSQL_DOMAIN0 CACHE_STORE array SESSION_DRIVER array private storage/cache/view/config paths"
+  },
+  {
+    "id": "full-suite-final",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "artisan",
+      "test",
+      "--no-ansi"
+    ],
+    "exit": 0,
+    "seconds": 7.667,
+    "environment": "SQLite memory DB_URL empty RUN_MYSQL_DOMAIN0 CACHE_STORE array SESSION_DRIVER array private storage/cache/view/config paths"
+  }
+]

@@ -1,0 +1,153 @@
+{
+  "T017": {
+    "pin": "2d7e613d5592ff169cb7743ff6fd086ec06fe58c",
+    "files": [
+      {
+        "path": "app/Http/Controllers/DocumentController.php",
+        "sha256": "f184f662e465231c309ef8f77ae82710ca55360589a46d8f767af6a87b6c82b4",
+        "matches_input": true
+      },
+      {
+        "path": "app/Services/Documents/Document.php",
+        "sha256": "0a755afea9d486a2a68995c4ebd16274bde342a82c06c0190690bb518f354e54",
+        "matches_input": true
+      },
+      {
+        "path": "composer.json",
+        "sha256": "5aa190533af842bb2b8f6d3834e8df225cd819454c2242e667199366ff4c2090",
+        "matches_input": true
+      },
+      {
+        "path": "composer.lock",
+        "sha256": "247f7b1ac21fdf30ade477cf41f3a41843d4dbf56f663f2dd5253a1aef3e1c3e",
+        "matches_input": true
+      },
+      {
+        "path": "resources/views/documents/document.blade.php",
+        "sha256": "2e4903ee5f695306e8742753ccacb912b9411a954e341c872b6b247149a3f7e3",
+        "matches_input": true
+      },
+      {
+        "path": "routes/modules/documents.php",
+        "sha256": "5ef36d3061de1fee0efc2528e80c38b4d7e94f3483b88fd7e3657770c9a6b5d5",
+        "matches_input": true
+      }
+    ],
+    "all_match": true
+  },
+  "T018": {
+    "pin": "c9d1f429056676576310e88e524a75c9bc897c83",
+    "files": [
+      {
+        "path": "app/Livewire/Dashboard/Index.php",
+        "sha256": "e5230a560b316bc6c8e3db4d3280f97750eebe3ac252a4caebd8360d7df08f95",
+        "matches_input": true
+      },
+      {
+        "path": "resources/views/livewire/dashboard/index.blade.php",
+        "sha256": "aa1dc7a6ab94d4f4355473808a64670c8ddf6e22dab51a4e15dcbc9715ba9f76",
+        "matches_input": true
+      },
+      {
+        "path": "routes/modules/dashboard.php",
+        "sha256": "f726c8e9ecb00b32ed3d1be5f6b4f56c6ba45a0559b03e1698c1dd2d583ad872",
+        "matches_input": true
+      },
+      {
+        "path": "routes/modules/scaffold.php",
+        "sha256": "5f166f48f7741b9e5c0035bff1f8cadca73ef1b5e061db89ab874cf5c7e4ff70",
+        "matches_input": true
+      },
+      {
+        "path": "tests/Feature/Dashboard/DashboardTest.php",
+        "sha256": "cfcee00e569475f9cdaea99e038b1c2c2b91b14afb60006c512c9cfd6f0720a2",
+        "matches_input": true
+      },
+      {
+        "path": "tests/Feature/DashboardTest.php",
+        "sha256": "d67d00c4f7bcae83bc5fcb2739ec9a7b0cf66a663a39033acd154ece338b8929",
+        "matches_input": true
+      }
+    ],
+    "all_match": true,
+    "removed_scaffold_view_absent": true
+  },
+  "T019": {
+    "pin": "7b7a438fcde75185c2160b642a02fbb2c6ed3ff1",
+    "files": [
+      {
+        "path": "app/Livewire/Reports/Index.php",
+        "sha256": "0bdb588b160c9cf1d3f435edd552eec5beb6ef33c9a21c511e4b21497b29b78c",
+        "matches_input": true
+      },
+      {
+        "path": "resources/views/livewire/reports/index.blade.php",
+        "sha256": "2f77d6ad44e5935d13873c503c17ff2059d2b6abdd061bb5b26c3de4c333ce6e",
+        "matches_input": true
+      },
+      {
+        "path": "resources/views/livewire/reports/styles.blade.php",
+        "sha256": "b172700204fa7582e83ba1dc3b9a0100db4ffee5bb8efbae614aebd6438f05ce",
+        "matches_input": true
+      },
+      {
+        "path": "routes/modules/reports.php",
+        "sha256": "d6418f9b0fe07ece1d5b7b4ec779378e93a9fbeba12ae6eadc376b0e7a099fa6",
+        "matches_input": true
+      }
+    ],
+    "all_match": true
+  },
+  "T020": {
+    "pin": "6095a5ca34a5b28bf65a481007d69b21a8bc7084",
+    "files": [
+      {
+        "path": "deploy/backup.cron.example",
+        "sha256": "5e09e29a02c1da01378a4d3dc3a19966441912643009486f8d46e4841f6b62bb",
+        "matches_input": true
+      },
+      {
+        "path": "deploy/backup.sh",
+        "sha256": "b575e6de68363b0e70b701600c9b6fcc16e7b0ecac962194e7a3daa5186705f7",
+        "matches_input": true
+      },
+      {
+        "path": "deploy/check-scripts.py",
+        "sha256": "3e92b61560c6ce26ea53db37a4971a6268d71652fe3b340c561ac22e7ddd376d",
+        "matches_input": true
+      },
+      {
+        "path": "deploy/deploy.sh",
+        "sha256": "5217347bdea3f9d4b57cd7b57fd92a28dbc1dbb70719cd7694cd6b9358ef1bb4",
+        "matches_input": true
+      },
+      {
+        "path": "deploy/nginx.conf.example",
+        "sha256": "f2cf80b7d201faf227a60b3f75afd8e660324d782a314d30e2829905f7b2ba2e",
+        "matches_input": true
+      },
+      {
+        "path": "deploy/php-fpm.conf.example",
+        "sha256": "407a770448821a259cbe2cb64c7fe3324cbcaa1b202405c413a4618b956c6988",
+        "matches_input": true
+      },
+      {
+        "path": "deploy/restore.sh",
+        "sha256": "67d514da781fd45bc6a9f03c955601863e2bba1061768a0f7542eb33cad57ef1",
+        "matches_input": true
+      }
+    ],
+    "all_match": true
+  },
+  "T021": {
+    "pin": "9d011685cde0f75ce676091cceca598978cdcf6a",
+    "files": [
+      {
+        "path": "docs/PANDUAN.md",
+        "sha256": "a4be78533fe8b1c2586ce10b3b2dd94080a8e6f562f7d509de5e1d551d70c6b4",
+        "matches_input": true
+      }
+    ],
+    "all_match": true
+  }
+}

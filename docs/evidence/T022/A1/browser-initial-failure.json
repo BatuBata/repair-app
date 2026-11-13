@@ -1,0 +1,20 @@
+{
+  "error": "Timeout dashboard",
+  "cases": [
+    {
+      "id": "tts-required-fields",
+      "invalidFields": 4
+    },
+    {
+      "id": "technician-create",
+      "orderId": 6,
+      "phoneNormalized": true,
+      "receiptAllowed": true,
+      "A5hidden": true,
+      "WAhidden": true
+    }
+  ],
+  "statuses": [],
+  "createdId": 6,
+  "consoleErrors": []
+}

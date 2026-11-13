@@ -33,7 +33,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T011 | Halaman tracking publik dan tombol Kirim WA | developer / 6.1-terra | medium / medium | T010 | T012, T013, T014, T020 | done |
 | T012 | Stok barang jualan dan restok | developer / 6.1-sol | medium / medium | T008 | T009, T010, T011, T014, T020 | done |
 | T013 | Penjualan barang dengan garansi opsional | developer / 6.1-sol | medium / high | T012 | T009, T010, T011, T014, T020 | done |
-| T014 | Pencatatan pengeluaran | developer / 6-luna | easy / low | T008 | T009, T010, T011, T012, T013, T020 | running |
+| T014 | Pencatatan pengeluaran | developer / 6-luna | easy / low | T008 | T009, T010, T011, T012, T013, T020 | done |
 | T015 | Integrasi alur servis (M2) dan stok/penjualan/pengeluaran (M4) | integrator / 6.1-sol | medium / medium | T011, T013, T014 | — | pending |
 | T016 | QA independen alur servis, penjualan, dan pengeluaran | tester / 6.1-sol | medium / high | T015 | T020 | pending |
 | T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | pending |
@@ -1950,12 +1950,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "tests/Feature/Expenses/**",
         "docs/evidence/T014/**"
       ],
-      "shared_resources": [
-        {
-          "name": "browser:headless:T014",
-          "mode": "exclusive"
-        }
-      ],
+      "shared_resources": [],
       "conflicts_with": [],
       "parallel_candidates": [
         "T009",
@@ -1974,7 +1969,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar daftar dan form.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "running",
+      "status": "done",
       "resource_phase_policy": "Coding/host tests hold no browser. Dedicated exclusive headless task resource permits at most2workers only with verified independent process/profile/CDP, localhost port and private data/cache/session/storage; shared/native browser remains globally exclusive.",
       "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
       "attempts": [
@@ -1985,7 +1980,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6-luna",
           "model_effective": null,
           "dispatch_ref": "native:collaboration.spawn_agent:/root/t014_expenses",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
           "phase_history": [
             {
@@ -2005,8 +2000,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "runtime": "Codex native collaboration",
         "task_id": "/root/t014_expenses",
         "base_revision": "3c35dd1118121d02cca7abb0ae99b78baeb30634",
-        "phase": "visual_self_check",
-        "browser_reservation": "dedicated private headless8190 granted after isolation preflight; no shared GUI/native mouse",
+        "phase": "settled",
+        "browser_reservation": "released; own headless profile closed/server stopped per worker, port8190 checked by coordinator",
         "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
         "model_observation": "Native spawn requested gpt-6-luna medium per triage, receipt returns canonical taskname only; backend identity not independently exposed."
       },
@@ -2023,6 +2018,23 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         },
         "summary": "Worker stopped; partial untracked source/evidence retained. Expenses4tes42assert PASS; earlier Expenses+Settings13tes120assert PASS; Pint/PHPStan/syntax/routes/diff PASS per worker. Browser harness incomplete; screenshots awal bukan bukti alur/visual PASS. No commit/push/database reset.",
         "resume_next": "Periksa file parsial cocok hash, perbaiki harness tanpa reset attempt, selesaikan browser flow/privacy dan perbandingan mockup3lebar. Simpan helper/fixture privat; no active owned process."
+      },
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "/Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T014/A1/README.md",
+        "revision": "aef8ffc75b11344b10ddaabe9ccae4a7e1776e45",
+        "checked_revision": "aef8ffc75b11344b10ddaabe9ccae4a7e1776e45",
+        "inputs": {
+          "T008": "3610253be1dedb1d9abad958059f52e33377f320"
+        },
+        "evidence": [
+          "/Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T014/A1/README.md",
+          "/Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T014/A1/browser-delete-results.json",
+          "/Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T014/A1/screens/list-final-1280.png",
+          "/Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T014/A1/screens/list-final-360.png",
+          "/Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T014/A1/screens/form-final-360.png"
+        ],
+        "summary": "Coordinator source/report/screenshot review accepted developer candidate. Developer reports5tests57assert/Pint/scopedPHPStan PASS; dateformat/MySQL bounds tested and date-dependent fixture corrected. Browser trusted input/create150000, edit175000/persistence/filter endpoints/same-day/reversed/clear/recover/total; portal menu calls fixed using existing Stock pattern, cancellation/Escape promise focus and confirmed synthetic deletion/tech403 proven. Nearest mockup references used (no expenses-specific screen). Final scoped CSS fixed adjacent desktop text;360/1280 refreshed,768 prior mobile rule equivalent. No fullsuite/build/MySQL/physical device; T015/T016 remain required; F003 not yet accepted."
       }
     },
     {
@@ -2785,3 +2797,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-13 | Perjelas subcakupan gate T016: AC09 hitungan tanggal garansi diuji sekarang, UI dashboard/pengingat T018 dan laporan T019 serta PDF T017 menunggu pemilik downstream lalu T023. AC04/11 bagian dashboard/laporan juga T023. Ini menghindari gate menunggu fitur yang bergantung padanya; seluruh AC PRD tetap wajib akhirv1. | Kontrak dependency T017/T018/T019 hard-depend T016 + PRD AC | T016,T023 | Review acceptance/dependency coordinator |
 
 | 2026-11-13 | T011 A1 developer self-check PASS source0736515, sourcehash/tinjauan coordinator cocok. Privasi/peran/WA dan responsif normal terbukti; uji nominalPHPINTMAX merepro overflow386di360 dan perbaikan final360/768/1280 lulus. Belum QA independen, PDF masih T017. | Review kandidat dan screenshot actual/acuan | T011,T015,T016 | docs/evidence/T011/README.md |
+
+| 2026-11-13 | T014 A1 PASS candidateaef8ffc setelah resume logicalA1 tanpa resetbudget. Browser mengungkap dan membuktikan perbaikan portal menu, fokus cancel/Escape dan CSS desktop; tanggal MySQL dan tes tanggal tetap diperbaiki. T011/T013/T014 kini siap integrasi T015; fitur menunggu QA T016. | Review coordinator source/report/screens | T014,T015,T016 | Native handoff + docs/evidence/T014/A1/README.md |

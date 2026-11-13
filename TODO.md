@@ -23,7 +23,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T001 | Scaffold Laravel 13 + Livewire starter kit, MySQL, WITA, Git | developer / 6.1-sol | medium / medium | — | — | done |
 | T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | done |
 | T003 | Layout lembar berbingkai, komponen UI dasar, dan web app manifest sesuai DESIGN.md | developer / 6.1-terra | medium / medium | T001 | T002, T006, T020 | done |
-| T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | running |
+| T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | blocked |
 | T005 | Pengaturan toko dan master kategori | developer / 6-luna | easy / low | T004 | T006, T020 | pending |
 | T006 | Spike dokumen: PDF A5, struk 58mm, dan QR di dompdf | developer / 6.1-sol | medium / medium | T001 | T002, T003, T004, T005, T020 | done |
 | T007 | Integrasi fondasi M1 pada branch candidate sebelum QA dan merge main | integrator / 6.1-sol | medium / medium | T002, T003, T004, T005 | — | pending |
@@ -124,36 +124,10 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
-      "state": "running",
-      "allowed_tasks": [
-        "T001",
-        "T002",
-        "T003",
-        "T004",
-        "T005",
-        "T006",
-        "T007",
-        "T008",
-        "T009",
-        "T010",
-        "T011",
-        "T012",
-        "T013",
-        "T014",
-        "T015",
-        "T016",
-        "T017",
-        "T018",
-        "T019",
-        "T020",
-        "T021",
-        "T022",
-        "T023",
-        "T024",
-        "T025"
-      ],
+      "state": "stopped",
+      "allowed_tasks": [],
       "stop_after_tasks": [],
-      "source_ref": "Instruksi user 2026-11-12: coordinator; lanjutkan pekerjaan, QA, integrasi sesuai dependensi, maksimal dua worker; deployment mengikuti kewenangan yang berlaku."
+      "source_ref": "User 13 Nov 2026: stop pekerjaan. Hentikan assignment aktif, simpan checkpoint, tanpa task/retry/QA/integrasi/deploy baru sampai user resume."
     },
     "exclusive_resources": [
       "branch:main",
@@ -765,7 +739,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar untuk layar login, daftar pengguna, form pengguna.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "running",
+      "status": "blocked",
       "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth",
       "attempts": [
         {
@@ -785,7 +759,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "ctx_68d80e45bfe3",
-          "outcome": "running",
+          "outcome": "cancelled",
           "receipt_ref": "docs/evidence/coordinator/T004-A2-start.json"
         }
       ],
@@ -799,27 +773,18 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "model_observation": "Same Sol high owner session reused; effective backend identity unverified. Historical candidate/QA snapshots in source_context do not create DAG dependencies."
       },
       "result": {
-        "verdict": "pass",
-        "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/README.md",
-        "revision": "ebeb0b62f1a39720091026c1c3a0e8ec535c818e",
-        "checked_revision": "ebeb0b62f1a39720091026c1c3a0e8ec535c818e",
+        "verdict": "blocked",
+        "artifact_ref": "docs/evidence/coordinator/stop-2026-11-13.json",
+        "revision": "sha256:7ef5286719030018ee1dd0177cd341eaf9f774cd1514dda35d959f1737288289",
+        "checked_revision": null,
         "inputs": {
           "T002": "4a0667c302c979ab40641459bf9e7afac0655e09",
           "T003": "a08d1d785b72199e1000840ea8e2afe1d7f38fbd"
         },
         "evidence": [
-          "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/README.md",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/report.json",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/source-manifest.json",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/suite-final-source.log",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/browser-checks.json",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/visual-review.md",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/login-360.png",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/users-list-360.png",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/users-create-1280.png",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/profile-technician-768.png"
+          "docs/evidence/coordinator/stop-2026-11-13.json"
         ],
-        "summary": "Developer A1 PASS: username/role/active-session guard, users/profile, last-admin protections;61PASS1SKIP612assertions,static/Pint/build/browser proof. Coordinator read reports/source and inspected main screenshots. Commitebeb0b6 pushed. MySQL/InnoDB admin-race not tested (SQLite races covered), planned for independent T008; /tts/baru module still T009/404, no TTS behavior claimed. F001 awaits T007/T008; real app initialization/production not done."
+        "summary": "User stop pekerjaan: active T004A2 cancelled, runtime stopped/process_stopped/exited confirmed. HEAD remainsf6b23c9 on fix/m1-auth-qa, tracked source unchanged; partial untracked A2 evidence and 2 auth tests preserved locally with hashes. No complete A2 verdict/tests claimed, no source cleanup/commit of partial work or budget reset. Project stopped; no new tasks/retries until explicit resume."
       },
       "prior_results": [
         {
@@ -846,7 +811,6 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "summary": "Developer A1 PASS: username/role/active-session guard, users/profile, last-admin protections;61PASS1SKIP612assertions,static/Pint/build/browser proof. Coordinator read reports/source and inspected main screenshots. Commitebeb0b6 pushed. MySQL/InnoDB admin-race not tested (SQLite races covered), planned for independent T008; /tts/baru module still T009/404, no TTS behavior claimed. F001 awaits T007/T008; real app initialization/production not done."
         }
       ],
-      "next_attempt_kind": "implementation",
       "source_context": {
         "note": "Historical downstream snapshots for reproducing QA findings; not DAG prerequisites or accepted current results. Original hard inputs T002/T003 unchanged. Static task-ID edges here would create a cycle when reopening T004.",
         "artifacts": {
@@ -2402,3 +2366,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-13 | T008 productFAIL3findings, evidenceb5919d1retained; PASSindependent cases retained for selective reuse. Reopen T004 A2 (1remaining codeattempt) for role-aware app launcher, login manifest link and global temp-upload active-admin guard. Add only publicmanifest/configlivewire scope; this is auth integration/security routing, no visualT003 redesign. Invalidate downstream T005/T007 completion for affected re-verification/reintegration; F001blocked/main unchanged. T004 consumes pinned candidate/QA artifacts, not FAILED QA as prerequisite. | QA reproduction + coordinator source/API review; framework temp middleware can retain throttle and add auth/admin | T004,T005,T007,T008 | msg_ed7ad49fa13e + docs/evidence/T008/README.md |
 
 | 2026-11-13 | Historical T007/T008 snapshot references for T004 fix are recorded under source_context with immutable SHA/path, not dependency edges. Validator rejected artifact edges as a cycle when reopening the original owner; no dispatch occurred while invalid. Hard prerequisites remain T002/T003 and FAILED QA remains only reproduction context. | Preserve version history without making repair wait on its own downstream integration | T004 | Validator feedback + coordinator correction |
+
+| 2026-11-13 | User menghentikan pekerjaan segera. project.execution=stopped, allowed_tasks kosong; batalkan assignment aktif T004 A2, simpan hasil parsial dan seluruh riwayat. Tidak ada task/retry/QA/integrasi/deployment baru sebelum instruksi resume. | Stop user mengalahkan izin eksekusi dan taskready | Semua | User: stop pekerjaan |

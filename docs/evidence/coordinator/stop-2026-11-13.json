@@ -1,0 +1,37 @@
+{
+  "observed_at": "2026-11-13T00:55:02.829932+00:00",
+  "instruction": "User: stop pekerjaan",
+  "execution": "stopped",
+  "active_assignment_stop": {
+    "dispatch_id": "ctx_68d80e45bfe3",
+    "state": "stopped",
+    "stage": "process_stopped",
+    "liveness": "exited",
+    "process_action": "closed_agent_terminal",
+    "pty_killed": true,
+    "stop_request_id": "2ce6518f-dad0-4b49-a70b-b55846f92f7b",
+    "source": "orca orchestration worker-stop + worker-show; --run rejected before mutation, corrected supported command succeeded"
+  },
+  "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth",
+  "head": "f6b23c974b319520b80991d67200c05ddd5562f4",
+  "branch": "fix/m1-auth-qa",
+  "tracked_diff": [],
+  "partial_untracked_files": [
+    {
+      "path": "docs/evidence/T004/A2/reproduction-before.log",
+      "sha256": "8366177e61d472157f8367882c22d2ae2a1c19462a44d60b6d6a2f473debc8f3",
+      "bytes": 9485
+    },
+    {
+      "path": "tests/Feature/Auth/RoleLauncherTest.php",
+      "sha256": "ad0bd65b007553c0785384b668ea3a9489e904672ea4264f0e3dc5c5d2bb4a85",
+      "bytes": 1698
+    },
+    {
+      "path": "tests/Feature/Auth/TemporaryUploadAuthorizationTest.php",
+      "sha256": "c22ed7a9f358176d427bd914bad6fdc92c95f5d11f51b02f3d0a321181804b46",
+      "bytes": 4464
+    }
+  ],
+  "limits": "Partial source/evidence preserved locally, not reviewed/committed/pushed as finished work. No new task, retry, QA, merge or deployment. Prior settled sessions may remain retained; no process exit inferred from unverifiable old rows."
+}

@@ -1,0 +1,925 @@
+[
+  {
+    "name": "normal-issued",
+    "orders": [
+      {
+        "id": 1,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis ",
+            "description_length": 240,
+            "qty": "1",
+            "price": "1000000",
+            "cost": "700000"
+          }
+        ],
+        "totals_decimal": {
+          "price": "1000000",
+          "cost": "700000",
+          "profit": "300000"
+        }
+      },
+      {
+        "id": 2,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 3,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 4,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 5,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 6,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      }
+    ]
+  },
+  {
+    "name": "normal-corrected",
+    "orders": [
+      {
+        "id": 1,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis ",
+            "description_length": 240,
+            "qty": "1",
+            "price": "1100000",
+            "cost": "700000"
+          }
+        ],
+        "totals_decimal": {
+          "price": "1100000",
+          "cost": "700000",
+          "profit": "400000"
+        }
+      },
+      {
+        "id": 2,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 3,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 4,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 5,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 6,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      }
+    ]
+  },
+  {
+    "name": "large-issued",
+    "orders": [
+      {
+        "id": 1,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis ",
+            "description_length": 240,
+            "qty": "1",
+            "price": "1100000",
+            "cost": "700000"
+          }
+        ],
+        "totals_decimal": {
+          "price": "1100000",
+          "cost": "700000",
+          "profit": "400000"
+        }
+      },
+      {
+        "id": 2,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis ",
+            "description_length": 240,
+            "qty": "2147483648",
+            "price": "4294967295",
+            "cost": "4294967295"
+          }
+        ],
+        "totals_decimal": {
+          "price": "9223372034707292160",
+          "cost": "9223372034707292160",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 3,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 4,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 5,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 6,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      }
+    ]
+  },
+  {
+    "name": "large-corrected",
+    "orders": [
+      {
+        "id": 1,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis ",
+            "description_length": 240,
+            "qty": "1",
+            "price": "1100000",
+            "cost": "700000"
+          }
+        ],
+        "totals_decimal": {
+          "price": "1100000",
+          "cost": "700000",
+          "profit": "400000"
+        }
+      },
+      {
+        "id": 2,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis!",
+            "description_length": 240,
+            "qty": "2147483648",
+            "price": "4294967295",
+            "cost": "4294967295"
+          }
+        ],
+        "totals_decimal": {
+          "price": "9223372034707292160",
+          "cost": "9223372034707292160",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 3,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 4,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 5,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 6,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      }
+    ]
+  },
+  {
+    "name": "negative-issued",
+    "orders": [
+      {
+        "id": 1,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis ",
+            "description_length": 240,
+            "qty": "1",
+            "price": "1100000",
+            "cost": "700000"
+          }
+        ],
+        "totals_decimal": {
+          "price": "1100000",
+          "cost": "700000",
+          "profit": "400000"
+        }
+      },
+      {
+        "id": 2,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis!",
+            "description_length": 240,
+            "qty": "2147483648",
+            "price": "4294967295",
+            "cost": "4294967295"
+          }
+        ],
+        "totals_decimal": {
+          "price": "9223372034707292160",
+          "cost": "9223372034707292160",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 3,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis ",
+            "description_length": 240,
+            "qty": "2147483648",
+            "price": "0",
+            "cost": "4294967295"
+          }
+        ],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "9223372034707292160",
+          "profit": "-9223372034707292160"
+        }
+      },
+      {
+        "id": 4,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 5,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 6,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      }
+    ]
+  },
+  {
+    "name": "negative-corrected",
+    "orders": [
+      {
+        "id": 1,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis ",
+            "description_length": 240,
+            "qty": "1",
+            "price": "1100000",
+            "cost": "700000"
+          }
+        ],
+        "totals_decimal": {
+          "price": "1100000",
+          "cost": "700000",
+          "profit": "400000"
+        }
+      },
+      {
+        "id": 2,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis!",
+            "description_length": 240,
+            "qty": "2147483648",
+            "price": "4294967295",
+            "cost": "4294967295"
+          }
+        ],
+        "totals_decimal": {
+          "price": "9223372034707292160",
+          "cost": "9223372034707292160",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 3,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis!",
+            "description_length": 240,
+            "qty": "2147483648",
+            "price": "0",
+            "cost": "4294967295"
+          }
+        ],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "9223372034707292160",
+          "profit": "-9223372034707292160"
+        }
+      },
+      {
+        "id": 4,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 5,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 6,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      }
+    ]
+  },
+  {
+    "name": "probe14-issued",
+    "orders": [
+      {
+        "id": 1,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis ",
+            "description_length": 240,
+            "qty": "1",
+            "price": "1100000",
+            "cost": "700000"
+          }
+        ],
+        "totals_decimal": {
+          "price": "1100000",
+          "cost": "700000",
+          "profit": "400000"
+        }
+      },
+      {
+        "id": 2,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis!",
+            "description_length": 240,
+            "qty": "2147483648",
+            "price": "4294967295",
+            "cost": "4294967295"
+          }
+        ],
+        "totals_decimal": {
+          "price": "9223372034707292160",
+          "cost": "9223372034707292160",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 3,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis!",
+            "description_length": 240,
+            "qty": "2147483648",
+            "price": "0",
+            "cost": "4294967295"
+          }
+        ],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "9223372034707292160",
+          "profit": "-9223372034707292160"
+        }
+      },
+      {
+        "id": 4,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis ",
+            "description_length": 240,
+            "qty": "99999",
+            "price": "1000000000",
+            "cost": "0"
+          }
+        ],
+        "totals_decimal": {
+          "price": "99999000000000",
+          "cost": "0",
+          "profit": "99999000000000"
+        }
+      },
+      {
+        "id": 5,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 6,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      }
+    ]
+  },
+  {
+    "name": "probe15-issued",
+    "orders": [
+      {
+        "id": 1,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis ",
+            "description_length": 240,
+            "qty": "1",
+            "price": "1100000",
+            "cost": "700000"
+          }
+        ],
+        "totals_decimal": {
+          "price": "1100000",
+          "cost": "700000",
+          "profit": "400000"
+        }
+      },
+      {
+        "id": 2,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis!",
+            "description_length": 240,
+            "qty": "2147483648",
+            "price": "4294967295",
+            "cost": "4294967295"
+          }
+        ],
+        "totals_decimal": {
+          "price": "9223372034707292160",
+          "cost": "9223372034707292160",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 3,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis!",
+            "description_length": 240,
+            "qty": "2147483648",
+            "price": "0",
+            "cost": "4294967295"
+          }
+        ],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "9223372034707292160",
+          "profit": "-9223372034707292160"
+        }
+      },
+      {
+        "id": 4,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis ",
+            "description_length": 240,
+            "qty": "99999",
+            "price": "1000000000",
+            "cost": "0"
+          }
+        ],
+        "totals_decimal": {
+          "price": "99999000000000",
+          "cost": "0",
+          "profit": "99999000000000"
+        }
+      },
+      {
+        "id": 5,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis ",
+            "description_length": 240,
+            "qty": "999999",
+            "price": "1000000000",
+            "cost": "0"
+          }
+        ],
+        "totals_decimal": {
+          "price": "999999000000000",
+          "cost": "0",
+          "profit": "999999000000000"
+        }
+      },
+      {
+        "id": 6,
+        "status": "dikerjakan",
+        "invoice_date": null,
+        "picked_date": null,
+        "rows": [],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "0",
+          "profit": "0"
+        }
+      }
+    ]
+  },
+  {
+    "name": "probe19-max-issued",
+    "orders": [
+      {
+        "id": 1,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis ",
+            "description_length": 240,
+            "qty": "1",
+            "price": "1100000",
+            "cost": "700000"
+          }
+        ],
+        "totals_decimal": {
+          "price": "1100000",
+          "cost": "700000",
+          "profit": "400000"
+        }
+      },
+      {
+        "id": 2,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis!",
+            "description_length": 240,
+            "qty": "2147483648",
+            "price": "4294967295",
+            "cost": "4294967295"
+          }
+        ],
+        "totals_decimal": {
+          "price": "9223372034707292160",
+          "cost": "9223372034707292160",
+          "profit": "0"
+        }
+      },
+      {
+        "id": 3,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis!",
+            "description_length": 240,
+            "qty": "2147483648",
+            "price": "0",
+            "cost": "4294967295"
+          }
+        ],
+        "totals_decimal": {
+          "price": "0",
+          "cost": "9223372034707292160",
+          "profit": "-9223372034707292160"
+        }
+      },
+      {
+        "id": 4,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis ",
+            "description_length": 240,
+            "qty": "99999",
+            "price": "1000000000",
+            "cost": "0"
+          }
+        ],
+        "totals_decimal": {
+          "price": "99999000000000",
+          "cost": "0",
+          "profit": "99999000000000"
+        }
+      },
+      {
+        "id": 5,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis ",
+            "description_length": 240,
+            "qty": "999999",
+            "price": "1000000000",
+            "cost": "0"
+          }
+        ],
+        "totals_decimal": {
+          "price": "999999000000000",
+          "cost": "0",
+          "profit": "999999000000000"
+        }
+      },
+      {
+        "id": 6,
+        "status": "selesai",
+        "invoice_date": "2026-11-13",
+        "picked_date": null,
+        "rows": [
+          {
+            "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis ",
+            "description_length": 240,
+            "qty": "2147483647",
+            "price": "4294967295",
+            "cost": "0"
+          },
+          {
+            "description": "Tambahan batas integer 2",
+            "description_length": 24,
+            "qty": "1",
+            "price": "4294967295",
+            "cost": "0"
+          },
+          {
+            "description": "Tambahan batas integer 3",
+            "description_length": 24,
+            "qty": "1",
+            "price": "2147483647",
+            "cost": "0"
+          }
+        ],
+        "totals_decimal": {
+          "price": "9223372036854775807",
+          "cost": "0",
+          "profit": "9223372036854775807"
+        }
+      }
+    ]
+  }
+]

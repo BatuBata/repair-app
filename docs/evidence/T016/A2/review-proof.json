@@ -1,0 +1,18 @@
+{
+  "verdict": "pass",
+  "states": 75,
+  "exact_single_line_totals_checked": 225,
+  "grand_font_min": 16,
+  "grand_font_max": 28,
+  "normal_fonts_all28": true,
+  "negative_profit_all_red": true,
+  "contact_sheets_opened": 10,
+  "selected_full_size_opened": [
+    "large-issue-360.png",
+    "large-published-1280.png",
+    "large-issue-top-1200.png",
+    "large-issue-top-1280.png"
+  ],
+  "approved_mockup_reference": "A1 exact approved reference images; 25 DESIGN/mockup source hashes unchanged (reuse-proof.json)",
+  "no_new_product_failures_observed": true
+}

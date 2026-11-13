@@ -1,0 +1,109 @@
+{
+  "prior_independent_tester": "/root/t016_qa",
+  "prior_checked_revision": "545b52a275687703e6046270afb45e01a0334922",
+  "prior_evidence_revision": "ffb4e0975e20a22e948749580aaf0901006fef33",
+  "checked_revision": "22e26d244dee2c361b7c21ea3d740e500fc83c9a",
+  "source_impact": {
+    "identical": 208,
+    "changed": [
+      "resources/views/livewire/invoice/form.blade.php",
+      "resources/views/livewire/invoice/published.blade.php",
+      "resources/views/livewire/tts/detail.blade.php"
+    ],
+    "detail_outside_style_identical": true,
+    "backend_actions_models_services_controllers_routes_schema_tests_config_dependencies_sharedCSSJS_public_tracking_identical": true
+  },
+  "conditions": {
+    "artifact_sha256": "6e43a91e8f08f49aae6ab334fa46dde48fcc52c1900d1a0e11f60344e2556f36",
+    "build14_identical": true,
+    "runtime_fonts5_identical": true,
+    "php": "8.3.30",
+    "node": "v22.23.2",
+    "chrome": "157.0.8103.79 same as T016A1",
+    "vendor_critical4_equal": true,
+    "vendor_complete_current_digest": "9eeb6fc32065e0dd96dd1e55e765cfac2da1ebd4ee0949e290c440b52c8560a6",
+    "vendor_no_files_modified_after_A1": true,
+    "fresh_private_fixture_isolation": "Same PHP8.3/config knobs and session/cache/views/storage isolation; new random key/password and fresh SQLite are intentional fixture differences. No MySQL access/mutation.",
+    "root_env_same_as_T010A2": true
+  },
+  "reused_independent_CASES": [
+    {
+      "ids": [
+        "IndependentTest.service_lifecycle",
+        "IndependentTest.stock_snapshot",
+        "IndependentTest.expenses_crud",
+        "IndependentTest.unrepairable_fee"
+      ],
+      "assertions": 114,
+      "reason": "Business actions/components/projection/guards unchanged; fresh fullsuite additionally exercises changed rendering; do not label old assertions as new run."
+    },
+    {
+      "ids": [
+        "MySQL.TTS-concurrent-numbering",
+        "MySQL.sale-stock-one-contention",
+        "MySQL.own-sale-delete-restore-once",
+        "MySQL.baseline-preservation",
+        "MySQL.casefold-controller-exact-guard"
+      ],
+      "reason": "Identical services/actions/models/schema/controller/runtime/config; three Blade repairs cannot alter locks/numbers/data. No MySQL rerun/writes required."
+    },
+    {
+      "ids": [
+        "A1.browser-normal-78-minus-changed-invoice-visuals",
+        "A1.public-tracking-all-statuses-zero-large",
+        "A1.stock-sales-expenses-normal-and-extreme",
+        "A1.date-filter-dialog-focus",
+        "A1.technician-HTTP403-privacy",
+        "A1.TTS-create-edit-list-received-and-cancelled"
+      ],
+      "reason": "View/asset inputs unchanged for these screens; TTS detail outside style identical and changes only affect totals absent from technician/received/cancelled/success states."
+    }
+  ],
+  "not_reused_as_PASS": [
+    "T016-F01 original failure",
+    "A1 invoice issue/correction/published presentation (replaced by75freshA2states)",
+    "T010/T015 developer browser PASS (read only as hints, not independent proof)",
+    "T017/T018/T019/downstream or physical/deploy cases"
+  ],
+  "old_evidence_sha256": {
+    "docs/evidence/T016/A1/README.md": "54651de2b7826bc0191e1f93521ff83a193c1c3f27972387b173a55cb4eb9f49",
+    "docs/evidence/T016/A1/IndependentTest.php": "f27b075484d36173a9fa6c5f6f78511aed1cd1dd79ffb5abed2510d3dce212dc",
+    "docs/evidence/T016/A1/independent-final.log": "bf551845c9adb58427f26714f52fed5f06b6be9bda6fae0b7e319ba2b6688df2",
+    "docs/evidence/T016/A1/independent-initial.xml": "4b395c447f89a26aff947a1b5e2457646349bcaa74c4fd7a49da6359eeebb732",
+    "docs/evidence/T016/A1/fee.log": "ea6f142a0d64b6723fd331485c9172bd5bc4842d8e84f373a6961c25dd9c1495",
+    "docs/evidence/T016/A1/mysql-proof.json": "f05472c303a1d924eabacd34508de44a09ce7ca0f4af677dac4d944b676d45a0",
+    "docs/evidence/T016/A1/mysql-final.json": "8734a7dbaff37b424ad065834cef11ed9e272c2de387a3b745e30888a575b908",
+    "docs/evidence/T016/A1/mysql-tracking.json": "516b3550d65f5969580e5fbfaf917e8c2dce1fce539deb4df5576af7fa39bc46",
+    "docs/evidence/T016/A1/browser-matrix-results.json": "6093c79e557a6ec767c4923ae362ab2f1804d2aa185eefdb80a26a2cb1414123",
+    "docs/evidence/T016/A1/edge-browser-results.json": "77dec921365e74c877538ebaffc816819f630bac5f77e5d294a06bbec463ee56",
+    "docs/evidence/T016/A1/interaction-error.json": "772625ee831db8975b742e289d03f222770dda4ed8ae53640aed4da47d102bab",
+    "docs/evidence/T016/A1/guard-results.json": "eefb97add76cf3acc153c8278a78fafe7773024aee8cf39b60f04f71c40faf5d"
+  },
+  "approved_reference_sha256": {
+    "DESIGN.md": "45f76c15d9eec1d866b28a5220563f4f5111a277204c39f342f30dace2886524",
+    "mockup/tts-baru.html": "0bb2f1a3d3f1738e97353ecb18ee5b49a8466e33652bd0acbb15528909d69b9c",
+    "mockup/index.html": "dc1ff51ebf35b9a24e58601760e8028264862f4637b66dc81e440e20b8bf338f",
+    "mockup/tts-detail.html": "90046eb2664367ed778411399b4bf63827208d2c4f5b18bb082c2cc917a896e7",
+    "mockup/laporan.html": "909e32c9270dc70ad1ac233ef1ee0cd2597843912d23abb69297720e6ddc5807",
+    "mockup/tracking.html": "827a71d7d675962454e721d39e8646c5b0d36b0508bf71b715a1cf058bfbbe40",
+    "mockup/login.html": "eee597ab1a9d634bca012d0addcb0efaea8dab2bb9efd51da1f1b58344c9da9c",
+    "mockup/tts-rincian.html": "ad3ede375e3cfdab97ccb7ca85cd25069ed373d3568c66b7ab5cb14f87255705",
+    "mockup/dashboard.html": "038f7eadc17d93f62afce943664c992ae5302fb7c133fcf7de0f5b5fd1f541c5",
+    "mockup/nota-a5.html": "2f16c3bc74b12f7558c22837a7ff438fac30289254713bf23d94539fba0517bb",
+    "mockup/tts.html": "5be1497f0e13685a772e33817f125f61fdddec1d9815d6a5374c7edaea366867",
+    "mockup/struk.html": "5ab6f33b8b4ae70530f99e904daa84c46f4aba97bf5f547ce39fc54335634c3d",
+    "mockup/tts-sukses.html": "b0c6ddc3169c3600c3d76a6a11fe470af419302ddbfe20c97c99e1e5cadeb04e",
+    "mockup/assets/icons.js": "9533bb8ee703c92b817b17b76a072a415635a59f31eb9ceb60999d7dd7e1d92f",
+    "mockup/assets/styles.css": "4bd02a981c869a9fa80e1eda344e75b130b7195c74909a3f63f863650ea20fd4",
+    "mockup/assets/charts.js": "89071120bd09eb276d9e568bab433ed035ea8b3a1b72750a1fa204a63e3d4ab4",
+    "mockup/assets/data.js": "5a07727e7501b335a1d719385ec026408bf7a29a8d6615c96fa234b364f350f9",
+    "mockup/assets/qr-tracking.svg": "41e2f794dc85bb11119c4bfff26025ab62510251ff16f1787d0fe8fec1946f93",
+    "mockup/assets/icons.svg": "9b2dce14c3a378516d2e8ca7bfbd1892c278b6819e8a319b50601cfcac39c34d",
+    "mockup/assets/app.js": "3960dbcb2621d432e5dd85472210bae633a81269b352188507d97439a5cb0649",
+    "mockup/assets/fonts/ibm-plex-sans-400.woff2": "3b646991d30055a93a4ecc499713d4347953a74a947ecab435ab72070cbdab0e",
+    "mockup/assets/fonts/ibm-plex-sans-500.woff2": "0717336fb31fcdcde4b8deb3675bb4a0f7f6d484864afcd6751ac29975962203",
+    "mockup/assets/fonts/ibm-plex-mono-500.woff2": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22",
+    "mockup/assets/fonts/ibm-plex-sans-600.woff2": "8960851d691c054ed38e259bdcf1a6190d157b4203ed5bb32c632a863fb8ec2f",
+    "mockup/assets/fonts/ibm-plex-mono-400.woff2": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+  }
+}

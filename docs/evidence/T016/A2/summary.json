@@ -1,0 +1,49 @@
+{
+  "verdict": "pass",
+  "checked_revision": "22e26d244dee2c361b7c21ea3d740e500fc83c9a",
+  "inputs": {
+    "T015": "22e26d244dee2c361b7c21ea3d740e500fc83c9a"
+  },
+  "finding_resolution": {
+    "id": "T016-F01",
+    "status": "closed_by_independent_retest",
+    "fresh_states": 75,
+    "widths": [
+      360,
+      768,
+      1200,
+      1279,
+      1280
+    ]
+  },
+  "fresh_suite": {
+    "passed": 157,
+    "skipped": 1,
+    "assertions": 1585
+  },
+  "fresh_browser": {
+    "states": 75,
+    "exact_decimal_totals_checks": 225,
+    "saves_through_real_buttons": 9,
+    "js_exceptions": 0,
+    "normal_font": 28,
+    "font_range": [
+      16,
+      28
+    ]
+  },
+  "reused_A1_independent_assertions": 114,
+  "reuse_proof": "docs/evidence/T016/A2/reuse-proof.json",
+  "artifact_sha256": "6e43a91e8f08f49aae6ab334fa46dde48fcc52c1900d1a0e11f60344e2556f36",
+  "source211_build14_final_match": true,
+  "resources_released": true,
+  "feature_acceptance": "coordinator gate, not self-accepted",
+  "not_run": [
+    "T017 PDF/print",
+    "T018 dashboard/reminders",
+    "T019 reports",
+    "T023 finalQA",
+    "T025 physicalAndroid/printer",
+    "T024-T025deployment"
+  ]
+}

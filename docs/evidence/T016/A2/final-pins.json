@@ -1,0 +1,51 @@
+{
+  "checked_revision": "22e26d244dee2c361b7c21ea3d740e500fc83c9a",
+  "head": "b41d9416a64f1df9ef0c65883ee62cd515547afd",
+  "source_files": 211,
+  "changed_views": [
+    "resources/views/livewire/invoice/form.blade.php",
+    "resources/views/livewire/invoice/published.blade.php",
+    "resources/views/livewire/tts/detail.blade.php"
+  ],
+  "unchanged": 208,
+  "artifacts": {
+    "files_sha256": {
+      "count": 14,
+      "mismatches": []
+    },
+    "old_new_different_files": {
+      "count": 0,
+      "mismatches": []
+    },
+    "build_inputs_sha256": {
+      "count": 73,
+      "mismatches": []
+    },
+    "runtime_fonts_sha256": {
+      "count": 5,
+      "mismatches": []
+    }
+  },
+  "artifact_sha256": "6e43a91e8f08f49aae6ab334fa46dde48fcc52c1900d1a0e11f60344e2556f36",
+  "detail_outside_style_identical": true,
+  "vendor_files": 12377,
+  "vendor_digest": "9eeb6fc32065e0dd96dd1e55e765cfac2da1ebd4ee0949e290c440b52c8560a6",
+  "vendor_modified_after_A1": [],
+  "reuse_reason": "All backend/actions/controllers/routes/schema/tests/config/dependency/sharedCSSJS and public tracking source are among208 identical files;14build/5fonts identical. A1 business+MySQL+unaffected visuals remain independent evidence. Changed three-view visual results must be fresh A2.",
+  "critical_vendor_reference": "docs/evidence/T008/A2/reused-evidence.json conditions.vendor_equal_hashes",
+  "critical_vendor_hashes": {
+    "vendor/composer/installed.json": "0168ef9dc5ed3c5a897f7d53c3923b434bc2e4538f20d539fdf5c6d54a8735f8",
+    "vendor/livewire/livewire/src/Features/SupportFileUploads/FileUploadConfiguration.php": "1e16ae19f70a1b76ce0cdd1dad34aeaf92d99143eadc51cbf0581641e17266fe",
+    "vendor/livewire/livewire/src/Features/SupportFileUploads/FileUploadController.php": "c1f06e3d601b4a40552c18c8db2be78201504181b8b807575d33c6b05f6ec9ae",
+    "vendor/laravel/framework/src/Illuminate/Foundation/Configuration/Middleware.php": "ae114afd0f14c4990872486c3239b2a0e712d2cd9a97d2370892caee054b6dee"
+  },
+  "vendor_conditions": "4 prior critical hashes match; same vendor installation has no files with mtime newer than A1 final-pins, no composer install/update in this run; current complete vendor content fingerprint recorded, not a claim that an A1 complete-vendor digest existed.",
+  "runtime": {
+    "php": "8.3.30",
+    "node": "v22.23.2",
+    "browser_expected": "Chrome157; actual receipt in browser-results.json"
+  },
+  "final_verified_source211": true,
+  "final_verified_build14": true,
+  "approved_reference_files_same_A1": 25
+}

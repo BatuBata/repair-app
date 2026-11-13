@@ -1,0 +1,50 @@
+{
+  "cases": [
+    {
+      "id": "empty-report-zero",
+      "pass": true
+    },
+    {
+      "id": "report-reversed-period",
+      "pass": true
+    },
+    {
+      "id": "user-edit-body-portalled-callback",
+      "pass": true
+    },
+    {
+      "id": "user-reset-body-portalled-callback",
+      "pass": true
+    },
+    {
+      "id": "category-edit-body-portalled-callback",
+      "pass": true
+    },
+    {
+      "id": "expense-edit-body-portalled-callback",
+      "pass": true
+    }
+  ],
+  "pdfs": [],
+  "screenStates": [
+    "report-empty-360",
+    "report-empty-768",
+    "report-empty-1280",
+    "report-date-error-360",
+    "report-date-error-768",
+    "report-date-error-1280",
+    "user-edit-360",
+    "user-edit-768",
+    "user-edit-1280",
+    "user-reset-360",
+    "user-reset-768",
+    "user-reset-1280",
+    "category-edit-360",
+    "category-edit-768",
+    "category-edit-1280",
+    "expense-edit-360",
+    "expense-edit-768",
+    "expense-edit-1280"
+  ],
+  "consoleErrors": []
+}

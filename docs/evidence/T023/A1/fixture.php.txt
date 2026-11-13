@@ -1,0 +1,22 @@
+<?php
+require getcwd().'/vendor/autoload.php';
+$root=getenv('QA_RUNTIME');$app=require getcwd().'/bootstrap/app.php';$app->useStoragePath($root.'/storage');$app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+if(config('database.default')!=='sqlite'||config('database.connections.sqlite.database')!==$root.'/fixture.sqlite')throw new RuntimeException('Unsafe database');
+if($argv[1]==='config'){
+ config(['app.env'=>'production','view.compiled'=>$root.'/storage/framework/views','session.files'=>$root.'/storage/framework/sessions','cache.stores.file.path'=>$root.'/storage/framework/cache/data','cache.stores.file.lock_path'=>$root.'/storage/framework/cache/locks','filesystems.disks.local.root'=>$root.'/storage/app/private','filesystems.disks.public.root'=>$root.'/storage/app/public','logging.channels.single.path'=>$root.'/storage/logs/laravel.log','logging.channels.daily.path'=>$root.'/storage/logs/laravel.log','dompdf.options.font_cache'=>$root.'/fonts','dompdf.options.temp_dir'=>$root.'/fonts']);
+ file_put_contents(getenv('APP_CONFIG_CACHE'),'<?php return '.var_export(config()->all(),true).';');chmod(getenv('APP_CONFIG_CACHE'),0600);echo "Private production config saved\n";exit;
+}
+if($argv[1]==='seed'){
+ if(App\Models\User::count())throw new RuntimeException('Fixture already populated');
+ $a=App\Models\User::factory()->create(['name'=>'Pak Arif QA','username'=>'t023_admin','role'=>'admin','password'=>getenv('QA_PASSWORD')]);$t=App\Models\User::factory()->create(['name'=>'Rizky QA','username'=>'t023_tech','role'=>'teknisi','password'=>getenv('QA_PASSWORD')]);
+ $c=App\Models\Category::create(['name'=>'Laptop']);App\Models\Category::create(['name'=>'Printer']);App\Models\StoreSetting::create(['name'=>'Anugerah QA','address'=>'Jalan Contoh 23, Makassar','phone'=>'0411-123456','default_warranty_days'=>30,'warranty_terms'=>'Garansi berlaku untuk kerusakan yang sama. Simpan nota ini.']);
+ auth()->login($a);$m=app(App\Actions\ServiceOrders\ManageServiceOrder::class);$ids=[];
+ $create=function($name,$state,$when,$price=0,$cost=0,$days=0,$unrepairable=false)use($c,$t,$m){Carbon\CarbonImmutable::setTestNow($when);$o=app(App\Services\CreateServiceOrder::class)->create(['customer_name'=>$name,'customer_phone'=>'0812-3456-7890','category_id'=>$c->id,'complaint'=>'Layar bergaris dan tidak menyala','item_description'=>'Asus X441','address'=>'Alamat privat QA 889'], $t);if($state!=='received')$m->assign($o->id,$t->id);if(in_array($state,['invoice','collected'])){$m->invoice($o->id,['rows'=>[['type'=>'part','description'=>'LCD sintetis','qty'=>1,'price'=>$price,'cost'=>$cost],['type'=>'jasa','description'=>'Jasa pemasangan','qty'=>1,'price'=>100000,'cost'=>5000]],'warranty_days'=>$days,'unrepairable'=>$unrepairable],false,App\Actions\ServiceOrders\InvoiceLines::revision($o->fresh()));if($state==='collected')$m->collect($o->id,substr($when,0,10));}if($state==='cancelled')$m->cancel($o->id,'Customer membatalkan');return $o->fresh();};
+ $today=Carbon\CarbonImmutable::now('Asia/Makassar')->toDateString();
+ foreach(['received','working','invoice','collected','cancelled']as $state){$o=$create('Customer '.$state,$state,$today.' 09:00:00',1000000,700000,3);$ids[$state]=$o->id;$ids[$state.'_token']=$o->tracking_token;}
+ $o=$create('Sampel PRD','invoice','2026-11-11 09:00:00',1000000,700000,30);$ids['sample']=$o->id;
+ Carbon\CarbonImmutable::setTestNow($today.' 10:00:00');$p=App\Models\Product::create(['name'=>'Printer Canon bekas','cost_price'=>1100000,'sell_price'=>1500000,'stock'=>5]);$ids['product']=$p->id;
+ $sale=app(App\Actions\Sales\CreateSale::class)->handle(['sold_on'=>'2026-11-11','customer_name'=>'Customer penjualan','customer_phone'=>'081234567890','warranty_days'=>30,'items'=>[['product_id'=>$p->id,'qty'=>1,'price'=>1500000]]]);$ids['sale']=$sale->id;
+ foreach([['bensin',15000],['konsumsi',50000]]as[$cat,$amt])App\Models\Expense::create(['spent_on'=>'2026-11-11','category'=>$cat,'description'=>'Biaya QA '.$cat,'amount'=>$amt,'created_by'=>$a->id]);
+ Carbon\CarbonImmutable::setTestNow();file_put_contents($root.'/ids.json',json_encode($ids));chmod($root.'/ids.json',0600);echo json_encode(['fixture'=>'privateSQLite','orders'=>App\Models\ServiceOrder::count(),'sales'=>App\Models\Sale::count(),'storagePrivate'=>storage_path()===$root.'/storage']).PHP_EOL;
+}

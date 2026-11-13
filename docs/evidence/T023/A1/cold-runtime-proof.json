@@ -1,0 +1,19 @@
+{
+  "afterCorrectionGlobalFontCacheChanged": [],
+  "privateColdCacheNowFiles": 10,
+  "privateColdCacheFiles": [
+    "plex_normal_41c5020cc6332f247d3952124188ade8.ufm.json",
+    "plex_bold_8566e039917aaf1ac070633ea7cc642e.ufm.json",
+    "plexmono_normal_a087216cd07e1db8678e53927a484150.ufm.json",
+    "plexmono_normal_a087216cd07e1db8678e53927a484150.ufm",
+    "plex_bold_8566e039917aaf1ac070633ea7cc642e.ufm",
+    "plex_normal_41c5020cc6332f247d3952124188ade8.ttf",
+    "plex_normal_41c5020cc6332f247d3952124188ade8.ufm",
+    "installed-fonts.json",
+    "plexmono_normal_a087216cd07e1db8678e53927a484150.ttf",
+    "plex_bold_8566e039917aaf1ac070633ea7cc642e.ttf"
+  ],
+  "publicPDFHTTPStatus": 200,
+  "coldRequestEvidence": "public-a5.pdf from flows final subset after private-router explicit useStoragePath before any successful PDF request",
+  "productionDataTouched": false
+}

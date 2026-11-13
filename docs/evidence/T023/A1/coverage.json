@@ -1,0 +1,247 @@
+{
+  "checked_revision": "a95a3058c2160617d2e59ce7ac44685774d7528d",
+  "software_contract_verdict": "fail",
+  "acceptance": [
+    {
+      "id": "AC-01",
+      "software": "pass",
+      "evidence": "Auth AuthenticationTest::remember_me_issues_framework_recaller_cookie_and_rotates_session + RoleLauncherTest; flows remember persistent recaller in fresh Chrome process without session cookie. Actual Android shortcut/browser install deferred T025. Targeted remember-only-proof.json excludes both session/XSRF, server viaRemember=true and roleteknisi; initial expiresfilter gap preserved."
+    },
+    {
+      "id": "AC-02",
+      "software": "pass",
+      "evidence": "TtsTest required/phone/injection cases; flows tts-four-required, invalid-phone-retains-fields, normalized6281234567890 with success screenshot."
+    },
+    {
+      "id": "AC-03",
+      "software": "pass",
+      "evidence": "DomainTest WITA month/min3/rollbacks + SalesTest WITA clock pin; actual parallel16 MySQL saves T002A4 reused only after identical numbering/model/migration hash proof. Guarded destructive MySQL test skipped here."
+    },
+    {
+      "id": "AC-04",
+      "software": "pass",
+      "evidence": "Auth/Invoice/Sales/Stock/Expenses/Reports/Settings/Dashboard tests revoke and role guards; actual11 HTTP403 technician routes and HTML no amounts; tech-list/detail screenshots3widths."
+    },
+    {
+      "id": "AC-05",
+      "software": "pass",
+      "evidence": "TtsTest own received/other owner/all states/stale actor lock; browser own received edit saved, tech-edit captures3widths."
+    },
+    {
+      "id": "AC-06",
+      "software": "pass",
+      "evidence": "InvoiceTest active technician/time/duplicate assignment + browser assign->Dikerjakan/name."
+    },
+    {
+      "id": "AC-07",
+      "software": "pass",
+      "evidence": "InvoiceTest all issue states/missing technician/rows/Jasa cost forced0; browser invalid invoice then Part+Jasa2lines; privateSQLite proof Jasa cost0."
+    },
+    {
+      "id": "AC-08",
+      "software": "pass",
+      "evidence": "InvoiceTest exact arithmetic; browser LCD1m+Jasa100k =1.1m;10HTTP PDFs text checks no700.000; public/tracking HTML privacy; QR and renders reviewed."
+    },
+    {
+      "id": "AC-09",
+      "software": "pass",
+      "evidence": "DashboardTest inclusive H-3/lastday30days/WITA/zero/contacted/expired + new MySQL service AND sale rowlocks at midnight and duplicate2admin mark; actual dashboard portalled mark removes row."
+    },
+    {
+      "id": "AC-10",
+      "software": "pass",
+      "evidence": "InvoiceTest legal collect states/date; browser collect id7 ->Diambil; tracking-collected screenshots and exact status in TrackingTest."
+    },
+    {
+      "id": "AC-11",
+      "software": "pass",
+      "evidence": "InvoiceTest cancel allowed/closed rejects; ReportsTest excludes cancelled; received/working/cancelled screenshots."
+    },
+    {
+      "id": "AC-12",
+      "software": "pass",
+      "evidence": "TrackingTest exacttoken/noindex/no financial private fields, DocumentsTest invoice gate; fresh browser public404/noindex and no leaked HP/address/cost; MySQL wrong-casePDF404 despite rawCIlookup matching."
+    },
+    {
+      "id": "AC-13",
+      "software": "pass",
+      "evidence": "TrackingTest WA exactencodednumber/template/role + DashboardTest warranty WA links. Browser inspected opaque redirect without opening/sending WA. Actual app switching deferred T025."
+    },
+    {
+      "id": "AC-14",
+      "software": "pass",
+      "evidence": "10new HTTP PDFs A5/58mm sizes/fonts/text/bounds;5QR decoded with CoreImage to exact64token appURLs; long2/5/63page artifacts independently rechecked with source/hash provenance. Physical print/phone scan deferred T025."
+    },
+    {
+      "id": "AC-15",
+      "software": "pass",
+      "evidence": "SalesTest shortage/rollback/restore-once/warranty/number + old actual MySQL parallelstock/delete proof reused with exactsource hashes. Browser warrantyphone rejection,2unit sale/PDF and ownsale deletion; privateSQLite stock restored5."
+    },
+    {
+      "id": "AC-16",
+      "software": "pass",
+      "evidence": "StockTest restock/snapshot/notexpense/overflow/rollback; browser restock4->6/currentcost1.2m. Original sale snapshot1.1m retained in SQLite proof."
+    },
+    {
+      "id": "AC-17",
+      "software": "pass",
+      "evidence": "ReportsTest PRDsample/currentrevision; actual11Nov browser report exact2.6m/1.8m/800k/65k/735k at3widths; newMySQL ownperiod report exact247912/222/247690."
+    },
+    {
+      "id": "AC-18",
+      "software": "pass",
+      "evidence": "ExpensesTest inclusive date filters/invaliddates/category/revocation + ReportsTest expense date effect; browser expense created15k and edit form3widths; empty/reversed report captures."
+    },
+    {
+      "id": "AC-19",
+      "software": "pass",
+      "evidence": "SettingsTest category deactivate/historicalname + TtsTest inactive category oldnames; browser category create/edit form callback/captures3widths."
+    },
+    {
+      "id": "AC-20",
+      "software": "pass",
+      "evidence": "UsersTest all actions, lastadmin protection; ConcurrentAdminTest4cases; Auth inactive/stale session/passwordreset; browser users create/edit/reset forms3widths actual bodyportalled callbacks."
+    },
+    {
+      "id": "AC-21",
+      "software": "pass",
+      "evidence": "InvoiceTest stale correction/date/status/pickup + ReportsTest updatedtotals originaldate; browser id7 correction1.1m->1.125m, retained invoiced_on proof."
+    },
+    {
+      "id": "AC-22",
+      "software": "pass",
+      "evidence": "InvoiceTest zero/unrepairable/servicecharge; DocumentsTest actualHTML contains Tidak dapat diperbaiki; report includes Selesai/Diambil invoice independent of flag."
+    },
+    {
+      "id": "AC-23",
+      "software": "pass",
+      "evidence": "SettingsTest fieldlimits/rasterupload/spoof/failedsave retainsold; actualUIlogo uploaded120x40,10PDF text/raster embedding, headers/store/address/phone/terms.255unbrokenname/65535address+terms full checks."
+    },
+    {
+      "id": "AC-24",
+      "software": "fail",
+      "evidence": "111primary captures37states3widths plus extra forms/states compared same approved mockup when one exists; no horizontaloverflow/JSerror. F01 report number link20px violates DESIGN/NFR07 touch contract. Fullpage fixednav at original viewport boundary is capture behavior; normalfold/scroll reviewed."
+    },
+    {
+      "id": "AC-25",
+      "software": "fail",
+      "evidence": "StickyTTS/invoice Save/Publish and input modes numeric/tel/16px/groupedmoney proven; label22px checkbox expands through44px label. F01 report anchors108.42x20px fail44x44. Actual Android keyboard deferred T025; qty formatting follows detailed§10.2 nominal-only separator rule."
+    },
+    {
+      "id": "AC-26",
+      "software": "pass",
+      "evidence": "ManifestHTTP TokoAnugerah/Anugerah standalone /mulai and192/512icons200 actual dimensions; software launcherroles/auth proved. Android installation/addressbar-free installedlaunch deferred T025."
+    }
+  ],
+  "business_rules": [
+    {
+      "id": "BR-01",
+      "status": "pass",
+      "evidence": "DomainTest numbers/WITA/transaction/rollback + reusedT00216parallelMySQL sourceequal."
+    },
+    {
+      "id": "BR-02",
+      "status": "pass",
+      "evidence": "DomainTest phone table; TtsTest/TrackingTest; browserinvalid/normalized."
+    },
+    {
+      "id": "BR-03",
+      "status": "pass",
+      "evidence": "TtsTest fourrequired+activecategory; browserfourfieldvalidation retainsdata."
+    },
+    {
+      "id": "BR-04",
+      "status": "pass",
+      "evidence": "DomainTest exactstatusgraph + InvoiceTest allowed/rejected transitions/stale locks; browser assign/publish/collect."
+    },
+    {
+      "id": "BR-05",
+      "status": "pass",
+      "evidence": "InvoiceTest allstates/technician/rows/zero; browser validation then publish."
+    },
+    {
+      "id": "BR-06",
+      "status": "pass",
+      "evidence": "DomainTest/InvoiceTest exactinteger/bounds/Jasa0; browser1.1m andlarge9.223e18 exactstrings; noNumber conversion ofmoney."
+    },
+    {
+      "id": "BR-07",
+      "status": "pass",
+      "evidence": "DashboardTest WITA inclusivewindow; newMySQL service/sale duplicate andmidnightlockedread; actualUICallback mark."
+    },
+    {
+      "id": "BR-08",
+      "status": "pass",
+      "evidence": "InvoiceTest correctionretainsdate + ReportsTest; browserid7invoiced_on retains13Nov."
+    },
+    {
+      "id": "BR-09",
+      "status": "pass",
+      "evidence": "TtsTest/InvoiceTest/ReportsTest revokedroles;11actualtechHTTP403; nofinancialHTML."
+    },
+    {
+      "id": "BR-10",
+      "status": "pass",
+      "evidence": "DomainTest tokenunique64 + TrackingTest exactcase/noindex/noleaks; existingT016CItracking sourceequal + newMySQLPDFwrongcase404."
+    },
+    {
+      "id": "BR-11",
+      "status": "pass",
+      "evidence": "SalesTest shortage+wholetransactionrollback; T016actualparallelstock1twoadmins sourceequal retained; currentMySQLnewown fixtures no baselinechange."
+    },
+    {
+      "id": "BR-12",
+      "status": "pass",
+      "evidence": "SalesTest snapshots + StockTest pricechanges; browserrestock changedproduct1cost1.2m whileorig sale1cost1.1m."
+    },
+    {
+      "id": "BR-13",
+      "status": "pass",
+      "evidence": "StockTest notexpense and SalesTest deleteonce/restoreoverflow rollback; browserownsale5delete restoredstock5; priorindependentMySQLonce-delete proofsourceequal."
+    },
+    {
+      "id": "BR-14",
+      "status": "pass",
+      "evidence": "ReportsTest PRDsample/inclusive dates/correction/delete/negative/large/31daywindows; actualsampleUI + newMySQL exact period."
+    },
+    {
+      "id": "BR-15",
+      "status": "pass",
+      "evidence": "TtsTest oldinactivecategory/creator & Users/Auth/Settings tests; renderedexistinghistory retainsnames."
+    },
+    {
+      "id": "BR-16",
+      "status": "pass",
+      "evidence": "ExpensesTest categories Bensin/Konsumsi/Gaji/Lainnya amountpositive/datebounds; browsercreate15k/edit callback."
+    }
+  ],
+  "deferred_T025": [
+    "physical Android installation/shortcut/browserclose/keyboard/4G/60sec pilot",
+    "physical58mmprinter/readability/photo/physicalQRscan"
+  ],
+  "not_run_A1": [
+    "MicrosoftEdge actual smoke planned on fixedA2",
+    "productionVPSHTTPSFPMcron/offsitebackup T024-T025 authorization absent"
+  ],
+  "primary_evidence": [
+    "suite.xml",
+    "test-inventory.json",
+    "checks.json",
+    "screen-matrix.json",
+    "matrix-summary.json",
+    "flows.json",
+    "extra-states.json",
+    "final-ui.json",
+    "large-positive-browser.json",
+    "large-negative-browser.json",
+    "mysql-proof.json",
+    "mysql-extension.json",
+    "reuse-proof.json",
+    "pdf-independent.json",
+    "long-pdf-independent.json",
+    "qr-check.log",
+    "manifest-http.json",
+    "report-touch-defect.json",
+    "remember-only-proof.json"
+  ]
+}

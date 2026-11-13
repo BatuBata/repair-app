@@ -1,0 +1,13 @@
+<?php
+require getcwd().'/vendor/autoload.php';$root=getenv('QA_RUNTIME');$app=require getcwd().'/bootstrap/app.php';$app->useStoragePath($root.'/storage');$app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();if(config('database.default')!=='sqlite'||config('database.connections.sqlite.database')!==$root.'/fixture.sqlite')throw new RuntimeException('UnsafeDB');
+use App\Models\{User,Product,ServiceOrder,Sale,Expense};use Carbon\CarbonImmutable;use App\Actions\ServiceOrders\{InvoiceLines,ManageServiceOrder};
+$admin=User::where('username','t023_admin')->firstOrFail();$tech=User::where('username','t023_tech')->firstOrFail();auth()->login($admin);$m=app(ManageServiceOrder::class);$ids=is_file($root.'/large-ids.json')?json_decode(file_get_contents($root.'/large-ids.json'),true):[];
+if($argv[1]==='positive'){
+ if($ids)throw new RuntimeException('Preserve prior fixture');
+ for($i=0;$i<2;$i++){$o=app(App\Services\CreateServiceOrder::class)->create(['customer_name'=>substr(str_repeat('Customer Batas ',9),0,100),'customer_phone'=>'081234567890','category_id'=>1,'complaint'=>str_repeat('Keluhan panjang ',25),'item_description'=>substr(str_repeat('Laptop sintetis ',20),0,255)],$tech);$m->assign($o->id,$tech->id);$m->invoice($o->id,['rows'=>[['type'=>'part','description'=>'LCD nilai batas','qty'=>2147483648,'price'=>4294967295,'cost'=>0]],'warranty_days'=>2,'unrepairable'=>false],false,InvoiceLines::revision($o->fresh()));$ids['services'][]=$o->id;$p=Product::create(['name'=>substr(str_repeat('Printer batas ',20),0,255),'cost_price'=>0,'sell_price'=>4294967295,'stock'=>2147483648]);$s=app(App\Actions\Sales\CreateSale::class)->handle(['sold_on'=>now('Asia/Makassar')->toDateString(),'customer_name'=>substr(str_repeat('Customer Batas ',9),0,100),'customer_phone'=>'081234567890','warranty_days'=>2,'items'=>[['product_id'=>$p->id,'qty'=>2147483648,'price'=>4294967295]]]);$ids['sales'][]=$s->id;}
+ file_put_contents($root.'/large-ids.json',json_encode($ids));chmod($root.'/large-ids.json',0600);
+}elseif($argv[1]==='negative'){
+ foreach($ids['services']as$id){$o=ServiceOrder::findOrFail($id);$m->invoice($id,['rows'=>[['type'=>'part','description'=>'LCD nilai batas negatif','qty'=>2147483648,'price'=>0,'cost'=>4294967295]],'warranty_days'=>2,'unrepairable'=>false],true,InvoiceLines::revision($o));}
+ foreach($ids['sales']as$id)Sale::findOrFail($id)->items()->update(['price'=>0,'cost'=>4294967295]);
+}else throw new RuntimeException('Unknown mode');
+$r=app(App\Services\Reports\Report::class)->build(now('Asia/Makassar')->toDateString(),now('Asia/Makassar')->toDateString());echo json_encode(['mode'=>$argv[1],'ownLargeIDs'=>$ids,'dailyMoney'=>array_intersect_key($r,array_flip(['revenue','cost','gross','expenses','net']))]).PHP_EOL;

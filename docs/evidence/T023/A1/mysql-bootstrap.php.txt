@@ -1,0 +1,8 @@
+<?php
+require getcwd().'/vendor/autoload.php';
+$root=getenv('QA_RUNTIME');$app=require getcwd().'/bootstrap/app.php';$app->useStoragePath($root.'/storage');$app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+$local=Dotenv\Dotenv::parse(file_get_contents('/Users/muzib/Projects/web/repair-app/.env'));
+if(!in_array($local['DB_HOST']??'127.0.0.1',['127.0.0.1','localhost','::1'],true))throw new RuntimeException('Not localhost');
+config(['database.default'=>'mysql','database.connections.mysql.url'=>null,'database.connections.mysql.host'=>$local['DB_HOST']??'127.0.0.1','database.connections.mysql.port'=>$local['DB_PORT']??'3306','database.connections.mysql.database'=>'repair_app_test','database.connections.mysql.username'=>$local['DB_USERNAME'],'database.connections.mysql.password'=>$local['DB_PASSWORD']??'']);unset($local);
+Illuminate\Support\Facades\DB::purge('mysql');
+$db=Illuminate\Support\Facades\DB::connection();if($db->getDatabaseName()!=='repair_app_test'||$db->getDriverName()!=='mysql'||$db->selectOne('select database() as d')->d!=='repair_app_test')throw new RuntimeException('Unsafe DB');

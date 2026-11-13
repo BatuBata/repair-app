@@ -1,0 +1,94 @@
+[
+  {
+    "name": "dashboard",
+    "width": 360,
+    "findings": [
+      {
+        "level": "WARN",
+        "id": "edge-text",
+        "width": 360,
+        "message": "1 text block(s) sit 12–15px from the phone's edge: \"Beranda\" (13px)",
+        "fix": "The page margin is 16–20px on a phone; the header and the corner labels sit on it too."
+      },
+      {
+        "level": "WARN",
+        "id": "tabular",
+        "width": 360,
+        "message": "Only 0% of the figures use tabular numerals.",
+        "fix": "Set font-variant-numeric: tabular-nums on tables, KPIs and anything that updates, so digits keep their width."
+      }
+    ]
+  },
+  {
+    "name": "dashboard",
+    "width": 768,
+    "findings": [
+      {
+        "level": "WARN",
+        "id": "tabular",
+        "width": 768,
+        "message": "Only 0% of the figures use tabular numerals.",
+        "fix": "Set font-variant-numeric: tabular-nums on tables, KPIs and anything that updates, so digits keep their width."
+      }
+    ]
+  },
+  {
+    "name": "dashboard",
+    "width": 1280,
+    "findings": [
+      {
+        "level": "WARN",
+        "id": "tabular",
+        "width": 1280,
+        "message": "Only 0% of the figures use tabular numerals.",
+        "fix": "Set font-variant-numeric: tabular-nums on tables, KPIs and anything that updates, so digits keep their width."
+      }
+    ]
+  },
+  {
+    "name": "invoice",
+    "width": 360,
+    "findings": [
+      {
+        "level": "WARN",
+        "id": "edge-text",
+        "width": 360,
+        "message": "1 text block(s) sit 12–15px from the phone's edge: \"Beranda\" (13px)",
+        "fix": "The page margin is 16–20px on a phone; the header and the corner labels sit on it too."
+      }
+    ]
+  },
+  {
+    "name": "invoice",
+    "width": 768,
+    "findings": []
+  },
+  {
+    "name": "invoice",
+    "width": 1280,
+    "findings": []
+  },
+  {
+    "name": "tts",
+    "width": 360,
+    "findings": [
+      {
+        "level": "WARN",
+        "id": "edge-text",
+        "width": 360,
+        "message": "1 text block(s) sit 12–15px from the phone's edge: \"Beranda\" (13px)",
+        "fix": "The page margin is 16–20px on a phone; the header and the corner labels sit on it too."
+      }
+    ]
+  },
+  {
+    "name": "tts",
+    "width": 768,
+    "findings": []
+  },
+  {
+    "name": "tts",
+    "width": 1280,
+    "findings": []
+  }
+]

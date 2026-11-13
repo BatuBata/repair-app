@@ -1,0 +1,9 @@
+{
+  "error": "Error: page eval: Error: No visible input[name=warranty_days]\n    at <anonymous>:1:139\n    at <anonymous>:1:337\n    at Page.eval (file:///Users/muzib/.codex/skills/design-taste-frontend/scripts/lib/cdp.mjs:210:13)\n    at async click (file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T023/A1/flows.mjs:6:33)\n    at async fill (file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T023/A1/flows.mjs:7:30)\n    at async file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T023/A1/flows.mjs:18:135",
+  "last": {
+    "id": "restock-adds-two-updates-price",
+    "pass": true
+  },
+  "createdId": 7,
+  "consoleErrors": []
+}

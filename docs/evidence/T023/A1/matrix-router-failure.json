@@ -1,0 +1,6 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: Overflow login 360\n\ntrue !== false\n\n    at shot (file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T023/A1/browser-matrix.mjs:12:1545)\n    at async file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T023/A1/browser-matrix.mjs:16:114",
+  "cases": 0,
+  "consoleErrors": [],
+  "statuses": []
+}

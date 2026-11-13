@@ -1,0 +1,1094 @@
+[
+  {
+    "class": "Tests\\Unit\\ExampleTest",
+    "name": "test_that_true_is_true",
+    "assertions": "1",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\AuthenticationTest",
+    "name": "test_login_uses_approved_username_form",
+    "assertions": "6",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\AuthenticationTest",
+    "name": "test_both_roles_login_without_email_and_ignore_intended_admin_url",
+    "assertions": "18",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\AuthenticationTest",
+    "name": "test_invalid_password_unknown_username_and_inactive_account_are_rejected",
+    "assertions": "9",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\AuthenticationTest",
+    "name": "test_required_fields_are_validated_and_input_is_preserved",
+    "assertions": "11",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\AuthenticationTest",
+    "name": "test_login_is_throttled_after_five_attempts",
+    "assertions": "13",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\AuthenticationTest",
+    "name": "test_remember_me_issues_framework_recaller_cookie_and_rotates_session",
+    "assertions": "4",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\AuthenticationTest",
+    "name": "test_deactivation_affects_an_existing_session",
+    "assertions": "4",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\AuthenticationTest",
+    "name": "test_role_change_affects_an_existing_session",
+    "assertions": "3",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\AuthenticationTest",
+    "name": "test_password_reset_invalidates_an_existing_password_session",
+    "assertions": "3",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\AuthenticationTest",
+    "name": "test_reset_immediately_after_login_also_invalidates_the_session",
+    "assertions": "5",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\AuthenticationTest",
+    "name": "test_technician_redirect_opens_the_tts_form",
+    "assertions": "4",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\EmailVerificationTest",
+    "name": "test_email_is_not_an_auth_requirement_and_verification_endpoints_are_absent",
+    "assertions": "5",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\PasswordConfirmationTest",
+    "name": "test_starter_confirmation_and_password_update_endpoints_are_absent",
+    "assertions": "4",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\PasswordResetTest",
+    "name": "test_self_service_recovery_is_unavailable",
+    "assertions": "4",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\RoleLauncherTest",
+    "name": "test_guest_login_discovers_the_same_manifest_as_the_app_shell",
+    "assertions": "6",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\RoleLauncherTest",
+    "name": "test_launcher_requires_login_then_redirects_to_the_current_role_home",
+    "assertions": "16",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\RoleLauncherTest",
+    "name": "test_inactive_session_cannot_use_the_launcher",
+    "assertions": "2",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\TemporaryUploadAuthorizationTest",
+    "name": "test_current_admin_can_upload_with_default_validation_and_preview_behavior",
+    "assertions": "15",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\TemporaryUploadAuthorizationTest",
+    "name": "test_real_signed_grant_cannot_write_after_account_permission_is_revoked with data set #0",
+    "assertions": "5",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\TemporaryUploadAuthorizationTest",
+    "name": "test_real_signed_grant_cannot_write_after_account_permission_is_revoked with data set #1",
+    "assertions": "5",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\TemporaryUploadAuthorizationTest",
+    "name": "test_guest_and_technician_cannot_reuse_a_grant_or_request_a_new_one",
+    "assertions": "5",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\TemporaryUploadAuthorizationTest",
+    "name": "test_admin_still_needs_a_valid_signature_and_upload_throttle_is_retained",
+    "assertions": "63",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\TemporaryUploadAuthorizationTest",
+    "name": "test_admin_cannot_write_with_an_expired_signed_grant",
+    "assertions": "3",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Auth\\TwoFactorChallengeTest",
+    "name": "test_two_factor_and_passkey_endpoints_are_absent",
+    "assertions": "14",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Dashboard\\DashboardTest",
+    "name": "test_daily_counts_backlog_and_revenue_follow_real_dates_and_statuses",
+    "assertions": "12",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Dashboard\\DashboardTest",
+    "name": "test_aggregate_beyond_php_int_max_and_sqlite_sum_is_exact_without_public_financial_state",
+    "assertions": "3",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Dashboard\\DashboardTest",
+    "name": "test_warranty_window_is_inclusive_wita_for_services_and_sales",
+    "assertions": "4",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Dashboard\\DashboardTest",
+    "name": "test_zero_contacted_expired_cancelled_and_unissued_warranties_are_excluded",
+    "assertions": "2",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Dashboard\\DashboardTest",
+    "name": "test_manual_whatsapp_links_use_existing_encoded_template_and_historical_names",
+    "assertions": "16",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Dashboard\\DashboardTest",
+    "name": "test_mark_rechecks_eligibility_after_mount_and_rejects_invalid_ids_and_kinds",
+    "assertions": "25",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Dashboard\\DashboardTest",
+    "name": "test_technician_and_revoked_admin_are_stopped_before_financial_queries",
+    "assertions": "7",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Dashboard\\DashboardTest",
+    "name": "test_inactive_admin_and_midnight_change_cannot_mark_stale_sale",
+    "assertions": "6",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Dashboard\\DashboardTest",
+    "name": "test_wita_daily_count_uses_storage_timezone_and_exclusive_upper_boundary",
+    "assertions": "1",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Dashboard\\DashboardTest",
+    "name": "test_monthly_chart_rolls_up_real_dates_counts_notes_once_and_keeps_daily_metrics_separate",
+    "assertions": "22",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Dashboard\\DashboardTest",
+    "name": "test_monthly_chart_handles_all_zero_and_single_day_without_division_or_false_income",
+    "assertions": "54",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Dashboard\\DashboardTest",
+    "name": "test_monthly_chart_large_negative_profit_and_tooltip_values_stay_exact",
+    "assertions": "16",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Dashboard\\DashboardTest",
+    "name": "test_chart_series_is_validated_and_fresh_admin_is_required_for_switching",
+    "assertions": "6",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Dashboard\\DashboardTest",
+    "name": "test_contact_rechecks_wita_after_locked_read_crosses_midnight",
+    "assertions": "8",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\DashboardTest",
+    "name": "test_root_and_dashboard_require_login_and_admin",
+    "assertions": "9",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\DashboardTest",
+    "name": "test_admin_gets_real_dashboard_and_empty_states",
+    "assertions": "8",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Documents\\DocumentTest",
+    "name": "test_documents_obey_roles_and_public_invoice_gate",
+    "assertions": "29",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Documents\\DocumentTest",
+    "name": "test_sale_receipt_keeps_large_integer_amounts_and_admin_access",
+    "assertions": "11",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Documents\\DocumentTest",
+    "name": "test_long_thermal_text_preserves_words_newlines_and_unbroken_text",
+    "assertions": "3",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Domain\\DomainTest",
+    "name": "test_numbers_use_wita_month_prefix_and_minimum_three_digits",
+    "assertions": "4",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Domain\\DomainTest",
+    "name": "test_counter_rolls_back_with_failed_document",
+    "assertions": "1",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Domain\\DomainTest",
+    "name": "test_counter_requires_transaction",
+    "assertions": "1",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Domain\\DomainTest",
+    "name": "test_phone_normalization_and_invalid_values",
+    "assertions": "9",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Domain\\DomainTest",
+    "name": "test_exact_status_graph_and_admin_authorization",
+    "assertions": "51",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Domain\\DomainTest",
+    "name": "test_creation_normalizes_phone_generates_unique_tokens_and_ignores_injected_fields",
+    "assertions": "153",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Domain\\DomainTest",
+    "name": "test_inactive_category_and_missing_required_input_are_rejected_without_counter",
+    "assertions": "6",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Domain\\DomainTest",
+    "name": "test_money_uses_integers_service_cost_is_zero_and_subtotals_are_exact",
+    "assertions": "8",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Domain\\DomainTest",
+    "name": "test_domain_tables_indexes_foreign_keys_and_cascade",
+    "assertions": "18",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Domain\\DomainTest",
+    "name": "test_sale_snapshots_relations_dates_and_expenses",
+    "assertions": "5",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Domain\\DomainTest",
+    "name": "test_secure_idempotent_seed_preserves_existing_password_and_settings",
+    "assertions": "12",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Domain\\DomainTest",
+    "name": "test_seed_fails_safely_without_initial_password",
+    "assertions": "3",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Domain\\DomainTest",
+    "name": "test_invalid_stock_expense_and_setting_values_are_rejected",
+    "assertions": "7",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Domain\\DomainTest",
+    "name": "test_database_enforces_unique_tracking_token_and_document_number",
+    "assertions": "2",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Domain\\MySqlConcurrencyTest",
+    "name": "test_mysql_fresh_seed_and_parallel_document_creation",
+    "assertions": "0",
+    "skipped": true
+  },
+  {
+    "class": "Tests\\Feature\\Domain\\SeederCacheTest",
+    "name": "test_seed_uses_cached_configuration_without_password_in_process_environment",
+    "assertions": "7",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\ExampleTest",
+    "name": "test_returns_a_successful_response",
+    "assertions": "2",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Expenses\\ExpensesTest",
+    "name": "test_admin_creates_edits_and_deletes_expenses",
+    "assertions": "10",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Expenses\\ExpensesTest",
+    "name": "test_validates_category_amount_and_date_range_total",
+    "assertions": "22",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Expenses\\ExpensesTest",
+    "name": "test_date_filter_includes_both_endpoints_and_totals_only_matching_days",
+    "assertions": "8",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Expenses\\ExpensesTest",
+    "name": "test_date_fields_reject_non_iso_and_out_of_mysql_range_while_accepting_boundaries",
+    "assertions": "15",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Expenses\\ExpensesTest",
+    "name": "test_technician_and_demoted_admin_cannot_use_component",
+    "assertions": "2",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_assign_and_change_only_active_technician_and_duplicate_assignment_keeps_time",
+    "assertions": "12",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_pickup_and_cancel_allow_only_legal_statuses_and_cannot_repeat with data set #0",
+    "assertions": "7",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_pickup_and_cancel_allow_only_legal_statuses_and_cannot_repeat with data set #1",
+    "assertions": "7",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_pickup_and_cancel_allow_only_legal_statuses_and_cannot_repeat with data set #2",
+    "assertions": "4",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_pickup_and_cancel_allow_only_legal_statuses_and_cannot_repeat with data set #3",
+    "assertions": "3",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_pickup_and_cancel_allow_only_legal_statuses_and_cannot_repeat with data set #4",
+    "assertions": "3",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_issue_only_in_progress_and_technician_is_required with data set #0",
+    "assertions": "1",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_issue_only_in_progress_and_technician_is_required with data set #1",
+    "assertions": "1",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_issue_only_in_progress_and_technician_is_required with data set #2",
+    "assertions": "1",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_issue_only_in_progress_and_technician_is_required with data set #3",
+    "assertions": "1",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_issue_only_in_progress_and_technician_is_required with data set #4",
+    "assertions": "1",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_issue_forces_jasa_zero_and_dates_warranty_once_in_wita",
+    "assertions": "8",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_correction_preserves_invoice_date_status_and_pickup_and_rejects_stale_save",
+    "assertions": "5",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_zero_total_unrepairable_default_warranty_and_dynamic_rows",
+    "assertions": "9",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_invalid_lines_dates_and_money_bounds_leave_old_invoice_unchanged",
+    "assertions": "12",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_database_failure_rolls_back_replacement_and_status",
+    "assertions": "2",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_direct_and_livewire_actions_recheck_current_admin_and_technician_gets_no_money",
+    "assertions": "25",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_published_correction_changes_amounts_without_changing_original_date",
+    "assertions": "7",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_invalid_ids_are_validated_before_order_queries_and_inactive_actor_cannot_write",
+    "assertions": "6",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_closed_status_cannot_reassign_and_forged_correction_mode_is_locked",
+    "assertions": "4",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_large_totals_stay_integer_and_format_boundary_digits_exactly",
+    "assertions": "5",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Invoice\\InvoiceTest",
+    "name": "test_stale_status_and_locked_form_mode_cannot_issue_as_correction",
+    "assertions": "2",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Layout\\LayoutPreviewTest",
+    "name": "test_preview_is_available_in_testing_with_components_and_manifest",
+    "assertions": "5",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Layout\\LayoutPreviewTest",
+    "name": "test_preview_is_not_available_in_production",
+    "assertions": "1",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Layout\\LayoutPreviewTest",
+    "name": "test_role_and_navigation_match_paths_without_starter_links",
+    "assertions": "16",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Profile\\ChangePasswordTest",
+    "name": "test_both_roles_change_only_their_own_password",
+    "assertions": "12",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Profile\\ChangePasswordTest",
+    "name": "test_current_password_strength_and_confirmation_are_checked",
+    "assertions": "7",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Profile\\ChangePasswordTest",
+    "name": "test_deactivated_user_cannot_call_a_previously_mounted_action",
+    "assertions": "2",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Reports\\ReportsTest",
+    "name": "test_prd_sample_and_restocks_are_information_only",
+    "assertions": "19",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Reports\\ReportsTest",
+    "name": "test_inclusive_dates_default_wita_and_quick_choices",
+    "assertions": "8",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Reports\\ReportsTest",
+    "name": "test_invalid_empty_and_legal_date_boundaries",
+    "assertions": "27",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Reports\\ReportsTest",
+    "name": "test_correction_uses_latest_values_with_original_invoice_date_and_sale_deletion",
+    "assertions": "4",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Reports\\ReportsTest",
+    "name": "test_exact_large_aggregates_negative_profit_and_tooltip_strings",
+    "assertions": "13",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Reports\\ReportsTest",
+    "name": "test_daily_zero_buckets_and_multiwindow_keep_whole_period_totals_and_average",
+    "assertions": "13",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Reports\\ReportsTest",
+    "name": "test_guest_technician_inactive_deleted_and_demoted_admin_block_before_report_queries",
+    "assertions": "15",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Sales\\SalesTest",
+    "name": "test_create_snapshots_stocks_and_immutable_sale_after_restock_and_product_changes",
+    "assertions": "13",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Sales\\SalesTest",
+    "name": "test_number_uses_wita_creation_month_and_does_not_reuse_deleted_number",
+    "assertions": "3",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Sales\\SalesTest",
+    "name": "test_creation_timestamp_is_pinned_with_number_when_clock_crosses_wita_month_during_insert",
+    "assertions": "2",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Sales\\SalesTest",
+    "name": "test_shortage_and_late_invalid_row_roll_back_every_product_and_document_number",
+    "assertions": "9",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Sales\\SalesTest",
+    "name": "test_duplicate_inactive_and_forged_products_are_rejected_without_partial_sale",
+    "assertions": "9",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Sales\\SalesTest",
+    "name": "test_qty_and_money_validate_unsigned_integers_and_zero_price_is_valid",
+    "assertions": "15",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Sales\\SalesTest",
+    "name": "test_line_and_accumulated_totals_cannot_overflow_php_integer",
+    "assertions": "7",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Sales\\SalesTest",
+    "name": "test_warranty_normalizes_phone_and_computes_date_while_zero_has_no_expiry",
+    "assertions": "12",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Sales\\SalesTest",
+    "name": "test_delete_restores_all_products_even_inactive_and_only_once",
+    "assertions": "6",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Sales\\SalesTest",
+    "name": "test_restore_overflow_rolls_back_prior_product_and_keeps_sale",
+    "assertions": "5",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Sales\\SalesTest",
+    "name": "test_item_write_failure_rolls_back_stock_sale_and_sequence",
+    "assertions": "5",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Sales\\SalesTest",
+    "name": "test_form_defaults_price_handles_rows_preview_and_saves",
+    "assertions": "10",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Sales\\SalesTest",
+    "name": "test_form_preview_safely_handles_invalid_and_overflow_values",
+    "assertions": "6",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Sales\\SalesTest",
+    "name": "test_form_and_delete_ids_are_validated_and_show_id_is_locked",
+    "assertions": "24",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Sales\\SalesTest",
+    "name": "test_delete_requires_explicit_confirmation_and_restores_stock",
+    "assertions": "7",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Sales\\SalesTest",
+    "name": "test_routes_and_actions_require_current_active_admin_including_stale_sessions",
+    "assertions": "31",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Sales\\SalesTest",
+    "name": "test_direct_actions_reject_technician_or_revoked_actor",
+    "assertions": "4",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Sales\\SalesTest",
+    "name": "test_empty_escaped_history_print_links_and_no_edit_route",
+    "assertions": "13",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\ScaffoldTest",
+    "name": "test_public_registration_is_disabled",
+    "assertions": "6",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\ScaffoldTest",
+    "name": "test_project_defaults_and_isolated_test_database",
+    "assertions": "5",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\ScaffoldTest",
+    "name": "test_routes_from_multiple_modules_are_loaded",
+    "assertions": "6",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\ScaffoldTest",
+    "name": "test_dompdf_can_render_an_a5_document",
+    "assertions": "1",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Settings\\ProfileUpdateTest",
+    "name": "test_legacy_profile_routes_redirect_to_approved_profile",
+    "assertions": "10",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Settings\\ProfileUpdateTest",
+    "name": "test_account_deletion_endpoints_are_absent",
+    "assertions": "4",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Settings\\SecurityTest",
+    "name": "test_appearance_security_and_account_deletion_components_expose_no_actions",
+    "assertions": "7",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Settings\\SettingsTest",
+    "name": "test_admin_saves_blank_initial_store_fields_and_warranty_range",
+    "assertions": "5",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Settings\\SettingsTest",
+    "name": "test_store_field_and_unsigned_range_validation_keeps_saved_values",
+    "assertions": "8",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Settings\\SettingsTest",
+    "name": "test_failed_store_write_keeps_existing_logo_and_removes_new_upload",
+    "assertions": "4",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Settings\\SettingsTest",
+    "name": "test_logo_upload_accepts_raster_and_rejects_svg_spoof_and_oversize",
+    "assertions": "16",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Settings\\SettingsTest",
+    "name": "test_category_can_be_added_renamed_and_deactivated_without_breaking_old_order",
+    "assertions": "6",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Settings\\SettingsTest",
+    "name": "test_categories_validate_unique_name_and_invalid_ids_without_mutation",
+    "assertions": "27",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Settings\\SettingsTest",
+    "name": "test_category_edit_id_is_locked",
+    "assertions": "1",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Settings\\SettingsTest",
+    "name": "test_logo_path_is_locked_from_client_changes",
+    "assertions": "1",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Settings\\SettingsTest",
+    "name": "test_settings_routes_and_every_component_action_require_an_active_admin",
+    "assertions": "14",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Settings\\SettingsTest",
+    "name": "test_stale_inactive_admin_cannot_save_store_or_categories",
+    "assertions": "4",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Stock\\StockTest",
+    "name": "test_admin_creates_edits_and_toggles_product_without_resetting_current_stock",
+    "assertions": "11",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Stock\\StockTest",
+    "name": "test_restock_updates_stock_and_cost_and_keeps_history_and_sale_snapshot_without_expense",
+    "assertions": "18",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Stock\\StockTest",
+    "name": "test_invalid_create_data_and_unsigned_boundaries_do_not_create_product",
+    "assertions": "44",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Stock\\StockTest",
+    "name": "test_invalid_restock_data_and_overflow_leave_stock_cost_and_history_unchanged",
+    "assertions": "45",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Stock\\StockTest",
+    "name": "test_restock_uses_current_stock_and_rejects_deactivated_product",
+    "assertions": "8",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Stock\\StockTest",
+    "name": "test_history_write_failure_rolls_back_stock_and_cost",
+    "assertions": "3",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Stock\\StockTest",
+    "name": "test_routes_require_active_admin_and_components_reject_technician",
+    "assertions": "23",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Stock\\StockTest",
+    "name": "test_stale_demoted_or_inactive_admin_cannot_run_any_action_or_refresh",
+    "assertions": "15",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Stock\\StockTest",
+    "name": "test_invalid_ids_are_rejected_before_looking_up_products",
+    "assertions": "24",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Stock\\StockTest",
+    "name": "test_edit_id_is_locked",
+    "assertions": "1",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Stock\\StockTest",
+    "name": "test_restock_id_is_locked",
+    "assertions": "1",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Stock\\StockTest",
+    "name": "test_empty_state_and_escaped_names_notes_and_rupiah_display",
+    "assertions": "8",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Tracking\\TrackingTest",
+    "name": "test_public_tracking_is_exact_and_discloses_only_public_information",
+    "assertions": "31",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Tracking\\TrackingTest",
+    "name": "test_whatsapp_is_admin_only_and_encodes_receipt_and_invoice",
+    "assertions": "13",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Tts\\TtsTest",
+    "name": "test_guest_routes_require_login_and_missing_ids_are_not_found",
+    "assertions": "14",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Tts\\TtsTest",
+    "name": "test_create_validates_four_required_fields_preserves_input_and_limits_optional_fields",
+    "assertions": "18",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Tts\\TtsTest",
+    "name": "test_create_normalizes_phone_assigns_creator_and_uses_sequence_service",
+    "assertions": "14",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Tts\\TtsTest",
+    "name": "test_invalid_phone_and_inactive_or_forged_category_do_not_create_data",
+    "assertions": "18",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Tts\\TtsTest",
+    "name": "test_technician_edit_requires_own_received_order_and_admin_can_edit_data with data set #0",
+    "assertions": "9",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Tts\\TtsTest",
+    "name": "test_technician_edit_requires_own_received_order_and_admin_can_edit_data with data set #1",
+    "assertions": "6",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Tts\\TtsTest",
+    "name": "test_technician_edit_requires_own_received_order_and_admin_can_edit_data with data set #2",
+    "assertions": "6",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Tts\\TtsTest",
+    "name": "test_technician_edit_requires_own_received_order_and_admin_can_edit_data with data set #3",
+    "assertions": "6",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Tts\\TtsTest",
+    "name": "test_technician_edit_requires_own_received_order_and_admin_can_edit_data with data set #4",
+    "assertions": "6",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Tts\\TtsTest",
+    "name": "test_open_form_rechecks_status_owner_and_current_role_before_save",
+    "assertions": "4",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Tts\\TtsTest",
+    "name": "test_save_rechecks_status_inside_transaction_before_mutation",
+    "assertions": "3",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Tts\\TtsTest",
+    "name": "test_owner_and_category_changes_after_mount_are_rechecked_without_mutating_data",
+    "assertions": "6",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Tts\\TtsTest",
+    "name": "test_detail_identifier_cannot_be_retargeted_and_refresh_removes_revoked_edit_link",
+    "assertions": "3",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Tts\\TtsTest",
+    "name": "test_list_paginates_and_resets_page_on_search",
+    "assertions": "4",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Tts\\TtsTest",
+    "name": "test_deactivated_actor_cannot_create_or_hydrate_existing_components",
+    "assertions": "3",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Tts\\TtsTest",
+    "name": "test_identifier_is_locked_against_forged_hydration",
+    "assertions": "1",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Tts\\TtsTest",
+    "name": "test_old_inactive_category_and_creator_names_are_preserved_but_new_choices_are_active_only",
+    "assertions": "5",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Tts\\TtsTest",
+    "name": "test_list_searches_number_name_normalized_phone_and_status_without_exposing_prices",
+    "assertions": "33",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Users\\ConcurrentAdminTest",
+    "name": "test_concurrent_mutations_preserve_an_active_admin with data set #0",
+    "assertions": "6",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Users\\ConcurrentAdminTest",
+    "name": "test_concurrent_mutations_preserve_an_active_admin with data set #1",
+    "assertions": "6",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Users\\ConcurrentAdminTest",
+    "name": "test_concurrent_mutations_preserve_an_active_admin with data set #2",
+    "assertions": "6",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Users\\ConcurrentAdminTest",
+    "name": "test_concurrent_mutations_preserve_an_active_admin with data set #3",
+    "assertions": "6",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Users\\UsersTest",
+    "name": "test_admin_creates_edits_reactivates_and_resets_accounts_without_email",
+    "assertions": "15",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Users\\UsersTest",
+    "name": "test_create_validation_preserves_values_and_checks_duplicate_username",
+    "assertions": "12",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Users\\UsersTest",
+    "name": "test_last_active_admin_cannot_be_deactivated_or_demoted",
+    "assertions": "11",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Users\\UsersTest",
+    "name": "test_two_admins_can_change_one_but_not_then_remove_the_survivor",
+    "assertions": "5",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Users\\UsersTest",
+    "name": "test_invalid_ids_are_rejected_without_mutation",
+    "assertions": "31",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Users\\UsersTest",
+    "name": "test_technician_and_inactive_admin_cannot_mount_user_management",
+    "assertions": "2",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Users\\UsersTest",
+    "name": "test_all_actions_recheck_role_after_mount",
+    "assertions": "14",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Users\\UsersTest",
+    "name": "test_deactivation_after_mount_blocks_direct_action_and_protected_output",
+    "assertions": "3",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Users\\UsersTest",
+    "name": "test_client_cannot_change_locked_user_id",
+    "assertions": "1",
+    "skipped": false
+  },
+  {
+    "class": "Tests\\Feature\\Users\\UsersTest",
+    "name": "test_client_cannot_change_locked_mode_to_bypass_account_form",
+    "assertions": "1",
+    "skipped": false
+  }
+]

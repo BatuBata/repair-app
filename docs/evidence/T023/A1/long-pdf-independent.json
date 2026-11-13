@@ -1,0 +1,569 @@
+{
+  "source_equality": [
+    {
+      "path": "app/Http/Controllers/DocumentController.php",
+      "pin_sha256": "f184f662e465231c309ef8f77ae82710ca55360589a46d8f767af6a87b6c82b4",
+      "current_sha256": "f184f662e465231c309ef8f77ae82710ca55360589a46d8f767af6a87b6c82b4",
+      "equal": true
+    },
+    {
+      "path": "app/Services/Documents/Document.php",
+      "pin_sha256": "0a755afea9d486a2a68995c4ebd16274bde342a82c06c0190690bb518f354e54",
+      "current_sha256": "0a755afea9d486a2a68995c4ebd16274bde342a82c06c0190690bb518f354e54",
+      "equal": true
+    },
+    {
+      "path": "composer.json",
+      "pin_sha256": "5aa190533af842bb2b8f6d3834e8df225cd819454c2242e667199366ff4c2090",
+      "current_sha256": "5aa190533af842bb2b8f6d3834e8df225cd819454c2242e667199366ff4c2090",
+      "equal": true
+    },
+    {
+      "path": "composer.lock",
+      "pin_sha256": "247f7b1ac21fdf30ade477cf41f3a41843d4dbf56f663f2dd5253a1aef3e1c3e",
+      "current_sha256": "247f7b1ac21fdf30ade477cf41f3a41843d4dbf56f663f2dd5253a1aef3e1c3e",
+      "equal": true
+    },
+    {
+      "path": "resources/views/documents/document.blade.php",
+      "pin_sha256": "2e4903ee5f695306e8742753ccacb912b9411a954e341c872b6b247149a3f7e3",
+      "current_sha256": "2e4903ee5f695306e8742753ccacb912b9411a954e341c872b6b247149a3f7e3",
+      "equal": true
+    },
+    {
+      "path": "routes/modules/documents.php",
+      "pin_sha256": "5ef36d3061de1fee0efc2528e80c38b4d7e94f3483b88fd7e3657770c9a6b5d5",
+      "current_sha256": "5ef36d3061de1fee0efc2528e80c38b4d7e94f3483b88fd7e3657770c9a6b5d5",
+      "equal": true
+    }
+  ],
+  "results": [
+    {
+      "name": "name-a5",
+      "artifact_sha256": "8d33d195f3ae436e42c21e3455f6a024f443bd79a44a11f2d9b8843a333f93b5",
+      "pages": [
+        {
+          "page": 1,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 1135,
+          "outside": 0
+        },
+        {
+          "page": 2,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 502,
+          "outside": 0
+        }
+      ],
+      "page_count": 2,
+      "qr_label_count": 1,
+      "seconds": 0.171,
+      "allGlyphsWithinPage": true
+    },
+    {
+      "name": "long-thermal",
+      "artifact_sha256": "3258fb8c59a0b956b65134cec2374b7e55d80944261105072ea64e6b862c56f5",
+      "pages": [
+        {
+          "page": 1,
+          "width": 164.409,
+          "height": 14000.0,
+          "glyphs": 31412,
+          "outside": 0
+        },
+        {
+          "page": 2,
+          "width": 164.409,
+          "height": 14000.0,
+          "glyphs": 31417,
+          "outside": 0
+        },
+        {
+          "page": 3,
+          "width": 164.409,
+          "height": 14000.0,
+          "glyphs": 27107,
+          "outside": 0
+        },
+        {
+          "page": 4,
+          "width": 164.409,
+          "height": 14000.0,
+          "glyphs": 27573,
+          "outside": 0
+        },
+        {
+          "page": 5,
+          "width": 164.409,
+          "height": 14000.0,
+          "glyphs": 10728,
+          "outside": 0
+        }
+      ],
+      "page_count": 5,
+      "qr_label_count": 1,
+      "addressCharacters": 65535,
+      "termsCharacters": 65535,
+      "fullContentMatch": true,
+      "seconds": 2.534,
+      "allGlyphsWithinPage": true
+    },
+    {
+      "name": "long-a5",
+      "artifact_sha256": "7e67c99f6cf17c64c0af390e5bf1b96aa1fa15964fb3e6f195cb6d07909976c3",
+      "pages": [
+        {
+          "page": 1,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2246,
+          "outside": 0
+        },
+        {
+          "page": 2,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2246,
+          "outside": 0
+        },
+        {
+          "page": 3,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2246,
+          "outside": 0
+        },
+        {
+          "page": 4,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2246,
+          "outside": 0
+        },
+        {
+          "page": 5,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2246,
+          "outside": 0
+        },
+        {
+          "page": 6,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2246,
+          "outside": 0
+        },
+        {
+          "page": 7,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2246,
+          "outside": 0
+        },
+        {
+          "page": 8,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2246,
+          "outside": 0
+        },
+        {
+          "page": 9,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2246,
+          "outside": 0
+        },
+        {
+          "page": 10,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2247,
+          "outside": 0
+        },
+        {
+          "page": 11,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2247,
+          "outside": 0
+        },
+        {
+          "page": 12,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2247,
+          "outside": 0
+        },
+        {
+          "page": 13,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2247,
+          "outside": 0
+        },
+        {
+          "page": 14,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2247,
+          "outside": 0
+        },
+        {
+          "page": 15,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2247,
+          "outside": 0
+        },
+        {
+          "page": 16,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2247,
+          "outside": 0
+        },
+        {
+          "page": 17,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2247,
+          "outside": 0
+        },
+        {
+          "page": 18,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2247,
+          "outside": 0
+        },
+        {
+          "page": 19,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2247,
+          "outside": 0
+        },
+        {
+          "page": 20,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2247,
+          "outside": 0
+        },
+        {
+          "page": 21,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2247,
+          "outside": 0
+        },
+        {
+          "page": 22,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2247,
+          "outside": 0
+        },
+        {
+          "page": 23,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2247,
+          "outside": 0
+        },
+        {
+          "page": 24,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2247,
+          "outside": 0
+        },
+        {
+          "page": 25,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2247,
+          "outside": 0
+        },
+        {
+          "page": 26,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2247,
+          "outside": 0
+        },
+        {
+          "page": 27,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2247,
+          "outside": 0
+        },
+        {
+          "page": 28,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2247,
+          "outside": 0
+        },
+        {
+          "page": 29,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2247,
+          "outside": 0
+        },
+        {
+          "page": 30,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 1915,
+          "outside": 0
+        },
+        {
+          "page": 31,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 888,
+          "outside": 0
+        },
+        {
+          "page": 32,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2132,
+          "outside": 0
+        },
+        {
+          "page": 33,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2131,
+          "outside": 0
+        },
+        {
+          "page": 34,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2128,
+          "outside": 0
+        },
+        {
+          "page": 35,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2132,
+          "outside": 0
+        },
+        {
+          "page": 36,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2131,
+          "outside": 0
+        },
+        {
+          "page": 37,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2128,
+          "outside": 0
+        },
+        {
+          "page": 38,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2132,
+          "outside": 0
+        },
+        {
+          "page": 39,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2131,
+          "outside": 0
+        },
+        {
+          "page": 40,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2128,
+          "outside": 0
+        },
+        {
+          "page": 41,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2132,
+          "outside": 0
+        },
+        {
+          "page": 42,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2131,
+          "outside": 0
+        },
+        {
+          "page": 43,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2128,
+          "outside": 0
+        },
+        {
+          "page": 44,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2132,
+          "outside": 0
+        },
+        {
+          "page": 45,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2131,
+          "outside": 0
+        },
+        {
+          "page": 46,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2128,
+          "outside": 0
+        },
+        {
+          "page": 47,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2132,
+          "outside": 0
+        },
+        {
+          "page": 48,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2131,
+          "outside": 0
+        },
+        {
+          "page": 49,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2128,
+          "outside": 0
+        },
+        {
+          "page": 50,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2132,
+          "outside": 0
+        },
+        {
+          "page": 51,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2131,
+          "outside": 0
+        },
+        {
+          "page": 52,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2128,
+          "outside": 0
+        },
+        {
+          "page": 53,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2132,
+          "outside": 0
+        },
+        {
+          "page": 54,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2131,
+          "outside": 0
+        },
+        {
+          "page": 55,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2128,
+          "outside": 0
+        },
+        {
+          "page": 56,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2132,
+          "outside": 0
+        },
+        {
+          "page": 57,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2131,
+          "outside": 0
+        },
+        {
+          "page": 58,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2128,
+          "outside": 0
+        },
+        {
+          "page": 59,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2132,
+          "outside": 0
+        },
+        {
+          "page": 60,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2131,
+          "outside": 0
+        },
+        {
+          "page": 61,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2128,
+          "outside": 0
+        },
+        {
+          "page": 62,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 2132,
+          "outside": 0
+        },
+        {
+          "page": 63,
+          "width": 419.53,
+          "height": 595.28,
+          "glyphs": 1044,
+          "outside": 0
+        }
+      ],
+      "page_count": 63,
+      "qr_label_count": 1,
+      "addressCharacters": 65535,
+      "termsCharacters": 65535,
+      "fullContentMatch": true,
+      "seconds": 2.573,
+      "allGlyphsWithinPage": true
+    }
+  ],
+  "reuse_condition": "same six source files; same stored PDF hashes reviewed against T017A3 coordinator-render-review.json; cold-FPM timing reused from immutable original evidence, not rerun"
+}

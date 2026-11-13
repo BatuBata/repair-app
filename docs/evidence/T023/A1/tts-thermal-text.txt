@@ -1,0 +1,13 @@
+Anugerah QA
+Jalan Contoh 23, Makassar
+0411-123456
+Tanda terima servis
+TTS-2611-007
+Tanggal terima / jual: 13/11/2026
+Customer: Customer alur T023
+HP: 6281234567890
+Barang: Laptop
+Keluhan: Layar mati QA diperbarui
+Simpan struk ini untuk pengambilan
+barang.
+Pindai untuk melihat status servis

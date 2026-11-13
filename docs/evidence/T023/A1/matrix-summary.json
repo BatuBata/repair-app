@@ -1,0 +1,120 @@
+{
+  "verdict": "captured",
+  "screens": 111,
+  "consoleErrors": [],
+  "statuses": [],
+  "references": [
+    {
+      "name": "dashboard",
+      "reference": "mockup/dashboard.html"
+    },
+    {
+      "name": "tts-new",
+      "reference": "mockup/tts-baru.html"
+    },
+    {
+      "name": "tts-list",
+      "reference": "mockup/tts.html"
+    },
+    {
+      "name": "tts-received",
+      "reference": "mockup/tts-detail.html"
+    },
+    {
+      "name": "tts-edit",
+      "reference": "mockup/tts-baru.html"
+    },
+    {
+      "name": "tts-success",
+      "reference": "mockup/tts-sukses.html"
+    },
+    {
+      "name": "tts-working",
+      "reference": "mockup/tts-detail.html"
+    },
+    {
+      "name": "invoice-form",
+      "reference": "mockup/tts-rincian.html"
+    },
+    {
+      "name": "invoice-correction",
+      "reference": "mockup/tts-rincian.html"
+    },
+    {
+      "name": "tts-invoice",
+      "reference": "mockup/tts-detail.html"
+    },
+    {
+      "name": "tts-collected",
+      "reference": "mockup/tts-detail.html"
+    },
+    {
+      "name": "tts-cancelled",
+      "reference": "mockup/tts-detail.html"
+    },
+    {
+      "name": "tts-receipt",
+      "reference": "mockup/struk.html"
+    },
+    {
+      "name": "invoice-receipt",
+      "reference": "mockup/struk.html"
+    },
+    {
+      "name": "sales-list",
+      "reference": "DESIGN.md shared pattern; no dedicated approved mockup exists"
+    },
+    {
+      "name": "sales-new",
+      "reference": "DESIGN.md shared pattern; no dedicated approved mockup exists"
+    },
+    {
+      "name": "sales-detail",
+      "reference": "DESIGN.md shared pattern; no dedicated approved mockup exists"
+    },
+    {
+      "name": "sales-receipt",
+      "reference": "mockup/struk.html"
+    },
+    {
+      "name": "stock-list",
+      "reference": "DESIGN.md shared pattern; no dedicated approved mockup exists"
+    },
+    {
+      "name": "stock-new",
+      "reference": "DESIGN.md shared pattern; no dedicated approved mockup exists"
+    },
+    {
+      "name": "stock-edit",
+      "reference": "DESIGN.md shared pattern; no dedicated approved mockup exists"
+    },
+    {
+      "name": "stock-restock",
+      "reference": "DESIGN.md shared pattern; no dedicated approved mockup exists"
+    },
+    {
+      "name": "expenses",
+      "reference": "DESIGN.md shared pattern; no dedicated approved mockup exists"
+    },
+    {
+      "name": "reports",
+      "reference": "mockup/laporan.html"
+    },
+    {
+      "name": "store",
+      "reference": "DESIGN.md shared pattern; no dedicated approved mockup exists"
+    },
+    {
+      "name": "categories",
+      "reference": "DESIGN.md shared pattern; no dedicated approved mockup exists"
+    },
+    {
+      "name": "users",
+      "reference": "DESIGN.md shared pattern; no dedicated approved mockup exists"
+    },
+    {
+      "name": "profile",
+      "reference": "DESIGN.md shared pattern; no dedicated approved mockup exists"
+    }
+  ]
+}

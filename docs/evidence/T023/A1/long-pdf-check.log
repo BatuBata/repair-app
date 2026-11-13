@@ -1,0 +1,19 @@
+<?php
+$root = '/Users/muzib/Projects/web/repair-app';
+$tmp = __DIR__;
+$mode = 'long-thermal';
+foreach (['APP_ENV'=>'testing','APP_CONFIG_CACHE'=>$tmp.'/cache/config.php','DB_CONNECTION'=>'sqlite','DB_DATABASE'=>$tmp.'/database.sqlite','SESSION_DRIVER'=>'array','CACHE_STORE'=>'array','LOG_CHANNEL'=>'single'] as $k=>$v) { putenv($k.'='.$v); $_ENV[$k]=$v; $_SERVER[$k]=$v; }
+foreach (['cache','storage/framework/cache/data','storage/framework/views','storage/framework/sessions','storage/logs','public'] as $path) { if (!is_dir($tmp.'/'.$path)) mkdir($tmp.'/'.$path,0700,true); }
+if ($mode === 'setup') { if (is_file($tmp.'/database.sqlite')) throw new RuntimeException('Preserve existing private fixture'); touch($tmp.'/database.sqlite'); }
+require $root.'/vendor/autoload.php';
+$app = require $root.'/bootstrap/app.php';
+$app->useStoragePath($tmp.'/storage');
+$app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+config(['app.url'=>'https://repair.example','database.default'=>'sqlite','database.connections.sqlite.database'=>$tmp.'/database.sqlite','view.compiled'=>$tmp.'/storage/framework/views','session.driver'=>'array','cache.default'=>'array','filesystems.disks.public.root'=>$tmp.'/public','logging.channels.single.path'=>$tmp.'/storage/logs/laravel.log']);
+Illuminate\Support\Facades\DB::purge('sqlite');
+if (config('database.default') !== 'sqlite' || realpath(Illuminate\Support\Facades\DB::connection()->getDatabaseName()) !== realpath($tmp.'/database.sqlite')) throw new RuntimeException('Unsafe database target');
+if ($mode === 'setup') {
+ Illuminate\Support\Facades\Art
+name-a5 2 0.171
+long-thermal 5 2.534
+long-a5 63 2.573

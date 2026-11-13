@@ -1,0 +1,8553 @@
+{
+  "cases": [
+    {
+      "name": "login",
+      "width": 360,
+      "route": "/login",
+      "screenshot": "screens/login-360.png",
+      "pass": true
+    },
+    {
+      "name": "login",
+      "width": 768,
+      "route": "/login",
+      "screenshot": "screens/login-768.png",
+      "pass": true
+    },
+    {
+      "name": "login",
+      "width": 1280,
+      "route": "/login",
+      "screenshot": "screens/login-1280.png",
+      "pass": true
+    },
+    {
+      "name": "dashboard",
+      "width": 360,
+      "route": "/",
+      "screenshot": "screens/dashboard-360.png",
+      "pass": true
+    },
+    {
+      "name": "dashboard",
+      "width": 768,
+      "route": "/",
+      "screenshot": "screens/dashboard-768.png",
+      "pass": true
+    },
+    {
+      "name": "dashboard",
+      "width": 1280,
+      "route": "/",
+      "screenshot": "screens/dashboard-1280.png",
+      "pass": true
+    },
+    {
+      "name": "tts-new",
+      "width": 360,
+      "route": "/tts/baru",
+      "screenshot": "screens/tts-new-360.png",
+      "pass": true
+    },
+    {
+      "name": "tts-new",
+      "width": 768,
+      "route": "/tts/baru",
+      "screenshot": "screens/tts-new-768.png",
+      "pass": true
+    },
+    {
+      "name": "tts-new",
+      "width": 1280,
+      "route": "/tts/baru",
+      "screenshot": "screens/tts-new-1280.png",
+      "pass": true
+    },
+    {
+      "name": "tts-list",
+      "width": 360,
+      "route": "/tts",
+      "screenshot": "screens/tts-list-360.png",
+      "pass": true
+    },
+    {
+      "name": "tts-list",
+      "width": 768,
+      "route": "/tts",
+      "screenshot": "screens/tts-list-768.png",
+      "pass": true
+    },
+    {
+      "name": "tts-list",
+      "width": 1280,
+      "route": "/tts",
+      "screenshot": "screens/tts-list-1280.png",
+      "pass": true
+    },
+    {
+      "name": "tts-received",
+      "width": 360,
+      "route": "/tts/1",
+      "screenshot": "screens/tts-received-360.png",
+      "pass": true
+    },
+    {
+      "name": "tts-received",
+      "width": 768,
+      "route": "/tts/1",
+      "screenshot": "screens/tts-received-768.png",
+      "pass": true
+    },
+    {
+      "name": "tts-received",
+      "width": 1280,
+      "route": "/tts/1",
+      "screenshot": "screens/tts-received-1280.png",
+      "pass": true
+    },
+    {
+      "name": "tts-edit",
+      "width": 360,
+      "route": "/tts/1/edit",
+      "screenshot": "screens/tts-edit-360.png",
+      "pass": true
+    },
+    {
+      "name": "tts-edit",
+      "width": 768,
+      "route": "/tts/1/edit",
+      "screenshot": "screens/tts-edit-768.png",
+      "pass": true
+    },
+    {
+      "name": "tts-edit",
+      "width": 1280,
+      "route": "/tts/1/edit",
+      "screenshot": "screens/tts-edit-1280.png",
+      "pass": true
+    },
+    {
+      "name": "tts-success",
+      "width": 360,
+      "route": "/tts/1/sukses",
+      "screenshot": "screens/tts-success-360.png",
+      "pass": true
+    },
+    {
+      "name": "tts-success",
+      "width": 768,
+      "route": "/tts/1/sukses",
+      "screenshot": "screens/tts-success-768.png",
+      "pass": true
+    },
+    {
+      "name": "tts-success",
+      "width": 1280,
+      "route": "/tts/1/sukses",
+      "screenshot": "screens/tts-success-1280.png",
+      "pass": true
+    },
+    {
+      "name": "tts-working",
+      "width": 360,
+      "route": "/tts/2",
+      "screenshot": "screens/tts-working-360.png",
+      "pass": true
+    },
+    {
+      "name": "tts-working",
+      "width": 768,
+      "route": "/tts/2",
+      "screenshot": "screens/tts-working-768.png",
+      "pass": true
+    },
+    {
+      "name": "tts-working",
+      "width": 1280,
+      "route": "/tts/2",
+      "screenshot": "screens/tts-working-1280.png",
+      "pass": true
+    },
+    {
+      "name": "invoice-form",
+      "width": 360,
+      "route": "/tts/2/rincian",
+      "screenshot": "screens/invoice-form-360.png",
+      "pass": true
+    },
+    {
+      "name": "invoice-form",
+      "width": 768,
+      "route": "/tts/2/rincian",
+      "screenshot": "screens/invoice-form-768.png",
+      "pass": true
+    },
+    {
+      "name": "invoice-form",
+      "width": 1280,
+      "route": "/tts/2/rincian",
+      "screenshot": "screens/invoice-form-1280.png",
+      "pass": true
+    },
+    {
+      "name": "invoice-correction",
+      "width": 360,
+      "route": "/tts/3/rincian",
+      "screenshot": "screens/invoice-correction-360.png",
+      "pass": true
+    },
+    {
+      "name": "invoice-correction",
+      "width": 768,
+      "route": "/tts/3/rincian",
+      "screenshot": "screens/invoice-correction-768.png",
+      "pass": true
+    },
+    {
+      "name": "invoice-correction",
+      "width": 1280,
+      "route": "/tts/3/rincian",
+      "screenshot": "screens/invoice-correction-1280.png",
+      "pass": true
+    },
+    {
+      "name": "tts-invoice",
+      "width": 360,
+      "route": "/tts/3",
+      "screenshot": "screens/tts-invoice-360.png",
+      "pass": true
+    },
+    {
+      "name": "tts-invoice",
+      "width": 768,
+      "route": "/tts/3",
+      "screenshot": "screens/tts-invoice-768.png",
+      "pass": true
+    },
+    {
+      "name": "tts-invoice",
+      "width": 1280,
+      "route": "/tts/3",
+      "screenshot": "screens/tts-invoice-1280.png",
+      "pass": true
+    },
+    {
+      "name": "tts-collected",
+      "width": 360,
+      "route": "/tts/4",
+      "screenshot": "screens/tts-collected-360.png",
+      "pass": true
+    },
+    {
+      "name": "tts-collected",
+      "width": 768,
+      "route": "/tts/4",
+      "screenshot": "screens/tts-collected-768.png",
+      "pass": true
+    },
+    {
+      "name": "tts-collected",
+      "width": 1280,
+      "route": "/tts/4",
+      "screenshot": "screens/tts-collected-1280.png",
+      "pass": true
+    },
+    {
+      "name": "tts-cancelled",
+      "width": 360,
+      "route": "/tts/5",
+      "screenshot": "screens/tts-cancelled-360.png",
+      "pass": true
+    },
+    {
+      "name": "tts-cancelled",
+      "width": 768,
+      "route": "/tts/5",
+      "screenshot": "screens/tts-cancelled-768.png",
+      "pass": true
+    },
+    {
+      "name": "tts-cancelled",
+      "width": 1280,
+      "route": "/tts/5",
+      "screenshot": "screens/tts-cancelled-1280.png",
+      "pass": true
+    },
+    {
+      "name": "tts-receipt",
+      "width": 360,
+      "route": "/tts/1/struk",
+      "screenshot": "screens/tts-receipt-360.png",
+      "pass": true
+    },
+    {
+      "name": "tts-receipt",
+      "width": 768,
+      "route": "/tts/1/struk",
+      "screenshot": "screens/tts-receipt-768.png",
+      "pass": true
+    },
+    {
+      "name": "tts-receipt",
+      "width": 1280,
+      "route": "/tts/1/struk",
+      "screenshot": "screens/tts-receipt-1280.png",
+      "pass": true
+    },
+    {
+      "name": "invoice-receipt",
+      "width": 360,
+      "route": "/tts/3/struk",
+      "screenshot": "screens/invoice-receipt-360.png",
+      "pass": true
+    },
+    {
+      "name": "invoice-receipt",
+      "width": 768,
+      "route": "/tts/3/struk",
+      "screenshot": "screens/invoice-receipt-768.png",
+      "pass": true
+    },
+    {
+      "name": "invoice-receipt",
+      "width": 1280,
+      "route": "/tts/3/struk",
+      "screenshot": "screens/invoice-receipt-1280.png",
+      "pass": true
+    },
+    {
+      "name": "sales-list",
+      "width": 360,
+      "route": "/penjualan",
+      "screenshot": "screens/sales-list-360.png",
+      "pass": true
+    },
+    {
+      "name": "sales-list",
+      "width": 768,
+      "route": "/penjualan",
+      "screenshot": "screens/sales-list-768.png",
+      "pass": true
+    },
+    {
+      "name": "sales-list",
+      "width": 1280,
+      "route": "/penjualan",
+      "screenshot": "screens/sales-list-1280.png",
+      "pass": true
+    },
+    {
+      "name": "sales-new",
+      "width": 360,
+      "route": "/penjualan/baru",
+      "screenshot": "screens/sales-new-360.png",
+      "pass": true
+    },
+    {
+      "name": "sales-new",
+      "width": 768,
+      "route": "/penjualan/baru",
+      "screenshot": "screens/sales-new-768.png",
+      "pass": true
+    },
+    {
+      "name": "sales-new",
+      "width": 1280,
+      "route": "/penjualan/baru",
+      "screenshot": "screens/sales-new-1280.png",
+      "pass": true
+    },
+    {
+      "name": "sales-detail",
+      "width": 360,
+      "route": "/penjualan/1",
+      "screenshot": "screens/sales-detail-360.png",
+      "pass": true
+    },
+    {
+      "name": "sales-detail",
+      "width": 768,
+      "route": "/penjualan/1",
+      "screenshot": "screens/sales-detail-768.png",
+      "pass": true
+    },
+    {
+      "name": "sales-detail",
+      "width": 1280,
+      "route": "/penjualan/1",
+      "screenshot": "screens/sales-detail-1280.png",
+      "pass": true
+    },
+    {
+      "name": "sales-receipt",
+      "width": 360,
+      "route": "/penjualan/1/struk",
+      "screenshot": "screens/sales-receipt-360.png",
+      "pass": true
+    },
+    {
+      "name": "sales-receipt",
+      "width": 768,
+      "route": "/penjualan/1/struk",
+      "screenshot": "screens/sales-receipt-768.png",
+      "pass": true
+    },
+    {
+      "name": "sales-receipt",
+      "width": 1280,
+      "route": "/penjualan/1/struk",
+      "screenshot": "screens/sales-receipt-1280.png",
+      "pass": true
+    },
+    {
+      "name": "stock-list",
+      "width": 360,
+      "route": "/stok",
+      "screenshot": "screens/stock-list-360.png",
+      "pass": true
+    },
+    {
+      "name": "stock-list",
+      "width": 768,
+      "route": "/stok",
+      "screenshot": "screens/stock-list-768.png",
+      "pass": true
+    },
+    {
+      "name": "stock-list",
+      "width": 1280,
+      "route": "/stok",
+      "screenshot": "screens/stock-list-1280.png",
+      "pass": true
+    },
+    {
+      "name": "stock-new",
+      "width": 360,
+      "route": "/stok/baru",
+      "screenshot": "screens/stock-new-360.png",
+      "pass": true
+    },
+    {
+      "name": "stock-new",
+      "width": 768,
+      "route": "/stok/baru",
+      "screenshot": "screens/stock-new-768.png",
+      "pass": true
+    },
+    {
+      "name": "stock-new",
+      "width": 1280,
+      "route": "/stok/baru",
+      "screenshot": "screens/stock-new-1280.png",
+      "pass": true
+    },
+    {
+      "name": "stock-edit",
+      "width": 360,
+      "route": "/stok/1/edit",
+      "screenshot": "screens/stock-edit-360.png",
+      "pass": true
+    },
+    {
+      "name": "stock-edit",
+      "width": 768,
+      "route": "/stok/1/edit",
+      "screenshot": "screens/stock-edit-768.png",
+      "pass": true
+    },
+    {
+      "name": "stock-edit",
+      "width": 1280,
+      "route": "/stok/1/edit",
+      "screenshot": "screens/stock-edit-1280.png",
+      "pass": true
+    },
+    {
+      "name": "stock-restock",
+      "width": 360,
+      "route": "/stok/1/restok",
+      "screenshot": "screens/stock-restock-360.png",
+      "pass": true
+    },
+    {
+      "name": "stock-restock",
+      "width": 768,
+      "route": "/stok/1/restok",
+      "screenshot": "screens/stock-restock-768.png",
+      "pass": true
+    },
+    {
+      "name": "stock-restock",
+      "width": 1280,
+      "route": "/stok/1/restok",
+      "screenshot": "screens/stock-restock-1280.png",
+      "pass": true
+    },
+    {
+      "name": "expenses",
+      "width": 360,
+      "route": "/pengeluaran",
+      "screenshot": "screens/expenses-360.png",
+      "pass": true
+    },
+    {
+      "name": "expenses",
+      "width": 768,
+      "route": "/pengeluaran",
+      "screenshot": "screens/expenses-768.png",
+      "pass": true
+    },
+    {
+      "name": "expenses",
+      "width": 1280,
+      "route": "/pengeluaran",
+      "screenshot": "screens/expenses-1280.png",
+      "pass": true
+    },
+    {
+      "name": "reports",
+      "width": 360,
+      "route": "/laporan",
+      "screenshot": "screens/reports-360.png",
+      "pass": true
+    },
+    {
+      "name": "reports",
+      "width": 768,
+      "route": "/laporan",
+      "screenshot": "screens/reports-768.png",
+      "pass": true
+    },
+    {
+      "name": "reports",
+      "width": 1280,
+      "route": "/laporan",
+      "screenshot": "screens/reports-1280.png",
+      "pass": true
+    },
+    {
+      "name": "store",
+      "width": 360,
+      "route": "/pengaturan/toko",
+      "screenshot": "screens/store-360.png",
+      "pass": true
+    },
+    {
+      "name": "store",
+      "width": 768,
+      "route": "/pengaturan/toko",
+      "screenshot": "screens/store-768.png",
+      "pass": true
+    },
+    {
+      "name": "store",
+      "width": 1280,
+      "route": "/pengaturan/toko",
+      "screenshot": "screens/store-1280.png",
+      "pass": true
+    },
+    {
+      "name": "categories",
+      "width": 360,
+      "route": "/pengaturan/kategori",
+      "screenshot": "screens/categories-360.png",
+      "pass": true
+    },
+    {
+      "name": "categories",
+      "width": 768,
+      "route": "/pengaturan/kategori",
+      "screenshot": "screens/categories-768.png",
+      "pass": true
+    },
+    {
+      "name": "categories",
+      "width": 1280,
+      "route": "/pengaturan/kategori",
+      "screenshot": "screens/categories-1280.png",
+      "pass": true
+    },
+    {
+      "name": "users",
+      "width": 360,
+      "route": "/pengaturan/pengguna",
+      "screenshot": "screens/users-360.png",
+      "pass": true
+    },
+    {
+      "name": "users",
+      "width": 768,
+      "route": "/pengaturan/pengguna",
+      "screenshot": "screens/users-768.png",
+      "pass": true
+    },
+    {
+      "name": "users",
+      "width": 1280,
+      "route": "/pengaturan/pengguna",
+      "screenshot": "screens/users-1280.png",
+      "pass": true
+    },
+    {
+      "name": "profile",
+      "width": 360,
+      "route": "/profil",
+      "screenshot": "screens/profile-360.png",
+      "pass": true
+    },
+    {
+      "name": "profile",
+      "width": 768,
+      "route": "/profil",
+      "screenshot": "screens/profile-768.png",
+      "pass": true
+    },
+    {
+      "name": "profile",
+      "width": 1280,
+      "route": "/profil",
+      "screenshot": "screens/profile-1280.png",
+      "pass": true
+    },
+    {
+      "name": "tracking-received",
+      "width": 360,
+      "route": "/t/[synthetic-token]",
+      "screenshot": "screens/tracking-received-360.png",
+      "pass": true
+    },
+    {
+      "name": "tracking-received",
+      "width": 768,
+      "route": "/t/[synthetic-token]",
+      "screenshot": "screens/tracking-received-768.png",
+      "pass": true
+    },
+    {
+      "name": "tracking-received",
+      "width": 1280,
+      "route": "/t/[synthetic-token]",
+      "screenshot": "screens/tracking-received-1280.png",
+      "pass": true
+    },
+    {
+      "name": "tracking-working",
+      "width": 360,
+      "route": "/t/[synthetic-token]",
+      "screenshot": "screens/tracking-working-360.png",
+      "pass": true
+    },
+    {
+      "name": "tracking-working",
+      "width": 768,
+      "route": "/t/[synthetic-token]",
+      "screenshot": "screens/tracking-working-768.png",
+      "pass": true
+    },
+    {
+      "name": "tracking-working",
+      "width": 1280,
+      "route": "/t/[synthetic-token]",
+      "screenshot": "screens/tracking-working-1280.png",
+      "pass": true
+    },
+    {
+      "name": "tracking-invoice",
+      "width": 360,
+      "route": "/t/[synthetic-token]",
+      "screenshot": "screens/tracking-invoice-360.png",
+      "pass": true
+    },
+    {
+      "name": "tracking-invoice",
+      "width": 768,
+      "route": "/t/[synthetic-token]",
+      "screenshot": "screens/tracking-invoice-768.png",
+      "pass": true
+    },
+    {
+      "name": "tracking-invoice",
+      "width": 1280,
+      "route": "/t/[synthetic-token]",
+      "screenshot": "screens/tracking-invoice-1280.png",
+      "pass": true
+    },
+    {
+      "name": "tracking-collected",
+      "width": 360,
+      "route": "/t/[synthetic-token]",
+      "screenshot": "screens/tracking-collected-360.png",
+      "pass": true
+    },
+    {
+      "name": "tracking-collected",
+      "width": 768,
+      "route": "/t/[synthetic-token]",
+      "screenshot": "screens/tracking-collected-768.png",
+      "pass": true
+    },
+    {
+      "name": "tracking-collected",
+      "width": 1280,
+      "route": "/t/[synthetic-token]",
+      "screenshot": "screens/tracking-collected-1280.png",
+      "pass": true
+    },
+    {
+      "name": "tracking-cancelled",
+      "width": 360,
+      "route": "/t/[synthetic-token]",
+      "screenshot": "screens/tracking-cancelled-360.png",
+      "pass": true
+    },
+    {
+      "name": "tracking-cancelled",
+      "width": 768,
+      "route": "/t/[synthetic-token]",
+      "screenshot": "screens/tracking-cancelled-768.png",
+      "pass": true
+    },
+    {
+      "name": "tracking-cancelled",
+      "width": 1280,
+      "route": "/t/[synthetic-token]",
+      "screenshot": "screens/tracking-cancelled-1280.png",
+      "pass": true
+    },
+    {
+      "name": "tech-list",
+      "width": 360,
+      "route": "/tts",
+      "screenshot": "screens/tech-list-360.png",
+      "pass": true
+    },
+    {
+      "name": "tech-list",
+      "width": 768,
+      "route": "/tts",
+      "screenshot": "screens/tech-list-768.png",
+      "pass": true
+    },
+    {
+      "name": "tech-list",
+      "width": 1280,
+      "route": "/tts",
+      "screenshot": "screens/tech-list-1280.png",
+      "pass": true
+    },
+    {
+      "name": "tech-detail",
+      "width": 360,
+      "route": "/tts/3",
+      "screenshot": "screens/tech-detail-360.png",
+      "pass": true
+    },
+    {
+      "name": "tech-detail",
+      "width": 768,
+      "route": "/tts/3",
+      "screenshot": "screens/tech-detail-768.png",
+      "pass": true
+    },
+    {
+      "name": "tech-detail",
+      "width": 1280,
+      "route": "/tts/3",
+      "screenshot": "screens/tech-detail-1280.png",
+      "pass": true
+    },
+    {
+      "name": "tech-edit",
+      "width": 360,
+      "route": "/tts/1/edit",
+      "screenshot": "screens/tech-edit-360.png",
+      "pass": true
+    },
+    {
+      "name": "tech-edit",
+      "width": 768,
+      "route": "/tts/1/edit",
+      "screenshot": "screens/tech-edit-768.png",
+      "pass": true
+    },
+    {
+      "name": "tech-edit",
+      "width": 1280,
+      "route": "/tts/1/edit",
+      "screenshot": "screens/tech-edit-1280.png",
+      "pass": true
+    }
+  ],
+  "audits": [
+    {
+      "name": "login",
+      "width": 360,
+      "route": "/login",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 22,
+          "height": 22,
+          "classes": ""
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "username",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "password",
+          "type": "password",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "checkbox",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "login",
+      "width": 768,
+      "route": "/login",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 22,
+          "height": 22,
+          "classes": ""
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "username",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "password",
+          "type": "password",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "checkbox",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "login",
+      "width": 1280,
+      "route": "/login",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "username",
+          "width": 322,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "password",
+          "width": 322,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 18,
+          "height": 18,
+          "classes": ""
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "username",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "password",
+          "type": "password",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "checkbox",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "dashboard",
+      "width": 360,
+      "route": "/",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "dashboard",
+      "width": 768,
+      "route": "/",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "dashboard",
+      "width": 1280,
+      "route": "/",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "Buat TTS",
+          "id": "",
+          "width": 112.078125,
+          "height": 36,
+          "classes": "btn primary"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tts-new",
+      "width": 360,
+      "route": "/tts/baru",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "customer_name",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "customer_phone",
+          "type": "tel",
+          "mode": "tel"
+        },
+        {
+          "id": "category-1",
+          "type": "radio",
+          "mode": ""
+        },
+        {
+          "id": "category-2",
+          "type": "radio",
+          "mode": ""
+        },
+        {
+          "id": "item_description",
+          "type": "text",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Simpan TTS",
+          "top": 776,
+          "bottom": 824,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tts-new",
+      "width": 768,
+      "route": "/tts/baru",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "customer_name",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "customer_phone",
+          "type": "tel",
+          "mode": "tel"
+        },
+        {
+          "id": "category-1",
+          "type": "radio",
+          "mode": ""
+        },
+        {
+          "id": "category-2",
+          "type": "radio",
+          "mode": ""
+        },
+        {
+          "id": "item_description",
+          "type": "text",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Simpan TTS",
+          "top": 900,
+          "bottom": 948,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tts-new",
+      "width": 1280,
+      "route": "/tts/baru",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "customer_name",
+          "width": 560,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "customer_phone",
+          "width": 560,
+          "height": 40,
+          "classes": "input num"
+        },
+        {
+          "tag": "SUMMARY",
+          "text": "Keterangan barang & alamat\nopsional",
+          "id": "",
+          "width": 256.40625,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "item_description",
+          "width": 560,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Simpan TTS",
+          "id": "",
+          "width": 106.515625,
+          "height": 36,
+          "classes": "btn primary"
+        },
+        {
+          "tag": "A",
+          "text": "Batal",
+          "id": "",
+          "width": 63.65625,
+          "height": 36,
+          "classes": "btn ghost"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        },
+        {
+          "id": "customer_name",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "customer_phone",
+          "type": "tel",
+          "mode": "tel"
+        },
+        {
+          "id": "category-1",
+          "type": "radio",
+          "mode": ""
+        },
+        {
+          "id": "category-2",
+          "type": "radio",
+          "mode": ""
+        },
+        {
+          "id": "item_description",
+          "type": "text",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tts-list",
+      "width": 360,
+      "route": "/tts",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "tts-list",
+      "width": 768,
+      "route": "/tts",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "tts-list",
+      "width": 1280,
+      "route": "/tts",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "Buat TTS",
+          "id": "",
+          "width": 112.078125,
+          "height": 36,
+          "classes": "btn primary"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Semua",
+          "id": "",
+          "width": 44.3125,
+          "height": 40,
+          "classes": "active"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Diterima",
+          "id": "",
+          "width": 53.78125,
+          "height": 40,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Dikerjakan",
+          "id": "",
+          "width": 66.578125,
+          "height": 40,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Selesai",
+          "id": "",
+          "width": 45.109375,
+          "height": 40,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Diambil",
+          "id": "",
+          "width": 48.03125,
+          "height": 40,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Batal",
+          "id": "",
+          "width": 32.828125,
+          "height": 40,
+          "classes": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 300,
+          "height": 34,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm act-btn"
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-006",
+          "id": "",
+          "width": 99.125,
+          "height": 18,
+          "classes": "id"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm act-btn"
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-005",
+          "id": "",
+          "width": 99.125,
+          "height": 18,
+          "classes": "id"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm act-btn"
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-004",
+          "id": "",
+          "width": 99.125,
+          "height": 18,
+          "classes": "id"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm act-btn"
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-003",
+          "id": "",
+          "width": 99.125,
+          "height": 18,
+          "classes": "id"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm act-btn"
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-002",
+          "id": "",
+          "width": 99.125,
+          "height": 18,
+          "classes": "id"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm act-btn"
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-001",
+          "id": "",
+          "width": 99.125,
+          "height": 18,
+          "classes": "id"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "tts-received",
+      "width": 360,
+      "route": "/tts/1",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "",
+          "top": 778,
+          "bottom": 822,
+          "height": 44
+        },
+        {
+          "text": "Tetapkan teknisi",
+          "top": 776,
+          "bottom": 824,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tts-received",
+      "width": 768,
+      "route": "/tts/1",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "",
+          "top": 902,
+          "bottom": 946,
+          "height": 44
+        },
+        {
+          "text": "Tetapkan teknisi",
+          "top": 900,
+          "bottom": 948,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tts-received",
+      "width": 1280,
+      "route": "/tts/1",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 58.3125,
+          "height": 20,
+          "classes": "crumb"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm act-btn"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Tetapkan teknisi",
+          "id": "",
+          "width": 135.71875,
+          "height": 36,
+          "classes": "btn primary"
+        },
+        {
+          "tag": "SELECT",
+          "text": "Pilih teknisi aktif\nRizky QA",
+          "id": "technician_id",
+          "width": 268,
+          "height": 40,
+          "classes": "select"
+        },
+        {
+          "tag": "A",
+          "text": "Kirim WA",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "Cetak struk",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "PDF struk",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "PDF A5",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tts-edit",
+      "width": 360,
+      "route": "/tts/1/edit",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "customer_name",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "customer_phone",
+          "type": "tel",
+          "mode": "tel"
+        },
+        {
+          "id": "category-1",
+          "type": "radio",
+          "mode": ""
+        },
+        {
+          "id": "category-2",
+          "type": "radio",
+          "mode": ""
+        },
+        {
+          "id": "item_description",
+          "type": "text",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Simpan perubahan",
+          "top": 776,
+          "bottom": 824,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tts-edit",
+      "width": 768,
+      "route": "/tts/1/edit",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "customer_name",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "customer_phone",
+          "type": "tel",
+          "mode": "tel"
+        },
+        {
+          "id": "category-1",
+          "type": "radio",
+          "mode": ""
+        },
+        {
+          "id": "category-2",
+          "type": "radio",
+          "mode": ""
+        },
+        {
+          "id": "item_description",
+          "type": "text",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Simpan perubahan",
+          "top": 900,
+          "bottom": 948,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tts-edit",
+      "width": 1280,
+      "route": "/tts/1/edit",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "customer_name",
+          "width": 560,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "customer_phone",
+          "width": 560,
+          "height": 40,
+          "classes": "input num"
+        },
+        {
+          "tag": "SUMMARY",
+          "text": "Keterangan barang & alamat\nopsional",
+          "id": "",
+          "width": 256.40625,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "item_description",
+          "width": 560,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Simpan perubahan",
+          "id": "",
+          "width": 151.296875,
+          "height": 36,
+          "classes": "btn primary"
+        },
+        {
+          "tag": "A",
+          "text": "Batal",
+          "id": "",
+          "width": 63.65625,
+          "height": 36,
+          "classes": "btn ghost"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        },
+        {
+          "id": "customer_name",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "customer_phone",
+          "type": "tel",
+          "mode": "tel"
+        },
+        {
+          "id": "category-1",
+          "type": "radio",
+          "mode": ""
+        },
+        {
+          "id": "category-2",
+          "type": "radio",
+          "mode": ""
+        },
+        {
+          "id": "item_description",
+          "type": "text",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tts-success",
+      "width": 360,
+      "route": "/tts/1/sukses",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tts-success",
+      "width": 768,
+      "route": "/tts/1/sukses",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tts-success",
+      "width": 1280,
+      "route": "/tts/1/sukses",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "Kirim WA",
+          "id": "",
+          "width": 560,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "Cetak struk",
+          "id": "",
+          "width": 560,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "PDF struk",
+          "id": "",
+          "width": 560,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "PDF A5",
+          "id": "",
+          "width": 560,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "Buat TTS lagi",
+          "id": "",
+          "width": 560,
+          "height": 36,
+          "classes": "btn primary block"
+        },
+        {
+          "tag": "A",
+          "text": "Lihat TTS",
+          "id": "",
+          "width": 560,
+          "height": 36,
+          "classes": "btn"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tts-working",
+      "width": 360,
+      "route": "/tts/2",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "",
+          "top": 778,
+          "bottom": 822,
+          "height": 44
+        },
+        {
+          "text": "Isi rincian & nota",
+          "top": 776,
+          "bottom": 824,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tts-working",
+      "width": 768,
+      "route": "/tts/2",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "",
+          "top": 902,
+          "bottom": 946,
+          "height": 44
+        },
+        {
+          "text": "Isi rincian & nota",
+          "top": 900,
+          "bottom": 948,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tts-working",
+      "width": 1280,
+      "route": "/tts/2",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 58.3125,
+          "height": 20,
+          "classes": "crumb"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm act-btn"
+        },
+        {
+          "tag": "A",
+          "text": "Isi rincian & nota",
+          "id": "",
+          "width": 138.78125,
+          "height": 36,
+          "classes": "btn primary"
+        },
+        {
+          "tag": "SELECT",
+          "text": "Pilih teknisi aktif\nRizky QA",
+          "id": "technician_id",
+          "width": 268,
+          "height": 40,
+          "classes": "select"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Simpan teknisi",
+          "id": "",
+          "width": 268,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "Kirim WA",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "Cetak struk",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "PDF struk",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "PDF A5",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "invoice-form",
+      "width": 360,
+      "route": "/tts/2/rincian",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 22,
+          "height": 22,
+          "classes": ""
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "warranty_days",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "checkbox",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Terbitkan nota",
+          "top": 776,
+          "bottom": 824,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "invoice-form",
+      "width": 768,
+      "route": "/tts/2/rincian",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 22,
+          "height": 22,
+          "classes": ""
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "warranty_days",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "checkbox",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Terbitkan nota",
+          "top": 900,
+          "bottom": 948,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "invoice-form",
+      "width": 1280,
+      "route": "/tts/2/rincian",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-002",
+          "id": "",
+          "width": 114.4375,
+          "height": 20,
+          "classes": "crumb"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "icon-btn"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Part",
+          "id": "",
+          "width": 50.828125,
+          "height": 36,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Jasa",
+          "id": "",
+          "width": 53.734375,
+          "height": 36,
+          "classes": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 80,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 72,
+          "height": 40,
+          "classes": "input num"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 140,
+          "height": 40,
+          "classes": "input money"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 140,
+          "height": 40,
+          "classes": "input money"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Tambah baris",
+          "id": "",
+          "width": 126.5,
+          "height": 36,
+          "classes": "btn ghost"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "warranty_days",
+          "width": 96,
+          "height": 40,
+          "classes": "input num"
+        },
+        {
+          "tag": "LABEL",
+          "text": "Tidak dapat diperbaiki\nTercetak di nota. Biaya cek tetap boleh ditagih.",
+          "id": "",
+          "width": 644,
+          "height": 40,
+          "classes": "check"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 18,
+          "height": 18,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Terbitkan nota",
+          "id": "",
+          "width": 268,
+          "height": 36,
+          "classes": "btn primary desktop-only"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "warranty_days",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "checkbox",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "invoice-correction",
+      "width": 360,
+      "route": "/tts/3/rincian",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 22,
+          "height": 22,
+          "classes": ""
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "warranty_days",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "checkbox",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Simpan koreksi",
+          "top": 776,
+          "bottom": 824,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "invoice-correction",
+      "width": 768,
+      "route": "/tts/3/rincian",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 22,
+          "height": 22,
+          "classes": ""
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "warranty_days",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "checkbox",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Simpan koreksi",
+          "top": 900,
+          "bottom": 948,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "invoice-correction",
+      "width": 1280,
+      "route": "/tts/3/rincian",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-003",
+          "id": "",
+          "width": 114.4375,
+          "height": 20,
+          "classes": "crumb"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "icon-btn"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Part",
+          "id": "",
+          "width": 50.828125,
+          "height": 36,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Jasa",
+          "id": "",
+          "width": 53.734375,
+          "height": 36,
+          "classes": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 80,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 72,
+          "height": 40,
+          "classes": "input num"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 140,
+          "height": 40,
+          "classes": "input money"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 140,
+          "height": 40,
+          "classes": "input money"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "icon-btn"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Part",
+          "id": "",
+          "width": 50.828125,
+          "height": 36,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Jasa",
+          "id": "",
+          "width": 53.734375,
+          "height": 36,
+          "classes": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 80,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 72,
+          "height": 40,
+          "classes": "input num"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 140,
+          "height": 40,
+          "classes": "input money"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Tambah baris",
+          "id": "",
+          "width": 126.5,
+          "height": 36,
+          "classes": "btn ghost"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "warranty_days",
+          "width": 96,
+          "height": 40,
+          "classes": "input num"
+        },
+        {
+          "tag": "LABEL",
+          "text": "Tidak dapat diperbaiki\nTercetak di nota. Biaya cek tetap boleh ditagih.",
+          "id": "",
+          "width": 644,
+          "height": 40,
+          "classes": "check"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 18,
+          "height": 18,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Simpan koreksi",
+          "id": "",
+          "width": 268,
+          "height": 36,
+          "classes": "btn primary desktop-only"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "warranty_days",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "checkbox",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tts-invoice",
+      "width": 360,
+      "route": "/tts/3",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "picked_up_on",
+          "type": "date",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "",
+          "top": 778,
+          "bottom": 822,
+          "height": 44
+        },
+        {
+          "text": "Tandai Diambil",
+          "top": 776,
+          "bottom": 824,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "c-who"
+        },
+        {
+          "firstCellClass": "c-who"
+        }
+      ]
+    },
+    {
+      "name": "tts-invoice",
+      "width": 768,
+      "route": "/tts/3",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "picked_up_on",
+          "type": "date",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "",
+          "top": 902,
+          "bottom": 946,
+          "height": 44
+        },
+        {
+          "text": "Tandai Diambil",
+          "top": 900,
+          "bottom": 948,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "c-who"
+        },
+        {
+          "firstCellClass": "c-who"
+        }
+      ]
+    },
+    {
+      "name": "tts-invoice",
+      "width": 1280,
+      "route": "/tts/3",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 58.3125,
+          "height": 20,
+          "classes": "crumb"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm act-btn"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Tandai Diambil",
+          "id": "",
+          "width": 125.171875,
+          "height": 36,
+          "classes": "btn primary"
+        },
+        {
+          "tag": "A",
+          "text": "Koreksi nota",
+          "id": "",
+          "width": 110.03125,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "picked_up_on",
+          "width": 268,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "A",
+          "text": "Kirim WA",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "Cetak struk",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "PDF struk",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "PDF A5",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        },
+        {
+          "id": "picked_up_on",
+          "type": "date",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "c-who"
+        },
+        {
+          "firstCellClass": "c-who"
+        }
+      ]
+    },
+    {
+      "name": "tts-collected",
+      "width": 360,
+      "route": "/tts/4",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "",
+          "top": 778,
+          "bottom": 822,
+          "height": 44
+        },
+        {
+          "text": "Koreksi nota",
+          "top": 776,
+          "bottom": 824,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "c-who"
+        },
+        {
+          "firstCellClass": "c-who"
+        }
+      ]
+    },
+    {
+      "name": "tts-collected",
+      "width": 768,
+      "route": "/tts/4",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "",
+          "top": 902,
+          "bottom": 946,
+          "height": 44
+        },
+        {
+          "text": "Koreksi nota",
+          "top": 900,
+          "bottom": 948,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "c-who"
+        },
+        {
+          "firstCellClass": "c-who"
+        }
+      ]
+    },
+    {
+      "name": "tts-collected",
+      "width": 1280,
+      "route": "/tts/4",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 58.3125,
+          "height": 20,
+          "classes": "crumb"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm act-btn"
+        },
+        {
+          "tag": "A",
+          "text": "Koreksi nota",
+          "id": "",
+          "width": 110.03125,
+          "height": 36,
+          "classes": "btn primary"
+        },
+        {
+          "tag": "A",
+          "text": "Koreksi nota",
+          "id": "",
+          "width": 110.03125,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "Kirim WA",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "Cetak struk",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "PDF struk",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "PDF A5",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "c-who"
+        },
+        {
+          "firstCellClass": "c-who"
+        }
+      ]
+    },
+    {
+      "name": "tts-cancelled",
+      "width": 360,
+      "route": "/tts/5",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "",
+          "top": 780,
+          "bottom": 824,
+          "height": 44
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tts-cancelled",
+      "width": 768,
+      "route": "/tts/5",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "",
+          "top": 904,
+          "bottom": 948,
+          "height": 44
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tts-cancelled",
+      "width": 1280,
+      "route": "/tts/5",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 58.3125,
+          "height": 20,
+          "classes": "crumb"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm act-btn"
+        },
+        {
+          "tag": "A",
+          "text": "Kirim WA",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "Cetak struk",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "PDF struk",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "PDF A5",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tts-receipt",
+      "width": 360,
+      "route": "/tts/1/struk",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "Plex, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tts-receipt",
+      "width": 768,
+      "route": "/tts/1/struk",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "Plex, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tts-receipt",
+      "width": 1280,
+      "route": "/tts/1/struk",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "Plex, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "invoice-receipt",
+      "width": 360,
+      "route": "/tts/3/struk",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "Plex, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "invoice-receipt",
+      "width": 768,
+      "route": "/tts/3/struk",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "Plex, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "invoice-receipt",
+      "width": 1280,
+      "route": "/tts/3/struk",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "Plex, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "sales-list",
+      "width": 360,
+      "route": "/penjualan",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Buat penjualan",
+          "top": 776,
+          "bottom": 824,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "sales-list",
+      "width": 768,
+      "route": "/penjualan",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Buat penjualan",
+          "top": 900,
+          "bottom": 948,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "sales-list",
+      "width": 1280,
+      "route": "/penjualan",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "Buat penjualan",
+          "id": "",
+          "width": 126.90625,
+          "height": 36,
+          "classes": "btn primary desktop-only"
+        },
+        {
+          "tag": "A",
+          "text": "Lihat",
+          "id": "",
+          "width": 53.78125,
+          "height": 32,
+          "classes": "btn sm"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "sales-new",
+      "width": 360,
+      "route": "/penjualan/baru",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "date",
+          "mode": "text"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "text"
+        },
+        {
+          "id": "",
+          "type": "tel",
+          "mode": "tel"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Simpan penjualan",
+          "top": 776,
+          "bottom": 824,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "sales-new",
+      "width": 768,
+      "route": "/penjualan/baru",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "date",
+          "mode": "text"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "text"
+        },
+        {
+          "id": "",
+          "type": "tel",
+          "mode": "tel"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Simpan penjualan",
+          "top": 900,
+          "bottom": 948,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "sales-new",
+      "width": 1280,
+      "route": "/penjualan/baru",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 368,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 368,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 368,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 368,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Tambah barang",
+          "id": "",
+          "width": 129.09375,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 46,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "SELECT",
+          "text": "Pilih barang\nPrinter Canon bekas · 4 unit",
+          "id": "",
+          "width": 642,
+          "height": 40,
+          "classes": "select"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 88,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 168,
+          "height": 40,
+          "classes": "input money"
+        },
+        {
+          "tag": "A",
+          "text": "Batal",
+          "id": "",
+          "width": 63.65625,
+          "height": 36,
+          "classes": "btn ghost"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Simpan penjualan",
+          "id": "",
+          "width": 145.34375,
+          "height": 36,
+          "classes": "btn primary desktop-only"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "date",
+          "mode": "text"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "text"
+        },
+        {
+          "id": "",
+          "type": "tel",
+          "mode": "tel"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "sales-detail",
+      "width": 360,
+      "route": "/penjualan/1",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "item-name"
+        }
+      ]
+    },
+    {
+      "name": "sales-detail",
+      "width": 768,
+      "route": "/penjualan/1",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "item-name"
+        }
+      ]
+    },
+    {
+      "name": "sales-detail",
+      "width": 1280,
+      "route": "/penjualan/1",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "Cetak struk",
+          "id": "",
+          "width": 103.5,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "PDF struk",
+          "id": "",
+          "width": 92.703125,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "PDF A5",
+          "id": "",
+          "width": 77.25,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "Kembali ke penjualan",
+          "id": "",
+          "width": 167.9375,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Hapus penjualan",
+          "id": "",
+          "width": 137.8125,
+          "height": 36,
+          "classes": "btn danger"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "item-name"
+        }
+      ]
+    },
+    {
+      "name": "sales-receipt",
+      "width": 360,
+      "route": "/penjualan/1/struk",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "Plex, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "sales-receipt",
+      "width": 768,
+      "route": "/penjualan/1/struk",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "Plex, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "sales-receipt",
+      "width": 1280,
+      "route": "/penjualan/1/struk",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "Plex, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "stock-list",
+      "width": 360,
+      "route": "/stok",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Tambah barang",
+          "top": 776,
+          "bottom": 824,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "stock-list",
+      "width": 768,
+      "route": "/stok",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Tambah barang",
+          "top": 900,
+          "bottom": 948,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "stock-list",
+      "width": 1280,
+      "route": "/stok",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "Tambah barang",
+          "id": "",
+          "width": 129.09375,
+          "height": 36,
+          "classes": "btn primary desktop-only"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm act-btn"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "stock-new",
+      "width": 360,
+      "route": "/stok/baru",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Simpan barang",
+          "top": 776,
+          "bottom": 824,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "stock-new",
+      "width": 768,
+      "route": "/stok/baru",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Simpan barang",
+          "top": 900,
+          "bottom": 948,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "stock-new",
+      "width": 1280,
+      "route": "/stok/baru",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 560,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 560,
+          "height": 40,
+          "classes": "input money"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 560,
+          "height": 40,
+          "classes": "input money"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 560,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "A",
+          "text": "Batal",
+          "id": "",
+          "width": 63.65625,
+          "height": 36,
+          "classes": "btn ghost"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Simpan barang",
+          "id": "",
+          "width": 126.40625,
+          "height": 36,
+          "classes": "btn primary desktop-only"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "stock-edit",
+      "width": 360,
+      "route": "/stok/1/edit",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Simpan barang",
+          "top": 776,
+          "bottom": 824,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "stock-edit",
+      "width": 768,
+      "route": "/stok/1/edit",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Simpan barang",
+          "top": 900,
+          "bottom": 948,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "stock-edit",
+      "width": 1280,
+      "route": "/stok/1/edit",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 560,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 560,
+          "height": 40,
+          "classes": "input money"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 560,
+          "height": 40,
+          "classes": "input money"
+        },
+        {
+          "tag": "A",
+          "text": "Restok & riwayat",
+          "id": "",
+          "width": 138.09375,
+          "height": 36,
+          "classes": "btn ghost"
+        },
+        {
+          "tag": "A",
+          "text": "Batal",
+          "id": "",
+          "width": 63.65625,
+          "height": 36,
+          "classes": "btn ghost"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Simpan barang",
+          "id": "",
+          "width": 126.40625,
+          "height": 36,
+          "classes": "btn primary desktop-only"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "stock-restock",
+      "width": 360,
+      "route": "/stok/1/restok",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "date",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Simpan restok",
+          "top": 776,
+          "bottom": 824,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "empty-cell"
+        }
+      ]
+    },
+    {
+      "name": "stock-restock",
+      "width": 768,
+      "route": "/stok/1/restok",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "date",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Simpan restok",
+          "top": 900,
+          "bottom": 948,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "empty-cell"
+        }
+      ]
+    },
+    {
+      "name": "stock-restock",
+      "width": 1280,
+      "route": "/stok/1/restok",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 560,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 560,
+          "height": 40,
+          "classes": "input money"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 560,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 560,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "A",
+          "text": "Kembali ke stok",
+          "id": "",
+          "width": 131.859375,
+          "height": 36,
+          "classes": "btn ghost"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Simpan restok",
+          "id": "",
+          "width": 122.328125,
+          "height": 36,
+          "classes": "btn primary desktop-only"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": "numeric"
+        },
+        {
+          "id": "",
+          "type": "date",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "empty-cell"
+        }
+      ]
+    },
+    {
+      "name": "expenses",
+      "width": 360,
+      "route": "/pengeluaran",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "date",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "date",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Tambah pengeluaran",
+          "top": 776,
+          "bottom": 824,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "expenses",
+      "width": 768,
+      "route": "/pengeluaran",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "date",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "date",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Tambah pengeluaran",
+          "top": 900,
+          "bottom": 948,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "expenses",
+      "width": 1280,
+      "route": "/pengeluaran",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Tambah pengeluaran",
+          "id": "",
+          "width": 164.78125,
+          "height": 36,
+          "classes": "btn primary desktop-only"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 372,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 372,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm act-btn"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm act-btn"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "date",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "date",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "reports",
+      "width": 360,
+      "route": "/laporan",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "TTS-2611-003",
+          "id": "",
+          "width": 108.421875,
+          "height": 20,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-004",
+          "id": "",
+          "width": 108.421875,
+          "height": 20,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "JL-2611-001",
+          "id": "",
+          "width": 96.140625,
+          "height": 20,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-006",
+          "id": "",
+          "width": 108.421875,
+          "height": 20,
+          "classes": ""
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "date",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "date",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "reports",
+      "width": 768,
+      "route": "/laporan",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "TTS-2611-003",
+          "id": "",
+          "width": 108.421875,
+          "height": 20,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-004",
+          "id": "",
+          "width": 108.421875,
+          "height": 20,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "JL-2611-001",
+          "id": "",
+          "width": 96.140625,
+          "height": 20,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-006",
+          "id": "",
+          "width": 108.421875,
+          "height": 20,
+          "classes": ""
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "date",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "date",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "reports",
+      "width": 1280,
+      "route": "/laporan",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Hari ini",
+          "id": "",
+          "width": 69.609375,
+          "height": 28,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "7 hari",
+          "id": "",
+          "width": 60.59375,
+          "height": 28,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Bulan ini",
+          "id": "",
+          "width": 80,
+          "height": 28,
+          "classes": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 162,
+          "height": 40,
+          "classes": "input num"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 162,
+          "height": 40,
+          "classes": "input num"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "1",
+          "id": "",
+          "width": 35.421875,
+          "height": 248,
+          "classes": "chart-hit"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "2",
+          "id": "",
+          "width": 35.4375,
+          "height": 248,
+          "classes": "chart-hit"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "3",
+          "id": "",
+          "width": 35.421875,
+          "height": 248,
+          "classes": "chart-hit"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "4",
+          "id": "",
+          "width": 35.421875,
+          "height": 248,
+          "classes": "chart-hit"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "5",
+          "id": "",
+          "width": 35.421875,
+          "height": 248,
+          "classes": "chart-hit"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "6",
+          "id": "",
+          "width": 35.421875,
+          "height": 248,
+          "classes": "chart-hit"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "7",
+          "id": "",
+          "width": 35.421875,
+          "height": 248,
+          "classes": "chart-hit"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "8",
+          "id": "",
+          "width": 35.421875,
+          "height": 248,
+          "classes": "chart-hit"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "9",
+          "id": "",
+          "width": 35.421875,
+          "height": 248,
+          "classes": "chart-hit"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "10",
+          "id": "",
+          "width": 35.421875,
+          "height": 248,
+          "classes": "chart-hit"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "11",
+          "id": "",
+          "width": 35.421875,
+          "height": 248,
+          "classes": "chart-hit"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "12",
+          "id": "",
+          "width": 35.421875,
+          "height": 248,
+          "classes": "chart-hit"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "13",
+          "id": "",
+          "width": 35.421875,
+          "height": 248,
+          "classes": "chart-hit"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Semua",
+          "id": "",
+          "width": 44.3125,
+          "height": 40,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Servis",
+          "id": "",
+          "width": 38.3125,
+          "height": 40,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Penjualan",
+          "id": "",
+          "width": 62.015625,
+          "height": 40,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 78.59375,
+          "height": 40,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "report-view-servis-3",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm report-detail"
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-003",
+          "id": "",
+          "width": 94.4375,
+          "height": 18,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "report-view-servis-4",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm report-detail"
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-004",
+          "id": "",
+          "width": 94.4375,
+          "height": 18,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "report-view-jual-1",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm report-detail"
+        },
+        {
+          "tag": "A",
+          "text": "JL-2611-001",
+          "id": "",
+          "width": 83.578125,
+          "height": 18,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "report-view-keluar-1",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm report-detail"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "report-view-keluar-2",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm report-detail"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "report-view-servis-6",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm report-detail"
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-006",
+          "id": "",
+          "width": 94.4375,
+          "height": 18,
+          "classes": ""
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "date",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "date",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "store",
+      "width": 360,
+      "route": "/pengaturan/toko",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "tel",
+          "mode": "tel"
+        },
+        {
+          "id": "",
+          "type": "file",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "number",
+          "mode": "numeric"
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Simpan pengaturan toko",
+          "top": 776,
+          "bottom": 824,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "store",
+      "width": 768,
+      "route": "/pengaturan/toko",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "tel",
+          "mode": "tel"
+        },
+        {
+          "id": "",
+          "type": "file",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "number",
+          "mode": "numeric"
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Simpan pengaturan toko",
+          "top": 900,
+          "bottom": 948,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "store",
+      "width": 1280,
+      "route": "/pengaturan/toko",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 560,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 560,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 560,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 560,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Simpan pengaturan toko",
+          "id": "",
+          "width": 186.921875,
+          "height": 36,
+          "classes": "btn primary desktop-only"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "tel",
+          "mode": "tel"
+        },
+        {
+          "id": "",
+          "type": "file",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "number",
+          "mode": "numeric"
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "categories",
+      "width": 360,
+      "route": "/pengaturan/kategori",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Tambah kategori",
+          "top": 776,
+          "bottom": 824,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "categories",
+      "width": 768,
+      "route": "/pengaturan/kategori",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Tambah kategori",
+          "top": 900,
+          "bottom": 948,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "categories",
+      "width": 1280,
+      "route": "/pengaturan/kategori",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Tambah kategori",
+          "id": "",
+          "width": 137.03125,
+          "height": 36,
+          "classes": "btn primary desktop-only"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm act-btn"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm act-btn"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "users",
+      "width": 360,
+      "route": "/pengaturan/pengguna",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Tambah pengguna",
+          "top": 776,
+          "bottom": 824,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "users",
+      "width": 768,
+      "route": "/pengaturan/pengguna",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Tambah pengguna",
+          "top": 900,
+          "bottom": 948,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "users",
+      "width": 1280,
+      "route": "/pengaturan/pengguna",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Tambah pengguna",
+          "id": "",
+          "width": 147.703125,
+          "height": 36,
+          "classes": "btn primary desktop-only"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm act-btn"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm act-btn"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "profile",
+      "width": 360,
+      "route": "/profil",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "password",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "password",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "password",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Simpan password",
+          "top": 776,
+          "bottom": 824,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "profile",
+      "width": 768,
+      "route": "/profil",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "password",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "password",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "password",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Simpan password",
+          "top": 900,
+          "bottom": 948,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "profile",
+      "width": 1280,
+      "route": "/profil",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Beranda",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Penjualan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Stok barang",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengeluaran",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Laporan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Pengaturan",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 560,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 560,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 560,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Simpan password",
+          "id": "",
+          "width": 560,
+          "height": 36,
+          "classes": "btn primary desktop-only"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 71.828125,
+          "height": 36,
+          "classes": "btn"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "password",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "password",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "password",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tracking-received",
+      "width": 360,
+      "route": "/t/[synthetic-token]",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tracking-received",
+      "width": 768,
+      "route": "/t/[synthetic-token]",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tracking-received",
+      "width": 1280,
+      "route": "/t/[synthetic-token]",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tracking-working",
+      "width": 360,
+      "route": "/t/[synthetic-token]",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tracking-working",
+      "width": 768,
+      "route": "/t/[synthetic-token]",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tracking-working",
+      "width": 1280,
+      "route": "/t/[synthetic-token]",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tracking-invoice",
+      "width": 360,
+      "route": "/t/[synthetic-token]",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tracking-invoice",
+      "width": 768,
+      "route": "/t/[synthetic-token]",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tracking-invoice",
+      "width": 1280,
+      "route": "/t/[synthetic-token]",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tracking-collected",
+      "width": 360,
+      "route": "/t/[synthetic-token]",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tracking-collected",
+      "width": 768,
+      "route": "/t/[synthetic-token]",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tracking-collected",
+      "width": 1280,
+      "route": "/t/[synthetic-token]",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tracking-cancelled",
+      "width": 360,
+      "route": "/t/[synthetic-token]",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tracking-cancelled",
+      "width": 768,
+      "route": "/t/[synthetic-token]",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tracking-cancelled",
+      "width": 1280,
+      "route": "/t/[synthetic-token]",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tech-list",
+      "width": 360,
+      "route": "/tts",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "tech-list",
+      "width": 768,
+      "route": "/tts",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "tech-list",
+      "width": 1280,
+      "route": "/tts",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Buat TTS",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Daftar TTS",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Profil",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "Buat TTS",
+          "id": "",
+          "width": 112.078125,
+          "height": 36,
+          "classes": "btn primary"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Semua",
+          "id": "",
+          "width": 44.3125,
+          "height": 40,
+          "classes": "active"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Diterima",
+          "id": "",
+          "width": 53.78125,
+          "height": 40,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Dikerjakan",
+          "id": "",
+          "width": 66.578125,
+          "height": 40,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Selesai",
+          "id": "",
+          "width": 45.109375,
+          "height": 40,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Diambil",
+          "id": "",
+          "width": 48.03125,
+          "height": 40,
+          "classes": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Batal",
+          "id": "",
+          "width": 32.828125,
+          "height": 40,
+          "classes": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 300,
+          "height": 34,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "Lihat",
+          "id": "",
+          "width": 53.78125,
+          "height": 32,
+          "classes": "btn sm"
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-006",
+          "id": "",
+          "width": 99.125,
+          "height": 18,
+          "classes": "id"
+        },
+        {
+          "tag": "A",
+          "text": "Lihat",
+          "id": "",
+          "width": 53.78125,
+          "height": 32,
+          "classes": "btn sm"
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-005",
+          "id": "",
+          "width": 99.125,
+          "height": 18,
+          "classes": "id"
+        },
+        {
+          "tag": "A",
+          "text": "Lihat",
+          "id": "",
+          "width": 53.78125,
+          "height": 32,
+          "classes": "btn sm"
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-004",
+          "id": "",
+          "width": 99.125,
+          "height": 18,
+          "classes": "id"
+        },
+        {
+          "tag": "A",
+          "text": "Lihat",
+          "id": "",
+          "width": 53.78125,
+          "height": 32,
+          "classes": "btn sm"
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-003",
+          "id": "",
+          "width": 99.125,
+          "height": 18,
+          "classes": "id"
+        },
+        {
+          "tag": "A",
+          "text": "Lihat",
+          "id": "",
+          "width": 53.78125,
+          "height": 32,
+          "classes": "btn sm"
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-002",
+          "id": "",
+          "width": 99.125,
+          "height": 18,
+          "classes": "id"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "id": "",
+          "width": 32,
+          "height": 32,
+          "classes": "btn sm act-btn"
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-001",
+          "id": "",
+          "width": 99.125,
+          "height": 18,
+          "classes": "id"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        },
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": [
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        },
+        {
+          "firstCellClass": "act"
+        }
+      ]
+    },
+    {
+      "name": "tech-detail",
+      "width": 360,
+      "route": "/tts/3",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tech-detail",
+      "width": 768,
+      "route": "/tts/3",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tech-detail",
+      "width": 1280,
+      "route": "/tts/3",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Buat TTS",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Daftar TTS",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Profil",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "A",
+          "text": "Servis",
+          "id": "",
+          "width": 58.3125,
+          "height": 20,
+          "classes": "crumb"
+        },
+        {
+          "tag": "A",
+          "text": "Cetak struk",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        },
+        {
+          "tag": "A",
+          "text": "PDF struk",
+          "id": "",
+          "width": 978,
+          "height": 36,
+          "classes": "btn"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tech-edit",
+      "width": 360,
+      "route": "/tts/1/edit",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "customer_name",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "customer_phone",
+          "type": "tel",
+          "mode": "tel"
+        },
+        {
+          "id": "category-1",
+          "type": "radio",
+          "mode": ""
+        },
+        {
+          "id": "category-2",
+          "type": "radio",
+          "mode": ""
+        },
+        {
+          "id": "item_description",
+          "type": "text",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Simpan perubahan",
+          "top": 776,
+          "bottom": 824,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tech-edit",
+      "width": 768,
+      "route": "/tts/1/edit",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [],
+      "inputModes": [
+        {
+          "id": "customer_name",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "customer_phone",
+          "type": "tel",
+          "mode": "tel"
+        },
+        {
+          "id": "category-1",
+          "type": "radio",
+          "mode": ""
+        },
+        {
+          "id": "category-2",
+          "type": "radio",
+          "mode": ""
+        },
+        {
+          "id": "item_description",
+          "type": "text",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [
+        {
+          "text": "Simpan perubahan",
+          "top": 900,
+          "bottom": 948,
+          "height": 48
+        }
+      ],
+      "tableActionsLeft": []
+    },
+    {
+      "name": "tech-edit",
+      "width": 1280,
+      "route": "/tts/1/edit",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "bodyFont": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsReady": "loaded",
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Anugerah",
+          "id": "",
+          "width": 204,
+          "height": 36,
+          "classes": "brand"
+        },
+        {
+          "tag": "A",
+          "text": "Buat TTS",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Daftar TTS",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "A",
+          "text": "Profil",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Keluar",
+          "id": "",
+          "width": 204,
+          "height": 32,
+          "classes": "nav-item"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "",
+          "width": 518,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "customer_name",
+          "width": 560,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "customer_phone",
+          "width": 560,
+          "height": 40,
+          "classes": "input num"
+        },
+        {
+          "tag": "SUMMARY",
+          "text": "Keterangan barang & alamat\nopsional",
+          "id": "",
+          "width": 256.40625,
+          "height": 32,
+          "classes": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "id": "item_description",
+          "width": 560,
+          "height": 40,
+          "classes": "input"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Simpan perubahan",
+          "id": "",
+          "width": 151.296875,
+          "height": 36,
+          "classes": "btn primary"
+        },
+        {
+          "tag": "A",
+          "text": "Batal",
+          "id": "",
+          "width": 63.65625,
+          "height": 36,
+          "classes": "btn ghost"
+        }
+      ],
+      "inputModes": [
+        {
+          "id": "",
+          "type": "search",
+          "mode": ""
+        },
+        {
+          "id": "customer_name",
+          "type": "text",
+          "mode": ""
+        },
+        {
+          "id": "customer_phone",
+          "type": "tel",
+          "mode": "tel"
+        },
+        {
+          "id": "category-1",
+          "type": "radio",
+          "mode": ""
+        },
+        {
+          "id": "category-2",
+          "type": "radio",
+          "mode": ""
+        },
+        {
+          "id": "item_description",
+          "type": "text",
+          "mode": ""
+        }
+      ],
+      "bottomNav": [],
+      "actions": [],
+      "tableActionsLeft": []
+    }
+  ]
+}

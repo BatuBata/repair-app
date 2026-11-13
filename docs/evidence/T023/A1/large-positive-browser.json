@@ -1,0 +1,137 @@
+{
+  "cases": [
+    {
+      "name": "dashboard",
+      "width": 360,
+      "pass": true,
+      "documentWidth": 360,
+      "hasLongExactValue": true
+    },
+    {
+      "name": "profit-keyboard-tooltip",
+      "width": 360,
+      "tips": [
+        {
+          "text": "13 Nov 2026\n\nRp36.893.488.138.830.693.640\n\nServis Rp18.446.744.069.415.809.320\nPenjualan Rp18.446.744.069.414.884.320",
+          "opacity": "1",
+          "rect": {
+            "left": 105,
+            "right": 319
+          },
+          "font": "12px"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "dashboard",
+      "width": 768,
+      "pass": true,
+      "documentWidth": 768,
+      "hasLongExactValue": true
+    },
+    {
+      "name": "profit-keyboard-tooltip",
+      "width": 768,
+      "tips": [
+        {
+          "text": "13 Nov 2026\n\nRp36.893.488.138.830.693.640\n\nServis Rp18.446.744.069.415.809.320\nPenjualan Rp18.446.744.069.414.884.320",
+          "opacity": "1",
+          "rect": {
+            "left": 491,
+            "right": 719
+          },
+          "font": "12px"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "dashboard",
+      "width": 1280,
+      "pass": true,
+      "documentWidth": 1280,
+      "hasLongExactValue": true
+    },
+    {
+      "name": "profit-keyboard-tooltip",
+      "width": 1280,
+      "tips": [
+        {
+          "text": "13 Nov 2026\n\nRp36.893.488.138.830.693.640\n\nServis Rp18.446.744.069.415.809.320\nPenjualan Rp18.446.744.069.414.884.320",
+          "opacity": "1",
+          "rect": {
+            "left": 982,
+            "right": 1210
+          },
+          "font": "12px"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "reports",
+      "width": 360,
+      "pass": true,
+      "documentWidth": 360,
+      "hasLongExactValue": true
+    },
+    {
+      "name": "reports",
+      "width": 768,
+      "pass": true,
+      "documentWidth": 768,
+      "hasLongExactValue": true
+    },
+    {
+      "name": "reports",
+      "width": 1280,
+      "pass": true,
+      "documentWidth": 1280,
+      "hasLongExactValue": true
+    },
+    {
+      "name": "invoice",
+      "width": 360,
+      "pass": true,
+      "documentWidth": 360,
+      "hasLongExactValue": true
+    },
+    {
+      "name": "invoice",
+      "width": 768,
+      "pass": true,
+      "documentWidth": 768,
+      "hasLongExactValue": true
+    },
+    {
+      "name": "invoice",
+      "width": 1280,
+      "pass": true,
+      "documentWidth": 1280,
+      "hasLongExactValue": true
+    },
+    {
+      "name": "sale",
+      "width": 360,
+      "pass": true,
+      "documentWidth": 360,
+      "hasLongExactValue": true
+    },
+    {
+      "name": "sale",
+      "width": 768,
+      "pass": true,
+      "documentWidth": 768,
+      "hasLongExactValue": true
+    },
+    {
+      "name": "sale",
+      "width": 1280,
+      "pass": true,
+      "documentWidth": 1280,
+      "hasLongExactValue": true
+    }
+  ],
+  "consoleErrors": []
+}

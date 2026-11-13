@@ -1,0 +1,15 @@
+{
+  "pid": 4609,
+  "profile": "/private/tmp/t023-a1-_l62grm9/chrome/ad-chrome-uR6amr",
+  "CDP": "fresh port0/session",
+  "TASTE_SKILL_TMP": "/private/tmp/t023-a1-_l62grm9/chrome",
+  "applicationPort": 8193,
+  "runtime": "/private/tmp/t023-a1-_l62grm9",
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/157.0.8103.79",
+    "revision": "@6dc9bc3bdaea5c35ed6d41fceab2f7a3a2227c4f",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "jsVersion": "15.7.112.43"
+  }
+}

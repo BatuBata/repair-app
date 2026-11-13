@@ -1,0 +1,47 @@
+{
+  "private_sqlite": true,
+  "order7": {
+    "id": 7,
+    "status": "diambil",
+    "invoiced_on": "2026-11-13 00:00:00",
+    "picked_up_on": "2026-11-13 00:00:00"
+  },
+  "order7items": [
+    {
+      "type": "part",
+      "description": "LCD QA",
+      "qty": 1,
+      "price": 1000000,
+      "cost": 700000
+    },
+    {
+      "type": "jasa",
+      "description": "Jasa QA",
+      "qty": 1,
+      "price": 125000,
+      "cost": 0
+    }
+  ],
+  "product1": {
+    "id": 1,
+    "stock": 5,
+    "cost_price": 1200000
+  },
+  "original_sale1_item": {
+    "qty": 1,
+    "price": 1500000,
+    "cost": 1100000
+  },
+  "own_deleted_sale5_exists": false,
+  "retained_helper_sale2_exists": true,
+  "own_expense": [
+    {
+      "spent_on": "2026-11-13 00:00:00",
+      "category": "bensin",
+      "description": "Biaya alur T023",
+      "amount": 15000
+    }
+  ],
+  "marked_private_service3": true,
+  "store_logo_path_present": true
+}

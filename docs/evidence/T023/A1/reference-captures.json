@@ -1,0 +1,200 @@
+[
+  {
+    "name": "login",
+    "width": 360,
+    "path": "references/login-360.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "login",
+    "width": 768,
+    "path": "references/login-768.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "login",
+    "width": 1280,
+    "path": "references/login-1280.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "dashboard",
+    "width": 360,
+    "path": "references/dashboard-360.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "dashboard",
+    "width": 768,
+    "path": "references/dashboard-768.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "dashboard",
+    "width": 1280,
+    "path": "references/dashboard-1280.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "tts",
+    "width": 360,
+    "path": "references/tts-360.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "tts",
+    "width": 768,
+    "path": "references/tts-768.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "tts",
+    "width": 1280,
+    "path": "references/tts-1280.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "tts-baru",
+    "width": 360,
+    "path": "references/tts-baru-360.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "tts-baru",
+    "width": 768,
+    "path": "references/tts-baru-768.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "tts-baru",
+    "width": 1280,
+    "path": "references/tts-baru-1280.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "tts-detail",
+    "width": 360,
+    "path": "references/tts-detail-360.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "tts-detail",
+    "width": 768,
+    "path": "references/tts-detail-768.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "tts-detail",
+    "width": 1280,
+    "path": "references/tts-detail-1280.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "tts-rincian",
+    "width": 360,
+    "path": "references/tts-rincian-360.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "tts-rincian",
+    "width": 768,
+    "path": "references/tts-rincian-768.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "tts-rincian",
+    "width": 1280,
+    "path": "references/tts-rincian-1280.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "tts-sukses",
+    "width": 360,
+    "path": "references/tts-sukses-360.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "tts-sukses",
+    "width": 768,
+    "path": "references/tts-sukses-768.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "tts-sukses",
+    "width": 1280,
+    "path": "references/tts-sukses-1280.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "tracking",
+    "width": 360,
+    "path": "references/tracking-360.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "tracking",
+    "width": 768,
+    "path": "references/tracking-768.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "tracking",
+    "width": 1280,
+    "path": "references/tracking-1280.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "struk",
+    "width": 360,
+    "path": "references/struk-360.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "struk",
+    "width": 768,
+    "path": "references/struk-768.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "struk",
+    "width": 1280,
+    "path": "references/struk-1280.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "nota-a5",
+    "width": 360,
+    "path": "references/nota-a5-360.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "nota-a5",
+    "width": 768,
+    "path": "references/nota-a5-768.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "nota-a5",
+    "width": 1280,
+    "path": "references/nota-a5-1280.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "laporan",
+    "width": 360,
+    "path": "references/laporan-360.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "laporan",
+    "width": 768,
+    "path": "references/laporan-768.png",
+    "fonts": "loaded"
+  },
+  {
+    "name": "laporan",
+    "width": 1280,
+    "path": "references/laporan-1280.png",
+    "fonts": "loaded"
+  }
+]

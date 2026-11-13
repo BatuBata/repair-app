@@ -1,0 +1,9 @@
+{
+  "storage": "/private/tmp/t023-a1-_l62grm9/cold-storage",
+  "fontDir": "/private/tmp/t023-a1-_l62grm9/cold-storage/framework/cache",
+  "initialFontFiles": 0,
+  "routerExplicitStorageBinding": true,
+  "databaseStillPrivate": "/private/tmp/t023-a1-_l62grm9/fixture.sqlite",
+  "cacheSessionViewsRemainPinnedToPrivateConfig": true,
+  "initialWebIsolationLimitation": "Initial native workspace font cache regenerated because getenv-only storage var not bound in web bootstrap; generated cache retained, no source/DB/build changed. Corrected with private router explicit useStoragePath before new PDF requests."
+}

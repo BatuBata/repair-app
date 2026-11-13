@@ -1,0 +1,25 @@
+{
+  "checked_revision": "a95a3058c2160617d2e59ce7ac44685774d7528d",
+  "initialCookieNames": [
+    "remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d",
+    "XSRF-TOKEN",
+    "t023_session"
+  ],
+  "copiedCookieNames": [
+    "remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d"
+  ],
+  "excludedSession": true,
+  "excludedXsrf": true,
+  "newChromeProcess": true,
+  "noPasswordSubmittedToSecondBrowser": true,
+  "finalPath": "/tts/baru",
+  "server": {
+    "viaRemember": true,
+    "role": "teknisi",
+    "cookieNames": [
+      "remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d"
+    ]
+  },
+  "verdict": "pass",
+  "consoleErrors": []
+}

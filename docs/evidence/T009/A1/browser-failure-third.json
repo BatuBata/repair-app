@@ -1,0 +1,184 @@
+{
+  "message": "page eval: TypeError: Cannot read properties of null (reading 'value')\n    at <anonymous>:1:46\n    at <anonymous>:1:53",
+  "observations": [
+    {
+      "id": "form-360",
+      "path": "/tts/baru",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "phoneType": "tel",
+      "phoneInputMode": "tel",
+      "actionbar": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "form-errors-360",
+      "path": "/tts/baru",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "phoneType": "tel",
+      "phoneInputMode": "tel",
+      "actionbar": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "saving-disabled-360",
+      "disabled": true
+    },
+    {
+      "id": "success-360",
+      "path": "/tts/7/sukses",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "actionbar": [],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "list-360",
+      "path": "/tts",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "actionbar": [],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "left-actions-360",
+      "actionX": 16,
+      "dataX": 72
+    },
+    {
+      "id": "detail-360",
+      "path": "/tts/1",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "actionbar": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "peer-edit-guard-360",
+      "result": "PASS"
+    },
+    {
+      "id": "admin-edit-360",
+      "path": "/tts/2/edit",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "phoneType": "tel",
+      "phoneInputMode": "tel",
+      "actionbar": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "form-768",
+      "path": "/tts/baru",
+      "width": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "phoneType": "tel",
+      "phoneInputMode": "tel",
+      "actionbar": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "form-errors-768",
+      "path": "/tts/baru",
+      "width": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "phoneType": "tel",
+      "phoneInputMode": "tel",
+      "actionbar": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "saving-disabled-768",
+      "disabled": true
+    },
+    {
+      "id": "success-768",
+      "path": "/tts/8/sukses",
+      "width": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "actionbar": [],
+      "privateValuesAbsent": true
+    }
+  ],
+  "jsonPrivacy": [
+    {
+      "width": 360,
+      "privateValuesAbsent": true
+    },
+    {
+      "width": 360,
+      "privateValuesAbsent": true
+    },
+    {
+      "width": 360,
+      "privateValuesAbsent": true
+    },
+    {
+      "width": 360,
+      "privateValuesAbsent": true
+    },
+    {
+      "width": 360,
+      "privateValuesAbsent": true
+    },
+    {
+      "width": 768,
+      "privateValuesAbsent": true
+    }
+  ]
+}

@@ -1,0 +1,368 @@
+{
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/157.0.8103.52",
+    "revision": "@0985600c06a688b9c669e74afde7dacd5aaed047",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "jsVersion": "15.7.112.23"
+  },
+  "observations": [
+    {
+      "id": "form-360",
+      "path": "/tts/baru",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "phoneType": "tel",
+      "phoneInputMode": "tel",
+      "actionbar": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "form-errors-360",
+      "path": "/tts/baru",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "phoneType": "tel",
+      "phoneInputMode": "tel",
+      "actionbar": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "saving-disabled-360",
+      "disabled": true
+    },
+    {
+      "id": "success-360",
+      "path": "/tts/7/sukses",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "actionbar": [],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "list-360",
+      "path": "/tts",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "actionbar": [],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "left-actions-360",
+      "actionX": 16,
+      "dataX": 72
+    },
+    {
+      "id": "detail-360",
+      "path": "/tts/1",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "actionbar": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "peer-edit-guard-360",
+      "result": "PASS"
+    },
+    {
+      "id": "admin-edit-360",
+      "path": "/tts/2/edit",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "phoneType": "tel",
+      "phoneInputMode": "tel",
+      "actionbar": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "form-768",
+      "path": "/tts/baru",
+      "width": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "phoneType": "tel",
+      "phoneInputMode": "tel",
+      "actionbar": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "form-errors-768",
+      "path": "/tts/baru",
+      "width": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "phoneType": "tel",
+      "phoneInputMode": "tel",
+      "actionbar": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "saving-disabled-768",
+      "disabled": true
+    },
+    {
+      "id": "success-768",
+      "path": "/tts/8/sukses",
+      "width": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "actionbar": [],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "create-another-768",
+      "result": "PASS"
+    },
+    {
+      "id": "list-768",
+      "path": "/tts",
+      "width": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "actionbar": [],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "left-actions-768",
+      "actionX": 24,
+      "dataX": 80
+    },
+    {
+      "id": "detail-768",
+      "path": "/tts/1",
+      "width": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "actionbar": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "peer-edit-guard-768",
+      "result": "PASS"
+    },
+    {
+      "id": "admin-edit-768",
+      "path": "/tts/2/edit",
+      "width": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "phoneType": "tel",
+      "phoneInputMode": "tel",
+      "actionbar": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "form-1280",
+      "path": "/tts/baru",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "14px",
+      "phoneType": "tel",
+      "phoneInputMode": "tel",
+      "actionbar": [],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "form-errors-1280",
+      "path": "/tts/baru",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "14px",
+      "phoneType": "tel",
+      "phoneInputMode": "tel",
+      "actionbar": [],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "saving-disabled-1280",
+      "disabled": true
+    },
+    {
+      "id": "success-1280",
+      "path": "/tts/9/sukses",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "14px",
+      "actionbar": [],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "create-another-1280",
+      "result": "PASS"
+    },
+    {
+      "id": "list-1280",
+      "path": "/tts",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "14px",
+      "actionbar": [],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "left-actions-1280",
+      "actionX": 261,
+      "dataX": 322.78125
+    },
+    {
+      "id": "detail-1280",
+      "path": "/tts/1",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "14px",
+      "actionbar": [],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "peer-edit-guard-1280",
+      "result": "PASS"
+    },
+    {
+      "id": "admin-edit-1280",
+      "path": "/tts/2/edit",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "14px",
+      "phoneType": "tel",
+      "phoneInputMode": "tel",
+      "actionbar": [],
+      "privateValuesAbsent": true
+    }
+  ],
+  "jsonPrivacy": [
+    {
+      "width": 360,
+      "privateValuesAbsent": true
+    },
+    {
+      "width": 360,
+      "privateValuesAbsent": true
+    },
+    {
+      "width": 360,
+      "privateValuesAbsent": true
+    },
+    {
+      "width": 360,
+      "privateValuesAbsent": true
+    },
+    {
+      "width": 360,
+      "privateValuesAbsent": true
+    },
+    {
+      "width": 768,
+      "privateValuesAbsent": true
+    },
+    {
+      "width": 768,
+      "privateValuesAbsent": true
+    },
+    {
+      "width": 768,
+      "privateValuesAbsent": true
+    },
+    {
+      "width": 768,
+      "privateValuesAbsent": true
+    },
+    {
+      "width": 768,
+      "privateValuesAbsent": true
+    },
+    {
+      "width": 1280,
+      "privateValuesAbsent": true
+    },
+    {
+      "width": 1280,
+      "privateValuesAbsent": true
+    },
+    {
+      "width": 1280,
+      "privateValuesAbsent": true
+    },
+    {
+      "width": 1280,
+      "privateValuesAbsent": true
+    },
+    {
+      "width": 1280,
+      "privateValuesAbsent": true
+    }
+  ],
+  "source": "T009 A1 uncommitted task source; source-manifest pins final hash",
+  "result": "PASS"
+}

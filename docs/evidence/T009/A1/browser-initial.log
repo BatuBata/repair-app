@@ -1,0 +1,3 @@
+page eval: TypeError: Failed to execute 'getComputedStyle' on 'Window': parameter 1 is not of type 'Element'.
+    at <anonymous>:1:6
+    at <anonymous>:1:109

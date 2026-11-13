@@ -1,0 +1,61 @@
+{
+  "message": "Create another",
+  "observations": [
+    {
+      "id": "form-360",
+      "path": "/tts/baru",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "phoneType": "tel",
+      "phoneInputMode": "tel",
+      "actionbar": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "form-errors-360",
+      "path": "/tts/baru",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "phoneType": "tel",
+      "phoneInputMode": "tel",
+      "actionbar": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ],
+      "privateValuesAbsent": true
+    },
+    {
+      "id": "saving-disabled-360",
+      "disabled": true
+    },
+    {
+      "id": "success-360",
+      "path": "/tts/7/sukses",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "bodyFontSize": "16px",
+      "actionbar": [],
+      "privateValuesAbsent": true
+    }
+  ],
+  "jsonPrivacy": [
+    {
+      "width": 360,
+      "privateValuesAbsent": true
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "browser": "All CDP task runners completed and Browser.close executed; final runner exit0",
+  "server": "exec42731 stopped Ctrl+C exit130",
+  "port8189_listening": false,
+  "private_fixture_config_and_backup": "retained task-owned /private/tmp; credential/config files excluded from Git",
+  "root_env_unchanged": true,
+  "public_build14_unchanged": true,
+  "main_merge": false,
+  "push": false
+}

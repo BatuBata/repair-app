@@ -101,10 +101,10 @@ class AuthenticationTest extends TestCase
         $this->assertGuest();
     }
 
-    public function test_technician_redirect_has_no_fake_downstream_module(): void
+    public function test_technician_redirect_opens_the_tts_form(): void
     {
         $user = User::factory()->create();
         $this->post('/login', ['username' => $user->username, 'password' => 'password'])->assertRedirect('/tts/baru');
-        $this->get('/tts/baru')->assertNotFound();
+        $this->get('/tts/baru')->assertOk()->assertSee('TTS baru');
     }
 }

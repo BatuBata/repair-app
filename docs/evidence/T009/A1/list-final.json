@@ -1,0 +1,530 @@
+{
+  "result": "PASS",
+  "results": [
+    {
+      "width": 360,
+      "documentWidth": 360,
+      "ids": [
+        {
+          "height": 44,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 44,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 44,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 44,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 44,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 44,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 44,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 44,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 44,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "targets": [
+        {
+          "tag": "A",
+          "width": 120.375,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 50.640625,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 61.46875,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 76.09375,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 51.5625,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 54.890625,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "tag": "INPUT",
+          "width": 328,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 113.28125,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 113.28125,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 113.28125,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 113.28125,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 66.3125,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 113.28125,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 66.3125,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 113.28125,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 66.3125,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 113.28125,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 66.3125,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 113.28125,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 113.28125,
+          "height": 44
+        }
+      ],
+      "privateValuesAbsent": true
+    },
+    {
+      "width": 768,
+      "documentWidth": 768,
+      "ids": [
+        {
+          "height": 44,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 44,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 44,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 44,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 44,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 44,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 44,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 44,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 44,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "targets": [
+        {
+          "tag": "A",
+          "width": 120.375,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 50.640625,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 61.46875,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 76.09375,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 51.5625,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 54.890625,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "tag": "INPUT",
+          "width": 720,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 113.28125,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 113.28125,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 113.28125,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 113.28125,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 66.3125,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 113.28125,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 66.3125,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 113.28125,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 66.3125,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 113.28125,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 66.3125,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 113.28125,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "tag": "A",
+          "width": 113.28125,
+          "height": 44
+        }
+      ],
+      "privateValuesAbsent": true
+    },
+    {
+      "width": 1280,
+      "documentWidth": 1280,
+      "ids": [
+        {
+          "height": 75,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 75,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 75,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 75,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 75,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 75,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 75,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 75,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "height": 92.5,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "targets": [
+        {
+          "tag": "A",
+          "width": 112.078125,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "width": 44.3125,
+          "height": 40
+        },
+        {
+          "tag": "BUTTON",
+          "width": 53.78125,
+          "height": 40
+        },
+        {
+          "tag": "BUTTON",
+          "width": 66.578125,
+          "height": 40
+        },
+        {
+          "tag": "BUTTON",
+          "width": 45.109375,
+          "height": 40
+        },
+        {
+          "tag": "BUTTON",
+          "width": 48.03125,
+          "height": 40
+        },
+        {
+          "tag": "BUTTON",
+          "width": 32.828125,
+          "height": 40
+        },
+        {
+          "tag": "INPUT",
+          "width": 300,
+          "height": 34
+        },
+        {
+          "tag": "BUTTON",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "tag": "A",
+          "width": 99.125,
+          "height": 18
+        },
+        {
+          "tag": "BUTTON",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "tag": "A",
+          "width": 99.125,
+          "height": 18
+        },
+        {
+          "tag": "BUTTON",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "tag": "A",
+          "width": 99.125,
+          "height": 18
+        },
+        {
+          "tag": "BUTTON",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "tag": "A",
+          "width": 99.125,
+          "height": 18
+        },
+        {
+          "tag": "A",
+          "width": 53.78125,
+          "height": 32
+        },
+        {
+          "tag": "A",
+          "width": 99.125,
+          "height": 18
+        },
+        {
+          "tag": "A",
+          "width": 53.78125,
+          "height": 32
+        },
+        {
+          "tag": "A",
+          "width": 99.125,
+          "height": 18
+        },
+        {
+          "tag": "A",
+          "width": 53.78125,
+          "height": 32
+        },
+        {
+          "tag": "A",
+          "width": 99.125,
+          "height": 18
+        },
+        {
+          "tag": "A",
+          "width": 53.78125,
+          "height": 32
+        },
+        {
+          "tag": "A",
+          "width": 99.125,
+          "height": 18
+        },
+        {
+          "tag": "BUTTON",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "tag": "A",
+          "width": 99.125,
+          "height": 18
+        }
+      ],
+      "privateValuesAbsent": true
+    }
+  ]
+}

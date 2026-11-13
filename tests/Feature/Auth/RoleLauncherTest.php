@@ -31,7 +31,7 @@ class RoleLauncherTest extends TestCase
         $this->get('/profil')->assertOk()->assertSee('<link rel="manifest" href="/manifest.webmanifest">', false);
         $this->get('/')->assertForbidden();
         $this->get('/dashboard')->assertForbidden();
-        $this->get('/tts/baru')->assertNotFound();
+        $this->get('/tts/baru')->assertOk()->assertSee('TTS baru');
         User::whereKey($admin->id)->update(['role' => 'admin']);
         $this->get('/mulai')->assertRedirect('/');
     }

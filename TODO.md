@@ -36,9 +36,9 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T014 | Pencatatan pengeluaran | developer / 6-luna | easy / low | T008 | T009, T010, T011, T012, T013, T020 | done |
 | T015 | Integrasi alur servis (M2) dan stok/penjualan/pengeluaran (M4) | integrator / 6.1-sol | medium / medium | T011, T013, T014 | — | done |
 | T016 | QA independen alur servis, penjualan, dan pengeluaran | tester / 6.1-sol | medium / high | T015 | T020 | done |
-| T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | running |
+| T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | done |
 | T018 | Dashboard admin dan pengingat garansi | developer / 6.1-sol | medium / medium | T016 | T017, T019, T020 | running |
-| T019 | Laporan omzet, modal, pengeluaran, dan laba per rentang tanggal | developer / 6.1-sol | medium / high | T016 | T017, T018, T020 | pending |
+| T019 | Laporan omzet, modal, pengeluaran, dan laba per rentang tanggal | developer / 6.1-sol | medium / high | T016 | T017, T018, T020 | running |
 | T020 | Paket deploy VPS: konfigurasi contoh, skrip deploy, backup dan restore | developer / 6.1-sol | medium / high | T001, T002 (artifact) | T002, T003, T004, T005, T006, T009, T012, T017, T018, T019 | done |
 | T021 | Panduan pengguna singkat untuk owner dan teknisi | developer / 6-luna | easy / low | T017, T018, T019 | T020 | pending |
 | T022 | Integrasi akhir v1 | integrator / 6.1-sol | medium / medium | T017, T018, T019, T020, T021 | — | pending |
@@ -2551,7 +2551,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "PDF preflight coordinator: BaconQrCode Writer sudah terpasang. Aset IBM Plex saat ini hanya5WOFF2; TTF turunan+lisensi dapat ditambah tanpa mengubah WOFF2/webfont existing. Bundled Python memiliki pypdf/pdfplumber/reportlab/PIL, fontTools/brotli belum ada; jika dibutuhkan gunakan build tooling privat, bukan install global/appdependency. pdftoppm bundled tersedia; helper Swift PDFKit/CoreImage T006 juga tersedia. Ikuti PDF skill marker sekali sebelum authoring PDF aktual.",
         "A2 closes exact-source review F01 print-media width/default-paper proof and F02 keeping line description/qty/price/subtotal together across A5 pages. Keep A1 failure and retest affected content/privacy/QR only; final full regression T022/T023."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "resource_phase_policy": "Coding/host tests no browser/MySQL resource. Private task headless phase only after isolation preflight, unique port8189(T017)/8190(T018), process/profile/CDP/TASTE/SQLite/config/cache/session/views/storage. Max2workers; no shared GUI.",
       "attempts": [
@@ -2573,7 +2573,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-terra",
           "model_effective": null,
           "dispatch_ref": "native:collaboration.followup_task:/root/t017_documents:T017-A2",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/T017/A1/review/review.json"
         }
       ],
@@ -2581,8 +2581,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "runtime": "Codex native collaboration",
         "task_id": "/root/t017_documents",
         "base_revision": "479a58565bed3f1b0d9a7e3ef1451d1de073fdbd",
-        "phase": "implementation-A2",
-        "browser_reservation": "conditional private headless8189, same isolation policy after preflight; source review F01 print-width/F02 pagination",
+        "phase": "closed",
+        "browser_reservation": "released; private server8189/browser closed per worker receipt",
         "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
         "model_observation": "New native spawn requested Terra high, canonical taskname returned only."
       },
@@ -2606,7 +2606,26 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           },
           "summary": "Selfcheck PASS retained, review F01 print width and F02 split A5 line reproduced; not accepted."
         }
-      ]
+      ],
+      "result": {
+        "verdict": "pass",
+        "revision": "66359012ac0e4febec1f21c4154ba23085212333",
+        "artifact_ref": "docs/evidence/T017/A2/README.md",
+        "inputs": {
+          "T016": "c66d038ea448910e3cc8a8529f170f72ac064306",
+          "T006": "be717f38926cdb6cc0281c013882c0e204dbb86f"
+        },
+        "summary": "A2 closes F01 print48mm+5mm margins and F02 40/40 paired A5 rows; QR/privacy/84assert PASS. Coordinator reviewed diff and A2 PNGs. Independent finalQA and physicalprinter still pending; extreme name/thermal>14000pt not proven.",
+        "evidence": [
+          "docs/evidence/T017/A1/README.md",
+          "docs/evidence/T017/A1/review/review.json",
+          "docs/evidence/T017/A2/README.md",
+          "docs/evidence/T017/A2/check.log",
+          "docs/evidence/T017/A2/browser.log",
+          "docs/evidence/T017/A2/qr-check.log",
+          "docs/evidence/T017/A2/render.log"
+        ]
+      }
     },
     {
       "id": "T018",
@@ -2655,13 +2674,15 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "acceptance_criteria": [
         "Ringkasan hari ini (TTS masuk, jumlah per status, omzet hari ini) dan daftar Selesai belum diambil.",
         "Daftar garansi H-3 sampai hari terakhir untuk nota dan penjualan, dengan Kirim WA (helper T011) dan Tandai dihubungi (AC-09).",
-        "Kartu angka satu kolom di HP; lulus AC-24."
+        "Kartu angka satu kolom di HP; lulus AC-24.",
+        "DESIGN.md §KPI tabs+grafik (510–511), PRD§10.2 dan mockup/dashboard.html78–80: panel grafik garis bulanan (awal bulan sampai hari ini),3tab KPI Omzet/Laba kotor/Nota servis memakai data nyata, rentang dan tautan laporan; desktop tab/HP label-nilai, hover/keyboard/tap tooltip, empty0 jujur. AC ringkas tidak menggantikan kontrak desain. DailyTTS/omzet tetap terpenuhi."
       ],
       "verification_plan": [
         "Feature test dengan waktu dibekukan (8, 11, 12 Des 2026 WITA) untuk servis dan penjualan.",
         "Screenshot 3 lebar dashboard.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri.",
-        "Ganti root placeholder tanpa route shadow: modules/dashboard.php dimuat sebelum scaffold.php; pertahankan home / dan redirect /dashboard, sesuaikan DashboardTest lama yang mengharapkan quicklink placeholder. Omzet exact untuk agregat legal yang melebihi PHP_INT_MAX; Brick\\Math\\BigInteger sudah terpasang, jangan gunakan float atau tambah dependency."
+        "Ganti root placeholder tanpa route shadow: modules/dashboard.php dimuat sebelum scaffold.php; pertahankan home / dan redirect /dashboard, sesuaikan DashboardTest lama yang mengharapkan quicklink placeholder. Omzet exact untuk agregat legal yang melebihi PHP_INT_MAX; Brick\\Math\\BigInteger sudah terpasang, jangan gunakan float atau tambah dependency.",
+        "Chart3seri/tab totals dan daily buckets benar sesuai tanggal/status/cost snapshot, guardadmin sebelumqueries, uang/dataexactstring; angka koordinatpixel boleh diproposikan. Screenshot final setelahchart lengkap, tanpa fakeevent. Ini bagian A1 existing sebelum handoff, bukan task/attemptbaru."
       ],
       "status": "running",
       "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
@@ -2743,15 +2764,40 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Pilih tanggal awal–akhir (default awal bulan s.d. hari ini, WITA, inklusif); tanggal akhir < awal ditolak.",
         "Data contoh PRD §20.1 menghasilkan omzet Rp2.600.000, modal Rp1.800.000, laba kotor Rp800.000, pengeluaran Rp65.000, laba bersih Rp735.000 (AC-17); TTS Batal dan restok tidak dihitung; pengeluaran sesuai AC-18.",
         "Rincian per transaksi; kartu di HP, tabel di desktop; lulus AC-24.",
-        "BR-14: restok tampil sebagai informasi tanpa mengurangi laba; koreksi nota memakai nilai terbaru tetapi tanggal nota tetap. Hak admin diperiksa ulang sebelum query atau aksi Livewire."
+        "BR-14: restok tampil sebagai informasi tanpa mengurangi laba; koreksi nota memakai nilai terbaru tetapi tanggal nota tetap. Hak admin diperiksa ulang sebelum query atau aksi Livewire.",
+        "PRD§10.2, DESIGN.md §Grafik omzet per hari (525–526) dan mockup/laporan.html: grafik batang omzet perhari dengan nol jujur, rata-rata/tertinggi, tooltip servis+penjualan; statement laba-rugi, tabel/rincian beserta total/filterjenis dan pilihan tanggal sesuai acuan. Tidak boleh menghilangkan grafik hanya karena AC ringkas."
       ],
       "verification_plan": [
         "Feature test dengan data §20.1 dan rentang yang tidak mencakup tanggal tersebut.",
         "Screenshot 3 lebar laporan.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri.",
-        "Buktikan default awal bulan/hari ini WITA, rentang inklusif dan invalid/empty, contoh PRD, koreksi/hapus transaksi, restok info, fresh role guard, serta jumlah agregat legal di atas PHP_INT_MAX tanpa float/SQLite SUM overflow. Brick\\Math\\BigInteger sudah terpasang; gunakan dependency existing tanpa menambah paket. Screenshot3width termasuk nilai panjang/negatif dan error."
+        "Buktikan default awal bulan/hari ini WITA, rentang inklusif dan invalid/empty, contoh PRD, koreksi/hapus transaksi, restok info, fresh role guard, serta jumlah agregat legal di atas PHP_INT_MAX tanpa float/SQLite SUM overflow. Brick\\Math\\BigInteger sudah terpasang; gunakan dependency existing tanpa menambah paket. Screenshot3width termasuk nilai panjang/negatif dan error.",
+        "Bandingkan chart daily buckets/sum terhadap uang exact dan sample, tooltip/keyboard/tap, hari nol/empty/negatif; default awal bulan–hariini dan tanggal bebas. Kartu/daftar/tabel sesuai DESIGN.md bila beda PRD tabel."
       ],
-      "status": "pending"
+      "status": "running",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root/t019_reports",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.spawn_agent:/root/t019_reports:T019",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
+        }
+      ],
+      "runtime_assignment": {
+        "runtime": "Codex native collaboration",
+        "task_id": "/root/t019_reports",
+        "base_revision": "66359012ac0e4febec1f21c4154ba23085212333",
+        "phase": "implementation",
+        "branch": "codex/t019-reports",
+        "browser_reservation": "conditional private headless8191 after isolation preflight; noGUI/CUA/Orca/MySQL",
+        "model_observation": "Native catalog supports Sol high; new spawn requested Sol high, effective model remains unproven until receipt."
+      },
+      "resource_phase_policy": "Coding/host test no shared browser/MySQL resource. Private headless phase8191 only after own recorded process/profile/CDP/TASTE/SQLite/config/cache/session/views/storage preflight. Max2workers includingT018. NoGUI/CUA/Orca."
     },
     {
       "id": "T020",

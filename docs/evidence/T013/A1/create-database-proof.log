@@ -1,0 +1,29 @@
+{
+    "sales": [
+        {
+            "number": "JL-2611-001",
+            "customer_name": "Ibu Ratna Sari pelanggan perangkat elektronik rumah tangga di lingkungan Balikpapan",
+            "customer_phone": "6281234567890",
+            "sold_on": "2026-11-13",
+            "warranty_days": 30,
+            "warranty_until": "2026-12-13",
+            "items": [
+                {
+                    "product_name": "Kabel HDMI dua meter dengan konektor berlapis dan pelindung kabel untuk perangkat televisi dan komputer",
+                    "qty": 2,
+                    "price": 150000,
+                    "cost": 100000
+                }
+            ]
+        }
+    ],
+    "stocks": [
+        1,
+        5,
+        5
+    ],
+    "items": 1,
+    "expenses": 0,
+    "private_session": true,
+    "private_view": true
+}

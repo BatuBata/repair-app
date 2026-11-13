@@ -1,0 +1,15 @@
+TASTESKILL · LINT   4 file(s)
+
+FAIL
+  [hairline] Thin rule / divider line. Separate with space, tone or scale; lines belong to real tables and form fields.  (2×)
+      ../../../../../../private/tmp/t013-lint-tmcy8md2/styles.blade.html:9  border-bottom:1px
+      ../../../../../../private/tmp/t013-lint-tmcy8md2/styles.blade.html:17  border-top:1px
+  [mono] Monospace type. Only literal code may be monospace.  (1×)
+      ../../../../../../private/tmp/t013-lint-tmcy8md2/styles.blade.html:21  font-family:var(--font-mono
+
+WARN
+  [outlined-box] A 1px outlined box. Prefer a filled surface or no box.  (1×)
+      ../../../../../../private/tmp/t013-lint-tmcy8md2/styles.blade.html:32  border:1px solid
+
+RESULT: 3 FAIL, 1 WARN — fix the FAILs before rendering.
+Interface fragments marked data-ui keep their own borders and shadows. Any other line that must keep a flagged pattern for a real reason can carry the comment taste-skill-ignore.

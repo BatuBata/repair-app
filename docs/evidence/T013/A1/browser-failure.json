@@ -1,0 +1,197 @@
+{
+  "error": "Timeout cancel dialog",
+  "observations": [
+    {
+      "id": "EMPTY",
+      "actual": {
+        "text": "Belum ada penjualan."
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "EMPTY-FORM-FOCUS",
+      "actual": {
+        "tag": "SELECT"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "ACTIVE-DEFAULT-PRICE",
+      "actual": {
+        "priceDisplay": "125.000",
+        "fullNameShown": true,
+        "inactiveExcluded": true
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "ROWS",
+      "actual": {
+        "added": 2,
+        "afterRemove": 1
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "WARRANTY-PHONE",
+      "actual": {
+        "focus": "customer_phone",
+        "rejected": true
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "CREATE-DATABASE",
+      "actual": {
+        "sales": [
+          {
+            "number": "JL-2611-001",
+            "customer_name": "Ibu Ratna Sari pelanggan perangkat elektronik rumah tangga di lingkungan Balikpapan",
+            "customer_phone": "6281234567890",
+            "sold_on": "2026-11-13",
+            "warranty_days": 30,
+            "warranty_until": "2026-12-13",
+            "items": [
+              {
+                "product_name": "Kabel HDMI dua meter dengan konektor berlapis dan pelindung kabel untuk perangkat televisi dan komputer",
+                "qty": 2,
+                "price": 150000,
+                "cost": 100000
+              }
+            ]
+          }
+        ],
+        "stocks": [
+          1,
+          5,
+          5
+        ],
+        "items": 1,
+        "expenses": 0,
+        "private_session": true,
+        "private_view": true
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "DETAIL-360",
+      "actual": {
+        "width": 360,
+        "documentWidth": 360,
+        "body": "16px",
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "primary": 0,
+        "fields": [],
+        "actionbar": null
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "LIST-360",
+      "actual": {
+        "width": 360,
+        "documentWidth": 360,
+        "body": "16px",
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "primary": 1,
+        "fields": [],
+        "actionbar": {
+          "visible": true,
+          "bottom": 836,
+          "navTop": 836
+        }
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "FORM-360",
+      "actual": {
+        "width": 360,
+        "documentWidth": 360,
+        "body": "16px",
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "primary": 1,
+        "fields": [
+          {
+            "height": 48,
+            "size": "16px"
+          },
+          {
+            "height": 48,
+            "size": "16px"
+          },
+          {
+            "height": 48,
+            "size": "16px"
+          },
+          {
+            "height": 48,
+            "size": "16px"
+          },
+          {
+            "height": 48,
+            "size": "16px"
+          },
+          {
+            "height": 48,
+            "size": "16px"
+          },
+          {
+            "height": 48,
+            "size": "16px"
+          }
+        ],
+        "actionbar": {
+          "visible": true,
+          "bottom": 836,
+          "navTop": 836
+        }
+      },
+      "verdict": "pass"
+    }
+  ],
+  "reports": [
+    {
+      "width": 360,
+      "path": "/penjualan/1",
+      "findings": [
+        {
+          "level": "WARN",
+          "id": "edge-text",
+          "width": 360,
+          "message": "1 text block(s) sit 12–15px from the phone's edge: \"Beranda\" (13px)",
+          "fix": "The page margin is 16–20px on a phone; the header and the corner labels sit on it too."
+        }
+      ],
+      "verdict": "pass"
+    },
+    {
+      "width": 360,
+      "path": "/penjualan",
+      "findings": [
+        {
+          "level": "WARN",
+          "id": "edge-text",
+          "width": 360,
+          "message": "1 text block(s) sit 12–15px from the phone's edge: \"Beranda\" (13px)",
+          "fix": "The page margin is 16–20px on a phone; the header and the corner labels sit on it too."
+        }
+      ],
+      "verdict": "pass"
+    },
+    {
+      "width": 360,
+      "path": "/penjualan/baru",
+      "findings": [
+        {
+          "level": "WARN",
+          "id": "edge-text",
+          "width": 360,
+          "message": "1 text block(s) sit 12–15px from the phone's edge: \"Beranda\" (13px)",
+          "fix": "The page margin is 16–20px on a phone; the header and the corner labels sit on it too."
+        }
+      ],
+      "verdict": "pass"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "input_T012": "2ce3ca3c46bcaab19c334240ff4fd3e72add85ac",
+  "source_sha256": {
+    "app/Actions/Sales/DeleteSale.php": "b1afb89611ae29ebc83fd2d4a784ba1f6238ecd68f735e41d05ecd77db998327",
+    "app/Actions/Sales/CreateSale.php": "0da38d1933e373117ab39d151ed583836dd500ae6b9a21bf76c7fc5e28f1ec72",
+    "app/Livewire/Sales/Index.php": "ec0b7bf0279c8aad5fc929792ef8ffb51904bd36d86501f4cc4448361a2b6938",
+    "app/Livewire/Sales/Show.php": "e22b204580ba27655d3a9d7a99f9a2db1967ac740e3701ef923e087cc97f3aac",
+    "app/Livewire/Sales/Form.php": "c74f340339bd7d91ece2d52a45f5934a6dd0a448188bdaefc1bcecbf2d98040b",
+    "resources/views/livewire/sales/form.blade.php": "fc0f1b618a24699bc8ab943b5ac2ed897a51bc888a4ba59f1e3ba354d0040054",
+    "resources/views/livewire/sales/index.blade.php": "7834970b2e113c8f871605b24d8b3d1e01bd83f41a95468a1ead49aa261a1e39",
+    "resources/views/livewire/sales/styles.blade.php": "918cf3358e72b003c787c33ec583e29e599681380d22e331a3f321f46db3d700",
+    "resources/views/livewire/sales/show.blade.php": "236c0267c98631e8fb8a80e3d530683880c4be349c370b93e878353a20a602ac",
+    "routes/modules/sales.php": "67e848644eaa88cdaa9ce36847bb0c3c3628a8d3d4c3caa0879cc08d72f89aaa",
+    "tests/Feature/Sales/mysql-concurrency.php": "dcf738bebe46cb14e533b0a4eba192432b8f0091f7d80e1f368953a8f42d4ac1",
+    "tests/Feature/Sales/SalesTest.php": "5dba08331c44955c53a4cf2aaf8a69201da01c795f951d38389944c0e8c6a062"
+  },
+  "build_asset_count": 14,
+  "build_unchanged_from_T012": true,
+  "build_sha256": {
+    "public/build/fonts-manifest.json": "66edf17c93351fe01158be7414a441a762f106417c74351881876b405b8b10ca",
+    "public/build/manifest.json": "5b6607d5a0edb876e2a6c62714c355a55b84a9a2cd084a0502183beb685e6836",
+    "public/build/assets/layout-VbftPR1Q.js": "c341bb7b6164371637f1c9a6732012308af41f20f51e2c1462f235c122bfa0d6",
+    "public/build/assets/fonts-C9MNnjVw.css": "3846a9bb60bfad92960eadcccaf0b4e129d74b11d48791506c8d1a827a385cc8",
+    "public/build/assets/instrument-sans-600-normal-B7fBEWYG.woff2": "efb770916eda95a0e31d80cccde9651d4e8617010b21220e9f227c4820d675da",
+    "public/build/assets/app-TKBAM3lN.js": "e0084906357a1e8dbae007de03328ce94f9b3fd02415f17b40fe16175ea9170f",
+    "public/build/assets/app-CDn1G0_W.css": "63d14283ee0b6e1c6b07bee2a3478b8f935739643343c4df0eca71a15acaaeba",
+    "public/build/assets/instrument-sans-500-normal-Z6ESRlEs.woff": "bd6a8dc8b0dc0cced0c32d3eda93f0e0e82c58ddefea8b53b3307b0c48da3089",
+    "public/build/assets/instrument-sans-500-normal-Dk9ku72i.woff2": "9d3547da16d950d12a677c772a3ff9b69846e60e7dcd1b5efd540993f7286532",
+    "public/build/assets/passkeys-CsxEE3hN.js": "ad776e742af479bdb7ac39623fb121e0046c181de471cdda0a1c57c7f7f57e72",
+    "public/build/assets/layout-DAFmGKay.css": "6b76534c3551b13f83b69959c988520f92d09ac7a13770287af8b35cfd3aa6bb",
+    "public/build/assets/instrument-sans-600-normal-B9e8oLYv.woff": "9b4ce1f2b26be7cb087fd87d6f99a202136292ec820af75bd38ab9e53895cf28",
+    "public/build/assets/instrument-sans-400-normal-DRC__1Mx.woff2": "9a91efaa3599a6ef01b2f49e9ec670e3a2f39baeef09c73198f1052cf3bb0850",
+    "public/build/assets/instrument-sans-400-normal-D1W7dsQl.woff": "797bd3eaa70edbd4757650ab44dad75fbfbfdf18bacedb4b71022c04621d30ad"
+  },
+  "MySQL_proof_reused_after_timestamp_only_change": "Sorted user/product locks, stock checks, writes and DocumentNumber call unchanged. Added explicit created_at assignment before Sale::save; focused clock-boundary test PASS.",
+  "browser_proof_source_impact": "Core22 observations/9 probes before table and summary CSS polish.10final viewport checks and4summary checks after respective changes. No business/source JS changes after browser proof."
+}

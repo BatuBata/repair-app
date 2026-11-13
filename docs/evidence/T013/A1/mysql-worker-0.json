@@ -1,0 +1,9 @@
+{
+  "result": "success",
+  "worker": 0,
+  "start": 1794537180.690813,
+  "elapsed_ms": 325.2,
+  "product_lock_ms": [
+    9.04
+  ]
+}

@@ -1,0 +1,489 @@
+{
+  "verdict": "pass",
+  "version": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/157.0.8103.52",
+    "revision": "@0985600c06a688b9c669e74afde7dacd5aaed047",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "jsVersion": "15.7.112.23"
+  },
+  "observations": [
+    {
+      "id": "EMPTY",
+      "actual": {
+        "text": "Belum ada penjualan."
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "EMPTY-FORM-FOCUS",
+      "actual": {
+        "tag": "SELECT"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "ACTIVE-DEFAULT-PRICE",
+      "actual": {
+        "priceDisplay": "125.000",
+        "fullNameShown": true,
+        "inactiveExcluded": true
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "ROWS",
+      "actual": {
+        "added": 2,
+        "afterRemove": 1
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "WARRANTY-PHONE",
+      "actual": {
+        "focus": "customer_phone",
+        "rejected": true
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "CREATE-DATABASE",
+      "actual": {
+        "sales": [
+          {
+            "number": "JL-2611-001",
+            "customer_name": "Ibu Ratna Sari pelanggan perangkat elektronik rumah tangga di lingkungan Balikpapan",
+            "customer_phone": "6281234567890",
+            "sold_on": "2026-11-13",
+            "warranty_days": 30,
+            "warranty_until": "2026-12-13",
+            "items": [
+              {
+                "product_name": "Kabel HDMI dua meter dengan konektor berlapis dan pelindung kabel untuk perangkat televisi dan komputer",
+                "qty": 2,
+                "price": 150000,
+                "cost": 100000
+              }
+            ]
+          }
+        ],
+        "stocks": [
+          1,
+          5,
+          5
+        ],
+        "items": 1,
+        "expenses": 0,
+        "private_session": true,
+        "private_view": true
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "DETAIL-360",
+      "actual": {
+        "width": 360,
+        "documentWidth": 360,
+        "body": "16px",
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "primary": 0,
+        "fields": [],
+        "actionbar": null
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "LIST-360",
+      "actual": {
+        "width": 360,
+        "documentWidth": 360,
+        "body": "16px",
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "primary": 1,
+        "fields": [],
+        "actionbar": {
+          "visible": true,
+          "bottom": 836,
+          "navTop": 836
+        }
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "FORM-360",
+      "actual": {
+        "width": 360,
+        "documentWidth": 360,
+        "body": "16px",
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "primary": 1,
+        "fields": [
+          {
+            "height": 48,
+            "size": "16px"
+          },
+          {
+            "height": 48,
+            "size": "16px"
+          },
+          {
+            "height": 48,
+            "size": "16px"
+          },
+          {
+            "height": 48,
+            "size": "16px"
+          },
+          {
+            "height": 48,
+            "size": "16px"
+          },
+          {
+            "height": 48,
+            "size": "16px"
+          },
+          {
+            "height": 48,
+            "size": "16px"
+          }
+        ],
+        "actionbar": {
+          "visible": true,
+          "bottom": 836,
+          "navTop": 836
+        }
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "DELETE-CANCEL-360",
+      "actual": {
+        "x": 19,
+        "y": 344,
+        "width": 322,
+        "height": 212,
+        "focusReturned": true
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "DETAIL-768",
+      "actual": {
+        "width": 768,
+        "documentWidth": 768,
+        "body": "16px",
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "primary": 0,
+        "fields": [],
+        "actionbar": null
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "LIST-768",
+      "actual": {
+        "width": 768,
+        "documentWidth": 768,
+        "body": "16px",
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "primary": 1,
+        "fields": [],
+        "actionbar": {
+          "visible": true,
+          "bottom": 836,
+          "navTop": 836
+        }
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "FORM-768",
+      "actual": {
+        "width": 768,
+        "documentWidth": 768,
+        "body": "16px",
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "primary": 1,
+        "fields": [
+          {
+            "height": 48,
+            "size": "16px"
+          },
+          {
+            "height": 48,
+            "size": "16px"
+          },
+          {
+            "height": 48,
+            "size": "16px"
+          },
+          {
+            "height": 48,
+            "size": "16px"
+          },
+          {
+            "height": 48,
+            "size": "16px"
+          },
+          {
+            "height": 48,
+            "size": "16px"
+          },
+          {
+            "height": 48,
+            "size": "16px"
+          }
+        ],
+        "actionbar": {
+          "visible": true,
+          "bottom": 836,
+          "navTop": 836
+        }
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "DETAIL-1280",
+      "actual": {
+        "width": 1280,
+        "documentWidth": 1280,
+        "body": "14px",
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "primary": 0,
+        "fields": [],
+        "actionbar": null
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "LIST-1280",
+      "actual": {
+        "width": 1280,
+        "documentWidth": 1280,
+        "body": "14px",
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "primary": 1,
+        "fields": [],
+        "actionbar": {
+          "visible": false,
+          "bottom": 0,
+          "navTop": 0
+        }
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "FORM-1280",
+      "actual": {
+        "width": 1280,
+        "documentWidth": 1280,
+        "body": "14px",
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "primary": 1,
+        "fields": [
+          {
+            "height": 40,
+            "size": "14px"
+          },
+          {
+            "height": 40,
+            "size": "14px"
+          },
+          {
+            "height": 40,
+            "size": "14px"
+          },
+          {
+            "height": 40,
+            "size": "14px"
+          },
+          {
+            "height": 40,
+            "size": "14px"
+          },
+          {
+            "height": 40,
+            "size": "14px"
+          },
+          {
+            "height": 40,
+            "size": "14px"
+          }
+        ],
+        "actionbar": {
+          "visible": false,
+          "bottom": 0,
+          "navTop": 0
+        }
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "DELETE-CANCEL-1280",
+      "actual": {
+        "x": 420,
+        "y": 366,
+        "width": 440,
+        "height": 168,
+        "focusReturned": true
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "DELETE-DATABASE",
+      "actual": {
+        "sales": [],
+        "stocks": [
+          3,
+          5,
+          5
+        ],
+        "items": 0,
+        "expenses": 0,
+        "private_session": true,
+        "private_view": true
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "TECH-GUARD-/penjualan",
+      "actual": {
+        "status": 403
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "TECH-GUARD-/penjualan/baru",
+      "actual": {
+        "status": 403
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "TECH-GUARD-/penjualan/1",
+      "actual": {
+        "status": 403
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "NO-JS-EXCEPTIONS",
+      "actual": {
+        "count": 0
+      },
+      "verdict": "pass"
+    }
+  ],
+  "reports": [
+    {
+      "width": 360,
+      "path": "/penjualan/1",
+      "findings": [
+        {
+          "level": "WARN",
+          "id": "edge-text",
+          "width": 360,
+          "message": "1 text block(s) sit 12–15px from the phone's edge: \"Beranda\" (13px)",
+          "fix": "The page margin is 16–20px on a phone; the header and the corner labels sit on it too."
+        }
+      ],
+      "verdict": "pass"
+    },
+    {
+      "width": 360,
+      "path": "/penjualan",
+      "findings": [
+        {
+          "level": "WARN",
+          "id": "edge-text",
+          "width": 360,
+          "message": "1 text block(s) sit 12–15px from the phone's edge: \"Beranda\" (13px)",
+          "fix": "The page margin is 16–20px on a phone; the header and the corner labels sit on it too."
+        }
+      ],
+      "verdict": "pass"
+    },
+    {
+      "width": 360,
+      "path": "/penjualan/baru",
+      "findings": [
+        {
+          "level": "WARN",
+          "id": "edge-text",
+          "width": 360,
+          "message": "1 text block(s) sit 12–15px from the phone's edge: \"Beranda\" (13px)",
+          "fix": "The page margin is 16–20px on a phone; the header and the corner labels sit on it too."
+        }
+      ],
+      "verdict": "pass"
+    },
+    {
+      "width": 768,
+      "path": "/penjualan/1",
+      "findings": [],
+      "verdict": "pass"
+    },
+    {
+      "width": 768,
+      "path": "/penjualan",
+      "findings": [],
+      "verdict": "pass"
+    },
+    {
+      "width": 768,
+      "path": "/penjualan/baru",
+      "findings": [],
+      "verdict": "pass"
+    },
+    {
+      "width": 1280,
+      "path": "/penjualan/1",
+      "findings": [
+        {
+          "level": "WARN",
+          "id": "panel-void",
+          "width": 1280,
+          "message": "1 card(s) hold a blank band inside: 307px in \"JL-2611-001\".",
+          "fix": "A card stretches to its neighbour only when it has content to fill. Keep a legend or a note directly under its chart (only an action or a total may sit at a stretched card's foot), let a short card keep its own height (align-items: start), and let a filtered block shrink to its rows."
+        }
+      ],
+      "verdict": "pass"
+    },
+    {
+      "width": 1280,
+      "path": "/penjualan",
+      "findings": [
+        {
+          "level": "WARN",
+          "id": "hero-void",
+          "width": 1280,
+          "message": "58% of the first screen is one empty block (1013×660px at 267,240).",
+          "fix": "Place the void on purpose or fill it: move the picture, the film or one fact into it, grow the headline to meet it, or shrink the screen to its content. A void reads as placed only when something closes it on the far side and it is the screen's one rest."
+        },
+        {
+          "level": "WARN",
+          "id": "panel-void",
+          "width": 1280,
+          "message": "1 card(s) hold a blank band inside: 617px in \"Penjualan\".",
+          "fix": "A card stretches to its neighbour only when it has content to fill. Keep a legend or a note directly under its chart (only an action or a total may sit at a stretched card's foot), let a short card keep its own height (align-items: start), and let a filtered block shrink to its rows."
+        }
+      ],
+      "verdict": "pass"
+    },
+    {
+      "width": 1280,
+      "path": "/penjualan/baru",
+      "findings": [
+        {
+          "level": "WARN",
+          "id": "panel-void",
+          "width": 1280,
+          "message": "1 card(s) hold a blank band inside: 118px in \"Penjualan baru\".",
+          "fix": "A card stretches to its neighbour only when it has content to fill. Keep a legend or a note directly under its chart (only an action or a total may sit at a stretched card's foot), let a short card keep its own height (align-items: start), and let a filtered block shrink to its rows."
+        }
+      ],
+      "verdict": "pass"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+TASTESKILL · LINT   4 file(s)
+
+WARN
+  [mono] Monospace type. Only literal code may be monospace.  (1×)
+      ../../../../../../private/tmp/t013-app-lint-vrbzw993/styles.blade.html:21  font-family:var(--font-mono
+
+RESULT: 0 FAIL, 1 WARN
+Interface fragments marked data-ui keep their own borders and shadows. Any other line that must keep a flagged pattern for a real reason can carry the comment taste-skill-ignore.

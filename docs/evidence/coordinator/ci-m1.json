@@ -1,0 +1,15 @@
+{
+  "source_revision": "1d831380cd89b601c67321298eff07f686d8f010",
+  "run_id": 43347632376,
+  "job_id": 131630714774,
+  "url": "https://github.com/BatuBata/repair-app/actions/runs/43347632376",
+  "result": "FAIL",
+  "failure_class": "evidence",
+  "cause": "Pint lint:check scanned docs/evidence/T008/A2/fixture.php and found formatting issues. Application setup/build succeeded; later application CI checks were not reached.",
+  "repair": "Pint formatting only on QA evidence helper; executed original preserved at immutable QA evidence commit3610253. No product source/dependency/config changes.",
+  "local_commands": [
+    "PHP8.3 vendor/bin/pint docs/evidence/T008/A2/fixture.php: fixed",
+    "PHP8.3 vendor/bin/pint --test docs/evidence/T008/A2/fixture.php: PASS"
+  ],
+  "next": "Publish formatting-only snapshot to main and inspect actual CI outcome; do not relabel failed run PASS."
+}

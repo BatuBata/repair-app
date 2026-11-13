@@ -1,0 +1,53 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "status": "diterima",
+      "warranty_contacted_at": null
+    },
+    {
+      "id": 2,
+      "status": "dikerjakan",
+      "warranty_contacted_at": null
+    },
+    {
+      "id": 3,
+      "status": "selesai",
+      "warranty_contacted_at": "2026-11-13T06:28:47.000000Z"
+    },
+    {
+      "id": 4,
+      "status": "selesai",
+      "warranty_contacted_at": null
+    },
+    {
+      "id": 5,
+      "status": "selesai",
+      "warranty_contacted_at": null
+    },
+    {
+      "id": 6,
+      "status": "selesai",
+      "warranty_contacted_at": null
+    },
+    {
+      "id": 7,
+      "status": "selesai",
+      "warranty_contacted_at": null
+    }
+  ],
+  "sales": [
+    {
+      "id": 1,
+      "warranty_contacted_at": null
+    },
+    {
+      "id": 2,
+      "warranty_contacted_at": "2026-11-13T06:28:49.000000Z"
+    },
+    {
+      "id": 3,
+      "warranty_contacted_at": null
+    }
+  ]
+}

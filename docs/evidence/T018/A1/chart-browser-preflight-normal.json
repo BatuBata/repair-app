@@ -1,0 +1,9 @@
+{
+  "kind": "normal",
+  "runtime": "/private/tmp/repair-t018-a1-qmcd074v/empty-final",
+  "pid": 82515,
+  "profile": "/private/tmp/repair-t018-a1-qmcd074v/empty-final/chrome/ad-chrome-V8lPTM",
+  "CDP": "owned port0",
+  "headless": true,
+  "server": 8190
+}

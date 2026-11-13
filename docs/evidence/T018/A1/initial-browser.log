@@ -1,0 +1,16 @@
+empty 360 PASS
+empty 768 PASS
+AssertionError [ERR_ASSERTION]: small touch target
+
+1 !== 0
+
+    at capture (file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T018/A1/browser.mjs:5:1576)
+    at async capture3 (file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T018/A1/browser.mjs:6:75)
+    at async file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T018/A1/browser.mjs:7:209 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}

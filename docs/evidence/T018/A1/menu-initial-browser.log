@@ -1,0 +1,21 @@
+empty 360 PASS
+empty 768 PASS
+empty 1280 PASS
+populated 360 PASS
+populated 768 PASS
+populated 1280 PASS
+populated-kpi 360 PASS
+populated-kpi 768 PASS
+populated-kpi 1280 PASS
+long-data 360 PASS
+long-data 768 PASS
+long-data 1280 PASS
+long-money 360 PASS
+long-money 768 PASS
+long-money 1280 PASS
+Error: page eval: Error: No visible #warranty-actions-service-3 button
+    at <anonymous>:1:139
+    at <anonymous>:1:274
+    at Page.eval (file:///Users/muzib/.codex/skills/design-taste-frontend/scripts/lib/cdp.mjs:210:13)
+    at async click (file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T018/A1/browser.mjs:4:756)
+    at async file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T018/A1/browser.mjs:11:823

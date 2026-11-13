@@ -1,0 +1,16 @@
+{
+  "private_root": "/private/tmp/repair-t018-a1-qmcd074v",
+  "datasets": {
+    "empty": "/private/tmp/repair-t018-a1-qmcd074v/chart-empty",
+    "populated": "/private/tmp/repair-t018-a1-qmcd074v/empty-final",
+    "large": "/private/tmp/repair-t018-a1-qmcd074v",
+    "negative": "/private/tmp/repair-t018-a1-qmcd074v/chart-negative"
+  },
+  "directory_modes": "0700",
+  "DB_env_config_modes": "0600",
+  "all_private_storage_views_cache_sessions": true,
+  "browser": "fresh ownChrome/process/profile/CDPport0/TASTE per run",
+  "server_port": 8190,
+  "server_stopped_during_chart_implementation": true,
+  "grant": "continuing conditional privateT018 grant; no sharedGUI/WA/MySQL"
+}

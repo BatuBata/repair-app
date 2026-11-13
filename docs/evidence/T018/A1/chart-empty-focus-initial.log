@@ -1,0 +1,21 @@
+empty revenue 360 PASS
+empty profit 360 PASS
+empty invoices 360 PASS
+empty revenue 768 PASS
+empty profit 768 PASS
+empty invoices 768 PASS
+empty revenue 1280 PASS
+empty profit 1280 PASS
+empty invoices 1280 PASS
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+'' !== 'tab-profit'
+
+    at file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T018/A1/chart-browser.mjs:12:449 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '',
+  expected: 'tab-profit',
+  operator: 'strictEqual',
+  diff: 'simple'
+}

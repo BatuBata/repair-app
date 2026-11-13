@@ -1,0 +1,9 @@
+{
+  "kind": "large",
+  "runtime": "/private/tmp/repair-t018-a1-qmcd074v",
+  "pid": 76186,
+  "profile": "/private/tmp/repair-t018-a1-qmcd074v/chrome/ad-chrome-96hISl",
+  "CDP": "owned port0",
+  "headless": true,
+  "server": 8190
+}

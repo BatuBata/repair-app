@@ -1,0 +1,1 @@
+{"fixture_mode":"negative","expected_daily_revenue":"Rp0","expected_monthly_profit":"Rp-36.893.488.138.829.168.640","note":"Initial fixture log expectation accidentally reused normal1350000; records created correctly with price0 and maxcost. No reseed/recreation; corrected expectation verified by chart/browser."}

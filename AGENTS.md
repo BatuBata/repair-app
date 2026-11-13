@@ -1,6 +1,6 @@
 # Aturan proyek — Aplikasi Servis Anugerah (repair-app)
 
-**Status proyek: STOPPED — user 13 November 2026: "stop pekerjaan". Jangan memulai atau meresume task, retry, QA, integrasi atau deployment dari wake otomatis. Tunggu instruksi resume eksplisit user; baca checkpoint TODO terlebih dahulu.**
+**Status proyek: RUNNING — Goal user 13 November 2026 meresume T001–T023 sampai siap rilis memakai worker bawaan Codex. T024–T025/deployment belum diizinkan. Riwayat stop dan checkpoint dipertahankan di TODO.md.**
 
 Bahasa: Indonesia sederhana. Jelaskan istilah teknis saat pertama dipakai, laporkan hasil pemeriksaan yang benar-benar dijalankan, dan minta persetujuan sebelum menghapus data atau deploy. Commit dan push branch pekerjaan ke origin sudah diizinkan user 12 November 2026; tidak perlu meminta ulang setiap task.
 
@@ -15,12 +15,12 @@ Bahasa: Indonesia sederhana. Jelaskan istilah teknis saat pertama dipakai, lapor
 
 ## Cara bekerja
 
-Gunakan skill `project-delivery` (sumber: `~/.agents/skills/project-delivery/SKILL.md`) untuk triase, dependensi, penugasan, QA, integrasi, dan rilis. Batas eksekusi terkini dibaca dari `project.execution` di `TODO.md`; user mengizinkan kelanjutan T001–T025 pada 12 November 2026, mengikuti dependensi dan gate izin. Jangan menyamakan cakupan task dengan izin push/deploy.
+Gunakan skill `project-delivery` (sumber: `~/.agents/skills/project-delivery/SKILL.md`) untuk triase, dependensi, penugasan, QA, integrasi, dan rilis. Batas eksekusi terkini dibaca dari `project.execution` di `TODO.md`; Goal user 13 November 2026 mengizinkan T001–T023, mengikuti dependensi dan gate izin. Gunakan koordinasi/worker bawaan Codex; jangan menjalankan orchestration Orca. Jangan menyamakan cakupan task dengan izin push/deploy.
 
 - Satu coordinator menulis ledger. Worker mengerjakan satu task dan mengembalikan perubahan serta bukti, tanpa mengubah status pusat atau membuat worker lain.
 - Maksimal dua worker aktif (termasuk tester). Maksimal dua upaya implementasi per task.
 - Coordinator dan semua worker memakai skill `ponytail` level full (lihat `~/.codex/AGENTS.md`).
-- Model per task ada di `model_hint` (`gpt-6-luna`, `gpt-6.1-terra`, `gpt-6.1-sol`). Katalog di ledger diverifikasi dari OpenCode; verifikasi ulang ketersediaannya di Codex sebelum dispatch dan perbarui `model_catalog.evidence_ref`.
+- Model per task ada di `model_hint` (`gpt-6-luna`, `gpt-6.1-terra`, `gpt-6.1-sol`). Katalog Codex diverifikasi dari tool native; catat model yang diminta dan receipt aktual sebelum mengklaim model efektif.
 - Untuk pekerjaan tampilan, skill `design-taste-frontend` tersedia di `~/.codex/skills/`; aturannya sudah dituangkan ke `DESIGN.md`, yang berlaku bila ada perbedaan.
 
 ## Lingkungan lokal (diperiksa 12 Nov 2026)

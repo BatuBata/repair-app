@@ -2,7 +2,7 @@
 
 ## Tujuan dan cara pakai
 
-Rencana kerja untuk membangun v1 sesuai `PRD.md` (v1.1). PRD adalah sumber kebutuhan; setiap task merujuk bagian PRD.
+Rencana kerja untuk membangun v1 sesuai `PRD.md` (v1.2). PRD adalah sumber kebutuhan; setiap task merujuk bagian PRD.
 
 **Sumber status tunggal adalah ledger JSON di bawah.** Coordinator memperbaruinya setelah memeriksa bukti worker, lalu membuat ulang overview dengan:
 
@@ -13,7 +13,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 - Maksimal **dua worker aktif** (tester/integrator/deployer ikut dihitung).
 - Maksimal **dua attempt implementasi** per task; perubahan kode setelah itu perlu keputusan user.
 - Task implementation `done` = siap QA, **bukan** fitur diterima. Fitur diterima setelah QA atas hasil integrasi lulus.
-- Status eksekusi saat ini: **running**, sesuai instruksi user 12 November 2026. T001–T025 dalam cakupan eksekusi; dependensi, akses, QA, dan izin deployment tetap menjadi gate. Push branch ke origin diizinkan user 12 November 2026; deployment produksi belum diizinkan.
+- Status eksekusi saat ini: **running**, sesuai Goal user 13 November 2026: T001–T023 sampai siap rilis memakai worker bawaan Codex. T024–T025 menunggu izin/akses deployment dan perangkat fisik. Push normal branch tetap diizinkan; seluruh gate QA dan batas attempt dipertahankan.
 
 ## Overview pekerjaan
 
@@ -124,10 +124,36 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
-      "state": "stopped",
-      "allowed_tasks": [],
-      "stop_after_tasks": [],
-      "source_ref": "User 13 Nov 2026: stop pekerjaan. Hentikan assignment aktif, simpan checkpoint, tanpa task/retry/QA/integrasi/deploy baru sampai user resume."
+      "state": "running",
+      "allowed_tasks": [
+        "T001",
+        "T002",
+        "T003",
+        "T004",
+        "T005",
+        "T006",
+        "T007",
+        "T008",
+        "T009",
+        "T010",
+        "T011",
+        "T012",
+        "T013",
+        "T014",
+        "T015",
+        "T016",
+        "T017",
+        "T018",
+        "T019",
+        "T020",
+        "T021",
+        "T022",
+        "T023"
+      ],
+      "stop_after_tasks": [
+        "T023"
+      ],
+      "source_ref": "User Goal 13 Nov 2026 pada chat Codex 01a1d268-2b8e-7832-8076-72b28764a569: resume eksplisit T001–T023 sampai siap rilis; lanjutkan logical T004 A2; tanpa deploy T024/T025."
     },
     "exclusive_resources": [
       "branch:main",
@@ -149,7 +175,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "gpt-6.1-terra",
         "gpt-6-luna"
       ],
-      "evidence_ref": "docs/evidence/coordinator/models-T005.json"
+      "evidence_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
     },
     "authorizations": [],
     "git": {
@@ -158,7 +184,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "push_authorized": true,
       "source_ref": "Instruksi user 12 Nov 2026: push ke GitHub BatuBata/repair-app, setiap pekerjaan selesai buat commit dan push",
       "policy": "Commit pekerjaan selesai dan push branch task/checkpoint setelah periksa perubahan; merge ke main tetap setelah QA/review relevan; tanpa force-push. Kandidat blocked disimpan sebagai checkpoint, bukan fitur diterima.",
-      "coordination_branch": "candidate/foundation-inputs"
+      "coordination_branch": "codex/goal-v1"
     }
   },
   "deliverables": [
@@ -2368,3 +2394,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-13 | Historical T007/T008 snapshot references for T004 fix are recorded under source_context with immutable SHA/path, not dependency edges. Validator rejected artifact edges as a cycle when reopening the original owner; no dispatch occurred while invalid. Hard prerequisites remain T002/T003 and FAILED QA remains only reproduction context. | Preserve version history without making repair wait on its own downstream integration | T004 | Validator feedback + coordinator correction |
 
 | 2026-11-13 | User menghentikan pekerjaan segera. project.execution=stopped, allowed_tasks kosong; batalkan assignment aktif T004 A2, simpan hasil parsial dan seluruh riwayat. Tidak ada task/retry/QA/integrasi/deployment baru sebelum instruksi resume. | Stop user mengalahkan izin eksekusi dan taskready | Semua | User: stop pekerjaan |
+
+| 2026-11-13 | Resume eksplisit melalui Goal Codex sampai T023; gunakan worker native, maksimal dua, tanpa orchestration Orca. Snapshot candidate M1 f6b23c9 digabung ke codex/goal-v1; tiga file parsial T004 A2 cocok hash stop dan disalin tanpa mengubah sumber lama. Lanjutkan logical A2, bukan attempt baru. | Goal user | T001–T023 | docs/evidence/coordinator/codex-resume-2026-11-13.json |

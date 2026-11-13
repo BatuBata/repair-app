@@ -1,0 +1,14 @@
+{
+  "source_ref": "User Goal 13 Nov 2026 pada chat Codex 01a1d268-2b8e-7832-8076-72b28764a569: resume eksplisit T001–T023 sampai siap rilis; lanjutkan logical T004 A2; tanpa deploy T024/T025.",
+  "runtime": "Codex desktop native collaboration tools",
+  "available_models": [
+    "gpt-6.1-sol",
+    "gpt-6.1-terra",
+    "gpt-6-luna"
+  ],
+  "model_evidence": "Current collaboration.spawn_agent schema exposes these exact overrides; effective worker model verified from launch receipt when available.",
+  "base_revision": "ccc2f6edeb606595020b22d76ccb550bba4c5796",
+  "legacy_runtime_observation": "Orca worktree ps read-only: T004 no agent/PTY; other six sessions agent state done, PTY retained. No Orca dispatch/resume performed.",
+  "partial_files": "All three partial files match sha256 recorded at stop; originals preserved.",
+  "attempt_policy": "Resume same logical T004 A2; preserve old assignment in phase_history, no new implementation attempt."
+}

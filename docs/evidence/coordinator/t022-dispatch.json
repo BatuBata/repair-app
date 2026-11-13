@@ -1,0 +1,18 @@
+{
+  "task": "T022",
+  "attempt": "A1",
+  "runtime": "native collaboration",
+  "worker": "/root/t022_integrate",
+  "model_requested": "gpt-6.1-sol",
+  "reasoning_requested": "high",
+  "model_effective": null,
+  "branch": "codex/t022-release",
+  "base_revision": "9d011685cde0f75ce676091cceca598978cdcf6a",
+  "inputs": {
+    "T017": "2d7e613d5592ff169cb7743ff6fd086ec06fe58c",
+    "T018": "c9d1f429056676576310e88e524a75c9bc897c83",
+    "T019": "7b7a438fcde75185c2160b642a02fbb2c6ed3ff1",
+    "T020": "6095a5ca34a5b28bf65a481007d69b21a8bc7084",
+    "T021": "9d011685cde0f75ce676091cceca598978cdcf6a"
+  }
+}

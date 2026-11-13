@@ -1,0 +1,39 @@
+{
+  "checked_revision": "501207eba89145683ece5df3aef6a065645e9072",
+  "verdict": "fail",
+  "failure_class": "product",
+  "findings": [
+    {
+      "id": "F01",
+      "actual": "Guide lists operasional/transportasi/utilitas",
+      "expected": "Bensin/Konsumsi/Gaji/Lainnya",
+      "source": "app/Enums/ExpenseCategory.php"
+    },
+    {
+      "id": "F02",
+      "actual": "KirimWA in technician steps",
+      "expected": "Admin only; technician printsTTS/owneditDiterima",
+      "source": "resources/views/livewire/tts/detail.blade.php45 +routes/modules/tracking.php"
+    },
+    {
+      "id": "F03",
+      "actual": "Publicinvoice instructions say PDF A5 button",
+      "expected": "Tracking issuedinvoice button Unduh nota (PDF)",
+      "source": "resources/views/tracking/show.blade.php50"
+    },
+    {
+      "id": "F04",
+      "actual": "Sales action Penjualan baru",
+      "expected": "List button Buat penjualan; page title Penjualan baru",
+      "source": "resources/views/livewire/sales/index.blade.php"
+    },
+    {
+      "id": "F05",
+      "actual": "Dashboardtabs/H-3 window/mark button not explained",
+      "expected": "Actual Beranda3KPI tabs and H-3 inclusive/markcontacted steps concise",
+      "source": "T018 accepted source c9d1f429056676576310e88e524a75c9bc897c83"
+    }
+  ],
+  "scope": "docs/PANDUAN.md only; no tests/build needed for correction",
+  "prior_worker_selfcheck": "reported pass; factual source review contradicts"
+}

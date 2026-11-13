@@ -1,0 +1,17 @@
+{
+  "private_runtime": "/private/tmp/repair-t022-a2-m02ip6_l",
+  "fixture_preserved": true,
+  "old_build_preserved": "/private/tmp/repair-t022-a2-m02ip6_l/old-build",
+  "pre_exclusion_build_preserved": "/private/tmp/repair-t022-a2-m02ip6_l/candidate-build",
+  "final_build_preserved": "/private/tmp/repair-t022-a2-m02ip6_l/candidate-build-final",
+  "server_pid": 21936,
+  "server_command": "php -S 127.0.0.1:8192 -t public /private/tmp/repair-t022-a2-m02ip6_l/router.php",
+  "server_terminated": true,
+  "port8192_released": true,
+  "browser_pid": 21969,
+  "browser_alive": false,
+  "profile_exists": false,
+  "chrome_directory_empty": true,
+  "mysql_not_accessed": true,
+  "earlier_resource_release": "pre-exclusion-smoke/resource-release.json"
+}

@@ -1,0 +1,9 @@
+{
+  "runtime": "/private/tmp/repair-t022-a2-m02ip6_l",
+  "privateModes": "directory0700/envDB0600",
+  "port8192_free": true,
+  "isolation": "new SQLite only; private config/cache/session/views/log/storage; explicit useStoragePath in router",
+  "browser": "conditional grant after this preflight; own headless Chrome process/profile/CDP port0; not Edge/GUI",
+  "requestedModel": "gpt-6.1-sol high same session",
+  "effectiveModel": null
+}

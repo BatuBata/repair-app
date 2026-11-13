@@ -1,0 +1,143 @@
+{
+  "verdict": "pass",
+  "files": [
+    {
+      "path": "/build/assets/app-CDn1G0_W.css",
+      "status": 200,
+      "bytes": 397614,
+      "same_sha256": true
+    },
+    {
+      "path": "/build/assets/app-TKBAM3lN.js",
+      "status": 200,
+      "bytes": 1757,
+      "same_sha256": true
+    },
+    {
+      "path": "/build/assets/fonts-C9MNnjVw.css",
+      "status": 200,
+      "bytes": 2352,
+      "same_sha256": true
+    },
+    {
+      "path": "/build/assets/instrument-sans-400-normal-D1W7dsQl.woff",
+      "status": 200,
+      "bytes": 21240,
+      "same_sha256": true
+    },
+    {
+      "path": "/build/assets/instrument-sans-400-normal-DRC__1Mx.woff2",
+      "status": 200,
+      "bytes": 16860,
+      "same_sha256": true
+    },
+    {
+      "path": "/build/assets/instrument-sans-500-normal-Dk9ku72i.woff2",
+      "status": 200,
+      "bytes": 17232,
+      "same_sha256": true
+    },
+    {
+      "path": "/build/assets/instrument-sans-500-normal-Z6ESRlEs.woff",
+      "status": 200,
+      "bytes": 21652,
+      "same_sha256": true
+    },
+    {
+      "path": "/build/assets/instrument-sans-600-normal-B7fBEWYG.woff2",
+      "status": 200,
+      "bytes": 17408,
+      "same_sha256": true
+    },
+    {
+      "path": "/build/assets/instrument-sans-600-normal-B9e8oLYv.woff",
+      "status": 200,
+      "bytes": 21676,
+      "same_sha256": true
+    },
+    {
+      "path": "/build/assets/layout-DAFmGKay.css",
+      "status": 200,
+      "bytes": 32149,
+      "same_sha256": true
+    },
+    {
+      "path": "/build/assets/layout-VbftPR1Q.js",
+      "status": 200,
+      "bytes": 2285,
+      "same_sha256": true
+    },
+    {
+      "path": "/build/assets/passkeys-CsxEE3hN.js",
+      "status": 200,
+      "bytes": 12075,
+      "same_sha256": true
+    },
+    {
+      "path": "/build/fonts-manifest.json",
+      "status": 200,
+      "bytes": 5742,
+      "same_sha256": true
+    },
+    {
+      "path": "/build/manifest.json",
+      "status": 200,
+      "bytes": 1982,
+      "same_sha256": true
+    },
+    {
+      "path": "/fonts/OFL-IBM-Plex.txt",
+      "status": 200,
+      "bytes": 4362,
+      "same_sha256": true
+    },
+    {
+      "path": "/fonts/ibm-plex-mono-400.woff2",
+      "status": 200,
+      "bytes": 14708,
+      "same_sha256": true
+    },
+    {
+      "path": "/fonts/ibm-plex-mono-500.ttf",
+      "status": 200,
+      "bytes": 41328,
+      "same_sha256": true
+    },
+    {
+      "path": "/fonts/ibm-plex-mono-500.woff2",
+      "status": 200,
+      "bytes": 14888,
+      "same_sha256": true
+    },
+    {
+      "path": "/fonts/ibm-plex-sans-400.ttf",
+      "status": 200,
+      "bytes": 56724,
+      "same_sha256": true
+    },
+    {
+      "path": "/fonts/ibm-plex-sans-400.woff2",
+      "status": 200,
+      "bytes": 22588,
+      "same_sha256": true
+    },
+    {
+      "path": "/fonts/ibm-plex-sans-500.woff2",
+      "status": 200,
+      "bytes": 24184,
+      "same_sha256": true
+    },
+    {
+      "path": "/fonts/ibm-plex-sans-600.ttf",
+      "status": 200,
+      "bytes": 56780,
+      "same_sha256": true
+    },
+    {
+      "path": "/fonts/ibm-plex-sans-600.woff2",
+      "status": 200,
+      "bytes": 24252,
+      "same_sha256": true
+    }
+  ]
+}

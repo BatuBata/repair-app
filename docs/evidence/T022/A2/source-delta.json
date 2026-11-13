@@ -1,0 +1,18 @@
+{
+  "prior_revision": "a95a3058c2160617d2e59ce7ac44685774d7528d",
+  "changed": [
+    {
+      "path": "resources/css/app.css",
+      "old_sha256": "1204a8609eb34db5d6a4fe125cc14c883806c2b555ba92a728bf740778e6e1d1",
+      "new_sha256": "d5d6fff950d39c6fc7b4505fb97b297afbae5cb962ed092ba3745ef2ce254b29"
+    },
+    {
+      "path": "resources/views/livewire/reports/styles.blade.php",
+      "old_sha256": "b172700204fa7582e83ba1dc3b9a0100db4ffee5bb8efbae614aebd6438f05ce",
+      "new_sha256": "ff8e1868c46fce21fab34c0d122daf91e1769f8b5d96a1394f294c079cf8c85c"
+    }
+  ],
+  "unchanged_source_files": 228,
+  "authorization": "T019069725b accepted fix; coordinator explicitly authorized minimal evidence exclusion withinT022A2 after scanner provenance audit",
+  "patch": "diff --git a/resources/css/app.css b/resources/css/app.css\nindex ad6eeed..58929ef 100644\n--- a/resources/css/app.css\n+++ b/resources/css/app.css\n@@ -2,6 +2,7 @@\n @import '../../vendor/livewire/flux/dist/flux.css';\n \n @source '../views';\n+@source not '../../docs/evidence';\n @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';\n @source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';\n @source '../../vendor/livewire/flux/stubs/**/*.blade.php';\ndiff --git a/resources/views/livewire/reports/styles.blade.php b/resources/views/livewire/reports/styles.blade.php\nindex bd18de8..7c287d0 100644\n--- a/resources/views/livewire/reports/styles.blade.php\n+++ b/resources/views/livewire/reports/styles.blade.php\n@@ -57,6 +57,7 @@\n .reports-page .report-table tbody td { border:0; padding:0; }\n .reports-page .report-table td.act { grid-column:1; grid-row:1 / span 2; }\n .reports-page .report-number { grid-column:2; grid-row:1; font-weight:500; }\n+.reports-page .report-number a { display:inline-block; min-width:44px; min-height:44px; }\n .reports-page .report-amount { grid-column:3; grid-row:1; max-width:48vw; }\n .reports-page .report-description { grid-column:2/-1; grid-row:2; color:var(--muted); font-size:14px; }\n .reports-page .report-table tbody .report-empty { grid-column:1/-1; }\n"
+}

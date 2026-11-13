@@ -1,0 +1,24 @@
+{
+  "verdict": "pass",
+  "sourceCssSha256": "d5d6fff950d39c6fc7b4505fb97b297afbae5cb962ed092ba3745ef2ce254b29",
+  "before": {
+    "candidateHash": "3a5c92c7ebbb5f9d8272cbff54282cf6dfa9b3b170377ef5d3426534800fbe02",
+    "generatedCssHash": "62a8a20fc6a608cd6eed0ac241f85d034cfcb9775fd61f3bd9645fc871ab1637",
+    "scannedFiles": 749
+  },
+  "withEvidenceSentinel": {
+    "candidateHash": "3a5c92c7ebbb5f9d8272cbff54282cf6dfa9b3b170377ef5d3426534800fbe02",
+    "generatedCssHash": "62a8a20fc6a608cd6eed0ac241f85d034cfcb9775fd61f3bd9645fc871ab1637",
+    "excludedSentinel": true
+  },
+  "afterRemovingOwnedSentinel": {
+    "candidateHash": "3a5c92c7ebbb5f9d8272cbff54282cf6dfa9b3b170377ef5d3426534800fbe02",
+    "generatedCssHash": "62a8a20fc6a608cd6eed0ac241f85d034cfcb9775fd61f3bd9645fc871ab1637",
+    "sentinelAbsent": true
+  },
+  "controlWithoutExclusion": {
+    "detectsSentinel": true
+  },
+  "explicitViewSourcesRetained": true,
+  "scope": "Installed Tailwind4.3.5 compiler/oxide scanner; docs/evidence addition/removal cannot change candidates/generated CSS. No second production build, no existing evidence deleted."
+}

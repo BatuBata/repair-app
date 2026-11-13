@@ -1,0 +1,27 @@
+{
+  "verdict": "pass",
+  "artifact_ref": "branch:codex/t022-release",
+  "revision": "a6e570f000846763e5f294bffe5d1193e6615cbc",
+  "checked_revision": "a6e570f000846763e5f294bffe5d1193e6615cbc",
+  "inputs": {
+    "T017": "2d7e613d5592ff169cb7743ff6fd086ec06fe58c",
+    "T018": "c9d1f429056676576310e88e524a75c9bc897c83",
+    "T019": "069725bc434fc2ab42a486773863d9c362e5e20d",
+    "T020": "6095a5ca34a5b28bf65a481007d69b21a8bc7084",
+    "T021": "069725bc434fc2ab42a486773863d9c362e5e20d"
+  },
+  "evidence": [
+    "docs/evidence/T022/A2/README.md",
+    "docs/evidence/T022/A2/checked-source.json",
+    "docs/evidence/T022/A2/source-delta.json",
+    "docs/evidence/T022/A2/full-suite.log",
+    "docs/evidence/T022/A2/checks.json",
+    "docs/evidence/T022/A2/build-manifest.json",
+    "docs/evidence/T022/A2/font-manifest.json",
+    "docs/evidence/T022/A2/browser-results.json",
+    "docs/evidence/T022/A2/scan-stability.json",
+    "docs/evidence/T022/A2/reused-proof.json",
+    "docs/evidence/T022/A2/resource-release.json"
+  ],
+  "summary": "T01944px fix integrated;181testsPASS/1guardedskip1913assert. Authorized one-line evidence exclusion makes Tailwind output stable vs evidence changes; finalbuild/11report smoke cases/23HTTPassetsPASS. IndependentT023A2 pending. Final evidence-only commit source-equivalent."
+}

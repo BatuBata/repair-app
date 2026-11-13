@@ -1,0 +1,35 @@
+
+> build
+> vp build
+
+[plugin laravel:fonts] Optimized font fallbacks require the optional "fontaine" package. Install it, or set "optimizedFallbacks: false" on your fonts to disable the feature.
+transforming...
+
+/fonts/ibm-plex-sans-400.woff2 referenced in /fonts/ibm-plex-sans-400.woff2 didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+/fonts/ibm-plex-sans-500.woff2 referenced in /fonts/ibm-plex-sans-500.woff2 didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+/fonts/ibm-plex-sans-600.woff2 referenced in /fonts/ibm-plex-sans-600.woff2 didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+/fonts/ibm-plex-mono-400.woff2 referenced in /fonts/ibm-plex-mono-400.woff2 didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+/fonts/ibm-plex-mono-500.woff2 referenced in /fonts/ibm-plex-mono-500.woff2 didn't resolve at build time, it will remain unchanged to be resolved at runtime
+✓ 25 modules transformed.
+rendering chunks...
+computing gzip size...
+public/build/manifest.json                                       1.98 kB │ gzip:  0.43 kB
+public/build/fonts-manifest.json                                 5.74 kB │ gzip:  0.71 kB
+public/build/assets/instrument-sans-400-normal-DRC__1Mx.woff2   16.86 kB
+public/build/assets/instrument-sans-500-normal-Dk9ku72i.woff2   17.23 kB
+public/build/assets/instrument-sans-600-normal-B7fBEWYG.woff2   17.40 kB
+public/build/assets/instrument-sans-400-normal-D1W7dsQl.woff    21.24 kB
+public/build/assets/instrument-sans-500-normal-Z6ESRlEs.woff    21.65 kB
+public/build/assets/instrument-sans-600-normal-B9e8oLYv.woff    21.67 kB
+public/build/assets/fonts-C9MNnjVw.css                           2.35 kB │ gzip:  0.38 kB
+public/build/assets/layout-DAFmGKay.css                         32.14 kB │ gzip:  7.30 kB
+public/build/assets/app-B8ctbMH8.css                           397.68 kB │ gzip: 38.92 kB
+public/build/assets/app-TKBAM3lN.js                              1.75 kB │ gzip:  0.93 kB
+public/build/assets/layout-VbftPR1Q.js                           2.28 kB │ gzip:  0.98 kB
+public/build/assets/passkeys-CsxEE3hN.js                        12.07 kB │ gzip:  3.90 kB
+
+✓ built in 510ms

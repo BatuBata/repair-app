@@ -1,0 +1,110 @@
+[
+  {
+    "id": "full-suite",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "artisan",
+      "test",
+      "--no-ansi"
+    ],
+    "environment_overrides": {
+      "DB_DATABASE": ":memory:",
+      "CACHE_STORE": "array",
+      "SESSION_DRIVER": "array"
+    },
+    "exit": 0,
+    "seconds": 9.281
+  },
+  {
+    "id": "build",
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "environment_overrides": {},
+    "exit": 0,
+    "seconds": 1.159
+  },
+  {
+    "id": "fixture-config",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "docs/evidence/T018/A1/fixture.php",
+      "config"
+    ],
+    "environment_overrides": {
+      "APP_ENV": "production"
+    },
+    "exit": 0,
+    "seconds": 0.273
+  },
+  {
+    "id": "fixture-seed",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "docs/evidence/T018/A1/fixture.php",
+      "seed"
+    ],
+    "environment_overrides": {},
+    "exit": 0,
+    "seconds": 1.094
+  },
+  {
+    "id": "fixture-populate",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "docs/evidence/T018/A1/fixture.php",
+      "populate"
+    ],
+    "environment_overrides": {},
+    "exit": 0,
+    "seconds": 0.325
+  },
+  {
+    "id": "config-cache",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "artisan",
+      "config:cache"
+    ],
+    "environment_overrides": {
+      "APP_ENV": "production"
+    },
+    "exit": 0,
+    "seconds": 0.301
+  },
+  {
+    "id": "route-cache",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "artisan",
+      "route:cache"
+    ],
+    "environment_overrides": {},
+    "exit": 0,
+    "seconds": 0.306
+  },
+  {
+    "id": "view-cache",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "artisan",
+      "view:cache"
+    ],
+    "environment_overrides": {},
+    "exit": 0,
+    "seconds": 1.424
+  },
+  {
+    "id": "build-final-evidence-exclusion",
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "exit": 0,
+    "seconds": 1.08,
+    "reason": "Authorized CSS source exclusion changes scan input; previous build retained as pre-exclusion evidence."
+  }
+]

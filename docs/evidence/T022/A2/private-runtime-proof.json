@@ -1,0 +1,12 @@
+{
+  "env": "production",
+  "database": "sqlite",
+  "dbPrivate": true,
+  "storagePrivate": true,
+  "sessionPrivate": true,
+  "cachePrivate": true,
+  "viewPrivate": true,
+  "logPrivate": true,
+  "configCached": true,
+  "routesCached": true
+}

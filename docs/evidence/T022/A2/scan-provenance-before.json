@@ -1,0 +1,111 @@
+{
+  "installedTailwind": "4.3.5",
+  "defaultImportAutoRoot": null,
+  "explicitSources": [
+    {
+      "base": "/Users/muzib/Projects/web/repair-app/vendor/livewire/flux/dist",
+      "pattern": "../../flux-pro/stubs",
+      "negated": false
+    },
+    {
+      "base": "/Users/muzib/Projects/web/repair-app/vendor/livewire/flux/dist",
+      "pattern": "../stubs",
+      "negated": false
+    },
+    {
+      "base": "/Users/muzib/Projects/web/repair-app/resources/css",
+      "pattern": "../views",
+      "negated": false
+    },
+    {
+      "base": "/Users/muzib/Projects/web/repair-app/resources/css",
+      "pattern": "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
+      "negated": false
+    },
+    {
+      "base": "/Users/muzib/Projects/web/repair-app/resources/css",
+      "pattern": "../../vendor/livewire/flux-pro/stubs/**/*.blade.php",
+      "negated": false
+    },
+    {
+      "base": "/Users/muzib/Projects/web/repair-app/resources/css",
+      "pattern": "../../vendor/livewire/flux/stubs/**/*.blade.php",
+      "negated": false
+    }
+  ],
+  "baseline": {
+    "scannedFiles": 1351,
+    "evidenceFiles": 602,
+    "candidates": 13859,
+    "optimizedCssBytes": 393111
+  },
+  "hypotheticalEvidenceExclusion": {
+    "supportedByInstalledCompiler": true,
+    "negation": {
+      "base": "/Users/muzib/Projects/web/repair-app/resources/css",
+      "pattern": "../../docs/evidence",
+      "negated": true
+    },
+    "scannedFiles": 749,
+    "evidenceFiles": 0,
+    "candidates": 8760,
+    "optimizedCssBytes": 393039,
+    "lowercasePresent": false
+  },
+  "origin": {
+    "file": "docs/evidence/T022/A1/browser-public.mjs",
+    "positions": [
+      {
+        "candidate": "lowercase",
+        "position": 4822
+      }
+    ],
+    "baselineScansFile": true,
+    "alsoPresentInA1ResultJson": true
+  },
+  "lostCandidateCount": 5099,
+  "lostCandidateSample": [
+    "--allow",
+    "--answers",
+    "--check",
+    "--colors",
+    "--compact",
+    "--create-test-db",
+    "--data",
+    "--debug",
+    "--element",
+    "--execute",
+    "--expect-url",
+    "--expected-output-count",
+    "--expression",
+    "--filter",
+    "--git",
+    "--heads",
+    "--height",
+    "--help",
+    "--host",
+    "--ignore-scripts",
+    "--is-ancestor",
+    "--json",
+    "--key",
+    "--limit",
+    "--list",
+    "--lock",
+    "--log-junit",
+    "--name-only",
+    "--no-ansi",
+    "--no-audit",
+    "--no-commit",
+    "--no-ff",
+    "--no-fund",
+    "--no-install",
+    "--no-progress",
+    "--no-reload",
+    "--no-scripts",
+    "--operation-kind",
+    "--out",
+    "--output-format"
+  ],
+  "allExplicitViewSourcePatternsPreserved": true,
+  "mutations": "none; in-memory compile/scanner only, no repository/public build modifications"
+}

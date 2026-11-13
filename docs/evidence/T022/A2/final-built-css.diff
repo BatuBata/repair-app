@@ -1,0 +1,10 @@
+--- pre-exclusion-built-css
++++ final-built-css
+@@ -302,3 +302,2 @@
+ .animate-spin{animation:var(--animate-spin)}
+-.\[cursor\:pointer\]{cursor:pointer}
+ .cursor-default{cursor:default}
+@@ -675,3 +674,2 @@
+ .\[text-transform\:inherit\]{text-transform:inherit}
+-.lowercase{text-transform:lowercase}
+ .uppercase{text-transform:uppercase}

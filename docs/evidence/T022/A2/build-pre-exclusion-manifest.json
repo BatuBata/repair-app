@@ -1,0 +1,72 @@
+[
+  {
+    "path": "public/build/assets/app-B8ctbMH8.css",
+    "bytes": 397686,
+    "sha256": "f1baf982d16355bf0badfc5142f4b3bf37c57bb71c4a3931550f02e064a0809f"
+  },
+  {
+    "path": "public/build/assets/app-TKBAM3lN.js",
+    "bytes": 1757,
+    "sha256": "e0084906357a1e8dbae007de03328ce94f9b3fd02415f17b40fe16175ea9170f"
+  },
+  {
+    "path": "public/build/assets/fonts-C9MNnjVw.css",
+    "bytes": 2352,
+    "sha256": "3846a9bb60bfad92960eadcccaf0b4e129d74b11d48791506c8d1a827a385cc8"
+  },
+  {
+    "path": "public/build/assets/instrument-sans-400-normal-D1W7dsQl.woff",
+    "bytes": 21240,
+    "sha256": "797bd3eaa70edbd4757650ab44dad75fbfbfdf18bacedb4b71022c04621d30ad"
+  },
+  {
+    "path": "public/build/assets/instrument-sans-400-normal-DRC__1Mx.woff2",
+    "bytes": 16860,
+    "sha256": "9a91efaa3599a6ef01b2f49e9ec670e3a2f39baeef09c73198f1052cf3bb0850"
+  },
+  {
+    "path": "public/build/assets/instrument-sans-500-normal-Dk9ku72i.woff2",
+    "bytes": 17232,
+    "sha256": "9d3547da16d950d12a677c772a3ff9b69846e60e7dcd1b5efd540993f7286532"
+  },
+  {
+    "path": "public/build/assets/instrument-sans-500-normal-Z6ESRlEs.woff",
+    "bytes": 21652,
+    "sha256": "bd6a8dc8b0dc0cced0c32d3eda93f0e0e82c58ddefea8b53b3307b0c48da3089"
+  },
+  {
+    "path": "public/build/assets/instrument-sans-600-normal-B7fBEWYG.woff2",
+    "bytes": 17408,
+    "sha256": "efb770916eda95a0e31d80cccde9651d4e8617010b21220e9f227c4820d675da"
+  },
+  {
+    "path": "public/build/assets/instrument-sans-600-normal-B9e8oLYv.woff",
+    "bytes": 21676,
+    "sha256": "9b4ce1f2b26be7cb087fd87d6f99a202136292ec820af75bd38ab9e53895cf28"
+  },
+  {
+    "path": "public/build/assets/layout-DAFmGKay.css",
+    "bytes": 32149,
+    "sha256": "6b76534c3551b13f83b69959c988520f92d09ac7a13770287af8b35cfd3aa6bb"
+  },
+  {
+    "path": "public/build/assets/layout-VbftPR1Q.js",
+    "bytes": 2285,
+    "sha256": "c341bb7b6164371637f1c9a6732012308af41f20f51e2c1462f235c122bfa0d6"
+  },
+  {
+    "path": "public/build/assets/passkeys-CsxEE3hN.js",
+    "bytes": 12075,
+    "sha256": "ad776e742af479bdb7ac39623fb121e0046c181de471cdda0a1c57c7f7f57e72"
+  },
+  {
+    "path": "public/build/fonts-manifest.json",
+    "bytes": 5742,
+    "sha256": "66edf17c93351fe01158be7414a441a762f106417c74351881876b405b8b10ca"
+  },
+  {
+    "path": "public/build/manifest.json",
+    "bytes": 1982,
+    "sha256": "3631e27a2dd160931b9db5abc0e7bd80cdf41d00744c6ee0d46a20fa5902b079"
+  }
+]

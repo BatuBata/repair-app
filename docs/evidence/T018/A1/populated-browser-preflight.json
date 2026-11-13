@@ -1,0 +1,10 @@
+{
+  "runtime": "/private/tmp/repair-t018-a1-qmcd074v/empty-final",
+  "pid": 63287,
+  "profile": "/private/tmp/repair-t018-a1-qmcd074v/empty-final/chrome/ad-chrome-EhNqOe",
+  "CDP": "owned port0",
+  "headless": true,
+  "server_port": 8190,
+  "private_database": true,
+  "private_storage_config": true
+}

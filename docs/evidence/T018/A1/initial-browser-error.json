@@ -1,0 +1,53 @@
+{
+  "error": "small touch target\n\n1 !== 0\n",
+  "cases": [
+    {
+      "id": "empty-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "revenue": "Rp0",
+      "laneColumns": "163px 163px",
+      "kpiColumns": "326px",
+      "reminders": 0,
+      "backlog": 0,
+      "smallTargets": [],
+      "amount": {
+        "text": "Rp0",
+        "x": 276.875,
+        "right": 327,
+        "y": 1178,
+        "width": 50.125,
+        "height": 26
+      },
+      "leftActions": []
+    },
+    {
+      "id": "empty-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "revenue": "Rp0",
+      "laneColumns": "179.5px 179.5px 179.5px 179.5px",
+      "kpiColumns": "718px",
+      "reminders": 0,
+      "backlog": 0,
+      "smallTargets": [],
+      "amount": {
+        "text": "Rp0",
+        "x": 676.875,
+        "right": 727,
+        "y": 899,
+        "width": 50.125,
+        "height": 26
+      },
+      "leftActions": []
+    }
+  ],
+  "actions": [],
+  "exceptions": []
+}

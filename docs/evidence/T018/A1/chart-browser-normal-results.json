@@ -1,0 +1,1162 @@
+{
+  "cases": [
+    {
+      "kind": "normal",
+      "series": "revenue",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "plot": {
+        "text": "01 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        02 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        03 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        04 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        05 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        06 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        07 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        08 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        09 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        10 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        11 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        12 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        13 Nov 2026Rp1.350.000Servis Rp1.100.000Penjualan Rp250.000",
+        "x": 137,
+        "right": 327,
+        "y": 535,
+        "bottom": 755,
+        "width": 190,
+        "height": 220,
+        "scrollWidth": 194,
+        "clientWidth": 190
+      },
+      "ticks": [
+        {
+          "text": "Rp0",
+          "x": 107.15625,
+          "right": 129,
+          "y": 747,
+          "bottom": 763,
+          "width": 21.84375,
+          "height": 16,
+          "scrollWidth": 22,
+          "clientWidth": 22
+        },
+        {
+          "text": "Rp500.000",
+          "x": 67.875,
+          "right": 129,
+          "y": 673.65625,
+          "bottom": 689.65625,
+          "width": 61.125,
+          "height": 16,
+          "scrollWidth": 61,
+          "clientWidth": 61
+        },
+        {
+          "text": "Rp1.000.000",
+          "x": 57.40625,
+          "right": 129,
+          "y": 600.328125,
+          "bottom": 616.328125,
+          "width": 71.59375,
+          "height": 16,
+          "scrollWidth": 72,
+          "clientWidth": 72
+        },
+        {
+          "text": "Rp1.500.000",
+          "x": 57.40625,
+          "right": 129,
+          "y": 527,
+          "bottom": 543,
+          "width": 71.59375,
+          "height": 16,
+          "scrollWidth": 72,
+          "clientWidth": 72
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "13 Nov 2026Rp1.350.000Servis Rp1.100.000Penjualan Rp250.000",
+          "x": 145,
+          "right": 319,
+          "y": 543,
+          "bottom": 633,
+          "width": 174,
+          "height": 90,
+          "scrollWidth": 172,
+          "clientWidth": 172
+        }
+      ],
+      "tabs": [
+        {
+          "text": "OmzetRp1.350.000",
+          "x": 17,
+          "right": 343,
+          "y": 314,
+          "bottom": 366,
+          "width": 326,
+          "height": 52,
+          "scrollWidth": 326,
+          "clientWidth": 326,
+          "selected": "true",
+          "font": "20px",
+          "color": "rgb(19, 20, 22)"
+        },
+        {
+          "text": "Laba kotorRp650.000",
+          "x": 17,
+          "right": 343,
+          "y": 366,
+          "bottom": 418,
+          "width": 326,
+          "height": 52,
+          "scrollWidth": 326,
+          "clientWidth": 326,
+          "selected": "false",
+          "font": "20px",
+          "color": "rgb(19, 20, 22)"
+        },
+        {
+          "text": "Nota servis1",
+          "x": 17,
+          "right": 343,
+          "y": 418,
+          "bottom": 470,
+          "width": 326,
+          "height": 52,
+          "scrollWidth": 326,
+          "clientWidth": 326,
+          "selected": "false",
+          "font": "20px",
+          "color": "rgb(19, 20, 22)"
+        }
+      ],
+      "live": "13 Nov 2026: Rp1.350.000",
+      "polyline": "0,220 83.333,220 166.667,220 250,220 333.333,220 416.667,220 500,220 583.333,220 666.667,220 750,220 833.333,220 916.667,220 1000,22",
+      "snapPublic": [
+        "series"
+      ]
+    },
+    {
+      "kind": "normal",
+      "series": "profit",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "plot": {
+        "text": "01 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        02 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        03 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        04 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        05 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        06 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        07 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        08 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        09 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        10 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        11 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        12 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        13 Nov 2026Rp650.000Servis Rp400.000Penjualan Rp250.000",
+        "x": 137,
+        "right": 327,
+        "y": 535,
+        "bottom": 755,
+        "width": 190,
+        "height": 220,
+        "scrollWidth": 194,
+        "clientWidth": 190
+      },
+      "ticks": [
+        {
+          "text": "Rp0",
+          "x": 107.15625,
+          "right": 129,
+          "y": 747,
+          "bottom": 763,
+          "width": 21.84375,
+          "height": 16,
+          "scrollWidth": 22,
+          "clientWidth": 22
+        },
+        {
+          "text": "Rp200.000",
+          "x": 67.875,
+          "right": 129,
+          "y": 692,
+          "bottom": 708,
+          "width": 61.125,
+          "height": 16,
+          "scrollWidth": 61,
+          "clientWidth": 61
+        },
+        {
+          "text": "Rp400.000",
+          "x": 67.875,
+          "right": 129,
+          "y": 637,
+          "bottom": 653,
+          "width": 61.125,
+          "height": 16,
+          "scrollWidth": 61,
+          "clientWidth": 61
+        },
+        {
+          "text": "Rp600.000",
+          "x": 67.875,
+          "right": 129,
+          "y": 582,
+          "bottom": 598,
+          "width": 61.125,
+          "height": 16,
+          "scrollWidth": 61,
+          "clientWidth": 61
+        },
+        {
+          "text": "Rp800.000",
+          "x": 67.875,
+          "right": 129,
+          "y": 527,
+          "bottom": 543,
+          "width": 61.125,
+          "height": 16,
+          "scrollWidth": 61,
+          "clientWidth": 61
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "13 Nov 2026Rp650.000Servis Rp400.000Penjualan Rp250.000",
+          "x": 145,
+          "right": 319,
+          "y": 543,
+          "bottom": 633,
+          "width": 174,
+          "height": 90,
+          "scrollWidth": 172,
+          "clientWidth": 172
+        }
+      ],
+      "tabs": [
+        {
+          "text": "OmzetRp1.350.000",
+          "x": 17,
+          "right": 343,
+          "y": 314,
+          "bottom": 366,
+          "width": 326,
+          "height": 52,
+          "scrollWidth": 326,
+          "clientWidth": 326,
+          "selected": "false",
+          "font": "20px",
+          "color": "rgb(19, 20, 22)"
+        },
+        {
+          "text": "Laba kotorRp650.000",
+          "x": 17,
+          "right": 343,
+          "y": 366,
+          "bottom": 418,
+          "width": 326,
+          "height": 52,
+          "scrollWidth": 326,
+          "clientWidth": 326,
+          "selected": "true",
+          "font": "20px",
+          "color": "rgb(19, 20, 22)"
+        },
+        {
+          "text": "Nota servis1",
+          "x": 17,
+          "right": 343,
+          "y": 418,
+          "bottom": 470,
+          "width": 326,
+          "height": 52,
+          "scrollWidth": 326,
+          "clientWidth": 326,
+          "selected": "false",
+          "font": "20px",
+          "color": "rgb(19, 20, 22)"
+        }
+      ],
+      "live": "13 Nov 2026: Rp650.000",
+      "polyline": "0,220 83.333,220 166.667,220 250,220 333.333,220 416.667,220 500,220 583.333,220 666.667,220 750,220 833.333,220 916.667,220 1000,41.25",
+      "snapPublic": [
+        "series"
+      ]
+    },
+    {
+      "kind": "normal",
+      "series": "invoices",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "plot": {
+        "text": "01 Nov 20260 nota servis\n                                            \n                        02 Nov 20260 nota servis\n                                            \n                        03 Nov 20260 nota servis\n                                            \n                        04 Nov 20260 nota servis\n                                            \n                        05 Nov 20260 nota servis\n                                            \n                        06 Nov 20260 nota servis\n                                            \n                        07 Nov 20260 nota servis\n                                            \n                        08 Nov 20260 nota servis\n                                            \n                        09 Nov 20260 nota servis\n                                            \n                        10 Nov 20260 nota servis\n                                            \n                        11 Nov 20260 nota servis\n                                            \n                        12 Nov 20260 nota servis\n                                            \n                        13 Nov 20261 nota servis",
+        "x": 137,
+        "right": 327,
+        "y": 535,
+        "bottom": 755,
+        "width": 190,
+        "height": 220,
+        "scrollWidth": 194,
+        "clientWidth": 190
+      },
+      "ticks": [
+        {
+          "text": "0",
+          "x": 121.796875,
+          "right": 129,
+          "y": 747,
+          "bottom": 763,
+          "width": 7.203125,
+          "height": 16,
+          "scrollWidth": 7,
+          "clientWidth": 7
+        },
+        {
+          "text": "1",
+          "x": 121.796875,
+          "right": 129,
+          "y": 637,
+          "bottom": 653,
+          "width": 7.203125,
+          "height": 16,
+          "scrollWidth": 7,
+          "clientWidth": 7
+        },
+        {
+          "text": "2",
+          "x": 121.796875,
+          "right": 129,
+          "y": 527,
+          "bottom": 543,
+          "width": 7.203125,
+          "height": 16,
+          "scrollWidth": 7,
+          "clientWidth": 7
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "13 Nov 20261 nota servis",
+          "x": 145,
+          "right": 319,
+          "y": 543,
+          "bottom": 597,
+          "width": 174,
+          "height": 54,
+          "scrollWidth": 172,
+          "clientWidth": 172
+        }
+      ],
+      "tabs": [
+        {
+          "text": "OmzetRp1.350.000",
+          "x": 17,
+          "right": 343,
+          "y": 314,
+          "bottom": 366,
+          "width": 326,
+          "height": 52,
+          "scrollWidth": 326,
+          "clientWidth": 326,
+          "selected": "false",
+          "font": "20px",
+          "color": "rgb(19, 20, 22)"
+        },
+        {
+          "text": "Laba kotorRp650.000",
+          "x": 17,
+          "right": 343,
+          "y": 366,
+          "bottom": 418,
+          "width": 326,
+          "height": 52,
+          "scrollWidth": 326,
+          "clientWidth": 326,
+          "selected": "false",
+          "font": "20px",
+          "color": "rgb(19, 20, 22)"
+        },
+        {
+          "text": "Nota servis1",
+          "x": 17,
+          "right": 343,
+          "y": 418,
+          "bottom": 470,
+          "width": 326,
+          "height": 52,
+          "scrollWidth": 326,
+          "clientWidth": 326,
+          "selected": "true",
+          "font": "20px",
+          "color": "rgb(19, 20, 22)"
+        }
+      ],
+      "live": "13 Nov 2026: 1",
+      "polyline": "0,220 83.333,220 166.667,220 250,220 333.333,220 416.667,220 500,220 583.333,220 666.667,220 750,220 833.333,220 916.667,220 1000,110",
+      "snapPublic": [
+        "series"
+      ]
+    },
+    {
+      "kind": "normal",
+      "series": "revenue",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "plot": {
+        "text": "01 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        02 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        03 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        04 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        05 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        06 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        07 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        08 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        09 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        10 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        11 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        12 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        13 Nov 2026Rp1.350.000Servis Rp1.100.000Penjualan Rp250.000",
+        "x": 145,
+        "right": 727,
+        "y": 535,
+        "bottom": 755,
+        "width": 582,
+        "height": 220,
+        "scrollWidth": 586,
+        "clientWidth": 582
+      },
+      "ticks": [
+        {
+          "text": "Rp0",
+          "x": 115.15625,
+          "right": 137,
+          "y": 747,
+          "bottom": 763,
+          "width": 21.84375,
+          "height": 16,
+          "scrollWidth": 22,
+          "clientWidth": 22
+        },
+        {
+          "text": "Rp500.000",
+          "x": 75.875,
+          "right": 137,
+          "y": 673.65625,
+          "bottom": 689.65625,
+          "width": 61.125,
+          "height": 16,
+          "scrollWidth": 61,
+          "clientWidth": 61
+        },
+        {
+          "text": "Rp1.000.000",
+          "x": 65.40625,
+          "right": 137,
+          "y": 600.328125,
+          "bottom": 616.328125,
+          "width": 71.59375,
+          "height": 16,
+          "scrollWidth": 72,
+          "clientWidth": 72
+        },
+        {
+          "text": "Rp1.500.000",
+          "x": 65.40625,
+          "right": 137,
+          "y": 527,
+          "bottom": 543,
+          "width": 71.59375,
+          "height": 16,
+          "scrollWidth": 72,
+          "clientWidth": 72
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "13 Nov 2026Rp1.350.000Servis Rp1.100.000Penjualan Rp250.000",
+          "x": 491,
+          "right": 719,
+          "y": 543,
+          "bottom": 633,
+          "width": 228,
+          "height": 90,
+          "scrollWidth": 226,
+          "clientWidth": 226
+        }
+      ],
+      "tabs": [
+        {
+          "text": "OmzetRp1.350.000",
+          "x": 25,
+          "right": 743,
+          "y": 314,
+          "bottom": 366,
+          "width": 718,
+          "height": 52,
+          "scrollWidth": 718,
+          "clientWidth": 718,
+          "selected": "true",
+          "font": "20px",
+          "color": "rgb(19, 20, 22)"
+        },
+        {
+          "text": "Laba kotorRp650.000",
+          "x": 25,
+          "right": 743,
+          "y": 366,
+          "bottom": 418,
+          "width": 718,
+          "height": 52,
+          "scrollWidth": 718,
+          "clientWidth": 718,
+          "selected": "false",
+          "font": "20px",
+          "color": "rgb(19, 20, 22)"
+        },
+        {
+          "text": "Nota servis1",
+          "x": 25,
+          "right": 743,
+          "y": 418,
+          "bottom": 470,
+          "width": 718,
+          "height": 52,
+          "scrollWidth": 718,
+          "clientWidth": 718,
+          "selected": "false",
+          "font": "20px",
+          "color": "rgb(19, 20, 22)"
+        }
+      ],
+      "live": "13 Nov 2026: Rp1.350.000",
+      "polyline": "0,220 83.333,220 166.667,220 250,220 333.333,220 416.667,220 500,220 583.333,220 666.667,220 750,220 833.333,220 916.667,220 1000,22",
+      "snapPublic": [
+        "series"
+      ]
+    },
+    {
+      "kind": "normal",
+      "series": "profit",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "plot": {
+        "text": "01 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        02 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        03 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        04 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        05 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        06 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        07 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        08 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        09 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        10 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        11 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        12 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        13 Nov 2026Rp650.000Servis Rp400.000Penjualan Rp250.000",
+        "x": 145,
+        "right": 727,
+        "y": 535,
+        "bottom": 755,
+        "width": 582,
+        "height": 220,
+        "scrollWidth": 586,
+        "clientWidth": 582
+      },
+      "ticks": [
+        {
+          "text": "Rp0",
+          "x": 115.15625,
+          "right": 137,
+          "y": 747,
+          "bottom": 763,
+          "width": 21.84375,
+          "height": 16,
+          "scrollWidth": 22,
+          "clientWidth": 22
+        },
+        {
+          "text": "Rp200.000",
+          "x": 75.875,
+          "right": 137,
+          "y": 692,
+          "bottom": 708,
+          "width": 61.125,
+          "height": 16,
+          "scrollWidth": 61,
+          "clientWidth": 61
+        },
+        {
+          "text": "Rp400.000",
+          "x": 75.875,
+          "right": 137,
+          "y": 637,
+          "bottom": 653,
+          "width": 61.125,
+          "height": 16,
+          "scrollWidth": 61,
+          "clientWidth": 61
+        },
+        {
+          "text": "Rp600.000",
+          "x": 75.875,
+          "right": 137,
+          "y": 582,
+          "bottom": 598,
+          "width": 61.125,
+          "height": 16,
+          "scrollWidth": 61,
+          "clientWidth": 61
+        },
+        {
+          "text": "Rp800.000",
+          "x": 75.875,
+          "right": 137,
+          "y": 527,
+          "bottom": 543,
+          "width": 61.125,
+          "height": 16,
+          "scrollWidth": 61,
+          "clientWidth": 61
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "13 Nov 2026Rp650.000Servis Rp400.000Penjualan Rp250.000",
+          "x": 491,
+          "right": 719,
+          "y": 543,
+          "bottom": 633,
+          "width": 228,
+          "height": 90,
+          "scrollWidth": 226,
+          "clientWidth": 226
+        }
+      ],
+      "tabs": [
+        {
+          "text": "OmzetRp1.350.000",
+          "x": 25,
+          "right": 743,
+          "y": 314,
+          "bottom": 366,
+          "width": 718,
+          "height": 52,
+          "scrollWidth": 718,
+          "clientWidth": 718,
+          "selected": "false",
+          "font": "20px",
+          "color": "rgb(19, 20, 22)"
+        },
+        {
+          "text": "Laba kotorRp650.000",
+          "x": 25,
+          "right": 743,
+          "y": 366,
+          "bottom": 418,
+          "width": 718,
+          "height": 52,
+          "scrollWidth": 718,
+          "clientWidth": 718,
+          "selected": "true",
+          "font": "20px",
+          "color": "rgb(19, 20, 22)"
+        },
+        {
+          "text": "Nota servis1",
+          "x": 25,
+          "right": 743,
+          "y": 418,
+          "bottom": 470,
+          "width": 718,
+          "height": 52,
+          "scrollWidth": 718,
+          "clientWidth": 718,
+          "selected": "false",
+          "font": "20px",
+          "color": "rgb(19, 20, 22)"
+        }
+      ],
+      "live": "13 Nov 2026: Rp650.000",
+      "polyline": "0,220 83.333,220 166.667,220 250,220 333.333,220 416.667,220 500,220 583.333,220 666.667,220 750,220 833.333,220 916.667,220 1000,41.25",
+      "snapPublic": [
+        "series"
+      ]
+    },
+    {
+      "kind": "normal",
+      "series": "invoices",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "plot": {
+        "text": "01 Nov 20260 nota servis\n                                            \n                        02 Nov 20260 nota servis\n                                            \n                        03 Nov 20260 nota servis\n                                            \n                        04 Nov 20260 nota servis\n                                            \n                        05 Nov 20260 nota servis\n                                            \n                        06 Nov 20260 nota servis\n                                            \n                        07 Nov 20260 nota servis\n                                            \n                        08 Nov 20260 nota servis\n                                            \n                        09 Nov 20260 nota servis\n                                            \n                        10 Nov 20260 nota servis\n                                            \n                        11 Nov 20260 nota servis\n                                            \n                        12 Nov 20260 nota servis\n                                            \n                        13 Nov 20261 nota servis",
+        "x": 145,
+        "right": 727,
+        "y": 535,
+        "bottom": 755,
+        "width": 582,
+        "height": 220,
+        "scrollWidth": 586,
+        "clientWidth": 582
+      },
+      "ticks": [
+        {
+          "text": "0",
+          "x": 129.796875,
+          "right": 137,
+          "y": 747,
+          "bottom": 763,
+          "width": 7.203125,
+          "height": 16,
+          "scrollWidth": 7,
+          "clientWidth": 7
+        },
+        {
+          "text": "1",
+          "x": 129.796875,
+          "right": 137,
+          "y": 637,
+          "bottom": 653,
+          "width": 7.203125,
+          "height": 16,
+          "scrollWidth": 7,
+          "clientWidth": 7
+        },
+        {
+          "text": "2",
+          "x": 129.796875,
+          "right": 137,
+          "y": 527,
+          "bottom": 543,
+          "width": 7.203125,
+          "height": 16,
+          "scrollWidth": 7,
+          "clientWidth": 7
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "13 Nov 20261 nota servis",
+          "x": 491,
+          "right": 719,
+          "y": 543,
+          "bottom": 597,
+          "width": 228,
+          "height": 54,
+          "scrollWidth": 226,
+          "clientWidth": 226
+        }
+      ],
+      "tabs": [
+        {
+          "text": "OmzetRp1.350.000",
+          "x": 25,
+          "right": 743,
+          "y": 314,
+          "bottom": 366,
+          "width": 718,
+          "height": 52,
+          "scrollWidth": 718,
+          "clientWidth": 718,
+          "selected": "false",
+          "font": "20px",
+          "color": "rgb(19, 20, 22)"
+        },
+        {
+          "text": "Laba kotorRp650.000",
+          "x": 25,
+          "right": 743,
+          "y": 366,
+          "bottom": 418,
+          "width": 718,
+          "height": 52,
+          "scrollWidth": 718,
+          "clientWidth": 718,
+          "selected": "false",
+          "font": "20px",
+          "color": "rgb(19, 20, 22)"
+        },
+        {
+          "text": "Nota servis1",
+          "x": 25,
+          "right": 743,
+          "y": 418,
+          "bottom": 470,
+          "width": 718,
+          "height": 52,
+          "scrollWidth": 718,
+          "clientWidth": 718,
+          "selected": "true",
+          "font": "20px",
+          "color": "rgb(19, 20, 22)"
+        }
+      ],
+      "live": "13 Nov 2026: 1",
+      "polyline": "0,220 83.333,220 166.667,220 250,220 333.333,220 416.667,220 500,220 583.333,220 666.667,220 750,220 833.333,220 916.667,220 1000,110",
+      "snapPublic": [
+        "series"
+      ]
+    },
+    {
+      "kind": "normal",
+      "series": "revenue",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "plot": {
+        "text": "01 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        02 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        03 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        04 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        05 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        06 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        07 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        08 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        09 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        10 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        11 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        12 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        13 Nov 2026Rp1.350.000Servis Rp1.100.000Penjualan Rp250.000",
+        "x": 386,
+        "right": 1218,
+        "y": 578,
+        "bottom": 798,
+        "width": 832,
+        "height": 220,
+        "scrollWidth": 836,
+        "clientWidth": 832
+      },
+      "ticks": [
+        {
+          "text": "Rp0",
+          "x": 356.15625,
+          "right": 378,
+          "y": 790,
+          "bottom": 806,
+          "width": 21.84375,
+          "height": 16,
+          "scrollWidth": 22,
+          "clientWidth": 22
+        },
+        {
+          "text": "Rp500.000",
+          "x": 316.875,
+          "right": 378,
+          "y": 716.65625,
+          "bottom": 732.65625,
+          "width": 61.125,
+          "height": 16,
+          "scrollWidth": 61,
+          "clientWidth": 61
+        },
+        {
+          "text": "Rp1.000.000",
+          "x": 306.40625,
+          "right": 378,
+          "y": 643.328125,
+          "bottom": 659.328125,
+          "width": 71.59375,
+          "height": 16,
+          "scrollWidth": 72,
+          "clientWidth": 72
+        },
+        {
+          "text": "Rp1.500.000",
+          "x": 306.40625,
+          "right": 378,
+          "y": 570,
+          "bottom": 586,
+          "width": 71.59375,
+          "height": 16,
+          "scrollWidth": 72,
+          "clientWidth": 72
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "13 Nov 2026Rp1.350.000Servis Rp1.100.000Penjualan Rp250.000",
+          "x": 982,
+          "right": 1210,
+          "y": 586,
+          "bottom": 676,
+          "width": 228,
+          "height": 90,
+          "scrollWidth": 226,
+          "clientWidth": 226
+        }
+      ],
+      "tabs": [
+        {
+          "text": "OmzetRp1.350.000",
+          "x": 262,
+          "right": 587.328125,
+          "y": 429,
+          "bottom": 517,
+          "width": 325.328125,
+          "height": 88,
+          "scrollWidth": 325,
+          "clientWidth": 325,
+          "selected": "true",
+          "font": "28px",
+          "color": "rgb(19, 20, 22)"
+        },
+        {
+          "text": "Laba kotorRp650.000",
+          "x": 587.328125,
+          "right": 912.65625,
+          "y": 429,
+          "bottom": 517,
+          "width": 325.328125,
+          "height": 88,
+          "scrollWidth": 324,
+          "clientWidth": 324,
+          "selected": "false",
+          "font": "28px",
+          "color": "rgb(19, 20, 22)"
+        },
+        {
+          "text": "Nota servis1",
+          "x": 912.65625,
+          "right": 1238,
+          "y": 429,
+          "bottom": 517,
+          "width": 325.34375,
+          "height": 88,
+          "scrollWidth": 324,
+          "clientWidth": 324,
+          "selected": "false",
+          "font": "28px",
+          "color": "rgb(19, 20, 22)"
+        }
+      ],
+      "live": "13 Nov 2026: Rp1.350.000",
+      "polyline": "0,220 83.333,220 166.667,220 250,220 333.333,220 416.667,220 500,220 583.333,220 666.667,220 750,220 833.333,220 916.667,220 1000,22",
+      "snapPublic": [
+        "series"
+      ]
+    },
+    {
+      "kind": "normal",
+      "series": "profit",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "plot": {
+        "text": "01 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        02 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        03 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        04 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        05 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        06 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        07 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        08 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        09 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        10 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        11 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        12 Nov 2026Rp0Servis Rp0Penjualan Rp0\n                                            \n                        13 Nov 2026Rp650.000Servis Rp400.000Penjualan Rp250.000",
+        "x": 386,
+        "right": 1218,
+        "y": 578,
+        "bottom": 798,
+        "width": 832,
+        "height": 220,
+        "scrollWidth": 836,
+        "clientWidth": 832
+      },
+      "ticks": [
+        {
+          "text": "Rp0",
+          "x": 356.15625,
+          "right": 378,
+          "y": 790,
+          "bottom": 806,
+          "width": 21.84375,
+          "height": 16,
+          "scrollWidth": 22,
+          "clientWidth": 22
+        },
+        {
+          "text": "Rp200.000",
+          "x": 316.875,
+          "right": 378,
+          "y": 735,
+          "bottom": 751,
+          "width": 61.125,
+          "height": 16,
+          "scrollWidth": 61,
+          "clientWidth": 61
+        },
+        {
+          "text": "Rp400.000",
+          "x": 316.875,
+          "right": 378,
+          "y": 680,
+          "bottom": 696,
+          "width": 61.125,
+          "height": 16,
+          "scrollWidth": 61,
+          "clientWidth": 61
+        },
+        {
+          "text": "Rp600.000",
+          "x": 316.875,
+          "right": 378,
+          "y": 625,
+          "bottom": 641,
+          "width": 61.125,
+          "height": 16,
+          "scrollWidth": 61,
+          "clientWidth": 61
+        },
+        {
+          "text": "Rp800.000",
+          "x": 316.875,
+          "right": 378,
+          "y": 570,
+          "bottom": 586,
+          "width": 61.125,
+          "height": 16,
+          "scrollWidth": 61,
+          "clientWidth": 61
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "13 Nov 2026Rp650.000Servis Rp400.000Penjualan Rp250.000",
+          "x": 982,
+          "right": 1210,
+          "y": 586,
+          "bottom": 676,
+          "width": 228,
+          "height": 90,
+          "scrollWidth": 226,
+          "clientWidth": 226
+        }
+      ],
+      "tabs": [
+        {
+          "text": "OmzetRp1.350.000",
+          "x": 262,
+          "right": 587.328125,
+          "y": 429,
+          "bottom": 517,
+          "width": 325.328125,
+          "height": 88,
+          "scrollWidth": 325,
+          "clientWidth": 325,
+          "selected": "false",
+          "font": "28px",
+          "color": "rgb(19, 20, 22)"
+        },
+        {
+          "text": "Laba kotorRp650.000",
+          "x": 587.328125,
+          "right": 912.65625,
+          "y": 429,
+          "bottom": 517,
+          "width": 325.328125,
+          "height": 88,
+          "scrollWidth": 324,
+          "clientWidth": 324,
+          "selected": "true",
+          "font": "28px",
+          "color": "rgb(19, 20, 22)"
+        },
+        {
+          "text": "Nota servis1",
+          "x": 912.65625,
+          "right": 1238,
+          "y": 429,
+          "bottom": 517,
+          "width": 325.34375,
+          "height": 88,
+          "scrollWidth": 324,
+          "clientWidth": 324,
+          "selected": "false",
+          "font": "28px",
+          "color": "rgb(19, 20, 22)"
+        }
+      ],
+      "live": "13 Nov 2026: Rp650.000",
+      "polyline": "0,220 83.333,220 166.667,220 250,220 333.333,220 416.667,220 500,220 583.333,220 666.667,220 750,220 833.333,220 916.667,220 1000,41.25",
+      "snapPublic": [
+        "series"
+      ]
+    },
+    {
+      "kind": "normal",
+      "series": "invoices",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "plot": {
+        "text": "01 Nov 20260 nota servis\n                                            \n                        02 Nov 20260 nota servis\n                                            \n                        03 Nov 20260 nota servis\n                                            \n                        04 Nov 20260 nota servis\n                                            \n                        05 Nov 20260 nota servis\n                                            \n                        06 Nov 20260 nota servis\n                                            \n                        07 Nov 20260 nota servis\n                                            \n                        08 Nov 20260 nota servis\n                                            \n                        09 Nov 20260 nota servis\n                                            \n                        10 Nov 20260 nota servis\n                                            \n                        11 Nov 20260 nota servis\n                                            \n                        12 Nov 20260 nota servis\n                                            \n                        13 Nov 20261 nota servis",
+        "x": 386,
+        "right": 1218,
+        "y": 578,
+        "bottom": 798,
+        "width": 832,
+        "height": 220,
+        "scrollWidth": 836,
+        "clientWidth": 832
+      },
+      "ticks": [
+        {
+          "text": "0",
+          "x": 370.796875,
+          "right": 378,
+          "y": 790,
+          "bottom": 806,
+          "width": 7.203125,
+          "height": 16,
+          "scrollWidth": 7,
+          "clientWidth": 7
+        },
+        {
+          "text": "1",
+          "x": 370.796875,
+          "right": 378,
+          "y": 680,
+          "bottom": 696,
+          "width": 7.203125,
+          "height": 16,
+          "scrollWidth": 7,
+          "clientWidth": 7
+        },
+        {
+          "text": "2",
+          "x": 370.796875,
+          "right": 378,
+          "y": 570,
+          "bottom": 586,
+          "width": 7.203125,
+          "height": 16,
+          "scrollWidth": 7,
+          "clientWidth": 7
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "13 Nov 20261 nota servis",
+          "x": 982,
+          "right": 1210,
+          "y": 586,
+          "bottom": 640,
+          "width": 228,
+          "height": 54,
+          "scrollWidth": 226,
+          "clientWidth": 226
+        }
+      ],
+      "tabs": [
+        {
+          "text": "OmzetRp1.350.000",
+          "x": 262,
+          "right": 587.328125,
+          "y": 429,
+          "bottom": 517,
+          "width": 325.328125,
+          "height": 88,
+          "scrollWidth": 325,
+          "clientWidth": 325,
+          "selected": "false",
+          "font": "28px",
+          "color": "rgb(19, 20, 22)"
+        },
+        {
+          "text": "Laba kotorRp650.000",
+          "x": 587.328125,
+          "right": 912.65625,
+          "y": 429,
+          "bottom": 517,
+          "width": 325.328125,
+          "height": 88,
+          "scrollWidth": 324,
+          "clientWidth": 324,
+          "selected": "false",
+          "font": "28px",
+          "color": "rgb(19, 20, 22)"
+        },
+        {
+          "text": "Nota servis1",
+          "x": 912.65625,
+          "right": 1238,
+          "y": 429,
+          "bottom": 517,
+          "width": 325.34375,
+          "height": 88,
+          "scrollWidth": 324,
+          "clientWidth": 324,
+          "selected": "true",
+          "font": "28px",
+          "color": "rgb(19, 20, 22)"
+        }
+      ],
+      "live": "13 Nov 2026: 1",
+      "polyline": "0,220 83.333,220 166.667,220 250,220 333.333,220 416.667,220 500,220 583.333,220 666.667,220 750,220 833.333,220 916.667,220 1000,110",
+      "snapPublic": [
+        "series"
+      ]
+    }
+  ],
+  "interactions": [
+    {
+      "keyboard_tabs": "ArrowRight/End/Home selected and focused correct series",
+      "chart_keyboard": "End shows exact currentday tooltip/live region for all9series-widthcases",
+      "external_WA_opened": false
+    }
+  ],
+  "exceptions": [],
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/157.0.8103.79",
+    "revision": "@6dc9bc3bdaea5c35ed6d41fceab2f7a3a2227c4f",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "jsVersion": "15.7.112.43"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "runtime": "/private/tmp/repair-t018-a1-qmcd074v/empty-final",
+  "root_mode": "0700",
+  "db_env_config_mode": "0600",
+  "private_cache_session_views_storage": true,
+  "purpose": "New empty SQLite for final CSS screenshots; original populated fixture preserved",
+  "Chrome": "fresh profile/CDPport0/TASTE subtree, no browser launched yet"
+}

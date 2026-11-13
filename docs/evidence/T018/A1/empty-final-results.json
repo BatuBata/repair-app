@@ -1,0 +1,215 @@
+{
+  "cases": [
+    {
+      "id": "empty-final-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "revenue": "Rp0",
+      "laneColumns": "163px 163px",
+      "kpiColumns": "326px",
+      "kpiLayout": "294px",
+      "label": {
+        "text": "Omzet hari ini",
+        "x": 33,
+        "right": 327,
+        "y": 1218,
+        "width": 294,
+        "height": 24
+      },
+      "reminders": 0,
+      "backlog": 0,
+      "smallTargets": [],
+      "amount": {
+        "text": "Rp0",
+        "x": 33,
+        "right": 327,
+        "y": 1246,
+        "width": 294,
+        "height": 34
+      },
+      "leftActions": []
+    },
+    {
+      "id": "empty-final-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "revenue": "Rp0",
+      "laneColumns": "179.5px 179.5px 179.5px 179.5px",
+      "kpiColumns": "718px",
+      "kpiLayout": "686px",
+      "label": {
+        "text": "Omzet hari ini",
+        "x": 41,
+        "right": 727,
+        "y": 939,
+        "width": 686,
+        "height": 24
+      },
+      "reminders": 0,
+      "backlog": 0,
+      "smallTargets": [],
+      "amount": {
+        "text": "Rp0",
+        "x": 41,
+        "right": 727,
+        "y": 967,
+        "width": 686,
+        "height": 34
+      },
+      "leftActions": []
+    },
+    {
+      "id": "empty-final-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "revenue": "Rp0",
+      "laneColumns": "244px 244px 244px 244px",
+      "kpiColumns": "488px 488px",
+      "kpiLayout": "448px",
+      "label": {
+        "text": "Omzet hari ini",
+        "x": 771,
+        "right": 1218,
+        "y": 615,
+        "width": 447,
+        "height": 20
+      },
+      "reminders": 0,
+      "backlog": 0,
+      "smallTargets": [
+        {
+          "text": "Buat TTS",
+          "x": 1126.921875,
+          "right": 1239,
+          "y": 91,
+          "width": 112.078125,
+          "height": 36
+        }
+      ],
+      "amount": {
+        "text": "Rp0",
+        "x": 771,
+        "right": 1218,
+        "y": 639,
+        "width": 447,
+        "height": 34
+      },
+      "leftActions": []
+    },
+    {
+      "id": "empty-kpi-final-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "revenue": "Rp0",
+      "laneColumns": "163px 163px",
+      "kpiColumns": "326px",
+      "kpiLayout": "294px",
+      "label": {
+        "text": "Omzet hari ini",
+        "x": 33,
+        "right": 327,
+        "y": 701,
+        "width": 294,
+        "height": 24
+      },
+      "reminders": 0,
+      "backlog": 0,
+      "smallTargets": [],
+      "amount": {
+        "text": "Rp0",
+        "x": 33,
+        "right": 327,
+        "y": 729,
+        "width": 294,
+        "height": 34
+      },
+      "leftActions": []
+    },
+    {
+      "id": "empty-kpi-final-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "revenue": "Rp0",
+      "laneColumns": "179.5px 179.5px 179.5px 179.5px",
+      "kpiColumns": "718px",
+      "kpiLayout": "686px",
+      "label": {
+        "text": "Omzet hari ini",
+        "x": 41,
+        "right": 727,
+        "y": 701,
+        "width": 686,
+        "height": 24
+      },
+      "reminders": 0,
+      "backlog": 0,
+      "smallTargets": [],
+      "amount": {
+        "text": "Rp0",
+        "x": 41,
+        "right": 727,
+        "y": 729,
+        "width": 686,
+        "height": 34
+      },
+      "leftActions": []
+    },
+    {
+      "id": "empty-kpi-final-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "revenue": "Rp0",
+      "laneColumns": "244px 244px 244px 244px",
+      "kpiColumns": "488px 488px",
+      "kpiLayout": "448px",
+      "label": {
+        "text": "Omzet hari ini",
+        "x": 771,
+        "right": 1218,
+        "y": 615,
+        "width": 447,
+        "height": 20
+      },
+      "reminders": 0,
+      "backlog": 0,
+      "smallTargets": [
+        {
+          "text": "Buat TTS",
+          "x": 1126.921875,
+          "right": 1239,
+          "y": 91,
+          "width": 112.078125,
+          "height": 36
+        }
+      ],
+      "amount": {
+        "text": "Rp0",
+        "x": 771,
+        "right": 1218,
+        "y": 639,
+        "width": 447,
+        "height": 34
+      },
+      "leftActions": []
+    }
+  ],
+  "exceptions": []
+}

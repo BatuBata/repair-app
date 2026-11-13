@@ -1,0 +1,1 @@
+{"tool":"pint","result":"fixed","files":[{"path":"app\/Livewire\/Dashboard\/Index.php","fixers":["unary_operator_spaces","phpdoc_separation","not_operator_with_successor_space","phpdoc_align"]}]}

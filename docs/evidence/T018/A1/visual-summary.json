@@ -1,0 +1,91 @@
+{
+  "final_axes": {
+    "large": {
+      "cases": 3,
+      "exceptions": 0,
+      "widths": [
+        360,
+        768,
+        1280
+      ],
+      "series": [
+        "profit"
+      ],
+      "touch": []
+    },
+    "negative": {
+      "cases": 9,
+      "exceptions": 0,
+      "widths": [
+        360,
+        768,
+        1280
+      ],
+      "series": [
+        "invoices",
+        "profit",
+        "revenue"
+      ],
+      "touch": [
+        {
+          "pointer": "touch currentday",
+          "series": "revenue",
+          "width": 360
+        },
+        {
+          "pointer": "touch currentday",
+          "series": "profit",
+          "width": 360
+        },
+        {
+          "pointer": "touch currentday",
+          "series": "invoices",
+          "width": 360
+        }
+      ]
+    },
+    "empty": {
+      "cases": 3,
+      "exceptions": 0,
+      "widths": [
+        360,
+        768,
+        1280
+      ],
+      "series": [
+        "revenue"
+      ],
+      "touch": []
+    },
+    "normal": {
+      "cases": 3,
+      "exceptions": 0,
+      "widths": [
+        360,
+        768,
+        1280
+      ],
+      "series": [
+        "revenue"
+      ],
+      "touch": []
+    }
+  },
+  "new_final_axis_observations": 18,
+  "reused_series_before_common_axis_CSS_refinement": [
+    "chart-browser-normal-results.json",
+    "chart-browser-large-results.json",
+    "chart-empty-focus-initial-error.json geometry9cases; keyboard continuation chart-empty-keyboard-results.json"
+  ],
+  "reused_backend_and_portal_interaction": "browser-continuation-results.json +database-proof.json; Mark write-after-lock current backend revalidated by contact-final.log",
+  "after_images_opened": [
+    "axis-final-large-profit-tooltip-360.png",
+    "axis-final-negative-profit-tooltip-360.png",
+    "axis-final-negative-profit-768.png",
+    "axis-final-negative-invoices-tooltip-1280.png",
+    "axis-final-normal-revenue-tooltip-360.png",
+    "axis-final-empty-revenue-360.png"
+  ],
+  "mockup": "mockup/dashboard.html exact reference; mockup-360/768/1280.png",
+  "history": "Earlier FAIL/harness/intermediate screenshots retained, not presented as final responsive PASS."
+}

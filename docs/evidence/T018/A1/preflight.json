@@ -1,0 +1,11 @@
+{
+  "runtime": "/private/tmp/repair-t018-a1-qmcd074v",
+  "directory_mode": "0700",
+  "env_config_db_mode": "0600",
+  "private_database": true,
+  "private_cache_session_views_storage": true,
+  "TASTE_SKILL_TMP": "/private/tmp/repair-t018-a1-qmcd074v/chrome",
+  "Chrome": "new own headless process/profile/CDPport0 via existing helper; not started yet",
+  "port8190_free": true,
+  "browser_grant": "Coordinator conditional grant: proceed after saved private preflight; conditions met"
+}

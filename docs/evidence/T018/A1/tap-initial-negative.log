@@ -1,0 +1,3 @@
+Error: Timeout tap tooltip
+    at wait (file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T018/A1/axis-browser.mjs:4:394)
+    at async file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T018/A1/axis-browser.mjs:10:447

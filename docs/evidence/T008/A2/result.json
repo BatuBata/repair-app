@@ -1,0 +1,21 @@
+{
+  "verdict": "pass",
+  "artifact_ref": "docs/evidence/T008/A2/README.md",
+  "revision": "3610253be1dedb1d9abad958059f52e33377f320",
+  "checked_revision": "db5de005a345de644a7aa9056ea93f5a81117a3d",
+  "inputs": {
+    "T007": "db5de005a345de644a7aa9056ea93f5a81117a3d"
+  },
+  "evidence": [
+    "docs/evidence/T008/A2/README.md",
+    "docs/evidence/T008/A2/http-boundaries.json",
+    "docs/evidence/T008/A2/browser-results.json",
+    "docs/evidence/T008/A2/targeted.xml",
+    "docs/evidence/T008/A2/provenance-before.json",
+    "docs/evidence/T008/A2/source-final.json",
+    "docs/evidence/T008/A2/reused-evidence.json",
+    "docs/evidence/T008/A2/resource-release.json",
+    "docs/evidence/T008/A2/privacy-check.json"
+  ],
+  "summary": "Independent T008 A2 PASS: F01/F02/F03 closed on canonicalT007db5de00;30targeted tests284assert;13actualHTTPboundary cases including actual Store grant/Users demote+deactivate403/no files;27Chrome observations9manifest diagnostics3width11screenshots reviewed. Reused23unchanged A1independent caseIDs incl12screensx3width4InnoDBraces;14assets27designinputs equal; T00780PASS817assert1MySQLskip reused. Source/.env unchanged;server8188+Chrome released;private SQLite retained. No build/full-suite/MySQL rerun,physicalAndroid/printer/VPS/CI/deploy."
+}

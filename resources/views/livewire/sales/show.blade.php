@@ -12,7 +12,7 @@
     @endforeach
     </tbody></table>
     <div class="sale-summary"><div class="summary-line total"><span>Total penjualan</span><strong>Rp{{ number_format($totalPrice, 0, ',', '.') }}</strong></div><div class="summary-line"><span>Total modal</span><span>Rp{{ number_format($totalCost, 0, ',', '.') }}</span></div><div class="summary-line"><span>Laba kotor</span><strong>Rp{{ number_format($totalPrice - $totalCost, 0, ',', '.') }}</strong></div></div>
-    <div class="detail-actions"><a class="btn" href="{{ route('sales.index') }}">Kembali ke penjualan</a><button class="btn danger" type="button" wire:click="confirmDelete">Hapus penjualan</button></div>
+    <div class="detail-actions"><a class="btn" href="{{ route('sales.print', $sale->id) }}">Cetak struk</a><a class="btn" href="{{ route('sales.receipt.pdf', $sale->id) }}">PDF struk</a><a class="btn" href="{{ route('sales.pdf', $sale->id) }}">PDF A5</a><a class="btn" href="{{ route('sales.index') }}">Kembali ke penjualan</a><button class="btn danger" type="button" wire:click="confirmDelete">Hapus penjualan</button></div>
     @if($confirmingDelete)
         <dialog class="sheet-dialog" x-init="$el.showModal()" x-on:cancel="$wire.cancelDelete()" aria-labelledby="delete-sale-title"><div class="dialog-body"><h2 id="delete-sale-title">Hapus penjualan?</h2><p>{{ $sale->number }} akan dihapus dan stok seluruh barang dikembalikan. Tindakan ini tidak dapat dibatalkan.</p><div class="dialog-actions"><button class="btn ghost" type="button" wire:click="cancelDelete" x-on:click="$el.closest('dialog').close()">Batal</button><button class="btn danger" type="button" wire:click="delete" wire:loading.attr="disabled" wire:target="delete">Ya, hapus penjualan</button></div></div></dialog>
     @endif

@@ -1,0 +1,22 @@
+tts-a5 page 1/1 width_mm=148.0008611111111 height_mm=210.00155555555554
+tts-a5 QR=1 contents=PASS
+tts-thermal page 1/1 width_mm=57.99984166666666 height_mm=227.3917361111111
+tts-thermal QR=1 contents=PASS
+nota-a5 page 1/5 width_mm=148.0008611111111 height_mm=210.00155555555554
+nota-a5 page 2/5 width_mm=148.0008611111111 height_mm=210.00155555555554
+nota-a5 page 3/5 width_mm=148.0008611111111 height_mm=210.00155555555554
+nota-a5 page 4/5 width_mm=148.0008611111111 height_mm=210.00155555555554
+nota-a5 page 5/5 width_mm=148.0008611111111 height_mm=210.00155555555554
+nota-a5 QR=1 contents=PASS
+nota-thermal page 1/1 width_mm=57.99984166666666 height_mm=1453.0369861111112
+nota-thermal QR=1 contents=PASS
+public-a5 page 1/5 width_mm=148.0008611111111 height_mm=210.00155555555554
+public-a5 page 2/5 width_mm=148.0008611111111 height_mm=210.00155555555554
+public-a5 page 3/5 width_mm=148.0008611111111 height_mm=210.00155555555554
+public-a5 page 4/5 width_mm=148.0008611111111 height_mm=210.00155555555554
+public-a5 page 5/5 width_mm=148.0008611111111 height_mm=210.00155555555554
+public-a5 QR=1 contents=PASS
+sale-a5 page 1/1 width_mm=148.0008611111111 height_mm=210.00155555555554
+sale-a5 QR=0 contents=PASS
+sale-thermal page 1/1 width_mm=57.99984166666666 height_mm=145.95863055555554
+sale-thermal QR=0 contents=PASS

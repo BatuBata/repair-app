@@ -1,0 +1,28 @@
+import Foundation
+import AppKit
+import PDFKit
+import CoreImage
+let names = ["tts-a5", "tts-thermal", "nota-a5", "nota-thermal", "public-a5", "sale-a5", "sale-thermal"]
+let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])!
+let token = try String(contentsOfFile: "/private/tmp/t017-token", encoding: .utf8)
+precondition(token.count == 64)
+let expected = "https://repair.example/t/" + token
+for name in names {
+ let doc = PDFDocument(url: URL(fileURLWithPath:"/private/tmp/\(name).pdf"))!
+ var decoded = [String](); var text = ""
+ for index in 0..<doc.pageCount {
+  let page=doc.page(at:index)!; let bounds=page.bounds(for:.mediaBox); let scale:CGFloat=150/72
+  let bitmap=NSBitmapImageRep(bitmapDataPlanes:nil,pixelsWide:Int(ceil(bounds.width*scale)),pixelsHigh:Int(ceil(bounds.height*scale)),bitsPerSample:8,samplesPerPixel:4,hasAlpha:true,isPlanar:false,colorSpaceName:.deviceRGB,bytesPerRow:0,bitsPerPixel:0)!
+  let ctx=NSGraphicsContext(bitmapImageRep:bitmap)!; NSGraphicsContext.saveGraphicsState(); NSGraphicsContext.current=ctx; NSColor.white.setFill(); NSRect(x:0,y:0,width:bitmap.pixelsWide,height:bitmap.pixelsHigh).fill();ctx.cgContext.scaleBy(x:scale,y:scale);page.draw(with:.mediaBox,to:ctx.cgContext);NSGraphicsContext.restoreGraphicsState()
+  let path="/private/tmp/final-\(name)-\(index+1).png"; try bitmap.representation(using:.png,properties:[:])!.write(to:URL(fileURLWithPath:path))
+  let raster=CIImage(contentsOf:URL(fileURLWithPath:path))!;decoded += detector.features(in:raster).compactMap{($0 as? CIQRCodeFeature)?.messageString}
+  let s=page.string ?? "";text += s
+  for i in 0..<(s as NSString).length {let r=page.characterBounds(at:i);if !r.isEmpty && !bounds.insetBy(dx:1,dy:1).contains(r) {print("OUTSIDE \(name) \(index+1) \(r)")}}
+  print("\(name) page \(index+1)/\(doc.pageCount) width_mm=\(bounds.width*25.4/72) height_mm=\(bounds.height*25.4/72)")
+ }
+ if !name.hasPrefix("sale") {precondition(decoded == [expected], "QR mismatch \(name): \(decoded)")}
+ precondition(!text.contains("734.567") && !text.contains("734567"))
+ if name == "public-a5" {precondition(!text.contains("6281234567890") && !text.contains("SECRET ADDRESS") && !text.contains("SYNTHETIC CUSTOMER"))}
+ if name.contains("nota") || name == "public-a5" {for i in 0..<40 {precondition(text.contains("Baris \(i) "),"missing row \(i) in \(name)")}; precondition(text.contains("8.000.000"));precondition(text.contains("Garansi 30"))}
+ print("\(name) QR=\(decoded.count) contents=PASS")
+}

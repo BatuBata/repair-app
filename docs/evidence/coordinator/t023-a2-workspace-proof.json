@@ -1,0 +1,20 @@
+{
+  "candidate_revision": "d047f25ea31d703660212e4205b937053c92adcb",
+  "native_workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+  "source": {
+    "files": 230,
+    "mismatches": []
+  },
+  "build": {
+    "files": 14,
+    "mismatches": [],
+    "file_set_exact": true,
+    "copied_from": "canonical T022 A2 frozen production build",
+    "preserved_old_build": "/private/tmp/repair-t023-a2-artifact-nm755bhm/preserved-a1-build",
+    "rebuild": false
+  },
+  "font": {
+    "files": 9,
+    "mismatches": []
+  }
+}

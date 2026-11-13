@@ -1,0 +1,14 @@
+{
+  "task": "T023",
+  "attempt": "A2",
+  "kind": "verification",
+  "worker": "/root/t023_final",
+  "requested_model": "gpt-6.1-sol (original independent session)",
+  "model_effective": null,
+  "input_T022": "d047f25ea31d703660212e4205b937053c92adcb",
+  "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+  "branch": "codex/t023-final-qa-a2",
+  "workspace_proof": "docs/evidence/coordinator/t023-a2-workspace-proof.json",
+  "scope": "Independent reporttouch/layout3width + actualEdgedesktopsmoke, frozen source/build/font checks; explicit A1unaffectedcase reuse bysource/conditions. PreserveA1FAIL. Noappfix/MySQLreset/mainmerge/deploy.",
+  "edge_runtime_proof": "docs/evidence/coordinator/edge-runtime-proof.json"
+}

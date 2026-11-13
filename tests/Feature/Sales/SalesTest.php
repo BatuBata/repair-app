@@ -361,13 +361,13 @@ class SalesTest extends TestCase
         $this->assertSame(1, $product->fresh()->stock);
     }
 
-    public function test_empty_escaped_history_and_no_edit_or_print_routes(): void
+    public function test_empty_escaped_history_print_links_and_no_edit_route(): void
     {
         $this->admin();
         $this->get('/penjualan')->assertOk()->assertSee('Belum ada penjualan.');
         $product = $this->product(['name' => '<script>bad()</script>']);
         $sale = app(CreateSale::class)->handle($this->input($product, ['customer_name' => '<script>customer()</script>']));
-        $this->get('/penjualan/'.$sale->id)->assertOk()->assertSee($product->name)->assertDontSee($product->name, false)->assertSee('Rp80.000')->assertSee('Tanpa garansi')->assertDontSee('Cetak');
+        $this->get('/penjualan/'.$sale->id)->assertOk()->assertSee($product->name)->assertDontSee($product->name, false)->assertSee('Rp80.000')->assertSee('Tanpa garansi')->assertSee('Cetak struk')->assertSee(route('sales.print', $sale->id), false);
         $this->get('/penjualan/'.$sale->id.'/edit')->assertNotFound();
         $this->get('/penjualan/invalid')->assertNotFound();
         $this->get('/penjualan/999')->assertNotFound();

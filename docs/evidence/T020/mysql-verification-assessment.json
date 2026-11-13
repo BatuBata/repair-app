@@ -1,0 +1,293 @@
+{
+  "verdict": "pass",
+  "scope": "Actual local MySQL synthetic backup/restore verification; no production acceptance",
+  "checked_revision": "a5a95970f5ff0caefdf8d85e89bc60604cd0638f",
+  "inputs": {
+    "T001": "4107c49d9098ab47c465773857fd5ee2811eb1b4",
+    "T002": "e5706f31321d7540cdcaec5f2792248b9c324841"
+  },
+  "T002_input_purpose": "baseline provenance only, not accepted dependency",
+  "assessment_utc": "2026-11-12T15:08:30.480733+00:00",
+  "baseline": {
+    "identity": {
+      "selected_database": "repair_app_test",
+      "server_version": "8.0.31"
+    },
+    "transport": "loopback TCP",
+    "baseline_counts_match": true,
+    "table_count": 20,
+    "view_count": 0,
+    "rows_by_table": {
+      "cache": 0,
+      "cache_locks": 0,
+      "categories": 9,
+      "expenses": 0,
+      "failed_jobs": 0,
+      "job_batches": 0,
+      "jobs": 0,
+      "migrations": 6,
+      "number_sequences": 1,
+      "passkeys": 0,
+      "password_reset_tokens": 0,
+      "products": 0,
+      "sale_items": 0,
+      "sales": 0,
+      "service_order_items": 0,
+      "service_orders": 4,
+      "sessions": 0,
+      "stock_entries": 0,
+      "store_settings": 1,
+      "users": 1
+    },
+    "tts_identity_summary": {
+      "total": 4,
+      "unique_numbers": 4,
+      "unique_tracking_tokens": 4,
+      "first_number": "TTS-2611-001",
+      "last_number": "TTS-2611-004"
+    },
+    "counter_rows": [
+      {
+        "prefix": "TTS",
+        "period": "2611",
+        "last_seq": 4
+      }
+    ],
+    "baseline_provenance_match": true,
+    "stored_routines_events_triggers": 0
+  },
+  "probe_created": {
+    "selected_database": "repair_app_test",
+    "probe_rows": 1,
+    "marker": "T020-synthetic-7",
+    "baseline_unchanged": true
+  },
+  "probe_mutated": {
+    "selected_database": "repair_app_test",
+    "changed_rows": 1,
+    "marker": "T020-mutated",
+    "snapshot_known_synthetic": true
+  },
+  "post_restore": {
+    "selected_database": "repair_app_test",
+    "different_tables_by_check": {
+      "rows_by_table": [],
+      "row_fingerprints": [],
+      "schema_fingerprints": [
+        "cache",
+        "cache_locks",
+        "categories",
+        "expenses",
+        "failed_jobs",
+        "job_batches",
+        "jobs",
+        "migrations",
+        "number_sequences",
+        "passkeys",
+        "password_reset_tokens",
+        "products",
+        "sale_items",
+        "sales",
+        "service_order_items",
+        "service_orders",
+        "sessions",
+        "stock_entries",
+        "store_settings",
+        "t020_backup_probe",
+        "users"
+      ]
+    },
+    "probe_marker": "T020-synthetic-7",
+    "post_restore_counts": {
+      "cache": 0,
+      "cache_locks": 0,
+      "categories": 9,
+      "expenses": 0,
+      "failed_jobs": 0,
+      "job_batches": 0,
+      "jobs": 0,
+      "migrations": 6,
+      "number_sequences": 1,
+      "passkeys": 0,
+      "password_reset_tokens": 0,
+      "products": 0,
+      "sale_items": 0,
+      "sales": 0,
+      "service_order_items": 0,
+      "service_orders": 4,
+      "sessions": 0,
+      "stock_entries": 0,
+      "store_settings": 1,
+      "t020_backup_probe": 1,
+      "users": 1
+    }
+  },
+  "schema_assessment": {
+    "selected_database": "repair_app_test",
+    "exact_show_create_string_match": false,
+    "schema_semantic_equality": true,
+    "cause": "SHOW CREATE after import adds explicit CHARACTER SET utf8mb4 to string columns; table charset/collation and all other schema text unchanged",
+    "tables": {
+      "cache": {
+        "table_default_charset": "utf8mb4",
+        "only_added_explicit_same_character_set": true,
+        "rows_and_identities_match": true
+      },
+      "cache_locks": {
+        "table_default_charset": "utf8mb4",
+        "only_added_explicit_same_character_set": true,
+        "rows_and_identities_match": true
+      },
+      "categories": {
+        "table_default_charset": "utf8mb4",
+        "only_added_explicit_same_character_set": true,
+        "rows_and_identities_match": true
+      },
+      "expenses": {
+        "table_default_charset": "utf8mb4",
+        "only_added_explicit_same_character_set": true,
+        "rows_and_identities_match": true
+      },
+      "failed_jobs": {
+        "table_default_charset": "utf8mb4",
+        "only_added_explicit_same_character_set": true,
+        "rows_and_identities_match": true
+      },
+      "job_batches": {
+        "table_default_charset": "utf8mb4",
+        "only_added_explicit_same_character_set": true,
+        "rows_and_identities_match": true
+      },
+      "jobs": {
+        "table_default_charset": "utf8mb4",
+        "only_added_explicit_same_character_set": true,
+        "rows_and_identities_match": true
+      },
+      "migrations": {
+        "table_default_charset": "utf8mb4",
+        "only_added_explicit_same_character_set": true,
+        "rows_and_identities_match": true
+      },
+      "number_sequences": {
+        "table_default_charset": "utf8mb4",
+        "only_added_explicit_same_character_set": true,
+        "rows_and_identities_match": true
+      },
+      "passkeys": {
+        "table_default_charset": "utf8mb4",
+        "only_added_explicit_same_character_set": true,
+        "rows_and_identities_match": true
+      },
+      "password_reset_tokens": {
+        "table_default_charset": "utf8mb4",
+        "only_added_explicit_same_character_set": true,
+        "rows_and_identities_match": true
+      },
+      "products": {
+        "table_default_charset": "utf8mb4",
+        "only_added_explicit_same_character_set": true,
+        "rows_and_identities_match": true
+      },
+      "sale_items": {
+        "table_default_charset": "utf8mb4",
+        "only_added_explicit_same_character_set": true,
+        "rows_and_identities_match": true
+      },
+      "sales": {
+        "table_default_charset": "utf8mb4",
+        "only_added_explicit_same_character_set": true,
+        "rows_and_identities_match": true
+      },
+      "service_order_items": {
+        "table_default_charset": "utf8mb4",
+        "only_added_explicit_same_character_set": true,
+        "rows_and_identities_match": true
+      },
+      "service_orders": {
+        "table_default_charset": "utf8mb4",
+        "only_added_explicit_same_character_set": true,
+        "rows_and_identities_match": true
+      },
+      "sessions": {
+        "table_default_charset": "utf8mb4",
+        "only_added_explicit_same_character_set": true,
+        "rows_and_identities_match": true
+      },
+      "stock_entries": {
+        "table_default_charset": "utf8mb4",
+        "only_added_explicit_same_character_set": true,
+        "rows_and_identities_match": true
+      },
+      "store_settings": {
+        "table_default_charset": "utf8mb4",
+        "only_added_explicit_same_character_set": true,
+        "rows_and_identities_match": true
+      },
+      "t020_backup_probe": {
+        "table_default_charset": "utf8mb4",
+        "only_added_explicit_same_character_set": true,
+        "rows_and_identities_match": true
+      },
+      "users": {
+        "table_default_charset": "utf8mb4",
+        "only_added_explicit_same_character_set": true,
+        "rows_and_identities_match": true
+      }
+    }
+  },
+  "source_equality": {
+    "all_8_recorded_source_sha256_match": true,
+    "diff_deploy_and_runbook_empty": true,
+    "new_changes_evidence_only": true
+  },
+  "archive": {
+    "path": "/tmp/repair-T020-actual-ldbh_q8h/backups/repair_app_test-20261112T150623Z-tg3a2f.sql.gz",
+    "bytes": 3762,
+    "sha256": "05fbbd7822dcade66ae805ef5e88ae65a4c981f6ace646f79ede6c18dcfb26d8",
+    "exactly_one_new_archive": true,
+    "initial_directory_empty": true,
+    "offsite_attempted": false,
+    "retention_executed": false,
+    "daily_backup_success": false
+  },
+  "private_permissions": {
+    "private_directory": "0o700",
+    "backup_directory": "0o700",
+    "archive": "0o600",
+    "client_secret_removed": true
+  },
+  "duration_seconds": {
+    "measured_real_command_sequence": 1.9511,
+    "actual_dump_with_expected_offsite_block": 0.2494,
+    "actual_mysql_import": 0.4835
+  },
+  "initial_failure_retained": {
+    "artifact": "docs/evidence/T020/mysql-verification-result.json",
+    "class": "evidence assertion: strict SHOW CREATE text equality",
+    "reason": "Actual dump/import passed; 21 schemas differ only by newly explicit CHARACTER SET utf8mb4 already inherited from same table charset; exact equality after removing only that redundant clause proved for every table; no source or DB change made for diagnosis"
+  },
+  "reused_checks": {
+    "source_revision": "a5a95970f5ff0caefdf8d85e89bc60604cd0638f",
+    "artifact": "docs/evidence/T020/host-check-final.log",
+    "cases": "31 stub safety cases and 3 bash syntax checks; unchanged bytes; not rerun"
+  },
+  "not_run": [
+    "ShellCheck (not installed, prior observation)",
+    "production Ubuntu/Nginx/PHP-FPM syntax/runtime",
+    "cron scheduling",
+    "HTTPS/renewal",
+    "off-VPS real transfer/checksum",
+    "production smoke",
+    "printer/Android checks",
+    "independent QA and integration"
+  ],
+  "limits": [
+    "Local MySQL root explicitly authorized; production least-privilege not verified",
+    "Pending Q-04 branch exits 1 intentionally, not daily backup success",
+    "repair_app not queried or modified by this task",
+    "No user/database creation or deletion",
+    "21 synthetic tables left: original 20 plus one probe row",
+    "Dump remains private outside Git; generated client secret removed",
+    "No source changes, services changed, main merge, or deployment"
+  ]
+}

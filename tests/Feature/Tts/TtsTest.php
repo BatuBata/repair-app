@@ -69,7 +69,7 @@ class TtsTest extends TestCase
             $this->assertDatabaseHas('service_orders', ['number' => 'TTS-2611-00'.$number, 'created_by' => $actor->id, 'customer_phone' => '6281234567890', 'status' => 'diterima', 'item_description' => 'Sharp', 'customer_address' => 'Jl. Uji']);
         }
         $order = ServiceOrder::firstOrFail();
-        $this->get(route('tts.success', $order->id))->assertOk()->assertSee($order->number)->assertSee('Buat TTS lagi')->assertDontSee('Kirim WA')->assertDontSee('Cetak struk');
+        $this->get(route('tts.success', $order->id))->assertOk()->assertSee($order->number)->assertSee('Buat TTS lagi')->assertDontSee('Kirim WA')->assertSee('Cetak struk')->assertSee(route('tts.print', $order->id), false);
     }
 
     public function test_invalid_phone_and_inactive_or_forged_category_do_not_create_data(): void

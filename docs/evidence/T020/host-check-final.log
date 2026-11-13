@@ -1,0 +1,16 @@
+$ bash -n deploy/backup.sh
+exit=0; duration=0.007s
+
+$ bash -n deploy/restore.sh
+exit=0; duration=0.005s
+
+$ bash -n deploy/deploy.sh
+exit=0; duration=0.005s
+
+$ python3 deploy/check-scripts.py
+exit=0; duration=4.468s
+PASS 31 host safety cases (stub tools only; NOT a MySQL backup/restore PASS)
+
+ShellCheck: NOT_RUN — not installed
+nginx -t / php-fpm -t: NOT_RUN — target binaries/environment unavailable
+total duration=4.484s

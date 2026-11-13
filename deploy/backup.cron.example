@@ -1,0 +1,7 @@
+# /etc/cron.d/repair-app-backup. Ubuntu cron uses SYSTEM time, not APP_TIMEZONE.
+# Enable only after timedatectl reports Asia/Makassar, Q-04 configured, and real restore PASS.
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin
+MAILTO=root
+# Replace BACKUP_ACCOUNT and SSH_ALIAS, remote directory per Q-04; use stable script path.
+0 3 * * * BACKUP_ACCOUNT /srv/repair-app/ops/backup.sh /etc/repair-app/backup.cnf repair_app /var/backups/repair-app SSH_ALIAS /REMOTE_DIRECTORY >> /var/log/repair-app-backup.log 2>&1

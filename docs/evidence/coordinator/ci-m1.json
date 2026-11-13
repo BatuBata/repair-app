@@ -11,5 +11,12 @@
     "PHP8.3 vendor/bin/pint docs/evidence/T008/A2/fixture.php: fixed",
     "PHP8.3 vendor/bin/pint --test docs/evidence/T008/A2/fixture.php: PASS"
   ],
-  "next": "Publish formatting-only snapshot to main and inspect actual CI outcome; do not relabel failed run PASS."
+  "next": "M1 remote CI PASS; retain prior failed run. Future application source requires checks at integration gates.",
+  "follow_up": {
+    "source_revision": "b5ae99a72e076fe6a5de5c5f3459ae01de666454",
+    "run_id": 43348211271,
+    "url": "https://github.com/BatuBata/repair-app/actions/runs/43348211271",
+    "result": "PASS",
+    "evidence": "GitHub Actions tests workflow completed conclusion=success on exact main SHA; source changes since accepted M1 only TODO metadata and QA helper formatting."
+  }
 }

@@ -31,8 +31,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T009 | TTS: form buat/edit, daftar dengan cari/filter, detail sesuai peran | developer / 6.1-sol | medium / high | T008 | T012, T013, T014, T020 | running |
 | T010 | Alur admin servis: tetapkan teknisi, rincian dan terbitkan nota, koreksi, diambil, batal | developer / 6.1-sol | complex / high | T009 | T012, T013, T014, T020 | pending |
 | T011 | Halaman tracking publik dan tombol Kirim WA | developer / 6.1-terra | medium / medium | T010 | T012, T013, T014, T020 | pending |
-| T012 | Stok barang jualan dan restok | developer / 6.1-sol | medium / medium | T008 | T009, T010, T011, T014, T020 | running |
-| T013 | Penjualan barang dengan garansi opsional | developer / 6.1-sol | medium / high | T012 | T009, T010, T011, T014, T020 | pending |
+| T012 | Stok barang jualan dan restok | developer / 6.1-sol | medium / medium | T008 | T009, T010, T011, T014, T020 | done |
+| T013 | Penjualan barang dengan garansi opsional | developer / 6.1-sol | medium / high | T012 | T009, T010, T011, T014, T020 | running |
 | T014 | Pencatatan pengeluaran | developer / 6-luna | easy / low | T008 | T009, T010, T011, T012, T013, T020 | pending |
 | T015 | Integrasi alur servis (M2) dan stok/penjualan/pengeluaran (M4) | integrator / 6.1-sol | medium / medium | T011, T013, T014 | — | pending |
 | T016 | QA independen alur servis, penjualan, dan pengeluaran | tester / 6.1-sol | medium / high | T015 | T020 | pending |
@@ -1394,7 +1394,12 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "tests/Feature/Auth/RoleLauncherTest.php",
         "tests/Feature/Auth/AuthenticationTest.php"
       ],
-      "shared_resources": [],
+      "shared_resources": [
+        {
+          "name": "browser:repair-app-visual",
+          "mode": "exclusive"
+        }
+      ],
       "conflicts_with": [],
       "parallel_candidates": [
         "T012",
@@ -1433,8 +1438,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "runtime": "Codex native collaboration",
         "task_id": "/root/t004_resume",
         "base_revision": "1d831380cd89b601c67321298eff07f686d8f010",
-        "phase": "coding",
-        "browser_reservation": "none; must request coordinator before visual QA",
+        "phase": "visual_self_check",
+        "browser_reservation": "exclusive granted T009, port8189 after T012 release",
         "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
         "model_observation": "Sol high requested; backend effective identity not independently exposed."
       }
@@ -1605,7 +1610,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar daftar stok dan form restok.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "running",
+      "status": "done",
       "resource_phase_policy": "Coding/host tests do not hold browser. Before visual QA request coordinator reservation browser:repair-app-visual exclusive; only one task at a time. Private SQLite per task; existing MySQL untouched.",
       "attempts": [
         {
@@ -1615,7 +1620,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native:collaboration:/root/t012_stock:T012",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
         }
       ],
@@ -1624,10 +1629,27 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "runtime": "Codex native collaboration",
         "task_id": "/root/t012_stock",
         "base_revision": "1d831380cd89b601c67321298eff07f686d8f010",
-        "phase": "coding",
-        "browser_reservation": "none; must request coordinator before visual QA",
+        "phase": "settled",
+        "browser_reservation": "released; server8190 stopped, listener absent, CDP browser closed per worker",
         "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
         "model_observation": "Sol high requested; backend effective identity not independently exposed."
+      },
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "/Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T012/A1/README.md",
+        "revision": "2ce3ca3c46bcaab19c334240ff4fd3e72add85ac",
+        "checked_revision": "2ce3ca3c46bcaab19c334240ff4fd3e72add85ac",
+        "inputs": {
+          "T008": "3610253be1dedb1d9abad958059f52e33377f320"
+        },
+        "evidence": [
+          "/Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T012/A1/README.md",
+          "/Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T012/A1/checks.json",
+          "/Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T012/A1/browser-results.json",
+          "/Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T012/A1/inspector-results.json",
+          "/Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T012/A1/source-manifest.json"
+        ],
+        "summary": "Developer A1 PASS: stock CRUD/restock/history, current-admin guard, snapshots/Expense preserved;69tests695assert then12Stock201assert after equivalent lookup typing fixes;Pint/staticPASS;19Chrome observations and12authenticated visual probes0FAIL,24screens reviewed. Coordinator read source, checks and main mobile screenshots. No actual MySQL/concurrency or independent/integrated QA yet; F003 awaits T016. Browser8190 released; no new build/dependency."
       }
     },
     {
@@ -1662,14 +1684,10 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "app/Actions/Sales/**",
         "resources/views/livewire/sales/**",
         "routes/modules/sales.php",
-        "tests/Feature/Sales/**"
+        "tests/Feature/Sales/**",
+        "docs/evidence/T013/**"
       ],
-      "shared_resources": [
-        {
-          "name": "db:mysql-test",
-          "mode": "exclusive"
-        }
-      ],
+      "shared_resources": [],
       "conflicts_with": [],
       "parallel_candidates": [
         "T009",
@@ -1689,7 +1707,31 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar daftar dan form penjualan.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "pending"
+      "status": "running",
+      "resource_phase_policy": "Coding/private SQLite first. Request db:mysql-test exclusive for actual concurrency, preserving existing repair_app_test schema/data and task-owned fixture provenance; no fresh/drop/truncate. Browser exclusive reserved only when visual phase starts.",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root/t012_stock",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.followup_task:/root/t012_stock:T013",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
+        }
+      ],
+      "runtime_assignment": {
+        "runtime": "Codex native collaboration",
+        "task_id": "/root/t012_stock",
+        "base_revision": "2ce3ca3c46bcaab19c334240ff4fd3e72add85ac",
+        "phase": "coding",
+        "browser_reservation": "none; T009 holds browser8189",
+        "mysql_reservation": "none; request before access; append task-owned fixture only, preserve baseline",
+        "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
+        "model_observation": "Existing Sol high native session resumed after T012 settled; effective backend not exposed."
+      }
     },
     {
       "id": "T014",

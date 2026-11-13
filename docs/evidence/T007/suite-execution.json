@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/opt/homebrew/opt/php@8.3/bin/php",
+    "artisan",
+    "test",
+    "--no-ansi",
+    "--log-junit=/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T007/suite-junit.xml"
+  ],
+  "exit_code": 0,
+  "duration_seconds": 4.272,
+  "DB_CONNECTION": "sqlite",
+  "DB_DATABASE": ":memory:",
+  "RUN_MYSQL_DOMAIN": "0"
+}

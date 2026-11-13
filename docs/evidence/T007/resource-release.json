@@ -1,0 +1,13 @@
+{
+  "task_browser_page": "7ebe8701-7ad6-4b77-97fc-a75798205093",
+  "task_tab_closed": true,
+  "server_group_terminated": 55095,
+  "private_bridge_group_terminated": 55096,
+  "preview_port": 8087,
+  "preview_port_released": true,
+  "private_fixture_retained": "/var/folders/z3/lllr0gjd35z5pplbyrcr_wf00000gn/T/repair-t007-mhikya2r/m1-synthetic.sqlite",
+  "private_directory_mode": "0o700",
+  "private_fixture_mode": "0o600",
+  "secrets_scan": "No generated APP_KEY/admin/technician password in evidence bytes",
+  "scope": "No MySQL connection, canonical env, global PHP change or deployment"
+}

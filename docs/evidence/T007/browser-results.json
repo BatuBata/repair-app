@@ -1,0 +1,259 @@
+{
+  "verdict": "pass_integration_smoke",
+  "role_status_observations": [
+    {
+      "assets": [
+        {
+          "status": 200,
+          "url": "/build/assets/app-CDn1G0_W.css"
+        },
+        {
+          "status": 200,
+          "url": "/build/assets/app-TKBAM3lN.js"
+        },
+        {
+          "status": 200,
+          "url": "/build/assets/layout-DAFmGKay.css"
+        },
+        {
+          "status": 200,
+          "url": "/flux/flux.min.js"
+        },
+        {
+          "status": 200,
+          "url": "/livewire-4e0e9985/livewire.min.js"
+        }
+      ],
+      "fonts": [
+        {
+          "family": "IBM Plex Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "IBM Plex Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "IBM Plex Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "IBM Plex Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "IBM Plex Mono",
+          "status": "unloaded"
+        }
+      ],
+      "role": "admin",
+      "routes": [
+        {
+          "path": "/",
+          "status": 200,
+          "url": "http://127.0.0.1:8087/"
+        },
+        {
+          "path": "/pengaturan/pengguna",
+          "status": 200,
+          "url": "http://127.0.0.1:8087/pengaturan/pengguna"
+        },
+        {
+          "path": "/pengaturan/toko",
+          "status": 200,
+          "url": "http://127.0.0.1:8087/pengaturan/toko"
+        },
+        {
+          "path": "/pengaturan/kategori",
+          "status": 200,
+          "url": "http://127.0.0.1:8087/pengaturan/kategori"
+        },
+        {
+          "path": "/profil",
+          "status": 200,
+          "url": "http://127.0.0.1:8087/profil"
+        }
+      ],
+      "viewport": {
+        "documentWidth": 1231,
+        "height": 838,
+        "width": 1231
+      }
+    },
+    {
+      "role": "guest",
+      "routes": [
+        {
+          "path": "/",
+          "status": 401
+        },
+        {
+          "path": "/profil",
+          "status": 401
+        },
+        {
+          "path": "/pengaturan/toko",
+          "status": 401
+        },
+        {
+          "path": "/pengaturan/kategori",
+          "status": 401
+        },
+        {
+          "path": "/pengaturan/pengguna",
+          "status": 401
+        }
+      ]
+    },
+    {
+      "navigation": [
+        {
+          "label": "Anugerah",
+          "path": "/"
+        },
+        {
+          "label": "Buat TTS",
+          "path": "/tts/baru"
+        },
+        {
+          "label": "Daftar TTS",
+          "path": "/tts"
+        },
+        {
+          "label": "Profil",
+          "path": "/profil"
+        },
+        {
+          "label": "TTTeknisi Uji T007Teknisi",
+          "path": "http://127.0.0.1:8087/profil"
+        },
+        {
+          "label": "Buat TTS",
+          "path": "/tts/baru"
+        },
+        {
+          "label": "Daftar TTS",
+          "path": "/tts"
+        },
+        {
+          "label": "Profil",
+          "path": "/profil"
+        }
+      ],
+      "role": "technician",
+      "routes": [
+        {
+          "path": "/",
+          "status": 403,
+          "url": "http://127.0.0.1:8087/"
+        },
+        {
+          "path": "/dashboard",
+          "status": 403,
+          "url": "http://127.0.0.1:8087/dashboard"
+        },
+        {
+          "path": "/pengaturan/pengguna",
+          "status": 403,
+          "url": "http://127.0.0.1:8087/pengaturan/pengguna"
+        },
+        {
+          "path": "/pengaturan/toko",
+          "status": 403,
+          "url": "http://127.0.0.1:8087/pengaturan/toko"
+        },
+        {
+          "path": "/pengaturan/kategori",
+          "status": 403,
+          "url": "http://127.0.0.1:8087/pengaturan/kategori"
+        },
+        {
+          "path": "/profil",
+          "status": 200,
+          "url": "http://127.0.0.1:8087/profil"
+        },
+        {
+          "path": "/tts/baru",
+          "status": 404,
+          "url": "http://127.0.0.1:8087/tts/baru"
+        }
+      ],
+      "viewport": {
+        "documentWidth": 1231,
+        "height": 838,
+        "width": 1231
+      }
+    }
+  ],
+  "steps": [
+    {
+      "case": "admin login",
+      "expected": "POST /login then /; shell Admin",
+      "actual": "Observed / and Beranda on T003 shell",
+      "result": "pass"
+    },
+    {
+      "case": "admin users/store/category/profile navigation",
+      "expected": "correct named routes, HTTP200, shared shell",
+      "actual": "Kelola pengguna via keyboard Enter after one ineffective click; later mouse Pengaturan/Kategori/avatar clicks navigate; all5 paths HTTP200",
+      "result": "pass"
+    },
+    {
+      "case": "store update in private fixture",
+      "expected": "Livewire persists synthetic store name and returns Indonesian success",
+      "actual": "Toko Uji T007, Pengaturan toko berhasil disimpan; no real store changed",
+      "result": "pass"
+    },
+    {
+      "case": "admin logout",
+      "expected": "returns /login and protected JSON requests401",
+      "actual": "/login and all5 protected requests401",
+      "result": "pass"
+    },
+    {
+      "case": "technician login with remember checked",
+      "expected": "authenticate, redirect /tts/baru; route pending T009",
+      "actual": "Redirected /tts/baru,404; then /profil200 with tech_t007 and technician navigation",
+      "result": "pass_auth_only; downstream_not_implemented"
+    },
+    {
+      "case": "technician protected routes",
+      "expected": "root/dashboard and3 settings paths403",
+      "actual": "all5 HTTP403, actual store403 page captured",
+      "result": "pass"
+    },
+    {
+      "case": "protected Livewire actions",
+      "expected": "server rejects inactive/demoted/nonadmin actions",
+      "actual": "Full suite SettingsTest active-admin/stale-account and UsersTest all-actions cases PASS on exact source; not additionally forged in browser",
+      "result": "pass_automated_suite"
+    },
+    {
+      "case": "technician logout and resource release",
+      "expected": "/login then own tab/server closed",
+      "actual": "/login; tab closed; server and private bridge process groups terminated; port8087 free",
+      "result": "pass"
+    }
+  ],
+  "observed_anomalies": [
+    {
+      "classification": "input automation/evidence uncertainty",
+      "actual": "First mouse click Kelola pengguna immediately after viewport command returned unchanged; wait --url timed out25000ms. Focus+Enter reached users; all later mouse navigations and store save worked. Retained failure in browser-events.jsonl.",
+      "limitation": "Do not infer full pointer reliability or responsive acceptance; independent T008 should include pointer checks."
+    }
+  ],
+  "screenshots": [
+    "admin-home.png",
+    "admin-users.png",
+    "admin-store.png",
+    "admin-categories.png",
+    "admin-profile.png",
+    "technician-pending-tts.png",
+    "technician-profile.png",
+    "technician-forbidden.png"
+  ],
+  "visual_scope": "Desktop integration smoke only; viewport command requested1280x900, first image1280x900; later native window measured1231x838. Store capture is scrolled after save. No full 360/768/1280 or physical-device claim.",
+  "console_last_observation": "empty entries",
+  "fonts": "Plex Sans400/500/600 loaded, Plex Mono unloaded on this text-only screen; no claim Mono loaded here",
+  "secret_handling": "Random private fixture credentials never in argv/log/screenshots; loopback private memory bridge used only to populate password field, responses/no-store and no request logging; password controls masked, no screenshots of entered passwords."
+}

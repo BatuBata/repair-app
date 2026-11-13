@@ -1,0 +1,187 @@
+{
+  "total": 72,
+  "passed": 71,
+  "skipped": 1,
+  "assertions": 698,
+  "errors": 0,
+  "failures": 0,
+  "phpunit_time_seconds": 3.351002,
+  "runner_stdout_duration_ms": 3362,
+  "process_wall_seconds": 4.272,
+  "skipped_cases": [
+    "Tests\\Feature\\Domain\\MySqlConcurrencyTest::test_mysql_fresh_seed_and_parallel_document_creation"
+  ],
+  "suites": [
+    {
+      "name": "Tests\\Unit\\ExampleTest",
+      "tests": "1",
+      "assertions": "1",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "0.000409"
+    },
+    {
+      "name": "Tests\\Feature\\Auth\\AuthenticationTest",
+      "tests": "11",
+      "assertions": "79",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "0.353613"
+    },
+    {
+      "name": "Tests\\Feature\\Auth\\EmailVerificationTest",
+      "tests": "1",
+      "assertions": "5",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "0.015439"
+    },
+    {
+      "name": "Tests\\Feature\\Auth\\PasswordConfirmationTest",
+      "tests": "1",
+      "assertions": "4",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "0.008424"
+    },
+    {
+      "name": "Tests\\Feature\\Auth\\PasswordResetTest",
+      "tests": "1",
+      "assertions": "4",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "0.007187"
+    },
+    {
+      "name": "Tests\\Feature\\Auth\\TwoFactorChallengeTest",
+      "tests": "1",
+      "assertions": "14",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "0.012341"
+    },
+    {
+      "name": "Tests\\Feature\\DashboardTest",
+      "tests": "2",
+      "assertions": "15",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "0.023142"
+    },
+    {
+      "name": "Tests\\Feature\\Domain\\DomainTest",
+      "tests": "14",
+      "assertions": "280",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "0.150662"
+    },
+    {
+      "name": "Tests\\Feature\\Domain\\MySqlConcurrencyTest",
+      "tests": "1",
+      "assertions": "0",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "1",
+      "time": "0.005443"
+    },
+    {
+      "name": "Tests\\Feature\\Domain\\SeederCacheTest",
+      "tests": "1",
+      "assertions": "7",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "0.618444"
+    },
+    {
+      "name": "Tests\\Feature\\ExampleTest",
+      "tests": "1",
+      "assertions": "2",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "0.007732"
+    },
+    {
+      "name": "Tests\\Feature\\Layout\\LayoutPreviewTest",
+      "tests": "3",
+      "assertions": "22",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "0.043881"
+    },
+    {
+      "name": "Tests\\Feature\\Profile\\ChangePasswordTest",
+      "tests": "3",
+      "assertions": "21",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "0.089507"
+    },
+    {
+      "name": "Tests\\Feature\\ScaffoldTest",
+      "tests": "4",
+      "assertions": "18",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "0.057497"
+    },
+    {
+      "name": "Tests\\Feature\\Settings\\ProfileUpdateTest",
+      "tests": "2",
+      "assertions": "14",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "0.022337"
+    },
+    {
+      "name": "Tests\\Feature\\Settings\\SecurityTest",
+      "tests": "1",
+      "assertions": "7",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "0.010356"
+    },
+    {
+      "name": "Tests\\Feature\\Settings\\SettingsTest",
+      "tests": "10",
+      "assertions": "86",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "0.272001"
+    },
+    {
+      "name": "Tests\\Feature\\Users\\ConcurrentAdminTest::test_concurrent_mutations_preserve_an_active_admin",
+      "tests": "4",
+      "assertions": "24",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "1.362822"
+    },
+    {
+      "name": "Tests\\Feature\\Users\\UsersTest",
+      "tests": "10",
+      "assertions": "95",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "0.289765"
+    }
+  ]
+}

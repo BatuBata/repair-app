@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/opt/homebrew/opt/php@8.3/bin/php",
+    "artisan",
+    "route:list",
+    "--json"
+  ],
+  "exit_code": 0,
+  "duration_seconds": 0.274,
+  "DB_CONNECTION": "sqlite",
+  "DB_DATABASE": ":memory:",
+  "RUN_MYSQL_DOMAIN": "0"
+}

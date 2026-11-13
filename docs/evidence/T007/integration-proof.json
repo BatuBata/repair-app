@@ -1,0 +1,34 @@
+{
+  "base": "ede491e76cbed8000aaee6e86392dc58d2741210",
+  "branch": "candidate/m1",
+  "inputs": {
+    "T002": {
+      "revision": "4a0667c302c979ab40641459bf9e7afac0655e09",
+      "is_ancestor": true
+    },
+    "T003": {
+      "revision": "a08d1d785b72199e1000840ea8e2afe1d7f38fbd",
+      "is_ancestor": true
+    },
+    "T004": {
+      "revision": "ebeb0b62f1a39720091026c1c3a0e8ec535c818e",
+      "is_ancestor": true
+    },
+    "T005": {
+      "revision": "ede491e76cbed8000aaee6e86392dc58d2741210",
+      "is_ancestor": true
+    }
+  },
+  "main_before": "38483300b34382e66e73d4f498e0e7c22b55ba58",
+  "t005_branch_before": "ede491e76cbed8000aaee6e86392dc58d2741210",
+  "source_files": 164,
+  "source_sha256": "11cbc71ccb63f910845ac4bd779244a090905de4723829554dfafe3c9740525f",
+  "working_bytes_equal_base": true,
+  "unmerged_paths": "",
+  "merge_needed": false,
+  "note": "All input pins already ancestors through dependency snapshots; no redundant merge, conflict resolution or product edit.",
+  "branch_preexistence_checks": {
+    "local": "git branch --list candidate/m1 returned empty before git switch -c succeeded",
+    "origin": "git ls-remote --heads origin candidate/m1 returned empty before branch creation"
+  }
+}

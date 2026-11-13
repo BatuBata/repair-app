@@ -29,7 +29,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T007 | Integrasi fondasi M1 pada branch candidate sebelum QA dan merge main | integrator / 6.1-sol | medium / medium | T002, T003, T004, T005 | — | done |
 | T008 | QA independen fondasi M1 | tester / 6.1-sol | medium / high | T007 | T006, T020 | done |
 | T009 | TTS: form buat/edit, daftar dengan cari/filter, detail sesuai peran | developer / 6.1-sol | medium / high | T008 | T012, T013, T014, T020 | done |
-| T010 | Alur admin servis: tetapkan teknisi, rincian dan terbitkan nota, koreksi, diambil, batal | developer / 6.1-sol | complex / high | T009 | T012, T013, T014, T020 | running |
+| T010 | Alur admin servis: tetapkan teknisi, rincian dan terbitkan nota, koreksi, diambil, batal | developer / 6.1-sol | complex / high | T009 | T012, T013, T014, T020 | done |
 | T011 | Halaman tracking publik dan tombol Kirim WA | developer / 6.1-terra | medium / medium | T010 | T012, T013, T014, T020 | pending |
 | T012 | Stok barang jualan dan restok | developer / 6.1-sol | medium / medium | T008 | T009, T010, T011, T014, T020 | done |
 | T013 | Penjualan barang dengan garansi opsional | developer / 6.1-sol | medium / high | T012 | T009, T010, T011, T014, T020 | done |
@@ -153,7 +153,67 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "stop_after_tasks": [
         "T023"
       ],
-      "source_ref": "User Goal 13 Nov 2026 pada chat Codex 01a1d268-2b8e-7832-8076-72b28764a569: resume eksplisit T001–T023 sampai siap rilis; lanjutkan logical T004 A2; tanpa deploy T024/T025."
+      "source_ref": "Native Goal reactivated 13 Nov 2026 updatedAt1794541380, current goal continuation explicitly requests T001–T023; verified get_goal status active after planning pause. Resume from latest checkpoint, not completed T004.",
+      "resume_allowed_tasks": [
+        "T001",
+        "T002",
+        "T003",
+        "T004",
+        "T005",
+        "T006",
+        "T007",
+        "T008",
+        "T009",
+        "T010",
+        "T011",
+        "T012",
+        "T013",
+        "T014",
+        "T015",
+        "T016",
+        "T017",
+        "T018",
+        "T019",
+        "T020",
+        "T021",
+        "T022",
+        "T023"
+      ],
+      "phase_history": [
+        {
+          "state": "paused",
+          "allowed_tasks": [],
+          "stop_after_tasks": [
+            "T023"
+          ],
+          "source_ref": "User 13 November 2026 menjawab opsi 2 pada pertanyaan async: siapkan hasil kajian dan satu prompt Goal dahulu; tidak lanjut implementasi. Goal native telah paused.",
+          "resume_allowed_tasks": [
+            "T001",
+            "T002",
+            "T003",
+            "T004",
+            "T005",
+            "T006",
+            "T007",
+            "T008",
+            "T009",
+            "T010",
+            "T011",
+            "T012",
+            "T013",
+            "T014",
+            "T015",
+            "T016",
+            "T017",
+            "T018",
+            "T019",
+            "T020",
+            "T021",
+            "T022",
+            "T023"
+          ]
+        }
+      ]
     },
     "exclusive_resources": [
       "branch:main",
@@ -185,6 +245,11 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "source_ref": "Instruksi user 12 Nov 2026: push ke GitHub BatuBata/repair-app, setiap pekerjaan selesai buat commit dan push",
       "policy": "Commit pekerjaan selesai dan push branch task/checkpoint setelah periksa perubahan; merge ke main tetap setelah QA/review relevan; tanpa force-push. Kandidat blocked disimpan sebagai checkpoint, bukan fitur diterima.",
       "coordination_branch": "codex/t010-invoice"
+    },
+    "browser_isolation_policy": {
+      "source_ref": "Coordinator13Nov2026 verified existing scripts/lib/cdp.mjs Browser.launch: fresh headless Chrome process, unique user-data-dir and remote-debugging-port0; T010 uses private TASTE_SKILL_TMP.",
+      "headless": "Each task may hold its own exclusive headless resource only with independent Chrome process/profile/CDP session, task-owned TASTE_SKILL_TMP, distinct localhost port, private SQLite/config/session/view/storage paths. Maximum2activeworkers unchanged. No shared OS mouse/CUA/native window input under this mode.",
+      "interactive": "Physical/native UI/browser context remains global exclusive browser:repair-app-visual; do not substitute shared GUI for parallel headless."
     }
   },
   "deliverables": [
@@ -1493,12 +1558,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "tests/Feature/Invoice/**",
         "docs/evidence/T010/**"
       ],
-      "shared_resources": [
-        {
-          "name": "browser:repair-app-visual",
-          "mode": "exclusive"
-        }
-      ],
+      "shared_resources": [],
       "conflicts_with": [],
       "parallel_candidates": [
         "T012",
@@ -1518,8 +1578,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar layar detail dan rincian; uji emulasi HP penambahan/penghapusan baris.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "running",
-      "resource_phase_policy": "Coding/private SQLite host checks without browser; request exclusive browser before actual visual phase. No MySQL existing fixture writes without specific reservation.",
+      "status": "done",
+      "resource_phase_policy": "Coding/host tests hold no browser. Dedicated exclusive headless task resource permits at most2workers only with verified independent process/profile/CDP, localhost port and private data/cache/session/storage; shared/native browser remains globally exclusive.",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -1529,7 +1589,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native:collaboration.followup_task:/root/t004_resume:T010",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
         }
       ],
@@ -1537,10 +1597,34 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "runtime": "Codex native collaboration",
         "task_id": "/root/t004_resume",
         "base_revision": "af4c81aff6cd851cc7f7fc9713d546d7783338ae",
-        "phase": "visual_self_check",
-        "browser_reservation": "exclusive granted8189 after T013 released; T014 will code only",
+        "phase": "settled",
+        "browser_reservation": "released; owned server/browser stopped per worker, localhost8189/8190 listeners absent on coordinator check",
         "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
         "model_observation": "Existing requested Sol high native session resumed only after T009 settled; effective backend identity not exposed."
+      },
+      "pause_checkpoint": {
+        "source_ref": "User 13 November 2026 menjawab opsi 2 pada pertanyaan async: siapkan hasil kajian dan satu prompt Goal dahulu; tidak lanjut implementasi. Goal native telah paused.",
+        "resume_policy": "Periksa hash/source dan hasil checkpoint; lanjutkan logical A1 bila sesuai, tanpa reset atau attempt baru hanya karena pause.",
+        "candidate_revision": "7542a9697f3646d16d12d151bdddab000c120e2c",
+        "handoff": "docs/evidence/T010/A1/handoff.md",
+        "summary": "Worker melaporkan developer PASS:54 kasus unik terarah lintas log, Pint/PHPStan PASS,29 observasi browser+5privasi PASS. Belum diselesaikan penerimaan coordinator/QA gabungan; tidak dipush. Review dan rekonsiliasi laporan saat resume sebelum T011.",
+        "limits": "Android fisik, race MySQL dan visual total ekstrem belum terbukti; QA independen T016 tetap wajib."
+      },
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T010/A1/handoff.md",
+        "revision": "7542a9697f3646d16d12d151bdddab000c120e2c",
+        "checked_revision": "7542a9697f3646d16d12d151bdddab000c120e2c",
+        "inputs": {
+          "T009": "12124a71bd24b30b7f343941bacd41315a4281f7"
+        },
+        "evidence": [
+          "docs/evidence/T010/A1/handoff.md",
+          "docs/evidence/T010/A1/source-manifest.json",
+          "docs/evidence/T010/A1/browser-results.json",
+          "docs/evidence/T010/A1/resource-release.json"
+        ],
+        "summary": "Developer self-check accepted as candidate after coordinator source/hash/report and screenshot review:54 unique directed tests evidenced across logs; Pint/PHPStan0;29 browser observations+5privacy PASS. Guards/atomic correction/old invoice and pickup dates preserved. No fresh build; T015 must build combined source. Android physical, MySQL race, extreme-total visual remain unproven and independent T016 required; F002 not accepted."
       }
     },
     {
@@ -1577,7 +1661,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "resources/views/tracking/**",
         "resources/views/livewire/tts/**",
         "routes/modules/tracking.php",
-        "tests/Feature/Tracking/**"
+        "tests/Feature/Tracking/**",
+        "docs/evidence/T011/**"
       ],
       "shared_resources": [],
       "conflicts_with": [],
@@ -1597,7 +1682,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar halaman tracking.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "pending"
+      "status": "pending",
+      "resource_phase_policy": "Coding/host tests no browser reservation. Visual uses exclusive browser:headless:T011 port8189 only with separate process/profile/CDP/TASTE_SKILL_TMP, private SQLite/config/cache/session/views/storage; max2 workers. No shared GUI/native mouse."
     },
     {
       "id": "T012",
@@ -1824,7 +1910,12 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "tests/Feature/Expenses/**",
         "docs/evidence/T014/**"
       ],
-      "shared_resources": [],
+      "shared_resources": [
+        {
+          "name": "browser:headless:T014",
+          "mode": "exclusive"
+        }
+      ],
       "conflicts_with": [],
       "parallel_candidates": [
         "T009",
@@ -1844,7 +1935,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
       "status": "running",
-      "resource_phase_policy": "Coding/private SQLite only first; request browser:repair-app-visual exclusive before real visual QA. Current T010 owns8189. No existing MySQL access/reset.",
+      "resource_phase_policy": "Coding/host tests hold no browser. Dedicated exclusive headless task resource permits at most2workers only with verified independent process/profile/CDP, localhost port and private data/cache/session/storage; shared/native browser remains globally exclusive.",
       "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
       "attempts": [
         {
@@ -1855,17 +1946,43 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_effective": null,
           "dispatch_ref": "native:collaboration.spawn_agent:/root/t014_expenses",
           "outcome": "running",
-          "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
+          "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
+          "phase_history": [
+            {
+              "id": "A1",
+              "kind": "implementation",
+              "worker_id": "/root/t014_expenses",
+              "model_requested": "gpt-6-luna",
+              "model_effective": null,
+              "dispatch_ref": "native:collaboration.spawn_agent:/root/t014_expenses",
+              "outcome": "cancelled",
+              "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
+            }
+          ]
         }
       ],
       "runtime_assignment": {
         "runtime": "Codex native collaboration",
         "task_id": "/root/t014_expenses",
         "base_revision": "3c35dd1118121d02cca7abb0ae99b78baeb30634",
-        "phase": "coding",
-        "browser_reservation": "none; T010 owns8189",
+        "phase": "visual_self_check",
+        "browser_reservation": "dedicated private headless8190 granted after isolation preflight; no shared GUI/native mouse",
         "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
         "model_observation": "Native spawn requested gpt-6-luna medium per triage, receipt returns canonical taskname only; backend identity not independently exposed."
+      },
+      "pause_checkpoint": {
+        "source_ref": "User 13 November 2026 menjawab opsi 2 pada pertanyaan async: siapkan hasil kajian dan satu prompt Goal dahulu; tidak lanjut implementasi. Goal native telah paused.",
+        "resume_policy": "Periksa hash/source dan hasil checkpoint; lanjutkan logical A1 bila sesuai, tanpa reset atau attempt baru hanya karena pause.",
+        "base_revision": "3c35dd1118121d02cca7abb0ae99b78baeb30634",
+        "source_sha256": {
+          "app/Livewire/Expenses/Index.php": "7a6d56ee237e738d7aafe4bbebcc809be673661c0ee81fae7944cc37122f0ae0",
+          "resources/views/livewire/expenses/index.blade.php": "7a6f646d50b8590871977e2f0b3f41383a516d651391b9dcf1cd42c06dd88f82",
+          "routes/modules/expenses.php": "2b8a632151e57e708579dc4d165c40d13a39bbe4735ea72b26864433c9444a7a",
+          "tests/Feature/Expenses/ExpensesTest.php": "f384c736b20f0a128a9eee7532cf622e7646989ae3d00c0c532285855f9aa277",
+          "docs/evidence/T014/A1/browser-check.mjs": "37f1c9530e034d12267fbf5b2da2ff414175c35641203626f9f71e5caf2a4e80"
+        },
+        "summary": "Worker stopped; partial untracked source/evidence retained. Expenses4tes42assert PASS; earlier Expenses+Settings13tes120assert PASS; Pint/PHPStan/syntax/routes/diff PASS per worker. Browser harness incomplete; screenshots awal bukan bukti alur/visual PASS. No commit/push/database reset.",
+        "resume_next": "Periksa file parsial cocok hash, perbaiki harness tanpa reset attempt, selesaikan browser flow/privacy dan perbandingan mockup3lebar. Simpan helper/fixture privat; no active owned process."
       }
     },
     {
@@ -2614,3 +2731,9 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-13 | T007 A2 verifikasi PASS pada source db5de00; aset generated stale dipulihkan hanya14file dengan hash historis cocok, sumber dan .env tetap. Reopen T008 untuk QA independen selektif; hasil FAIL lama tetap. Scope T009 mencakup dua tes auth yang sementara mengharapkan /tts/baru404, agar diperbarui ketika form tersedia. Bukti task baru diperbolehkan di folder ID masing-masing. | Review coordinator + hasil native worker | T007–T009,T012,T014 | docs/evidence/T007/A2/handoff.md |
 
 | 2026-11-13 | T008 A2 PASS, F001 accepted: tiga FAIL awal ditutup dengan observasi baru; bukti independen yang tidak berubah dipakai ulang eksplisit. M1 boleh digabung ke main. T009/T012 coding dapat paralel pada workspace berbeda; browser hanya direservasi pada fase visual setelah coordinator memberi slot. | QA independen + review coordinator | F001,T008,T009,T012 | docs/evidence/T008/A2/README.md |
+
+| 2026-11-13 | Resource browser disesuaikan dengan runtime nyata: helper Chrome membuat proses headless/profile/CDP port unik, tanpa pointer OS. T0108189 dan T0148190 boleh visual paralel hanya dengan SQL/cache/session/storage/profil privat masing-masing; max2worker tetap. UI/browser interaktif bersama tetap exclusive global. | Pemeriksaan source helper dan isolasi fixture aktual | T010,T014 | project.browser_isolation_policy |
+
+| 2026-11-13 | User memilih opsi 2: kajian dan satu prompt Goal dahulu. Goal native paused, project.execution paused dengan allowed_tasks kosong; tidak dispatch baru. T010 candidate7542a96 dilaporkan PASS oleh worker tetapi rekonsiliasi coordinator belum selesai; T014 A1 parsial dihentikan, file/hash dan bukti dipertahankan, browser/server dilepas. Lanjut hanya setelah resume user. | Pilihan user terbaru mengalahkan run lama | Semua; checkpoint T010/T014 | Jawaban async opsi2 + native Goal paused + handoff worker |
+
+| 2026-11-13 | Goal native kembali active (updatedAt1794541380); resume cakupan T001–T023 dari checkpoint terbaru. T010 candidate7542a96 diterima developer self-check setelah review hash/source/laporan/screenshot, bukan penerimaan F002. T014 hash5file cocok checkpoint; lanjut logical A1 visual, tanpa attempt baru. | Goal aktif dan instruksi continuation terkini | T010,T011,T014 | get_goal + source-manifest T010 + pause_checkpoint T014 |

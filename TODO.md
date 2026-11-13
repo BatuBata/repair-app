@@ -28,7 +28,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T006 | Spike dokumen: PDF A5, struk 58mm, dan QR di dompdf | developer / 6.1-sol | medium / medium | T001 | T002, T003, T004, T005, T020 | done |
 | T007 | Integrasi fondasi M1 pada branch candidate sebelum QA dan merge main | integrator / 6.1-sol | medium / medium | T002, T003, T004, T005 | — | done |
 | T008 | QA independen fondasi M1 | tester / 6.1-sol | medium / high | T007 | T006, T020 | done |
-| T009 | TTS: form buat/edit, daftar dengan cari/filter, detail sesuai peran | developer / 6.1-sol | medium / high | T008 | T012, T013, T014, T020 | running |
+| T009 | TTS: form buat/edit, daftar dengan cari/filter, detail sesuai peran | developer / 6.1-sol | medium / high | T008 | T012, T013, T014, T020 | done |
 | T010 | Alur admin servis: tetapkan teknisi, rincian dan terbitkan nota, koreksi, diambil, batal | developer / 6.1-sol | complex / high | T009 | T012, T013, T014, T020 | pending |
 | T011 | Halaman tracking publik dan tombol Kirim WA | developer / 6.1-terra | medium / medium | T010 | T012, T013, T014, T020 | pending |
 | T012 | Stok barang jualan dan restok | developer / 6.1-sol | medium / medium | T008 | T009, T010, T011, T014, T020 | done |
@@ -1394,12 +1394,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "tests/Feature/Auth/RoleLauncherTest.php",
         "tests/Feature/Auth/AuthenticationTest.php"
       ],
-      "shared_resources": [
-        {
-          "name": "browser:repair-app-visual",
-          "mode": "exclusive"
-        }
-      ],
+      "shared_resources": [],
       "conflicts_with": [],
       "parallel_candidates": [
         "T012",
@@ -1419,7 +1414,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar untuk form, daftar, detail; uji emulasi HP untuk tombol menempel.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "running",
+      "status": "done",
       "resource_phase_policy": "Coding/host tests do not hold browser. Before visual QA request coordinator reservation browser:repair-app-visual exclusive; only one task at a time. Private SQLite per task; existing MySQL untouched.",
       "attempts": [
         {
@@ -1429,7 +1424,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native:collaboration:/root/t004_resume:T009",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
         }
       ],
@@ -1438,10 +1433,27 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "runtime": "Codex native collaboration",
         "task_id": "/root/t004_resume",
         "base_revision": "1d831380cd89b601c67321298eff07f686d8f010",
-        "phase": "visual_self_check",
-        "browser_reservation": "exclusive granted T009, port8189 after T012 release",
+        "phase": "settled",
+        "browser_reservation": "released after long-category check; browser runner exit0, server8189 exit130",
         "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
         "model_observation": "Sol high requested; backend effective identity not independently exposed."
+      },
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T009/A1/handoff.md",
+        "revision": "12124a71bd24b30b7f343941bacd41315a4281f7",
+        "checked_revision": "12124a71bd24b30b7f343941bacd41315a4281f7",
+        "inputs": {
+          "T008": "3610253be1dedb1d9abad958059f52e33377f320"
+        },
+        "evidence": [
+          "docs/evidence/T009/A1/handoff.md",
+          "docs/evidence/T009/A1/source-manifest.json",
+          "docs/evidence/T009/A1/browser-results.json",
+          "docs/evidence/T009/A1/long-category.json",
+          "docs/evidence/T009/A1/resource-release.json"
+        ],
+        "summary": "Developer A1 PASS form/edit/list/detail/success, fresh locked transaction+role privacy;32tests262assert and affected subsets PASS, fullPHPStan/PintPASS;browser360/768/1280/privacyJSON/long255category checksPASS. Coordinator reviewed source and important form/list/screens+report. No actual MySQL or physicalAndroid; integrated independent QA remains T016/F002 not accepted."
       }
     },
     {
@@ -1478,7 +1490,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "resources/views/livewire/tts/**",
         "resources/views/livewire/invoice/**",
         "routes/modules/invoice.php",
-        "tests/Feature/Invoice/**"
+        "tests/Feature/Invoice/**",
+        "docs/evidence/T010/**"
       ],
       "shared_resources": [],
       "conflicts_with": [],
@@ -1500,7 +1513,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar layar detail dan rincian; uji emulasi HP penambahan/penghapusan baris.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "pending"
+      "status": "pending",
+      "resource_phase_policy": "Coding/private SQLite host checks without browser; request exclusive browser before actual visual phase. No MySQL existing fixture writes without specific reservation."
     },
     {
       "id": "T011",
@@ -1687,7 +1701,12 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "tests/Feature/Sales/**",
         "docs/evidence/T013/**"
       ],
-      "shared_resources": [],
+      "shared_resources": [
+        {
+          "name": "browser:repair-app-visual",
+          "mode": "exclusive"
+        }
+      ],
       "conflicts_with": [],
       "parallel_candidates": [
         "T009",
@@ -1726,9 +1745,9 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "runtime": "Codex native collaboration",
         "task_id": "/root/t012_stock",
         "base_revision": "2ce3ca3c46bcaab19c334240ff4fd3e72add85ac",
-        "phase": "coding",
-        "browser_reservation": "none; T009 holds browser8189",
-        "mysql_reservation": "none; request before access; append task-owned fixture only, preserve baseline",
+        "phase": "visual_self_check",
+        "browser_reservation": "exclusive granted8190 after T009 release",
+        "mysql_reservation": "released after real two-admin race PASS; preexisting20-table baseline retained, expected JLcounter+1 and owned fixture additions only",
         "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
         "model_observation": "Existing Sol high native session resumed after T012 settled; effective backend not exposed."
       }

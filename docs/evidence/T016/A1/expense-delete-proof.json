@@ -1,0 +1,135 @@
+{
+  "orders": [
+    {
+      "id": 1,
+      "status": "batal",
+      "normalized_phone": true,
+      "invoice_date": null,
+      "picked_date": null,
+      "warranty_until": null,
+      "items": []
+    },
+    {
+      "id": 2,
+      "status": "diambil",
+      "normalized_phone": true,
+      "invoice_date": "2026-11-13",
+      "picked_date": "2026-11-13",
+      "warranty_until": "2026-12-13",
+      "items": [
+        {
+          "type": "part",
+          "description": "LCD normal QA",
+          "qty": 1,
+          "price": 950000,
+          "cost": 700000
+        },
+        {
+          "type": "jasa",
+          "description": "Jasa ganti LCD QA",
+          "qty": 1,
+          "price": 100000,
+          "cost": 0
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "status": "diterima",
+      "normalized_phone": true,
+      "invoice_date": null,
+      "picked_date": null,
+      "warranty_until": null,
+      "items": []
+    },
+    {
+      "id": 4,
+      "status": "dikerjakan",
+      "normalized_phone": true,
+      "invoice_date": null,
+      "picked_date": null,
+      "warranty_until": null,
+      "items": []
+    },
+    {
+      "id": 5,
+      "status": "batal",
+      "normalized_phone": true,
+      "invoice_date": null,
+      "picked_date": null,
+      "warranty_until": null,
+      "items": []
+    },
+    {
+      "id": 6,
+      "status": "selesai",
+      "normalized_phone": true,
+      "invoice_date": "2026-11-13",
+      "picked_date": null,
+      "warranty_until": "2026-11-13",
+      "items": [
+        {
+          "type": "jasa",
+          "description": "Biaya cek gratis",
+          "qty": 1,
+          "price": 0,
+          "cost": 0
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "status": "selesai",
+      "normalized_phone": true,
+      "invoice_date": "2026-11-13",
+      "picked_date": null,
+      "warranty_until": "2026-11-13",
+      "items": [
+        {
+          "type": "part",
+          "description": "Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis Deskripsi perangkat elektronik sintetis ",
+          "qty": 2147483648,
+          "price": 4294967295,
+          "cost": 4294967295
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Kabel HDMI panjang untuk televisi dan perangkat elektronik sintetis QA",
+      "stock": 5,
+      "cost_price": 100000,
+      "sell_price": 150000
+    },
+    {
+      "id": 2,
+      "name": "Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA ",
+      "stock": 0,
+      "cost_price": 4294967295,
+      "sell_price": 4294967295
+    }
+  ],
+  "sales": [
+    {
+      "id": 2,
+      "number": "JL-2611-002",
+      "warranty_until": "2026-12-13",
+      "items": [
+        {
+          "product_name": "Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA ",
+          "qty": 2147483648,
+          "price": 4294967295,
+          "cost": 4294967295
+        }
+      ]
+    }
+  ],
+  "expenses": [
+    {
+      "id": 2,
+      "amount": 4294967295
+    }
+  ]
+}

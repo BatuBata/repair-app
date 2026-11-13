@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\QA\IndependentTest" file="/Users/muzib/Projects/web/repair-app/docs/evidence/T016/A1/IndependentTest.php" tests="1" assertions="9" errors="0" failures="0" skipped="0" time="0.189217">
+    <testcase name="test_unrepairable_check_fee_fifty_thousand_is_public_revenue_with_zero_jasa_cost" file="/Users/muzib/Projects/web/repair-app/docs/evidence/T016/A1/IndependentTest.php" line="105" class="Tests\QA\IndependentTest" classname="Tests.QA.IndependentTest" assertions="9" time="0.189217"/>
+  </testsuite>
+</testsuites>

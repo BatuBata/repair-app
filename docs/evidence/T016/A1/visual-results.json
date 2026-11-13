@@ -1,0 +1,673 @@
+{
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/157.0.8103.79",
+    "revision": "@6dc9bc3bdaea5c35ed6d41fceab2f7a3a2227c4f",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "jsVersion": "15.7.112.43"
+  },
+  "cases": [
+    {
+      "id": "invoice-normal-360",
+      "viewport": 360,
+      "documentWidth": 360,
+      "boxes": [
+        {
+          "tag": "STRONG",
+          "class": "",
+          "text": "Rp1.000.000",
+          "x": 259.671875,
+          "y": 598,
+          "width": 84.328125,
+          "height": 24,
+          "right": 344,
+          "scrollWidth": 84,
+          "clientWidth": 84
+        },
+        {
+          "tag": "DD",
+          "class": "",
+          "text": "Rp1.000.000",
+          "x": 33,
+          "y": 1131,
+          "width": 163.921875,
+          "height": 34,
+          "right": 196.921875,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "tag": "DD",
+          "class": "",
+          "text": "Rp700.000",
+          "x": 244.828125,
+          "y": 1190,
+          "width": 82.171875,
+          "height": 24,
+          "right": 327,
+          "scrollWidth": 82,
+          "clientWidth": 82
+        },
+        {
+          "tag": "DD",
+          "class": "",
+          "text": "Rp300.000",
+          "x": 244.828125,
+          "y": 1222,
+          "width": 82.171875,
+          "height": 24,
+          "right": 327,
+          "scrollWidth": 82,
+          "clientWidth": 82
+        },
+        {
+          "tag": "DIV",
+          "class": "actionbar",
+          "text": "Total\nRp1.000.000\nTerbitkan nota",
+          "x": 0,
+          "y": 763,
+          "width": 360,
+          "height": 73,
+          "right": 360,
+          "scrollWidth": 360,
+          "clientWidth": 360
+        },
+        {
+          "tag": "DIV",
+          "class": "total",
+          "text": "Total\nRp1.000.000",
+          "x": 16,
+          "y": 779,
+          "width": 108.421875,
+          "height": 42,
+          "right": 124.421875,
+          "scrollWidth": 108,
+          "clientWidth": 108
+        },
+        {
+          "tag": "BUTTON",
+          "class": "btn primary",
+          "text": "Terbitkan nota",
+          "x": 136.421875,
+          "y": 776,
+          "width": 207.578125,
+          "height": 48,
+          "right": 344,
+          "scrollWidth": 206,
+          "clientWidth": 206
+        }
+      ]
+    },
+    {
+      "id": "invoice-normal-768",
+      "viewport": 768,
+      "documentWidth": 768,
+      "boxes": [
+        {
+          "tag": "STRONG",
+          "class": "",
+          "text": "Rp1.000.000",
+          "x": 659.671875,
+          "y": 574,
+          "width": 84.328125,
+          "height": 24,
+          "right": 744,
+          "scrollWidth": 84,
+          "clientWidth": 84
+        },
+        {
+          "tag": "DD",
+          "class": "",
+          "text": "Rp1.000.000",
+          "x": 563.078125,
+          "y": 1011,
+          "width": 163.921875,
+          "height": 34,
+          "right": 727,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "tag": "DD",
+          "class": "",
+          "text": "Rp700.000",
+          "x": 644.828125,
+          "y": 1070,
+          "width": 82.171875,
+          "height": 24,
+          "right": 727,
+          "scrollWidth": 82,
+          "clientWidth": 82
+        },
+        {
+          "tag": "DD",
+          "class": "",
+          "text": "Rp300.000",
+          "x": 644.828125,
+          "y": 1102,
+          "width": 82.171875,
+          "height": 24,
+          "right": 727,
+          "scrollWidth": 82,
+          "clientWidth": 82
+        },
+        {
+          "tag": "DIV",
+          "class": "actionbar",
+          "text": "Total\nRp1.000.000\nTerbitkan nota",
+          "x": 0,
+          "y": 763,
+          "width": 768,
+          "height": 73,
+          "right": 768,
+          "scrollWidth": 768,
+          "clientWidth": 768
+        },
+        {
+          "tag": "DIV",
+          "class": "total",
+          "text": "Total\nRp1.000.000",
+          "x": 16,
+          "y": 779,
+          "width": 108.421875,
+          "height": 42,
+          "right": 124.421875,
+          "scrollWidth": 108,
+          "clientWidth": 108
+        },
+        {
+          "tag": "BUTTON",
+          "class": "btn primary",
+          "text": "Terbitkan nota",
+          "x": 136.421875,
+          "y": 776,
+          "width": 615.578125,
+          "height": 48,
+          "right": 752,
+          "scrollWidth": 614,
+          "clientWidth": 614
+        }
+      ]
+    },
+    {
+      "id": "invoice-normal-1280",
+      "viewport": 1280,
+      "documentWidth": 1280,
+      "boxes": [
+        {
+          "tag": "STRONG",
+          "class": "",
+          "text": "Rp1.000.000",
+          "x": 832.71875,
+          "y": 307,
+          "width": 72.28125,
+          "height": 20,
+          "right": 905,
+          "scrollWidth": 72,
+          "clientWidth": 72
+        },
+        {
+          "tag": "DD",
+          "class": "",
+          "text": "Rp1.000.000",
+          "x": 950,
+          "y": 270,
+          "width": 163.921875,
+          "height": 34,
+          "right": 1113.921875,
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "tag": "DD",
+          "class": "",
+          "text": "Rp700.000",
+          "x": 1146.109375,
+          "y": 329,
+          "width": 71.890625,
+          "height": 20,
+          "right": 1218,
+          "scrollWidth": 72,
+          "clientWidth": 72
+        },
+        {
+          "tag": "DD",
+          "class": "",
+          "text": "Rp300.000",
+          "x": 1146.109375,
+          "y": 357,
+          "width": 71.890625,
+          "height": 20,
+          "right": 1218,
+          "scrollWidth": 72,
+          "clientWidth": 72
+        }
+      ]
+    },
+    {
+      "id": "invoice-large-360",
+      "viewport": 425,
+      "documentWidth": 425,
+      "boxes": [
+        {
+          "tag": "STRONG",
+          "class": "",
+          "text": "Rp9.223.372.030.412.324.865",
+          "x": 142.75,
+          "y": 598,
+          "width": 201.25,
+          "height": 24,
+          "right": 344,
+          "scrollWidth": 201,
+          "clientWidth": 201
+        },
+        {
+          "tag": "STRONG",
+          "class": "",
+          "text": "Rp4.294.967.295",
+          "x": 230.4375,
+          "y": 985,
+          "width": 113.5625,
+          "height": 24,
+          "right": 344,
+          "scrollWidth": 114,
+          "clientWidth": 114
+        },
+        {
+          "tag": "STRONG",
+          "class": "",
+          "text": "Rp2.147.483.647",
+          "x": 230.4375,
+          "y": 1282,
+          "width": 113.5625,
+          "height": 24,
+          "right": 344,
+          "scrollWidth": 114,
+          "clientWidth": 114
+        },
+        {
+          "tag": "DD",
+          "class": "",
+          "text": "Rp9.223.372.036.854.775.807",
+          "x": 33,
+          "y": 1815,
+          "width": 391.5,
+          "height": 34,
+          "right": 424.5,
+          "scrollWidth": 392,
+          "clientWidth": 392
+        },
+        {
+          "tag": "DD",
+          "class": "",
+          "text": "Rp9.223.372.030.412.324.865",
+          "x": 194.5,
+          "y": 1874,
+          "width": 230,
+          "height": 24,
+          "right": 424.5,
+          "scrollWidth": 230,
+          "clientWidth": 230
+        },
+        {
+          "tag": "DD",
+          "class": "",
+          "text": "Rp6.442.450.942",
+          "x": 294.71875,
+          "y": 1906,
+          "width": 129.78125,
+          "height": 24,
+          "right": 424.5,
+          "scrollWidth": 130,
+          "clientWidth": 130
+        },
+        {
+          "tag": "DIV",
+          "class": "actionbar",
+          "text": "Total\nRp9.223.372.036.854.775.807\nTerbitkan nota",
+          "x": 0,
+          "y": 908,
+          "width": 425,
+          "height": 91,
+          "right": 425,
+          "scrollWidth": 425,
+          "clientWidth": 425
+        },
+        {
+          "tag": "DIV",
+          "class": "total",
+          "text": "Total\nRp9.223.372.036.854.775.807",
+          "x": 16,
+          "y": 921,
+          "width": 244.828125,
+          "height": 66,
+          "right": 260.828125,
+          "scrollWidth": 245,
+          "clientWidth": 245
+        },
+        {
+          "tag": "BUTTON",
+          "class": "btn primary",
+          "text": "Terbitkan nota",
+          "x": 272.828125,
+          "y": 930,
+          "width": 136.171875,
+          "height": 48,
+          "right": 409,
+          "scrollWidth": 134,
+          "clientWidth": 134
+        }
+      ]
+    },
+    {
+      "id": "invoice-large-768",
+      "viewport": 768,
+      "documentWidth": 768,
+      "boxes": [
+        {
+          "tag": "STRONG",
+          "class": "",
+          "text": "Rp9.223.372.030.412.324.865",
+          "x": 542.75,
+          "y": 574,
+          "width": 201.25,
+          "height": 24,
+          "right": 744,
+          "scrollWidth": 201,
+          "clientWidth": 201
+        },
+        {
+          "tag": "STRONG",
+          "class": "",
+          "text": "Rp4.294.967.295",
+          "x": 630.4375,
+          "y": 961,
+          "width": 113.5625,
+          "height": 24,
+          "right": 744,
+          "scrollWidth": 114,
+          "clientWidth": 114
+        },
+        {
+          "tag": "STRONG",
+          "class": "",
+          "text": "Rp2.147.483.647",
+          "x": 630.4375,
+          "y": 1258,
+          "width": 113.5625,
+          "height": 24,
+          "right": 744,
+          "scrollWidth": 114,
+          "clientWidth": 114
+        },
+        {
+          "tag": "DD",
+          "class": "",
+          "text": "Rp9.223.372.036.854.775.807",
+          "x": 335.5,
+          "y": 1695,
+          "width": 391.5,
+          "height": 34,
+          "right": 727,
+          "scrollWidth": 392,
+          "clientWidth": 392
+        },
+        {
+          "tag": "DD",
+          "class": "",
+          "text": "Rp9.223.372.030.412.324.865",
+          "x": 497,
+          "y": 1754,
+          "width": 230,
+          "height": 24,
+          "right": 727,
+          "scrollWidth": 230,
+          "clientWidth": 230
+        },
+        {
+          "tag": "DD",
+          "class": "",
+          "text": "Rp6.442.450.942",
+          "x": 597.21875,
+          "y": 1786,
+          "width": 129.78125,
+          "height": 24,
+          "right": 727,
+          "scrollWidth": 130,
+          "clientWidth": 130
+        },
+        {
+          "tag": "DIV",
+          "class": "actionbar",
+          "text": "Total\nRp9.223.372.036.854.775.807\nTerbitkan nota",
+          "x": 0,
+          "y": 763,
+          "width": 768,
+          "height": 73,
+          "right": 768,
+          "scrollWidth": 768,
+          "clientWidth": 768
+        },
+        {
+          "tag": "DIV",
+          "class": "total",
+          "text": "Total\nRp9.223.372.036.854.775.807",
+          "x": 16,
+          "y": 779,
+          "width": 258.75,
+          "height": 42,
+          "right": 274.75,
+          "scrollWidth": 259,
+          "clientWidth": 259
+        },
+        {
+          "tag": "BUTTON",
+          "class": "btn primary",
+          "text": "Terbitkan nota",
+          "x": 286.75,
+          "y": 776,
+          "width": 465.25,
+          "height": 48,
+          "right": 752,
+          "scrollWidth": 463,
+          "clientWidth": 463
+        }
+      ]
+    },
+    {
+      "id": "invoice-large-1280",
+      "viewport": 1280,
+      "documentWidth": 1342,
+      "boxes": [
+        {
+          "tag": "STRONG",
+          "class": "",
+          "text": "Rp9.223.372.030.412.324.865",
+          "x": 732.5,
+          "y": 307,
+          "width": 172.5,
+          "height": 20,
+          "right": 905,
+          "scrollWidth": 173,
+          "clientWidth": 173
+        },
+        {
+          "tag": "STRONG",
+          "class": "",
+          "text": "Rp4.294.967.295",
+          "x": 807.65625,
+          "y": 402,
+          "width": 97.34375,
+          "height": 20,
+          "right": 905,
+          "scrollWidth": 97,
+          "clientWidth": 97
+        },
+        {
+          "tag": "STRONG",
+          "class": "",
+          "text": "Rp2.147.483.647",
+          "x": 807.65625,
+          "y": 497,
+          "width": 97.34375,
+          "height": 20,
+          "right": 905,
+          "scrollWidth": 97,
+          "clientWidth": 97
+        },
+        {
+          "tag": "DD",
+          "class": "",
+          "text": "Rp9.223.372.036.854.775.807",
+          "x": 950,
+          "y": 270,
+          "width": 391.5,
+          "height": 34,
+          "right": 1341.5,
+          "scrollWidth": 392,
+          "clientWidth": 392
+        },
+        {
+          "tag": "DD",
+          "class": "",
+          "text": "Rp9.223.372.030.412.324.865",
+          "x": 1140.25,
+          "y": 329,
+          "width": 201.25,
+          "height": 20,
+          "right": 1341.5,
+          "scrollWidth": 201,
+          "clientWidth": 201
+        },
+        {
+          "tag": "DD",
+          "class": "",
+          "text": "Rp6.442.450.942",
+          "x": 1227.9375,
+          "y": 357,
+          "width": 113.5625,
+          "height": 20,
+          "right": 1341.5,
+          "scrollWidth": 114,
+          "clientWidth": 114
+        }
+      ]
+    },
+    {
+      "id": "invoice-large-final-360",
+      "viewport": 425,
+      "documentWidth": 425,
+      "boxes": [
+        {
+          "tag": "STRONG",
+          "class": "",
+          "text": "Rp9.223.372.030.412.324.865",
+          "x": 142.75,
+          "y": 598,
+          "width": 201.25,
+          "height": 24,
+          "right": 344,
+          "scrollWidth": 201,
+          "clientWidth": 201
+        },
+        {
+          "tag": "STRONG",
+          "class": "",
+          "text": "Rp4.294.967.295",
+          "x": 230.4375,
+          "y": 985,
+          "width": 113.5625,
+          "height": 24,
+          "right": 344,
+          "scrollWidth": 114,
+          "clientWidth": 114
+        },
+        {
+          "tag": "STRONG",
+          "class": "",
+          "text": "Rp2.147.483.647",
+          "x": 230.4375,
+          "y": 1282,
+          "width": 113.5625,
+          "height": 24,
+          "right": 344,
+          "scrollWidth": 114,
+          "clientWidth": 114
+        },
+        {
+          "tag": "DD",
+          "class": "",
+          "text": "Rp9.223.372.036.854.775.807",
+          "x": 33,
+          "y": 1815,
+          "width": 391.5,
+          "height": 34,
+          "right": 424.5,
+          "scrollWidth": 392,
+          "clientWidth": 392
+        },
+        {
+          "tag": "DD",
+          "class": "",
+          "text": "Rp9.223.372.030.412.324.865",
+          "x": 194.5,
+          "y": 1874,
+          "width": 230,
+          "height": 24,
+          "right": 424.5,
+          "scrollWidth": 230,
+          "clientWidth": 230
+        },
+        {
+          "tag": "DD",
+          "class": "",
+          "text": "Rp6.442.450.942",
+          "x": 294.71875,
+          "y": 1906,
+          "width": 129.78125,
+          "height": 24,
+          "right": 424.5,
+          "scrollWidth": 130,
+          "clientWidth": 130
+        },
+        {
+          "tag": "DIV",
+          "class": "actionbar",
+          "text": "Total\nRp9.223.372.036.854.775.807\nTerbitkan nota",
+          "x": 0,
+          "y": 908,
+          "width": 425,
+          "height": 91,
+          "right": 425,
+          "scrollWidth": 425,
+          "clientWidth": 425
+        },
+        {
+          "tag": "DIV",
+          "class": "total",
+          "text": "Total\nRp9.223.372.036.854.775.807",
+          "x": 16,
+          "y": 921,
+          "width": 244.828125,
+          "height": 66,
+          "right": 260.828125,
+          "scrollWidth": 245,
+          "clientWidth": 245
+        },
+        {
+          "tag": "BUTTON",
+          "class": "btn primary",
+          "text": "Terbitkan nota",
+          "x": 272.828125,
+          "y": 930,
+          "width": 136.171875,
+          "height": 48,
+          "right": 409,
+          "scrollWidth": 134,
+          "clientWidth": 134
+        }
+      ]
+    }
+  ],
+  "exceptions": []
+}

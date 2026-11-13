@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\QA\IndependentTest" file="/Users/muzib/Projects/web/repair-app/docs/evidence/T016/A1/IndependentTest.php" tests="2" assertions="92" errors="0" failures="0" skipped="0" time="0.547745">
+    <testcase name="test_service_lifecycle_with_customer_privacy_stale_correction_and_revocation" file="/Users/muzib/Projects/web/repair-app/docs/evidence/T016/A1/IndependentTest.php" line="41" class="Tests\QA\IndependentTest" classname="Tests.QA.IndependentTest" assertions="58" time="0.371040"/>
+    <testcase name="test_expenses_crud_inclusive_same_day_reversed_cleared_and_date_bounds" file="/Users/muzib/Projects/web/repair-app/docs/evidence/T016/A1/IndependentTest.php" line="132" class="Tests\QA\IndependentTest" classname="Tests.QA.IndependentTest" assertions="34" time="0.176706"/>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,2782 @@
+{
+  "cases": [
+    {
+      "id": "tts-create-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan TTS",
+          "x": 16,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 328
+        }
+      ],
+      "numeric": [
+        {
+          "name": null,
+          "mode": "tel",
+          "value": ""
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tts-create-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan TTS",
+          "x": 16,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 736
+        }
+      ],
+      "numeric": [
+        {
+          "name": null,
+          "mode": "tel",
+          "value": ""
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tts-create-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan TTS",
+          "x": 261,
+          "right": 367.515625,
+          "y": 635,
+          "bottom": 671,
+          "height": 36,
+          "width": 106.515625
+        }
+      ],
+      "numeric": [
+        {
+          "name": null,
+          "mode": "tel",
+          "value": ""
+        }
+      ],
+      "smallTargets": [
+        {
+          "tag": "BUTTON",
+          "text": "Simpan TTS",
+          "label": null,
+          "width": 106.515625,
+          "height": 36
+        },
+        {
+          "tag": "A",
+          "text": "Batal",
+          "label": null,
+          "width": 63.65625,
+          "height": 36
+        }
+      ],
+      "leftActions": []
+    },
+    {
+      "id": "tts-success-tech-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tts-success-tech-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tts-success-tech-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Buat TTS lagi",
+          "label": null,
+          "width": 560,
+          "height": 36
+        },
+        {
+          "tag": "A",
+          "text": "Lihat TTS",
+          "label": null,
+          "width": 560,
+          "height": 36
+        }
+      ],
+      "leftActions": []
+    },
+    {
+      "id": "tts-edit-tech-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan perubahan",
+          "x": 16,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 328
+        }
+      ],
+      "numeric": [
+        {
+          "name": null,
+          "mode": "tel",
+          "value": "6281234567890"
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tts-edit-tech-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan perubahan",
+          "x": 16,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 736
+        }
+      ],
+      "numeric": [
+        {
+          "name": null,
+          "mode": "tel",
+          "value": "6281234567890"
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tts-edit-tech-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan perubahan",
+          "x": 261,
+          "right": 412.296875,
+          "y": 635,
+          "bottom": 671,
+          "height": 36,
+          "width": 151.296875
+        }
+      ],
+      "numeric": [
+        {
+          "name": null,
+          "mode": "tel",
+          "value": "6281234567890"
+        }
+      ],
+      "smallTargets": [
+        {
+          "tag": "BUTTON",
+          "text": "Simpan perubahan",
+          "label": null,
+          "width": 151.296875,
+          "height": 36
+        },
+        {
+          "tag": "A",
+          "text": "Batal",
+          "label": null,
+          "width": 63.65625,
+          "height": 36
+        }
+      ],
+      "leftActions": []
+    },
+    {
+      "id": "tts-detail-tech-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tts-detail-tech-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tts-detail-tech-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Servis",
+          "label": null,
+          "width": 58.3125,
+          "height": 20
+        },
+        {
+          "tag": "A",
+          "text": "Ubah TTS",
+          "label": null,
+          "width": 91.65625,
+          "height": 36
+        }
+      ],
+      "leftActions": []
+    },
+    {
+      "id": "tts-list-tech-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": ""
+        },
+        {
+          "firstClass": "act",
+          "firstText": "Lihat"
+        }
+      ]
+    },
+    {
+      "id": "tts-list-tech-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": ""
+        },
+        {
+          "firstClass": "act",
+          "firstText": "Lihat"
+        }
+      ]
+    },
+    {
+      "id": "tts-list-tech-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Buat TTS",
+          "label": null,
+          "width": 112.078125,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Semua",
+          "label": null,
+          "width": 44.3125,
+          "height": 40
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Diterima",
+          "label": null,
+          "width": 53.78125,
+          "height": 40
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Dikerjakan",
+          "label": null,
+          "width": 66.578125,
+          "height": 40
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Selesai",
+          "label": null,
+          "width": 45.109375,
+          "height": 40
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Diambil",
+          "label": null,
+          "width": 48.03125,
+          "height": 40
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Batal",
+          "label": null,
+          "width": 32.828125,
+          "height": 40
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "label": "Pilihan untuk TTS-2611-002",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-002",
+          "label": null,
+          "width": 99.125,
+          "height": 18
+        },
+        {
+          "tag": "A",
+          "text": "Lihat",
+          "label": null,
+          "width": 53.78125,
+          "height": 32
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-001",
+          "label": null,
+          "width": 99.125,
+          "height": 18
+        }
+      ],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": ""
+        },
+        {
+          "firstClass": "act",
+          "firstText": "Lihat"
+        }
+      ]
+    },
+    {
+      "id": "tts-detail-admin-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "",
+          "x": 16,
+          "right": 60,
+          "y": 778,
+          "bottom": 822,
+          "height": 44,
+          "width": 44
+        },
+        {
+          "text": "Tetapkan teknisi",
+          "x": 72,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 272
+        }
+      ],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tts-detail-admin-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "",
+          "x": 16,
+          "right": 60,
+          "y": 778,
+          "bottom": 822,
+          "height": 44,
+          "width": 44
+        },
+        {
+          "text": "Tetapkan teknisi",
+          "x": 72,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 680
+        }
+      ],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tts-detail-admin-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Servis",
+          "label": null,
+          "width": 58.3125,
+          "height": 20
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "label": "Pilihan untuk TTS-2611-002",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Tetapkan teknisi",
+          "label": null,
+          "width": 135.71875,
+          "height": 36
+        },
+        {
+          "tag": "A",
+          "text": "Kirim WA",
+          "label": null,
+          "width": 978,
+          "height": 36
+        }
+      ],
+      "leftActions": []
+    },
+    {
+      "id": "tts-assigned-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "",
+          "x": 16,
+          "right": 60,
+          "y": 778,
+          "bottom": 822,
+          "height": 44,
+          "width": 44
+        }
+      ],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tts-assigned-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "",
+          "x": 16,
+          "right": 60,
+          "y": 778,
+          "bottom": 822,
+          "height": 44,
+          "width": 44
+        }
+      ],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tts-assigned-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Servis",
+          "label": null,
+          "width": 58.3125,
+          "height": 20
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "label": "Pilihan untuk TTS-2611-002",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "tag": "A",
+          "text": "Isi rincian & nota",
+          "label": null,
+          "width": 138.78125,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Simpan teknisi",
+          "label": null,
+          "width": 268,
+          "height": 36
+        },
+        {
+          "tag": "A",
+          "text": "Kirim WA",
+          "label": null,
+          "width": 978,
+          "height": 36
+        }
+      ],
+      "leftActions": []
+    },
+    {
+      "id": "invoice-form-normal-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Terbitkan nota",
+          "x": 136.421875,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 207.578125
+        }
+      ],
+      "numeric": [
+        {
+          "name": "Qty baris 1",
+          "mode": "numeric",
+          "value": "1"
+        },
+        {
+          "name": "Harga jual baris 1",
+          "mode": "numeric",
+          "value": "1.000.000"
+        },
+        {
+          "name": "Modal baris 1",
+          "mode": "numeric",
+          "value": "700.000"
+        },
+        {
+          "name": "Qty baris 2",
+          "mode": "numeric",
+          "value": "1"
+        },
+        {
+          "name": "Harga jual baris 2",
+          "mode": "numeric",
+          "value": "100.000"
+        },
+        {
+          "name": "Modal baris 2",
+          "mode": "numeric",
+          "value": "0"
+        },
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "30"
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "invoice-form-normal-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Terbitkan nota",
+          "x": 136.421875,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 615.578125
+        }
+      ],
+      "numeric": [
+        {
+          "name": "Qty baris 1",
+          "mode": "numeric",
+          "value": "1"
+        },
+        {
+          "name": "Harga jual baris 1",
+          "mode": "numeric",
+          "value": "1.000.000"
+        },
+        {
+          "name": "Modal baris 1",
+          "mode": "numeric",
+          "value": "700.000"
+        },
+        {
+          "name": "Qty baris 2",
+          "mode": "numeric",
+          "value": "1"
+        },
+        {
+          "name": "Harga jual baris 2",
+          "mode": "numeric",
+          "value": "100.000"
+        },
+        {
+          "name": "Modal baris 2",
+          "mode": "numeric",
+          "value": "0"
+        },
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "30"
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "invoice-form-normal-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [
+        {
+          "name": "Qty baris 1",
+          "mode": "numeric",
+          "value": "1"
+        },
+        {
+          "name": "Harga jual baris 1",
+          "mode": "numeric",
+          "value": "1.000.000"
+        },
+        {
+          "name": "Modal baris 1",
+          "mode": "numeric",
+          "value": "700.000"
+        },
+        {
+          "name": "Qty baris 2",
+          "mode": "numeric",
+          "value": "1"
+        },
+        {
+          "name": "Harga jual baris 2",
+          "mode": "numeric",
+          "value": "100.000"
+        },
+        {
+          "name": "Modal baris 2",
+          "mode": "numeric",
+          "value": "0"
+        },
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "30"
+        }
+      ],
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "TTS-2611-002",
+          "label": null,
+          "width": 114.4375,
+          "height": 20
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "label": "Hapus baris 1",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Part",
+          "label": null,
+          "width": 50.828125,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Jasa",
+          "label": null,
+          "width": 53.734375,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "label": "Hapus baris 2",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Part",
+          "label": null,
+          "width": 50.828125,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Jasa",
+          "label": null,
+          "width": 53.734375,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Tambah baris",
+          "label": null,
+          "width": 126.5,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Terbitkan nota",
+          "label": null,
+          "width": 268,
+          "height": 36
+        }
+      ],
+      "leftActions": []
+    },
+    {
+      "id": "invoice-issued-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "",
+          "x": 16,
+          "right": 60,
+          "y": 778,
+          "bottom": 822,
+          "height": 44,
+          "width": 44
+        },
+        {
+          "text": "Tandai Diambil",
+          "x": 72,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 272
+        }
+      ],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "c-who",
+          "firstText": "LCD normal QA Part"
+        },
+        {
+          "firstClass": "c-who",
+          "firstText": "Jasa ganti LCD QA Jasa"
+        }
+      ]
+    },
+    {
+      "id": "invoice-issued-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "",
+          "x": 16,
+          "right": 60,
+          "y": 778,
+          "bottom": 822,
+          "height": 44,
+          "width": 44
+        },
+        {
+          "text": "Tandai Diambil",
+          "x": 72,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 680
+        }
+      ],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "c-who",
+          "firstText": "LCD normal QA Part"
+        },
+        {
+          "firstClass": "c-who",
+          "firstText": "Jasa ganti LCD QA Jasa"
+        }
+      ]
+    },
+    {
+      "id": "invoice-issued-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Servis",
+          "label": null,
+          "width": 58.3125,
+          "height": 20
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "label": "Pilihan untuk TTS-2611-002",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Tandai Diambil",
+          "label": null,
+          "width": 125.171875,
+          "height": 36
+        },
+        {
+          "tag": "A",
+          "text": "Koreksi nota",
+          "label": null,
+          "width": 110.03125,
+          "height": 36
+        },
+        {
+          "tag": "A",
+          "text": "Kirim WA",
+          "label": null,
+          "width": 978,
+          "height": 36
+        }
+      ],
+      "leftActions": [
+        {
+          "firstClass": "c-who",
+          "firstText": "LCD normal QA\nPart"
+        },
+        {
+          "firstClass": "c-who",
+          "firstText": "Jasa ganti LCD QA\nJasa"
+        }
+      ]
+    },
+    {
+      "id": "invoice-correction-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan koreksi",
+          "x": 136.421875,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 207.578125
+        }
+      ],
+      "numeric": [
+        {
+          "name": "Qty baris 1",
+          "mode": "numeric",
+          "value": "1"
+        },
+        {
+          "name": "Harga jual baris 1",
+          "mode": "numeric",
+          "value": "950.000"
+        },
+        {
+          "name": "Modal baris 1",
+          "mode": "numeric",
+          "value": "700.000"
+        },
+        {
+          "name": "Qty baris 2",
+          "mode": "numeric",
+          "value": "1"
+        },
+        {
+          "name": "Harga jual baris 2",
+          "mode": "numeric",
+          "value": "100.000"
+        },
+        {
+          "name": "Modal baris 2",
+          "mode": "numeric",
+          "value": "0"
+        },
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "30"
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "invoice-correction-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan koreksi",
+          "x": 136.421875,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 615.578125
+        }
+      ],
+      "numeric": [
+        {
+          "name": "Qty baris 1",
+          "mode": "numeric",
+          "value": "1"
+        },
+        {
+          "name": "Harga jual baris 1",
+          "mode": "numeric",
+          "value": "950.000"
+        },
+        {
+          "name": "Modal baris 1",
+          "mode": "numeric",
+          "value": "700.000"
+        },
+        {
+          "name": "Qty baris 2",
+          "mode": "numeric",
+          "value": "1"
+        },
+        {
+          "name": "Harga jual baris 2",
+          "mode": "numeric",
+          "value": "100.000"
+        },
+        {
+          "name": "Modal baris 2",
+          "mode": "numeric",
+          "value": "0"
+        },
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "30"
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "invoice-correction-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [
+        {
+          "name": "Qty baris 1",
+          "mode": "numeric",
+          "value": "1"
+        },
+        {
+          "name": "Harga jual baris 1",
+          "mode": "numeric",
+          "value": "950.000"
+        },
+        {
+          "name": "Modal baris 1",
+          "mode": "numeric",
+          "value": "700.000"
+        },
+        {
+          "name": "Qty baris 2",
+          "mode": "numeric",
+          "value": "1"
+        },
+        {
+          "name": "Harga jual baris 2",
+          "mode": "numeric",
+          "value": "100.000"
+        },
+        {
+          "name": "Modal baris 2",
+          "mode": "numeric",
+          "value": "0"
+        },
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "30"
+        }
+      ],
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "TTS-2611-002",
+          "label": null,
+          "width": 114.4375,
+          "height": 20
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "label": "Hapus baris 1",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Part",
+          "label": null,
+          "width": 50.828125,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Jasa",
+          "label": null,
+          "width": 53.734375,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "label": "Hapus baris 2",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Part",
+          "label": null,
+          "width": 50.828125,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Jasa",
+          "label": null,
+          "width": 53.734375,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Tambah baris",
+          "label": null,
+          "width": 126.5,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Simpan koreksi",
+          "label": null,
+          "width": 268,
+          "height": 36
+        }
+      ],
+      "leftActions": []
+    },
+    {
+      "id": "invoice-collected-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "",
+          "x": 16,
+          "right": 60,
+          "y": 778,
+          "bottom": 822,
+          "height": 44,
+          "width": 44
+        }
+      ],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "c-who",
+          "firstText": "LCD normal QA Part"
+        },
+        {
+          "firstClass": "c-who",
+          "firstText": "Jasa ganti LCD QA Jasa"
+        }
+      ]
+    },
+    {
+      "id": "invoice-collected-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "",
+          "x": 16,
+          "right": 60,
+          "y": 778,
+          "bottom": 822,
+          "height": 44,
+          "width": 44
+        }
+      ],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "c-who",
+          "firstText": "LCD normal QA Part"
+        },
+        {
+          "firstClass": "c-who",
+          "firstText": "Jasa ganti LCD QA Jasa"
+        }
+      ]
+    },
+    {
+      "id": "invoice-collected-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Servis",
+          "label": null,
+          "width": 58.3125,
+          "height": 20
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "label": "Pilihan untuk TTS-2611-002",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "tag": "A",
+          "text": "Koreksi nota",
+          "label": null,
+          "width": 110.03125,
+          "height": 36
+        },
+        {
+          "tag": "A",
+          "text": "Koreksi nota",
+          "label": null,
+          "width": 110.03125,
+          "height": 36
+        },
+        {
+          "tag": "A",
+          "text": "Kirim WA",
+          "label": null,
+          "width": 978,
+          "height": 36
+        }
+      ],
+      "leftActions": [
+        {
+          "firstClass": "c-who",
+          "firstText": "LCD normal QA\nPart"
+        },
+        {
+          "firstClass": "c-who",
+          "firstText": "Jasa ganti LCD QA\nJasa"
+        }
+      ]
+    },
+    {
+      "id": "tts-list-admin-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": ""
+        },
+        {
+          "firstClass": "act",
+          "firstText": ""
+        }
+      ]
+    },
+    {
+      "id": "tts-list-admin-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": ""
+        },
+        {
+          "firstClass": "act",
+          "firstText": ""
+        }
+      ]
+    },
+    {
+      "id": "tts-list-admin-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Buat TTS",
+          "label": null,
+          "width": 112.078125,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Semua",
+          "label": null,
+          "width": 44.3125,
+          "height": 40
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Diterima",
+          "label": null,
+          "width": 53.78125,
+          "height": 40
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Dikerjakan",
+          "label": null,
+          "width": 66.578125,
+          "height": 40
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Selesai",
+          "label": null,
+          "width": 45.109375,
+          "height": 40
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Diambil",
+          "label": null,
+          "width": 48.03125,
+          "height": 40
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Batal",
+          "label": null,
+          "width": 32.828125,
+          "height": 40
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "label": "Pilihan untuk TTS-2611-002",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-002",
+          "label": null,
+          "width": 99.125,
+          "height": 18
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "label": "Pilihan untuk TTS-2611-001",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "tag": "A",
+          "text": "TTS-2611-001",
+          "label": null,
+          "width": 99.125,
+          "height": 18
+        }
+      ],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": ""
+        },
+        {
+          "firstClass": "act",
+          "firstText": ""
+        }
+      ]
+    },
+    {
+      "id": "tts-cancelled-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "",
+          "x": 16,
+          "right": 60,
+          "y": 780,
+          "bottom": 824,
+          "height": 44,
+          "width": 44
+        }
+      ],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tts-cancelled-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "",
+          "x": 16,
+          "right": 60,
+          "y": 780,
+          "bottom": 824,
+          "height": 44,
+          "width": 44
+        }
+      ],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tts-cancelled-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Servis",
+          "label": null,
+          "width": 58.3125,
+          "height": 20
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "label": "Pilihan untuk TTS-2611-001",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "tag": "A",
+          "text": "Kirim WA",
+          "label": null,
+          "width": 978,
+          "height": 36
+        }
+      ],
+      "leftActions": []
+    },
+    {
+      "id": "stock-create-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan barang",
+          "x": 16,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 328
+        }
+      ],
+      "numeric": [
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "70.000"
+        },
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "125.000"
+        },
+        {
+          "name": "stock",
+          "mode": "numeric",
+          "value": "3"
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "stock-create-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan barang",
+          "x": 16,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 736
+        }
+      ],
+      "numeric": [
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "70.000"
+        },
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "125.000"
+        },
+        {
+          "name": "stock",
+          "mode": "numeric",
+          "value": "3"
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "stock-create-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "70.000"
+        },
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "125.000"
+        },
+        {
+          "name": "stock",
+          "mode": "numeric",
+          "value": "3"
+        }
+      ],
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Batal",
+          "label": null,
+          "width": 63.65625,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Simpan barang",
+          "label": null,
+          "width": 126.40625,
+          "height": 36
+        }
+      ],
+      "leftActions": []
+    },
+    {
+      "id": "stock-list-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": ""
+        }
+      ]
+    },
+    {
+      "id": "stock-list-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": ""
+        }
+      ]
+    },
+    {
+      "id": "stock-list-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Tambah barang",
+          "label": null,
+          "width": 129.09375,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "label": "Pilihan untuk Kabel HDMI panjang untuk televisi dan perangkat elektronik sintetis QA",
+          "width": 32,
+          "height": 32
+        }
+      ],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": ""
+        }
+      ]
+    },
+    {
+      "id": "stock-edit-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan barang",
+          "x": 16,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 328
+        }
+      ],
+      "numeric": [
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "70.000"
+        },
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "125.000"
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "stock-edit-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan barang",
+          "x": 16,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 736
+        }
+      ],
+      "numeric": [
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "70.000"
+        },
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "125.000"
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "stock-edit-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "70.000"
+        },
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "125.000"
+        }
+      ],
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Restok & riwayat",
+          "label": null,
+          "width": 138.09375,
+          "height": 36
+        },
+        {
+          "tag": "A",
+          "text": "Batal",
+          "label": null,
+          "width": 63.65625,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Simpan barang",
+          "label": null,
+          "width": 126.40625,
+          "height": 36
+        }
+      ],
+      "leftActions": []
+    },
+    {
+      "id": "stock-restock-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan restok",
+          "x": 16,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 328
+        }
+      ],
+      "numeric": [
+        {
+          "name": "qty",
+          "mode": "numeric",
+          "value": "2"
+        },
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "100.000"
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "empty-cell",
+          "firstText": "Belum ada riwayat restok untuk barang ini."
+        }
+      ]
+    },
+    {
+      "id": "stock-restock-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan restok",
+          "x": 16,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 736
+        }
+      ],
+      "numeric": [
+        {
+          "name": "qty",
+          "mode": "numeric",
+          "value": "2"
+        },
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "100.000"
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "empty-cell",
+          "firstText": "Belum ada riwayat restok untuk barang ini."
+        }
+      ]
+    },
+    {
+      "id": "stock-restock-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [
+        {
+          "name": "qty",
+          "mode": "numeric",
+          "value": "2"
+        },
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "100.000"
+        }
+      ],
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Kembali ke stok",
+          "label": null,
+          "width": 131.859375,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Simpan restok",
+          "label": null,
+          "width": 122.328125,
+          "height": 36
+        }
+      ],
+      "leftActions": [
+        {
+          "firstClass": "empty-cell",
+          "firstText": "Belum ada riwayat restok untuk barang ini."
+        }
+      ]
+    },
+    {
+      "id": "stock-history-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan restok",
+          "x": 16,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 328
+        }
+      ],
+      "numeric": [
+        {
+          "name": "qty",
+          "mode": "numeric",
+          "value": ""
+        },
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "100.000"
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "history-date",
+          "firstText": "13/11/2026"
+        }
+      ]
+    },
+    {
+      "id": "stock-history-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan restok",
+          "x": 16,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 736
+        }
+      ],
+      "numeric": [
+        {
+          "name": "qty",
+          "mode": "numeric",
+          "value": ""
+        },
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "100.000"
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "history-date",
+          "firstText": "13/11/2026"
+        }
+      ]
+    },
+    {
+      "id": "stock-history-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [
+        {
+          "name": "qty",
+          "mode": "numeric",
+          "value": ""
+        },
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "100.000"
+        }
+      ],
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Kembali ke stok",
+          "label": null,
+          "width": 131.859375,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Simpan restok",
+          "label": null,
+          "width": 122.328125,
+          "height": 36
+        }
+      ],
+      "leftActions": [
+        {
+          "firstClass": "history-date",
+          "firstText": "13/11/2026"
+        }
+      ]
+    },
+    {
+      "id": "sale-create-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan penjualan",
+          "x": 16,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 328
+        }
+      ],
+      "numeric": [
+        {
+          "name": "customer_phone",
+          "mode": "tel",
+          "value": ""
+        },
+        {
+          "name": "warranty_days",
+          "mode": "numeric",
+          "value": "0"
+        },
+        {
+          "name": "qty-0",
+          "mode": "numeric",
+          "value": "2"
+        },
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "150.000"
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "sale-create-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan penjualan",
+          "x": 16,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 736
+        }
+      ],
+      "numeric": [
+        {
+          "name": "customer_phone",
+          "mode": "tel",
+          "value": ""
+        },
+        {
+          "name": "warranty_days",
+          "mode": "numeric",
+          "value": "0"
+        },
+        {
+          "name": "qty-0",
+          "mode": "numeric",
+          "value": "2"
+        },
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "150.000"
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "sale-create-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [
+        {
+          "name": "customer_phone",
+          "mode": "tel",
+          "value": ""
+        },
+        {
+          "name": "warranty_days",
+          "mode": "numeric",
+          "value": "0"
+        },
+        {
+          "name": "qty-0",
+          "mode": "numeric",
+          "value": "2"
+        },
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "150.000"
+        }
+      ],
+      "smallTargets": [
+        {
+          "tag": "BUTTON",
+          "text": "Tambah barang",
+          "label": null,
+          "width": 129.09375,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "label": "Hapus baris barang 1",
+          "width": 46,
+          "height": 36
+        },
+        {
+          "tag": "A",
+          "text": "Batal",
+          "label": null,
+          "width": 63.65625,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Simpan penjualan",
+          "label": null,
+          "width": 145.34375,
+          "height": 36
+        }
+      ],
+      "leftActions": []
+    },
+    {
+      "id": "sale-detail-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "item-name",
+          "firstText": "Kabel HDMI panjang untuk televisi dan perangkat elektronik sintetis QA"
+        }
+      ]
+    },
+    {
+      "id": "sale-detail-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "item-name",
+          "firstText": "Kabel HDMI panjang untuk televisi dan perangkat elektronik sintetis QA"
+        }
+      ]
+    },
+    {
+      "id": "sale-detail-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Kembali ke penjualan",
+          "label": null,
+          "width": 167.9375,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Hapus penjualan",
+          "label": null,
+          "width": 137.8125,
+          "height": 36
+        }
+      ],
+      "leftActions": [
+        {
+          "firstClass": "item-name",
+          "firstText": "Kabel HDMI panjang untuk televisi dan perangkat elektronik sintetis QA"
+        }
+      ]
+    },
+    {
+      "id": "sale-list-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": "Lihat"
+        }
+      ]
+    },
+    {
+      "id": "sale-list-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": "Lihat"
+        }
+      ]
+    },
+    {
+      "id": "sale-list-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Buat penjualan",
+          "label": null,
+          "width": 126.90625,
+          "height": 36
+        },
+        {
+          "tag": "A",
+          "text": "Lihat",
+          "label": "Lihat JL-2611-001",
+          "width": 53.78125,
+          "height": 32
+        }
+      ],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": "Lihat"
+        }
+      ]
+    },
+    {
+      "id": "sale-delete-dialog-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "item-name",
+          "firstText": "Kabel HDMI panjang untuk televisi dan perangkat elektronik sintetis QA"
+        }
+      ]
+    },
+    {
+      "id": "sale-delete-dialog-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "item-name",
+          "firstText": "Kabel HDMI panjang untuk televisi dan perangkat elektronik sintetis QA"
+        }
+      ]
+    },
+    {
+      "id": "sale-delete-dialog-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Kembali ke penjualan",
+          "label": null,
+          "width": 167.9375,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Hapus penjualan",
+          "label": null,
+          "width": 137.8125,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Batal",
+          "label": null,
+          "width": 63.65625,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Ya, hapus penjualan",
+          "label": null,
+          "width": 158.953125,
+          "height": 36
+        }
+      ],
+      "leftActions": [
+        {
+          "firstClass": "item-name",
+          "firstText": "Kabel HDMI panjang untuk televisi dan perangkat elektronik sintetis QA"
+        }
+      ]
+    },
+    {
+      "id": "expense-create-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan",
+          "x": 16,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 328
+        }
+      ],
+      "numeric": [
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "150.000"
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "expense-create-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan",
+          "x": 16,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 736
+        }
+      ],
+      "numeric": [
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "150.000"
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "expense-create-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "150.000"
+        }
+      ],
+      "smallTargets": [
+        {
+          "tag": "BUTTON",
+          "text": "Batal",
+          "label": null,
+          "width": 63.65625,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Simpan",
+          "label": null,
+          "width": 78.546875,
+          "height": 36
+        }
+      ],
+      "leftActions": []
+    },
+    {
+      "id": "expense-list-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Tambah pengeluaran",
+          "x": 16,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 328
+        }
+      ],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": ""
+        }
+      ]
+    },
+    {
+      "id": "expense-list-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Tambah pengeluaran",
+          "x": 16,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 736
+        }
+      ],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": ""
+        }
+      ]
+    },
+    {
+      "id": "expense-list-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [
+        {
+          "tag": "BUTTON",
+          "text": "Tambah pengeluaran",
+          "label": null,
+          "width": 164.78125,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "label": "Pilihan untuk bensin 13/11/2026",
+          "width": 32,
+          "height": 32
+        }
+      ],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": ""
+        }
+      ]
+    },
+    {
+      "id": "expense-edit-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan",
+          "x": 16,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 328
+        }
+      ],
+      "numeric": [
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "175.000"
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "expense-edit-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Simpan",
+          "x": 16,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 736
+        }
+      ],
+      "numeric": [
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "175.000"
+        }
+      ],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "expense-edit-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [
+        {
+          "name": null,
+          "mode": "numeric",
+          "value": "175.000"
+        }
+      ],
+      "smallTargets": [
+        {
+          "tag": "BUTTON",
+          "text": "Batal",
+          "label": null,
+          "width": 63.65625,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Simpan",
+          "label": null,
+          "width": 78.546875,
+          "height": 36
+        }
+      ],
+      "leftActions": []
+    },
+    {
+      "id": "tracking-collected-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tracking-collected-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tracking-collected-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tracking-privacy",
+      "publicPrice": true,
+      "privateAbsent": true
+    },
+    {
+      "id": "tech-fresh-html-private-absence",
+      "result": "PASS"
+    }
+  ],
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/157.0.8103.79",
+    "revision": "@6dc9bc3bdaea5c35ed6d41fceab2f7a3a2227c4f",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "jsVersion": "15.7.112.43"
+  },
+  "exceptions": []
+}

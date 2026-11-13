@@ -1,0 +1,27 @@
+{
+  "verdict": "pass",
+  "baseline_rows_identical_after_delete": true,
+  "retained_deltas": {
+    "cache": 0,
+    "cache_locks": 0,
+    "categories": 1,
+    "expenses": 0,
+    "failed_jobs": 0,
+    "job_batches": 0,
+    "jobs": 0,
+    "migrations": 0,
+    "number_sequences": 2,
+    "passkeys": 0,
+    "password_reset_tokens": 0,
+    "products": 1,
+    "sale_items": 0,
+    "sales": 0,
+    "service_order_items": 0,
+    "service_orders": 2,
+    "sessions": 0,
+    "stock_entries": 0,
+    "store_settings": 0,
+    "users": 3
+  },
+  "no_mysql_connections_left_after_process_exit": true
+}

@@ -1,0 +1,1 @@
+{"tool":"pint","result":"fixed","files":[{"path":"docs\/evidence\/T016\/A1\/fixture.php","fixers":["method_argument_space","whitespace_after_comma_in_array","binary_operator_spaces"]}]}

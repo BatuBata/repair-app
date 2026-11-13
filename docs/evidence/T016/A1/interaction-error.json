@@ -1,0 +1,190 @@
+{
+  "error": "page eval: Error: No visible [data-test=logout-button]\n    at <anonymous>:1:133\n    at <anonymous>:1:266",
+  "cases": [
+    {
+      "id": "date-same-day-inclusive",
+      "total": "Rp4.295.142.295"
+    },
+    {
+      "id": "date-reversed",
+      "result": "PASS"
+    },
+    {
+      "id": "date-cleared",
+      "result": "PASS"
+    },
+    {
+      "id": "date-recovered",
+      "result": "PASS"
+    },
+    {
+      "id": "expense-delete-dialog-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Tambah pengeluaran",
+          "x": 16,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 328
+        }
+      ],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": ""
+        },
+        {
+          "firstClass": "act",
+          "firstText": ""
+        }
+      ]
+    },
+    {
+      "id": "expense-delete-dialog-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Tambah pengeluaran",
+          "x": 16,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 736
+        }
+      ],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": ""
+        },
+        {
+          "firstClass": "act",
+          "firstText": ""
+        }
+      ]
+    },
+    {
+      "id": "expense-delete-dialog-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [
+        {
+          "tag": "BUTTON",
+          "text": "Tambah pengeluaran",
+          "label": null,
+          "width": 164.78125,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "label": "Pilihan untuk lainnya 13/11/2026",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "label": "Pilihan untuk bensin 13/11/2026",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Batal",
+          "label": null,
+          "width": 63.65625,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Ya, hapus",
+          "label": null,
+          "width": 92.15625,
+          "height": 36
+        }
+      ],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": ""
+        },
+        {
+          "firstClass": "act",
+          "firstText": ""
+        }
+      ]
+    },
+    {
+      "id": "expense-cancel-focus",
+      "result": "PASS"
+    },
+    {
+      "id": "expense-escape-focus",
+      "result": "PASS"
+    },
+    {
+      "id": "expense-delete-own-only",
+      "result": "PASS"
+    },
+    {
+      "id": "invoice-lower-accessibility",
+      "warrantyInputMode": "numeric",
+      "numeric": [
+        {
+          "label": "Qty baris 1",
+          "mode": "numeric"
+        },
+        {
+          "label": "Harga jual baris 1",
+          "mode": "numeric"
+        },
+        {
+          "label": "Modal baris 1",
+          "mode": "numeric"
+        },
+        {
+          "label": "Qty baris 2",
+          "mode": "numeric"
+        },
+        {
+          "label": "Harga jual baris 2",
+          "mode": "numeric"
+        },
+        {
+          "label": "Modal baris 2",
+          "mode": "numeric"
+        }
+      ],
+      "button": {
+        "x": 136.421875,
+        "y": 776,
+        "right": 344,
+        "bottom": 824,
+        "width": 207.578125,
+        "height": 48
+      }
+    }
+  ]
+}

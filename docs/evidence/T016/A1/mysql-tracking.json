@@ -1,0 +1,15 @@
+{
+  "verdict": "pass",
+  "actual_controller": "App\\Http\\Controllers\\TrackingController::show",
+  "column_collation": "utf8mb4_unicode_ci",
+  "case_insensitive_raw_lookup_returns_own_id": true,
+  "wrongcase_status": 404,
+  "exact_status": 200,
+  "noindex": true,
+  "no_store_private": true,
+  "private_fields_absent_from_public_view": true,
+  "no_livewire_snapshot": true,
+  "database_identical_before_after": true,
+  "original_baseline_preserved": true,
+  "view_storage_private": true
+}

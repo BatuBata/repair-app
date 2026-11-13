@@ -1,0 +1,1 @@
+{"tool":"pint","result":"fixed","files":[{"path":"docs\/evidence\/T016\/A1\/IndependentTest.php","fixers":["method_argument_space"]}]}

@@ -1,0 +1,28 @@
+{
+  "tables": 20,
+  "counts": {
+    "cache": 0,
+    "cache_locks": 0,
+    "categories": 9,
+    "expenses": 0,
+    "failed_jobs": 0,
+    "job_batches": 0,
+    "jobs": 0,
+    "migrations": 6,
+    "number_sequences": 2,
+    "passkeys": 0,
+    "password_reset_tokens": 0,
+    "products": 1,
+    "sale_items": 1,
+    "sales": 9,
+    "service_order_items": 0,
+    "service_orders": 8,
+    "sessions": 0,
+    "stock_entries": 0,
+    "store_settings": 1,
+    "users": 3
+  },
+  "future_period": "3101",
+  "future_period_absent": true,
+  "baseline_private": true
+}

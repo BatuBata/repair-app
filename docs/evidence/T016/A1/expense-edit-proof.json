@@ -1,0 +1,53 @@
+{
+  "orders": [
+    {
+      "id": 1,
+      "status": "batal",
+      "normalized_phone": true,
+      "invoice_date": null,
+      "picked_date": null,
+      "warranty_until": null,
+      "items": []
+    },
+    {
+      "id": 2,
+      "status": "diambil",
+      "normalized_phone": true,
+      "invoice_date": "2026-11-13",
+      "picked_date": "2026-11-13",
+      "warranty_until": "2026-12-13",
+      "items": [
+        {
+          "type": "part",
+          "description": "LCD normal QA",
+          "qty": 1,
+          "price": 950000,
+          "cost": 700000
+        },
+        {
+          "type": "jasa",
+          "description": "Jasa ganti LCD QA",
+          "qty": 1,
+          "price": 100000,
+          "cost": 0
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Kabel HDMI panjang untuk televisi dan perangkat elektronik sintetis QA",
+      "stock": 5,
+      "cost_price": 100000,
+      "sell_price": 150000
+    }
+  ],
+  "sales": [],
+  "expenses": [
+    {
+      "id": 1,
+      "amount": 175000
+    }
+  ]
+}

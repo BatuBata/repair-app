@@ -1,0 +1,27 @@
+{
+  "checked_revision": "545b52a275687703e6046270afb45e01a0334922",
+  "observed_head": "9e85f9093734fb846c99dc5e7f3f0a7ee91965c1",
+  "artifact_sha256": "6e43a91e8f08f49aae6ab334fa46dde48fcc52c1900d1a0e11f60344e2556f36",
+  "entry_css": "assets/app-CxA26Lmt.css",
+  "checks": {
+    "source211": {
+      "count": 211,
+      "mismatches": []
+    },
+    "files_sha256": {
+      "count": 14,
+      "mismatches": []
+    },
+    "build_inputs_sha256": {
+      "count": 73,
+      "mismatches": []
+    },
+    "runtime_fonts_sha256": {
+      "count": 5,
+      "mismatches": []
+    }
+  },
+  "no_rebuild": true,
+  "app_source_unchanged": true,
+  "evidence_metadata_correction": "trusted-visual screen.width was initially mislabeled requestedWidth; retained measurement renamed screenWidth and requestedWidth derived from configured case-name width. No screenshot/result geometry changed. Original stdout under-counted mobile overflow by comparing docWidth to expanded innerWidth; report uses configured/visual viewport width."
+}

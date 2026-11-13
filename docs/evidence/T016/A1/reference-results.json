@@ -1,0 +1,77 @@
+[
+  {
+    "name": "tts",
+    "width": 360,
+    "source": "mockup/tts.html"
+  },
+  {
+    "name": "tts",
+    "width": 768,
+    "source": "mockup/tts.html"
+  },
+  {
+    "name": "tts",
+    "width": 1280,
+    "source": "mockup/tts.html"
+  },
+  {
+    "name": "tts-baru",
+    "width": 360,
+    "source": "mockup/tts-baru.html"
+  },
+  {
+    "name": "tts-baru",
+    "width": 768,
+    "source": "mockup/tts-baru.html"
+  },
+  {
+    "name": "tts-baru",
+    "width": 1280,
+    "source": "mockup/tts-baru.html"
+  },
+  {
+    "name": "tts-detail",
+    "width": 360,
+    "source": "mockup/tts-detail.html"
+  },
+  {
+    "name": "tts-detail",
+    "width": 768,
+    "source": "mockup/tts-detail.html"
+  },
+  {
+    "name": "tts-detail",
+    "width": 1280,
+    "source": "mockup/tts-detail.html"
+  },
+  {
+    "name": "tts-sukses",
+    "width": 360,
+    "source": "mockup/tts-sukses.html"
+  },
+  {
+    "name": "tts-sukses",
+    "width": 768,
+    "source": "mockup/tts-sukses.html"
+  },
+  {
+    "name": "tts-sukses",
+    "width": 1280,
+    "source": "mockup/tts-sukses.html"
+  },
+  {
+    "name": "tracking",
+    "width": 360,
+    "source": "mockup/tracking.html"
+  },
+  {
+    "name": "tracking",
+    "width": 768,
+    "source": "mockup/tracking.html"
+  },
+  {
+    "name": "tracking",
+    "width": 1280,
+    "source": "mockup/tracking.html"
+  }
+]

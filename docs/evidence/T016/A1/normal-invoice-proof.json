@@ -1,0 +1,40 @@
+{
+  "orders": [
+    {
+      "id": 1,
+      "status": "dikerjakan",
+      "normalized_phone": true,
+      "invoice_date": null,
+      "picked_date": null,
+      "warranty_until": null,
+      "items": []
+    },
+    {
+      "id": 2,
+      "status": "selesai",
+      "normalized_phone": true,
+      "invoice_date": "2026-11-13",
+      "picked_date": null,
+      "warranty_until": "2026-12-13",
+      "items": [
+        {
+          "type": "part",
+          "description": "LCD normal QA",
+          "qty": 1,
+          "price": 1000000,
+          "cost": 700000
+        },
+        {
+          "type": "jasa",
+          "description": "Jasa ganti LCD QA",
+          "qty": 1,
+          "price": 100000,
+          "cost": 0
+        }
+      ]
+    }
+  ],
+  "products": [],
+  "sales": [],
+  "expenses": []
+}

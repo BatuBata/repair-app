@@ -1,0 +1,42 @@
+{
+  "verdict": "fail",
+  "checked_revision": "545b52a275687703e6046270afb45e01a0334922",
+  "inputs": {
+    "T015": "545b52a275687703e6046270afb45e01a0334922"
+  },
+  "findings": [
+    {
+      "id": "T016-F01",
+      "owner": "T010",
+      "priority": "P2",
+      "summary": "Valid large invoice values overflow form360/1280 and published360; published desktop numeric cells split mid-digit with long description",
+      "evidence": [
+        "trusted-visual-results.json",
+        "trusted-invoice-large-summary-360.png",
+        "trusted-invoice-large-summary-1280.png",
+        "published-results.json",
+        "published-large-lower-360.png",
+        "published-large-lower-1280.png"
+      ]
+    }
+  ],
+  "core_suite": {
+    "passed": 157,
+    "skipped": 1,
+    "assertions": 1585
+  },
+  "independent_new_cases": {
+    "passed": 4,
+    "assertions": 114
+  },
+  "mysql_preserved": true,
+  "resources_released": true,
+  "not_run": [
+    "T017 print/PDF",
+    "T018 dashboard/reminders",
+    "T019 reports/revenue/profit",
+    "T023 final combined gate",
+    "T025 physical Android/printer",
+    "T024-T025 deployment"
+  ]
+}

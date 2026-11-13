@@ -1,0 +1,43 @@
+{
+  "verdict": "pass",
+  "actual_actions": [
+    "App\\Services\\CreateServiceOrder",
+    "App\\Actions\\Sales\\CreateSale"
+  ],
+  "tts_numbers": [
+    "TTS-3101-001",
+    "TTS-3101-002"
+  ],
+  "sales_outcomes": [
+    "shortage",
+    "success"
+  ],
+  "stock": 0,
+  "sale_items": 1,
+  "orphan_items": 0,
+  "tts_sequence": 2,
+  "jl_sequence": 1,
+  "baseline_rows_identical": true,
+  "table_count_deltas": {
+    "cache": 0,
+    "cache_locks": 0,
+    "categories": 1,
+    "expenses": 0,
+    "failed_jobs": 0,
+    "job_batches": 0,
+    "jobs": 0,
+    "migrations": 0,
+    "number_sequences": 2,
+    "passkeys": 0,
+    "password_reset_tokens": 0,
+    "products": 1,
+    "sale_items": 1,
+    "sales": 1,
+    "service_order_items": 0,
+    "service_orders": 2,
+    "sessions": 0,
+    "stock_entries": 0,
+    "store_settings": 0,
+    "users": 3
+  }
+}

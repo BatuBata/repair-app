@@ -1,0 +1,429 @@
+{
+  "cases": [
+    {
+      "id": "sale-large-detail-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "item-name",
+          "firstText": "Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA"
+        }
+      ]
+    },
+    {
+      "id": "sale-large-detail-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "item-name",
+          "firstText": "Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA"
+        }
+      ]
+    },
+    {
+      "id": "sale-large-detail-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Kembali ke penjualan",
+          "label": null,
+          "width": 167.9375,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Hapus penjualan",
+          "label": null,
+          "width": 137.8125,
+          "height": 36
+        }
+      ],
+      "leftActions": [
+        {
+          "firstClass": "item-name",
+          "firstText": "Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA Barang panjang sintetis QA"
+        }
+      ]
+    },
+    {
+      "id": "sale-large-list-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": "Lihat"
+        }
+      ]
+    },
+    {
+      "id": "sale-large-list-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": "Lihat"
+        }
+      ]
+    },
+    {
+      "id": "sale-large-list-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [
+        {
+          "tag": "A",
+          "text": "Buat penjualan",
+          "label": null,
+          "width": 126.90625,
+          "height": 36
+        },
+        {
+          "tag": "A",
+          "text": "Lihat",
+          "label": "Lihat JL-2611-002",
+          "width": 53.78125,
+          "height": 32
+        }
+      ],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": "Lihat"
+        }
+      ]
+    },
+    {
+      "id": "expense-large-list-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Tambah pengeluaran",
+          "x": 16,
+          "right": 344,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 328
+        }
+      ],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": ""
+        },
+        {
+          "firstClass": "act",
+          "firstText": ""
+        }
+      ]
+    },
+    {
+      "id": "expense-large-list-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [
+        {
+          "text": "Tambah pengeluaran",
+          "x": 16,
+          "right": 752,
+          "y": 776,
+          "bottom": 824,
+          "height": 48,
+          "width": 736
+        }
+      ],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": ""
+        },
+        {
+          "firstClass": "act",
+          "firstText": ""
+        }
+      ]
+    },
+    {
+      "id": "expense-large-list-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [
+        {
+          "tag": "BUTTON",
+          "text": "Tambah pengeluaran",
+          "label": null,
+          "width": 164.78125,
+          "height": 36
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "label": "Pilihan untuk lainnya 13/11/2026",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "label": "Pilihan untuk bensin 13/11/2026",
+          "width": 32,
+          "height": 32
+        }
+      ],
+      "leftActions": [
+        {
+          "firstClass": "act",
+          "firstText": ""
+        },
+        {
+          "firstClass": "act",
+          "firstText": ""
+        }
+      ]
+    },
+    {
+      "id": "tracking-received-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tracking-received-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tracking-received-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tracking-working-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tracking-working-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tracking-working-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tracking-cancelled-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tracking-cancelled-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tracking-cancelled-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tracking-zero-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tracking-zero-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tracking-zero-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tracking-large-360",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "visualWidth": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tracking-large-768",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "visualWidth": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    },
+    {
+      "id": "tracking-large-1280",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "visualWidth": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbar": [],
+      "numeric": [],
+      "smallTargets": [],
+      "leftActions": []
+    }
+  ],
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/157.0.8103.79",
+    "revision": "@6dc9bc3bdaea5c35ed6d41fceab2f7a3a2227c4f",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "jsVersion": "15.7.112.43"
+  },
+  "exceptions": []
+}

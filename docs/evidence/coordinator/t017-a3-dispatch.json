@@ -1,0 +1,14 @@
+{
+  "task": "T017",
+  "attempt": "A3",
+  "authorization_ref": "User13Nov2026 async call_4a4f2a2bc9334b239c34c0f5b91b7ca6 explicitly answered Izinkan satu upaya tambahan A3 (direkomendasikan), for A5 header clipping and longthermal within existing scope/inputlimits.",
+  "runtime": "native collaboration",
+  "worker": "/root/t017_documents",
+  "model_requested": "gpt-6.1-terra",
+  "model_effective": null,
+  "receipt": "reuse same Terrahigh worker via followup_task; backend identity not exposed",
+  "base_revision": "84e4097",
+  "branch": "codex/t017-documents-a3",
+  "scope": "existingT017 only",
+  "max_implementation_attempts_this_task": 3
+}

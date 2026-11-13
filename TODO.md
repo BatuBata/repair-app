@@ -36,7 +36,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T014 | Pencatatan pengeluaran | developer / 6-luna | easy / low | T008 | T009, T010, T011, T012, T013, T020 | done |
 | T015 | Integrasi alur servis (M2) dan stok/penjualan/pengeluaran (M4) | integrator / 6.1-sol | medium / medium | T011, T013, T014 | — | done |
 | T016 | QA independen alur servis, penjualan, dan pengeluaran | tester / 6.1-sol | medium / high | T015 | T020 | done |
-| T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | failed |
+| T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | running |
 | T018 | Dashboard admin dan pengingat garansi | developer / 6.1-sol | medium / medium | T016 | T017, T019, T020 | running |
 | T019 | Laporan omzet, modal, pengeluaran, dan laba per rentang tanggal | developer / 6.1-sol | medium / high | T016 | T017, T018, T020 | done |
 | T020 | Paket deploy VPS: konfigurasi contoh, skrip deploy, backup dan restore | developer / 6.1-sol | medium / high | T001, T002 (artifact) | T002, T003, T004, T005, T006, T009, T012, T017, T018, T019 | done |
@@ -358,7 +358,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "push_authorized": true,
       "source_ref": "Instruksi user 12 Nov 2026: push ke GitHub BatuBata/repair-app, setiap pekerjaan selesai buat commit dan push",
       "policy": "Commit pekerjaan selesai dan push branch task/checkpoint setelah periksa perubahan; merge ke main tetap setelah QA/review relevan; tanpa force-push. Kandidat blocked disimpan sebagai checkpoint, bukan fitur diterima.",
-      "coordination_branch": "codex/t019-reports"
+      "coordination_branch": "codex/t017-documents-a3"
     },
     "browser_isolation_policy": {
       "source_ref": "Coordinator13Nov2026 verified existing scripts/lib/cdp.mjs Browser.launch: fresh headless Chrome process, unique user-data-dir and remote-debugging-port0; T010 uses private TASTE_SKILL_TMP.",
@@ -2551,7 +2551,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "PDF preflight coordinator: BaconQrCode Writer sudah terpasang. Aset IBM Plex saat ini hanya5WOFF2; TTF turunan+lisensi dapat ditambah tanpa mengubah WOFF2/webfont existing. Bundled Python memiliki pypdf/pdfplumber/reportlab/PIL, fontTools/brotli belum ada; jika dibutuhkan gunakan build tooling privat, bukan install global/appdependency. pdftoppm bundled tersedia; helper Swift PDFKit/CoreImage T006 juga tersedia. Ikuti PDF skill marker sekali sebelum authoring PDF aktual.",
         "A2 closes exact-source review F01 print-media width/default-paper proof and F02 keeping line description/qty/price/subtotal together across A5 pages. Keep A1 failure and retest affected content/privacy/QR only; final full regression T022/T023."
       ],
-      "status": "failed",
+      "status": "running",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "resource_phase_policy": "Coding/host tests no browser/MySQL resource. Private task headless phase only after isolation preflight, unique port8189(T017)/8190(T018), process/profile/CDP/TASTE/SQLite/config/cache/session/views/storage. Max2workers; no shared GUI.",
       "attempts": [
@@ -2582,16 +2582,27 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
             }
           ],
           "review_ref": "docs/evidence/T017/A2/boundary-review/review.json"
+        },
+        {
+          "id": "A3",
+          "kind": "implementation",
+          "worker_id": "/root/t017_documents",
+          "model_requested": "gpt-6.1-terra",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.followup_task:/root/t017_documents:T017-A3",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/t017-a3-dispatch.json"
         }
       ],
       "runtime_assignment": {
         "runtime": "Codex native collaboration",
         "task_id": "/root/t017_documents",
-        "base_revision": "479a58565bed3f1b0d9a7e3ef1451d1de073fdbd",
-        "phase": "awaiting_user_attempt_exception",
-        "browser_reservation": "released; private server8189/browser closed per worker receipt",
+        "base_revision": "84e4097",
+        "phase": "implementation-A3",
+        "browser_reservation": "conditional private headless8189 after isolation preflight; CLI privateSQLite first; noMySQL/GUI/CUA/Orca",
         "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
-        "model_observation": "New native spawn requested Terra high, canonical taskname returned only."
+        "model_observation": "New native spawn requested Terra high, canonical taskname returned only.",
+        "branch": "codex/t017-documents-a3"
       },
       "pause_history": [
         {
@@ -2631,26 +2642,28 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
             "docs/evidence/T017/A2/qr-check.log",
             "docs/evidence/T017/A2/render.log"
           ]
+        },
+        {
+          "verdict": "fail",
+          "failure_class": "product",
+          "revision": "66359012ac0e4febec1f21c4154ba23085212333",
+          "artifact_ref": "docs/evidence/T017/A2/boundary-review/review.json",
+          "inputs": {
+            "T016": "c66d038ea448910e3cc8a8529f170f72ac064306",
+            "T006": "be717f38926cdb6cc0281c013882c0e204dbb86f"
+          },
+          "evidence": [
+            "docs/evidence/T017/A2/boundary-review/review.json",
+            "docs/evidence/T017/A2/boundary-review/name-a5-first.png",
+            "docs/evidence/T017/A2/boundary-review/text-bounds-results.json",
+            "docs/evidence/T017/A2/boundary-review/generation-results.json"
+          ],
+          "summary": "F03 valid store name255 unbroken clips A5 header/document identity;223glyphs outside2pages. LongA5 passes61pages; longthermal unproven after harness60s timeout. A1/A2 PASS/FAIL history retained; no code changed; user decision needed forA3."
         }
       ],
-      "result": {
-        "verdict": "fail",
-        "failure_class": "product",
-        "revision": "66359012ac0e4febec1f21c4154ba23085212333",
-        "artifact_ref": "docs/evidence/T017/A2/boundary-review/review.json",
-        "inputs": {
-          "T016": "c66d038ea448910e3cc8a8529f170f72ac064306",
-          "T006": "be717f38926cdb6cc0281c013882c0e204dbb86f"
-        },
-        "evidence": [
-          "docs/evidence/T017/A2/boundary-review/review.json",
-          "docs/evidence/T017/A2/boundary-review/name-a5-first.png",
-          "docs/evidence/T017/A2/boundary-review/text-bounds-results.json",
-          "docs/evidence/T017/A2/boundary-review/generation-results.json"
-        ],
-        "summary": "F03 valid store name255 unbroken clips A5 header/document identity;223glyphs outside2pages. LongA5 passes61pages; longthermal unproven after harness60s timeout. A1/A2 PASS/FAIL history retained; no code changed; user decision needed forA3."
-      },
-      "next_action": "Request one extra implementation attempt A3 for reproduced F03 and diagnose longthermal; no code until explicit user exception. Other taskT018 continues."
+      "next_action": "A3 authorized once only: fix reproduced F03 valid255name A5 header and diagnose/improve longthermal render without reducing inputlimits; reuse passed unaffected evidence; report exactsource and meaningfulbounds/render/roles checks.",
+      "implementation_attempt_limit": 3,
+      "implementation_attempt_limit_source_ref": "User13Nov2026 async call_4a4f2a2bc9334b239c34c0f5b91b7ca6 explicitly answered Izinkan satu upaya tambahan A3 (direkomendasikan), for A5 header clipping and longthermal within existing scope/inputlimits."
     },
     {
       "id": "T018",

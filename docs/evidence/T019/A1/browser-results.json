@@ -1,0 +1,303 @@
+{
+  "checks": [
+    {
+      "test": "default WITA month",
+      "passed": true
+    },
+    {
+      "test": "sample net",
+      "passed": true
+    },
+    {
+      "screenshot": "populated-360",
+      "metrics": {
+        "width": 360,
+        "scroll": 360,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "zeroBars": 10,
+        "barCount": 1
+      }
+    },
+    {
+      "test": "populated 360 no page overflow",
+      "passed": true
+    },
+    {
+      "screenshot": "populated-768",
+      "metrics": {
+        "width": 768,
+        "scroll": 768,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "zeroBars": 10,
+        "barCount": 1
+      }
+    },
+    {
+      "test": "populated 768 no page overflow",
+      "passed": true
+    },
+    {
+      "screenshot": "populated-1280",
+      "metrics": {
+        "width": 1280,
+        "scroll": 1280,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "zeroBars": 10,
+        "barCount": 1
+      }
+    },
+    {
+      "test": "populated 1280 no page overflow",
+      "passed": true
+    },
+    {
+      "test": "servis filter real rows",
+      "passed": true
+    },
+    {
+      "screenshot": "filter-servis-360",
+      "metrics": {
+        "width": 360,
+        "scroll": 360,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "zeroBars": 10,
+        "barCount": 1
+      }
+    },
+    {
+      "test": "filter-servis 360 no page overflow",
+      "passed": true
+    },
+    {
+      "test": "detail opens",
+      "passed": true
+    },
+    {
+      "screenshot": "detail-360",
+      "metrics": {
+        "width": 360,
+        "scroll": 360,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "zeroBars": 10,
+        "barCount": 1
+      }
+    },
+    {
+      "test": "detail 360 no page overflow",
+      "passed": true
+    },
+    {
+      "test": "detail close focus restored",
+      "passed": true
+    },
+    {
+      "test": "keyboard tooltip exact",
+      "passed": true
+    },
+    {
+      "screenshot": "tooltip-keyboard-1280",
+      "metrics": {
+        "width": 1280,
+        "scroll": 1280,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "zeroBars": 10,
+        "barCount": 1
+      }
+    },
+    {
+      "test": "tooltip-keyboard 1280 no page overflow",
+      "passed": true
+    },
+    {
+      "test": "escape closes tooltip",
+      "passed": true
+    },
+    {
+      "test": "tap tooltip visible",
+      "passed": true
+    },
+    {
+      "screenshot": "tooltip-tap-360",
+      "metrics": {
+        "width": 360,
+        "scroll": 360,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "zeroBars": 10,
+        "barCount": 1
+      }
+    },
+    {
+      "test": "tooltip-tap 360 no page overflow",
+      "passed": true
+    },
+    {
+      "test": "today control real empty",
+      "passed": true
+    },
+    {
+      "screenshot": "empty-360",
+      "metrics": {
+        "width": 360,
+        "scroll": 360,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "zeroBars": 1,
+        "barCount": 0
+      }
+    },
+    {
+      "test": "empty 360 no page overflow",
+      "passed": true
+    },
+    {
+      "screenshot": "empty-768",
+      "metrics": {
+        "width": 768,
+        "scroll": 768,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "zeroBars": 1,
+        "barCount": 0
+      }
+    },
+    {
+      "test": "empty 768 no page overflow",
+      "passed": true
+    },
+    {
+      "screenshot": "empty-1280",
+      "metrics": {
+        "width": 1280,
+        "scroll": 1280,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "zeroBars": 1,
+        "barCount": 0
+      }
+    },
+    {
+      "test": "empty 1280 no page overflow",
+      "passed": true
+    },
+    {
+      "test": "7days control",
+      "passed": true
+    },
+    {
+      "test": "negative exact",
+      "passed": true
+    },
+    {
+      "screenshot": "negative-large-360",
+      "metrics": {
+        "width": 360,
+        "scroll": 360,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "zeroBars": 0,
+        "barCount": 1
+      }
+    },
+    {
+      "test": "negative-large 360 no page overflow",
+      "passed": true
+    },
+    {
+      "screenshot": "negative-large-768",
+      "metrics": {
+        "width": 768,
+        "scroll": 768,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "zeroBars": 0,
+        "barCount": 1
+      }
+    },
+    {
+      "test": "negative-large 768 no page overflow",
+      "passed": true
+    },
+    {
+      "screenshot": "negative-large-1280",
+      "metrics": {
+        "width": 1280,
+        "scroll": 1280,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "zeroBars": 0,
+        "barCount": 1
+      }
+    },
+    {
+      "test": "negative-large 1280 no page overflow",
+      "passed": true
+    },
+    {
+      "test": "invalid range error",
+      "passed": true
+    },
+    {
+      "screenshot": "error-360",
+      "metrics": {
+        "width": 360,
+        "scroll": 360,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "zeroBars": 0,
+        "barCount": 0
+      }
+    },
+    {
+      "test": "error 360 no page overflow",
+      "passed": true
+    },
+    {
+      "screenshot": "error-768",
+      "metrics": {
+        "width": 768,
+        "scroll": 768,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "zeroBars": 0,
+        "barCount": 0
+      }
+    },
+    {
+      "test": "error 768 no page overflow",
+      "passed": true
+    },
+    {
+      "screenshot": "error-1280",
+      "metrics": {
+        "width": 1280,
+        "scroll": 1280,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "zeroBars": 0,
+        "barCount": 0
+      }
+    },
+    {
+      "test": "error 1280 no page overflow",
+      "passed": true
+    },
+    {
+      "test": "chart next actual window",
+      "passed": true
+    },
+    {
+      "test": "chart retains sample net",
+      "passed": true
+    },
+    {
+      "screenshot": "chart-window-1280",
+      "metrics": {
+        "width": 1280,
+        "scroll": 1280,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "zeroBars": 10,
+        "barCount": 1
+      }
+    },
+    {
+      "test": "chart-window 1280 no page overflow",
+      "passed": true
+    },
+    {
+      "test": "no JS errors",
+      "passed": true
+    }
+  ],
+  "console": []
+}

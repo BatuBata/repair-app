@@ -1,0 +1,9 @@
+{
+  "app/Livewire/Reports/Index.php": "0bdb588b160c9cf1d3f435edd552eec5beb6ef33c9a21c511e4b21497b29b78c",
+  "app/Services/Reports/Report.php": "38de4a97b20f0c83a572c30a30b5f339eb87338f6e4c036677cea4a8a72fa07b",
+  "resources/views/livewire/reports/index.blade.php": "2f77d6ad44e5935d13873c503c17ff2059d2b6abdd061bb5b26c3de4c333ce6e",
+  "resources/views/livewire/reports/styles.blade.php": "b172700204fa7582e83ba1dc3b9a0100db4ffee5bb8efbae614aebd6438f05ce",
+  "tests/Feature/Reports/ReportsTest.php": "9f9f883443606f15d08b0ce6068ed20c3d3d9d81fbe3c3bac750b83ec8cc959d",
+  "routes/modules/reports.php": "d6418f9b0fe07ece1d5b7b4ec779378e93a9fbeba12ae6eadc376b0e7a099fa6",
+  "private_fixture_database_sha256": "2112080431068ae4af381392c9cc345b9c12a497ae2b96e139797ce7c21ca7f7"
+}

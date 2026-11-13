@@ -1,0 +1,12 @@
+{
+    "db": "sqlite",
+    "db_path": "\/private\/tmp\/repair-t019-a1-20261113\/database.sqlite",
+    "config": "\/private\/tmp\/repair-t019-a1-20261113\/cache\/config.php",
+    "views": "\/private\/tmp\/repair-t019-a1-20261113\/storage\/framework\/views",
+    "sessions": "\/private\/tmp\/repair-t019-a1-20261113\/storage\/framework\/sessions",
+    "logs": "\/private\/tmp\/repair-t019-a1-20261113\/storage\/logs\/laravel.log",
+    "storage": "\/private\/tmp\/repair-t019-a1-20261113\/storage",
+    "fixture": "synthetic PRD sample 11Nov; negative\/large 12Nov; empty dates separate; no production\/MySQL",
+    "port": 8191,
+    "taste_tmp": "\/private\/tmp\/repair-t019-a1-20261113\/taste"
+}

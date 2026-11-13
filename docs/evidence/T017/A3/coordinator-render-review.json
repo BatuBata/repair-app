@@ -1,0 +1,39 @@
+{
+  "source_revision": "2d7e613d5592ff169cb7743ff6fd086ec06fe58c",
+  "renderer": "bundled pdftoppm",
+  "reason": "Original name page2 PNG did not visually match current PDF (header absent/body shifted); fresh Poppler render shows full repeated header. Prior PNG bytes retained. No appsource changed.",
+  "rows": [
+    {
+      "pdf": "name-a5.pdf",
+      "page": 1,
+      "pdf_sha256": "8d33d195f3ae436e42c21e3455f6a024f443bd79a44a11f2d9b8843a333f93b5",
+      "png": "name-a5-1.png",
+      "new_png_sha256": "9ac7c85bd38c97c27390e8af90e61ac975c9cbf9b41c4c3392f0f15a244a9a56",
+      "prior_png_sha256": "52d25092382be85cd243db7444e8643b7e6c074b0bd65d0d7372eab21f72b88f"
+    },
+    {
+      "pdf": "name-a5.pdf",
+      "page": 2,
+      "pdf_sha256": "8d33d195f3ae436e42c21e3455f6a024f443bd79a44a11f2d9b8843a333f93b5",
+      "png": "name-a5-2.png",
+      "new_png_sha256": "4532af4c9de1e4179efe4f93d5dd795c8ace17cb4f91466d256d9dba6556fc41",
+      "prior_png_sha256": "a4415abf4ba61bc68571d6b6f1de2fc6579460eb91d4ab1ac5249694f461a17c"
+    },
+    {
+      "pdf": "long-a5.pdf",
+      "page": 1,
+      "pdf_sha256": "7e67c99f6cf17c64c0af390e5bf1b96aa1fa15964fb3e6f195cb6d07909976c3",
+      "png": "long-a5-first-01.png",
+      "new_png_sha256": "ee5bc8930ee0e80ebd07c47433c64d64c047931ed046d7fc06c7244373ae8d8d",
+      "prior_png_sha256": "6479afd7efe51a36b4583c84d3d85ccf501bdfb06b6690264540ff6f4298a5ed"
+    },
+    {
+      "pdf": "long-a5.pdf",
+      "page": 63,
+      "pdf_sha256": "7e67c99f6cf17c64c0af390e5bf1b96aa1fa15964fb3e6f195cb6d07909976c3",
+      "png": "long-a5-last-63.png",
+      "new_png_sha256": "dab90256e70cb19cca87ee3e56664d9f623c514bb1fc3f139e1129f881984811",
+      "prior_png_sha256": "690ae6010c3e31ba270c7a9bcf4f61de8a59c6e59aec96534d5cab9795cd7f9b"
+    }
+  ]
+}

@@ -36,7 +36,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T014 | Pencatatan pengeluaran | developer / 6-luna | easy / low | T008 | T009, T010, T011, T012, T013, T020 | done |
 | T015 | Integrasi alur servis (M2) dan stok/penjualan/pengeluaran (M4) | integrator / 6.1-sol | medium / medium | T011, T013, T014 | — | done |
 | T016 | QA independen alur servis, penjualan, dan pengeluaran | tester / 6.1-sol | medium / high | T015 | T020 | done |
-| T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | running |
+| T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | done |
 | T018 | Dashboard admin dan pengingat garansi | developer / 6.1-sol | medium / medium | T016 | T017, T019, T020 | running |
 | T019 | Laporan omzet, modal, pengeluaran, dan laba per rentang tanggal | developer / 6.1-sol | medium / high | T016 | T017, T018, T020 | done |
 | T020 | Paket deploy VPS: konfigurasi contoh, skrip deploy, backup dan restore | developer / 6.1-sol | medium / high | T001, T002 (artifact) | T002, T003, T004, T005, T006, T009, T012, T017, T018, T019 | done |
@@ -2551,7 +2551,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "PDF preflight coordinator: BaconQrCode Writer sudah terpasang. Aset IBM Plex saat ini hanya5WOFF2; TTF turunan+lisensi dapat ditambah tanpa mengubah WOFF2/webfont existing. Bundled Python memiliki pypdf/pdfplumber/reportlab/PIL, fontTools/brotli belum ada; jika dibutuhkan gunakan build tooling privat, bukan install global/appdependency. pdftoppm bundled tersedia; helper Swift PDFKit/CoreImage T006 juga tersedia. Ikuti PDF skill marker sekali sebelum authoring PDF aktual.",
         "A2 closes exact-source review F01 print-media width/default-paper proof and F02 keeping line description/qty/price/subtotal together across A5 pages. Keep A1 failure and retest affected content/privacy/QR only; final full regression T022/T023."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "resource_phase_policy": "Coding/host tests no browser/MySQL resource. Private task headless phase only after isolation preflight, unique port8189(T017)/8190(T018), process/profile/CDP/TASTE/SQLite/config/cache/session/views/storage. Max2workers; no shared GUI.",
       "attempts": [
@@ -2590,7 +2590,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-terra",
           "model_effective": null,
           "dispatch_ref": "native:collaboration.followup_task:/root/t017_documents:T017-A3",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/t017-a3-dispatch.json"
         }
       ],
@@ -2598,8 +2598,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "runtime": "Codex native collaboration",
         "task_id": "/root/t017_documents",
         "base_revision": "84e4097",
-        "phase": "implementation-A3",
-        "browser_reservation": "conditional private headless8189 after isolation preflight; CLI privateSQLite first; noMySQL/GUI/CUA/Orca",
+        "phase": "closed",
+        "browser_reservation": "released; worker reports privateFPM terminated, no browser/MySQL used",
         "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
         "model_observation": "New native spawn requested Terra high, canonical taskname returned only.",
         "branch": "codex/t017-documents-a3"
@@ -2661,9 +2661,28 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "summary": "F03 valid store name255 unbroken clips A5 header/document identity;223glyphs outside2pages. LongA5 passes61pages; longthermal unproven after harness60s timeout. A1/A2 PASS/FAIL history retained; no code changed; user decision needed forA3."
         }
       ],
-      "next_action": "A3 authorized once only: fix reproduced F03 valid255name A5 header and diagnose/improve longthermal render without reducing inputlimits; reuse passed unaffected evidence; report exactsource and meaningfulbounds/render/roles checks.",
+      "next_action": "Consume exact A3 source in T021/T022; independent T023 verifies final integrated candidate. No further implementation authorized beyond3attempts.",
       "implementation_attempt_limit": 3,
-      "implementation_attempt_limit_source_ref": "User13Nov2026 async call_4a4f2a2bc9334b239c34c0f5b91b7ca6 explicitly answered Izinkan satu upaya tambahan A3 (direkomendasikan), for A5 header clipping and longthermal within existing scope/inputlimits."
+      "implementation_attempt_limit_source_ref": "User13Nov2026 async call_4a4f2a2bc9334b239c34c0f5b91b7ca6 explicitly answered Izinkan satu upaya tambahan A3 (direkomendasikan), for A5 header clipping and longthermal within existing scope/inputlimits.",
+      "result": {
+        "verdict": "pass",
+        "revision": "2d7e613d5592ff169cb7743ff6fd086ec06fe58c",
+        "artifact_ref": "docs/evidence/T017/A3/README.md",
+        "inputs": {
+          "T016": "c66d038ea448910e3cc8a8529f170f72ac064306",
+          "T006": "be717f38926cdb6cc0281c013882c0e204dbb86f"
+        },
+        "evidence": [
+          "docs/evidence/T017/A3/README.md",
+          "docs/evidence/T017/A3/check.log",
+          "docs/evidence/T017/A3/request.log",
+          "docs/evidence/T017/A3/thermal-check.json",
+          "docs/evidence/T017/A3/check-a5.log",
+          "docs/evidence/T017/A3/coordinator-render-review.json",
+          "docs/evidence/T017/A3/a2-regression-pairs.log"
+        ],
+        "summary": "AuthorizedA3 fixes F03 name255 A5 full/repeated identity and longthermal. Coldprivate FPM30/128M:0.948s request,0.739CPU,39.8MB;131070chars complete5pages/QR/boundsPASS. A5max63pages complete15.755s.5tests87assert/Pint/PHPStanPASS. Coordinator sourcehashes matchFPM and rerendered4PNG directly from finalPDF, preserving priorimages. No appsource change after2d7. IndependentT023/production/physical pending."
+      }
     },
     {
       "id": "T018",

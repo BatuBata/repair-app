@@ -1,6 +1,6 @@
 # Aturan proyek — Aplikasi Servis Anugerah (repair-app)
 
-**Status proyek: RUNNING — Goal native aktif kembali 13 November 2026; lanjut T001–T023 dari checkpoint terbaru sampai siap rilis memakai worker bawaan Codex. T024–T025/deployment belum diizinkan. Riwayat jeda/stop dipertahankan di TODO.md.**
+**Status proyek: RUNNING — Goal native aktif kembali 13 November 2026; lanjut T001–T023 dari checkpoint T017/T018 A1 sampai siap rilis memakai worker bawaan Codex. T024–T025/deployment belum diizinkan. Riwayat jeda/stop dipertahankan di TODO.md.**
 
 Bahasa: Indonesia sederhana. Jelaskan istilah teknis saat pertama dipakai, laporkan hasil pemeriksaan yang benar-benar dijalankan, dan minta persetujuan sebelum menghapus data atau deploy. Commit dan push branch pekerjaan ke origin sudah diizinkan user 12 November 2026; tidak perlu meminta ulang setiap task.
 

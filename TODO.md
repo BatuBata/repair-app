@@ -36,8 +36,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T014 | Pencatatan pengeluaran | developer / 6-luna | easy / low | T008 | T009, T010, T011, T012, T013, T020 | done |
 | T015 | Integrasi alur servis (M2) dan stok/penjualan/pengeluaran (M4) | integrator / 6.1-sol | medium / medium | T011, T013, T014 | — | done |
 | T016 | QA independen alur servis, penjualan, dan pengeluaran | tester / 6.1-sol | medium / high | T015 | T020 | done |
-| T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | pending |
-| T018 | Dashboard admin dan pengingat garansi | developer / 6.1-sol | medium / medium | T016 | T017, T019, T020 | pending |
+| T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | running |
+| T018 | Dashboard admin dan pengingat garansi | developer / 6.1-sol | medium / medium | T016 | T017, T019, T020 | running |
 | T019 | Laporan omzet, modal, pengeluaran, dan laba per rentang tanggal | developer / 6.1-sol | medium / high | T016 | T017, T018, T020 | pending |
 | T020 | Paket deploy VPS: konfigurasi contoh, skrip deploy, backup dan restore | developer / 6.1-sol | medium / high | T001, T002 (artifact) | T002, T003, T004, T005, T006, T009, T012, T017, T018, T019 | done |
 | T021 | Panduan pengguna singkat untuk owner dan teknisi | developer / 6-luna | easy / low | T017, T018, T019 | T020 | pending |
@@ -153,7 +153,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "stop_after_tasks": [
         "T023"
       ],
-      "source_ref": "Native Goal reactivated 13 Nov 2026 updatedAt1794541380, current goal continuation explicitly requests T001–T023; verified get_goal status active after planning pause. Resume from latest checkpoint, not completed T004.",
+      "source_ref": "Native Goal reactivated 13 Nov 2026 updatedAt1794550614; latest goal continuation explicitly resumes T001–T023, verified active via get_goal. Resume latest T017/T018 A1 checkpoint, retain completed T004 and history.",
       "resume_allowed_tasks": [
         "T001",
         "T002",
@@ -187,6 +187,120 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
             "T023"
           ],
           "source_ref": "User 13 November 2026 menjawab opsi 2 pada pertanyaan async: siapkan hasil kajian dan satu prompt Goal dahulu; tidak lanjut implementasi. Goal native telah paused.",
+          "resume_allowed_tasks": [
+            "T001",
+            "T002",
+            "T003",
+            "T004",
+            "T005",
+            "T006",
+            "T007",
+            "T008",
+            "T009",
+            "T010",
+            "T011",
+            "T012",
+            "T013",
+            "T014",
+            "T015",
+            "T016",
+            "T017",
+            "T018",
+            "T019",
+            "T020",
+            "T021",
+            "T022",
+            "T023"
+          ]
+        },
+        {
+          "state": "running",
+          "allowed_tasks": [
+            "T001",
+            "T002",
+            "T003",
+            "T004",
+            "T005",
+            "T006",
+            "T007",
+            "T008",
+            "T009",
+            "T010",
+            "T011",
+            "T012",
+            "T013",
+            "T014",
+            "T015",
+            "T016",
+            "T017",
+            "T018",
+            "T019",
+            "T020",
+            "T021",
+            "T022",
+            "T023"
+          ],
+          "stop_after_tasks": [
+            "T023"
+          ],
+          "source_ref": "Native Goal reactivated 13 Nov 2026 updatedAt1794541380, current goal continuation explicitly requests T001–T023; verified get_goal status active after planning pause. Resume from latest checkpoint, not completed T004.",
+          "resume_allowed_tasks": [
+            "T001",
+            "T002",
+            "T003",
+            "T004",
+            "T005",
+            "T006",
+            "T007",
+            "T008",
+            "T009",
+            "T010",
+            "T011",
+            "T012",
+            "T013",
+            "T014",
+            "T015",
+            "T016",
+            "T017",
+            "T018",
+            "T019",
+            "T020",
+            "T021",
+            "T022",
+            "T023"
+          ]
+        },
+        {
+          "state": "paused",
+          "allowed_tasks": [
+            "T001",
+            "T002",
+            "T003",
+            "T004",
+            "T005",
+            "T006",
+            "T007",
+            "T008",
+            "T009",
+            "T010",
+            "T011",
+            "T012",
+            "T013",
+            "T014",
+            "T015",
+            "T016",
+            "T017",
+            "T018",
+            "T019",
+            "T020",
+            "T021",
+            "T022",
+            "T023"
+          ],
+          "stop_after_tasks": [
+            "T023"
+          ],
+          "source_ref": "User latest async reply call_f572e2779218488d81f1de4a09316c94 memilih 2: siapkan hasil kajian dan satu prompt Goal dahulu. Native Goal paused dan dua worker interrupted; tidak ada implementasi baru sampai user resume.",
           "resume_allowed_tasks": [
             "T001",
             "T002",
@@ -2434,9 +2548,65 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Simpan contoh PDF/struk dan screenshot; pindai QR. Uji printer fisik klien dilakukan di T025.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri.",
         "Gunakan temuan T006 be717f3: buktikan font PDF sesuai DESIGN, paginasi A5 dengan identitas lanjutan dan total/garansi/QR terbaca, panjang thermal untuk konten nyata, serta decode QR dengan token tracking produksi (64 karakter pada kandidat T002), bukan hanya fixture spike. Bukti printer fisik tetap T025.",
-        "PDF preflight coordinator: BaconQrCode Writer sudah terpasang. Aset IBM Plex saat ini hanya5WOFF2; TTF turunan+lisensi dapat ditambah tanpa mengubah WOFF2/webfont existing. Bundled Python memiliki pypdf/pdfplumber/reportlab/PIL, fontTools/brotli belum ada; jika dibutuhkan gunakan build tooling privat, bukan install global/appdependency. pdftoppm bundled tersedia; helper Swift PDFKit/CoreImage T006 juga tersedia. Ikuti PDF skill marker sekali sebelum authoring PDF aktual."
+        "PDF preflight coordinator: BaconQrCode Writer sudah terpasang. Aset IBM Plex saat ini hanya5WOFF2; TTF turunan+lisensi dapat ditambah tanpa mengubah WOFF2/webfont existing. Bundled Python memiliki pypdf/pdfplumber/reportlab/PIL, fontTools/brotli belum ada; jika dibutuhkan gunakan build tooling privat, bukan install global/appdependency. pdftoppm bundled tersedia; helper Swift PDFKit/CoreImage T006 juga tersedia. Ikuti PDF skill marker sekali sebelum authoring PDF aktual.",
+        "A2 closes exact-source review F01 print-media width/default-paper proof and F02 keeping line description/qty/price/subtotal together across A5 pages. Keep A1 failure and retest affected content/privacy/QR only; final full regression T022/T023."
       ],
-      "status": "pending"
+      "status": "running",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "resource_phase_policy": "Coding/host tests no browser/MySQL resource. Private task headless phase only after isolation preflight, unique port8189(T017)/8190(T018), process/profile/CDP/TASTE/SQLite/config/cache/session/views/storage. Max2workers; no shared GUI.",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root/t017_documents",
+          "model_requested": "gpt-6.1-terra",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.spawn_agent:/root/t017_documents:T017",
+          "outcome": "fail",
+          "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
+          "review_ref": "docs/evidence/T017/A1/review/review.json"
+        },
+        {
+          "id": "A2",
+          "kind": "implementation",
+          "worker_id": "/root/t017_documents",
+          "model_requested": "gpt-6.1-terra",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.followup_task:/root/t017_documents:T017-A2",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/T017/A1/review/review.json"
+        }
+      ],
+      "runtime_assignment": {
+        "runtime": "Codex native collaboration",
+        "task_id": "/root/t017_documents",
+        "base_revision": "479a58565bed3f1b0d9a7e3ef1451d1de073fdbd",
+        "phase": "implementation-A2",
+        "browser_reservation": "conditional private headless8189, same isolation policy after preflight; source review F01 print-width/F02 pagination",
+        "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
+        "model_observation": "New native spawn requested Terra high, canonical taskname returned only."
+      },
+      "pause_history": [
+        {
+          "source_ref": "User latest async reply call_f572e2779218488d81f1de4a09316c94 memilih 2: siapkan hasil kajian dan satu prompt Goal dahulu. Native Goal paused dan dua worker interrupted; tidak ada implementasi baru sampai user resume.",
+          "worker_state": "interrupted",
+          "attempt": "A1",
+          "continuation": "WIP dipertahankan di workspace task. Status running hanya logical attempt belum selesai; worker tidak aktif. Rekonsiliasi dan lanjutkan A1 saat resume, jangan reset ID/budget atau menganggap PASS.",
+          "date": "2026-11-13"
+        }
+      ],
+      "prior_results": [
+        {
+          "verdict": "fail",
+          "revision": "479a58565bed3f1b0d9a7e3ef1451d1de073fdbd",
+          "artifact_ref": "docs/evidence/T017/A1/review/review.json",
+          "inputs": {
+            "T016": "c66d038ea448910e3cc8a8529f170f72ac064306",
+            "T006": "be717f38926cdb6cc0281c013882c0e204dbb86f"
+          },
+          "summary": "Selfcheck PASS retained, review F01 print width and F02 split A5 line reproduced; not accepted."
+        }
+      ]
     },
     {
       "id": "T018",
@@ -2493,7 +2663,39 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri.",
         "Ganti root placeholder tanpa route shadow: modules/dashboard.php dimuat sebelum scaffold.php; pertahankan home / dan redirect /dashboard, sesuaikan DashboardTest lama yang mengharapkan quicklink placeholder. Omzet exact untuk agregat legal yang melebihi PHP_INT_MAX; Brick\\Math\\BigInteger sudah terpasang, jangan gunakan float atau tambah dependency."
       ],
-      "status": "pending"
+      "status": "running",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "resource_phase_policy": "Coding/host tests no browser/MySQL resource. Private task headless phase only after isolation preflight, unique port8189(T017)/8190(T018), process/profile/CDP/TASTE/SQLite/config/cache/session/views/storage. Max2workers; no shared GUI.",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root/t004_resume",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.followup_task:/root/t004_resume:T018",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
+        }
+      ],
+      "runtime_assignment": {
+        "runtime": "Codex native collaboration",
+        "task_id": "/root/t004_resume",
+        "base_revision": "6e6cb0967923e89ec61900fda069336b7c5bf5e4",
+        "phase": "implementation",
+        "browser_reservation": "conditional grant private headless port8190 after worker records isolated process/profile/CDP/TASTE/SQLite/config/cache/session/views/storage preflight; no GUI/CUA/Orca/MySQL",
+        "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
+        "model_observation": "Reuse settled Sol high session, native receipt exposes no backend identity."
+      },
+      "pause_history": [
+        {
+          "source_ref": "User latest async reply call_f572e2779218488d81f1de4a09316c94 memilih 2: siapkan hasil kajian dan satu prompt Goal dahulu. Native Goal paused dan dua worker interrupted; tidak ada implementasi baru sampai user resume.",
+          "worker_state": "interrupted",
+          "attempt": "A1",
+          "continuation": "WIP dipertahankan di workspace task. Status running hanya logical attempt belum selesai; worker tidak aktif. Rekonsiliasi dan lanjutkan A1 saat resume, jangan reset ID/budget atau menganggap PASS.",
+          "date": "2026-11-13"
+        }
+      ]
     },
     {
       "id": "T019",
@@ -2527,7 +2729,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "app/Services/Reports/**",
         "resources/views/livewire/reports/**",
         "routes/modules/reports.php",
-        "tests/Feature/Reports/**"
+        "tests/Feature/Reports/**",
+        "docs/evidence/T019/**"
       ],
       "shared_resources": [],
       "conflicts_with": [],
@@ -2539,12 +2742,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "acceptance_criteria": [
         "Pilih tanggal awal–akhir (default awal bulan s.d. hari ini, WITA, inklusif); tanggal akhir < awal ditolak.",
         "Data contoh PRD §20.1 menghasilkan omzet Rp2.600.000, modal Rp1.800.000, laba kotor Rp800.000, pengeluaran Rp65.000, laba bersih Rp735.000 (AC-17); TTS Batal dan restok tidak dihitung; pengeluaran sesuai AC-18.",
-        "Rincian per transaksi; kartu di HP, tabel di desktop; lulus AC-24."
+        "Rincian per transaksi; kartu di HP, tabel di desktop; lulus AC-24.",
+        "BR-14: restok tampil sebagai informasi tanpa mengurangi laba; koreksi nota memakai nilai terbaru tetapi tanggal nota tetap. Hak admin diperiksa ulang sebelum query atau aksi Livewire."
       ],
       "verification_plan": [
         "Feature test dengan data §20.1 dan rentang yang tidak mencakup tanggal tersebut.",
         "Screenshot 3 lebar laporan.",
-        "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
+        "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri.",
+        "Buktikan default awal bulan/hari ini WITA, rentang inklusif dan invalid/empty, contoh PRD, koreksi/hapus transaksi, restok info, fresh role guard, serta jumlah agregat legal di atas PHP_INT_MAX tanpa float/SQLite SUM overflow. Brick\\Math\\BigInteger sudah terpasang; gunakan dependency existing tanpa menambah paket. Screenshot3width termasuk nilai panjang/negatif dan error."
       ],
       "status": "pending"
     },
@@ -3063,3 +3268,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-13 | Persiapkan kontrak downstream tanpa dispatch sebelum T016PASS: scope T017 mencakup TTF/OFL turunan dan bukti; scope T018 mencakup scaffold route dan DashboardTest placeholder yang harus diganti bersama fitur. Library QR/BigInteger existing dan runtimePDF terverifikasi read-only; tidak menambah dependency atau mengimplementasi task hilir. | Review caller/scope dan preflight lokal | T017,T018 | Source scaffold/DashboardTest + runtime imports coordinator |
 
 | 2026-11-13 | T016 A2 independentPASS c66d038 checked22e26d2 menutupF01 dengan75state/225nilaiutuh/9simpan;157PASS1guardSKIP/1585assertbaru danreuseindepA1terpin. F002/F003accepted; kandidatbolehffmain setelahreview. Source211/build14tetapmatch, semuaresourceclosed. F004–F006/R001 belumaccepted. | QA independen + coordinator report/source/pins/images | T016,F002,F003,main | docs/evidence/T016/A2/README.md |
+
+| 2026-11-13 | Main6e6cb09 setelahT016PASS mendapatCI43374298609success. MulaiT017Terra/T018Sol native pada dua workspace terisolasi, max2worker. Nativeworktreeclean dipakaiulangpada6e6 dan14assetaccepteddisalin; buildlama dipindaharsipprivat tanpa hapus. TaskT019readymenunggu slot. | QA/CI source exact + native receipts/worktreepreflight | T017,T018,T019 | docs/evidence/coordinator/ci-m2-m4.json; native-T018-build-sync.json |

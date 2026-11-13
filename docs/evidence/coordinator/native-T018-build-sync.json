@@ -1,0 +1,9 @@
+{
+  "purpose": "Reuse existing native worktree with accepted exact build; old generated assets moved to private archive without deletion.",
+  "worktree": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+  "old_build_archive": "/private/tmp/repair-native-build-before-T018-pv0wxnzg/old-build",
+  "old_file_count": 14,
+  "current_manifest_files": 14,
+  "current_artifact_sha256": "6e43a91e8f08f49aae6ab334fa46dde48fcc52c1900d1a0e11f60344e2556f36",
+  "source_revision": "6e6cb0967923e89ec61900fda069336b7c5bf5e4"
+}

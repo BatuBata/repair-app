@@ -1,0 +1,22 @@
+{
+  "checked_revision": "479a58565bed3f1b0d9a7e3ef1451d1de073fdbd",
+  "verdict": "fail",
+  "source": "coordinator review plus implementer read-only exact-source reproduction",
+  "findings": [
+    {
+      "id": "F01",
+      "scope": "HTML print",
+      "expected": "struk layout stays within58mm roll width",
+      "actual": "Chrome print-media main1280px/338.67mm; default Letter print text span206.11mm",
+      "evidence": "review-print.log"
+    },
+    {
+      "id": "F02",
+      "scope": "A5 pagination",
+      "expected": "line description and its qty/price/subtotal stay readable together",
+      "actual": "description Baris3 at page1 end, qty/price/subtotal begin page2",
+      "evidence": "../pdf/final-nota-a5-1.png and final-nota-a5-2.png"
+    }
+  ],
+  "retention": "A1 self-check PASS evidence retained; source candidate not accepted; no physical printer test."
+}

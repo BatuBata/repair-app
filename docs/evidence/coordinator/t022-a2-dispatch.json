@@ -1,0 +1,20 @@
+{
+  "task": "T022",
+  "attempt": "A2",
+  "worker": "/root/t022_integrate",
+  "dispatch": "nativefollowup_task",
+  "requested_model": "gpt-6.1-sol (originalsession reused)",
+  "model_effective": null,
+  "base_revision": "b21fdab",
+  "runtime_delta_from_A95": [
+    "resources/views/livewire/reports/styles.blade.php"
+  ],
+  "inputs": {
+    "T017": "2d7e613d5592ff169cb7743ff6fd086ec06fe58c",
+    "T018": "c9d1f429056676576310e88e524a75c9bc897c83",
+    "T019": "069725bc434fc2ab42a486773863d9c362e5e20d",
+    "T020": "6095a5ca34a5b28bf65a481007d69b21a8bc7084",
+    "T021": "069725bc434fc2ab42a486773863d9c362e5e20d"
+  },
+  "checks": "Combinedcandidate focusedreports/suite/build/manifests; unchangedbusiness/ops proof reuse byhash. No mainmerge untilindependentT023A2PASS."
+}

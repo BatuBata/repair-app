@@ -41,7 +41,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T019 | Laporan omzet, modal, pengeluaran, dan laba per rentang tanggal | developer / 6.1-sol | medium / high | T016 | T017, T018, T020 | done |
 | T020 | Paket deploy VPS: konfigurasi contoh, skrip deploy, backup dan restore | developer / 6.1-sol | medium / high | T001, T002 (artifact) | T002, T003, T004, T005, T006, T009, T012, T017, T018, T019 | done |
 | T021 | Panduan pengguna singkat untuk owner dan teknisi | developer / 6-luna | easy / low | T017, T018, T019 | T020 | done |
-| T022 | Integrasi akhir v1 | integrator / 6.1-sol | medium / medium | T017, T018, T019, T020, T021 | — | pending |
+| T022 | Integrasi akhir v1 | integrator / 6.1-sol | medium / medium | T017, T018, T019, T020, T021 | — | running |
 | T023 | QA akhir v1: regresi penuh dan uji responsif semua layar | tester / 6.1-sol | medium / high | T022 | — | pending |
 | T024 | Deploy v1 ke VPS produksi | deployer / 6.1-sol | medium / high | T022, T023 | — | pending |
 | T025 | Verifikasi produksi dan uji di HP dan printer klien | tester / 6.1-sol | medium / high | T024 | — | pending |
@@ -358,7 +358,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "push_authorized": true,
       "source_ref": "Instruksi user 12 Nov 2026: push ke GitHub BatuBata/repair-app, setiap pekerjaan selesai buat commit dan push",
       "policy": "Commit pekerjaan selesai dan push branch task/checkpoint setelah periksa perubahan; merge ke main tetap setelah QA/review relevan; tanpa force-push. Kandidat blocked disimpan sebagai checkpoint, bukan fitur diterima.",
-      "coordination_branch": "codex/t019-reports-a2"
+      "coordination_branch": "codex/t022-release"
     },
     "browser_isolation_policy": {
       "source_ref": "Coordinator13Nov2026 verified existing scripts/lib/cdp.mjs Browser.launch: fresh headless Chrome process, unique user-data-dir and remote-debugging-port0; T010 uses private TASTE_SKILL_TMP.",
@@ -3226,7 +3226,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Cocokkan revisi input; jalankan test suite penuh, build aset, dan smoke alur utama.",
         "T020 source6095a5ca34a5b28bf65a481007d69b21a8bc7084 belum digabung. Integrasikan deploy/**,docs/DEPLOYMENT.md,docs/evidence/T020/** dari pin itu tanpa metadata/task lama. Runbook opening masih menyebut MySQLrestore BLOCKED walau verifikasi nyata6095a5c PASS; rekonsiliasi kalimat status dan tautkan bukti, pertahankan sumberFAIL/lokalPASS serta gateQ03/Q04 produksi. Jangan mengulang DBrestore/menghapusfixture yang sudahterbukti. Jalankan shellchecks sesuai perubahan/pin."
       ],
-      "status": "pending",
+      "status": "running",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -3238,16 +3238,26 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "dispatch_ref": "native:collaboration.spawn_agent:/root/t022_integrate:T022",
           "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/t022-dispatch.json"
+        },
+        {
+          "id": "A2",
+          "kind": "implementation",
+          "worker_id": "/root/t022_integrate",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.followup_task:/root/t022_integrate:T022-A2",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/t022-a2-dispatch.json"
         }
       ],
       "runtime_assignment": {
         "runtime": "Codex native collaboration",
         "task_id": "/root/t022_integrate",
-        "base_revision": "9d011685cde0f75ce676091cceca598978cdcf6a",
+        "base_revision": "b21fdab",
         "branch": "codex/t022-release",
-        "phase": "closed",
-        "resources": "released; no mainmerge happened,8192/profileclosed",
-        "model_observation": "Nativecatalog supportsSolhigh; fresh integrationworker requested, backendnotproven."
+        "phase": "integration",
+        "resources": "privateSQLite/build/exclusive root; conditionalownheadless8192; noMySQL/noGUI/no mainmerge",
+        "model_observation": "Reuse original Solhigh integration session; effectivebackendnotexposed."
       },
       "prior_results": [
         {

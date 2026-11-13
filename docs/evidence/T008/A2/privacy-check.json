@@ -1,0 +1,7 @@
+{
+  "exact_private_key_password_signed_url_matches": 0,
+  "files_checked": "All non-image A2 evidence against private fixture key/password and last signed URL; no raw request headers/cookies/config dumps",
+  "root_env_unchanged": true,
+  "screenshots": "Empty or masked password inputs, synthetic names only",
+  "verdict": "pass"
+}

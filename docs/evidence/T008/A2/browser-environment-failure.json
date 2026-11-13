@@ -1,0 +1,96 @@
+{
+  "error": "IBM Plex font/style not settled",
+  "observations": [
+    {
+      "id": "GUEST-LAUNCHER-360",
+      "path": "/login",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "fontsLoaded": "loaded",
+      "status": 200,
+      "expectedPath": "/login",
+      "expectedStatus": 200,
+      "verdict": "pass"
+    },
+    {
+      "id": "ADMIN-LOGIN-360",
+      "path": "/",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "fontsLoaded": "loaded",
+      "status": 200,
+      "expectedPath": "/",
+      "expectedStatus": 200,
+      "verdict": "pass"
+    },
+    {
+      "id": "ADMIN-LAUNCHER-360",
+      "path": "/",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "fontsLoaded": "loaded",
+      "status": 200,
+      "expectedPath": "/",
+      "expectedStatus": 200,
+      "verdict": "pass"
+    },
+    {
+      "id": "ADMIN-STORE-360",
+      "path": "/pengaturan/toko",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "fontsLoaded": "loaded",
+      "status": 200,
+      "expectedPath": "/pengaturan/toko",
+      "expectedStatus": 200,
+      "verdict": "pass"
+    },
+    {
+      "id": "TECH-LOGIN-360",
+      "path": "/tts/baru",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "16px",
+      "fontsLoaded": "loaded",
+      "status": 404,
+      "expectedPath": "/tts/baru",
+      "expectedStatus": 404,
+      "verdict": "pass"
+    },
+    {
+      "id": "TECH-PROFILE-360",
+      "path": "/profil",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "fontsLoaded": "loaded",
+      "status": 200,
+      "expectedPath": "/profil",
+      "expectedStatus": 200,
+      "verdict": "pass"
+    },
+    {
+      "id": "TECH-LAUNCHER-360",
+      "path": "/tts/baru",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "16px",
+      "fontsLoaded": "loaded",
+      "status": 404,
+      "expectedPath": "/tts/baru",
+      "expectedStatus": 404,
+      "verdict": "pass"
+    }
+  ]
+}

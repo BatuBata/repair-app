@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/opt/homebrew/opt/php@8.3/bin/php",
+    "docs/evidence/T008/A2/fixture.php",
+    "transition",
+    "restore"
+  ],
+  "exit": 0,
+  "duration_s": 0.2852468490600586
+}

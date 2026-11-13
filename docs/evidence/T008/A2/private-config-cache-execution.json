@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/opt/homebrew/opt/php@8.3/bin/php",
+    "artisan",
+    "config:cache",
+    "--no-ansi"
+  ],
+  "exit": 0,
+  "duration_s": 0.463346004486084
+}

@@ -1,0 +1,12 @@
+{
+  "time_utc": "2026-11-13T01:45:34.807546+00:00",
+  "server_session": 5490,
+  "server_ctrl_c_exit": 0,
+  "port8188_listener_present": false,
+  "chrome_profiles_remaining": 0,
+  "browser_close_finally": true,
+  "private_fixture_preserved": true,
+  "MySQL_not_accessed": true,
+  "root_env_unchanged": true,
+  "deploy": false
+}

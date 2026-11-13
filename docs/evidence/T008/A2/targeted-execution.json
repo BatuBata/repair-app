@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/opt/homebrew/opt/php@8.3/bin/php",
+    "vendor/bin/phpunit",
+    "--filter",
+    "AuthenticationTest|RoleLauncherTest|TemporaryUploadAuthorizationTest|SettingsTest",
+    "--log-junit=docs/evidence/T008/A2/targeted.xml",
+    "--colors=never"
+  ],
+  "exit": 0,
+  "duration_s": 1.4634301662445068
+}

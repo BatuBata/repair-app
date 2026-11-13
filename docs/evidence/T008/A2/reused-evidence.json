@@ -1,0 +1,112 @@
+{
+  "prior_independent_tester": "T008 A1 independent Sol requested high, effective backend unverified",
+  "prior_checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4",
+  "prior_evidence_revision": "b5919d1ed35a3c7fd5702d877a2a80574e3d3529",
+  "current_checked_revision": "db5de005a345de644a7aa9056ea93f5a81117a3d",
+  "reused_case_ids": [
+    "AUTH-ROUTES",
+    "AUTH-TRANSITIONS",
+    "LIVEWIRE-ACTIONS",
+    "CATEGORY-HISTORY",
+    "LOGO-VALIDATION",
+    "LAST-ADMIN-SERIAL",
+    "MYSQL-RACE-1",
+    "MYSQL-RACE-2",
+    "MYSQL-RACE-3",
+    "MYSQL-RACE-4",
+    "VISUAL-login",
+    "VISUAL-admin-home",
+    "VISUAL-users-list",
+    "VISUAL-users-create",
+    "VISUAL-users-edit",
+    "VISUAL-users-reset",
+    "VISUAL-profile-admin",
+    "VISUAL-profile-technician",
+    "VISUAL-store",
+    "VISUAL-categories-list",
+    "VISUAL-categories-create",
+    "VISUAL-categories-edit",
+    "VISUAL-INTERACTION-STATES"
+  ],
+  "source_impact": {
+    "old_manifest_files": 164,
+    "same_hash": 161,
+    "changed_files": {
+      "public/manifest.webmanifest": {
+        "A1": "a9c1f57cc5708cfba3010e2ff87f64c9c9ad9305a9915e62f4ac378fcd4e1e53",
+        "current": "50fabb380f928a7c7b52deac3960987e7f3420d12aca2f738f009eb9ae453a5f"
+      },
+      "resources/views/layouts/auth/simple.blade.php": {
+        "A1": "8e2a6cd43a40f8b908b49414d69187cd5e6f8e97d5a8114296966ca3de3717b3",
+        "current": "e7379fc98bbf005f2e6c46a6b3c20b0d72cbb191406fa45df4adde45fca33131"
+      },
+      "routes/modules/auth.php": {
+        "A1": "6c2f38d7b1e5ed6c80f0dae78c5c29dddb913f087b2d87afe64d21acda30419b",
+        "current": "2006b4ab7e3e23a46b41c1eaf7745cdd2e94396ad9d6c91e01525078942ee760"
+      }
+    },
+    "new_files": [
+      "config/livewire.php",
+      "tests/Feature/Auth/RoleLauncherTest.php",
+      "tests/Feature/Auth/TemporaryUploadAuthorizationTest.php"
+    ],
+    "relevant_User_Users_Categories_Store_Profile_services_migrations_assets_unchanged": true
+  },
+  "conditions": {
+    "php": "8.3.30 matches A1",
+    "chrome": "157.0.8103.52 matches A1",
+    "node": "22.23.2",
+    "vendor_equal_hashes": {
+      "vendor/composer/installed.json": "0168ef9dc5ed3c5a897f7d53c3923b434bc2e4538f20d539fdf5c6d54a8735f8",
+      "vendor/livewire/livewire/src/Features/SupportFileUploads/FileUploadConfiguration.php": "1e16ae19f70a1b76ce0cdd1dad34aeaf92d99143eadc51cbf0581641e17266fe",
+      "vendor/livewire/livewire/src/Features/SupportFileUploads/FileUploadController.php": "c1f06e3d601b4a40552c18c8db2be78201504181b8b807575d33c6b05f6ec9ae",
+      "vendor/laravel/framework/src/Illuminate/Foundation/Configuration/Middleware.php": "ae114afd0f14c4990872486c3239b2a0e712d2cd9a97d2370892caee054b6dee"
+    },
+    "all14build_artifacts": true,
+    "all27PRD_DESIGN_PRODUCT_mockup_files": true,
+    "old_browser_fixtures": "Synthetic isolated SQLite; ordinary, long names, errors, logo preview, menu/keyboard/touch/scroll controls; no domain feature implementation changed",
+    "old_mysql_fixture": "repair_app_qa_m1 isolated InnoDB four concurrent operation pairs,20tables and8task-owned users retained; relevant service/models/schema/middleware unchanged; no access/reset/rerun now"
+  },
+  "prior_evidence_sha256": {
+    "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/README.md": "c81a83640843d1f1c3e55831361c070b5f6e41dbcc25ebc3df3f1be3493b6ddc",
+    "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/cases.json": "f812e0da7b902eec47f7b846cac3fcbb6281c8ff02316855513f120a5fa48aca",
+    "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/targeted.xml": "ca080353c3b64e69819e1464673d4058c95be75c1af86f1a0524369bd5aa385f",
+    "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/independent.xml": "d0d84bb70d20d51409eaa98324bd66c1fc7a8c7571e33d4e110db5ce3b1e8c99",
+    "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/independent-extra.xml": "4ad8cefa1c19f95a1036268b3345880e6bdc25af909a0233d69095f38f0ad752",
+    "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/http-sessions.json": "b17fb82e8591f7f221438ef677f02ba33097d57e5a10ceb1ab9a7da6c9dabe7b",
+    "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/mysql-baseline.json": "05ab7dcb2709d812d2cd9b2bb7b1342f4451bdfd96285a2ae4f35e8e6803b79a",
+    "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/mysql-races.json": "40afab7b4ca13273ac78671ac567dddd39280fd157375ed68866608699456cea",
+    "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/mysql-inventory.json": "97fc7cd25532cc09e896949b2548647c596e2d6478b70dd2b6b3d9b49eb85a5b",
+    "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/browser-results.json": "58b87163cfe8a6a24f8b25f86a46320b1e61668bd196577e24cf010439cb4d74",
+    "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/supplement-results.json": "80d5a6afa5fef5cd21007d3f45975b1f648aa35d4f781bd275b86860f6b15c11",
+    "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/visual-summary.json": "0117c3568b52c791edcc8cda1107c3fb0d3a1e3349564fee8260b54cd65ed87d",
+    "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/source-proof.json": "6c91aea837eb090e4e2c2444793fa2c7a1722cb880c270587575ed38f4bd2af2",
+    "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/assets-proof.json": "076a077a44f56b6ed6b594506e9fa6f459503d5a366fc857f359a9590670e503",
+    "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T008/requirements-assets-hashes.json": "04d6283b1fcd8e436075bfc8b7c0dcc7226733d480cc13c0704198a48c6b8490"
+  },
+  "integrator_full_suite": {
+    "origin": "T007 A2 integrator, not this tester",
+    "checked_revision": "db5de005a345de644a7aa9056ea93f5a81117a3d",
+    "result": "80PASS817assert1MySQLSKIP",
+    "evidence": "docs/evidence/T007/A2/suite.xml",
+    "sha256": "525c6e4359ea16c974e17a13100cad0cfb790427a3cedb3bb14949785d38b399",
+    "reuse": "Same complete application/test/config source vs pin, current14assets verified. Not rerun."
+  },
+  "old_fails_preserved": [
+    "F01 technician manifest launch403",
+    "F02 guest login no-manifest",
+    "F03 signed upload after demotion200/file written"
+  ],
+  "old_fail_resolution_evidence": [
+    "browser-results.json",
+    "http-boundaries.json"
+  ],
+  "not_reused_as_PASS": [
+    "prior three failures",
+    "physical Android",
+    "production",
+    "printer",
+    "futureTTSform",
+    "remoteCI"
+  ]
+}

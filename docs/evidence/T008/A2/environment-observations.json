@@ -1,0 +1,35 @@
+[
+  {
+    "id": "LISTENER-SANDBOX",
+    "classification": "environment",
+    "command": "python3 docs/evidence/T008/A2/runner.py serve",
+    "initial": "EPERM localhost8188",
+    "recovery": "authorized sandbox escalation succeeded; stopped at handoff"
+  },
+  {
+    "id": "HTTP-SANDBOX",
+    "classification": "environment",
+    "command": "python3 docs/evidence/T008/A2/http-boundaries.py",
+    "initial": "EPERM socket; first escalation review timed out",
+    "recovery": "single authorized retry succeeded"
+  },
+  {
+    "id": "STORAGE-PATH-ASSUMPTION",
+    "classification": "environment/helper",
+    "initial": "Active admin200/1path but helper counted0private files; expected2. Actual one PNG and metadata landed ignored root storage because PHP web context storagePath ignored environment-only override",
+    "recovery": "Private artisan config cache pinning resolved paths; same positive control200/2files then both revocation403/0file. No source edits, original generated files retained"
+  },
+  {
+    "id": "FONT-WAIT-ERROR-PAGE",
+    "classification": "helper expectation",
+    "initial": "7Chrome observations passed360; helper waited for IBM Plex on framework403 error page that intentionally has no app shell",
+    "evidence": "browser-environment-failure.json",
+    "recovery": "Wait for app font only when data-repair-shell present; final27observations+9diagnostics PASS; source unchanged"
+  },
+  {
+    "id": "PROVENANCE-PARSER",
+    "classification": "helper",
+    "initial": "Historical requirement manifest included canonical/AGENTS/TODO labels and Git quoted Unicode file names",
+    "recovery": "Exclude two canonical metadata labels from stable design comparison; git core.quotepath=false; all27design sources and14assets pass"
+  }
+]

@@ -1,0 +1,157 @@
+{
+  "checked_revision": "db5de005a345de644a7aa9056ea93f5a81117a3d",
+  "transport": "actual localhost HTTP with real encrypted session cookies, CSRF and multipart PNG",
+  "grant": "actual Store::_startUpload, URL private",
+  "transitions": "actual Users::edit/save via second synthetic admin",
+  "temporary_file_delta": "includes byte file and Livewire metadata; no public/logo save performed",
+  "observations": [
+    {
+      "id": "UPLOAD-ACTIVE-ADMIN-REAL-HTTP",
+      "expected": {
+        "status": 200,
+        "returned_paths": 1,
+        "new_file_count": 2
+      },
+      "actual": {
+        "status": 200,
+        "returned_paths": 1,
+        "new_file_count": 2
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "UPLOAD-TAMPERED-SIGNATURE",
+      "expected": {
+        "status": 401,
+        "new_files": 0
+      },
+      "actual": {
+        "status": 401,
+        "new_files": 0
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "UPLOAD-STALE-GRANT-DEMOTE",
+      "expected": {
+        "status": 403,
+        "new_files": 0
+      },
+      "actual": {
+        "status": 403,
+        "new_files": 0
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "LAUNCHER-CURRENT-ROLE-AFTER-USERS-DEMOTION",
+      "expected": {
+        "status": 404,
+        "path": "/tts/baru"
+      },
+      "actual": {
+        "status": 404,
+        "path": "/tts/baru"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "DEMOTED-ADMIN-ROUTE-/",
+      "expected": {
+        "status": 403
+      },
+      "actual": {
+        "status": 403
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "DEMOTED-ADMIN-ROUTE-/dashboard",
+      "expected": {
+        "status": 403
+      },
+      "actual": {
+        "status": 403
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "DEMOTED-ADMIN-ROUTE-/pengaturan/pengguna",
+      "expected": {
+        "status": 403
+      },
+      "actual": {
+        "status": 403
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "DEMOTED-ADMIN-ROUTE-/pengaturan/toko",
+      "expected": {
+        "status": 403
+      },
+      "actual": {
+        "status": 403
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "DEMOTED-ADMIN-ROUTE-/pengaturan/kategori",
+      "expected": {
+        "status": 403
+      },
+      "actual": {
+        "status": 403
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "UPLOAD-STALE-GRANT-DEACTIVATE",
+      "expected": {
+        "status": 403,
+        "new_files": 0
+      },
+      "actual": {
+        "status": 403,
+        "new_files": 0
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "INACTIVE-SESSION-INVALIDATED",
+      "expected": {
+        "status": 401
+      },
+      "actual": {
+        "status": 401
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "UPLOAD-GUEST-EXISTING-GRANT",
+      "expected": {
+        "status": 401,
+        "new_files": 0
+      },
+      "actual": {
+        "status": 401,
+        "new_files": 0
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "UPLOAD-TECHNICIAN-EXISTING-GRANT",
+      "expected": {
+        "status": 403,
+        "new_files": 0
+      },
+      "actual": {
+        "status": 403,
+        "new_files": 0
+      },
+      "verdict": "pass"
+    }
+  ],
+  "verdict": "pass",
+  "credentials_logged": false
+}

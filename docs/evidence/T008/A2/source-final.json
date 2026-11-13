@@ -1,0 +1,27 @@
+{
+  "checked_revision": "db5de005a345de644a7aa9056ea93f5a81117a3d",
+  "head_observed": "cde9e0cf0aa908ddddcbf0c0ef6446e85a161d4f",
+  "source_identical_to_pin": true,
+  "no_local_product_changes": true,
+  "baseline164_comparison": {
+    "total": 164,
+    "unchanged": 161,
+    "changed": [
+      "public/manifest.webmanifest",
+      "resources/views/layouts/auth/simple.blade.php",
+      "routes/modules/auth.php"
+    ]
+  },
+  "all_initial_source_hashes_unchanged": 163,
+  "assets_unchanged": 14,
+  "root_env_unchanged": true,
+  "fixture": {
+    "driver": "sqlite",
+    "tables": 20,
+    "users": 3,
+    "categories": 2,
+    "store_settings": 1
+  },
+  "MySQL_accessed": false,
+  "generated_root_temp_note": "Initial server used default storage path; one synthetic PNG and its Livewire metadata retained in ignored storage/app/private/livewire-tmp. Actual final HTTP checks pinned file paths through private config cache. No database/root.env or tracked source mutation."
+}

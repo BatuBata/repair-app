@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/opt/homebrew/opt/php@8.3/bin/php",
+    "docs/evidence/T008/A2/fixture.php",
+    "transition",
+    "demote"
+  ],
+  "exit": 0,
+  "duration_s": 0.2989368438720703
+}

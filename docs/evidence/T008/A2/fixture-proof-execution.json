@@ -1,0 +1,9 @@
+{
+  "command": [
+    "/opt/homebrew/opt/php@8.3/bin/php",
+    "docs/evidence/T008/A2/fixture.php",
+    "init"
+  ],
+  "exit": 0,
+  "duration_s": 0.306002140045166
+}

@@ -29,12 +29,12 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T007 | Integrasi fondasi M1 pada branch candidate sebelum QA dan merge main | integrator / 6.1-sol | medium / medium | T002, T003, T004, T005 | — | done |
 | T008 | QA independen fondasi M1 | tester / 6.1-sol | medium / high | T007 | T006, T020 | done |
 | T009 | TTS: form buat/edit, daftar dengan cari/filter, detail sesuai peran | developer / 6.1-sol | medium / high | T008 | T012, T013, T014, T020 | done |
-| T010 | Alur admin servis: tetapkan teknisi, rincian dan terbitkan nota, koreksi, diambil, batal | developer / 6.1-sol | complex / high | T009 | T012, T013, T014, T020 | running |
-| T011 | Halaman tracking publik dan tombol Kirim WA | developer / 6.1-terra | medium / medium | T010 | T012, T013, T014, T020 | blocked |
+| T010 | Alur admin servis: tetapkan teknisi, rincian dan terbitkan nota, koreksi, diambil, batal | developer / 6.1-sol | complex / high | T009 | T012, T013, T014, T020 | done |
+| T011 | Halaman tracking publik dan tombol Kirim WA | developer / 6.1-terra | medium / medium | T010 | T012, T013, T014, T020 | done |
 | T012 | Stok barang jualan dan restok | developer / 6.1-sol | medium / medium | T008 | T009, T010, T011, T014, T020 | done |
 | T013 | Penjualan barang dengan garansi opsional | developer / 6.1-sol | medium / high | T012 | T009, T010, T011, T014, T020 | done |
 | T014 | Pencatatan pengeluaran | developer / 6-luna | easy / low | T008 | T009, T010, T011, T012, T013, T020 | done |
-| T015 | Integrasi alur servis (M2) dan stok/penjualan/pengeluaran (M4) | integrator / 6.1-sol | medium / medium | T011, T013, T014 | — | blocked |
+| T015 | Integrasi alur servis (M2) dan stok/penjualan/pengeluaran (M4) | integrator / 6.1-sol | medium / medium | T011, T013, T014 | — | running |
 | T016 | QA independen alur servis, penjualan, dan pengeluaran | tester / 6.1-sol | medium / high | T015 | T020 | failed |
 | T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | pending |
 | T018 | Dashboard admin dan pengingat garansi | developer / 6.1-sol | medium / medium | T016 | T017, T019, T020 | pending |
@@ -1578,7 +1578,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar layar detail dan rincian; uji emulasi HP penambahan/penghapusan baris.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "running",
+      "status": "done",
       "resource_phase_policy": "Coding/host tests hold no browser. Dedicated exclusive headless task resource permits at most2workers only with verified independent process/profile/CDP, localhost port and private data/cache/session/storage; shared/native browser remains globally exclusive.",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
@@ -1599,7 +1599,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native:collaboration.followup_task:/root/t004_resume:T010A2",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
         }
       ],
@@ -1607,8 +1607,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "runtime": "Codex native collaboration",
         "task_id": "/root/t004_resume",
         "base_revision": "ffb4e0975e20a22e948749580aaf0901006fef33",
-        "phase": "F01_scoped_responsive_repair",
-        "browser_reservation": "none coding; dedicated headless8189 after private preflight",
+        "phase": "settled",
+        "browser_reservation": "released verified8189false/ownedChrome0/profile0",
         "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
         "model_observation": "Reuse settled Sol high implementer session; native effective backend not exposed. A2 is final default implementation attempt; independent QA remains different session."
       },
@@ -1654,6 +1654,24 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
             "artifact_ref": "docs/evidence/T015/A1/handoff.md"
           }
         ]
+      },
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T010/A2/handoff.md",
+        "revision": "291fa2451c012c2d07097b8166a8c4317305aa97",
+        "checked_revision": "291fa2451c012c2d07097b8166a8c4317305aa97",
+        "inputs": {
+          "T009": "12124a71bd24b30b7f343941bacd41315a4281f7"
+        },
+        "evidence": [
+          "docs/evidence/T010/A2/handoff.md",
+          "docs/evidence/T010/A2/source-after.json",
+          "docs/evidence/T010/A2/final-grand-results.json",
+          "docs/evidence/T010/A2/breakpoint-final-results.json",
+          "docs/evidence/T010/A2/final-render-tests.log",
+          "docs/evidence/T010/A2/resource-release.json"
+        ],
+        "summary": "F01 candidate fixed in3views only: exact whole grand using container/text length capnormal28/floor16; responsive bar/button48; published numericnowrap/phonegrid; stacking breakpoint1279. Coordinator source/hash/report/actualafterimages reviewPASS. Earlier42tests328assert and finaloverlapping5tests85assert accurately labeled; 27initialstates, final15states315probes and breakpoint6states126probes verified. No backend/moneyformatter/range/globalstyle/dependency/schema change. T011logic/guard unchanged. Fullsuite/PHPStan/MySQL/build not rerun; new T015build +independentT016A2 required. Default2implementationattempts now consumed."
       }
     },
     {
@@ -1711,7 +1729,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar halaman tracking.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "blocked",
+      "status": "done",
       "resource_phase_policy": "Coding/host tests no browser reservation. Visual uses exclusive browser:headless:T011 port8189 only with separate process/profile/CDP/TASTE_SKILL_TMP, private SQLite/config/cache/session/views/storage; max2 workers. No shared GUI/native mouse.",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
@@ -1755,7 +1773,23 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "summary": "Candidate self-check accepted after coordinator source/hash/report and screenshots review. Public exact-token guard, no customerphone/address/cost, noindex/no-store and admin-only WA; zero-warranty and reusable reminder template.2 tests44assert/Pint/scopedPHPStan PASS before subsequent Blade-only CSS. Normal3width/screens and maxint/255description browser3width proven; initial386px overflow on360 retained and fixed. No MySQL case-insensitive or physicalphone/WA messaging/build repeated. T015freshbuild+T016independentQA remain required; F002 pending."
         }
       ],
-      "revalidation_reason": "T016A1 productFAIL F01 requires T010 A2; preserve prior completed source/evidence, revalidate affected downstream against new source and build before reuse."
+      "revalidation_reason": "T016A1 productFAIL F01 requires T010 A2; preserve prior completed source/evidence, revalidate affected downstream against new source and build before reuse.",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T011/revalidation-after-T010-A2.json",
+        "revision": "291fa2451c012c2d07097b8166a8c4317305aa97",
+        "checked_revision": "291fa2451c012c2d07097b8166a8c4317305aa97",
+        "inputs": {
+          "T010": "291fa2451c012c2d07097b8166a8c4317305aa97"
+        },
+        "evidence": [
+          "docs/evidence/T011/revalidation-after-T010-A2.json",
+          "docs/evidence/T011/README.md",
+          "docs/evidence/T010/A2/source-after.json",
+          "docs/evidence/T010/A2/final-render-tests.log"
+        ],
+        "summary": "Revalidated against T010A2 without new implementation: controller/helper/route/publictracking/tests byte-identical to original T011, TTS detail outside style including adminWA hook identical. Final5test85assert subset includes Tracking/WA currenttestsPASS. Reuse public visual proofs for unchanged source/artifact; reassembled build and independent QA still required."
+      }
     },
     {
       "id": "T012",
@@ -2097,7 +2131,12 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "write_scope": [
         "**"
       ],
-      "shared_resources": [],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
       "conflicts_with": [],
       "parallel_candidates": [],
       "acceptance_criteria": [
@@ -2107,7 +2146,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Cocokkan revisi input; jalankan test suite penuh dan smoke alur TTS → nota → tracking serta penjualan.",
         "Build produksi sekali pada sumber gabungan karena Blade baru memengaruhi scanner Tailwind; pin manifest/hash artifact yang sama untuk QA T016. Jangan memakai bundle M1 sebagai bukti build sumber gabungan."
       ],
-      "status": "blocked",
+      "status": "running",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -2119,16 +2158,26 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "dispatch_ref": "native:collaboration.followup_task:/root/t004_resume:T015",
           "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
+        },
+        {
+          "id": "A2",
+          "kind": "verification",
+          "worker_id": "/root/t004_resume",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.followup_task:/root/t004_resume:T015A2",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
         }
       ],
       "runtime_assignment": {
         "runtime": "Codex native collaboration",
         "task_id": "/root/t004_resume",
-        "base_revision": "01c303d1805ce6574760940021451777a36004bc",
-        "phase": "settled",
-        "browser_reservation": "released; own Chrome/server8189 stopped, listener absent per evidence",
+        "base_revision": "291fa2451c012c2d07097b8166a8c4317305aa97",
+        "phase": "reintegrate_A2_current_candidate_and_build",
+        "browser_reservation": "none during checks/build; private headless8189 phase afterpreflight if actually needed",
         "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
-        "model_observation": "Reuse settled Sol high session for integration only; effective backend not independently exposed. Independent tester T016 must be a different native session."
+        "model_observation": "Reuse settled Sol high session integrator, backend effective unknown. Candidate source includes unchanged T013/T014 plus T010A2/T011adoption; no main merge before T016A2."
       },
       "prior_results": [
         {
@@ -2947,3 +2996,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-13 | T015 A1 PASS integratedcandidate545b52a: puremerge inputspreserved,157testsPASS/1guardedMySQLSKIP/1585assert/Pint/PHPStan0. Freshproductionbundle14file artifact6e43a91e... dan14smokePASS dipin. QA T016 haruspakaiartifactini, bukanbundleM1; main tetapmenungguQA. | Hash/report/screens coordinator review | T015,T016 | docs/evidence/T015/A1/handoff.md |
 
 | 2026-11-13 | T016 A1 productFAIL F01 (ffb4e09/target545b52a) dipertahankan: nominal legal besar melebar padaform/published dan angka tabeldesktop pecah. Suite/MySQL/privasi/status dan matriksunaffected PASS tetapberbukti, bukanpenerimaanfitur. Buka T010 A2 tersisa1attempt; T011/T015blocked sampai revalidasiinputbaru; snapshotQA menjadi source_context bukan dependency.14assetQA lama disalinprivat/pin sama agar tidak hilang saatrebuild. | Independent QA + coordinator evidence/source review | T010,T011,T015,T016 | docs/evidence/T016/A1/README.md |
+
+| 2026-11-13 | T010 A2 candidate291fa24 PASS setelah perbaikan3view/breakpoint1279; default2attemptterpakai, source/financialbackendunchanged. T011 direvalidasi terhadapinputbaru tanpaimplementasiulang, logic/WAguard/publicview hashidentik. Buka T015 A2 verification/buildcurrentrevision; T016A1FAILtetapriwayat danbelumbolehmain. | Review coordinator hash/source/images + currenttargetedtests | T010,T011,T015,T016 | docs/evidence/T010/A2/handoff.md; docs/evidence/T011/revalidation-after-T010-A2.json |

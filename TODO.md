@@ -35,7 +35,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T013 | Penjualan barang dengan garansi opsional | developer / 6.1-sol | medium / high | T012 | T009, T010, T011, T014, T020 | done |
 | T014 | Pencatatan pengeluaran | developer / 6-luna | easy / low | T008 | T009, T010, T011, T012, T013, T020 | done |
 | T015 | Integrasi alur servis (M2) dan stok/penjualan/pengeluaran (M4) | integrator / 6.1-sol | medium / medium | T011, T013, T014 | — | done |
-| T016 | QA independen alur servis, penjualan, dan pengeluaran | tester / 6.1-sol | medium / high | T015 | T020 | running |
+| T016 | QA independen alur servis, penjualan, dan pengeluaran | tester / 6.1-sol | medium / high | T015 | T020 | done |
 | T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | pending |
 | T018 | Dashboard admin dan pengingat garansi | developer / 6.1-sol | medium / medium | T016 | T017, T019, T020 | pending |
 | T019 | Laporan omzet, modal, pengeluaran, dan laba per rentang tanggal | developer / 6.1-sol | medium / high | T016 | T017, T018, T020 | pending |
@@ -277,7 +277,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "acceptance_tasks": [
         "T016"
       ],
-      "status": "pending"
+      "status": "accepted"
     },
     {
       "id": "F003",
@@ -290,7 +290,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "acceptance_tasks": [
         "T016"
       ],
-      "status": "pending"
+      "status": "accepted"
     },
     {
       "id": "F004",
@@ -2258,7 +2258,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Sesi tester terpisah: jalankan test suite, skenario manual end-to-end dengan data sintetis, screenshot 3 lebar per layar, simpan laporan di docs/evidence/T016/.",
         "Buat pemetaan subkasus AC yang diuji sekarang dan yang menunggu T017/T018/T019 lalu T023; jangan membuat gate T016 menunggu fitur downstream yang hard-depend padanya. Akhir v1 tetap mencakup seluruh AC PRD."
       ],
-      "status": "running",
+      "status": "done",
       "qa_for": "T015",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "resource_phase_policy": "Reading/coding/SQLite suite holds no MySQL/browser resource. Grant db:mysql-test exclusive only after append-only fixture preflight; browser:headless:T016 port8189 only after isolated process/profile/CDP/TASTE/privateSQLite/config/cache/session/views/storage preflight. Max2 workers unchanged.",
@@ -2280,7 +2280,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native:collaboration.followup_task:/root/t016_qa:T016A2",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
         }
       ],
@@ -2289,8 +2289,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "task_id": "/root/t016_qa",
         "base_revision": "22e26d244dee2c361b7c21ea3d740e500fc83c9a",
         "checked_revision_target": "22e26d244dee2c361b7c21ea3d740e500fc83c9a",
-        "phase": "A2_independent_source_and_reuse_audit",
-        "browser_reservation": "none until normal private preflight; dedicatedheadless8189 approved for actual phase",
+        "phase": "settled_independent_pass",
+        "browser_reservation": "released verified8189false/ownedChrome0/profile0",
         "mysql_reservation": "none needed for CSS-only3view repair; prior independent MySQL proof may be reused only after backend/schema/controller/runtime hash comparison",
         "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
         "model_observation": "Reuse independent Sol high tester session, distinct from implementer/integrator; effective backend unknown."
@@ -2300,7 +2300,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "id": "T016-F01",
           "owner_task": "T010",
           "classification": "product",
-          "status": "open_pending_A2_independent_verification",
+          "status": "closed_by_independent_A2",
           "criteria": [
             "AC-24",
             "AC-25"
@@ -2316,7 +2316,9 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           ],
           "next": "Finish unaffected matrix to batch owner findings; after QA settles reopen T010 remaining implementation A2, preserving FAIL and input pins.",
           "published_caller": "Published large total overflows360 (document408/right407.5); desktop1280 numeric qty/price/cost split digits with valid234char description. Same ownerT010 A2 must cover form and published. Negative profit exact/red/fits3width PASS retained.",
-          "repair_revision": "291fa2451c012c2d07097b8166a8c4317305aa97"
+          "repair_revision": "291fa2451c012c2d07097b8166a8c4317305aa97",
+          "resolution_evidence": "docs/evidence/T016/A2/README.md",
+          "resolution_revision": "c66d038ea448910e3cc8a8529f170f72ac064306"
         }
       ],
       "artifact_archive": {
@@ -2349,7 +2351,28 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           ],
           "summary": "Independent PRODUCT FAIL F01 ownerT010: valid large totals overflow form360/1280/published360 and desktop numeric columns split with longdescription. All available matrix completed;157suitePASS+1guardSKIP/1585assert,4newcases114assert across targetedlogs, MySQL races/preservation/casefoldguardPASS, normal78captures+edge24+published12/references reviewed. Source211/build14/input73/font5 unchanged. No app patch; all resources released. Reuse unaffected PASS only with matching source/artifact/condition proof; F002/F003 not accepted."
         }
-      ]
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T016/A2/README.md",
+        "revision": "c66d038ea448910e3cc8a8529f170f72ac064306",
+        "checked_revision": "22e26d244dee2c361b7c21ea3d740e500fc83c9a",
+        "inputs": {
+          "T015": "22e26d244dee2c361b7c21ea3d740e500fc83c9a"
+        },
+        "evidence": [
+          "docs/evidence/T016/A2/README.md",
+          "docs/evidence/T016/A2/summary.json",
+          "docs/evidence/T016/A2/browser-results.json",
+          "docs/evidence/T016/A2/database-proof.json",
+          "docs/evidence/T016/A2/review-proof.json",
+          "docs/evidence/T016/A2/suite.log",
+          "docs/evidence/T016/A2/reuse-proof.json",
+          "docs/evidence/T016/A2/final-pins.json",
+          "docs/evidence/T016/A2/resource-release.json"
+        ],
+        "summary": "Independent PASS closesF01 by75freshstates/225whole-values across360/768/1200/1279/1280,9realbutton saves/exactdecimalstrings, normalfont28/min16, table/bar/descriptionboundaries good; JS0. New157PASS1guardSKIP/1585assert. A1independent114assert/MySQL/concurrency/casefold/unaffectedmatrix reused only with provenance208source+14assets+5fonts/vendor/runtime/design proof. Coordinator reviewed report/reuse/pins/criticalactualimages and finalsource211/build14 match. Downstreamdocs/dashboard/reports/finalQA/physical/production still pending."
+      }
     },
     {
       "id": "T017",
@@ -2388,7 +2411,10 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "routes/modules/documents.php",
         "tests/Feature/Documents/**",
         "composer.json",
-        "composer.lock"
+        "composer.lock",
+        "docs/evidence/T017/**",
+        "public/fonts/*.ttf",
+        "public/fonts/OFL*.txt"
       ],
       "shared_resources": [],
       "conflicts_with": [],
@@ -2407,7 +2433,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Feature test respons PDF/HTML, akses per peran, dan teks dokumen tidak memuat nilai modal.",
         "Simpan contoh PDF/struk dan screenshot; pindai QR. Uji printer fisik klien dilakukan di T025.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri.",
-        "Gunakan temuan T006 be717f3: buktikan font PDF sesuai DESIGN, paginasi A5 dengan identitas lanjutan dan total/garansi/QR terbaca, panjang thermal untuk konten nyata, serta decode QR dengan token tracking produksi (64 karakter pada kandidat T002), bukan hanya fixture spike. Bukti printer fisik tetap T025."
+        "Gunakan temuan T006 be717f3: buktikan font PDF sesuai DESIGN, paginasi A5 dengan identitas lanjutan dan total/garansi/QR terbaca, panjang thermal untuk konten nyata, serta decode QR dengan token tracking produksi (64 karakter pada kandidat T002), bukan hanya fixture spike. Bukti printer fisik tetap T025.",
+        "PDF preflight coordinator: BaconQrCode Writer sudah terpasang. Aset IBM Plex saat ini hanya5WOFF2; TTF turunan+lisensi dapat ditambah tanpa mengubah WOFF2/webfont existing. Bundled Python memiliki pypdf/pdfplumber/reportlab/PIL, fontTools/brotli belum ada; jika dibutuhkan gunakan build tooling privat, bukan install global/appdependency. pdftoppm bundled tersedia; helper Swift PDFKit/CoreImage T006 juga tersedia. Ikuti PDF skill marker sekali sebelum authoring PDF aktual."
       ],
       "status": "pending"
     },
@@ -2443,7 +2470,10 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "resources/views/livewire/dashboard/**",
         "resources/views/dashboard.blade.php",
         "routes/modules/dashboard.php",
-        "tests/Feature/Dashboard/**"
+        "tests/Feature/Dashboard/**",
+        "docs/evidence/T018/**",
+        "routes/modules/scaffold.php",
+        "tests/Feature/DashboardTest.php"
       ],
       "shared_resources": [],
       "conflicts_with": [],
@@ -2460,7 +2490,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Feature test dengan waktu dibekukan (8, 11, 12 Des 2026 WITA) untuk servis dan penjualan.",
         "Screenshot 3 lebar dashboard.",
-        "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
+        "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri.",
+        "Ganti root placeholder tanpa route shadow: modules/dashboard.php dimuat sebelum scaffold.php; pertahankan home / dan redirect /dashboard, sesuaikan DashboardTest lama yang mengharapkan quicklink placeholder. Omzet exact untuk agregat legal yang melebihi PHP_INT_MAX; Brick\\Math\\BigInteger sudah terpasang, jangan gunakan float atau tambah dependency."
       ],
       "status": "pending"
     },
@@ -3028,3 +3059,7 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-13 | T010 A2 candidate291fa24 PASS setelah perbaikan3view/breakpoint1279; default2attemptterpakai, source/financialbackendunchanged. T011 direvalidasi terhadapinputbaru tanpaimplementasiulang, logic/WAguard/publicview hashidentik. Buka T015 A2 verification/buildcurrentrevision; T016A1FAILtetapriwayat danbelumbolehmain. | Review coordinator hash/source/images + currenttargetedtests | T010,T011,T015,T016 | docs/evidence/T010/A2/handoff.md; docs/evidence/T011/revalidation-after-T010-A2.json |
 
 | 2026-11-13 | T015 A2 PASS candidate22e26d2: fresh157PASS/1guardSKIP/1585assert/Pint/PHPStan0 danbuildbaru14/14byte-identik. Source211match,208unchanged/3viewfix. Buka T016 A2 padaexactcandidateini dengan sesi testerindependen yangsama; A1FAILffb4/545tetapprior_result, F01belumclosed sampaiobservasiindependenbaru. | Review coordinator source/assets/commands/reusemapping | T015,T016 | docs/evidence/T015/A2/handoff.md |
+
+| 2026-11-13 | Persiapkan kontrak downstream tanpa dispatch sebelum T016PASS: scope T017 mencakup TTF/OFL turunan dan bukti; scope T018 mencakup scaffold route dan DashboardTest placeholder yang harus diganti bersama fitur. Library QR/BigInteger existing dan runtimePDF terverifikasi read-only; tidak menambah dependency atau mengimplementasi task hilir. | Review caller/scope dan preflight lokal | T017,T018 | Source scaffold/DashboardTest + runtime imports coordinator |
+
+| 2026-11-13 | T016 A2 independentPASS c66d038 checked22e26d2 menutupF01 dengan75state/225nilaiutuh/9simpan;157PASS1guardSKIP/1585assertbaru danreuseindepA1terpin. F002/F003accepted; kandidatbolehffmain setelahreview. Source211/build14tetapmatch, semuaresourceclosed. F004–F006/R001 belumaccepted. | QA independen + coordinator report/source/pins/images | T016,F002,F003,main | docs/evidence/T016/A2/README.md |

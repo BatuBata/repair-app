@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f2f5f6">
+    <link rel="manifest" href="/manifest.webmanifest">
     <title>{{ $title }} — Anugerah</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>

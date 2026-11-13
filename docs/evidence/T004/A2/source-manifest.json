@@ -1,0 +1,11 @@
+{
+  "base_revision": "9a7117b952b2232791405a6121a1d36b061baa01",
+  "sha256": {
+    "routes/modules/auth.php": "2006b4ab7e3e23a46b41c1eaf7745cdd2e94396ad9d6c91e01525078942ee760",
+    "resources/views/layouts/auth/simple.blade.php": "e7379fc98bbf005f2e6c46a6b3c20b0d72cbb191406fa45df4adde45fca33131",
+    "public/manifest.webmanifest": "50fabb380f928a7c7b52deac3960987e7f3420d12aca2f738f009eb9ae453a5f",
+    "config/livewire.php": "2ca0829ad6aa71cb105e53bd33b7e4a9e6c6eaa962de7b0b1cbe1a74bd5bbc31",
+    "tests/Feature/Auth/RoleLauncherTest.php": "750c3a64afffd857d813e5dc8b57399337b29ea54fd2bb071575ee6249ef958e",
+    "tests/Feature/Auth/TemporaryUploadAuthorizationTest.php": "b88818f52d913aa237be78c5e3ca9ecad5d27f9f0d9be86a6d8c614d4523f4ac"
+  }
+}

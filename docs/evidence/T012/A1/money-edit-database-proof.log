@@ -1,0 +1,20 @@
+{
+    "product": {
+        "name": "Pengisi daya USB T012",
+        "cost_price": 150000,
+        "sell_price": 200000,
+        "stock": 6
+    },
+    "entries": [
+        {
+            "qty": 2,
+            "cost_price": 175000,
+            "entry_date": "2026-11-12T16:00:00.000000Z",
+            "note": "Pembelian sintetis T012"
+        }
+    ],
+    "expenses": 0,
+    "driver": "sqlite",
+    "private_session": true,
+    "private_view": true
+}

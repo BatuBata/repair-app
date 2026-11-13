@@ -1,0 +1,35 @@
+{
+  "base_revision": "1d831380cd89b601c67321298eff07f686d8f010",
+  "accepted_T008_input": "3610253be1dedb1d9abad958059f52e33377f320",
+  "source_sha256": {
+    "app/Livewire/Stock/Index.php": "239254558e760247d83ee1a2f14bd3a957990dbc0d70d1df4bf059fcca53539f",
+    "app/Livewire/Stock/Restock.php": "6278ba43c81dacd60d533b35afcd7b0e924fd983dfb24350ddbfaf422f371fa5",
+    "app/Livewire/Stock/Form.php": "bc55091a4d290de57f37490b7c0013337f5fdcb359a034b7ec1c080c21969680",
+    "resources/views/livewire/stock/form.blade.php": "1011df71c8deba61936b47ed999cefba40ef9e190b4750ae6d85214377095579",
+    "resources/views/livewire/stock/index.blade.php": "f817163002b51e4057537bdeb9ee97c72d32257bea39aed8a8d2ce74f05330fe",
+    "resources/views/livewire/stock/styles.blade.php": "ae085e8790302f1ffb45461b7ac84ec71c50565de689eed8c72f17b3e0360923",
+    "resources/views/livewire/stock/restock.blade.php": "0ab5e497ec7eae0fbbdcc02c51d066b3b6d806045f8a87fa8cb3ac7f24e5a478",
+    "routes/modules/stock.php": "b422e8362fa3b94878e9a54488aeb2b222750269566c3271ebb05a33db7279b4",
+    "tests/Feature/Stock/StockTest.php": "c6b43f3319513ab1d3a9238fe4a725430e17ec4510bff4cdc588ae2c7d01c694"
+  },
+  "asset_count": 14,
+  "assets_unchanged_from_T008": true,
+  "asset_sha256": {
+    "public/build/fonts-manifest.json": "66edf17c93351fe01158be7414a441a762f106417c74351881876b405b8b10ca",
+    "public/build/manifest.json": "5b6607d5a0edb876e2a6c62714c355a55b84a9a2cd084a0502183beb685e6836",
+    "public/build/assets/layout-VbftPR1Q.js": "c341bb7b6164371637f1c9a6732012308af41f20f51e2c1462f235c122bfa0d6",
+    "public/build/assets/fonts-C9MNnjVw.css": "3846a9bb60bfad92960eadcccaf0b4e129d74b11d48791506c8d1a827a385cc8",
+    "public/build/assets/instrument-sans-600-normal-B7fBEWYG.woff2": "efb770916eda95a0e31d80cccde9651d4e8617010b21220e9f227c4820d675da",
+    "public/build/assets/app-TKBAM3lN.js": "e0084906357a1e8dbae007de03328ce94f9b3fd02415f17b40fe16175ea9170f",
+    "public/build/assets/app-CDn1G0_W.css": "63d14283ee0b6e1c6b07bee2a3478b8f935739643343c4df0eca71a15acaaeba",
+    "public/build/assets/instrument-sans-500-normal-Z6ESRlEs.woff": "bd6a8dc8b0dc0cced0c32d3eda93f0e0e82c58ddefea8b53b3307b0c48da3089",
+    "public/build/assets/instrument-sans-500-normal-Dk9ku72i.woff2": "9d3547da16d950d12a677c772a3ff9b69846e60e7dcd1b5efd540993f7286532",
+    "public/build/assets/passkeys-CsxEE3hN.js": "ad776e742af479bdb7ac39623fb121e0046c181de471cdda0a1c57c7f7f57e72",
+    "public/build/assets/layout-DAFmGKay.css": "6b76534c3551b13f83b69959c988520f92d09ac7a13770287af8b35cfd3aa6bb",
+    "public/build/assets/instrument-sans-600-normal-B9e8oLYv.woff": "9b4ce1f2b26be7cb087fd87d6f99a202136292ec820af75bd38ab9e53895cf28",
+    "public/build/assets/instrument-sans-400-normal-DRC__1Mx.woff2": "9a91efaa3599a6ef01b2f49e9ec670e3a2f39baeef09c73198f1052cf3bb0850",
+    "public/build/assets/instrument-sans-400-normal-D1W7dsQl.woff": "797bd3eaa70edbd4757650ab44dad75fbfbfdf18bacedb4b71022c04621d30ad"
+  },
+  "browser_source_note": "Browser evidence precedes three findOrFail\u2192whereKey/firstOrFail typing changes, same primary-key predicates and locking semantics; no view/CSS/JS changes afterwards. Final Stock tests + static rerun.",
+  "requirements_and_mockup_unchanged": true
+}

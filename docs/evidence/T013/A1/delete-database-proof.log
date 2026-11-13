@@ -1,0 +1,12 @@
+{
+    "sales": [],
+    "stocks": [
+        3,
+        5,
+        5
+    ],
+    "items": 0,
+    "expenses": 0,
+    "private_session": true,
+    "private_view": true
+}

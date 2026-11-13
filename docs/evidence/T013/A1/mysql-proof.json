@@ -1,0 +1,60 @@
+{
+  "verdict": "pass",
+  "distinct_active_admins": true,
+  "actual_action": "App\\Actions\\Sales\\CreateSale",
+  "outcomes": [
+    "shortage",
+    "success"
+  ],
+  "stock": 0,
+  "new_sales": 1,
+  "new_items": 1,
+  "orphan_items": 0,
+  "sequence_increment": 1,
+  "unique_new_number": true,
+  "preexisting_baseline_rows_preserved": true,
+  "owned_new_fixture_rows_retained": true,
+  "table_count_deltas": {
+    "cache": 0,
+    "cache_locks": 0,
+    "categories": 0,
+    "expenses": 0,
+    "failed_jobs": 0,
+    "job_batches": 0,
+    "jobs": 0,
+    "migrations": 0,
+    "number_sequences": 0,
+    "passkeys": 0,
+    "password_reset_tokens": 0,
+    "products": 1,
+    "sale_items": 1,
+    "sales": 1,
+    "service_order_items": 0,
+    "service_orders": 0,
+    "sessions": 0,
+    "stock_entries": 0,
+    "store_settings": 0,
+    "users": 2
+  },
+  "worker_timing": [
+    {
+      "result": "success",
+      "worker": 0,
+      "start": 1794537180.690813,
+      "elapsed_ms": 325.2,
+      "product_lock_ms": [
+        9.04
+      ]
+    },
+    {
+      "result": "shortage",
+      "qty_error": true,
+      "worker": 1,
+      "start": 1794537180.689607,
+      "elapsed_ms": 330.6,
+      "product_lock_ms": [
+        294.27
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "pins_after": {
+    "T011": {
+      "revision": "0736515bb5f673febfe293604166bad46308954a",
+      "ancestor_after": true
+    },
+    "T013": {
+      "revision": "3c35dd1118121d02cca7abb0ae99b78baeb30634",
+      "ancestor_after": true
+    },
+    "T014": {
+      "revision": "aef8ffc75b11344b10ddaabe9ccae4a7e1776e45",
+      "ancestor_after": true
+    },
+    "T012": {
+      "revision": "2ce3ca3c46bcaab19c334240ff4fd3e72add85ac",
+      "ancestor_after": true
+    }
+  },
+  "ledger_agents_env_unchanged": true,
+  "merge_conflicts": [],
+  "new_migrations": "",
+  "T008_helper_retained": true
+}

@@ -1,0 +1,11 @@
+{
+  "browser_reservation_released": true,
+  "owned_Chrome_profiles_remaining": 0,
+  "server_port": 8190,
+  "server_exit": 0,
+  "listener_present": false,
+  "MySQL_resource_released": true,
+  "MySQL_existing_rows_preserved": true,
+  "private_SQLite_and_MySQL_provenance_retained": true,
+  "root_env_modified": false
+}

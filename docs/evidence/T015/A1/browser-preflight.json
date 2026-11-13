@@ -1,0 +1,9 @@
+{
+  "server_port8189_free": true,
+  "new_private_sqlite": true,
+  "private_config_session_views_storage": true,
+  "headless_helper": "Browser.launch with own process, remote-debugging-port=0, mkdtemp profile, TASTE_SKILL_TMP restricted to new task-owned chrome subtree",
+  "node": "v22.23.2",
+  "gui_cua_orca": false,
+  "credentials": "private.json mode0600 in task dir0700, excluded from repository"
+}

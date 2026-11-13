@@ -1,0 +1,20 @@
+{
+  "orders": [
+    {
+      "id": 1,
+      "status": "selesai",
+      "invoiced_on": "2026-11-13",
+      "total": 1000000,
+      "cost": 700000
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Keyboard Integrasi",
+      "stock": 3
+    }
+  ],
+  "sales": [],
+  "expenses": []
+}

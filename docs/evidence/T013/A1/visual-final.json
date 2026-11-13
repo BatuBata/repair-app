@@ -1,0 +1,301 @@
+{
+  "verdict": "pass",
+  "observations": [
+    {
+      "width": 360,
+      "path": "/penjualan",
+      "documentWidth": 360,
+      "money": [
+        {
+          "text": "Rp9.223.372.034.707.292.160",
+          "height": 48,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "Rp300.000",
+          "height": 24,
+          "whiteSpace": "normal"
+        }
+      ],
+      "id": [
+        {
+          "text": "JL-2611-003",
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "JL-2611-002",
+          "whiteSpace": "normal"
+        }
+      ],
+      "verdict": "pass"
+    },
+    {
+      "width": 360,
+      "path": "/penjualan/2",
+      "documentWidth": 360,
+      "money": [
+        {
+          "text": "2 unit",
+          "height": 24,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "Harga jualRp150.000",
+          "height": 24,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "Modal per unitRp100.000",
+          "height": 24,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "SubtotalRp300.000",
+          "height": 24,
+          "whiteSpace": "normal"
+        }
+      ],
+      "id": [
+        {
+          "text": "JL-2611-002",
+          "whiteSpace": "normal"
+        }
+      ],
+      "verdict": "pass"
+    },
+    {
+      "width": 360,
+      "path": "/penjualan/3",
+      "documentWidth": 360,
+      "money": [
+        {
+          "text": "2.147.483.648 unit",
+          "height": 24,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "Harga jualRp4.294.967.295",
+          "height": 24,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "Modal per unitRp4.294.967.295",
+          "height": 24,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "SubtotalRp9.223.372.034.707.292.160",
+          "height": 24,
+          "whiteSpace": "normal"
+        }
+      ],
+      "id": [
+        {
+          "text": "JL-2611-003",
+          "whiteSpace": "normal"
+        }
+      ],
+      "verdict": "pass"
+    },
+    {
+      "width": 768,
+      "path": "/penjualan",
+      "documentWidth": 768,
+      "money": [
+        {
+          "text": "Rp9.223.372.034.707.292.160",
+          "height": 24,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "Rp300.000",
+          "height": 24,
+          "whiteSpace": "normal"
+        }
+      ],
+      "id": [
+        {
+          "text": "JL-2611-003",
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "JL-2611-002",
+          "whiteSpace": "normal"
+        }
+      ],
+      "verdict": "pass"
+    },
+    {
+      "width": 768,
+      "path": "/penjualan/2",
+      "documentWidth": 768,
+      "money": [
+        {
+          "text": "2 unit",
+          "height": 24,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "Harga jualRp150.000",
+          "height": 24,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "Modal per unitRp100.000",
+          "height": 24,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "SubtotalRp300.000",
+          "height": 24,
+          "whiteSpace": "normal"
+        }
+      ],
+      "id": [
+        {
+          "text": "JL-2611-002",
+          "whiteSpace": "normal"
+        }
+      ],
+      "verdict": "pass"
+    },
+    {
+      "width": 768,
+      "path": "/penjualan/3",
+      "documentWidth": 768,
+      "money": [
+        {
+          "text": "2.147.483.648 unit",
+          "height": 24,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "Harga jualRp4.294.967.295",
+          "height": 24,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "Modal per unitRp4.294.967.295",
+          "height": 24,
+          "whiteSpace": "normal"
+        },
+        {
+          "text": "SubtotalRp9.223.372.034.707.292.160",
+          "height": 24,
+          "whiteSpace": "normal"
+        }
+      ],
+      "id": [
+        {
+          "text": "JL-2611-003",
+          "whiteSpace": "normal"
+        }
+      ],
+      "verdict": "pass"
+    },
+    {
+      "width": 1280,
+      "path": "/penjualan",
+      "documentWidth": 1280,
+      "money": [
+        {
+          "text": "Rp9.223.372.034.707.292.160",
+          "height": 57,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Rp300.000",
+          "height": 56.5,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "id": [
+        {
+          "text": "JL-2611-003",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "JL-2611-002",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "verdict": "pass"
+    },
+    {
+      "width": 1280,
+      "path": "/penjualan/2",
+      "documentWidth": 1280,
+      "money": [
+        {
+          "text": "2 unit",
+          "height": 56.5,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Harga jualRp150.000",
+          "height": 56.5,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Modal per unitRp100.000",
+          "height": 56.5,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "SubtotalRp300.000",
+          "height": 56.5,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "id": [
+        {
+          "text": "JL-2611-002",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "verdict": "pass"
+    },
+    {
+      "width": 1280,
+      "path": "/penjualan/3",
+      "documentWidth": 1280,
+      "money": [
+        {
+          "text": "2.147.483.648 unit",
+          "height": 52,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Harga jualRp4.294.967.295",
+          "height": 52,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Modal per unitRp4.294.967.295",
+          "height": 52,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "SubtotalRp9.223.372.034.707.292.160",
+          "height": 52,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "id": [
+        {
+          "text": "JL-2611-003",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "LOWER-FORM",
+      "width": 360,
+      "qtyReachable": true,
+      "priceReachable": true,
+      "verdict": "pass"
+    }
+  ],
+  "runtimeErrors": []
+}

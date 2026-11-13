@@ -1,0 +1,11 @@
+{
+  "chrome": "Own CDP runners closed Browser and removed only own profile; final process93013 exit0",
+  "server": "exec42729 stopped Ctrl+C exit130",
+  "port8189_closed": true,
+  "source_and_artifact_unchanged_during_smoke": true,
+  "private_fixture": "task-owned private SQLite/config/cache/session/views/storage retained; no existing databases touched",
+  "worktrees_retained": true,
+  "merge_main": false,
+  "push": false,
+  "deploy": false
+}

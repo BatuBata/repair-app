@@ -1,0 +1,45 @@
+{
+  "targeted_regression": {
+    "command": "/opt/homebrew/opt/php@8.3/bin/php artisan test --compact tests/Feature/Stock tests/Feature/Auth tests/Feature/Users tests/Feature/Settings tests/Feature/Profile tests/Feature/Layout",
+    "tests": 69,
+    "assertions": 695,
+    "passed": 69,
+    "exit": 0,
+    "duration_ms": 3656
+  },
+  "final_stock_after_lookup_typing": {
+    "command": "/opt/homebrew/opt/php@8.3/bin/php artisan test --compact tests/Feature/Stock",
+    "tests": 12,
+    "assertions": 201,
+    "passed": 12,
+    "exit": 0,
+    "duration_ms": 785
+  },
+  "final_static": {
+    "command": "/opt/homebrew/opt/php@8.3/bin/php vendor/bin/phpstan analyse app/Livewire/Stock --no-progress --memory-limit=512M",
+    "errors": 0,
+    "exit": 0
+  },
+  "final_pint": {
+    "command": "/opt/homebrew/opt/php@8.3/bin/php vendor/bin/pint --test app/Livewire/Stock routes/modules/stock.php tests/Feature/Stock docs/evidence/T012/A1/fixture.php",
+    "exit": 0
+  },
+  "initial_test_failure": {
+    "tests": 12,
+    "passed": 11,
+    "failure": "Inactive account route expected403 but second request302 because first request had logged out actor. Test fixture now reauthenticates inactive admin on each path. No product fix required."
+  },
+  "initial_static_failure": {
+    "errors": 9,
+    "cause": "Validated mixed id makes findOrFail inferred Product|Collection. Adopted existing Settings whereKey(...)->firstOrFail pattern in three lookups; queries still select same single primary key. No suppressions/casts/baseline."
+  },
+  "design_lint": {
+    "exit": 0,
+    "fail": 0,
+    "warn": 0,
+    "method": "Unmodified Blade files copied to private temporary .html filenames; lint CLI excludes .blade.php."
+  },
+  "git_diff_check": {
+    "exit": 0
+  }
+}

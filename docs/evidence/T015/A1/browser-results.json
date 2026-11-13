@@ -1,0 +1,116 @@
+{
+  "result": "PASS",
+  "version": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/157.0.8103.79",
+    "revision": "@6dc9bc3bdaea5c35ed6d41fceab2f7a3a2227c4f",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "jsVersion": "15.7.112.43"
+  },
+  "cases": [
+    {
+      "id": "tts-created-1280",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "result": "PASS"
+    },
+    {
+      "id": "invoice-issued-1280",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "result": "PASS"
+    },
+    {
+      "id": "public-tracking",
+      "priceShown": true,
+      "privateAbsent": true,
+      "result": "PASS"
+    },
+    {
+      "id": "tracking-1280",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "result": "PASS"
+    },
+    {
+      "id": "stock-created-1280",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "result": "PASS"
+    },
+    {
+      "id": "sale-created-1280",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "result": "PASS"
+    },
+    {
+      "id": "sale-deleted-1280",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "result": "PASS"
+    },
+    {
+      "id": "expense-edited-1280",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "result": "PASS"
+    },
+    {
+      "id": "invoice-issued-360",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "result": "PASS"
+    },
+    {
+      "id": "expense-list-360",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "result": "PASS"
+    },
+    {
+      "id": "tracking-360",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "result": "PASS"
+    },
+    {
+      "id": "technician-private-amounts",
+      "result": "PASS"
+    },
+    {
+      "id": "technician-guard-/pengeluaran",
+      "path": "/pengeluaran",
+      "status": 403,
+      "codeVisible": true,
+      "shell": false,
+      "font": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "documentReady": "complete",
+      "amountsAbsent": true,
+      "result": "PASS"
+    },
+    {
+      "id": "technician-guard-/penjualan",
+      "path": "/penjualan",
+      "status": 403,
+      "codeVisible": true,
+      "shell": false,
+      "font": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "documentReady": "complete",
+      "amountsAbsent": true,
+      "result": "PASS"
+    }
+  ],
+  "jsExceptions": [],
+  "diagnosis": "Initial helper waited app Plex font on intentional framework403; public tracking already PASS. Final guard subset verifies403 status/DOM without app-font requirement."
+}

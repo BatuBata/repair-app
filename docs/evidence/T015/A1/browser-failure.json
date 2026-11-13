@@ -1,0 +1,85 @@
+{
+  "message": "Timeout CSS/fonts",
+  "cases": [
+    {
+      "id": "tts-created-1280",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "result": "PASS"
+    },
+    {
+      "id": "invoice-issued-1280",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "result": "PASS"
+    },
+    {
+      "id": "public-tracking",
+      "priceShown": true,
+      "privateAbsent": true,
+      "result": "PASS"
+    },
+    {
+      "id": "tracking-1280",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "result": "PASS"
+    },
+    {
+      "id": "stock-created-1280",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "result": "PASS"
+    },
+    {
+      "id": "sale-created-1280",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "result": "PASS"
+    },
+    {
+      "id": "sale-deleted-1280",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "result": "PASS"
+    },
+    {
+      "id": "expense-edited-1280",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "result": "PASS"
+    },
+    {
+      "id": "invoice-issued-360",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "result": "PASS"
+    },
+    {
+      "id": "expense-list-360",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "result": "PASS"
+    },
+    {
+      "id": "tracking-360",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "result": "PASS"
+    },
+    {
+      "id": "technician-private-amounts",
+      "result": "PASS"
+    }
+  ]
+}

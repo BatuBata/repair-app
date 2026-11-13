@@ -1,0 +1,46 @@
+{
+  "address_chars": 65535,
+  "terms_chars": 65535,
+  "full_content_match": true,
+  "markers": true,
+  "bounds": [
+    {
+      "page": 1,
+      "chars": 31412,
+      "outside": 0,
+      "width_pt": 164.409,
+      "height_pt": 14000.0
+    },
+    {
+      "page": 2,
+      "chars": 31417,
+      "outside": 0,
+      "width_pt": 164.409,
+      "height_pt": 14000.0
+    },
+    {
+      "page": 3,
+      "chars": 27107,
+      "outside": 0,
+      "width_pt": 164.409,
+      "height_pt": 14000.0
+    },
+    {
+      "page": 4,
+      "chars": 27573,
+      "outside": 0,
+      "width_pt": 164.409,
+      "height_pt": 14000.0
+    },
+    {
+      "page": 5,
+      "chars": 10728,
+      "outside": 0,
+      "width_pt": 164.409,
+      "height_pt": 14000.0
+    }
+  ],
+  "qr_page": 5,
+  "qr_top_pt": 5516.6630000000005,
+  "seconds": 2.361
+}

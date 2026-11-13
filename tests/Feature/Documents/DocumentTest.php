@@ -5,6 +5,7 @@ namespace Tests\Feature\Documents;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Sale;
+use App\Models\StoreSetting;
 use App\Models\User;
 use App\Services\CreateServiceOrder;
 use App\Services\Documents\Document;
@@ -50,5 +51,28 @@ class DocumentTest extends TestCase
         $this->actingAs($admin)->get(route('sales.print', $sale->id))->assertOk()->assertSee('2147483648')->assertSee('Rp4.294.967.295')->assertSee('Rp9.223.372.034.707.292.160');
         $this->get(route('sales.receipt.pdf', $sale->id))->assertOk()->assertHeader('Content-Type', 'application/pdf');
         $this->get(route('sales.pdf', $sale->id))->assertOk()->assertHeader('Content-Type', 'application/pdf');
+    }
+
+    public function test_long_thermal_text_preserves_words_newlines_and_unbroken_text(): void
+    {
+        $admin = User::factory()->create(['role' => 'admin']);
+        $address = "Awal α\n\n".str_repeat('Kata & teks ', 150)."\n".str_repeat('X', 1300).' akhir';
+        $terms = "Awal\n".str_repeat("Ketentuan <uji>\n", 120).'Akhir';
+        StoreSetting::updateOrCreate(['id' => 1], ['name' => 'Toko', 'address' => $address, 'phone' => '081234567890', 'warranty_terms' => $terms, 'default_warranty_days' => 30]);
+        $sale = Sale::create(['number' => 'JL-2611-998', 'sold_on' => '2026-11-10', 'created_by' => $admin->id, 'warranty_days' => 0]);
+        $response = $this->actingAs($admin)->get(route('sales.print', $sale->id))->assertOk();
+        $dom = new \DOMDocument;
+        $dom->loadHTML('<?xml encoding="UTF-8">'.$response->getContent(), LIBXML_NOERROR | LIBXML_NOWARNING);
+        $xpath = new \DOMXPath($dom);
+        $read = static function (\DOMNodeList $nodes): string {
+            $text = '';
+            foreach ($nodes as $node) {
+                $text .= $node->textContent;
+            }
+
+            return $text;
+        };
+        $this->assertSame($address, $read($xpath->query('//header/p[@class="pre"]')));
+        $this->assertSame($terms, $read($xpath->query('//section[last()]/p[@class="pre"]')));
     }
 }

@@ -1,0 +1,30 @@
+<?php
+$root = '/Users/muzib/Projects/web/repair-app';
+$tmp = __DIR__;
+$mode = $argv[1] ?? 'setup';
+foreach (['APP_ENV'=>'testing','APP_CONFIG_CACHE'=>$tmp.'/cache/config.php','DB_CONNECTION'=>'sqlite','DB_DATABASE'=>$tmp.'/database.sqlite','SESSION_DRIVER'=>'array','CACHE_STORE'=>'array','LOG_CHANNEL'=>'single'] as $k=>$v) { putenv($k.'='.$v); $_ENV[$k]=$v; $_SERVER[$k]=$v; }
+foreach (['cache','storage/framework/cache/data','storage/framework/views','storage/framework/sessions','storage/logs','public'] as $path) { if (!is_dir($tmp.'/'.$path)) mkdir($tmp.'/'.$path,0700,true); }
+if ($mode === 'setup') { if (is_file($tmp.'/database.sqlite')) throw new RuntimeException('Preserve existing private fixture'); touch($tmp.'/database.sqlite'); }
+require $root.'/vendor/autoload.php';
+$app = require $root.'/bootstrap/app.php';
+$app->useStoragePath($tmp.'/storage');
+$app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+config(['app.url'=>'https://repair.example','database.default'=>'sqlite','database.connections.sqlite.database'=>$tmp.'/database.sqlite','view.compiled'=>$tmp.'/storage/framework/views','session.driver'=>'array','cache.default'=>'array','filesystems.disks.public.root'=>$tmp.'/public','logging.channels.single.path'=>$tmp.'/storage/logs/laravel.log']);
+Illuminate\Support\Facades\DB::purge('sqlite');
+if (config('database.default') !== 'sqlite' || realpath(Illuminate\Support\Facades\DB::connection()->getDatabaseName()) !== realpath($tmp.'/database.sqlite')) throw new RuntimeException('Unsafe database target');
+if ($mode === 'setup') {
+ Illuminate\Support\Facades\Artisan::call('migrate',['--force'=>true]);
+ $admin=App\Models\User::factory()->create(['role'=>'admin']);
+ $category=App\Models\Category::create(['name'=>'Synthetic category','is_active'=>true]);
+ $order=App\Models\ServiceOrder::create(['number'=>'TTS-2611-BOUNDARY','customer_name'=>str_repeat('C',100),'customer_phone'=>'081234567890','category_id'=>$category->id,'item_description'=>str_repeat('I',100),'complaint'=>str_repeat('K',500),'created_by'=>$admin->id,'technician_id'=>$admin->id,'status'=>'selesai','invoiced_on'=>'2026-11-13','warranty_days'=>30,'warranty_until'=>'2026-12-13']);
+ $order->items()->create(['type'=>'part','description'=>'SYNTHETIC ITEM END','qty'=>1,'price'=>123456,'cost'=>65432]);
+ echo json_encode(['setup'=>'pass','database'=>'new private SQLite','order_id'=>$order->id,'cold_font_cache'=>count(glob($tmp.'/storage/framework/cache/*') ?: [])]).PHP_EOL; exit;
+}
+$long=str_starts_with($mode,'long');
+$bounded=fn(string $text,string $end):string=>substr(str_repeat($text,5000),0,65535-strlen($end)).$end;
+App\Models\StoreSetting::updateOrCreate(['id'=>1],['name'=>$long?'Synthetic boundary store':str_repeat('N',255),'address'=>$long?$bounded('Alamat sintetis batas ', ' ADDRESS_END'):'Synthetic address ADDRESS_END','phone'=>'6281234567890','warranty_terms'=>$long?$bounded('Ketentuan sintetis batas ', ' TERMS_END'):'Synthetic warranty TERMS_END','default_warranty_days'=>30]);
+if ($mode === 'unbroken-thermal') App\Models\StoreSetting::query()->whereKey(1)->update(['name'=>'Synthetic store','address'=>str_repeat('X',65524).'ADDRESS_END','warranty_terms'=>str_repeat('Y',65526).'TERMS_END']);
+if ($mode === 'newlines-thermal') App\Models\StoreSetting::query()->whereKey(1)->update(['name'=>'Synthetic store','address'=>implode("\n",array_map(fn($i)=>sprintf('ADDR%04d',$i),range(1,300))),'warranty_terms'=>implode("\n",array_map(fn($i)=>sprintf('TERM%04d',$i),range(1,300)))]);
+$format=str_ends_with($mode,'a5')?'a5':'thermal';
+$start=microtime(true);$usageBefore=getrusage();$doc=app(App\Services\Documents\Document::class);$response=$doc->respond($doc->order(1,false,true),$format);$pdf=$response->getContent();file_put_contents($tmp.'/'.$mode.'.pdf',$pdf);
+echo json_encode(['cpu_seconds'=>round((getrusage()['ru_utime.tv_sec']-$usageBefore['ru_utime.tv_sec'])+(getrusage()['ru_utime.tv_usec']-$usageBefore['ru_utime.tv_usec'])/1000000+(getrusage()['ru_stime.tv_sec']-$usageBefore['ru_stime.tv_sec'])+(getrusage()['ru_stime.tv_usec']-$usageBefore['ru_stime.tv_usec'])/1000000,3),'mode'=>$mode,'bytes'=>strlen($pdf),'seconds'=>round(microtime(true)-$start,3),'max_execution_time'=>ini_get('max_execution_time'),'memory_limit'=>ini_get('memory_limit'),'peak_bytes'=>memory_get_peak_usage(true),'document_source_sha256'=>hash_file('sha256',$root.'/app/Services/Documents/Document.php'),'template_sha256'=>hash_file('sha256',$root.'/resources/views/documents/document.blade.php'),'private_database'=>true]).PHP_EOL;

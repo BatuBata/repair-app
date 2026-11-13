@@ -92,13 +92,15 @@ class Document
         }]]);
         $pdf->render();
         if ($format === 'thermal') {
-            $pdf = new Dompdf($options);
-            $pdf->loadHtml(view('documents.document', $data)->render());
-            $pdf->setPaper([0, 0, 58 * 72 / 25.4, min(14000, max(100, $height + 50))]);
-            $pdf->render();
+            if ($pdf->getCanvas()->get_page_count() === 1 && $height + 50 < 14000) {
+                $pdf = new Dompdf($options);
+                $pdf->loadHtml(view('documents.document', $data)->render());
+                $pdf->setPaper([0, 0, 58 * 72 / 25.4, max(100, $height + 50)]);
+                $pdf->render();
+            }
         } else {
-            $data['headerTop'] = max(30, ceil(($headerBottom + 12) * 25.4 / 72));
-            if ($data['headerTop'] > 30) {
+            $data['headerTop'] = max(39, ceil(($headerBottom + 12) * 25.4 / 72));
+            if ($data['headerTop'] > 39) {
                 $pdf = new Dompdf($options);
                 $pdf->loadHtml(view('documents.document', $data)->render());
                 $pdf->setPaper('a5');

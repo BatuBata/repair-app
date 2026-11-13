@@ -1,0 +1,9 @@
+{
+  "chrome": "CDP Browser.close completed; runner exit 0; helper removed only its own profile in task-owned temp subtree",
+  "php_server": "exec session 64239 stopped with Ctrl+C; final exit 130",
+  "fixture": "new private SQLite fixture and generated-asset backup retained under task-owned /private/tmp directory, credentials excluded from repository",
+  "root_env": "unchanged (SHA256 before/after checked)",
+  "existing_databases_touched": false,
+  "main_merge": false,
+  "push": false
+}

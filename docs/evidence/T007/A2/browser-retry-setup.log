@@ -1,0 +1,17 @@
+node:fs:1370
+  const result = binding.mkdir(
+                         ^
+
+Error: EEXIST: file already exists, mkdir '/private/tmp/repair-t007-a2-dnuhcs0y/chrome-tmp'
+    at mkdirSync (node:fs:1370:26)
+    at file:///Users/muzib/Projects/web/repair-app/docs/evidence/T007/A2/browser-smoke.mjs:8:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  errno: -17,
+  code: 'EEXIST',
+  syscall: 'mkdir',
+  path: '/private/tmp/repair-t007-a2-dnuhcs0y/chrome-tmp'
+}
+
+Node.js v22.23.2

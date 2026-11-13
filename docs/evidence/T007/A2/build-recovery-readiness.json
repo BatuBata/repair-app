@@ -1,0 +1,21 @@
+{
+  "historical_source": "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings",
+  "all_expected_assets_match": true,
+  "files": {
+    "public/build/assets/app-CDn1G0_W.css": true,
+    "public/build/assets/app-TKBAM3lN.js": true,
+    "public/build/assets/fonts-C9MNnjVw.css": true,
+    "public/build/assets/instrument-sans-400-normal-D1W7dsQl.woff": true,
+    "public/build/assets/instrument-sans-400-normal-DRC__1Mx.woff2": true,
+    "public/build/assets/instrument-sans-500-normal-Dk9ku72i.woff2": true,
+    "public/build/assets/instrument-sans-500-normal-Z6ESRlEs.woff": true,
+    "public/build/assets/instrument-sans-600-normal-B7fBEWYG.woff2": true,
+    "public/build/assets/instrument-sans-600-normal-B9e8oLYv.woff": true,
+    "public/build/assets/layout-DAFmGKay.css": true,
+    "public/build/assets/layout-VbftPR1Q.js": true,
+    "public/build/assets/passkeys-CsxEE3hN.js": true,
+    "public/build/fonts-manifest.json": true,
+    "public/build/manifest.json": true
+  },
+  "action": "read-only verification; no asset restored yet"
+}

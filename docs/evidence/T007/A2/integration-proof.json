@@ -1,0 +1,32 @@
+{
+  "T002": {
+    "revision": "4a0667c302c979ab40641459bf9e7afac0655e09",
+    "is_ancestor": true
+  },
+  "T003": {
+    "revision": "a08d1d785b72199e1000840ea8e2afe1d7f38fbd",
+    "is_ancestor": true
+  },
+  "T004": {
+    "revision": "db5de005a345de644a7aa9056ea93f5a81117a3d",
+    "is_ancestor": true
+  },
+  "T005_original": {
+    "revision": "ede491e76cbed8000aaee6e86392dc58d2741210",
+    "is_ancestor": true
+  },
+  "T005_revalidated": {
+    "revision": "db5de005a345de644a7aa9056ea93f5a81117a3d",
+    "is_ancestor": true
+  },
+  "settings_owned_diff": "",
+  "unmerged_paths": "",
+  "changes_since_old_m1_source": [
+    "config/livewire.php",
+    "public/manifest.webmanifest",
+    "resources/views/layouts/auth/simple.blade.php",
+    "routes/modules/auth.php",
+    "tests/Feature/Auth/RoleLauncherTest.php",
+    "tests/Feature/Auth/TemporaryUploadAuthorizationTest.php"
+  ]
+}

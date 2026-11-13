@@ -1,0 +1,22 @@
+{
+  "verdict": "pass",
+  "artifact_ref": "docs/evidence/T007/A2/handoff.md",
+  "revision": "db5de005a345de644a7aa9056ea93f5a81117a3d",
+  "checked_revision": "db5de005a345de644a7aa9056ea93f5a81117a3d",
+  "inputs": {
+    "T002": "4a0667c302c979ab40641459bf9e7afac0655e09",
+    "T003": "a08d1d785b72199e1000840ea8e2afe1d7f38fbd",
+    "T004": "db5de005a345de644a7aa9056ea93f5a81117a3d",
+    "T005": "db5de005a345de644a7aa9056ea93f5a81117a3d"
+  },
+  "evidence": [
+    "docs/evidence/T007/A2/handoff.md",
+    "docs/evidence/T007/A2/integration-proof.json",
+    "docs/evidence/T007/A2/suite.log",
+    "docs/evidence/T007/A2/suite.xml",
+    "docs/evidence/T007/A2/browser-results.json",
+    "docs/evidence/T007/A2/build-restoration.json",
+    "docs/evidence/T007/A2/source-after.json"
+  ],
+  "summary": "80 tests PASS,817 assertions,1 guarded MySQL skip;13 real Chrome observations PASS after verified generated-asset restore;source/.env unchanged. Integrator verification only;T008 independent QA pending."
+}

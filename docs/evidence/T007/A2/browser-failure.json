@@ -1,0 +1,68 @@
+{
+  "message": "admin-categories",
+  "observations": [
+    {
+      "id": "guest-launcher-login",
+      "path": "/login",
+      "width": 580,
+      "documentWidth": 580,
+      "font": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontsLoaded": "loaded",
+      "status": 200,
+      "expectedPath": "/login",
+      "expectedStatus": 200,
+      "result": "PASS"
+    },
+    {
+      "id": "guest-login-manifest",
+      "href": "/manifest.webmanifest",
+      "status": 200,
+      "name": "Toko Anugerah",
+      "start_url": "/mulai",
+      "display": "standalone",
+      "chromeDiscovered": true,
+      "chromeParseErrors": 0,
+      "result": "PASS"
+    },
+    {
+      "id": "admin-login-home",
+      "path": "/",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontsLoaded": "loaded",
+      "status": 200,
+      "expectedPath": "/",
+      "expectedStatus": 200,
+      "result": "PASS"
+    },
+    {
+      "id": "admin-launcher",
+      "path": "/",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontsLoaded": "loaded",
+      "status": 200,
+      "expectedPath": "/",
+      "expectedStatus": 200,
+      "result": "PASS"
+    },
+    {
+      "id": "admin-store",
+      "path": "/pengaturan/toko",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontsLoaded": "loaded",
+      "status": 200,
+      "expectedPath": "/pengaturan/toko",
+      "expectedStatus": 200,
+      "result": "PASS"
+    }
+  ],
+  "classification": "evidence assertion typo and environment build mismatch",
+  "assertion_detail": "Runner expected Kategori barang; actual heading is Kategori with subtitle Master kategori barang servis. Runner text matcher needs correction; no product change.",
+  "environment_detail": "Actual screenshot is unstyled; baseline generated public/build lacks dynamic layout chunks from current source. Historical 14 asset hashes verified against old T007 manifest; no restoration performed pending coordinator scope update.",
+  "native_browser_limit": "Extension goto/screenshot failed timeoutMs internal error. Native UI acquisition took 223s and subsequent input required stale context; stopped that path. CDP helper successfully ran browser."
+}

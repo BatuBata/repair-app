@@ -1,0 +1,220 @@
+{
+  "candidate": "db5de005a345de644a7aa9056ea93f5a81117a3d",
+  "tool": "installed Chrome via existing design-taste-frontend CDP helper",
+  "browserVersion": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/157.0.8103.52",
+    "revision": "@0985600c06a688b9c669e74afde7dacd5aaed047",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "jsVersion": "15.7.112.23"
+  },
+  "observations": [
+    {
+      "id": "guest-launcher-login",
+      "path": "/login",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsLoaded": "loaded",
+      "status": 200,
+      "expectedPath": "/login",
+      "expectedStatus": 200,
+      "result": "PASS"
+    },
+    {
+      "id": "guest-login-manifest",
+      "href": "/manifest.webmanifest",
+      "status": 200,
+      "name": "Toko Anugerah",
+      "start_url": "/mulai",
+      "display": "standalone",
+      "chromeDiscovered": true,
+      "chromeParseErrors": 0,
+      "result": "PASS"
+    },
+    {
+      "id": "admin-login-home",
+      "path": "/",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontsLoaded": "loaded",
+      "status": 200,
+      "expectedPath": "/",
+      "expectedStatus": 200,
+      "result": "PASS"
+    },
+    {
+      "id": "admin-launcher",
+      "path": "/",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsLoaded": "loaded",
+      "status": 200,
+      "expectedPath": "/",
+      "expectedStatus": 200,
+      "result": "PASS"
+    },
+    {
+      "id": "admin-store",
+      "path": "/pengaturan/toko",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsLoaded": "loaded",
+      "status": 200,
+      "expectedPath": "/pengaturan/toko",
+      "expectedStatus": 200,
+      "result": "PASS"
+    },
+    {
+      "id": "admin-categories",
+      "path": "/pengaturan/kategori",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsLoaded": "loaded",
+      "status": 200,
+      "expectedPath": "/pengaturan/kategori",
+      "expectedStatus": 200,
+      "result": "PASS"
+    },
+    {
+      "id": "admin-profile",
+      "path": "/profil",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsLoaded": "loaded",
+      "status": 200,
+      "expectedPath": "/profil",
+      "expectedStatus": 200,
+      "result": "PASS"
+    },
+    {
+      "id": "admin-logout",
+      "path": "/login",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsLoaded": "loaded",
+      "status": 200,
+      "expectedPath": "/login",
+      "expectedStatus": 200,
+      "result": "PASS"
+    },
+    {
+      "id": "technician-login-role-target",
+      "path": "/tts/baru",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontsLoaded": "loaded",
+      "status": 404,
+      "expectedPath": "/tts/baru",
+      "expectedStatus": 404,
+      "result": "PASS"
+    },
+    {
+      "id": "technician-launcher",
+      "path": "/tts/baru",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontsLoaded": "loaded",
+      "status": 404,
+      "expectedPath": "/tts/baru",
+      "expectedStatus": 404,
+      "result": "PASS"
+    },
+    {
+      "id": "technician-root-forbidden",
+      "path": "/",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontsLoaded": "loaded",
+      "status": 403,
+      "expectedPath": "/",
+      "expectedStatus": 403,
+      "result": "PASS"
+    },
+    {
+      "id": "technician-dashboard-forbidden",
+      "path": "/dashboard",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontsLoaded": "loaded",
+      "status": 403,
+      "expectedPath": "/dashboard",
+      "expectedStatus": 403,
+      "result": "PASS"
+    },
+    {
+      "id": "technician-profile",
+      "path": "/profil",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "fontsLoaded": "loaded",
+      "status": 200,
+      "expectedPath": "/profil",
+      "expectedStatus": 200,
+      "result": "PASS"
+    }
+  ],
+  "documents": [
+    {
+      "path": "/login",
+      "status": 200
+    },
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/pengaturan/toko",
+      "status": 200
+    },
+    {
+      "path": "/pengaturan/kategori",
+      "status": 200
+    },
+    {
+      "path": "/profil",
+      "status": 200
+    },
+    {
+      "path": "/login",
+      "status": 200
+    },
+    {
+      "path": "/tts/baru",
+      "status": 404
+    },
+    {
+      "path": "/tts/baru",
+      "status": 404
+    },
+    {
+      "path": "/",
+      "status": 403
+    },
+    {
+      "path": "/dashboard",
+      "status": 403
+    },
+    {
+      "path": "/profil",
+      "status": 200
+    }
+  ],
+  "runtimeExceptions": [],
+  "pendingT009": "404 /tts/baru is expected at M1; role target verified, TTS form not claimed."
+}

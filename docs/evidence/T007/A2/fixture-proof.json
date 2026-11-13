@@ -1,0 +1,9 @@
+{
+  "driver": "sqlite",
+  "users": 2,
+  "categories": 9,
+  "settings": 1,
+  "new_private_sqlite": true,
+  "migrate_seed_exit_code": 0,
+  "existing_databases_touched": false
+}

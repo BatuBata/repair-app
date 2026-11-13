@@ -38,11 +38,11 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T016 | QA independen alur servis, penjualan, dan pengeluaran | tester / 6.1-sol | medium / high | T015 | T020 | done |
 | T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | done |
 | T018 | Dashboard admin dan pengingat garansi | developer / 6.1-sol | medium / medium | T016 | T017, T019, T020 | done |
-| T019 | Laporan omzet, modal, pengeluaran, dan laba per rentang tanggal | developer / 6.1-sol | medium / high | T016 | T017, T018, T020 | done |
+| T019 | Laporan omzet, modal, pengeluaran, dan laba per rentang tanggal | developer / 6.1-sol | medium / high | T016 | T017, T018, T020 | running |
 | T020 | Paket deploy VPS: konfigurasi contoh, skrip deploy, backup dan restore | developer / 6.1-sol | medium / high | T001, T002 (artifact) | T002, T003, T004, T005, T006, T009, T012, T017, T018, T019 | done |
-| T021 | Panduan pengguna singkat untuk owner dan teknisi | developer / 6-luna | easy / low | T017, T018, T019 | T020 | done |
-| T022 | Integrasi akhir v1 | integrator / 6.1-sol | medium / medium | T017, T018, T019, T020, T021 | — | done |
-| T023 | QA akhir v1: regresi penuh dan uji responsif semua layar | tester / 6.1-sol | medium / high | T022 | — | running |
+| T021 | Panduan pengguna singkat untuk owner dan teknisi | developer / 6-luna | easy / low | T017, T018, T019 | T020 | pending |
+| T022 | Integrasi akhir v1 | integrator / 6.1-sol | medium / medium | T017, T018, T019, T020, T021 | — | pending |
+| T023 | QA akhir v1: regresi penuh dan uji responsif semua layar | tester / 6.1-sol | medium / high | T022 | — | failed |
 | T024 | Deploy v1 ke VPS produksi | deployer / 6.1-sol | medium / high | T022, T023 | — | pending |
 | T025 | Verifikasi produksi dan uji di HP dan printer klien | tester / 6.1-sol | medium / high | T024 | — | pending |
 <!-- END GENERATED VIEW -->
@@ -358,7 +358,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "push_authorized": true,
       "source_ref": "Instruksi user 12 Nov 2026: push ke GitHub BatuBata/repair-app, setiap pekerjaan selesai buat commit dan push",
       "policy": "Commit pekerjaan selesai dan push branch task/checkpoint setelah periksa perubahan; merge ke main tetap setelah QA/review relevan; tanpa force-push. Kandidat blocked disimpan sebagai checkpoint, bukan fitur diterima.",
-      "coordination_branch": "codex/t022-release"
+      "coordination_branch": "codex/t019-reports-a2"
     },
     "browser_isolation_policy": {
       "source_ref": "Coordinator13Nov2026 verified existing scripts/lib/cdp.mjs Browser.launch: fresh headless Chrome process, unique user-data-dir and remote-debugging-port0; T010 uses private TASTE_SKILL_TMP.",
@@ -2846,9 +2846,10 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar laporan.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri.",
         "Buktikan default awal bulan/hari ini WITA, rentang inklusif dan invalid/empty, contoh PRD, koreksi/hapus transaksi, restok info, fresh role guard, serta jumlah agregat legal di atas PHP_INT_MAX tanpa float/SQLite SUM overflow. Brick\\Math\\BigInteger sudah terpasang; gunakan dependency existing tanpa menambah paket. Screenshot3width termasuk nilai panjang/negatif dan error.",
-        "Bandingkan chart daily buckets/sum terhadap uang exact dan sample, tooltip/keyboard/tap, hari nol/empty/negatif; default awal bulan–hariini dan tanggal bebas. Kartu/daftar/tabel sesuai DESIGN.md bila beda PRD tabel."
+        "Bandingkan chart daily buckets/sum terhadap uang exact dan sample, tooltip/keyboard/tap, hari nol/empty/negatif; default awal bulan–hariini dan tanggal bebas. Kartu/daftar/tabel sesuai DESIGN.md bila beda PRD tabel.",
+        "A2 repairs independent T023-A1 F01 only: actual report-number anchor >=44x44 below1024px; real tap in added area must navigate correct transaction, eye dialog remains distinct. Preserve 3width layout, exact long/negative amounts, labels/routes/backend. Source context docs/evidence/T023/A1/report-touch-defect.json, not dependency (avoid cycle)."
       ],
-      "status": "done",
+      "status": "running",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -2860,36 +2861,47 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "dispatch_ref": "native:collaboration.spawn_agent:/root/t019_reports:T019",
           "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/t019-dispatch.json"
+        },
+        {
+          "id": "A2",
+          "kind": "implementation",
+          "worker_id": "/root/t019_touch",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.spawn_agent:/root/t019_touch:T019-A2",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/t019-a2-dispatch.json"
         }
       ],
       "runtime_assignment": {
         "runtime": "Codex native collaboration",
-        "task_id": "/root/t019_reports",
-        "base_revision": "66359012ac0e4febec1f21c4154ba23085212333",
-        "phase": "closed",
-        "branch": "codex/t019-reports",
-        "browser_reservation": "released; server8191/profile closed per resource-release.json",
-        "model_observation": "Spawn requested Sol high; actual receipt task_name=/root/t019_reports only. Effective backend unknown.",
-        "receipt_ref": "docs/evidence/coordinator/t019-dispatch.json"
+        "task_id": "/root/t019_touch",
+        "base_revision": "3683d27",
+        "phase": "implementation",
+        "branch": "codex/t019-reports-a2",
+        "resources": "privateheadless8191 conditional afterpreflight; noMySQL/noGUI",
+        "model_observation": "RequestedSolhigh via nativecatalog; receipt exposes task_name only, effectivebackendunknown."
       },
       "resource_phase_policy": "Coding/host test no shared browser/MySQL resource. Private headless phase8191 only after own recorded process/profile/CDP/TASTE/SQLite/config/cache/session/views/storage preflight. Max2workers includingT018. NoGUI/CUA/Orca.",
-      "result": {
-        "verdict": "pass",
-        "revision": "7b7a438fcde75185c2160b642a02fbb2c6ed3ff1",
-        "artifact_ref": "docs/evidence/T019/A1/README.md",
-        "inputs": {
-          "T016": "c66d038ea448910e3cc8a8529f170f72ac064306"
-        },
-        "evidence": [
-          "docs/evidence/T019/A1/README.md",
-          "docs/evidence/T019/A1/feature-tests.log",
-          "docs/evidence/T019/A1/view-money-tests.log",
-          "docs/evidence/T019/A1/browser-results.json",
-          "docs/evidence/T019/A1/source-manifest.json",
-          "docs/evidence/T019/A1/resource-release.json"
-        ],
-        "summary": "7tests99assert PASS plus2relevant32assert aftermoney markup; PHPStan/Pint PASS; browser32assert 3width+controls. Coordinator reviewed source/sample/negative/mobile/dialog PNG and6source hashes matched. Wholeperiod exacttotals with31day chartwindow; bigvolume untested. T022/T023 finalgate pending."
-      }
+      "prior_results": [
+        {
+          "verdict": "pass",
+          "revision": "7b7a438fcde75185c2160b642a02fbb2c6ed3ff1",
+          "artifact_ref": "docs/evidence/T019/A1/README.md",
+          "inputs": {
+            "T016": "c66d038ea448910e3cc8a8529f170f72ac064306"
+          },
+          "evidence": [
+            "docs/evidence/T019/A1/README.md",
+            "docs/evidence/T019/A1/feature-tests.log",
+            "docs/evidence/T019/A1/view-money-tests.log",
+            "docs/evidence/T019/A1/browser-results.json",
+            "docs/evidence/T019/A1/source-manifest.json",
+            "docs/evidence/T019/A1/resource-release.json"
+          ],
+          "summary": "7tests99assert PASS plus2relevant32assert aftermoney markup; PHPStan/Pint PASS; browser32assert 3width+controls. Coordinator reviewed source/sample/negative/mobile/dialog PNG and6source hashes matched. Wholeperiod exacttotals with31day chartwindow; bigvolume untested. T022/T023 finalgate pending."
+        }
+      ]
     },
     {
       "id": "T020",
@@ -3068,7 +3080,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Cocokkan setiap langkah dengan layar di branch terbaru."
       ],
-      "status": "done",
+      "status": "pending",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -3116,24 +3128,25 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
             "T019": "7b7a438fcde75185c2160b642a02fbb2c6ed3ff1"
           },
           "summary": "Factualdocreview F01–F05: wrongexpenseenum/roleWA/publicPDFlabel/salesbutton and missingdashboardsteps."
+        },
+        {
+          "verdict": "pass",
+          "revision": "9d011685cde0f75ce676091cceca598978cdcf6a",
+          "artifact_ref": "docs/PANDUAN.md",
+          "inputs": {
+            "T017": "2d7e613d5592ff169cb7743ff6fd086ec06fe58c",
+            "T018": "c9d1f429056676576310e88e524a75c9bc897c83",
+            "T019": "7b7a438fcde75185c2160b642a02fbb2c6ed3ff1"
+          },
+          "evidence": [
+            "docs/PANDUAN.md",
+            "docs/evidence/coordinator/t021-a1-review.json",
+            "docs/evidence/coordinator/t021-dispatch.json"
+          ],
+          "summary": "A2 guide corrects5factualreview findings: actualexpenseenum/adminWA/publicPDFlabel/salesbutton anddashboard/H-3steps. Coordinator readfullfinalguide, source labels/roles crosschecked. No creds; gitdiffcheckPASS; docs-onlyno build/tests. Combinedflow andphysical installation/printer remainT022/T023/T025."
         }
       ],
-      "result": {
-        "verdict": "pass",
-        "revision": "9d011685cde0f75ce676091cceca598978cdcf6a",
-        "artifact_ref": "docs/PANDUAN.md",
-        "inputs": {
-          "T017": "2d7e613d5592ff169cb7743ff6fd086ec06fe58c",
-          "T018": "c9d1f429056676576310e88e524a75c9bc897c83",
-          "T019": "7b7a438fcde75185c2160b642a02fbb2c6ed3ff1"
-        },
-        "evidence": [
-          "docs/PANDUAN.md",
-          "docs/evidence/coordinator/t021-a1-review.json",
-          "docs/evidence/coordinator/t021-dispatch.json"
-        ],
-        "summary": "A2 guide corrects5factualreview findings: actualexpenseenum/adminWA/publicPDFlabel/salesbutton anddashboard/H-3steps. Coordinator readfullfinalguide, source labels/roles crosschecked. No creds; gitdiffcheckPASS; docs-onlyno build/tests. Combinedflow andphysical installation/printer remainT022/T023/T025."
-      }
+      "revalidation_note": "Pending unchanged guide revalidation after CSS-only T019A2; no guide code attempt authorized beyond2. Preserve prior PASS and inputpins."
     },
     {
       "id": "T022",
@@ -3181,7 +3194,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Cocokkan revisi input; jalankan test suite penuh, build aset, dan smoke alur utama.",
         "T020 source6095a5ca34a5b28bf65a481007d69b21a8bc7084 belum digabung. Integrasikan deploy/**,docs/DEPLOYMENT.md,docs/evidence/T020/** dari pin itu tanpa metadata/task lama. Runbook opening masih menyebut MySQLrestore BLOCKED walau verifikasi nyata6095a5c PASS; rekonsiliasi kalimat status dan tautkan bukti, pertahankan sumberFAIL/lokalPASS serta gateQ03/Q04 produksi. Jangan mengulang DBrestore/menghapusfixture yang sudahterbukti. Jalankan shellchecks sesuai perubahan/pin."
       ],
-      "status": "done",
+      "status": "pending",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -3204,29 +3217,32 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "resources": "released; no mainmerge happened,8192/profileclosed",
         "model_observation": "Nativecatalog supportsSolhigh; fresh integrationworker requested, backendnotproven."
       },
-      "result": {
-        "verdict": "pass",
-        "revision": "a95a3058c2160617d2e59ce7ac44685774d7528d",
-        "checked_source_revision": "44154b674393e7d4c8a715131b13cae3e863cca7",
-        "artifact_ref": "docs/evidence/T022/A1/README.md",
-        "inputs": {
-          "T017": "2d7e613d5592ff169cb7743ff6fd086ec06fe58c",
-          "T018": "c9d1f429056676576310e88e524a75c9bc897c83",
-          "T019": "7b7a438fcde75185c2160b642a02fbb2c6ed3ff1",
-          "T020": "6095a5ca34a5b28bf65a481007d69b21a8bc7084",
-          "T021": "9d011685cde0f75ce676091cceca598978cdcf6a"
-        },
-        "evidence": [
-          "docs/evidence/T022/A1/README.md",
-          "docs/evidence/T022/A1/source-manifest.json",
-          "docs/evidence/T022/A1/build-manifest.json",
-          "docs/evidence/T022/A1/font-manifest.json",
-          "docs/evidence/T022/A1/checked-source.json",
-          "docs/evidence/T022/A1/browser-results.json",
-          "docs/evidence/T022/A1/resource-release.json"
-        ],
-        "summary": "Full181PASS/1guardedMySQLSKIP1913assert, Pint/PHPStan/build/cachesPASS;26browser+5PDF+23HTTPasset checksPASS. Only2preprinting assertions/runbook updated; businesssources exactinputs. Coordinator reviewedrunbook/guide and verified230source14build9font hashes onroot/nativeQA exactA95. Candidatepushed; no mainmerge/deploy; T023 independent mandatory."
-      }
+      "prior_results": [
+        {
+          "verdict": "pass",
+          "revision": "a95a3058c2160617d2e59ce7ac44685774d7528d",
+          "checked_source_revision": "44154b674393e7d4c8a715131b13cae3e863cca7",
+          "artifact_ref": "docs/evidence/T022/A1/README.md",
+          "inputs": {
+            "T017": "2d7e613d5592ff169cb7743ff6fd086ec06fe58c",
+            "T018": "c9d1f429056676576310e88e524a75c9bc897c83",
+            "T019": "7b7a438fcde75185c2160b642a02fbb2c6ed3ff1",
+            "T020": "6095a5ca34a5b28bf65a481007d69b21a8bc7084",
+            "T021": "9d011685cde0f75ce676091cceca598978cdcf6a"
+          },
+          "evidence": [
+            "docs/evidence/T022/A1/README.md",
+            "docs/evidence/T022/A1/source-manifest.json",
+            "docs/evidence/T022/A1/build-manifest.json",
+            "docs/evidence/T022/A1/font-manifest.json",
+            "docs/evidence/T022/A1/checked-source.json",
+            "docs/evidence/T022/A1/browser-results.json",
+            "docs/evidence/T022/A1/resource-release.json"
+          ],
+          "summary": "Full181PASS/1guardedMySQLSKIP1913assert, Pint/PHPStan/build/cachesPASS;26browser+5PDF+23HTTPasset checksPASS. Only2preprinting assertions/runbook updated; businesssources exactinputs. Coordinator reviewedrunbook/guide and verified230source14build9font hashes onroot/nativeQA exactA95. Candidatepushed; no mainmerge/deploy; T023 independent mandatory."
+        }
+      ],
+      "revalidation_note": "A2 available after T019A2 and unchangedT021 revalidation; new combined candidate then independentT023A2 mandatory."
     },
     {
       "id": "T023",
@@ -3273,7 +3289,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Revalidasi bagian software AC-01, AC-25 dan AC-26 pada revisi akhir: remember-me/launcher peran, keyboard/inputmode dan aksi form menempel, manifest/nama/ikon toko. Bukti fondasi boleh dipakai ulang hanya dengan pin/hash sumber dan kondisi relevan tetap cocok; pemasangan Android/keyboard nyata/printer fisik tetap T025, tidak diklaim PASS lewat emulasi.",
         "T017 menyatakan batas belum terbukti: periksa nama toko legal255 karakter (termasuk kata panjang), alamat/syarat65535 karakter dan thermal melewati14000pt dengan fixture privat; buktikan isi akhir/QR tidak hilang dan batas halaman, bukan hanya HTTP200. Cek PDF dengan font-cache privat kosong dan data exactsource; F01 printwidth58mm serta F02 paginasi pairedlines harus tetapPASS. Field limits diverifikasi pada Store.php57–60 dan Dompdf mendukung overflow_wrap. Pertahankan fail; jangan patch candidate dalam sesi tester."
       ],
-      "status": "running",
+      "status": "failed",
       "qa_for": "T022",
       "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
       "attempts": [
@@ -3284,7 +3300,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native:collaboration.spawn_agent:/root/t023_final:T023",
-          "outcome": "running",
+          "outcome": "fail",
           "receipt_ref": "docs/evidence/coordinator/t023-dispatch.json"
         }
       ],
@@ -3293,9 +3309,28 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "task_id": "/root/t023_final",
         "base_revision": "a95a3058c2160617d2e59ce7ac44685774d7528d",
         "branch": "codex/t023-final-qa",
-        "phase": "independent_verification",
-        "resources": "db:mysql-test exclusive; conditional private headless8193 after preflight; noGUI/hardware",
+        "phase": "closed",
+        "resources": "released; ownserver8193/Chrome/MySQL closed; fixtures retained",
         "model_observation": "FreshSolhigh independent session requested; not featurebuilder/integrator; backendmodel notexposed."
+      },
+      "result": {
+        "verdict": "fail",
+        "revision": "c789e0a52e4195a41a9100e566561e0852c9fa11",
+        "checked_revision": "a95a3058c2160617d2e59ce7ac44685774d7528d",
+        "artifact_ref": "docs/evidence/T023/A1/README.md",
+        "inputs": {
+          "T022": "a95a3058c2160617d2e59ce7ac44685774d7528d"
+        },
+        "evidence": [
+          "docs/evidence/T023/A1/coverage.json",
+          "docs/evidence/T023/A1/report-touch-defect.json",
+          "docs/evidence/T023/A1/suite.xml",
+          "docs/evidence/T023/A1/mysql-proof.json",
+          "docs/evidence/T023/A1/mysql-extension.json",
+          "docs/evidence/T023/A1/remember-only-proof.json",
+          "docs/evidence/T023/A1/final-source-proof.json"
+        ],
+        "summary": "F01 only: report number link108.42x20px on360, required44x44. Other24softwareAC and16BR PASS;181testsPASS/1guardedMySQLSKIP1913assert;111primaryscreens,10PDF,5QR,6actualMySQLcases, baseline20tablesunchanged. EdgeNOT_RUN A1 plannedfixedA2; physical/productionT02425 deferred."
       }
     },
     {

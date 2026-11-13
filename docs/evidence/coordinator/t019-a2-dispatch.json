@@ -1,0 +1,16 @@
+{
+  "task": "T019",
+  "attempt": "A2",
+  "worker": "/root/t019_touch",
+  "requested_model": "gpt-6.1-sol",
+  "requested_effort": "high",
+  "actual_receipt": {
+    "task_name": "/root/t019_touch"
+  },
+  "model_effective": null,
+  "base_revision": "3683d27",
+  "failure_context": "docs/evidence/T023/A1/report-touch-defect.json",
+  "scope": "Actual report anchor touch target >=44x44 below1024, no backend changes",
+  "Ponytail": "full; actual source supplied in workerbrief",
+  "history": "T023 A1 FAIL preserved; T019 A1 developerPASS retained; T021/T022 priorPASS pending revalidation"
+}

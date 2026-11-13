@@ -1,0 +1,22 @@
+{
+  "version": "157.0.4341.57",
+  "url": "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/ad6420a5-895f-42d2-be1d-e6dc161f11ef/MicrosoftEdge-157.0.4341.57.pkg",
+  "bytes": 438226628,
+  "sha256": "d2791ba64c1c40332fdd6b21e26a5b58cc2ce002f4b9dc5dd6445ab500ce2798",
+  "matches_official_hash": true,
+  "binary": "/private/tmp/repair-qa-edge-sy_vwosh/expanded/MicrosoftEdge-157.0.4341.57.pkg/Payload/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
+  "codesign_verified": true,
+  "version_output": "Microsoft Edge 157.0.4341.57",
+  "global_install": false,
+  "prepared_utc": "2026-11-13T11:30:50.535811+00:00",
+  "source_documentation": "https://learn.microsoft.com/en-us/intune/configmgr/apps/deploy-use/deploy-edge",
+  "release_metadata_api": "https://edgeupdates.microsoft.com/api/products?view=enterprise",
+  "signature_status": [
+    "Status: signed by a developer certificate issued by Apple for distribution",
+    "1. Developer ID Installer: Microsoft Corporation (UBF8T346G9)"
+  ],
+  "package_scripts_executed": false,
+  "purpose": "NFR04 actual Edge desktop software QA on corrected candidate; not global install",
+  "cdp_helper_configuration": "CHROME_PATH in isolated subprocess; unique TASTE/profile; headless only",
+  "private_runtime_retained_for_consumer": "T023 A2"
+}

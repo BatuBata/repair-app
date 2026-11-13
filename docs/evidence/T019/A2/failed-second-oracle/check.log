@@ -1,0 +1,10 @@
+AssertionError [ERR_ASSERTION]: exact long revenue 360
+    at check (file:///private/tmp/repair-t019-a2-20261113/check.mjs:8:40)
+    at file:///private/tmp/repair-t019-a2-20261113/check.mjs:26:190 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}

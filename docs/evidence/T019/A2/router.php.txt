@@ -1,0 +1,8 @@
+<?php
+$uri=urldecode(parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH)??'/');
+if($uri!=='/'&&is_file('/Users/muzib/Projects/web/repair-app/public'.$uri))return false;
+define('LARAVEL_START',microtime(true));
+require '/Users/muzib/Projects/web/repair-app/vendor/autoload.php';
+$app=require '/Users/muzib/Projects/web/repair-app/bootstrap/app.php';
+$app->useStoragePath(__DIR__.'/storage');
+$app->handleRequest(Illuminate\Http\Request::capture());

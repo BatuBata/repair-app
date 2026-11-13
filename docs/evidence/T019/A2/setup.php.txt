@@ -1,0 +1,8 @@
+<?php
+require '/Users/muzib/Projects/web/repair-app/vendor/autoload.php';
+$app=require '/Users/muzib/Projects/web/repair-app/bootstrap/app.php';
+$app->useStoragePath(__DIR__.'/storage');
+$app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+if(config('database.default')!=='sqlite'||config('database.connections.sqlite.database')!==__DIR__.'/database.sqlite')throw new RuntimeException('Unsafe DB');
+App\Models\User::where('username','t019review')->firstOrFail()->update(['password'=>json_decode(file_get_contents(__DIR__.'/private.json'),true)['password']]);
+echo json_encode(['db'=>config('database.default'),'database'=>config('database.connections.sqlite.database'),'config'=>$app->getCachedConfigPath(),'storage'=>storage_path(),'views'=>config('view.compiled'),'sessions'=>config('session.files'),'logs'=>config('logging.channels.single.path'),'sourceFixture'=>'readonly SQLite backup A1; reset synthetic password only on copy','port'=>8191,'taste'=>__DIR__.'/taste'],JSON_PRETTY_PRINT);

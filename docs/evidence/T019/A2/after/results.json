@@ -1,0 +1,661 @@
+{
+  "verdict": "pass",
+  "mode": "after",
+  "assertionCount": 62,
+  "cases": [
+    {
+      "width": 360,
+      "large": {
+        "width": 360,
+        "documentWidth": 360,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "links": [
+          {
+            "label": "JL-2611-002",
+            "href": "http://127.0.0.1:8191/penjualan/2",
+            "width": 67.203125,
+            "height": 72,
+            "display": "inline-block",
+            "textHeight": 68,
+            "eye": {
+              "x": 16,
+              "width": 44,
+              "height": 44
+            },
+            "x": 96
+          },
+          {
+            "label": "JL-2611-003",
+            "href": "http://127.0.0.1:8191/penjualan/3",
+            "width": 67.203125,
+            "height": 72,
+            "display": "inline-block",
+            "textHeight": 68,
+            "eye": {
+              "x": 16,
+              "width": 44,
+              "height": 44
+            },
+            "x": 96
+          },
+          {
+            "label": "JL-2611-001",
+            "href": "http://127.0.0.1:8191/penjualan/1",
+            "width": 96.140625,
+            "height": 44,
+            "display": "inline-block",
+            "textHeight": 20,
+            "eye": {
+              "x": 16,
+              "width": 44,
+              "height": 44
+            },
+            "x": 96
+          },
+          {
+            "label": "TTS-2611-001",
+            "href": "http://127.0.0.1:8191/tts/1",
+            "width": 108.421875,
+            "height": 44,
+            "display": "inline-block",
+            "textHeight": 20,
+            "eye": {
+              "x": 16,
+              "width": 44,
+              "height": 44
+            },
+            "x": 96
+          }
+        ],
+        "money": "Omzet servis Rp1.100.000 Omzet penjualan Rp16.000.000.000.001.500.000 Omzet Rp16.000.000.000.002.600.000 Modal −Rp17.179.869.180.001.800.000 Laba kotor −Rp1.179.869.179.999.200.000 Pengeluaran −Rp65.000 Laba bersih −Rp1.179.869.179.999.265.000",
+        "rows": [
+          {
+            "number": "JL-2611-002",
+            "amount": "Rp8.000.000.000.000.000.000"
+          },
+          {
+            "number": "JL-2611-003",
+            "amount": "Rp8.000.000.000.000.000.000"
+          },
+          {
+            "number": "JL-2611-001",
+            "amount": "Rp1.500.000"
+          },
+          {
+            "number": "Bensin",
+            "amount": "−Rp15.000"
+          },
+          {
+            "number": "Konsumsi",
+            "amount": "−Rp50.000"
+          },
+          {
+            "number": "TTS-2611-001",
+            "amount": "Rp1.100.000"
+          }
+        ],
+        "footer": "Total semua transaksi\nLaba bersih −Rp1.179.869.179.999.265.000"
+      },
+      "sample": {
+        "width": 360,
+        "documentWidth": 360,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "links": [
+          {
+            "label": "JL-2611-001",
+            "href": "http://127.0.0.1:8191/penjualan/1",
+            "width": 96.140625,
+            "height": 44,
+            "display": "inline-block",
+            "textHeight": 20,
+            "eye": {
+              "x": 16,
+              "width": 44,
+              "height": 44
+            },
+            "x": 96
+          },
+          {
+            "label": "TTS-2611-001",
+            "href": "http://127.0.0.1:8191/tts/1",
+            "width": 108.421875,
+            "height": 44,
+            "display": "inline-block",
+            "textHeight": 20,
+            "eye": {
+              "x": 16,
+              "width": 44,
+              "height": 44
+            },
+            "x": 96
+          }
+        ],
+        "money": "Omzet servis Rp1.100.000 Omzet penjualan Rp1.500.000 Omzet Rp2.600.000 Modal −Rp1.800.000 Laba kotor Rp800.000 Pengeluaran −Rp65.000 Laba bersih Rp735.000",
+        "rows": [
+          {
+            "number": "JL-2611-001",
+            "amount": "Rp1.500.000"
+          },
+          {
+            "number": "Bensin",
+            "amount": "−Rp15.000"
+          },
+          {
+            "number": "Konsumsi",
+            "amount": "−Rp50.000"
+          },
+          {
+            "number": "TTS-2611-001",
+            "amount": "Rp1.100.000"
+          }
+        ],
+        "footer": "Total semua transaksi\nLaba bersih Rp735.000"
+      }
+    },
+    {
+      "width": 360,
+      "kind": "tts",
+      "pt": {
+        "x": 150.2109375,
+        "y": 601,
+        "href": "/tts/1",
+        "belowText": true,
+        "hit": true,
+        "width": 108.421875,
+        "height": 44
+      },
+      "navigated": "/tts/1",
+      "event": {
+        "trusted": true,
+        "pointerType": "touch",
+        "anchor": "http://127.0.0.1:8191/tts/1",
+        "eye": false
+      }
+    },
+    {
+      "width": 360,
+      "kind": "penjualan",
+      "pt": {
+        "x": 144.0703125,
+        "y": 455,
+        "href": "/penjualan/1",
+        "belowText": true,
+        "hit": true,
+        "width": 96.140625,
+        "height": 44
+      },
+      "navigated": "/penjualan/1",
+      "event": {
+        "trusted": true,
+        "pointerType": "touch",
+        "anchor": "http://127.0.0.1:8191/penjualan/1",
+        "eye": false
+      }
+    },
+    {
+      "width": 360,
+      "eyeDialog": true,
+      "route": "/laporan",
+      "focusRestored": true
+    },
+    {
+      "width": 768,
+      "large": {
+        "width": 768,
+        "documentWidth": 768,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "links": [
+          {
+            "label": "JL-2611-002",
+            "href": "http://127.0.0.1:8191/penjualan/2",
+            "width": 96.140625,
+            "height": 44,
+            "display": "inline-block",
+            "textHeight": 20,
+            "eye": {
+              "x": 24,
+              "width": 44,
+              "height": 44
+            },
+            "x": 104
+          },
+          {
+            "label": "JL-2611-003",
+            "href": "http://127.0.0.1:8191/penjualan/3",
+            "width": 96.140625,
+            "height": 44,
+            "display": "inline-block",
+            "textHeight": 20,
+            "eye": {
+              "x": 24,
+              "width": 44,
+              "height": 44
+            },
+            "x": 104
+          },
+          {
+            "label": "JL-2611-001",
+            "href": "http://127.0.0.1:8191/penjualan/1",
+            "width": 96.140625,
+            "height": 44,
+            "display": "inline-block",
+            "textHeight": 20,
+            "eye": {
+              "x": 24,
+              "width": 44,
+              "height": 44
+            },
+            "x": 104
+          },
+          {
+            "label": "TTS-2611-001",
+            "href": "http://127.0.0.1:8191/tts/1",
+            "width": 108.421875,
+            "height": 44,
+            "display": "inline-block",
+            "textHeight": 20,
+            "eye": {
+              "x": 24,
+              "width": 44,
+              "height": 44
+            },
+            "x": 104
+          }
+        ],
+        "money": "Omzet servis Rp1.100.000 Omzet penjualan Rp16.000.000.000.001.500.000 Omzet Rp16.000.000.000.002.600.000 Modal −Rp17.179.869.180.001.800.000 Laba kotor −Rp1.179.869.179.999.200.000 Pengeluaran −Rp65.000 Laba bersih −Rp1.179.869.179.999.265.000",
+        "rows": [
+          {
+            "number": "JL-2611-002",
+            "amount": "Rp8.000.000.000.000.000.000"
+          },
+          {
+            "number": "JL-2611-003",
+            "amount": "Rp8.000.000.000.000.000.000"
+          },
+          {
+            "number": "JL-2611-001",
+            "amount": "Rp1.500.000"
+          },
+          {
+            "number": "Bensin",
+            "amount": "−Rp15.000"
+          },
+          {
+            "number": "Konsumsi",
+            "amount": "−Rp50.000"
+          },
+          {
+            "number": "TTS-2611-001",
+            "amount": "Rp1.100.000"
+          }
+        ],
+        "footer": "Total semua transaksi\nLaba bersih −Rp1.179.869.179.999.265.000"
+      },
+      "sample": {
+        "width": 768,
+        "documentWidth": 768,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "links": [
+          {
+            "label": "JL-2611-001",
+            "href": "http://127.0.0.1:8191/penjualan/1",
+            "width": 96.140625,
+            "height": 44,
+            "display": "inline-block",
+            "textHeight": 20,
+            "eye": {
+              "x": 24,
+              "width": 44,
+              "height": 44
+            },
+            "x": 104
+          },
+          {
+            "label": "TTS-2611-001",
+            "href": "http://127.0.0.1:8191/tts/1",
+            "width": 108.421875,
+            "height": 44,
+            "display": "inline-block",
+            "textHeight": 20,
+            "eye": {
+              "x": 24,
+              "width": 44,
+              "height": 44
+            },
+            "x": 104
+          }
+        ],
+        "money": "Omzet servis Rp1.100.000 Omzet penjualan Rp1.500.000 Omzet Rp2.600.000 Modal −Rp1.800.000 Laba kotor Rp800.000 Pengeluaran −Rp65.000 Laba bersih Rp735.000",
+        "rows": [
+          {
+            "number": "JL-2611-001",
+            "amount": "Rp1.500.000"
+          },
+          {
+            "number": "Bensin",
+            "amount": "−Rp15.000"
+          },
+          {
+            "number": "Konsumsi",
+            "amount": "−Rp50.000"
+          },
+          {
+            "number": "TTS-2611-001",
+            "amount": "Rp1.100.000"
+          }
+        ],
+        "footer": "Total semua transaksi\nLaba bersih Rp735.000"
+      }
+    },
+    {
+      "width": 768,
+      "kind": "tts",
+      "pt": {
+        "x": 158.2109375,
+        "y": 775,
+        "href": "/tts/1",
+        "belowText": true,
+        "hit": true,
+        "width": 108.421875,
+        "height": 44
+      },
+      "navigated": "/tts/1",
+      "event": {
+        "trusted": true,
+        "pointerType": "touch",
+        "anchor": "http://127.0.0.1:8191/tts/1",
+        "eye": false
+      }
+    },
+    {
+      "width": 768,
+      "kind": "penjualan",
+      "pt": {
+        "x": 152.0703125,
+        "y": 517,
+        "href": "/penjualan/1",
+        "belowText": true,
+        "hit": true,
+        "width": 96.140625,
+        "height": 44
+      },
+      "navigated": "/penjualan/1",
+      "event": {
+        "trusted": true,
+        "pointerType": "touch",
+        "anchor": "http://127.0.0.1:8191/penjualan/1",
+        "eye": false
+      }
+    },
+    {
+      "width": 768,
+      "eyeDialog": true,
+      "route": "/laporan",
+      "focusRestored": true
+    },
+    {
+      "width": 1280,
+      "large": {
+        "width": 1280,
+        "documentWidth": 1280,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "links": [
+          {
+            "label": "JL-2611-002",
+            "href": "http://127.0.0.1:8191/penjualan/2",
+            "width": 83.578125,
+            "height": 18,
+            "display": "inline",
+            "textHeight": 18,
+            "eye": {
+              "x": 261,
+              "width": 32,
+              "height": 32
+            },
+            "x": 407
+          },
+          {
+            "label": "JL-2611-003",
+            "href": "http://127.0.0.1:8191/penjualan/3",
+            "width": 83.578125,
+            "height": 18,
+            "display": "inline",
+            "textHeight": 18,
+            "eye": {
+              "x": 261,
+              "width": 32,
+              "height": 32
+            },
+            "x": 407
+          },
+          {
+            "label": "JL-2611-001",
+            "href": "http://127.0.0.1:8191/penjualan/1",
+            "width": 83.578125,
+            "height": 18,
+            "display": "inline",
+            "textHeight": 18,
+            "eye": {
+              "x": 261,
+              "width": 32,
+              "height": 32
+            },
+            "x": 407
+          },
+          {
+            "label": "TTS-2611-001",
+            "href": "http://127.0.0.1:8191/tts/1",
+            "width": 94.4375,
+            "height": 18,
+            "display": "inline",
+            "textHeight": 18,
+            "eye": {
+              "x": 261,
+              "width": 32,
+              "height": 32
+            },
+            "x": 407
+          }
+        ],
+        "money": "Omzet servis Rp1.100.000 Omzet penjualan Rp16.000.000.000.001.500.000 Omzet Rp16.000.000.000.002.600.000 Modal −Rp17.179.869.180.001.800.000 Laba kotor −Rp1.179.869.179.999.200.000 Pengeluaran −Rp65.000 Laba bersih −Rp1.179.869.179.999.265.000",
+        "rows": [
+          {
+            "number": "JL-2611-002",
+            "amount": "Rp8.000.000.000.000.000.000"
+          },
+          {
+            "number": "JL-2611-003",
+            "amount": "Rp8.000.000.000.000.000.000"
+          },
+          {
+            "number": "JL-2611-001",
+            "amount": "Rp1.500.000"
+          },
+          {
+            "number": "Bensin",
+            "amount": "−Rp15.000"
+          },
+          {
+            "number": "Konsumsi",
+            "amount": "−Rp50.000"
+          },
+          {
+            "number": "TTS-2611-001",
+            "amount": "Rp1.100.000"
+          }
+        ],
+        "footer": "Total semua transaksi\tRp16.000.000.000.002.535.000\tRp17.179.869.180.001.800.000\tLaba bersih −Rp1.179.869.179.999.265.000"
+      },
+      "sample": {
+        "width": 1280,
+        "documentWidth": 1280,
+        "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+        "links": [
+          {
+            "label": "JL-2611-001",
+            "href": "http://127.0.0.1:8191/penjualan/1",
+            "width": 83.578125,
+            "height": 18,
+            "display": "inline",
+            "textHeight": 18,
+            "eye": {
+              "x": 261,
+              "width": 32,
+              "height": 32
+            },
+            "x": 407
+          },
+          {
+            "label": "TTS-2611-001",
+            "href": "http://127.0.0.1:8191/tts/1",
+            "width": 94.4375,
+            "height": 18,
+            "display": "inline",
+            "textHeight": 18,
+            "eye": {
+              "x": 261,
+              "width": 32,
+              "height": 32
+            },
+            "x": 407
+          }
+        ],
+        "money": "Omzet servis Rp1.100.000 Omzet penjualan Rp1.500.000 Omzet Rp2.600.000 Modal −Rp1.800.000 Laba kotor Rp800.000 Pengeluaran −Rp65.000 Laba bersih Rp735.000",
+        "rows": [
+          {
+            "number": "JL-2611-001",
+            "amount": "Rp1.500.000"
+          },
+          {
+            "number": "Bensin",
+            "amount": "−Rp15.000"
+          },
+          {
+            "number": "Konsumsi",
+            "amount": "−Rp50.000"
+          },
+          {
+            "number": "TTS-2611-001",
+            "amount": "Rp1.100.000"
+          }
+        ],
+        "footer": "Total semua transaksi\tRp2.535.000\tRp1.800.000\tLaba bersih Rp735.000"
+      }
+    },
+    {
+      "width": 1280,
+      "kind": "tts",
+      "pt": {
+        "x": 454.21875,
+        "y": 733,
+        "href": "/tts/1",
+        "belowText": false,
+        "hit": true,
+        "width": 94.4375,
+        "height": 18
+      },
+      "navigated": "/tts/1",
+      "event": {
+        "trusted": true,
+        "pointerType": "mouse",
+        "anchor": "http://127.0.0.1:8191/tts/1",
+        "eye": false
+      }
+    },
+    {
+      "width": 1280,
+      "kind": "penjualan",
+      "pt": {
+        "x": 448.7890625,
+        "y": 577,
+        "href": "/penjualan/1",
+        "belowText": false,
+        "hit": true,
+        "width": 83.578125,
+        "height": 18
+      },
+      "navigated": "/penjualan/1",
+      "event": {
+        "trusted": true,
+        "pointerType": "mouse",
+        "anchor": "http://127.0.0.1:8191/penjualan/1",
+        "eye": false
+      }
+    },
+    {
+      "width": 1280,
+      "eyeDialog": true,
+      "route": "/laporan",
+      "focusRestored": true
+    }
+  ],
+  "taps": [
+    {
+      "trusted": true,
+      "pointerType": "touch",
+      "anchor": "http://127.0.0.1:8191/tts/1",
+      "eye": false
+    },
+    {
+      "trusted": true,
+      "pointerType": "touch",
+      "anchor": "http://127.0.0.1:8191/penjualan/1",
+      "eye": false
+    },
+    {
+      "trusted": true,
+      "pointerType": "touch",
+      "eye": true
+    },
+    {
+      "trusted": true,
+      "pointerType": "mouse",
+      "eye": false
+    },
+    {
+      "trusted": true,
+      "pointerType": "touch",
+      "anchor": "http://127.0.0.1:8191/tts/1",
+      "eye": false
+    },
+    {
+      "trusted": true,
+      "pointerType": "touch",
+      "anchor": "http://127.0.0.1:8191/penjualan/1",
+      "eye": false
+    },
+    {
+      "trusted": true,
+      "pointerType": "touch",
+      "eye": true
+    },
+    {
+      "trusted": true,
+      "pointerType": "mouse",
+      "eye": false
+    },
+    {
+      "trusted": true,
+      "pointerType": "mouse",
+      "anchor": "http://127.0.0.1:8191/tts/1",
+      "eye": false
+    },
+    {
+      "trusted": true,
+      "pointerType": "mouse",
+      "anchor": "http://127.0.0.1:8191/penjualan/1",
+      "eye": false
+    },
+    {
+      "trusted": true,
+      "pointerType": "mouse",
+      "eye": true
+    },
+    {
+      "trusted": true,
+      "pointerType": "mouse",
+      "eye": false
+    }
+  ],
+  "consoleErrors": []
+}

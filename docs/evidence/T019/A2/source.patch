@@ -1,0 +1,12 @@
+diff --git a/resources/views/livewire/reports/styles.blade.php b/resources/views/livewire/reports/styles.blade.php
+index bd18de8..7c287d0 100644
+--- a/resources/views/livewire/reports/styles.blade.php
++++ b/resources/views/livewire/reports/styles.blade.php
+@@ -57,6 +57,7 @@
+ .reports-page .report-table tbody td { border:0; padding:0; }
+ .reports-page .report-table td.act { grid-column:1; grid-row:1 / span 2; }
+ .reports-page .report-number { grid-column:2; grid-row:1; font-weight:500; }
++.reports-page .report-number a { display:inline-block; min-width:44px; min-height:44px; }
+ .reports-page .report-amount { grid-column:3; grid-row:1; max-width:48vw; }
+ .reports-page .report-description { grid-column:2/-1; grid-row:2; color:var(--muted); font-size:14px; }
+ .reports-page .report-table tbody .report-empty { grid-column:1/-1; }

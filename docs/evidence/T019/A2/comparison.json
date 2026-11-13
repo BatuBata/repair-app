@@ -1,0 +1,89 @@
+{
+  "assertions": 14,
+  "checks": [
+    {
+      "width": 360,
+      "state": "sample",
+      "check": "exact money unchanged",
+      "pass": true
+    },
+    {
+      "width": 360,
+      "state": "sample",
+      "check": "all links >=44x44",
+      "pass": true
+    },
+    {
+      "width": 360,
+      "state": "large",
+      "check": "exact money unchanged",
+      "pass": true
+    },
+    {
+      "width": 360,
+      "state": "large",
+      "check": "all links >=44x44",
+      "pass": true
+    },
+    {
+      "width": 768,
+      "state": "sample",
+      "check": "exact money unchanged",
+      "pass": true
+    },
+    {
+      "width": 768,
+      "state": "sample",
+      "check": "all links >=44x44",
+      "pass": true
+    },
+    {
+      "width": 768,
+      "state": "large",
+      "check": "exact money unchanged",
+      "pass": true
+    },
+    {
+      "width": 768,
+      "state": "large",
+      "check": "all links >=44x44",
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "state": "sample",
+      "check": "exact money unchanged",
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "state": "sample",
+      "check": "desktop metrics identical",
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "state": "large",
+      "check": "exact money unchanged",
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "state": "large",
+      "check": "desktop metrics identical",
+      "pass": true
+    },
+    {
+      "state": "sample",
+      "width": 1280,
+      "check": "desktop screenshot byte identical",
+      "pass": true
+    },
+    {
+      "state": "long-negative",
+      "width": 1280,
+      "check": "desktop screenshot byte identical",
+      "pass": true
+    }
+  ]
+}

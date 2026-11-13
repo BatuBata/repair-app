@@ -1,0 +1,40 @@
+{
+  "port8191Free": true,
+  "serverPID": 17818,
+  "serverStopped": true,
+  "browsers": [
+    {
+      "run": "failed-second-oracle",
+      "pid": 18205,
+      "alive": false,
+      "profileExists": false
+    },
+    {
+      "run": "intermediate-centered",
+      "pid": 18335,
+      "alive": false,
+      "profileExists": false
+    },
+    {
+      "run": "before",
+      "pid": 18253,
+      "alive": false,
+      "profileExists": false
+    },
+    {
+      "run": "after",
+      "pid": 18520,
+      "alive": false,
+      "profileExists": false
+    },
+    {
+      "run": "failed-initial-oracle",
+      "pid": 17995,
+      "alive": false,
+      "profileExists": false
+    }
+  ],
+  "database": "private SQLite copy retained; original A1/database and MySQL untouched",
+  "privateRuntime": "/private/tmp/repair-t019-a2-20261113",
+  "GUI": "unused"
+}

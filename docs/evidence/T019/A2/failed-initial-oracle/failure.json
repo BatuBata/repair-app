@@ -1,0 +1,6 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: exact long negative 360\n    at check (file:///private/tmp/repair-t019-a2-20261113/check.mjs:8:40)\n    at file:///private/tmp/repair-t019-a2-20261113/check.mjs:26:101",
+  "assertionCount": 1,
+  "cases": [],
+  "taps": []
+}

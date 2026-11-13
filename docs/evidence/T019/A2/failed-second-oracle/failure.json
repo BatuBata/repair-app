@@ -1,0 +1,6 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: exact long revenue 360\n    at check (file:///private/tmp/repair-t019-a2-20261113/check.mjs:8:40)\n    at file:///private/tmp/repair-t019-a2-20261113/check.mjs:26:190",
+  "assertionCount": 2,
+  "cases": [],
+  "taps": []
+}

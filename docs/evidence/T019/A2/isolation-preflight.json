@@ -1,0 +1,12 @@
+{
+    "db": "sqlite",
+    "database": "\/private\/tmp\/repair-t019-a2-20261113\/database.sqlite",
+    "config": "\/private\/tmp\/repair-t019-a2-20261113\/cache\/config.php",
+    "storage": "\/private\/tmp\/repair-t019-a2-20261113\/storage",
+    "views": "\/private\/tmp\/repair-t019-a2-20261113\/storage\/framework\/views",
+    "sessions": "\/private\/tmp\/repair-t019-a2-20261113\/storage\/framework\/sessions",
+    "logs": "\/private\/tmp\/repair-t019-a2-20261113\/storage\/logs\/laravel.log",
+    "sourceFixture": "readonly SQLite backup A1; reset synthetic password only on copy",
+    "port": 8191,
+    "taste": "\/private\/tmp\/repair-t019-a2-20261113\/taste"
+}

@@ -1,0 +1,29 @@
+{
+  "task": "T019",
+  "attempt": "A2",
+  "verdict": "pass",
+  "role": "implementer developer check; not independent QA",
+  "checked_base_revision": "5f2a5a27106ef1da4f30c09d4835f76ade0de365",
+  "source_patch_sha256": "09a15383620ac83e82d76948a1d33ae4062af3af67cb75bcc93d1ad477742866",
+  "final_css_sha256": "ff8e1868c46fce21fab34c0d122daf91e1769f8b5d96a1394f294c079cf8c85c",
+  "input_T016": "c66d038ea448910e3cc8a8529f170f72ac064306",
+  "prior_T019_A1": "7b7a438fcde75185c2160b642a02fbb2c6ed3ff1",
+  "browser_assertions": 62,
+  "comparison_assertions": 14,
+  "widths": [
+    360,
+    768,
+    1280
+  ],
+  "changed_source": [
+    "resources/views/livewire/reports/styles.blade.php"
+  ],
+  "source_equal_backend_proof": "source-proof.json",
+  "resource_release": "resource-release.json",
+  "independent_QA": "T023 A2 pending",
+  "skipped": [
+    "feature/full suite/static analysis/build (source unchanged except CSS)",
+    "physical device/printer",
+    "deployment"
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "result": "PASS",
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/157.0.8103.52",
+    "revision": "@0985600c06a688b9c669e74afde7dacd5aaed047",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "jsVersion": "15.7.112.23"
+  },
+  "results": [
+    {
+      "case": "detail-received",
+      "path": "/tts/1",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ]
+    },
+    {
+      "case": "detail-assigned",
+      "path": "/tts/1",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ]
+    },
+    {
+      "case": "empty-line-rejected",
+      "width": 360
+    },
+    {
+      "case": "profit-colors",
+      "width": 360,
+      "result": "PASS"
+    },
+    {
+      "case": "invoice",
+      "path": "/tts/1/rincian",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ]
+    },
+    {
+      "case": "detail-issued",
+      "path": "/tts/1",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ]
+    },
+    {
+      "case": "correction",
+      "path": "/tts/1/rincian",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ]
+    },
+    {
+      "case": "correction-preserves-date-pickup",
+      "width": 360,
+      "date": "13 Nov 2026"
+    },
+    {
+      "case": "cancel",
+      "width": 360,
+      "result": "PASS"
+    },
+    {
+      "case": "detail-received",
+      "path": "/tts/2",
+      "width": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ]
+    },
+    {
+      "case": "detail-assigned",
+      "path": "/tts/2",
+      "width": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ]
+    },
+    {
+      "case": "empty-line-rejected",
+      "width": 768
+    },
+    {
+      "case": "invoice",
+      "path": "/tts/2/rincian",
+      "width": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ]
+    },
+    {
+      "case": "detail-issued",
+      "path": "/tts/2",
+      "width": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ]
+    },
+    {
+      "case": "correction",
+      "path": "/tts/2/rincian",
+      "width": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ]
+    },
+    {
+      "case": "correction-preserves-date-pickup",
+      "width": 768,
+      "date": "13 Nov 2026"
+    },
+    {
+      "case": "cancel",
+      "width": 768,
+      "result": "PASS"
+    },
+    {
+      "case": "detail-received",
+      "path": "/tts/3",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": []
+    },
+    {
+      "case": "desktop-select-option",
+      "width": 1280,
+      "method": "DOM selectOption equivalent; native macOS popup did not change value; submit remains trusted CDP input"
+    },
+    {
+      "case": "detail-assigned",
+      "path": "/tts/3",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": []
+    },
+    {
+      "case": "empty-line-rejected",
+      "width": 1280
+    },
+    {
+      "case": "invoice",
+      "path": "/tts/3/rincian",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": []
+    },
+    {
+      "case": "detail-issued",
+      "path": "/tts/3",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": []
+    },
+    {
+      "case": "correction",
+      "path": "/tts/3/rincian",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": []
+    },
+    {
+      "case": "correction-preserves-date-pickup",
+      "width": 1280,
+      "date": "13 Nov 2026"
+    },
+    {
+      "case": "cancel",
+      "width": 1280,
+      "result": "PASS"
+    },
+    {
+      "case": "final-layout",
+      "width": 360,
+      "doc": 360,
+      "price": "1.000.000",
+      "total": "Rp1.100.000",
+      "amountRect": {
+        "width": 163.921875,
+        "height": 34,
+        "lineHeight": "34px"
+      }
+    },
+    {
+      "case": "final-layout",
+      "width": 768,
+      "doc": 768,
+      "price": "1.000.000",
+      "total": "Rp1.100.000",
+      "amountRect": {
+        "width": 163.921875,
+        "height": 34,
+        "lineHeight": "34px"
+      }
+    },
+    {
+      "case": "final-layout",
+      "width": 1280,
+      "doc": 1280,
+      "price": "1.000.000",
+      "total": "Rp1.100.000",
+      "amountRect": {
+        "width": 163.921875,
+        "height": 34,
+        "lineHeight": "34px"
+      }
+    }
+  ],
+  "privacy": [
+    {
+      "case": "technician-detail",
+      "width": 360,
+      "amountsAbsent": true
+    },
+    {
+      "case": "technician-detail",
+      "width": 768,
+      "amountsAbsent": true
+    },
+    {
+      "case": "stale-admin-response",
+      "status": 403,
+      "amountsAbsent": true
+    },
+    {
+      "case": "demoted-admin-fresh-detail",
+      "amountsAbsent": true
+    },
+    {
+      "case": "technician-detail",
+      "width": 1280,
+      "amountsAbsent": true
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "message": "Assignment",
+  "results": [
+    {
+      "case": "detail-received",
+      "path": "/tts/1",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ]
+    },
+    {
+      "case": "detail-assigned",
+      "path": "/tts/1",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ]
+    },
+    {
+      "case": "empty-line-rejected",
+      "width": 360
+    },
+    {
+      "case": "profit-colors",
+      "width": 360,
+      "result": "PASS"
+    },
+    {
+      "case": "invoice",
+      "path": "/tts/1/rincian",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ]
+    },
+    {
+      "case": "detail-issued",
+      "path": "/tts/1",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ]
+    },
+    {
+      "case": "correction",
+      "path": "/tts/1/rincian",
+      "width": 360,
+      "documentWidth": 360,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ]
+    },
+    {
+      "case": "correction-preserves-date-pickup",
+      "width": 360,
+      "date": "13 Nov 2026"
+    },
+    {
+      "case": "cancel",
+      "width": 360,
+      "result": "PASS"
+    },
+    {
+      "case": "detail-received",
+      "path": "/tts/2",
+      "width": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ]
+    },
+    {
+      "case": "detail-assigned",
+      "path": "/tts/2",
+      "width": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ]
+    },
+    {
+      "case": "empty-line-rejected",
+      "width": 768
+    },
+    {
+      "case": "invoice",
+      "path": "/tts/2/rincian",
+      "width": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ]
+    },
+    {
+      "case": "detail-issued",
+      "path": "/tts/2",
+      "width": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ]
+    },
+    {
+      "case": "correction",
+      "path": "/tts/2/rincian",
+      "width": 768,
+      "documentWidth": 768,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": [
+        {
+          "top": 763,
+          "bottom": 836,
+          "height": 73
+        }
+      ]
+    },
+    {
+      "case": "correction-preserves-date-pickup",
+      "width": 768,
+      "date": "13 Nov 2026"
+    },
+    {
+      "case": "cancel",
+      "width": 768,
+      "result": "PASS"
+    },
+    {
+      "case": "detail-received",
+      "path": "/tts/3",
+      "width": 1280,
+      "documentWidth": 1280,
+      "font": "\"IBM Plex Sans\", system-ui, sans-serif",
+      "actionbars": []
+    }
+  ],
+  "privacy": [
+    {
+      "case": "technician-detail",
+      "width": 360,
+      "amountsAbsent": true
+    },
+    {
+      "case": "technician-detail",
+      "width": 768,
+      "amountsAbsent": true
+    }
+  ]
+}

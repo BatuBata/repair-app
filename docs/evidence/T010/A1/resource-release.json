@@ -1,0 +1,9 @@
+{
+  "browser": "final runner80990 exit0 and Browser.close completed in task-owned profile",
+  "server": "exec20460 stopped Ctrl+C exit130",
+  "port8189_listening": false,
+  "scope": "browser:headless:T010, private task process/profile/DB/config/storage only",
+  "fixture": "private SQLite retained; no existing MySQL/reset/drop",
+  "push": false,
+  "merge_main": false
+}

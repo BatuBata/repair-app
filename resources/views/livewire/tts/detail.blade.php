@@ -42,7 +42,7 @@
                 @endif
                 @if($isAdmin && $order->status->value === 'selesai')<form class="form" id="collect-order" wire:submit="collect" style="margin-top:16px"><div class="field"><label for="picked_up_on">Tanggal diambil</label><input type="date" class="input" id="picked_up_on" wire:model="picked_up_on" min="1000-01-01" max="9999-12-31"></div></form>@endif@unless($canEdit)<p class="notice" style="margin-top:12px">TTS hanya bisa diedit oleh pembuatnya saat statusnya Diterima. Hubungi admin untuk perubahan.</p>@endunless</section></aside>@endunless</div>
             <div class="success-actions">
-                @if(\Illuminate\Support\Facades\Route::has('tts.whatsapp'))<a class="btn" href="{{ route('tts.whatsapp', $order->id) }}">Kirim WA</a>@endif
+                @if($isAdmin && \Illuminate\Support\Facades\Route::has('tts.whatsapp'))<a class="btn" href="{{ route('tts.whatsapp', $order->id) }}">Kirim WA</a>@endif
                 @if(\Illuminate\Support\Facades\Route::has('tts.print'))<a class="btn" href="{{ route('tts.print', $order->id) }}">Cetak struk</a>@endif
                 @if($success)<a class="btn primary block" href="{{ route('tts.create') }}"><x-ui.icon name="plus" />Buat TTS lagi</a><a class="btn" href="{{ route('tts.show', $order->id) }}">Lihat TTS</a>@endif
             </div>

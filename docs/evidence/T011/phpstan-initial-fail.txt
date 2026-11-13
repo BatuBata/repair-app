@@ -1,0 +1,1 @@
+Initial scoped PHPStan: FAIL at TrackingController.php line 32: Cannot call method format() on string (method.nonObject). The order model date cast was inferred as string. Resolved by parsing the value before formatting; no suppression.

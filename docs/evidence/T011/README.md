@@ -1,0 +1,7 @@
+# T011 A1 self-check
+
+Input T010: 7542a9697f3646d16d12d151bdddab000c120e2c; branch base 2df388b9674f7ff3ece15bc5efd1d8f32f62a2a4. Model requested gpt-6.1-terra high; effective backend receipt unavailable. Ponytail full loaded from /Users/muzib/.codex/plugins/cache/ponytail/ponytail/5.3.3/skills/ponytail/SKILL.md.
+
+- PHP 8.3: `artisan test tests/Feature/Tracking` PASS (2 tests, 44 assertions); scoped Pint PASS; scoped PHPStan debug PASS. Initial PHPStan failure retained in phpstan-initial-fail.txt.
+- Browser: headless Chrome, private profile, CDP, storage/cache/session/view and SQLite fixture; reference and actual screenshots at 360, 768, 1280. `document.fonts.ready` awaited. Examined images: matching content order, max width, status steps, price and warranty; fixture omits shop contact and PDF route is not yet present. First capture failed because local server did not serve assets; second exposed stylesheet loading order; corrected and final images supplied. Measurement JSON includes dimensions and synthetic fixture text. No horizontal overflow: 360/360, 768/768, 1280/1280 scroll/client widths. Server and Chrome stopped; port 8189 released. No live WA opened.
+- No build rerun; existing bundle reused. T015 must build combined production assets. No physical device or MySQL case-insensitive lookup run. Case-sensitive guard uses hash_equals after query; feature test tests flipped token using SQLite.

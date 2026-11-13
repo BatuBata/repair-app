@@ -26,8 +26,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | done |
 | T005 | Pengaturan toko dan master kategori | developer / 6-luna | easy / low | T004 | T006, T020 | done |
 | T006 | Spike dokumen: PDF A5, struk 58mm, dan QR di dompdf | developer / 6.1-sol | medium / medium | T001 | T002, T003, T004, T005, T020 | done |
-| T007 | Integrasi fondasi M1 pada branch candidate sebelum QA dan merge main | integrator / 6.1-sol | medium / medium | T002, T003, T004, T005 | — | running |
-| T008 | QA independen fondasi M1 | tester / 6.1-sol | medium / high | T007 | T006, T020 | failed |
+| T007 | Integrasi fondasi M1 pada branch candidate sebelum QA dan merge main | integrator / 6.1-sol | medium / medium | T002, T003, T004, T005 | — | done |
+| T008 | QA independen fondasi M1 | tester / 6.1-sol | medium / high | T007 | T006, T020 | running |
 | T009 | TTS: form buat/edit, daftar dengan cari/filter, detail sesuai peran | developer / 6.1-sol | medium / high | T008 | T012, T013, T014, T020 | pending |
 | T010 | Alur admin servis: tetapkan teknisi, rincian dan terbitkan nota, koreksi, diambil, batal | developer / 6.1-sol | complex / high | T009 | T012, T013, T014, T020 | pending |
 | T011 | Halaman tracking publik dan tombol Kirim WA | developer / 6.1-terra | medium / medium | T010 | T012, T013, T014, T020 | pending |
@@ -1151,7 +1151,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Cocokkan revisi input dengan hasil task; jalankan test suite penuh dan smoke login di browser."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -1171,7 +1171,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native:collaboration.followup_task:/root/t004_resume:T007",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
         }
       ],
@@ -1184,26 +1184,25 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       },
       "result": {
         "verdict": "pass",
-        "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T007/README.md",
-        "revision": "f6b23c974b319520b80991d67200c05ddd5562f4",
-        "checked_revision": "f6b23c974b319520b80991d67200c05ddd5562f4",
+        "artifact_ref": "docs/evidence/T007/A2/handoff.md",
+        "revision": "db5de005a345de644a7aa9056ea93f5a81117a3d",
+        "checked_revision": "db5de005a345de644a7aa9056ea93f5a81117a3d",
         "inputs": {
           "T002": "4a0667c302c979ab40641459bf9e7afac0655e09",
           "T003": "a08d1d785b72199e1000840ea8e2afe1d7f38fbd",
-          "T004": "ebeb0b62f1a39720091026c1c3a0e8ec535c818e",
-          "T005": "ede491e76cbed8000aaee6e86392dc58d2741210"
+          "T004": "db5de005a345de644a7aa9056ea93f5a81117a3d",
+          "T005": "db5de005a345de644a7aa9056ea93f5a81117a3d"
         },
         "evidence": [
-          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T007/README.md",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T007/result.json",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T007/integration-proof.json",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T007/source-manifest.json",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T007/suite-summary.json",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T007/fixture-proof.json",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T007/browser-results.json",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T007/resource-release.json"
+          "docs/evidence/T007/A2/handoff.md",
+          "docs/evidence/T007/A2/integration-proof.json",
+          "docs/evidence/T007/A2/suite.log",
+          "docs/evidence/T007/A2/suite.xml",
+          "docs/evidence/T007/A2/browser-results.json",
+          "docs/evidence/T007/A2/build-restoration.json",
+          "docs/evidence/T007/A2/source-after.json"
         ],
-        "summary": "PASS integrasi candidate/m1 finalf6b23c9; empat input ancestor,164 source hashes sama denganede491e;71PASS1MySQLSKIP698assertions,SQLite migrate/seed baru dan browser admin/teknisi/profile403 lulus. result.json mem-pin evidence commitdfcd5c3 sebelumnya; handoff/remote finalf6b23c9 berbeda hanya dokumen, kode/manifest identik. Coordinator membaca bukti dan remotehash. Satu pointerwaittimeout dicatat, full responsive/manifest/InnoDB adminrace tetapT008. Main belum digabung/F001 belum accepted; /tts/baru tetapM2/T009."
+        "summary": "80 tests PASS,817 assertions,1 guarded MySQL skip;13 real Chrome observations PASS after verified generated-asset restore;source/.env unchanged. Integrator verification only;T008 independent QA pending. Coordinator inspected code/pins, source/artifact restoration proof, Chrome results and guest screenshot; evidence commit255d805."
       },
       "prior_results": [
         {
@@ -1282,9 +1281,9 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Sesi tester terpisah mem-pin revisi T007, meninjau dan memakai ulang suite penuh integrator pada source/artifact sama, lalu menjalankan pemeriksaan independen kasus akses negatif/akun/kategori/unggah yang kritis, screenshot nyata 3 lebar, pointer, dan manifest termasuk tujuan start_url sesuai peran. Kasus baru/fail tetap diuji, bukan diasumsikan PASS.",
         "Uji race mutasi admin terakhir pada MySQL/InnoDB dengan fixture terisolasi dan resource db:mysql-qa-m1 eksklusif (database baru repair_app_qa_m1, wajib kosong sebelum fixture): T004 membuktikan empat pasangan race di SQLite, bukan engine produksi. Pertahankan guard/provenance fixture dan jangan menyentuh repair_app; laporan failure tetap jika belum terbukti."
       ],
-      "status": "failed",
+      "status": "running",
       "qa_for": "T007",
-      "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
           "id": "A1",
@@ -1295,15 +1294,24 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "dispatch_ref": "ctx_dd91a4362474",
           "outcome": "fail",
           "receipt_ref": "docs/evidence/coordinator/T008-start.json"
+        },
+        {
+          "id": "A2",
+          "kind": "verification",
+          "worker_id": "/root/t008_qa",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.spawn_agent:/root/t008_qa",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
         }
       ],
       "runtime_assignment": {
-        "run_id": "run_729e02cff091",
-        "task_id": "task_a7fb2081803a",
-        "dispatch_id": "ctx_dd91a4362474",
-        "receipt_ref": "docs/evidence/coordinator/T008-start.json",
-        "base_revision": "f6b23c974b319520b80991d67200c05ddd5562f4",
-        "model_observation": "New independent Sol high tester requested; effective backend model unverified. Previous integrator exited/released, immutable source pin retained."
+        "runtime": "Codex native collaboration",
+        "task_id": "/root/t008_qa",
+        "base_revision": "db5de005a345de644a7aa9056ea93f5a81117a3d",
+        "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
+        "model_observation": "Independent native Sol high requested; receipt canonical task name, backend identity not independently exposed. T007 producer settled, browser/server released."
       },
       "result": {
         "verdict": "fail",
@@ -1380,7 +1388,10 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "app/Livewire/Tts/**",
         "resources/views/livewire/tts/**",
         "routes/modules/tts.php",
-        "tests/Feature/Tts/**"
+        "tests/Feature/Tts/**",
+        "docs/evidence/T009/**",
+        "tests/Feature/Auth/RoleLauncherTest.php",
+        "tests/Feature/Auth/AuthenticationTest.php"
       ],
       "shared_resources": [],
       "conflicts_with": [],
@@ -1548,7 +1559,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "app/Livewire/Stock/**",
         "resources/views/livewire/stock/**",
         "routes/modules/stock.php",
-        "tests/Feature/Stock/**"
+        "tests/Feature/Stock/**",
+        "docs/evidence/T012/**"
       ],
       "shared_resources": [],
       "conflicts_with": [],
@@ -1661,7 +1673,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "app/Livewire/Expenses/**",
         "resources/views/livewire/expenses/**",
         "routes/modules/expenses.php",
-        "tests/Feature/Expenses/**"
+        "tests/Feature/Expenses/**",
+        "docs/evidence/T014/**"
       ],
       "shared_resources": [],
       "conflicts_with": [],
@@ -2425,3 +2438,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-13 | User menghentikan pekerjaan segera. project.execution=stopped, allowed_tasks kosong; batalkan assignment aktif T004 A2, simpan hasil parsial dan seluruh riwayat. Tidak ada task/retry/QA/integrasi/deployment baru sebelum instruksi resume. | Stop user mengalahkan izin eksekusi dan taskready | Semua | User: stop pekerjaan |
 
 | 2026-11-13 | Resume eksplisit melalui Goal Codex sampai T023; gunakan worker native, maksimal dua, tanpa orchestration Orca. Snapshot candidate M1 f6b23c9 digabung ke codex/goal-v1; tiga file parsial T004 A2 cocok hash stop dan disalin tanpa mengubah sumber lama. Lanjutkan logical A2, bukan attempt baru. | Goal user | T001–T023 | docs/evidence/coordinator/codex-resume-2026-11-13.json |
+
+| 2026-11-13 | T007 A2 verifikasi PASS pada source db5de00; aset generated stale dipulihkan hanya14file dengan hash historis cocok, sumber dan .env tetap. Reopen T008 untuk QA independen selektif; hasil FAIL lama tetap. Scope T009 mencakup dua tes auth yang sementara mengharapkan /tts/baru404, agar diperbarui ketika form tersedia. Bukti task baru diperbolehkan di folder ID masing-masing. | Review coordinator + hasil native worker | T007–T009,T012,T014 | docs/evidence/T007/A2/handoff.md |

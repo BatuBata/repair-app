@@ -34,7 +34,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T012 | Stok barang jualan dan restok | developer / 6.1-sol | medium / medium | T008 | T009, T010, T011, T014, T020 | done |
 | T013 | Penjualan barang dengan garansi opsional | developer / 6.1-sol | medium / high | T012 | T009, T010, T011, T014, T020 | done |
 | T014 | Pencatatan pengeluaran | developer / 6-luna | easy / low | T008 | T009, T010, T011, T012, T013, T020 | done |
-| T015 | Integrasi alur servis (M2) dan stok/penjualan/pengeluaran (M4) | integrator / 6.1-sol | medium / medium | T011, T013, T014 | — | running |
+| T015 | Integrasi alur servis (M2) dan stok/penjualan/pengeluaran (M4) | integrator / 6.1-sol | medium / medium | T011, T013, T014 | — | done |
 | T016 | QA independen alur servis, penjualan, dan pengeluaran | tester / 6.1-sol | medium / high | T015 | T020 | pending |
 | T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | pending |
 | T018 | Dashboard admin dan pengingat garansi | developer / 6.1-sol | medium / medium | T016 | T017, T019, T020 | pending |
@@ -2065,12 +2065,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "write_scope": [
         "**"
       ],
-      "shared_resources": [
-        {
-          "name": "branch:main",
-          "mode": "exclusive"
-        }
-      ],
+      "shared_resources": [],
       "conflicts_with": [],
       "parallel_candidates": [],
       "acceptance_criteria": [
@@ -2080,7 +2075,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Cocokkan revisi input; jalankan test suite penuh dan smoke alur TTS → nota → tracking serta penjualan.",
         "Build produksi sekali pada sumber gabungan karena Blade baru memengaruhi scanner Tailwind; pin manifest/hash artifact yang sama untuk QA T016. Jangan memakai bundle M1 sebagai bukti build sumber gabungan."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -2090,7 +2085,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native:collaboration.followup_task:/root/t004_resume:T015",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
         }
       ],
@@ -2098,10 +2093,30 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "runtime": "Codex native collaboration",
         "task_id": "/root/t004_resume",
         "base_revision": "01c303d1805ce6574760940021451777a36004bc",
-        "phase": "integration",
-        "browser_reservation": "none during merge/check/build; private headless8189 permitted after isolation preflight",
+        "phase": "settled",
+        "browser_reservation": "released; own Chrome/server8189 stopped, listener absent per evidence",
         "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
         "model_observation": "Reuse settled Sol high session for integration only; effective backend not independently exposed. Independent tester T016 must be a different native session."
+      },
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T015/A1/handoff.md",
+        "revision": "545b52a275687703e6046270afb45e01a0334922",
+        "checked_revision": "545b52a275687703e6046270afb45e01a0334922",
+        "inputs": {
+          "T011": "0736515bb5f673febfe293604166bad46308954a",
+          "T013": "3c35dd1118121d02cca7abb0ae99b78baeb30634",
+          "T014": "aef8ffc75b11344b10ddaabe9ccae4a7e1776e45"
+        },
+        "evidence": [
+          "docs/evidence/T015/A1/handoff.md",
+          "docs/evidence/T015/A1/source-manifest.json",
+          "docs/evidence/T015/A1/assets-manifest.json",
+          "docs/evidence/T015/A1/suite.xml",
+          "docs/evidence/T015/A1/browser-results.json",
+          "docs/evidence/T015/A1/resource-release.json"
+        ],
+        "summary": "Pure pinned merge/no conflicts, exact owned-source bytes retained, no business patch/new migration; coordinator hash/report/screenshot review matches. Full157PASS+1guardedMySQLSKIP/1585assert; globalPint/PHPStan0; one freshproductionbuild14files artifact6e43a91e...;14combinedChromeobservationsPASS. Framework403font timeout evidence retained/resolved runner-only subset, no rebuild/retestfull. Main remainsb5ae99a; independentT016/MySQLriskmatrix required."
       }
     },
     {
@@ -2821,3 +2836,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-13 | T011 A1 developer self-check PASS source0736515, sourcehash/tinjauan coordinator cocok. Privasi/peran/WA dan responsif normal terbukti; uji nominalPHPINTMAX merepro overflow386di360 dan perbaikan final360/768/1280 lulus. Belum QA independen, PDF masih T017. | Review kandidat dan screenshot actual/acuan | T011,T015,T016 | docs/evidence/T011/README.md |
 
 | 2026-11-13 | T014 A1 PASS candidateaef8ffc setelah resume logicalA1 tanpa resetbudget. Browser mengungkap dan membuktikan perbaikan portal menu, fokus cancel/Escape dan CSS desktop; tanggal MySQL dan tes tanggal tetap diperbaiki. T011/T013/T014 kini siap integrasi T015; fitur menunggu QA T016. | Review coordinator source/report/screens | T014,T015,T016 | Native handoff + docs/evidence/T014/A1/README.md |
+
+| 2026-11-13 | T015 A1 PASS integratedcandidate545b52a: puremerge inputspreserved,157testsPASS/1guardedMySQLSKIP/1585assert/Pint/PHPStan0. Freshproductionbundle14file artifact6e43a91e... dan14smokePASS dipin. QA T016 haruspakaiartifactini, bukanbundleM1; main tetapmenungguQA. | Hash/report/screens coordinator review | T015,T016 | docs/evidence/T015/A1/handoff.md |

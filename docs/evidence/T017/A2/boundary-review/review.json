@@ -1,0 +1,43 @@
+{
+  "verdict": "fail",
+  "failure_class": "product",
+  "checked_revision": "66359012ac0e4febec1f21c4154ba23085212333",
+  "runtime_head": "3ff05949060b9cefe22385cc8a6ab2e37e7ea175",
+  "source_equality": {
+    "app/Services/Documents/Document.php": {
+      "sha256": "200eac70cd0eec66c6cd5d9568b96f5ff5f36a2862cd52009c584c82441000ab",
+      "matches_T017_A2": true
+    },
+    "app/Http/Controllers/DocumentController.php": {
+      "sha256": "f184f662e465231c309ef8f77ae82710ca55360589a46d8f767af6a87b6c82b4",
+      "matches_T017_A2": true
+    },
+    "resources/views/documents/document.blade.php": {
+      "sha256": "6ea69f493c0e2c85b5f4e29b20feceff5c6f53435e59f072b08a3df615cd29a5",
+      "matches_T017_A2": true
+    }
+  },
+  "database": "fresh private SQLite, migrations only; no existing DB reset or MySQL access",
+  "cold_font_cache": "new private storage, first PDF registered fonts",
+  "findings": [
+    {
+      "id": "F03",
+      "input": "Store name255 unbrokenASCII characters, legal max255 from Settings/Store.php",
+      "actual": "A5 header table pushes name and document identity beyond page;223glyphs outside each of2pages, visual clipping confirmed",
+      "expected": "full name/document identity readable within A5",
+      "evidence": "name-a5-first.png and text-bounds-results.json"
+    }
+  ],
+  "unproven": [
+    {
+      "case": "thermal with address65535 and warranty_terms65535 (both legal)",
+      "observation": "generation exceeded coordinator harness60s timeout; child killed, no finalPDF. Not a production/FPM measurement."
+    }
+  ],
+  "passes": [
+    "name255 thermal fits with complete customer100/complaint500",
+    "address+terms65535 A5 complete61pages, no outside glyphs, end markers present,14.482s CLI128M/peak48.8MB"
+  ],
+  "budget": "T017 A1/A2 consumed. No source changed; further implementation requires user decision.",
+  "limits": "Not independent finalT023, no printer/Android/production."
+}

@@ -1,0 +1,49 @@
+[
+  {
+    "file": "long-a5.pdf",
+    "pages": 61,
+    "outside": [],
+    "name255_complete": null,
+    "body_C100": true,
+    "body_K500": true,
+    "address_end": true,
+    "terms_end": true,
+    "number": true,
+    "last_page_chars": 111
+  },
+  {
+    "file": "name-a5.pdf",
+    "pages": 2,
+    "outside": [
+      {
+        "page": 1,
+        "count": 223,
+        "sample": "NNNNNNNNNNNNNNNNNNNNNNNNN"
+      },
+      {
+        "page": 2,
+        "count": 223,
+        "sample": "NNNNNNNNNNNNNNNNNNNNNNNNN"
+      }
+    ],
+    "name255_complete": true,
+    "body_C100": true,
+    "body_K500": true,
+    "address_end": true,
+    "terms_end": true,
+    "number": true,
+    "last_page_chars": 474
+  },
+  {
+    "file": "name-thermal.pdf",
+    "pages": 1,
+    "outside": [],
+    "name255_complete": true,
+    "body_C100": true,
+    "body_K500": true,
+    "address_end": true,
+    "terms_end": true,
+    "number": true,
+    "last_page_chars": 1389
+  }
+]

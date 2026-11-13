@@ -36,7 +36,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T014 | Pencatatan pengeluaran | developer / 6-luna | easy / low | T008 | T009, T010, T011, T012, T013, T020 | done |
 | T015 | Integrasi alur servis (M2) dan stok/penjualan/pengeluaran (M4) | integrator / 6.1-sol | medium / medium | T011, T013, T014 | — | done |
 | T016 | QA independen alur servis, penjualan, dan pengeluaran | tester / 6.1-sol | medium / high | T015 | T020 | done |
-| T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | done |
+| T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | failed |
 | T018 | Dashboard admin dan pengingat garansi | developer / 6.1-sol | medium / medium | T016 | T017, T019, T020 | running |
 | T019 | Laporan omzet, modal, pengeluaran, dan laba per rentang tanggal | developer / 6.1-sol | medium / high | T016 | T017, T018, T020 | done |
 | T020 | Paket deploy VPS: konfigurasi contoh, skrip deploy, backup dan restore | developer / 6.1-sol | medium / high | T001, T002 (artifact) | T002, T003, T004, T005, T006, T009, T012, T017, T018, T019 | done |
@@ -2551,7 +2551,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "PDF preflight coordinator: BaconQrCode Writer sudah terpasang. Aset IBM Plex saat ini hanya5WOFF2; TTF turunan+lisensi dapat ditambah tanpa mengubah WOFF2/webfont existing. Bundled Python memiliki pypdf/pdfplumber/reportlab/PIL, fontTools/brotli belum ada; jika dibutuhkan gunakan build tooling privat, bukan install global/appdependency. pdftoppm bundled tersedia; helper Swift PDFKit/CoreImage T006 juga tersedia. Ikuti PDF skill marker sekali sebelum authoring PDF aktual.",
         "A2 closes exact-source review F01 print-media width/default-paper proof and F02 keeping line description/qty/price/subtotal together across A5 pages. Keep A1 failure and retest affected content/privacy/QR only; final full regression T022/T023."
       ],
-      "status": "done",
+      "status": "failed",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "resource_phase_policy": "Coding/host tests no browser/MySQL resource. Private task headless phase only after isolation preflight, unique port8189(T017)/8190(T018), process/profile/CDP/TASTE/SQLite/config/cache/session/views/storage. Max2workers; no shared GUI.",
       "attempts": [
@@ -2573,15 +2573,22 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-terra",
           "model_effective": null,
           "dispatch_ref": "native:collaboration.followup_task:/root/t017_documents:T017-A2",
-          "outcome": "pass",
-          "receipt_ref": "docs/evidence/T017/A1/review/review.json"
+          "outcome": "fail",
+          "receipt_ref": "docs/evidence/T017/A1/review/review.json",
+          "phase_history": [
+            {
+              "outcome": "pass",
+              "source_ref": "A2 implementer selfcheck and coordinator F01/F02 reviewPASS; retained in prior_results"
+            }
+          ],
+          "review_ref": "docs/evidence/T017/A2/boundary-review/review.json"
         }
       ],
       "runtime_assignment": {
         "runtime": "Codex native collaboration",
         "task_id": "/root/t017_documents",
         "base_revision": "479a58565bed3f1b0d9a7e3ef1451d1de073fdbd",
-        "phase": "closed",
+        "phase": "awaiting_user_attempt_exception",
         "browser_reservation": "released; private server8189/browser closed per worker receipt",
         "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
         "model_observation": "New native spawn requested Terra high, canonical taskname returned only."
@@ -2605,27 +2612,45 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
             "T006": "be717f38926cdb6cc0281c013882c0e204dbb86f"
           },
           "summary": "Selfcheck PASS retained, review F01 print width and F02 split A5 line reproduced; not accepted."
+        },
+        {
+          "verdict": "pass",
+          "revision": "66359012ac0e4febec1f21c4154ba23085212333",
+          "artifact_ref": "docs/evidence/T017/A2/README.md",
+          "inputs": {
+            "T016": "c66d038ea448910e3cc8a8529f170f72ac064306",
+            "T006": "be717f38926cdb6cc0281c013882c0e204dbb86f"
+          },
+          "summary": "A2 closes F01 print48mm+5mm margins and F02 40/40 paired A5 rows; QR/privacy/84assert PASS. Coordinator reviewed diff and A2 PNGs. Independent finalQA and physicalprinter still pending; extreme name/thermal>14000pt not proven.",
+          "evidence": [
+            "docs/evidence/T017/A1/README.md",
+            "docs/evidence/T017/A1/review/review.json",
+            "docs/evidence/T017/A2/README.md",
+            "docs/evidence/T017/A2/check.log",
+            "docs/evidence/T017/A2/browser.log",
+            "docs/evidence/T017/A2/qr-check.log",
+            "docs/evidence/T017/A2/render.log"
+          ]
         }
       ],
       "result": {
-        "verdict": "pass",
+        "verdict": "fail",
+        "failure_class": "product",
         "revision": "66359012ac0e4febec1f21c4154ba23085212333",
-        "artifact_ref": "docs/evidence/T017/A2/README.md",
+        "artifact_ref": "docs/evidence/T017/A2/boundary-review/review.json",
         "inputs": {
           "T016": "c66d038ea448910e3cc8a8529f170f72ac064306",
           "T006": "be717f38926cdb6cc0281c013882c0e204dbb86f"
         },
-        "summary": "A2 closes F01 print48mm+5mm margins and F02 40/40 paired A5 rows; QR/privacy/84assert PASS. Coordinator reviewed diff and A2 PNGs. Independent finalQA and physicalprinter still pending; extreme name/thermal>14000pt not proven.",
         "evidence": [
-          "docs/evidence/T017/A1/README.md",
-          "docs/evidence/T017/A1/review/review.json",
-          "docs/evidence/T017/A2/README.md",
-          "docs/evidence/T017/A2/check.log",
-          "docs/evidence/T017/A2/browser.log",
-          "docs/evidence/T017/A2/qr-check.log",
-          "docs/evidence/T017/A2/render.log"
-        ]
-      }
+          "docs/evidence/T017/A2/boundary-review/review.json",
+          "docs/evidence/T017/A2/boundary-review/name-a5-first.png",
+          "docs/evidence/T017/A2/boundary-review/text-bounds-results.json",
+          "docs/evidence/T017/A2/boundary-review/generation-results.json"
+        ],
+        "summary": "F03 valid store name255 unbroken clips A5 header/document identity;223glyphs outside2pages. LongA5 passes61pages; longthermal unproven after harness60s timeout. A1/A2 PASS/FAIL history retained; no code changed; user decision needed forA3."
+      },
+      "next_action": "Request one extra implementation attempt A3 for reproduced F03 and diagnose longthermal; no code until explicit user exception. Other taskT018 continues."
     },
     {
       "id": "T018",

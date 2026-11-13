@@ -30,7 +30,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T008 | QA independen fondasi M1 | tester / 6.1-sol | medium / high | T007 | T006, T020 | done |
 | T009 | TTS: form buat/edit, daftar dengan cari/filter, detail sesuai peran | developer / 6.1-sol | medium / high | T008 | T012, T013, T014, T020 | done |
 | T010 | Alur admin servis: tetapkan teknisi, rincian dan terbitkan nota, koreksi, diambil, batal | developer / 6.1-sol | complex / high | T009 | T012, T013, T014, T020 | done |
-| T011 | Halaman tracking publik dan tombol Kirim WA | developer / 6.1-terra | medium / medium | T010 | T012, T013, T014, T020 | pending |
+| T011 | Halaman tracking publik dan tombol Kirim WA | developer / 6.1-terra | medium / medium | T010 | T012, T013, T014, T020 | done |
 | T012 | Stok barang jualan dan restok | developer / 6.1-sol | medium / medium | T008 | T009, T010, T011, T014, T020 | done |
 | T013 | Penjualan barang dengan garansi opsional | developer / 6.1-sol | medium / high | T012 | T009, T010, T011, T014, T020 | done |
 | T014 | Pencatatan pengeluaran | developer / 6-luna | easy / low | T008 | T009, T010, T011, T012, T013, T020 | running |
@@ -1682,8 +1682,48 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar halaman tracking.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "pending",
-      "resource_phase_policy": "Coding/host tests no browser reservation. Visual uses exclusive browser:headless:T011 port8189 only with separate process/profile/CDP/TASTE_SKILL_TMP, private SQLite/config/cache/session/views/storage; max2 workers. No shared GUI/native mouse."
+      "status": "done",
+      "resource_phase_policy": "Coding/host tests no browser reservation. Visual uses exclusive browser:headless:T011 port8189 only with separate process/profile/CDP/TASTE_SKILL_TMP, private SQLite/config/cache/session/views/storage; max2 workers. No shared GUI/native mouse.",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root/t011_tracking",
+          "model_requested": "gpt-6.1-terra",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.spawn_agent:/root/t011_tracking",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
+        }
+      ],
+      "runtime_assignment": {
+        "runtime": "Codex native collaboration",
+        "task_id": "/root/t011_tracking",
+        "base_revision": "2df388b",
+        "phase": "settled",
+        "browser_reservation": "released; worker Browser.close/server stopped, port8189 absent/profile empty; independent pgrep unavailable sysmondfailure noted",
+        "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
+        "model_observation": "Native tool catalog verifies Terra/Luna/Sol available; spawn requested gpt-6.1-terra high and returned canonical taskname only. Effective backend not independently exposed."
+      },
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T011/README.md",
+        "revision": "0736515bb5f673febfe293604166bad46308954a",
+        "checked_revision": "0736515bb5f673febfe293604166bad46308954a",
+        "inputs": {
+          "T010": "7542a9697f3646d16d12d151bdddab000c120e2c"
+        },
+        "evidence": [
+          "docs/evidence/T011/README.md",
+          "docs/evidence/T011/source-sha256.txt",
+          "docs/evidence/T011/final-check-output.txt",
+          "docs/evidence/T011/measurements.json",
+          "docs/evidence/T011/after.json",
+          "docs/evidence/T011/final-normal-360.png"
+        ],
+        "summary": "Candidate self-check accepted after coordinator source/hash/report and screenshots review. Public exact-token guard, no customerphone/address/cost, noindex/no-store and admin-only WA; zero-warranty and reusable reminder template.2 tests44assert/Pint/scopedPHPStan PASS before subsequent Blade-only CSS. Normal3width/screens and maxint/255description browser3width proven; initial386px overflow on360 retained and fixed. No MySQL case-insensitive or physicalphone/WA messaging/build repeated. T015freshbuild+T016independentQA remain required; F002 pending."
+      }
     },
     {
       "id": "T012",
@@ -2022,7 +2062,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "conflicts_with": [],
       "parallel_candidates": [],
       "acceptance_criteria": [
-        "main memuat candidate T009–T014 pada satu revisi; seluruh test lulus; tidak ada migrasi baru di luar T002."
+        "Branch candidate gabungan memuat hasil T009–T014 pada satu revisi; seluruh test lulus; tidak ada migrasi baru di luar T002. Merge main hanya sesudah QA independen T016 PASS dan review relevan, sesuai AGENTS.md; integrasi tidak melepas gate QA."
       ],
       "verification_plan": [
         "Cocokkan revisi input; jalankan test suite penuh dan smoke alur TTS → nota → tracking serta penjualan.",
@@ -2067,12 +2107,13 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "T020"
       ],
       "acceptance_criteria": [
-        "AC-02–AC-13, AC-15, AC-16, AC-21, AC-22 lulus pada revisi T015 (AC-08 bagian struk/PDF dan AC-12 tombol PDF diuji di T023).",
+        "AC-02–AC-13, AC-15, AC-16, AC-21, AC-22 lulus untuk cakupan alur servis/tracking/WA/stok/penjualan/pengeluaran yang tersedia pada revisi T015. AC-09 pada gate ini membuktikan hitungan tanggal garansi; daftar/pengingat dashboard T018, akses dashboard/laporan AC-04, pengaruh Batal ke laporan AC-11, dokumen AC-08 dan tombol PDF AC-12 dibuktikan lengkap pada T023 setelah task pemiliknya selesai. Tidak menyatakan bagian tersebut PASS sebelum tersedia.",
         "Semua layar M2/M4 lulus AC-24 di 360/768/1280px; form TTS dan rincian nota lulus AC-25 di emulasi HP (HP nyata di T025).",
         "Penomoran dan stok bersamaan diuji di MySQL test."
       ],
       "verification_plan": [
-        "Sesi tester terpisah: jalankan test suite, skenario manual end-to-end dengan data sintetis, screenshot 3 lebar per layar, simpan laporan di docs/evidence/T016/."
+        "Sesi tester terpisah: jalankan test suite, skenario manual end-to-end dengan data sintetis, screenshot 3 lebar per layar, simpan laporan di docs/evidence/T016/.",
+        "Buat pemetaan subkasus AC yang diuji sekarang dan yang menunggu T017/T018/T019 lalu T023; jangan membuat gate T016 menunggu fitur downstream yang hard-depend padanya. Akhir v1 tetap mencakup seluruh AC PRD."
       ],
       "status": "pending",
       "qa_for": "T015"
@@ -2462,7 +2503,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "conflicts_with": [],
       "parallel_candidates": [],
       "acceptance_criteria": [
-        "main memuat candidate T017–T021 pada satu revisi; seluruh test lulus; build aset produksi berhasil."
+        "Branch candidate gabungan memuat hasil T017–T021 pada satu revisi; seluruh test lulus; build aset produksi berhasil. Merge main hanya sesudah QA independen T023 PASS dan review relevan, sesuai AGENTS.md; integrasi tidak melepas gate QA."
       ],
       "verification_plan": [
         "Cocokkan revisi input; jalankan test suite penuh, build aset, dan smoke alur utama."
@@ -2510,7 +2551,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "BR-01–BR-16 tercakup test yang lulus; tidak ada defect penghambat rilis."
       ],
       "verification_plan": [
-        "Sesi tester terpisah: test suite penuh, skenario manual end-to-end, screenshot semua layar 3 lebar, contoh PDF/struk, laporan di docs/evidence/T023/."
+        "Sesi tester terpisah: test suite penuh, skenario manual end-to-end, screenshot semua layar 3 lebar, contoh PDF/struk, laporan di docs/evidence/T023/.",
+        "Revalidasi bagian software AC-01, AC-25 dan AC-26 pada revisi akhir: remember-me/launcher peran, keyboard/inputmode dan aksi form menempel, manifest/nama/ikon toko. Bukti fondasi boleh dipakai ulang hanya dengan pin/hash sumber dan kondisi relevan tetap cocok; pemasangan Android/keyboard nyata/printer fisik tetap T025, tidak diklaim PASS lewat emulasi."
       ],
       "status": "pending",
       "qa_for": "T022"
@@ -2737,3 +2779,9 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-13 | User memilih opsi 2: kajian dan satu prompt Goal dahulu. Goal native paused, project.execution paused dengan allowed_tasks kosong; tidak dispatch baru. T010 candidate7542a96 dilaporkan PASS oleh worker tetapi rekonsiliasi coordinator belum selesai; T014 A1 parsial dihentikan, file/hash dan bukti dipertahankan, browser/server dilepas. Lanjut hanya setelah resume user. | Pilihan user terbaru mengalahkan run lama | Semua; checkpoint T010/T014 | Jawaban async opsi2 + native Goal paused + handoff worker |
 
 | 2026-11-13 | Goal native kembali active (updatedAt1794541380); resume cakupan T001–T023 dari checkpoint terbaru. T010 candidate7542a96 diterima developer self-check setelah review hash/source/laporan/screenshot, bukan penerimaan F002. T014 hash5file cocok checkpoint; lanjut logical A1 visual, tanpa attempt baru. | Goal aktif dan instruksi continuation terkini | T010,T011,T014 | get_goal + source-manifest T010 + pause_checkpoint T014 |
+
+| 2026-11-13 | Selaraskan frasa acceptance T015/T022: integrasi menghasilkan branch candidate gabungan, bukan merge main sebelum QA. Gate T016/T023 tetap wajib sebelum merge. T023 menegaskan revalidasi software AC01/25/26 dan pemisahan bukti fisik T025; tidak mengubah scope PRD. | AGENTS.md + PRD§15 + project-delivery gate integrasi/QA | T015,T022,T023 | Review kontrak coordinator |
+
+| 2026-11-13 | Perjelas subcakupan gate T016: AC09 hitungan tanggal garansi diuji sekarang, UI dashboard/pengingat T018 dan laporan T019 serta PDF T017 menunggu pemilik downstream lalu T023. AC04/11 bagian dashboard/laporan juga T023. Ini menghindari gate menunggu fitur yang bergantung padanya; seluruh AC PRD tetap wajib akhirv1. | Kontrak dependency T017/T018/T019 hard-depend T016 + PRD AC | T016,T023 | Review acceptance/dependency coordinator |
+
+| 2026-11-13 | T011 A1 developer self-check PASS source0736515, sourcehash/tinjauan coordinator cocok. Privasi/peran/WA dan responsif normal terbukti; uji nominalPHPINTMAX merepro overflow386di360 dan perbaikan final360/768/1280 lulus. Belum QA independen, PDF masih T017. | Review kandidat dan screenshot actual/acuan | T011,T015,T016 | docs/evidence/T011/README.md |

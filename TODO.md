@@ -29,11 +29,11 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T007 | Integrasi fondasi M1 pada branch candidate sebelum QA dan merge main | integrator / 6.1-sol | medium / medium | T002, T003, T004, T005 | — | done |
 | T008 | QA independen fondasi M1 | tester / 6.1-sol | medium / high | T007 | T006, T020 | done |
 | T009 | TTS: form buat/edit, daftar dengan cari/filter, detail sesuai peran | developer / 6.1-sol | medium / high | T008 | T012, T013, T014, T020 | done |
-| T010 | Alur admin servis: tetapkan teknisi, rincian dan terbitkan nota, koreksi, diambil, batal | developer / 6.1-sol | complex / high | T009 | T012, T013, T014, T020 | pending |
+| T010 | Alur admin servis: tetapkan teknisi, rincian dan terbitkan nota, koreksi, diambil, batal | developer / 6.1-sol | complex / high | T009 | T012, T013, T014, T020 | running |
 | T011 | Halaman tracking publik dan tombol Kirim WA | developer / 6.1-terra | medium / medium | T010 | T012, T013, T014, T020 | pending |
 | T012 | Stok barang jualan dan restok | developer / 6.1-sol | medium / medium | T008 | T009, T010, T011, T014, T020 | done |
-| T013 | Penjualan barang dengan garansi opsional | developer / 6.1-sol | medium / high | T012 | T009, T010, T011, T014, T020 | running |
-| T014 | Pencatatan pengeluaran | developer / 6-luna | easy / low | T008 | T009, T010, T011, T012, T013, T020 | pending |
+| T013 | Penjualan barang dengan garansi opsional | developer / 6.1-sol | medium / high | T012 | T009, T010, T011, T014, T020 | done |
+| T014 | Pencatatan pengeluaran | developer / 6-luna | easy / low | T008 | T009, T010, T011, T012, T013, T020 | running |
 | T015 | Integrasi alur servis (M2) dan stok/penjualan/pengeluaran (M4) | integrator / 6.1-sol | medium / medium | T011, T013, T014 | — | pending |
 | T016 | QA independen alur servis, penjualan, dan pengeluaran | tester / 6.1-sol | medium / high | T015 | T020 | pending |
 | T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | pending |
@@ -184,7 +184,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "push_authorized": true,
       "source_ref": "Instruksi user 12 Nov 2026: push ke GitHub BatuBata/repair-app, setiap pekerjaan selesai buat commit dan push",
       "policy": "Commit pekerjaan selesai dan push branch task/checkpoint setelah periksa perubahan; merge ke main tetap setelah QA/review relevan; tanpa force-push. Kandidat blocked disimpan sebagai checkpoint, bukan fitur diterima.",
-      "coordination_branch": "codex/t009-tts"
+      "coordination_branch": "codex/t010-invoice"
     }
   },
   "deliverables": [
@@ -1493,7 +1493,12 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "tests/Feature/Invoice/**",
         "docs/evidence/T010/**"
       ],
-      "shared_resources": [],
+      "shared_resources": [
+        {
+          "name": "browser:repair-app-visual",
+          "mode": "exclusive"
+        }
+      ],
       "conflicts_with": [],
       "parallel_candidates": [
         "T012",
@@ -1513,8 +1518,30 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar layar detail dan rincian; uji emulasi HP penambahan/penghapusan baris.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "pending",
-      "resource_phase_policy": "Coding/private SQLite host checks without browser; request exclusive browser before actual visual phase. No MySQL existing fixture writes without specific reservation."
+      "status": "running",
+      "resource_phase_policy": "Coding/private SQLite host checks without browser; request exclusive browser before actual visual phase. No MySQL existing fixture writes without specific reservation.",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root/t004_resume",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.followup_task:/root/t004_resume:T010",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
+        }
+      ],
+      "runtime_assignment": {
+        "runtime": "Codex native collaboration",
+        "task_id": "/root/t004_resume",
+        "base_revision": "af4c81aff6cd851cc7f7fc9713d546d7783338ae",
+        "phase": "visual_self_check",
+        "browser_reservation": "exclusive granted8189 after T013 released; T014 will code only",
+        "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
+        "model_observation": "Existing requested Sol high native session resumed only after T009 settled; effective backend identity not exposed."
+      }
     },
     {
       "id": "T011",
@@ -1701,12 +1728,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "tests/Feature/Sales/**",
         "docs/evidence/T013/**"
       ],
-      "shared_resources": [
-        {
-          "name": "browser:repair-app-visual",
-          "mode": "exclusive"
-        }
-      ],
+      "shared_resources": [],
       "conflicts_with": [],
       "parallel_candidates": [
         "T009",
@@ -1726,7 +1748,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar daftar dan form penjualan.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "running",
+      "status": "done",
       "resource_phase_policy": "Coding/private SQLite first. Request db:mysql-test exclusive for actual concurrency, preserving existing repair_app_test schema/data and task-owned fixture provenance; no fresh/drop/truncate. Browser exclusive reserved only when visual phase starts.",
       "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
       "attempts": [
@@ -1737,7 +1759,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native:collaboration.followup_task:/root/t012_stock:T013",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
         }
       ],
@@ -1745,11 +1767,29 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "runtime": "Codex native collaboration",
         "task_id": "/root/t012_stock",
         "base_revision": "2ce3ca3c46bcaab19c334240ff4fd3e72add85ac",
-        "phase": "visual_self_check",
-        "browser_reservation": "exclusive granted8190 after T009 release",
+        "phase": "settled",
+        "browser_reservation": "released8190; serverexit0/listenerabsent/profile0 per evidence",
         "mysql_reservation": "released after real two-admin race PASS; preexisting20-table baseline retained, expected JLcounter+1 and owned fixture additions only",
         "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
         "model_observation": "Existing Sol high native session resumed after T012 settled; effective backend not exposed."
+      },
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "/Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T013/A1/README.md",
+        "revision": "3c35dd1118121d02cca7abb0ae99b78baeb30634",
+        "checked_revision": "3c35dd1118121d02cca7abb0ae99b78baeb30634",
+        "inputs": {
+          "T012": "2ce3ca3c46bcaab19c334240ff4fd3e72add85ac"
+        },
+        "evidence": [
+          "/Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T013/A1/README.md",
+          "/Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T013/A1/checks.json",
+          "/Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T013/A1/mysql-proof.json",
+          "/Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T013/A1/browser-results.json",
+          "/Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T013/A1/summary-final.json",
+          "/Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T013/A1/source-manifest.json"
+        ],
+        "summary": "Developer A1 PASS atomic sales/delete/stock snapshots/warranty/numbering;53tests604assert plus timestamp boundary1/2 and final5/49 focusedPASS;Pint/staticPASS. Actual two-admin MySQL stock1 race one success/one shortage,baseline20tables preserved except authorized JLcounter+1+ownedrows.22core browser observations+10viewport+4summaryPASS/32screens reviewed;14buildunchanged. Coordinator read actions/reports/race and final numeric screenshot. F003 still pending independent integrated T016; no physical/deploy. Resources released."
       }
     },
     {
@@ -1803,7 +1843,30 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar daftar dan form.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "pending"
+      "status": "running",
+      "resource_phase_policy": "Coding/private SQLite only first; request browser:repair-app-visual exclusive before real visual QA. Current T010 owns8189. No existing MySQL access/reset.",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root/t014_expenses",
+          "model_requested": "gpt-6-luna",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.spawn_agent:/root/t014_expenses",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
+        }
+      ],
+      "runtime_assignment": {
+        "runtime": "Codex native collaboration",
+        "task_id": "/root/t014_expenses",
+        "base_revision": "3c35dd1118121d02cca7abb0ae99b78baeb30634",
+        "phase": "coding",
+        "browser_reservation": "none; T010 owns8189",
+        "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
+        "model_observation": "Native spawn requested gpt-6-luna medium per triage, receipt returns canonical taskname only; backend identity not independently exposed."
+      }
     },
     {
       "id": "T015",
@@ -1845,7 +1908,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "main memuat candidate T009–T014 pada satu revisi; seluruh test lulus; tidak ada migrasi baru di luar T002."
       ],
       "verification_plan": [
-        "Cocokkan revisi input; jalankan test suite penuh dan smoke alur TTS → nota → tracking serta penjualan."
+        "Cocokkan revisi input; jalankan test suite penuh dan smoke alur TTS → nota → tracking serta penjualan.",
+        "Build produksi sekali pada sumber gabungan karena Blade baru memengaruhi scanner Tailwind; pin manifest/hash artifact yang sama untuk QA T016. Jangan memakai bundle M1 sebagai bukti build sumber gabungan."
       ],
       "status": "pending"
     },

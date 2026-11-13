@@ -41,8 +41,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T019 | Laporan omzet, modal, pengeluaran, dan laba per rentang tanggal | developer / 6.1-sol | medium / high | T016 | T017, T018, T020 | done |
 | T020 | Paket deploy VPS: konfigurasi contoh, skrip deploy, backup dan restore | developer / 6.1-sol | medium / high | T001, T002 (artifact) | T002, T003, T004, T005, T006, T009, T012, T017, T018, T019 | done |
 | T021 | Panduan pengguna singkat untuk owner dan teknisi | developer / 6-luna | easy / low | T017, T018, T019 | T020 | done |
-| T022 | Integrasi akhir v1 | integrator / 6.1-sol | medium / medium | T017, T018, T019, T020, T021 | — | running |
-| T023 | QA akhir v1: regresi penuh dan uji responsif semua layar | tester / 6.1-sol | medium / high | T022 | — | pending |
+| T022 | Integrasi akhir v1 | integrator / 6.1-sol | medium / medium | T017, T018, T019, T020, T021 | — | done |
+| T023 | QA akhir v1: regresi penuh dan uji responsif semua layar | tester / 6.1-sol | medium / high | T022 | — | running |
 | T024 | Deploy v1 ke VPS produksi | deployer / 6.1-sol | medium / high | T022, T023 | — | pending |
 | T025 | Verifikasi produksi dan uji di HP dan printer klien | tester / 6.1-sol | medium / high | T024 | — | pending |
 <!-- END GENERATED VIEW -->
@@ -3181,7 +3181,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Cocokkan revisi input; jalankan test suite penuh, build aset, dan smoke alur utama.",
         "T020 source6095a5ca34a5b28bf65a481007d69b21a8bc7084 belum digabung. Integrasikan deploy/**,docs/DEPLOYMENT.md,docs/evidence/T020/** dari pin itu tanpa metadata/task lama. Runbook opening masih menyebut MySQLrestore BLOCKED walau verifikasi nyata6095a5c PASS; rekonsiliasi kalimat status dan tautkan bukti, pertahankan sumberFAIL/lokalPASS serta gateQ03/Q04 produksi. Jangan mengulang DBrestore/menghapusfixture yang sudahterbukti. Jalankan shellchecks sesuai perubahan/pin."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -3191,7 +3191,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native:collaboration.spawn_agent:/root/t022_integrate:T022",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/t022-dispatch.json"
         }
       ],
@@ -3200,9 +3200,32 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "task_id": "/root/t022_integrate",
         "base_revision": "9d011685cde0f75ce676091cceca598978cdcf6a",
         "branch": "codex/t022-release",
-        "phase": "integration",
-        "resources": "branch:main exclusive reserved bytask; no actualmainmerge untilT023PASS",
+        "phase": "closed",
+        "resources": "released; no mainmerge happened,8192/profileclosed",
         "model_observation": "Nativecatalog supportsSolhigh; fresh integrationworker requested, backendnotproven."
+      },
+      "result": {
+        "verdict": "pass",
+        "revision": "a95a3058c2160617d2e59ce7ac44685774d7528d",
+        "checked_source_revision": "44154b674393e7d4c8a715131b13cae3e863cca7",
+        "artifact_ref": "docs/evidence/T022/A1/README.md",
+        "inputs": {
+          "T017": "2d7e613d5592ff169cb7743ff6fd086ec06fe58c",
+          "T018": "c9d1f429056676576310e88e524a75c9bc897c83",
+          "T019": "7b7a438fcde75185c2160b642a02fbb2c6ed3ff1",
+          "T020": "6095a5ca34a5b28bf65a481007d69b21a8bc7084",
+          "T021": "9d011685cde0f75ce676091cceca598978cdcf6a"
+        },
+        "evidence": [
+          "docs/evidence/T022/A1/README.md",
+          "docs/evidence/T022/A1/source-manifest.json",
+          "docs/evidence/T022/A1/build-manifest.json",
+          "docs/evidence/T022/A1/font-manifest.json",
+          "docs/evidence/T022/A1/checked-source.json",
+          "docs/evidence/T022/A1/browser-results.json",
+          "docs/evidence/T022/A1/resource-release.json"
+        ],
+        "summary": "Full181PASS/1guardedMySQLSKIP1913assert, Pint/PHPStan/build/cachesPASS;26browser+5PDF+23HTTPasset checksPASS. Only2preprinting assertions/runbook updated; businesssources exactinputs. Coordinator reviewedrunbook/guide and verified230source14build9font hashes onroot/nativeQA exactA95. Candidatepushed; no mainmerge/deploy; T023 independent mandatory."
       }
     },
     {
@@ -3250,8 +3273,30 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Revalidasi bagian software AC-01, AC-25 dan AC-26 pada revisi akhir: remember-me/launcher peran, keyboard/inputmode dan aksi form menempel, manifest/nama/ikon toko. Bukti fondasi boleh dipakai ulang hanya dengan pin/hash sumber dan kondisi relevan tetap cocok; pemasangan Android/keyboard nyata/printer fisik tetap T025, tidak diklaim PASS lewat emulasi.",
         "T017 menyatakan batas belum terbukti: periksa nama toko legal255 karakter (termasuk kata panjang), alamat/syarat65535 karakter dan thermal melewati14000pt dengan fixture privat; buktikan isi akhir/QR tidak hilang dan batas halaman, bukan hanya HTTP200. Cek PDF dengan font-cache privat kosong dan data exactsource; F01 printwidth58mm serta F02 paginasi pairedlines harus tetapPASS. Field limits diverifikasi pada Store.php57–60 dan Dompdf mendukung overflow_wrap. Pertahankan fail; jangan patch candidate dalam sesi tester."
       ],
-      "status": "pending",
-      "qa_for": "T022"
+      "status": "running",
+      "qa_for": "T022",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "verification",
+          "worker_id": "/root/t023_final",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.spawn_agent:/root/t023_final:T023",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/t023-dispatch.json"
+        }
+      ],
+      "runtime_assignment": {
+        "runtime": "Codex native collaboration",
+        "task_id": "/root/t023_final",
+        "base_revision": "a95a3058c2160617d2e59ce7ac44685774d7528d",
+        "branch": "codex/t023-final-qa",
+        "phase": "independent_verification",
+        "resources": "db:mysql-test exclusive; conditional private headless8193 after preflight; noGUI/hardware",
+        "model_observation": "FreshSolhigh independent session requested; not featurebuilder/integrator; backendmodel notexposed."
+      }
     },
     {
       "id": "T024",

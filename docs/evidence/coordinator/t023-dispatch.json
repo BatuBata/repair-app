@@ -1,0 +1,15 @@
+{
+  "task": "T023",
+  "attempt": "A1",
+  "kind": "independent_verification",
+  "worker": "/root/t023_final",
+  "requested_model": "gpt-6.1-sol",
+  "requested_reasoning": "high",
+  "effective_model": null,
+  "input_T022": "a95a3058c2160617d2e59ce7ac44685774d7528d",
+  "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+  "branch": "codex/t023-final-qa",
+  "workspace_proof": "docs/evidence/coordinator/t023-workspace-proof.json",
+  "resource": "db:mysql-test exclusive",
+  "guard_note": "Do not enable old emptyDB MySqlConcurrencyTest against existing20tables; no reset/migratefresh. Use non-destructive actualMySQL ownfixtures/reuse proven unchanged source."
+}

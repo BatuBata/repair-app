@@ -1,0 +1,20 @@
+{
+  "candidate_revision": "a95a3058c2160617d2e59ce7ac44685774d7528d",
+  "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+  "verification": {
+    "source-manifest.json": {
+      "files": 230,
+      "mismatches": []
+    },
+    "build-manifest.json": {
+      "files": 14,
+      "mismatches": []
+    },
+    "font-manifest.json": {
+      "files": 9,
+      "mismatches": []
+    }
+  },
+  "build_file_set_exact": true,
+  "build_reused_byte_identical_no_copy_or_rebuild": true
+}

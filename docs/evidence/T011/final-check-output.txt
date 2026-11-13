@@ -1,0 +1,12 @@
+Output transcribed from actual tool responses; no raw check log files were saved in private temp.
+
+$ /opt/homebrew/opt/php@8.3/bin/php vendor/bin/pint --test app/Http/Controllers/TrackingController.php app/Support/WhatsApp.php routes/modules/tracking.php tests/Feature/Tracking/TrackingTest.php
+{"tool":"pint","result":"passed"}
+
+$ /opt/homebrew/opt/php@8.3/bin/php vendor/bin/phpstan analyse app/Http/Controllers/TrackingController.php app/Support/WhatsApp.php --memory-limit=512M --debug
+{"tool":"phpstan","result":"passed","errors":0}
+
+$ /opt/homebrew/opt/php@8.3/bin/php artisan test tests/Feature/Tracking
+{"tool":"phpunit","result":"passed","tests":2,"passed":2,"assertions":44,"duration_ms":285}
+
+These outputs precede the subsequent Blade-only responsive CSS adjustment. No test or build was repeated for evidence formatting; the adjustment was checked in Chrome at three widths.

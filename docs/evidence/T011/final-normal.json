@@ -1,0 +1,146 @@
+[
+  {
+    "width": 360,
+    "scrollWidth": 360,
+    "clientWidth": 360,
+    "sheet": {
+      "left": 12,
+      "right": 348,
+      "width": 336,
+      "scrollWidth": 334,
+      "clientWidth": 334,
+      "text": "TTS-2611-001\n\nPrinter Anda sudah selesai dan siap diambil.\n\nDiterima\n8 Nov\nDikerjakan\n8 Nov\nSelesai\n10 Nov\nDiambil\nBarang\nPrinter Epson L3110\nKeluhan\nHasil cetak bergaris\nTanggal nota\n10 Nov 2026\nTinta 664 hitam × 1\nRp100.000\nJasa pembersihan head × 1\nRp85.000\nTotal\nRp185.000\n\nGaransi 30 hari, berlaku sampai 10 Des 2026."
+    },
+    "total": {
+      "left": 230.953125,
+      "right": 331,
+      "width": 100.046875,
+      "scrollWidth": 100,
+      "clientWidth": 100,
+      "text": "Rp185.000"
+    },
+    "rows": [
+      {
+        "left": 29,
+        "right": 331,
+        "width": 302,
+        "scrollWidth": 302,
+        "clientWidth": 302,
+        "text": "Tinta 664 hitam × 1\nRp100.000"
+      },
+      {
+        "left": 29,
+        "right": 331,
+        "width": 302,
+        "scrollWidth": 302,
+        "clientWidth": 302,
+        "text": "Jasa pembersihan head × 1\nRp85.000"
+      },
+      {
+        "left": 29,
+        "right": 331,
+        "width": 302,
+        "scrollWidth": 302,
+        "clientWidth": 302,
+        "text": "Total\nRp185.000"
+      }
+    ],
+    "track": "Diterima\n8 Nov\nDikerjakan\n8 Nov\nSelesai\n10 Nov\nDiambil"
+  },
+  {
+    "width": 768,
+    "scrollWidth": 768,
+    "clientWidth": 768,
+    "sheet": {
+      "left": 12,
+      "right": 652,
+      "width": 640,
+      "scrollWidth": 638,
+      "clientWidth": 638,
+      "text": "TTS-2611-001\n\nPrinter Anda sudah selesai dan siap diambil.\n\nDiterima\n8 Nov\nDikerjakan\n8 Nov\nSelesai\n10 Nov\nDiambil\nBarang\nPrinter Epson L3110\nKeluhan\nHasil cetak bergaris\nTanggal nota\n10 Nov 2026\nTinta 664 hitam × 1\nRp100.000\nJasa pembersihan head × 1\nRp85.000\nTotal\nRp185.000\n\nGaransi 30 hari, berlaku sampai 10 Des 2026."
+    },
+    "total": {
+      "left": 514.9375,
+      "right": 635,
+      "width": 120.0625,
+      "scrollWidth": 120,
+      "clientWidth": 120,
+      "text": "Rp185.000"
+    },
+    "rows": [
+      {
+        "left": 29,
+        "right": 635,
+        "width": 606,
+        "scrollWidth": 606,
+        "clientWidth": 606,
+        "text": "Tinta 664 hitam × 1\nRp100.000"
+      },
+      {
+        "left": 29,
+        "right": 635,
+        "width": 606,
+        "scrollWidth": 606,
+        "clientWidth": 606,
+        "text": "Jasa pembersihan head × 1\nRp85.000"
+      },
+      {
+        "left": 29,
+        "right": 635,
+        "width": 606,
+        "scrollWidth": 606,
+        "clientWidth": 606,
+        "text": "Total\nRp185.000"
+      }
+    ],
+    "track": "Diterima\n8 Nov\nDikerjakan\n8 Nov\nSelesai\n10 Nov\nDiambil"
+  },
+  {
+    "width": 1280,
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "sheet": {
+      "left": 430.75,
+      "right": 849.25,
+      "width": 418.5,
+      "scrollWidth": 417,
+      "clientWidth": 417,
+      "text": "TTS-2611-001\n\nPrinter Anda sudah selesai dan siap diambil.\n\nDiterima\n8 Nov\nDikerjakan\n8 Nov\nSelesai\n10 Nov\nDiambil\nBarang\nPrinter Epson L3110\nKeluhan\nHasil cetak bergaris\nTanggal nota\n10 Nov 2026\nTinta 664 hitam × 1\nRp100.000\nJasa pembersihan head × 1\nRp85.000\nTotal\nRp185.000\n\nGaransi 30 hari, berlaku sampai 10 Des 2026."
+    },
+    "total": {
+      "left": 700.1875,
+      "right": 820.25,
+      "width": 120.0625,
+      "scrollWidth": 120,
+      "clientWidth": 120,
+      "text": "Rp185.000"
+    },
+    "rows": [
+      {
+        "left": 459.75,
+        "right": 820.25,
+        "width": 360.5,
+        "scrollWidth": 361,
+        "clientWidth": 361,
+        "text": "Tinta 664 hitam × 1\nRp100.000"
+      },
+      {
+        "left": 459.75,
+        "right": 820.25,
+        "width": 360.5,
+        "scrollWidth": 361,
+        "clientWidth": 361,
+        "text": "Jasa pembersihan head × 1\nRp85.000"
+      },
+      {
+        "left": 459.75,
+        "right": 820.25,
+        "width": 360.5,
+        "scrollWidth": 361,
+        "clientWidth": 361,
+        "text": "Total\nRp185.000"
+      }
+    ],
+    "track": "Diterima\n8 Nov\nDikerjakan\n8 Nov\nSelesai\n10 Nov\nDiambil"
+  }
+]

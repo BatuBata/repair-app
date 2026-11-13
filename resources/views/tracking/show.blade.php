@@ -17,8 +17,10 @@
         .bill { margin-top:28px; padding-top:20px; border-top:1px solid var(--border); display:grid; gap:16px; }
         .bill .totals .grand { border-bottom:0; padding:12px 0 0; margin:4px 0 0; border-top:1px solid var(--border); }
         .bill .totals .grand dd { font-size:24px; line-height:30px; }
-        .totals dt { overflow-wrap:anywhere; min-width:0; } .totals dd { text-align:right; flex:none; }
+        .totals > div { flex-wrap:wrap; } .totals dt { overflow-wrap:anywhere; min-width:0; flex:1 1 140px; }
+        .totals dd { text-align:right; max-width:100%; margin-left:auto; overflow-wrap:anywhere; }
         .foot { max-width:640px; margin:0 auto 32px; padding:0 16px; color:var(--muted); font-size:13px; text-align:center; overflow-wrap:anywhere; }
+        @media (max-width:639.98px) { .bill .totals .grand dd { font-size:20px; } }
         @media (max-width:1023.98px) { .public .sheet { margin:0 12px 16px; border:1px solid var(--border); border-radius:12px; padding:20px 16px 24px; } body { background:var(--ground); } }
     </style>
 </head>

@@ -1,0 +1,28 @@
+{
+  "suite": {
+    "total": 158,
+    "passed": 157,
+    "assertions": 1585,
+    "skipped": [
+      {
+        "class": "Tests\\Feature\\Domain\\MySqlConcurrencyTest",
+        "name": "test_mysql_fresh_seed_and_parallel_document_creation",
+        "reason": "",
+        "reason_from_test_source": "RUN_MYSQL_DOMAIN !=1: guarded MySQL acceptance requires explicit credentials and an empty database. This run explicitly uses0; no MySQL/reset/migrate:fresh occurred."
+      }
+    ],
+    "runs": 1
+  },
+  "pint_global": "PASS including prior PHP evidence helpers",
+  "phpstan_full_debug": {
+    "errors": 0,
+    "result": "PASS"
+  },
+  "production_build": {
+    "runs": 1,
+    "file_count": 14,
+    "byte_identical_to_A1": true
+  },
+  "new_browser_observations": 0,
+  "reuse": "smoke-reuse.json"
+}

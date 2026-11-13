@@ -1,0 +1,21 @@
+{
+  "before": {
+    "AGENTS.md": "0c3f9fe75b3a1e6251959d48931a84734ed891b94785466143bc35672f373f3e",
+    ".env": "78134d22410053522907eb15a15cc35e9e9aba008a74f07b73c98cc39624b5e3",
+    "TODO.md": "6b5ff289ffeeccfd7ef7e2d7bafe6b5ac9230ec0d26efbd2e9492d4c44953c92",
+    "main_revision": "b5ae99a72e076fe6a5de5c5f3459ae01de666454"
+  },
+  "after": {
+    "AGENTS.md": "0c3f9fe75b3a1e6251959d48931a84734ed891b94785466143bc35672f373f3e",
+    ".env": "78134d22410053522907eb15a15cc35e9e9aba008a74f07b73c98cc39624b5e3",
+    "TODO.md": "6b5ff289ffeeccfd7ef7e2d7bafe6b5ac9230ec0d26efbd2e9492d4c44953c92",
+    "main_revision": "b5ae99a72e076fe6a5de5c5f3459ae01de666454"
+  },
+  "worker_changed_TODO_AGENTS_env": false,
+  "TODO_change_if_any": "coordinator only; never staged by integrator",
+  "main_unchanged": true,
+  "git_status": [
+    "?? docs/evidence/T015/A2/"
+  ],
+  "no_new_migrations_or_models_or_dependencies_or_business_patch": true
+}

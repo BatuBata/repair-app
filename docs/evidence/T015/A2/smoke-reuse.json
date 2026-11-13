@@ -1,0 +1,39 @@
+{
+  "strategy": "No new browser: fresh build14 byte-identical; unchanged208source hashes plus exact three T010A2 view hashes. Existing smoke is reused, not rerun or independent QA.",
+  "artifact_sha256": "6e43a91e8f08f49aae6ab334fa46dde48fcc52c1900d1a0e11f60344e2556f36",
+  "unchanged_source_count": 208,
+  "changed_view_hashes": {
+    "resources/views/livewire/invoice/form.blade.php": "06b31cdb8fec054d3be18bf595ab2492e440ced9e77c27ed6c8fd917690236af",
+    "resources/views/livewire/invoice/published.blade.php": "bc4def310ba19d22247a30f725cd8568cc5265f84111fca7f90eaf7fd6edd3bd",
+    "resources/views/livewire/tts/detail.blade.php": "f40b7807aeb4698ee1453d70c06ce47e4091c1a939951a0e1095d5639af8ad41"
+  },
+  "mapping": [
+    {
+      "coverage": "TTS create\u2192assign\u2192invoice business action\u2192public tracking; stock create\u2192sale snapshot\u2192delete stock restore; expenses create/edit via portalled menu; technician financial privacy and403",
+      "source_condition": "All app PHP/controllers/actions/routes/schema/tests/shared CSSJS/deps unchanged from T015A1;208/211complete source hashes match; build14/runtimefont5match",
+      "evidence": [
+        "docs/evidence/T015/A1/browser-results.json",
+        "docs/evidence/T015/A1/invoice-proof.json",
+        "docs/evidence/T015/A1/stock-proof.json",
+        "docs/evidence/T015/A1/sale-proof.json",
+        "docs/evidence/T015/A1/sale-deleted-proof.json",
+        "docs/evidence/T015/A1/expense-proof.json",
+        "docs/evidence/T015/A1/browser-guards-final.log"
+      ]
+    },
+    {
+      "coverage": "Changed form/detail/published layout: trusted actual0\u2192target input; issue/correction buttons; exact integer DB+date preservation; normal/large/negative3width; final adaptive grand15states315layoutprobes; final breakpoint6states126layoutprobes",
+      "source_condition": "Three final checked view hashes match T010A2 commit291fa245 exactly, including1279 stacking constant and amount-length adaptive font; build14identical to artifact used in that proof",
+      "evidence": [
+        "docs/evidence/T010/A2/browser-results.json",
+        "docs/evidence/T010/A2/database-proof.json",
+        "docs/evidence/T010/A2/final-grand-results.json",
+        "docs/evidence/T010/A2/breakpoint-final-results.json",
+        "docs/evidence/T010/A2/source-after.json",
+        "docs/evidence/T010/A2/resource-release.json"
+      ]
+    }
+  ],
+  "excluded_old_visuals": "Old T015A1 invoice/detail screenshots do not prove new responsive layout; final T010A2 final2-/final-breakpoint- screenshots are used for changed presentation. Historical intermediate failures retained.",
+  "new_current_candidate_checks": "Full SQLite suite157PASS1guardedMySQLSKIP1585assertions; globalPint/PHPStan/build once; no claim of new browser observations."
+}

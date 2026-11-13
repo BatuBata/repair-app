@@ -1,0 +1,25 @@
+{
+  "base_revision": "cf172e9c35999a393362859461b61ae5c898ea45",
+  "branch": "codex/m2-m4-candidate-a2",
+  "inputs": {
+    "T011": "291fa2451c012c2d07097b8166a8c4317305aa97",
+    "T013": "3c35dd1118121d02cca7abb0ae99b78baeb30634",
+    "T014": "aef8ffc75b11344b10ddaabe9ccae4a7e1776e45"
+  },
+  "source_count": 211,
+  "build_input_count": 73,
+  "only_app_diff_from_T015_A1": [
+    "resources/views/livewire/invoice/form.blade.php",
+    "resources/views/livewire/invoice/published.blade.php",
+    "resources/views/livewire/tts/detail.blade.php"
+  ],
+  "control_before": {
+    "AGENTS.md": "0c3f9fe75b3a1e6251959d48931a84734ed891b94785466143bc35672f373f3e",
+    ".env": "78134d22410053522907eb15a15cc35e9e9aba008a74f07b73c98cc39624b5e3",
+    "TODO.md": "6b5ff289ffeeccfd7ef7e2d7bafe6b5ac9230ec0d26efbd2e9492d4c44953c92",
+    "main_revision": "b5ae99a72e076fe6a5de5c5f3459ae01de666454"
+  },
+  "old_build14_verified_against_manifest_and_archive": true,
+  "old_archive_preserved": "/private/tmp/repair-t016-a1-build-qjg314_u/build",
+  "browser": "not reserved or started; only needed if production bytes change"
+}

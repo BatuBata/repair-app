@@ -1,0 +1,8 @@
+{
+  "browser_or_server_started": false,
+  "browser_reservation": "none needed: identical production artifact permits evidence reuse",
+  "listener8189": false,
+  "mysql_connected": false,
+  "existing_databases_not_touched": true,
+  "old_archive_preserved": true
+}

@@ -8,10 +8,10 @@
         .tts-compose .paper hr { border:0; border-top:1px dashed var(--control); margin:8px 0; }
         .tts-compose .paper dl { display:grid; grid-template-columns:56px minmax(0,1fr); gap:4px 8px; }
         .tts-compose .paper dt { color:var(--muted); }
-        .tts-compose .choice label { overflow-wrap:anywhere; text-align:center; }
+        .tts-compose .choice label { height:100%; min-height:72px; overflow-wrap:anywhere; text-align:center; }
         .tts-compose .form-end { display:flex; gap:8px; }
         .tts-compose .error-text { margin-top:4px; }
-        @media(max-width:1023.98px) { .tts-compose .compose { display:block; } .tts-compose summary { min-height:44px; height:auto; flex-wrap:wrap; } }
+        @media(max-width:1023.98px) { .tts-compose .compose { display:block; } .tts-compose .choice label { min-height:60px; } .tts-compose summary { min-height:44px; height:auto; flex-wrap:wrap; } }
     </style>
     <div class="title-row"><div><h1>{{ $orderId ? 'Ubah TTS' : 'TTS baru' }}</h1><p class="sub desktop-only">Empat isian wajib. {{ $orderId ? 'Perbarui data barang dan customer.' : 'Nomor TTS dibuat otomatis saat disimpan.' }}</p></div></div>
     @if($errors->any())<p class="notice" role="alert" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">Periksa kembali isian di bawah.</p>@endif

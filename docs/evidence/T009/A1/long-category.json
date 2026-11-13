@@ -1,0 +1,284 @@
+{
+  "result": "PASS",
+  "results": [
+    {
+      "width": 360,
+      "documentWidth": 360,
+      "labels": [
+        {
+          "length": 10,
+          "width": 104,
+          "height": 60,
+          "bottom": 414,
+          "scrollHeight": 58,
+          "clientHeight": 58
+        },
+        {
+          "length": 2,
+          "width": 104,
+          "height": 60,
+          "bottom": 414,
+          "scrollHeight": 58,
+          "clientHeight": 58
+        },
+        {
+          "length": 6,
+          "width": 104,
+          "height": 60,
+          "bottom": 414,
+          "scrollHeight": 58,
+          "clientHeight": 58
+        },
+        {
+          "length": 8,
+          "width": 104,
+          "height": 60,
+          "bottom": 482,
+          "scrollHeight": 58,
+          "clientHeight": 58
+        },
+        {
+          "length": 7,
+          "width": 104,
+          "height": 60,
+          "bottom": 482,
+          "scrollHeight": 58,
+          "clientHeight": 58
+        },
+        {
+          "length": 7,
+          "width": 104,
+          "height": 60,
+          "bottom": 482,
+          "scrollHeight": 58,
+          "clientHeight": 58
+        },
+        {
+          "length": 7,
+          "width": 104,
+          "height": 60,
+          "bottom": 550,
+          "scrollHeight": 58,
+          "clientHeight": 58
+        },
+        {
+          "length": 2,
+          "width": 104,
+          "height": 60,
+          "bottom": 550,
+          "scrollHeight": 58,
+          "clientHeight": 58
+        },
+        {
+          "length": 7,
+          "width": 104,
+          "height": 60,
+          "bottom": 550,
+          "scrollHeight": 58,
+          "clientHeight": 58
+        },
+        {
+          "length": 254,
+          "width": 104,
+          "height": 518,
+          "bottom": 1076,
+          "scrollHeight": 516,
+          "clientHeight": 516
+        }
+      ],
+      "nextFieldTop": 1128,
+      "save": [
+        {
+          "top": 776,
+          "bottom": 824
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "documentWidth": 768,
+      "labels": [
+        {
+          "length": 10,
+          "width": 105.59375,
+          "height": 60,
+          "bottom": 414,
+          "scrollHeight": 58,
+          "clientHeight": 58
+        },
+        {
+          "length": 2,
+          "width": 105.59375,
+          "height": 60,
+          "bottom": 414,
+          "scrollHeight": 58,
+          "clientHeight": 58
+        },
+        {
+          "length": 6,
+          "width": 105.609375,
+          "height": 60,
+          "bottom": 414,
+          "scrollHeight": 58,
+          "clientHeight": 58
+        },
+        {
+          "length": 8,
+          "width": 105.59375,
+          "height": 60,
+          "bottom": 414,
+          "scrollHeight": 58,
+          "clientHeight": 58
+        },
+        {
+          "length": 7,
+          "width": 105.59375,
+          "height": 60,
+          "bottom": 414,
+          "scrollHeight": 58,
+          "clientHeight": 58
+        },
+        {
+          "length": 7,
+          "width": 105.59375,
+          "height": 518,
+          "bottom": 940,
+          "scrollHeight": 516,
+          "clientHeight": 516
+        },
+        {
+          "length": 7,
+          "width": 105.59375,
+          "height": 518,
+          "bottom": 940,
+          "scrollHeight": 516,
+          "clientHeight": 516
+        },
+        {
+          "length": 2,
+          "width": 105.609375,
+          "height": 518,
+          "bottom": 940,
+          "scrollHeight": 516,
+          "clientHeight": 516
+        },
+        {
+          "length": 7,
+          "width": 105.59375,
+          "height": 518,
+          "bottom": 940,
+          "scrollHeight": 516,
+          "clientHeight": 516
+        },
+        {
+          "length": 254,
+          "width": 105.59375,
+          "height": 518,
+          "bottom": 940,
+          "scrollHeight": 516,
+          "clientHeight": 516
+        }
+      ],
+      "nextFieldTop": 992,
+      "save": [
+        {
+          "top": 776,
+          "bottom": 824
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "documentWidth": 1280,
+      "labels": [
+        {
+          "length": 10,
+          "width": 105.59375,
+          "height": 72,
+          "bottom": 427,
+          "scrollHeight": 70,
+          "clientHeight": 70
+        },
+        {
+          "length": 2,
+          "width": 105.59375,
+          "height": 72,
+          "bottom": 427,
+          "scrollHeight": 70,
+          "clientHeight": 70
+        },
+        {
+          "length": 6,
+          "width": 105.609375,
+          "height": 72,
+          "bottom": 427,
+          "scrollHeight": 70,
+          "clientHeight": 70
+        },
+        {
+          "length": 8,
+          "width": 105.59375,
+          "height": 72,
+          "bottom": 427,
+          "scrollHeight": 70,
+          "clientHeight": 70
+        },
+        {
+          "length": 7,
+          "width": 105.59375,
+          "height": 72,
+          "bottom": 427,
+          "scrollHeight": 70,
+          "clientHeight": 70
+        },
+        {
+          "length": 7,
+          "width": 105.59375,
+          "height": 520,
+          "bottom": 955,
+          "scrollHeight": 518,
+          "clientHeight": 518
+        },
+        {
+          "length": 7,
+          "width": 105.59375,
+          "height": 520,
+          "bottom": 955,
+          "scrollHeight": 518,
+          "clientHeight": 518
+        },
+        {
+          "length": 2,
+          "width": 105.609375,
+          "height": 520,
+          "bottom": 955,
+          "scrollHeight": 518,
+          "clientHeight": 518
+        },
+        {
+          "length": 7,
+          "width": 105.59375,
+          "height": 520,
+          "bottom": 955,
+          "scrollHeight": 518,
+          "clientHeight": 518
+        },
+        {
+          "length": 254,
+          "width": 105.59375,
+          "height": 520,
+          "bottom": 955,
+          "scrollHeight": 518,
+          "clientHeight": 518
+        }
+      ],
+      "nextFieldTop": 1003,
+      "save": [
+        {
+          "top": 0,
+          "bottom": 0
+        }
+      ]
+    }
+  ]
+}

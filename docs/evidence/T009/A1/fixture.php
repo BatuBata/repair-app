@@ -29,6 +29,9 @@ if ($argv[1] === 'config') {
         $order->items()->create(['type' => 'part', 'description' => 'PART PRIVAT UJI', 'qty' => 1, 'price' => 919191, 'cost' => 818181]);
     }
     echo json_encode(['driver' => config('database.default'), 'users' => User::count(), 'orders' => ServiceOrder::count(), 'categories' => Category::count(), 'private_views' => str_starts_with(config('view.compiled'), $runtime), 'private_local_disk' => str_starts_with(config('filesystems.disks.local.root'), $runtime)])."\n";
+} elseif ($argv[1] === 'long-category') {
+    $category = Category::create(['name' => str_repeat('Kategori panjang ', 15)]);
+    echo json_encode(['category_id' => $category->id, 'name_length' => strlen($category->name)])."\n";
 } else {
     throw new RuntimeException('Unknown fixture mode.');
 }

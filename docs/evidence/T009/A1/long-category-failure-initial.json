@@ -1,0 +1,4 @@
+{
+  "message": "The expression evaluated to a falsy value:\n\n  assert.ok(data.labels.some(l=>l.length===255))\n",
+  "results": []
+}

@@ -1,0 +1,3 @@
+The expression evaluated to a falsy value:
+
+  assert.ok(data.labels.some(l=>l.length===255))

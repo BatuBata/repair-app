@@ -34,7 +34,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T012 | Stok barang jualan dan restok | developer / 6.1-sol | medium / medium | T008 | T009, T010, T011, T014, T020 | done |
 | T013 | Penjualan barang dengan garansi opsional | developer / 6.1-sol | medium / high | T012 | T009, T010, T011, T014, T020 | done |
 | T014 | Pencatatan pengeluaran | developer / 6-luna | easy / low | T008 | T009, T010, T011, T012, T013, T020 | done |
-| T015 | Integrasi alur servis (M2) dan stok/penjualan/pengeluaran (M4) | integrator / 6.1-sol | medium / medium | T011, T013, T014 | — | pending |
+| T015 | Integrasi alur servis (M2) dan stok/penjualan/pengeluaran (M4) | integrator / 6.1-sol | medium / medium | T011, T013, T014 | — | running |
 | T016 | QA independen alur servis, penjualan, dan pengeluaran | tester / 6.1-sol | medium / high | T015 | T020 | pending |
 | T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | pending |
 | T018 | Dashboard admin dan pengingat garansi | developer / 6.1-sol | medium / medium | T016 | T017, T019, T020 | pending |
@@ -2080,7 +2080,29 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Cocokkan revisi input; jalankan test suite penuh dan smoke alur TTS → nota → tracking serta penjualan.",
         "Build produksi sekali pada sumber gabungan karena Blade baru memengaruhi scanner Tailwind; pin manifest/hash artifact yang sama untuk QA T016. Jangan memakai bundle M1 sebagai bukti build sumber gabungan."
       ],
-      "status": "pending"
+      "status": "running",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "verification",
+          "worker_id": "/root/t004_resume",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.followup_task:/root/t004_resume:T015",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
+        }
+      ],
+      "runtime_assignment": {
+        "runtime": "Codex native collaboration",
+        "task_id": "/root/t004_resume",
+        "base_revision": "01c303d1805ce6574760940021451777a36004bc",
+        "phase": "integration",
+        "browser_reservation": "none during merge/check/build; private headless8189 permitted after isolation preflight",
+        "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
+        "model_observation": "Reuse settled Sol high session for integration only; effective backend not independently exposed. Independent tester T016 must be a different native session."
+      }
     },
     {
       "id": "T016",

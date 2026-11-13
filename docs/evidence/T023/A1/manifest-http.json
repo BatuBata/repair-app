@@ -1,0 +1,41 @@
+{
+  "manifest": {
+    "status": 200,
+    "json": {
+      "name": "Toko Anugerah",
+      "short_name": "Anugerah",
+      "start_url": "/mulai",
+      "display": "standalone",
+      "background_color": "#f2f5f6",
+      "theme_color": "#f2f5f6",
+      "icons": [
+        {
+          "src": "/icons/ticket-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        },
+        {
+          "src": "/icons/ticket-512.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+      ]
+    }
+  },
+  "icons": [
+    {
+      "src": "/icons/ticket-192.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 4402
+    },
+    {
+      "src": "/icons/ticket-512.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 10719
+    }
+  ],
+  "standalone": true,
+  "launcher": "/mulai"
+}

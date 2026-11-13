@@ -1,0 +1,20 @@
+
+   Illuminate\Database\QueryException
+
+  SQLSTATE[42S02]: Base table or view not found: 1146 Table 'repair_app_test.number_counters' doesn't exist (Connection: mysql, Host: 127.0.0.1, Port: 3306, Database: repair_app_test, SQL: select exists(select * from `number_counters` where `period` = 3201) as `exists`)
+
+  at vendor/laravel/framework/src/Illuminate/Database/Connection.php:864
+    860▕             $exceptionType = ($isUniqueConstraintError = $this->isUniqueConstraintError($e))
+    861▕                 ? UniqueConstraintViolationException::class
+    862▕                 : QueryException::class;
+    863▕
+  ➜ 864▕             $exception = new $exceptionType(
+    865▕                 $this->getNameWithReadWriteType(),
+    866▕                 $query,
+    867▕                 $this->prepareBindings($bindings),
+    868▕                 $e,
+
+      [2m+6 vendor frames [22m
+
+  7   docs/evidence/T023/A1/mysql.php.txt:8
+      Illuminate\Database\Query\Builder::exists()

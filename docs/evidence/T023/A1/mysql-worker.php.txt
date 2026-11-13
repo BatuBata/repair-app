@@ -1,0 +1,8 @@
+<?php
+require __DIR__.'/mysql-bootstrap.php.txt';
+$p=json_decode(file_get_contents($root.'/mysql-fixture.json'),true);$kind=$argv[1];$id=(int)$argv[2];$actor=(int)$argv[3];$target=(float)$argv[4];$clockMode=$argv[5]??'fixed';
+auth()->login(App\Models\User::findOrFail($actor));
+Carbon\CarbonImmutable::setTestNow($clockMode==='boundary'?fn()=>Carbon\CarbonImmutable::parse(microtime(true)>=$target?'2032-01-15 00:00:01':'2032-01-14 23:59:59','Asia/Makassar'):Carbon\CarbonImmutable::parse('2032-01-14 12:00:00','Asia/Makassar'));
+while(microtime(true)<$target&&$clockMode!=='boundary')usleep(10000);
+$start=microtime(true);try{$c=app(App\Livewire\Dashboard\Index::class);$c->markContacted($kind,$id);$result='marked';}catch(Illuminate\Validation\ValidationException $e){$result='rejected';}
+echo json_encode(['result'=>$result,'kind'=>$kind,'ownId'=>$id,'actor'=>$actor,'wallSeconds'=>round(microtime(true)-$start,3),'clockMode'=>$clockMode]).PHP_EOL;

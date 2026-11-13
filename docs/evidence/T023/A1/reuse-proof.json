@@ -1,0 +1,179 @@
+[
+  {
+    "cases": "T002-numbering",
+    "source_pin": "4a0667c302c979ab40641459bf9e7afac0655e09",
+    "files": [
+      {
+        "path": "app/Services/DocumentNumber.php",
+        "pin_sha256": "1209e0227cb3625669420aa95644d81723445e42f31530d3240fbe55dc8c6e82",
+        "current_sha256": "1209e0227cb3625669420aa95644d81723445e42f31530d3240fbe55dc8c6e82",
+        "equal": true
+      },
+      {
+        "path": "app/Services/CreateServiceOrder.php",
+        "pin_sha256": "6168bd2e833eaa7055c5a8e3f3ff1615e6ce3032de196dd0f88ed4275e958899",
+        "current_sha256": "6168bd2e833eaa7055c5a8e3f3ff1615e6ce3032de196dd0f88ed4275e958899",
+        "equal": true
+      },
+      {
+        "path": "app/Models/ServiceOrder.php",
+        "pin_sha256": "525371050586a9955067368fd48c6002ea663c4ec74ac63f9009ad5789ee418d",
+        "current_sha256": "525371050586a9955067368fd48c6002ea663c4ec74ac63f9009ad5789ee418d",
+        "equal": true
+      },
+      {
+        "path": "app/Models/Sale.php",
+        "pin_sha256": "604add72635e79a437205133276d01b0d53c8664deb89606f1152a75b820a817",
+        "current_sha256": "604add72635e79a437205133276d01b0d53c8664deb89606f1152a75b820a817",
+        "equal": true
+      },
+      {
+        "path": "database/migrations/0001_01_01_000000_create_users_table.php",
+        "pin_sha256": "10d79883bc08ce46510f9ad8b1830b4d06d586dc56ae2c8bac3b3e491f69a90f",
+        "current_sha256": "10d79883bc08ce46510f9ad8b1830b4d06d586dc56ae2c8bac3b3e491f69a90f",
+        "equal": true
+      },
+      {
+        "path": "database/migrations/0001_01_01_000001_create_cache_table.php",
+        "pin_sha256": "fbb4665e5a977e71df4e74ec75b3c06ca4f17ad0de7138fe9786639189978e77",
+        "current_sha256": "fbb4665e5a977e71df4e74ec75b3c06ca4f17ad0de7138fe9786639189978e77",
+        "equal": true
+      },
+      {
+        "path": "database/migrations/0001_01_01_000002_create_jobs_table.php",
+        "pin_sha256": "df4910687180313a14a3f96a8bddd808ae145ed1b107cd772caf865c0dc2b746",
+        "current_sha256": "df4910687180313a14a3f96a8bddd808ae145ed1b107cd772caf865c0dc2b746",
+        "equal": true
+      },
+      {
+        "path": "database/migrations/2024_01_01_000000_create_passkeys_table.php",
+        "pin_sha256": "3c866281584abdc808b6b6fe1d28aae55d997d3f97c5dd2d07ae106ff58531fc",
+        "current_sha256": "3c866281584abdc808b6b6fe1d28aae55d997d3f97c5dd2d07ae106ff58531fc",
+        "equal": true
+      },
+      {
+        "path": "database/migrations/2025_08_14_170933_add_two_factor_columns_to_users_table.php",
+        "pin_sha256": "79f22594944d826286ad1dafb13217967781e104dbb021a1c85fbdf9270db4a5",
+        "current_sha256": "79f22594944d826286ad1dafb13217967781e104dbb021a1c85fbdf9270db4a5",
+        "equal": true
+      },
+      {
+        "path": "database/migrations/2026_11_12_000000_create_domain_tables.php",
+        "pin_sha256": "482b136ded519a020ab891441d5c50404328313719bcf0fdc535f3e21e6327fe",
+        "current_sha256": "482b136ded519a020ab891441d5c50404328313719bcf0fdc535f3e21e6327fe",
+        "equal": true
+      }
+    ],
+    "all_equal": true
+  },
+  {
+    "cases": "T016-mysql-domain",
+    "source_pin": "545b52a275687703e6046270afb45e01a0334922",
+    "files": [
+      {
+        "path": "app/Actions/Sales/CreateSale.php",
+        "pin_sha256": "0da38d1933e373117ab39d151ed583836dd500ae6b9a21bf76c7fc5e28f1ec72",
+        "current_sha256": "0da38d1933e373117ab39d151ed583836dd500ae6b9a21bf76c7fc5e28f1ec72",
+        "equal": true
+      },
+      {
+        "path": "app/Actions/Sales/DeleteSale.php",
+        "pin_sha256": "b1afb89611ae29ebc83fd2d4a784ba1f6238ecd68f735e41d05ecd77db998327",
+        "current_sha256": "b1afb89611ae29ebc83fd2d4a784ba1f6238ecd68f735e41d05ecd77db998327",
+        "equal": true
+      },
+      {
+        "path": "app/Services/CreateServiceOrder.php",
+        "pin_sha256": "6168bd2e833eaa7055c5a8e3f3ff1615e6ce3032de196dd0f88ed4275e958899",
+        "current_sha256": "6168bd2e833eaa7055c5a8e3f3ff1615e6ce3032de196dd0f88ed4275e958899",
+        "equal": true
+      },
+      {
+        "path": "app/Services/DocumentNumber.php",
+        "pin_sha256": "1209e0227cb3625669420aa95644d81723445e42f31530d3240fbe55dc8c6e82",
+        "current_sha256": "1209e0227cb3625669420aa95644d81723445e42f31530d3240fbe55dc8c6e82",
+        "equal": true
+      },
+      {
+        "path": "app/Http/Controllers/TrackingController.php",
+        "pin_sha256": "9a3872954ac689e00af7b3e00d76e5dc17aa2ec4230c0b427d8c4f4ac5bfafe3",
+        "current_sha256": "9a3872954ac689e00af7b3e00d76e5dc17aa2ec4230c0b427d8c4f4ac5bfafe3",
+        "equal": true
+      },
+      {
+        "path": "app/Models/ServiceOrder.php",
+        "pin_sha256": "525371050586a9955067368fd48c6002ea663c4ec74ac63f9009ad5789ee418d",
+        "current_sha256": "525371050586a9955067368fd48c6002ea663c4ec74ac63f9009ad5789ee418d",
+        "equal": true
+      },
+      {
+        "path": "app/Models/Product.php",
+        "pin_sha256": "c9c4f1940f07337f04692f36cbd0f80083a897a509acf2b789b1024ef7a36890",
+        "current_sha256": "c9c4f1940f07337f04692f36cbd0f80083a897a509acf2b789b1024ef7a36890",
+        "equal": true
+      },
+      {
+        "path": "app/Models/Sale.php",
+        "pin_sha256": "604add72635e79a437205133276d01b0d53c8664deb89606f1152a75b820a817",
+        "current_sha256": "604add72635e79a437205133276d01b0d53c8664deb89606f1152a75b820a817",
+        "equal": true
+      },
+      {
+        "path": "app/Models/User.php",
+        "pin_sha256": "6854ce944be197f9527bd0730447acd09be2780b01ef9458a1a48e5abe0b4aa2",
+        "current_sha256": "6854ce944be197f9527bd0730447acd09be2780b01ef9458a1a48e5abe0b4aa2",
+        "equal": true
+      }
+    ],
+    "all_equal": true
+  },
+  {
+    "cases": "T020-operational",
+    "source_pin": "6095a5ca34a5b28bf65a481007d69b21a8bc7084",
+    "files": [
+      {
+        "path": "deploy/backup.cron.example",
+        "pin_sha256": "5e09e29a02c1da01378a4d3dc3a19966441912643009486f8d46e4841f6b62bb",
+        "current_sha256": "5e09e29a02c1da01378a4d3dc3a19966441912643009486f8d46e4841f6b62bb",
+        "equal": true
+      },
+      {
+        "path": "deploy/backup.sh",
+        "pin_sha256": "b575e6de68363b0e70b701600c9b6fcc16e7b0ecac962194e7a3daa5186705f7",
+        "current_sha256": "b575e6de68363b0e70b701600c9b6fcc16e7b0ecac962194e7a3daa5186705f7",
+        "equal": true
+      },
+      {
+        "path": "deploy/check-scripts.py",
+        "pin_sha256": "3e92b61560c6ce26ea53db37a4971a6268d71652fe3b340c561ac22e7ddd376d",
+        "current_sha256": "3e92b61560c6ce26ea53db37a4971a6268d71652fe3b340c561ac22e7ddd376d",
+        "equal": true
+      },
+      {
+        "path": "deploy/deploy.sh",
+        "pin_sha256": "5217347bdea3f9d4b57cd7b57fd92a28dbc1dbb70719cd7694cd6b9358ef1bb4",
+        "current_sha256": "5217347bdea3f9d4b57cd7b57fd92a28dbc1dbb70719cd7694cd6b9358ef1bb4",
+        "equal": true
+      },
+      {
+        "path": "deploy/nginx.conf.example",
+        "pin_sha256": "f2cf80b7d201faf227a60b3f75afd8e660324d782a314d30e2829905f7b2ba2e",
+        "current_sha256": "f2cf80b7d201faf227a60b3f75afd8e660324d782a314d30e2829905f7b2ba2e",
+        "equal": true
+      },
+      {
+        "path": "deploy/php-fpm.conf.example",
+        "pin_sha256": "407a770448821a259cbe2cb64c7fe3324cbcaa1b202405c413a4618b956c6988",
+        "current_sha256": "407a770448821a259cbe2cb64c7fe3324cbcaa1b202405c413a4618b956c6988",
+        "equal": true
+      },
+      {
+        "path": "deploy/restore.sh",
+        "pin_sha256": "67d514da781fd45bc6a9f03c955601863e2bba1061768a0f7542eb33cad57ef1",
+        "current_sha256": "67d514da781fd45bc6a9f03c955601863e2bba1061768a0f7542eb33cad57ef1",
+        "equal": true
+      }
+    ],
+    "all_equal": true
+  }
+]

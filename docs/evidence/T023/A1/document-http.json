@@ -1,0 +1,42 @@
+{
+  "pdfs": [
+    {
+      "name": "tts-a5",
+      "status": 200,
+      "contentType": "application/pdf",
+      "cache": "no-store, private",
+      "robots": null
+    },
+    {
+      "name": "invoice-logo-a5",
+      "status": 200,
+      "contentType": "application/pdf",
+      "cache": "no-store, private",
+      "robots": null
+    },
+    {
+      "name": "invoice-logo-thermal",
+      "status": 200,
+      "contentType": "application/pdf",
+      "cache": "no-store, private",
+      "robots": null
+    }
+  ],
+  "manifest": true,
+  "icons": [
+    {
+      "src": "/icons/ticket-192.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 4402
+    },
+    {
+      "src": "/icons/ticket-512.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 10719
+    }
+  ],
+  "logoUpload": true,
+  "consoleErrors": []
+}

@@ -1,0 +1,32 @@
+{
+  "verdict": "fail",
+  "artifact_ref": "docs/evidence/T023/A1/README.md",
+  "checked_revision": "a95a3058c2160617d2e59ce7ac44685774d7528d",
+  "inputs": {
+    "T022": "a95a3058c2160617d2e59ce7ac44685774d7528d"
+  },
+  "evidence_revision": "Evidence-only commit is returned in tester handoff; no self-referential commit hash embedded.",
+  "finding": "T023-F01: report-number anchor108.421875x20px at360; expected44x44; confirmed distinct eye/dialog action",
+  "counts": {
+    "suite_passed": 181,
+    "suite_skipped": 1,
+    "suite_assertions": 1913,
+    "primary_screenshots": 111,
+    "reference_captures": 33,
+    "flow_cases": 21,
+    "extra_state_cases": 6,
+    "extra_state_screens": 18,
+    "final_ui_cases": 3,
+    "large_cases": 30,
+    "new_http_pdfs": 10,
+    "qr_decodes": 5,
+    "mysql_cases": 6
+  },
+  "resources": "released; resource-release.json",
+  "not_run": [
+    "Edge A1; planned fixedA2",
+    "physical Android/4G/keyboard/installedshortcut/pilot/printer/camera T025",
+    "production T024-T025"
+  ],
+  "summary": "All42 software AC/BR mapped; BR01-16 pass. SoftwareAC24/25 failF01, no productpatch. Others pass subject to explicitphysicaldeferrals and source-provenance reuse. No deploy/mainmerge/push."
+}

@@ -1,0 +1,104 @@
+{
+  "verdict": "pass",
+  "checked_revision": "a95a3058c2160617d2e59ce7ac44685774d7528d",
+  "cases": [
+    {
+      "id": "remember-recaller-new-browser-without-session-cookie",
+      "pass": true,
+      "evidence": "remember-only-proof.json; supersedes initial expires>0 cookie-filter evidence gap; no business-flow replay"
+    },
+    {
+      "id": "tts-four-required",
+      "pass": true
+    },
+    {
+      "id": "invalid-phone-retains-fields",
+      "pass": true
+    },
+    {
+      "id": "technician-create-success",
+      "pass": true
+    },
+    {
+      "id": "technician-edit-own-received",
+      "pass": true
+    },
+    {
+      "id": "admin-role-launcher",
+      "pass": true
+    },
+    {
+      "id": "report-prd-sample-exact",
+      "pass": true
+    },
+    {
+      "id": "assign-status-and-name",
+      "pass": true
+    },
+    {
+      "id": "invoice-multiline-part-service",
+      "pass": true
+    },
+    {
+      "id": "invoice-correction-exact-total",
+      "pass": true
+    },
+    {
+      "id": "collect-status",
+      "pass": true
+    },
+    {
+      "id": "body-portalled-stock-menu-navigation",
+      "pass": true
+    },
+    {
+      "id": "restock-adds-two-updates-price",
+      "pass": true
+    },
+    {
+      "id": "sale-stocks-and-warranty",
+      "pass": true
+    },
+    {
+      "id": "delete-own-sale-restores-stock",
+      "pass": true
+    },
+    {
+      "id": "expense-create",
+      "pass": true
+    },
+    {
+      "id": "manual-WA-redirect-no-send",
+      "pass": true
+    },
+    {
+      "id": "technician-route-guards-11",
+      "pass": true
+    },
+    {
+      "id": "technician-price-cost-absent-html",
+      "pass": true
+    },
+    {
+      "id": "public-invalid-404-noindex",
+      "pass": true
+    },
+    {
+      "id": "console-clean",
+      "pass": true
+    }
+  ],
+  "createdId": 7,
+  "saleId": 5,
+  "pdfs": [
+    "tts-thermal",
+    "invoice-a5",
+    "invoice-thermal",
+    "invoice-corrected-a5",
+    "sale-a5",
+    "sale-thermal",
+    "public-a5"
+  ],
+  "consoleErrors": [],
+  "evidence_reconstruction": "Final flow process printed21cases/7PDF/26screens, then read-only large-screen helper reused the generic save function and overwrote flows.json. This inventory reconstructs the recorded IDs from executed source/previous preserved failures/screens/privateSQLite state; prior helper-written JSON retained. No business flow replay or source patch. Source runners through each phase retained; surviving PDF/screens and final independent fixture proof substantiate results."
+}

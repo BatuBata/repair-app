@@ -1,0 +1,227 @@
+{
+    "database": "repair_app_test",
+    "hostLocal": true,
+    "baselineTables": 20,
+    "baseline": {
+        "cache": {
+            "rows": 0,
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "cache_locks": {
+            "rows": 0,
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "categories": {
+            "rows": 10,
+            "sha256": "722c831cd790362292d1e5d0a56f78c6d997d68516aab3f89566081ddba4053d"
+        },
+        "expenses": {
+            "rows": 0,
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "failed_jobs": {
+            "rows": 0,
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "job_batches": {
+            "rows": 0,
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "jobs": {
+            "rows": 0,
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "migrations": {
+            "rows": 6,
+            "sha256": "2a8b36d95b39b2a984edd7c7083994165aab9654ef49c1ca9be932fe5861dfea"
+        },
+        "number_sequences": {
+            "rows": 4,
+            "sha256": "45e21c9bd7ef6f39ca6534ace14d89553746cbd9eae63a274716b86e409bb4d5"
+        },
+        "passkeys": {
+            "rows": 0,
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "password_reset_tokens": {
+            "rows": 0,
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "products": {
+            "rows": 2,
+            "sha256": "52ef21fd3a9e4d8114ffa202fa948454fd6afdee40e6d31b2e52e9bf50b0b74a"
+        },
+        "sale_items": {
+            "rows": 1,
+            "sha256": "2c60ab786132b5eeea92d5d2145d3cc0a8af5efe558bca6813cd831aba4dbacb"
+        },
+        "sales": {
+            "rows": 9,
+            "sha256": "1827a7af84dd8ff7214f3148f0708588ba4b9c824f765e0bcca51439247d9e2e"
+        },
+        "service_order_items": {
+            "rows": 0,
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "service_orders": {
+            "rows": 10,
+            "sha256": "7beff7b9b39363887fb319b91a7153cf3179dd9bb7ec7386fb41ce5b5f6e578c"
+        },
+        "sessions": {
+            "rows": 0,
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "stock_entries": {
+            "rows": 0,
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "store_settings": {
+            "rows": 1,
+            "sha256": "5bc0085713b9fcfb7776f88b86148c6afab606079f04a6b5a758bc394ff1ad27"
+        },
+        "users": {
+            "rows": 6,
+            "sha256": "037f0a17e7d98196e73ea3968d108edfbde0f231102859690997b837d52c35ee"
+        }
+    },
+    "schemaOperations": false,
+    "baselinePreserved": true,
+    "perTableBaselinePreserved": {
+        "cache": true,
+        "cache_locks": true,
+        "categories": true,
+        "expenses": true,
+        "failed_jobs": true,
+        "job_batches": true,
+        "jobs": true,
+        "migrations": true,
+        "number_sequences": true,
+        "passkeys": true,
+        "password_reset_tokens": true,
+        "products": true,
+        "sale_items": true,
+        "sales": true,
+        "service_order_items": true,
+        "service_orders": true,
+        "sessions": true,
+        "stock_entries": true,
+        "store_settings": true,
+        "users": true
+    },
+    "afterCounts": {
+        "cache": 0,
+        "cache_locks": 0,
+        "categories": 11,
+        "expenses": 0,
+        "failed_jobs": 0,
+        "job_batches": 0,
+        "jobs": 0,
+        "migrations": 6,
+        "number_sequences": 6,
+        "passkeys": 0,
+        "password_reset_tokens": 0,
+        "products": 3,
+        "sale_items": 2,
+        "sales": 10,
+        "service_order_items": 2,
+        "service_orders": 12,
+        "sessions": 0,
+        "stock_entries": 0,
+        "store_settings": 1,
+        "users": 9
+    },
+    "cases": [
+        {
+            "case": "duplicate-service",
+            "results": [
+                {
+                    "result": "rejected",
+                    "kind": "service",
+                    "ownId": 11,
+                    "actor": 7,
+                    "wallSeconds": 0.026,
+                    "clockMode": "fixed"
+                },
+                {
+                    "result": "marked",
+                    "kind": "service",
+                    "ownId": 11,
+                    "actor": 8,
+                    "wallSeconds": 0.022,
+                    "clockMode": "fixed"
+                }
+            ],
+            "contactedAt": "2032-01-14 12:00:00",
+            "pass": true
+        },
+        {
+            "case": "duplicate-sale",
+            "results": [
+                {
+                    "result": "rejected",
+                    "kind": "sale",
+                    "ownId": 11,
+                    "actor": 7,
+                    "wallSeconds": 0.017,
+                    "clockMode": "fixed"
+                },
+                {
+                    "result": "marked",
+                    "kind": "sale",
+                    "ownId": 11,
+                    "actor": 8,
+                    "wallSeconds": 0.018,
+                    "clockMode": "fixed"
+                }
+            ],
+            "contactedAt": "2032-01-14 12:00:00",
+            "pass": true
+        },
+        {
+            "case": "service-rowlock-WITA-midnight",
+            "result": {
+                "result": "rejected",
+                "kind": "service",
+                "ownId": 12,
+                "actor": 7,
+                "wallSeconds": 1.552,
+                "clockMode": "boundary"
+            },
+            "pass": true
+        },
+        {
+            "case": "wrong-case-public-PDF-under-ci-collation",
+            "collation": "utf8mb4_unicode_ci",
+            "databaseLookupMatches": true,
+            "controllerStatus": 404,
+            "pass": true
+        },
+        {
+            "case": "mysql-report-inclusive-own-period",
+            "values": {
+                "revenue": "247912",
+                "cost": "222",
+                "gross": "247690",
+                "net": "247690",
+                "restock": "0"
+            },
+            "pass": true
+        }
+    ],
+    "ownFixture": {
+        "actors": [
+            7,
+            8
+        ],
+        "tech": 9,
+        "category": 11,
+        "product": 3,
+        "service": [
+            11,
+            12
+        ],
+        "sale": 11
+    },
+    "baselineRowsUntouched": true,
+    "verdict": "pass"
+}

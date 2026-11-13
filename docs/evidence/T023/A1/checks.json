@@ -1,0 +1,40 @@
+[
+  {
+    "id": "full-suite",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "artisan",
+      "test",
+      "--no-ansi",
+      "--log-junit",
+      "/Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T023/A1/suite.xml"
+    ],
+    "exit": 0,
+    "seconds": 8.677,
+    "environment": "privateSQLite :memory: DB_URL empty RUN_MYSQL_DOMAIN0 CACHE_STORE array SESSION_DRIVER array private config/storage/views"
+  },
+  {
+    "id": "pint",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "vendor/bin/pint",
+      "--test"
+    ],
+    "exit": 0,
+    "seconds": 3.649,
+    "environment": "privateSQLite :memory: DB_URL empty RUN_MYSQL_DOMAIN0 CACHE_STORE array SESSION_DRIVER array private config/storage/views"
+  },
+  {
+    "id": "phpstan",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "vendor/bin/phpstan",
+      "analyse",
+      "--memory-limit=512M",
+      "--no-progress"
+    ],
+    "exit": 0,
+    "seconds": 1.621,
+    "environment": "privateSQLite :memory: DB_URL empty RUN_MYSQL_DOMAIN0 CACHE_STORE array SESSION_DRIVER array private config/storage/views"
+  }
+]

@@ -1,0 +1,13 @@
+Anugerah QA
+0411-123456
+Tanda terima servis
+TTS-2611-001
+Jalan Contoh 23, Makassar
+Tanggal terima / jual: 13/11/2026
+Customer: Customer received
+HP: 6281234567890
+Barang: Laptop Asus X441
+Keluhan: Layar bergaris dan tidak menyala
+Simpan struk ini untuk pengambilan barang.
+Pindai untuk melihat status servis
+1 / 1

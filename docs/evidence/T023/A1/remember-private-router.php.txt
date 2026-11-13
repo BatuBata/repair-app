@@ -1,0 +1,10 @@
+<?php
+$uri=urldecode(parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH)??'/');
+if($uri!=='/'&&is_file('/Users/muzib/.codex/worktrees/v1-stock/repair-app'.'/public'.$uri))return false;
+define('LARAVEL_START',microtime(true));
+require '/Users/muzib/.codex/worktrees/v1-stock/repair-app'.'/vendor/autoload.php';
+$app=require '/Users/muzib/.codex/worktrees/v1-stock/repair-app'.'/bootstrap/app.php';
+$app->useStoragePath('/private/tmp/t023-a1-_l62grm9/cold-storage');
+$app->handleRequest(Illuminate\Http\Request::capture());
+
+if($uri==='/mulai')file_put_contents('/private/tmp/t023-a1-_l62grm9/remember-server.json',json_encode(['viaRemember'=>auth()->viaRemember(),'role'=>auth()->user()?->role->value,'cookieNames'=>array_keys($_COOKIE)]));

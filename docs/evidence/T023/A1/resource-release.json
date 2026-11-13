@@ -1,0 +1,14 @@
+{
+  "serverPid": 14961,
+  "serverAlive": false,
+  "port8193Stopped": true,
+  "ownedChromeProfileDirectories": [],
+  "browserSourceGuarantee": "Each runner finally Browser.close; transient profiles absent; no shared GUI/browser used.",
+  "mysqlLockReleased": true,
+  "mysqlBaseline20TablesPreserved": true,
+  "databaseFixtureRetained": "mysql-extension.json ownFixture; no cleanup",
+  "privateRuntimeRetained": "/private/tmp/t023-a1-_l62grm9",
+  "workspaceGeneratedFontCacheRetained": "cold-preflight/proof; initialisolationlimitation recorded",
+  "sourceBuildFontsStillFrozen": true,
+  "rememberRetestClosed": true
+}

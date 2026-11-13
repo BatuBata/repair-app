@@ -1,0 +1,13 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /IBM Plex Sans/. Input:\n\n'Plex, sans-serif'\n\n    at shot (file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T023/A1/browser-matrix.mjs:12:1614)\n    at async file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T023/A1/browser-matrix.mjs:17:259",
+  "cases": 39,
+  "last": {
+    "name": "tts-cancelled",
+    "width": 1280,
+    "route": "/tts/5",
+    "screenshot": "screens/tts-cancelled-1280.png",
+    "pass": true
+  },
+  "consoleErrors": [],
+  "statuses": []
+}

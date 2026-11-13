@@ -1,0 +1,9 @@
+{
+  "error": "Error: page eval: Error: No visible [data-test=logout-button]\n    at <anonymous>:1:139\n    at <anonymous>:1:276\n    at Page.eval (file:///Users/muzib/.codex/skills/design-taste-frontend/scripts/lib/cdp.mjs:210:13)\n    at async click (file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T023/A1/flows.mjs:6:33)\n    at async logout (file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T023/A1/flows.mjs:14:24)\n    at async file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T023/A1/flows.mjs:20:1142",
+  "last": {
+    "id": "technician-edit-own-received",
+    "pass": true
+  },
+  "createdId": 7,
+  "consoleErrors": []
+}

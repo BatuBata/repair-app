@@ -1,0 +1,337 @@
+[
+  {
+    "file": "invoice-a5.pdf",
+    "sha256": "4fdd389e01bec820617bc7db1ae9b478de410e03ff0ac40d3c22eac2b0fda93e",
+    "pages": [
+      {
+        "width_pt": 419.53,
+        "height_pt": 595.28,
+        "outsideGlyphs": 0
+      },
+      {
+        "width_pt": 419.53,
+        "height_pt": 595.28,
+        "outsideGlyphs": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "/SUBAAB+IBMPlexSans-Regular",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAC+IBMPlexSans-SemiBold",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAD+IBMPlexMono-Medium",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAB+IBMPlexSans-Regular",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAC+IBMPlexSans-SemiBold",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAD+IBMPlexMono-Medium",
+        "embedded": true
+      }
+    ],
+    "images": [],
+    "pass": true
+  },
+  {
+    "file": "invoice-corrected-a5.pdf",
+    "sha256": "f34cc161bfe6518489e28f3369069d670f115360e24b9d6135ab450660a5646d",
+    "pages": [
+      {
+        "width_pt": 419.53,
+        "height_pt": 595.28,
+        "outsideGlyphs": 0
+      },
+      {
+        "width_pt": 419.53,
+        "height_pt": 595.28,
+        "outsideGlyphs": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "/SUBAAB+IBMPlexSans-Regular",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAC+IBMPlexSans-SemiBold",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAD+IBMPlexMono-Medium",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAB+IBMPlexSans-Regular",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAC+IBMPlexSans-SemiBold",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAD+IBMPlexMono-Medium",
+        "embedded": true
+      }
+    ],
+    "images": [],
+    "pass": true
+  },
+  {
+    "file": "invoice-logo-a5.pdf",
+    "sha256": "b0ce6bf2a5697eedea5f5bb216038bcc3aae82f3e742891d63f0f99151f9ed30",
+    "pages": [
+      {
+        "width_pt": 419.53,
+        "height_pt": 595.28,
+        "outsideGlyphs": 0
+      },
+      {
+        "width_pt": 419.53,
+        "height_pt": 595.28,
+        "outsideGlyphs": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "/SUBAAB+IBMPlexSans-Regular",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAC+IBMPlexSans-SemiBold",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAD+IBMPlexMono-Medium",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAB+IBMPlexSans-Regular",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAC+IBMPlexSans-SemiBold",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAD+IBMPlexMono-Medium",
+        "embedded": true
+      }
+    ],
+    "images": [
+      {
+        "width": 120,
+        "height": 40
+      },
+      {
+        "width": 120,
+        "height": 40
+      }
+    ],
+    "pass": true
+  },
+  {
+    "file": "invoice-logo-thermal.pdf",
+    "sha256": "ef73e8040716e7ab4dc14874306551c4e94bc719d75ee230af6b85a3588e2cb8",
+    "pages": [
+      {
+        "width_pt": 164.409,
+        "height_pt": 661.872,
+        "outsideGlyphs": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "/SUBAAB+IBMPlexSans-SemiBold",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAC+IBMPlexSans-Regular",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAD+IBMPlexMono-Medium",
+        "embedded": true
+      }
+    ],
+    "images": [
+      {
+        "width": 120,
+        "height": 40
+      }
+    ],
+    "pass": true
+  },
+  {
+    "file": "invoice-thermal.pdf",
+    "sha256": "1ef7727f721209699e95d69af5133ed76f4653462cb78a2c50b8df38d815b562",
+    "pages": [
+      {
+        "width_pt": 164.409,
+        "height_pt": 646.428,
+        "outsideGlyphs": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "/SUBAAB+IBMPlexSans-SemiBold",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAC+IBMPlexSans-Regular",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAD+IBMPlexMono-Medium",
+        "embedded": true
+      }
+    ],
+    "images": [],
+    "pass": true
+  },
+  {
+    "file": "public-a5.pdf",
+    "sha256": "6dd196b1fe9643b33067b34f6fcefd0e614ce9a8dd91d4c35afdb5d8348bf034",
+    "pages": [
+      {
+        "width_pt": 419.53,
+        "height_pt": 595.28,
+        "outsideGlyphs": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "/SUBAAB+IBMPlexSans-Regular",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAC+IBMPlexSans-SemiBold",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAD+IBMPlexMono-Medium",
+        "embedded": true
+      }
+    ],
+    "images": [],
+    "pass": true
+  },
+  {
+    "file": "sale-a5.pdf",
+    "sha256": "905d6e28bc110fc0574f3bf775591f1c19b570dd08fcf1172fd5a1e745d038e3",
+    "pages": [
+      {
+        "width_pt": 419.53,
+        "height_pt": 595.28,
+        "outsideGlyphs": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "/SUBAAB+IBMPlexSans-Regular",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAC+IBMPlexSans-SemiBold",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAD+IBMPlexMono-Medium",
+        "embedded": true
+      }
+    ],
+    "images": [],
+    "pass": true
+  },
+  {
+    "file": "sale-thermal.pdf",
+    "sha256": "b9ddae67748fd74c53611596b2e18fd172a89b5324b978345fe64574894a1708",
+    "pages": [
+      {
+        "width_pt": 164.409,
+        "height_pt": 412.425,
+        "outsideGlyphs": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "/SUBAAB+IBMPlexSans-SemiBold",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAC+IBMPlexSans-Regular",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAD+IBMPlexMono-Medium",
+        "embedded": true
+      }
+    ],
+    "images": [],
+    "pass": true
+  },
+  {
+    "file": "tts-a5.pdf",
+    "sha256": "fda726ea75253476315240e4c8877e95572448b9a0b0019f56f32e51149cb158",
+    "pages": [
+      {
+        "width_pt": 419.53,
+        "height_pt": 595.28,
+        "outsideGlyphs": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "/SUBAAB+IBMPlexSans-Regular",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAC+IBMPlexSans-SemiBold",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAD+IBMPlexMono-Medium",
+        "embedded": true
+      }
+    ],
+    "images": [],
+    "pass": true
+  },
+  {
+    "file": "tts-thermal.pdf",
+    "sha256": "1894bc69822dd4493c24beb47e8688c917634e2f8cda4bee0a7aa53831b79dc5",
+    "pages": [
+      {
+        "width_pt": 164.409,
+        "height_pt": 409.35,
+        "outsideGlyphs": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "/SUBAAB+IBMPlexSans-SemiBold",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAC+IBMPlexSans-Regular",
+        "embedded": true
+      },
+      {
+        "name": "/SUBAAD+IBMPlexMono-Medium",
+        "embedded": true
+      }
+    ],
+    "images": [],
+    "pass": true
+  }
+]

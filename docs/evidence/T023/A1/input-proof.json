@@ -1,0 +1,22 @@
+{
+  "checked_revision": "a95a3058c2160617d2e59ce7ac44685774d7528d",
+  "branch": "codex/t023-final-qa",
+  "runtime": "/private/tmp/t023-a1-_l62grm9",
+  "manifests": {
+    "source": {
+      "files": 230,
+      "mismatches": [],
+      "manifest_sha256": "0a8ac686a0faf1e2ea6101c735685680645f6098587b8e1d2d562ccc8f5b316e"
+    },
+    "build": {
+      "files": 14,
+      "mismatches": [],
+      "manifest_sha256": "a8dbf65005b84af7f6f74b2dd76c6c1d0a8b3f1e740ca1e184084e262d1dde30"
+    },
+    "font": {
+      "files": 9,
+      "mismatches": [],
+      "manifest_sha256": "e893ed5f4a95745a67ada01bc3291a65849c9beffc2e351115674b688cf11a22"
+    }
+  }
+}

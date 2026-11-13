@@ -1,0 +1,9 @@
+{
+  "error": "Error: Timeout publish\n    at wait (file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T023/A1/flows.mjs:4:120)\n    at async file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T023/A1/flows.mjs:20:974",
+  "last": {
+    "id": "assign-status-and-name",
+    "pass": true
+  },
+  "createdId": 7,
+  "consoleErrors": []
+}

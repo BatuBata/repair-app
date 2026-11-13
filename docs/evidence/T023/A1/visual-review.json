@@ -1,0 +1,111 @@
+{
+  "reviewed": "All111primaryscreens via reviews/all-360/768/1280 sheets,10same-screencompare pairs and direct screenshots; largepositive/negative phone top/bottom sheets; 10newPDF text+renders and name255/longPDF renders. Source same mockup matched where available; masters/stock/sales/profile have no dedicated approved mockup and are checked against DESIGN sharedpatterns, not falsely labeled a same-screen mockup.",
+  "verdict": "fail-F01",
+  "findings": [
+    {
+      "screen": "stock-list",
+      "width": 360,
+      "level": "WARN",
+      "id": "edge-text",
+      "message": "1 text block(s) sit 12\u201315px from the phone's edge: \"Beranda\" (13px)"
+    },
+    {
+      "screen": "stock-list",
+      "width": 1280,
+      "level": "WARN",
+      "id": "hero-void",
+      "message": "58% of the first screen is one empty block (1120\u00d7600px at 160,240)."
+    },
+    {
+      "screen": "stock-list",
+      "width": 1280,
+      "level": "WARN",
+      "id": "panel-void",
+      "message": "1 card(s) hold a blank band inside: 622px in \"Stok\"."
+    },
+    {
+      "screen": "reports",
+      "width": 360,
+      "level": "WARN",
+      "id": "edge-text",
+      "message": "1 text block(s) sit 12\u201315px from the phone's edge: \"Beranda\" (13px)"
+    },
+    {
+      "screen": "reports",
+      "width": 1280,
+      "level": "WARN",
+      "id": "tiny-text",
+      "message": "48% of the text is under 13px."
+    },
+    {
+      "screen": "store",
+      "width": 360,
+      "level": "WARN",
+      "id": "edge-text",
+      "message": "1 text block(s) sit 12\u201315px from the phone's edge: \"Beranda\" (13px)"
+    },
+    {
+      "screen": "store",
+      "width": 1280,
+      "level": "WARN",
+      "id": "hero-void",
+      "message": "29% of the first screen is one empty block (427\u00d7780px at 853,120)."
+    },
+    {
+      "screen": "store",
+      "width": 1280,
+      "level": "WARN",
+      "id": "unused-canvas",
+      "message": "The content stops 275px short of the right edge while it starts 33px from the sidebar."
+    },
+    {
+      "screen": "dashboard",
+      "width": 360,
+      "level": "WARN",
+      "id": "edge-text",
+      "message": "1 text block(s) sit 12\u201315px from the phone's edge: \"Beranda\" (13px)"
+    },
+    {
+      "screen": "dashboard",
+      "width": 360,
+      "level": "WARN",
+      "id": "tabular",
+      "message": "Only 0% of the figures use tabular numerals."
+    },
+    {
+      "screen": "dashboard",
+      "width": 768,
+      "level": "WARN",
+      "id": "tabular",
+      "message": "Only 0% of the figures use tabular numerals."
+    },
+    {
+      "screen": "dashboard",
+      "width": 1280,
+      "level": "WARN",
+      "id": "tabular",
+      "message": "Only 0% of the figures use tabular numerals."
+    },
+    {
+      "screen": "invoice",
+      "width": 360,
+      "level": "WARN",
+      "id": "edge-text",
+      "message": "1 text block(s) sit 12\u201315px from the phone's edge: \"Beranda\" (13px)"
+    },
+    {
+      "screen": "tts",
+      "width": 360,
+      "level": "WARN",
+      "id": "edge-text",
+      "message": "1 text block(s) sit 12\u201315px from the phone's edge: \"Beranda\" (13px)"
+    }
+  ],
+  "inspectorWarningDispositions": {
+    "edge-text": "bottomnav outer labels in approvedshell; normalfold and actualMenu navigation inspected",
+    "hero-void/panel-void/unused-canvas": "one-product/onecategory sparsefixture keeps approvedsheet andfirstaction; no inventedrecords",
+    "tiny-text": "secondary desktoptable metadata; mainbody14 andphone16; screenshotlegible",
+    "tabular": "inspector heuristic missed nestedmoney; final-ui.json computed font-variant-numeric tabular-nums for allKPI values"
+  },
+  "product_defect": "report-touch-defect.json; genuine20pxanchor retainedFAIL"
+}

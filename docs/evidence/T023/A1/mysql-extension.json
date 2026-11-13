@@ -1,0 +1,73 @@
+{
+    "case": "sale-rowlock-WITA-midnight",
+    "result": {
+        "result": "rejected",
+        "kind": "sale",
+        "ownId": 12,
+        "actor": 8,
+        "wallSeconds": 1.547,
+        "clockMode": "boundary"
+    },
+    "verdict": "pass",
+    "baselineAll20TablesPreserved": true,
+    "perTable": {
+        "cache": true,
+        "cache_locks": true,
+        "categories": true,
+        "expenses": true,
+        "failed_jobs": true,
+        "job_batches": true,
+        "jobs": true,
+        "migrations": true,
+        "number_sequences": true,
+        "passkeys": true,
+        "password_reset_tokens": true,
+        "products": true,
+        "sale_items": true,
+        "sales": true,
+        "service_order_items": true,
+        "service_orders": true,
+        "sessions": true,
+        "stock_entries": true,
+        "store_settings": true,
+        "users": true
+    },
+    "afterCounts": {
+        "cache": 0,
+        "cache_locks": 0,
+        "categories": 11,
+        "expenses": 0,
+        "failed_jobs": 0,
+        "job_batches": 0,
+        "jobs": 0,
+        "migrations": 6,
+        "number_sequences": 6,
+        "passkeys": 0,
+        "password_reset_tokens": 0,
+        "products": 3,
+        "sale_items": 3,
+        "sales": 11,
+        "service_order_items": 2,
+        "service_orders": 12,
+        "sessions": 0,
+        "stock_entries": 0,
+        "store_settings": 1,
+        "users": 9
+    },
+    "ownFixture": {
+        "actors": [
+            7,
+            8
+        ],
+        "tech": 9,
+        "category": 11,
+        "product": 3,
+        "service": [
+            11,
+            12
+        ],
+        "sale": 11,
+        "sale_boundary": 12
+    },
+    "schemaOperations": false
+}

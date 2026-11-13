@@ -1,0 +1,18 @@
+{
+  "checked_revision": "a95a3058c2160617d2e59ce7ac44685774d7528d",
+  "manifests": {
+    "source": {
+      "files": 230,
+      "mismatches": []
+    },
+    "build": {
+      "files": 14,
+      "mismatches": []
+    },
+    "font": {
+      "files": 9,
+      "mismatches": []
+    }
+  },
+  "afterTargetedRememberRetest": "same230/14/9 hashes verified again"
+}

@@ -1,0 +1,143 @@
+{
+  "cases": [
+    {
+      "id": "empty-report-zero",
+      "pass": true
+    },
+    {
+      "id": "report-reversed-period",
+      "pass": true
+    },
+    {
+      "id": "user-edit-body-portalled-callback",
+      "pass": true
+    },
+    {
+      "id": "user-reset-body-portalled-callback",
+      "pass": true
+    },
+    {
+      "id": "category-edit-body-portalled-callback",
+      "pass": true
+    },
+    {
+      "id": "expense-edit-body-portalled-callback",
+      "pass": true
+    }
+  ],
+  "screenStates": [
+    "report-empty-360",
+    "report-empty-768",
+    "report-empty-1280",
+    "report-date-error-360",
+    "report-date-error-768",
+    "report-date-error-1280",
+    "user-edit-360",
+    "user-edit-768",
+    "user-edit-1280",
+    "user-reset-360",
+    "user-reset-768",
+    "user-reset-1280",
+    "category-edit-360",
+    "category-edit-768",
+    "category-edit-1280",
+    "expense-edit-360",
+    "expense-edit-768",
+    "expense-edit-1280"
+  ],
+  "inspect": [
+    {
+      "name": "dashboard",
+      "width": 360,
+      "findings": [
+        {
+          "level": "WARN",
+          "id": "edge-text",
+          "width": 360,
+          "message": "1 text block(s) sit 12–15px from the phone's edge: \"Beranda\" (13px)",
+          "fix": "The page margin is 16–20px on a phone; the header and the corner labels sit on it too."
+        },
+        {
+          "level": "WARN",
+          "id": "tabular",
+          "width": 360,
+          "message": "Only 0% of the figures use tabular numerals.",
+          "fix": "Set font-variant-numeric: tabular-nums on tables, KPIs and anything that updates, so digits keep their width."
+        }
+      ]
+    },
+    {
+      "name": "dashboard",
+      "width": 768,
+      "findings": [
+        {
+          "level": "WARN",
+          "id": "tabular",
+          "width": 768,
+          "message": "Only 0% of the figures use tabular numerals.",
+          "fix": "Set font-variant-numeric: tabular-nums on tables, KPIs and anything that updates, so digits keep their width."
+        }
+      ]
+    },
+    {
+      "name": "dashboard",
+      "width": 1280,
+      "findings": [
+        {
+          "level": "WARN",
+          "id": "tabular",
+          "width": 1280,
+          "message": "Only 0% of the figures use tabular numerals.",
+          "fix": "Set font-variant-numeric: tabular-nums on tables, KPIs and anything that updates, so digits keep their width."
+        }
+      ]
+    },
+    {
+      "name": "invoice",
+      "width": 360,
+      "findings": [
+        {
+          "level": "WARN",
+          "id": "edge-text",
+          "width": 360,
+          "message": "1 text block(s) sit 12–15px from the phone's edge: \"Beranda\" (13px)",
+          "fix": "The page margin is 16–20px on a phone; the header and the corner labels sit on it too."
+        }
+      ]
+    },
+    {
+      "name": "invoice",
+      "width": 768,
+      "findings": []
+    },
+    {
+      "name": "invoice",
+      "width": 1280,
+      "findings": []
+    },
+    {
+      "name": "tts",
+      "width": 360,
+      "findings": [
+        {
+          "level": "WARN",
+          "id": "edge-text",
+          "width": 360,
+          "message": "1 text block(s) sit 12–15px from the phone's edge: \"Beranda\" (13px)",
+          "fix": "The page margin is 16–20px on a phone; the header and the corner labels sit on it too."
+        }
+      ]
+    },
+    {
+      "name": "tts",
+      "width": 768,
+      "findings": []
+    },
+    {
+      "name": "tts",
+      "width": 1280,
+      "findings": []
+    }
+  ],
+  "consoleErrors": []
+}

@@ -1,0 +1,18 @@
+{
+  "pid": 4463,
+  "port": 8193,
+  "privateRuntime": "/private/tmp/t023-a1-_l62grm9",
+  "database": "/private/tmp/t023-a1-_l62grm9/fixture.sqlite",
+  "config": "/private/tmp/t023-a1-_l62grm9/bootstrap/config.php",
+  "storage": "/private/tmp/t023-a1-_l62grm9/storage",
+  "session": "private files",
+  "cache": "private files",
+  "views": "/private/tmp/t023-a1-_l62grm9/storage/framework/views",
+  "fontCacheInitiallyEmpty": true,
+  "noSharedEnvMutation": true,
+  "initialProcessExitedBeforeHTTP": true,
+  "routerCwd": "public",
+  "correctedPid": 10986,
+  "explicitPrivateRouter": "/private/tmp/t023-a1-_l62grm9/router.php",
+  "explicitStoragePath": "/private/tmp/t023-a1-_l62grm9/cold-storage"
+}

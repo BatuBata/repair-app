@@ -1,0 +1,41 @@
+{
+  "cases": [
+    {
+      "id": "mobile-menu-actual-stock-link",
+      "pass": true
+    },
+    {
+      "id": "dashboard-body-portalled-mark-contacted",
+      "pass": true,
+      "before": 6,
+      "after": 5
+    },
+    {
+      "id": "phone-keyboard-sticky-save-software",
+      "pass": true,
+      "phone": {
+        "type": "tel",
+        "inputmode": "tel",
+        "fontSize": "16px",
+        "border": "rgb(138, 146, 150)",
+        "background": "rgb(255, 255, 255)",
+        "text": "rgb(19, 20, 22)"
+      },
+      "save": {
+        "height": 48,
+        "width": 328,
+        "top": 776,
+        "bottom": 824,
+        "viewport": 900
+      }
+    }
+  ],
+  "pdfs": [],
+  "screenStates": [
+    "navigation-menu-360",
+    "navigation-menu-768",
+    "navigation-menu-1280",
+    "warranty-mark-success"
+  ],
+  "consoleErrors": []
+}

@@ -1,0 +1,47 @@
+{
+  "error": "Error: page eval: Error: No visible [data-test=logout-button]\n    at <anonymous>:1:145\n    at <anonymous>:1:593\n    at Page.eval (file:///Users/muzib/.codex/skills/design-taste-frontend/scripts/lib/cdp.mjs:210:13)\n    at async click (file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T023/A1/flows.mjs:6:33)\n    at async logout (file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T023/A1/flows.mjs:14:46)\n    at async file:///Users/muzib/.codex/worktrees/v1-stock/repair-app/docs/evidence/T023/A1/flows.mjs:23:1",
+  "last": {
+    "id": "manual-WA-redirect-no-send",
+    "pass": true
+  },
+  "createdId": 7,
+  "saleId": 5,
+  "consoleErrors": [],
+  "inputs": [
+    {
+      "name": "_token",
+      "type": "hidden",
+      "value": "[redacted]"
+    },
+    {
+      "name": "q",
+      "type": "search",
+      "value": ""
+    },
+    {
+      "name": "current_password",
+      "type": "password",
+      "value": "[redacted]"
+    },
+    {
+      "name": "password",
+      "type": "password",
+      "value": "[redacted]"
+    },
+    {
+      "name": "password_confirmation",
+      "type": "password",
+      "value": "[redacted]"
+    },
+    {
+      "name": "_token",
+      "type": "hidden",
+      "value": "[redacted]"
+    },
+    {
+      "name": "_token",
+      "type": "hidden",
+      "value": "[redacted]"
+    }
+  ]
+}

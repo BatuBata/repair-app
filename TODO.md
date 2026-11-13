@@ -28,10 +28,10 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T006 | Spike dokumen: PDF A5, struk 58mm, dan QR di dompdf | developer / 6.1-sol | medium / medium | T001 | T002, T003, T004, T005, T020 | done |
 | T007 | Integrasi fondasi M1 pada branch candidate sebelum QA dan merge main | integrator / 6.1-sol | medium / medium | T002, T003, T004, T005 | — | done |
 | T008 | QA independen fondasi M1 | tester / 6.1-sol | medium / high | T007 | T006, T020 | done |
-| T009 | TTS: form buat/edit, daftar dengan cari/filter, detail sesuai peran | developer / 6.1-sol | medium / high | T008 | T012, T013, T014, T020 | pending |
+| T009 | TTS: form buat/edit, daftar dengan cari/filter, detail sesuai peran | developer / 6.1-sol | medium / high | T008 | T012, T013, T014, T020 | running |
 | T010 | Alur admin servis: tetapkan teknisi, rincian dan terbitkan nota, koreksi, diambil, batal | developer / 6.1-sol | complex / high | T009 | T012, T013, T014, T020 | pending |
 | T011 | Halaman tracking publik dan tombol Kirim WA | developer / 6.1-terra | medium / medium | T010 | T012, T013, T014, T020 | pending |
-| T012 | Stok barang jualan dan restok | developer / 6.1-sol | medium / medium | T008 | T009, T010, T011, T014, T020 | pending |
+| T012 | Stok barang jualan dan restok | developer / 6.1-sol | medium / medium | T008 | T009, T010, T011, T014, T020 | running |
 | T013 | Penjualan barang dengan garansi opsional | developer / 6.1-sol | medium / high | T012 | T009, T010, T011, T014, T020 | pending |
 | T014 | Pencatatan pengeluaran | developer / 6-luna | easy / low | T008 | T009, T010, T011, T012, T013, T020 | pending |
 | T015 | Integrasi alur servis (M2) dan stok/penjualan/pengeluaran (M4) | integrator / 6.1-sol | medium / medium | T011, T013, T014 | — | pending |
@@ -184,7 +184,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "push_authorized": true,
       "source_ref": "Instruksi user 12 Nov 2026: push ke GitHub BatuBata/repair-app, setiap pekerjaan selesai buat commit dan push",
       "policy": "Commit pekerjaan selesai dan push branch task/checkpoint setelah periksa perubahan; merge ke main tetap setelah QA/review relevan; tanpa force-push. Kandidat blocked disimpan sebagai checkpoint, bukan fitur diterima.",
-      "coordination_branch": "codex/goal-v1"
+      "coordination_branch": "codex/t009-tts"
     }
   },
   "deliverables": [
@@ -1414,8 +1414,30 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar untuk form, daftar, detail; uji emulasi HP untuk tombol menempel.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "pending",
-      "resource_phase_policy": "Coding/host tests do not hold browser. Before visual QA request coordinator reservation browser:repair-app-visual exclusive; only one task at a time. Private SQLite per task; existing MySQL untouched."
+      "status": "running",
+      "resource_phase_policy": "Coding/host tests do not hold browser. Before visual QA request coordinator reservation browser:repair-app-visual exclusive; only one task at a time. Private SQLite per task; existing MySQL untouched.",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root/t004_resume",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration:/root/t004_resume:T009",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
+        }
+      ],
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "runtime_assignment": {
+        "runtime": "Codex native collaboration",
+        "task_id": "/root/t004_resume",
+        "base_revision": "1d831380cd89b601c67321298eff07f686d8f010",
+        "phase": "coding",
+        "browser_reservation": "none; must request coordinator before visual QA",
+        "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
+        "model_observation": "Sol high requested; backend effective identity not independently exposed."
+      }
     },
     {
       "id": "T010",
@@ -1583,8 +1605,30 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar daftar stok dan form restok.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "pending",
-      "resource_phase_policy": "Coding/host tests do not hold browser. Before visual QA request coordinator reservation browser:repair-app-visual exclusive; only one task at a time. Private SQLite per task; existing MySQL untouched."
+      "status": "running",
+      "resource_phase_policy": "Coding/host tests do not hold browser. Before visual QA request coordinator reservation browser:repair-app-visual exclusive; only one task at a time. Private SQLite per task; existing MySQL untouched.",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root/t012_stock",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration:/root/t012_stock:T012",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
+        }
+      ],
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "runtime_assignment": {
+        "runtime": "Codex native collaboration",
+        "task_id": "/root/t012_stock",
+        "base_revision": "1d831380cd89b601c67321298eff07f686d8f010",
+        "phase": "coding",
+        "browser_reservation": "none; must request coordinator before visual QA",
+        "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
+        "model_observation": "Sol high requested; backend effective identity not independently exposed."
+      }
     },
     {
       "id": "T013",

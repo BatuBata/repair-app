@@ -23,10 +23,10 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T001 | Scaffold Laravel 13 + Livewire starter kit, MySQL, WITA, Git | developer / 6.1-sol | medium / medium | — | — | done |
 | T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | done |
 | T003 | Layout lembar berbingkai, komponen UI dasar, dan web app manifest sesuai DESIGN.md | developer / 6.1-terra | medium / medium | T001 | T002, T006, T020 | done |
-| T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | blocked |
-| T005 | Pengaturan toko dan master kategori | developer / 6-luna | easy / low | T004 | T006, T020 | pending |
+| T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | done |
+| T005 | Pengaturan toko dan master kategori | developer / 6-luna | easy / low | T004 | T006, T020 | done |
 | T006 | Spike dokumen: PDF A5, struk 58mm, dan QR di dompdf | developer / 6.1-sol | medium / medium | T001 | T002, T003, T004, T005, T020 | done |
-| T007 | Integrasi fondasi M1 pada branch candidate sebelum QA dan merge main | integrator / 6.1-sol | medium / medium | T002, T003, T004, T005 | — | pending |
+| T007 | Integrasi fondasi M1 pada branch candidate sebelum QA dan merge main | integrator / 6.1-sol | medium / medium | T002, T003, T004, T005 | — | running |
 | T008 | QA independen fondasi M1 | tester / 6.1-sol | medium / high | T007 | T006, T020 | failed |
 | T009 | TTS: form buat/edit, daftar dengan cari/filter, detail sesuai peran | developer / 6.1-sol | medium / high | T008 | T012, T013, T014, T020 | pending |
 | T010 | Alur admin servis: tetapkan teknisi, rincian dan terbitkan nota, koreksi, diambil, batal | developer / 6.1-sol | complex / high | T009 | T012, T013, T014, T020 | pending |
@@ -765,8 +765,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar untuk layar login, daftar pengguna, form pengguna.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "blocked",
-      "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth",
+      "status": "done",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
           "id": "A1",
@@ -781,36 +781,48 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         {
           "id": "A2",
           "kind": "implementation",
-          "worker_id": "task_72f0c571e239",
+          "worker_id": "/root/t004_resume",
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
-          "dispatch_ref": "ctx_68d80e45bfe3",
-          "outcome": "cancelled",
-          "receipt_ref": "docs/evidence/coordinator/T004-A2-start.json"
+          "dispatch_ref": "native:collaboration.spawn_agent:/root/t004_resume",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
+          "phase_history": [
+            {
+              "id": "A2",
+              "kind": "implementation",
+              "worker_id": "task_72f0c571e239",
+              "model_requested": "gpt-6.1-sol",
+              "model_effective": null,
+              "dispatch_ref": "ctx_68d80e45bfe3",
+              "outcome": "cancelled",
+              "receipt_ref": "docs/evidence/coordinator/T004-A2-start.json"
+            }
+          ]
         }
       ],
       "runtime_assignment": {
-        "run_id": "run_729e02cff091",
-        "task_id": "task_72f0c571e239",
-        "dispatch_id": "ctx_68d80e45bfe3",
-        "receipt_ref": "docs/evidence/coordinator/T004-A2-start.json",
-        "base_revision": "f6b23c974b319520b80991d67200c05ddd5562f4",
-        "follow_up_of": "ctx_0166b401edc1",
-        "model_observation": "Same Sol high owner session reused; effective backend identity unverified. Historical candidate/QA snapshots in source_context do not create DAG dependencies."
+        "runtime": "Codex native collaboration",
+        "task_id": "/root/t004_resume",
+        "base_revision": "9a7117b952b2232791405a6121a1d36b061baa01",
+        "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
+        "model_observation": "spawn_agent requested gpt-6.1-sol high, receipt returns canonical task name; effective backend identity not independently exposed. Same logical A2 resumed."
       },
       "result": {
-        "verdict": "blocked",
-        "artifact_ref": "docs/evidence/coordinator/stop-2026-11-13.json",
-        "revision": "sha256:7ef5286719030018ee1dd0177cd341eaf9f774cd1514dda35d959f1737288289",
-        "checked_revision": null,
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T004/A2/codex-handoff.md",
+        "revision": "db5de005a345de644a7aa9056ea93f5a81117a3d",
+        "checked_revision": "db5de005a345de644a7aa9056ea93f5a81117a3d",
         "inputs": {
           "T002": "4a0667c302c979ab40641459bf9e7afac0655e09",
           "T003": "a08d1d785b72199e1000840ea8e2afe1d7f38fbd"
         },
         "evidence": [
-          "docs/evidence/coordinator/stop-2026-11-13.json"
+          "docs/evidence/T004/A2/codex-handoff.md",
+          "docs/evidence/T004/A2/checks.json",
+          "docs/evidence/T004/A2/source-manifest.json"
         ],
-        "summary": "User stop pekerjaan: active T004A2 cancelled, runtime stopped/process_stopped/exited confirmed. HEAD remainsf6b23c9 on fix/m1-auth-qa, tracked source unchanged; partial untracked A2 evidence and 2 auth tests preserved locally with hashes. No complete A2 verdict/tests claimed, no source cleanup/commit of partial work or budget reset. Project stopped; no new tasks/retries until explicit resume."
+        "summary": "Logical A2 resumed native Codex: F01/F02/F03 fixed, 63 tests/527 assertions PASS, Pint/PHPStan debug PASS. Coordinator reviewed diff, framework/default preservation and report. Browser/independent integrated QA remains T008; no MySQL/build repeated; old / launcher shortcut may require reinstall."
       },
       "prior_results": [
         {
@@ -835,6 +847,20 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
             "/Users/muzib/orca/workspaces/repair-app/repair-t004-auth/docs/evidence/T004/profile-technician-768.png"
           ],
           "summary": "Developer A1 PASS: username/role/active-session guard, users/profile, last-admin protections;61PASS1SKIP612assertions,static/Pint/build/browser proof. Coordinator read reports/source and inspected main screenshots. Commitebeb0b6 pushed. MySQL/InnoDB admin-race not tested (SQLite races covered), planned for independent T008; /tts/baru module still T009/404, no TTS behavior claimed. F001 awaits T007/T008; real app initialization/production not done."
+        },
+        {
+          "verdict": "blocked",
+          "artifact_ref": "docs/evidence/coordinator/stop-2026-11-13.json",
+          "revision": "sha256:7ef5286719030018ee1dd0177cd341eaf9f774cd1514dda35d959f1737288289",
+          "checked_revision": null,
+          "inputs": {
+            "T002": "4a0667c302c979ab40641459bf9e7afac0655e09",
+            "T003": "a08d1d785b72199e1000840ea8e2afe1d7f38fbd"
+          },
+          "evidence": [
+            "docs/evidence/coordinator/stop-2026-11-13.json"
+          ],
+          "summary": "User stop pekerjaan: active T004A2 cancelled, runtime stopped/process_stopped/exited confirmed. HEAD remainsf6b23c9 on fix/m1-auth-qa, tracked source unchanged; partial untracked A2 evidence and 2 auth tests preserved locally with hashes. No complete A2 verdict/tests claimed, no source cleanup/commit of partial work or budget reset. Project stopped; no new tasks/retries until explicit resume."
         }
       ],
       "source_context": {
@@ -907,8 +933,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Screenshot 3 lebar untuk pengaturan toko dan kategori.",
         "Bandingkan screenshot layar dengan layar padanan di mockup/ (360 dan 1280px); tombol aksi baris di kolom kiri."
       ],
-      "status": "pending",
-      "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings",
+      "status": "done",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
           "id": "A1",
@@ -931,24 +957,18 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       },
       "result": {
         "verdict": "pass",
-        "artifact_ref": "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/README.md",
-        "revision": "ede491e76cbed8000aaee6e86392dc58d2741210",
-        "checked_revision": "ede491e76cbed8000aaee6e86392dc58d2741210",
+        "artifact_ref": "docs/evidence/T005/README.md",
+        "revision": "db5de005a345de644a7aa9056ea93f5a81117a3d",
+        "checked_revision": "db5de005a345de644a7aa9056ea93f5a81117a3d",
         "inputs": {
-          "T004": "ebeb0b62f1a39720091026c1c3a0e8ec535c818e"
+          "T004": "db5de005a345de644a7aa9056ea93f5a81117a3d"
         },
         "evidence": [
-          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/README.md",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/tests-final.log",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/pint-final.log",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/phpstan-final.log",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/routes.json",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/store-form-360.png",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/store-form-1280.png",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/categories-list-768.png",
-          "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings/docs/evidence/T005/categories-form-360.png"
+          "docs/evidence/T005/README.md",
+          "docs/evidence/T004/A2/checks.json",
+          "docs/evidence/T004/A2/codex-handoff.md"
         ],
-        "summary": "Developer A1 PASS: toko/logo raster tervalidasi/kategori, guard per-route/action dan properti locked;24tes366assertions,Pint/PHPStan/build/browser proof. Coordinator membaca source/report dan melihat form/list penting; codepush ede491e tersedia. Belum QA integrasi/F001 accepted, suite full M1 masih T007, MySQL admin-race T008. Tidak ada MySQL/rahasia/data aplikasi yang disentuh."
+        "summary": "Revalidated against T004 A2: git diff ede491e..db5de00 on owned Settings source/views/routes/tests is empty; T004 shared auth/upload checks include existing Settings tests and new real signed-upload boundary/preview checks PASS. Reuse prior visual evidence for unchanged rendered settings source; no new implementation attempt, F001 awaits independent integrated QA T008."
       },
       "prior_results": [
         {
@@ -1131,8 +1151,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Cocokkan revisi input dengan hasil task; jalankan test suite penuh dan smoke login di browser."
       ],
-      "status": "pending",
-      "workspace": "/Users/muzib/orca/workspaces/repair-app/repair-t005-settings",
+      "status": "running",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
           "id": "A1",
@@ -1143,15 +1163,24 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "dispatch_ref": "ctx_823381684830",
           "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/T007-start.json"
+        },
+        {
+          "id": "A2",
+          "kind": "verification",
+          "worker_id": "/root/t004_resume",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.followup_task:/root/t004_resume:T007",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
         }
       ],
       "runtime_assignment": {
-        "run_id": "run_729e02cff091",
-        "task_id": "task_ad597c68c480",
-        "dispatch_id": "ctx_823381684830",
-        "receipt_ref": "docs/evidence/coordinator/T007-start.json",
-        "base_revision": "ede491e76cbed8000aaee6e86392dc58d2741210",
-        "model_observation": "New Sol high integrator requested; effective backend identity unverified. Source already assembles all prerequisites; assignment verifies/pins candidate and writes evidence only."
+        "runtime": "Codex native collaboration",
+        "task_id": "/root/t004_resume",
+        "base_revision": "db5de005a345de644a7aa9056ea93f5a81117a3d",
+        "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
+        "model_observation": "Existing requested Sol high native session, effective backend identity not exposed; new task contract after T004 settled. Independent T008 will use different agent."
       },
       "result": {
         "verdict": "pass",

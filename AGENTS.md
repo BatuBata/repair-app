@@ -33,7 +33,7 @@ Gunakan skill `project-delivery` (sumber: `~/.agents/skills/project-delivery/SKI
 - Composer 2.8.6, Node 22, npm 10, Git 2.50.
 - MySQL 8.0.31 lokal dapat diakses memakai user `root` dari `.env` (izin user 12 Nov 2026). Password tidak boleh dicetak/dikirim chat atau masuk Git. ADMIN_INITIAL_PASSWORD aplikasi masih menunggu isian user; pengujian DB boleh memakai password admin sintetis dari fixture privat.
 - Database yang dibutuhkan: `repair_app` (lokal) dan `repair_app_test` (uji konkurensi, resource `db:mysql-test` eksklusif). Feature test lain memakai SQLite in-memory.
-- Repo Git lokal sudah dibuat T001; main masih baseline dokumen. Kandidat aplikasi ada di branch/task dan worktree Orca, menunggu integrasi + QA sesuai TODO. Remote `origin`: `https://github.com/BatuBata/repair-app.git`; user 12 Nov 2026 mengizinkan commit dan push setiap pekerjaan selesai. Push checkpoint/candidate tidak menerima fitur atau melepas gate QA sebelum merge ke main.
+- Repo Git lokal sudah dibuat T001. Fondasi M1 telah lulus QA independen T008; status integrasi/penerimaan terbaru mengikuti TODO. Kandidat dan bukti lama tetap dipertahankan di branch/worktree, sedangkan pekerjaan lanjutan memakai worker Codex native. Remote `origin`: `https://github.com/BatuBata/repair-app.git`; user 12 Nov 2026 mengizinkan commit dan push setiap pekerjaan selesai. Push checkpoint/candidate tidak menerima fitur atau melepas gate QA sebelum merge ke main.
 
 ## Blocker yang diketahui
 

@@ -37,10 +37,10 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T015 | Integrasi alur servis (M2) dan stok/penjualan/pengeluaran (M4) | integrator / 6.1-sol | medium / medium | T011, T013, T014 | — | done |
 | T016 | QA independen alur servis, penjualan, dan pengeluaran | tester / 6.1-sol | medium / high | T015 | T020 | done |
 | T017 | Dokumen cetak: struk 58mm dan PDF A5 untuk TTS, nota, penjualan (+ QR) | developer / 6.1-terra | medium / medium | T016, T006 | T018, T019, T020 | done |
-| T018 | Dashboard admin dan pengingat garansi | developer / 6.1-sol | medium / medium | T016 | T017, T019, T020 | running |
+| T018 | Dashboard admin dan pengingat garansi | developer / 6.1-sol | medium / medium | T016 | T017, T019, T020 | done |
 | T019 | Laporan omzet, modal, pengeluaran, dan laba per rentang tanggal | developer / 6.1-sol | medium / high | T016 | T017, T018, T020 | done |
 | T020 | Paket deploy VPS: konfigurasi contoh, skrip deploy, backup dan restore | developer / 6.1-sol | medium / high | T001, T002 (artifact) | T002, T003, T004, T005, T006, T009, T012, T017, T018, T019 | done |
-| T021 | Panduan pengguna singkat untuk owner dan teknisi | developer / 6-luna | easy / low | T017, T018, T019 | T020 | pending |
+| T021 | Panduan pengguna singkat untuk owner dan teknisi | developer / 6-luna | easy / low | T017, T018, T019 | T020 | running |
 | T022 | Integrasi akhir v1 | integrator / 6.1-sol | medium / medium | T017, T018, T019, T020, T021 | — | pending |
 | T023 | QA akhir v1: regresi penuh dan uji responsif semua layar | tester / 6.1-sol | medium / high | T022 | — | pending |
 | T024 | Deploy v1 ke VPS produksi | deployer / 6.1-sol | medium / high | T022, T023 | — | pending |
@@ -358,7 +358,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "push_authorized": true,
       "source_ref": "Instruksi user 12 Nov 2026: push ke GitHub BatuBata/repair-app, setiap pekerjaan selesai buat commit dan push",
       "policy": "Commit pekerjaan selesai dan push branch task/checkpoint setelah periksa perubahan; merge ke main tetap setelah QA/review relevan; tanpa force-push. Kandidat blocked disimpan sebagai checkpoint, bukan fitur diterima.",
-      "coordination_branch": "codex/t017-documents-a3"
+      "coordination_branch": "codex/t021-guide"
     },
     "browser_isolation_policy": {
       "source_ref": "Coordinator13Nov2026 verified existing scripts/lib/cdp.mjs Browser.launch: fresh headless Chrome process, unique user-data-dir and remote-debugging-port0; T010 uses private TASTE_SKILL_TMP.",
@@ -2741,7 +2741,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Ganti root placeholder tanpa route shadow: modules/dashboard.php dimuat sebelum scaffold.php; pertahankan home / dan redirect /dashboard, sesuaikan DashboardTest lama yang mengharapkan quicklink placeholder. Omzet exact untuk agregat legal yang melebihi PHP_INT_MAX; Brick\\Math\\BigInteger sudah terpasang, jangan gunakan float atau tambah dependency.",
         "Chart3seri/tab totals dan daily buckets benar sesuai tanggal/status/cost snapshot, guardadmin sebelumqueries, uang/dataexactstring; angka koordinatpixel boleh diproposikan. Screenshot final setelahchart lengkap, tanpa fakeevent. Ini bagian A1 existing sebelum handoff, bukan task/attemptbaru."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
       "resource_phase_policy": "Coding/host tests no browser/MySQL resource. Private task headless phase only after isolation preflight, unique port8189(T017)/8190(T018), process/profile/CDP/TASTE/SQLite/config/cache/session/views/storage. Max2workers; no shared GUI.",
       "attempts": [
@@ -2752,7 +2752,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native:collaboration.followup_task:/root/t004_resume:T018",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
         }
       ],
@@ -2760,8 +2760,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "runtime": "Codex native collaboration",
         "task_id": "/root/t004_resume",
         "base_revision": "6e6cb0967923e89ec61900fda069336b7c5bf5e4",
-        "phase": "implementation",
-        "browser_reservation": "conditional grant private headless port8190 after worker records isolated process/profile/CDP/TASTE/SQLite/config/cache/session/views/storage preflight; no GUI/CUA/Orca/MySQL",
+        "phase": "closed",
+        "browser_reservation": "released;8190false/ownedChrome0/privatefixtures preserved",
         "receipt_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json",
         "model_observation": "Reuse settled Sol high session, native receipt exposes no backend identity."
       },
@@ -2773,7 +2773,24 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "continuation": "WIP dipertahankan di workspace task. Status running hanya logical attempt belum selesai; worker tidak aktif. Rekonsiliasi dan lanjutkan A1 saat resume, jangan reset ID/budget atau menganggap PASS.",
           "date": "2026-11-13"
         }
-      ]
+      ],
+      "result": {
+        "verdict": "pass",
+        "revision": "c9d1f429056676576310e88e524a75c9bc897c83",
+        "artifact_ref": "docs/evidence/T018/A1/handoff.md",
+        "inputs": {
+          "T016": "c66d038ea448910e3cc8a8529f170f72ac064306"
+        },
+        "evidence": [
+          "docs/evidence/T018/A1/handoff.md",
+          "docs/evidence/T018/A1/source-manifest.json",
+          "docs/evidence/T018/A1/visual-summary.json",
+          "docs/evidence/T018/A1/contact-final.log",
+          "docs/evidence/T018/A1/axis-final-negative-results.json",
+          "docs/evidence/T018/A1/resource-release.json"
+        ],
+        "summary": "Dashboarddaily+monthly3series exactBigInteger,backlog/warranty role/WITA/lockedclock guards PASS. Source6hashes matched; coordinator read mark guards and final normal/large PNG. Developer targeted runs overlap (not summed); final18visualcases PASS,2contacttests24assert afterlockclock fix, PHPStan0/PintPASS. MySQLrace/linkreports/fullintegration/independentT023 pending."
+      }
     },
     {
       "id": "T019",
@@ -3051,7 +3068,29 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Cocokkan setiap langkah dengan layar di branch terbaru."
       ],
-      "status": "pending"
+      "status": "running",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root/t021_guide",
+          "model_requested": "gpt-6-luna",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.spawn_agent:/root/t021_guide:T021",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/coordinator/t021-dispatch.json"
+        }
+      ],
+      "runtime_assignment": {
+        "runtime": "Codex native collaboration",
+        "task_id": "/root/t021_guide",
+        "base_revision": "02795c8",
+        "branch": "codex/t021-guide",
+        "phase": "documentation",
+        "resources": "none, readsource and writeguide only",
+        "model_observation": "Nativecatalog supports Luna medium; requested new Luna medium, backend identity not proven."
+      }
     },
     {
       "id": "T022",

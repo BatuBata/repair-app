@@ -1,0 +1,16 @@
+{
+  "task": "T021",
+  "attempt": "A1",
+  "requested_model": "gpt-6-luna",
+  "requested_reasoning": "medium",
+  "model_effective": null,
+  "runtime": "Codex native collaboration",
+  "worker": "/root/t021_guide",
+  "branch": "codex/t021-guide",
+  "source_base": "02795c8",
+  "inputs": {
+    "T017": "2d7e613d5592ff169cb7743ff6fd086ec06fe58c",
+    "T018": "c9d1f429056676576310e88e524a75c9bc897c83",
+    "T019": "7b7a438fcde75185c2160b642a02fbb2c6ed3ff1"
+  }
+}

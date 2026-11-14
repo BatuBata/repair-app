@@ -1,0 +1,6 @@
+<?php
+require getcwd().'/vendor/autoload.php';$root=getenv('QA_RUNTIME');$app=require getcwd().'/bootstrap/app.php';$app->useStoragePath($root.'/storage');$app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+if(config('database.default')!=='sqlite'||config('database.connections.sqlite.database')!==$root.'/fixture.sqlite')throw new RuntimeException('Unsafe database');
+config(['app.env'=>'production','view.compiled'=>$root.'/storage/framework/views','session.files'=>$root.'/storage/framework/sessions','cache.stores.file.path'=>$root.'/storage/framework/cache/data','cache.stores.file.lock_path'=>$root.'/storage/framework/cache/locks','filesystems.disks.local.root'=>$root.'/storage/app/private','filesystems.disks.public.root'=>$root.'/storage/app/public','logging.channels.single.path'=>$root.'/storage/logs/laravel.log','logging.channels.daily.path'=>$root.'/storage/logs/laravel.log']);
+file_put_contents(getenv('APP_CONFIG_CACHE'),'<?php return '.var_export(config()->all(),true).';');chmod(getenv('APP_CONFIG_CACHE'),0600);
+echo json_encode(['configPrivate'=>true,'databasePrivate'=>true,'storagePrivate'=>storage_path()===$root.'/storage','appEnv'=>config('app.env')]).PHP_EOL;

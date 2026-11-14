@@ -1,0 +1,18 @@
+[
+  {
+    "file": "edge-admin-a5.pdf",
+    "sha256": "4825d4e07856e81433324d227413df25e4b70a85a6017ab999100d7ba3828d73",
+    "pages": 2,
+    "status": "pass",
+    "modalAbsent": true,
+    "publicIdentityPhoneAbsent": "not public"
+  },
+  {
+    "file": "edge-public-a5.pdf",
+    "sha256": "a5b99abdb50c8bea9804bb8052ddacb748d5cf4ee659ba9a4b3bed7480b83736",
+    "pages": 1,
+    "status": "pass",
+    "modalAbsent": true,
+    "publicIdentityPhoneAbsent": true
+  }
+]

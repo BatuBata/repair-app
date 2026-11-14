@@ -1,0 +1,18 @@
+{
+  "checked_revision": "d047f25ea31d703660212e4205b937053c92adcb",
+  "HEAD_before_evidence_commit": "d047f25ea31d703660212e4205b937053c92adcb",
+  "manifests": {
+    "source": {
+      "files": 230,
+      "mismatches": []
+    },
+    "build": {
+      "files": 14,
+      "mismatches": []
+    },
+    "font": {
+      "files": 9,
+      "mismatches": []
+    }
+  }
+}

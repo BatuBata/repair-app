@@ -1,0 +1,13 @@
+{
+  "ownedServerPid": 24014,
+  "serverStoppedBy": "owned unified-exec session59314 Ctrl-C completion receipt",
+  "ownedChromeEdgeProfilesRemaining": [],
+  "ChromeAndEdgeRunnersCompleted": true,
+  "headlessOnly": true,
+  "privateRuntimeRetained": "/private/tmp/t023-a2-3of99won",
+  "privateSQLiteRetained": "/private/tmp/t023-a2-3of99won/fixture.sqlite",
+  "A1privateFixturePreserved": true,
+  "A1fixtureSha256StillMatchesCopyInput": true,
+  "MySQLUsed": false,
+  "globalInstallOrDeploy": false
+}

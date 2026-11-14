@@ -1,0 +1,42 @@
+{
+  "checked_revision": "d047f25ea31d703660212e4205b937053c92adcb",
+  "branch": "codex/t023-final-qa-a2",
+  "private_runtime": "/private/tmp/t023-a2-3of99won",
+  "fixtureCopiedFromOwnA1": true,
+  "fixtureSourceSha256": "13ae5d851dd8e4954bd1d3708aa43d7f044f8408c6ef8797efb4f0deaa47ff9e",
+  "fixtureCopiedSha256": "13ae5d851dd8e4954bd1d3708aa43d7f044f8408c6ef8797efb4f0deaa47ff9e",
+  "manifests": {
+    "source": {
+      "files": 230,
+      "mismatches": []
+    },
+    "build": {
+      "files": 14,
+      "mismatches": []
+    },
+    "font": {
+      "files": 9,
+      "mismatches": []
+    }
+  },
+  "source_delta": {
+    "changed": [
+      "resources/css/app.css",
+      "resources/views/livewire/reports/styles.blade.php"
+    ],
+    "unchanged": 228
+  },
+  "actual_A1_to_A2_CSS": {
+    "oldFile": "app-CxA26Lmt.css",
+    "newFile": "app-CDn1G0_W.css",
+    "removedRules": [
+      ".\\[cursor\\:pointer\\]{cursor:pointer}"
+    ],
+    "removedBytes": 36,
+    "allRetainedBytesIdentical": true
+  },
+  "unusedRuntimeClassSearch": {
+    "literalConsumers": [],
+    "dynamicClassReview": "Views/JS/domain unchanged; no dynamic use of these two utilities. Explicit view/vendor scanner sources retained."
+  }
+}

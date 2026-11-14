@@ -1,0 +1,8 @@
+<?php
+$uri=urldecode(parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH)??'/');
+if($uri!=='/'&&is_file('/Users/muzib/.codex/worktrees/v1-stock/repair-app'.'/public'.$uri))return false;
+define('LARAVEL_START',microtime(true));
+require '/Users/muzib/.codex/worktrees/v1-stock/repair-app'.'/vendor/autoload.php';
+$app=require '/Users/muzib/.codex/worktrees/v1-stock/repair-app'.'/bootstrap/app.php';
+$app->useStoragePath('/private/tmp/t023-a2-3of99won'.'/storage');
+$app->handleRequest(Illuminate\Http\Request::capture());

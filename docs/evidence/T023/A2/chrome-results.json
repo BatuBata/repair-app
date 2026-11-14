@@ -1,0 +1,1004 @@
+{
+  "cases": [
+    {
+      "id": "eye-dialog-focus-tab",
+      "width": 360,
+      "eyeId": "report-view-jual-1",
+      "pass": true
+    },
+    {
+      "id": "eye-dialog-focus-tab",
+      "width": 768,
+      "eyeId": "report-view-jual-1",
+      "pass": true
+    },
+    {
+      "id": "eye-dialog-focus-tab",
+      "width": 1280,
+      "eyeId": "report-view-jual-1",
+      "pass": true
+    },
+    {
+      "id": "F01-fixed-with-trusted-added-area-taps",
+      "count": 4,
+      "pass": true
+    }
+  ],
+  "layouts": [
+    {
+      "mode": "sample",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "anchors": [
+        {
+          "href": "http://127.0.0.1:8193/penjualan/1",
+          "text": "JL-2611-001",
+          "width": 96.140625,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/6",
+          "text": "TTS-2611-006",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        }
+      ]
+    },
+    {
+      "mode": "sample",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "anchors": [
+        {
+          "href": "http://127.0.0.1:8193/penjualan/1",
+          "text": "JL-2611-001",
+          "width": 96.140625,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/6",
+          "text": "TTS-2611-006",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        }
+      ]
+    },
+    {
+      "mode": "sample",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "anchors": [
+        {
+          "href": "http://127.0.0.1:8193/penjualan/1",
+          "text": "JL-2611-001",
+          "width": 83.578125,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/6",
+          "text": "TTS-2611-006",
+          "width": 94.4375,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        }
+      ]
+    },
+    {
+      "mode": "large-negative",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "anchors": [
+        {
+          "href": "http://127.0.0.1:8193/penjualan/2",
+          "text": "JL-2611-002",
+          "width": 96.140625,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/penjualan/3",
+          "text": "JL-2611-003",
+          "width": 96.140625,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/penjualan/4",
+          "text": "JL-2611-004",
+          "width": 96.140625,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/3",
+          "text": "TTS-2611-003",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/4",
+          "text": "TTS-2611-004",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/7",
+          "text": "TTS-2611-007",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/8",
+          "text": "TTS-2611-008",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/9",
+          "text": "TTS-2611-009",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/penjualan/1",
+          "text": "JL-2611-001",
+          "width": 96.140625,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/6",
+          "text": "TTS-2611-006",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        }
+      ]
+    },
+    {
+      "mode": "large-negative",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "anchors": [
+        {
+          "href": "http://127.0.0.1:8193/penjualan/2",
+          "text": "JL-2611-002",
+          "width": 96.140625,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/penjualan/3",
+          "text": "JL-2611-003",
+          "width": 96.140625,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/penjualan/4",
+          "text": "JL-2611-004",
+          "width": 96.140625,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/3",
+          "text": "TTS-2611-003",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/4",
+          "text": "TTS-2611-004",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/7",
+          "text": "TTS-2611-007",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/8",
+          "text": "TTS-2611-008",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/9",
+          "text": "TTS-2611-009",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/penjualan/1",
+          "text": "JL-2611-001",
+          "width": 96.140625,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/6",
+          "text": "TTS-2611-006",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        }
+      ]
+    },
+    {
+      "mode": "large-negative",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "anchors": [
+        {
+          "href": "http://127.0.0.1:8193/penjualan/2",
+          "text": "JL-2611-002",
+          "width": 83.578125,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        },
+        {
+          "href": "http://127.0.0.1:8193/penjualan/3",
+          "text": "JL-2611-003",
+          "width": 83.578125,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        },
+        {
+          "href": "http://127.0.0.1:8193/penjualan/4",
+          "text": "JL-2611-004",
+          "width": 83.578125,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/3",
+          "text": "TTS-2611-003",
+          "width": 94.4375,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/4",
+          "text": "TTS-2611-004",
+          "width": 94.4375,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/7",
+          "text": "TTS-2611-007",
+          "width": 94.4375,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/8",
+          "text": "TTS-2611-008",
+          "width": 94.4375,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/9",
+          "text": "TTS-2611-009",
+          "width": 94.4375,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        },
+        {
+          "href": "http://127.0.0.1:8193/penjualan/1",
+          "text": "JL-2611-001",
+          "width": 83.578125,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/6",
+          "text": "TTS-2611-006",
+          "width": 94.4375,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        }
+      ]
+    },
+    {
+      "mode": "large-positive",
+      "requestedWidth": 360,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "anchors": [
+        {
+          "href": "http://127.0.0.1:8193/penjualan/2",
+          "text": "JL-2611-002",
+          "width": 96.140625,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/penjualan/3",
+          "text": "JL-2611-003",
+          "width": 67.203125,
+          "height": 72,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/penjualan/4",
+          "text": "JL-2611-004",
+          "width": 67.203125,
+          "height": 72,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/3",
+          "text": "TTS-2611-003",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/4",
+          "text": "TTS-2611-004",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/7",
+          "text": "TTS-2611-007",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/8",
+          "text": "TTS-2611-008",
+          "width": 67.203125,
+          "height": 72,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/9",
+          "text": "TTS-2611-009",
+          "width": 67.203125,
+          "height": 72,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/penjualan/1",
+          "text": "JL-2611-001",
+          "width": 96.140625,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/6",
+          "text": "TTS-2611-006",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        }
+      ]
+    },
+    {
+      "mode": "large-positive",
+      "requestedWidth": 768,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "anchors": [
+        {
+          "href": "http://127.0.0.1:8193/penjualan/2",
+          "text": "JL-2611-002",
+          "width": 96.140625,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/penjualan/3",
+          "text": "JL-2611-003",
+          "width": 96.140625,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/penjualan/4",
+          "text": "JL-2611-004",
+          "width": 96.140625,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/3",
+          "text": "TTS-2611-003",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/4",
+          "text": "TTS-2611-004",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/7",
+          "text": "TTS-2611-007",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/8",
+          "text": "TTS-2611-008",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/9",
+          "text": "TTS-2611-009",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/penjualan/1",
+          "text": "JL-2611-001",
+          "width": 96.140625,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/6",
+          "text": "TTS-2611-006",
+          "width": 108.421875,
+          "height": 44,
+          "display": "inline-block",
+          "minWidth": "44px",
+          "minHeight": "44px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 44,
+          "eyeHeight": 44
+        }
+      ]
+    },
+    {
+      "mode": "large-positive",
+      "requestedWidth": 1280,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "anchors": [
+        {
+          "href": "http://127.0.0.1:8193/penjualan/2",
+          "text": "JL-2611-002",
+          "width": 83.578125,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        },
+        {
+          "href": "http://127.0.0.1:8193/penjualan/3",
+          "text": "JL-2611-003",
+          "width": 83.578125,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        },
+        {
+          "href": "http://127.0.0.1:8193/penjualan/4",
+          "text": "JL-2611-004",
+          "width": 83.578125,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/3",
+          "text": "TTS-2611-003",
+          "width": 94.4375,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/4",
+          "text": "TTS-2611-004",
+          "width": 94.4375,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/7",
+          "text": "TTS-2611-007",
+          "width": 94.4375,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/8",
+          "text": "TTS-2611-008",
+          "width": 94.4375,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/9",
+          "text": "TTS-2611-009",
+          "width": 94.4375,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        },
+        {
+          "href": "http://127.0.0.1:8193/penjualan/1",
+          "text": "JL-2611-001",
+          "width": 83.578125,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        },
+        {
+          "href": "http://127.0.0.1:8193/tts/6",
+          "text": "TTS-2611-006",
+          "width": 94.4375,
+          "height": 18,
+          "display": "inline",
+          "minWidth": "0px",
+          "minHeight": "0px",
+          "eyeLeftOfAnchor": true,
+          "eyeWidth": 32,
+          "eyeHeight": 32
+        }
+      ]
+    }
+  ],
+  "taps": [
+    {
+      "kind": "service",
+      "width": 360,
+      "pass": true,
+      "href": "http://127.0.0.1:8193/tts/6",
+      "anchor": {
+        "left": 96,
+        "top": 574,
+        "width": 108.421875,
+        "height": 44,
+        "bottom": 618
+      },
+      "text": {
+        "top": 576,
+        "bottom": 596,
+        "height": 20
+      },
+      "x": 150.2109375,
+      "y": 606,
+      "hitIsAnchor": true,
+      "event": {
+        "trusted": true,
+        "x": 150,
+        "y": 606
+      },
+      "actualPath": "/tts/6"
+    },
+    {
+      "kind": "sale",
+      "width": 360,
+      "pass": true,
+      "href": "http://127.0.0.1:8193/penjualan/1",
+      "anchor": {
+        "left": 96,
+        "top": 428,
+        "width": 96.140625,
+        "height": 44,
+        "bottom": 472
+      },
+      "text": {
+        "top": 430,
+        "bottom": 450,
+        "height": 20
+      },
+      "x": 144.0703125,
+      "y": 460,
+      "hitIsAnchor": true,
+      "event": {
+        "trusted": true,
+        "x": 144,
+        "y": 460
+      },
+      "actualPath": "/penjualan/1"
+    },
+    {
+      "kind": "service",
+      "width": 768,
+      "pass": true,
+      "href": "http://127.0.0.1:8193/tts/6",
+      "anchor": {
+        "left": 104,
+        "top": 748,
+        "width": 108.421875,
+        "height": 44,
+        "bottom": 792
+      },
+      "text": {
+        "top": 750,
+        "bottom": 770,
+        "height": 20
+      },
+      "x": 158.2109375,
+      "y": 780,
+      "hitIsAnchor": true,
+      "event": {
+        "trusted": true,
+        "x": 158,
+        "y": 780
+      },
+      "actualPath": "/tts/6"
+    },
+    {
+      "kind": "sale",
+      "width": 768,
+      "pass": true,
+      "href": "http://127.0.0.1:8193/penjualan/1",
+      "anchor": {
+        "left": 104,
+        "top": 490,
+        "width": 96.140625,
+        "height": 44,
+        "bottom": 534
+      },
+      "text": {
+        "top": 492,
+        "bottom": 512,
+        "height": 20
+      },
+      "x": 152.0703125,
+      "y": 522,
+      "hitIsAnchor": true,
+      "event": {
+        "trusted": true,
+        "x": 152,
+        "y": 522
+      },
+      "actualPath": "/penjualan/1"
+    }
+  ],
+  "consoleErrors": []
+}

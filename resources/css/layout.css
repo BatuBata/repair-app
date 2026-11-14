@@ -441,6 +441,7 @@ dialog.sheet-dialog[open] { animation: rise .2s var(--ease); }
   .table tbody tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px; padding: 12px 0; border-bottom: 1px solid var(--rule); }
   .table tbody tr:last-child { border-bottom: 0; }
   .table td { display: block; height: auto; padding: 0; border: 0; background: none !important; }
+  .table td[colspan] { grid-column: 1 / -1; }
   .table td.c-id { grid-column: 1; grid-row: 1; }
   .table td.c-st { grid-column: 2; grid-row: 1; justify-self: end; }
   .table td.c-who { grid-column: 1 / -1; }

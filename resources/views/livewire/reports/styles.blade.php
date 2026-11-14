@@ -48,7 +48,8 @@
 .reports-page .period,.reports-page .segmented { width:100%; }
 .reports-page .segmented button { flex:1; min-height:44px; }
 .reports-page .report-dates { width:100%; }
-.reports-page .report-dates .field { flex:1; width:0; }
+.reports-page .report-dates > div { flex:1; min-width:0; }
+.reports-page .report-dates .field { width:100%; }
 .reports-page .report-dates .date-picker-trigger { width:100%; min-width:0; }
 .reports-page .daily-chart { height:230px; }
 .reports-page .chart-plot { min-width:calc(var(--days) * 44px); }

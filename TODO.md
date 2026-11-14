@@ -55,7 +55,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T033 | Deploy aturan dan reset hanya admin demo | deployer / 6.1-sol | medium / high | T031, T032 | — | done |
 | T034 | Tambahkan placeholder seluruh form dan tahan push | developer / 6.1-sol | medium / medium | — | — | done |
 | T035 | QA independen placeholder seluruh form | tester / 6.1-sol | medium / medium | T034 | — | done |
-| T036 | Push dan integrasi setelah aba-aba user | integrator / 6.1-sol | easy / medium | T034, T035, T037, T038, T039, T041, T045, T046 | — | running |
+| T036 | Push dan integrasi setelah aba-aba user | integrator / 6.1-sol | easy / medium | T034, T035, T037, T038, T039, T041, T045, T046 | — | done |
 | T037 | Selectbox pencarian untuk pilihan dinamis atau lebih dari tiga | developer / 6.1-terra | medium / medium | T035 | — | done |
 | T038 | QA independen selectbox pencarian | tester / 6.1-terra | medium / medium | T037 | — | done |
 | T039 | Datepicker bersama untuk seluruh kontrol tanggal | developer / 6.1-terra | medium / medium | T038 | — | done |
@@ -66,6 +66,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T044 | QA independen halaman tracking customer | tester / 6.1-terra | medium / medium | T043 | — | done |
 | T045 | Perbaiki ikon aksi yang hilang pada sprite bersama | developer / 6-luna | easy / low | — | — | done |
 | T046 | QA independen kelengkapan ikon aksi | tester / 6-luna | easy / low | T045 | — | done |
+| T047 | Perbaiki layout mobile laporan dan empty state servis | developer / 6.1-terra | easy / medium | T036 | — | done |
+| T048 | QA independen perbaikan responsif laporan dan servis | tester / 6.1-terra | easy / medium | T047 | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -145,14 +147,12 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
-      "state": "running",
-      "allowed_tasks": [
-        "T036"
-      ],
+      "state": "stopped",
+      "allowed_tasks": [],
       "stop_after_tasks": [
-        "T036"
+        "T048"
       ],
-      "source_ref": "User15Nov2026 explicitly says push to main. T036 integration, main push and CI/CD observation are authorized; no force-push or workflow expansion.",
+      "source_ref": "User15Nov2026 reports broken mobile layout on reports and TTS pages. T047 repair and T048 independent QA are authorized locally; user explicitly says wait for a new signal before push/deploy.",
       "phase_history": [
         {
           "state": "paused",
@@ -548,6 +548,33 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
             "T036"
           ],
           "source_ref": "User15Nov2026 explicitly says push to main. Integrate the held local revisions once, then observe the existing main CI/CD through deployment."
+        },
+        {
+          "state": "stopped",
+          "allowed_tasks": [],
+          "stop_after_tasks": [
+            "T036"
+          ],
+          "source_ref": "T036 completed PASS: candidate merged to main at d6fb3941eb1aa25583580248cdb27dd1e27136bb, GitHub Actions run 43636268111 passed CI and deploy, and production /up plus /login returned HTTP 200."
+        },
+        {
+          "state": "running",
+          "allowed_tasks": [
+            "T047",
+            "T048"
+          ],
+          "stop_after_tasks": [
+            "T048"
+          ],
+          "source_ref": "User15Nov2026 reports broken mobile layout on reports and TTS pages. T047 repair and T048 independent QA are authorized locally; user explicitly says wait for a new signal before push/deploy."
+        },
+        {
+          "state": "stopped",
+          "allowed_tasks": [],
+          "stop_after_tasks": [
+            "T048"
+          ],
+          "source_ref": "T047 implementation and T048 independent QA completed PASS on pinned candidate sha256:4422b4f35ceb521f09e81cbc9289993645aa25f9f41d6696c073d659f3234fd2. Responsive report dates and TTS empty state verified at 360/768/1280; changes remain local pending user push signal."
         }
       ]
     },
@@ -4972,7 +4999,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Sesudah aba-aba user: pin revisi, push branch, review/merge sesuai instruksi, lalu observasi CI/CD nyata."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [{
         "id": "A1",
@@ -4981,9 +5008,27 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "model_requested": "gpt-6.1-sol",
         "model_effective": null,
         "dispatch_ref": "user:push-main-2026-11-15",
-        "outcome": "running",
-        "receipt_ref": null
-      }]
+        "outcome": "pass",
+        "receipt_ref": "docs/evidence/T036/A1/README.md"
+      }],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T036/A1/README.md",
+        "revision": "sha256:d6fb3941eb1aa25583580248cdb27dd1e27136bb",
+        "checked_revision": "sha256:d6fb3941eb1aa25583580248cdb27dd1e27136bb",
+        "inputs": {
+          "T034": "sha256:2d31e5b2b6091fa2d301907bbef59b3301cf3bdc347a15333a473f51a998aa07",
+          "T035": "sha256:2d31e5b2b6091fa2d301907bbef59b3301cf3bdc347a15333a473f51a998aa07",
+          "T037": "sha256:aa4cc7ca6e9f37da95c412858144484b20f3b33a93fb433dbc7f2fbe7be9751c",
+          "T038": "sha256:aa4cc7ca6e9f37da95c412858144484b20f3b33a93fb433dbc7f2fbe7be9751c",
+          "T039": "sha256:aa571baa88e28a0840eaf209f41925ff85c024ac4a333b6d87737167cfc451dc",
+          "T041": "sha256:21064de143b6d51af6e1202e4172beba76322d35c5b0813fcf19f73165468f10",
+          "T045": "sha256:06ac7156d98a99f5312e7b20d3970acf8c4d02bb66712c61740f35caf7248918",
+          "T046": "sha256:f4123ce626a48f9fc1da4957645ff3c864f6a6b211ff99549db03dbb46cbf4ad"
+        },
+        "evidence": ["docs/evidence/T036/A1/README.md"],
+        "summary": "Candidate 5b2f1c1 integrated to main at d6fb3941eb1aa25583580248cdb27dd1e27136bb. GitHub Actions run 43636268111 passed CI and deployment; production /up and /login returned HTTP 200."
+      }
     },
     {
       "deliverable_id": null,
@@ -5705,6 +5750,121 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "inputs": {"T045": "sha256:06ac7156d98a99f5312e7b20d3970acf8c4d02bb66712c61740f35caf7248918"},
         "evidence": ["docs/evidence/T046/A1/README.md"],
         "summary": "QA independen PASS: 31 ikon statis dibandingkan dengan 58 simbol sprite, 0 hilang dan 0 ID duplikat; i-pencil tunggal melayani empat caller. ScaffoldTest 6 tes/32 assertion, view cache dan browser menu TTS lulus; ikon mata/pensil 16x16 dengan href benar dan tanpa error browser. Tidak ada perubahan kode oleh tester, commit/push/merge/deploy."
+      }
+    },
+    {
+      "id": "T047",
+      "title": "Perbaiki layout mobile laporan dan empty state servis",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "deliverable_id": null,
+      "prd_refs": ["PRD.md §10.2", "DESIGN.md"],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Dua aturan CSS mobile membuat wrapper datepicker menyusut ke nol dan empty state colspan masuk kolom aksi 44px.",
+      "model_hint": "gpt-6.1-terra",
+      "model_reason": "Terra untuk perbaikan visual responsif kecil yang harus diuji di tiga lebar.",
+      "depends_on": {"hard": ["T036"], "contracts": []},
+      "write_scope": [
+        "resources/css/layout.css",
+        "resources/views/livewire/reports/styles.blade.php",
+        "TODO.md",
+        "docs/evidence/T047/**"
+      ],
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Kontrol Dari tanggal dan Sampai tanggal tetap terbaca dan memakai lebar yang tersedia pada 360px, 768px, dan 1280px.",
+        "Empty state tabel servis dengan colspan memenuhi lebar daftar mobile dan tidak membungkus satu huruf per baris.",
+        "Halaman laporan dan servis tidak memiliki overflow horizontal atau error console pada tiga lebar.",
+        "Tidak ada perubahan data, query, rute, otorisasi, commit, push, atau deployment."
+      ],
+      "verification_plan": [
+        "Tes fitur Reports dan TTS, view cache, build aset, formatter, diff check, dan browser 360/768/1280."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [{
+        "id": "A1",
+        "kind": "implementation",
+        "worker_id": "/root",
+        "model_requested": "gpt-6.1-terra",
+        "model_effective": null,
+        "dispatch_ref": "user:responsive-regression-2026-11-15",
+        "outcome": "pass",
+        "receipt_ref": "docs/evidence/T047/A1/README.md"
+      }],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T047/A1/README.md",
+        "revision": "sha256:4422b4f35ceb521f09e81cbc9289993645aa25f9f41d6696c073d659f3234fd2",
+        "checked_revision": "sha256:4422b4f35ceb521f09e81cbc9289993645aa25f9f41d6696c073d659f3234fd2",
+        "inputs": {"T036": "sha256:d6fb3941eb1aa25583580248cdb27dd1e27136bb"},
+        "evidence": ["docs/evidence/T047/A1/README.md"],
+        "summary": "Akar masalah diperbaiki dengan tiga deklarasi CSS: wrapper datepicker menjadi flex item yang dapat menyusut secara benar, sementara cell colspan selalu melintasi seluruh grid mobile. Browser 360/768/1280 tanpa overflow/error; 25 tes/258 assertion, view cache, build, dan formatter lulus. Perubahan tetap lokal."
+      }
+    },
+    {
+      "id": "T048",
+      "title": "QA independen perbaikan responsif laporan dan servis",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "visual",
+      "deliverable_id": null,
+      "prd_refs": ["PRD.md §10.2", "DESIGN.md"],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Perubahan aturan tabel bersama dan CSS laporan perlu diuji independen agar tidak memindahkan regresi ke lebar lain.",
+      "model_hint": "gpt-6.1-terra",
+      "model_reason": "Terra untuk QA visual responsif di tiga lebar.",
+      "depends_on": {"hard": ["T047"], "contracts": []},
+      "write_scope": ["docs/evidence/T048/**"],
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Tester independen mem-pin kandidat dan memeriksa kedua akar masalah di 360px, 768px, dan 1280px.",
+        "Tidak ada overflow horizontal, error console, atau regresi pada tes fitur terarah dan build.",
+        "Tester tidak mengubah kode aplikasi, TODO, commit, push, atau deployment."
+      ],
+      "verification_plan": [
+        "Audit diff dan hash, tes fitur Reports/TTS, view cache, build, serta browser tiga lebar."
+      ],
+      "status": "done",
+      "qa_for": "T047",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [{
+        "id": "A1",
+        "kind": "verification",
+        "worker_id": "/root/t048_responsive_qa",
+        "model_requested": "gpt-6.1-terra",
+        "model_effective": null,
+        "dispatch_ref": "native-codex:T048:A1",
+        "outcome": "pass",
+        "receipt_ref": "docs/evidence/T048/A1/README.md"
+      }],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T048/A1/README.md",
+        "revision": "sha256:0ac3521ba33388c1368616e496ca7321b07c9ab8bf31c6abb08ad60d5b7869c5",
+        "checked_revision": "sha256:4422b4f35ceb521f09e81cbc9289993645aa25f9f41d6696c073d659f3234fd2",
+        "inputs": {"T047": "sha256:4422b4f35ceb521f09e81cbc9289993645aa25f9f41d6696c073d659f3234fd2"},
+        "evidence": [
+          "docs/evidence/T048/A1/README.md",
+          "docs/evidence/T048/A1/reports-360.png",
+          "docs/evidence/T048/A1/reports-768.png",
+          "docs/evidence/T048/A1/reports-1280.png",
+          "docs/evidence/T048/A1/tts-360.png",
+          "docs/evidence/T048/A1/tts-768.png",
+          "docs/evidence/T048/A1/tts-1280.png"
+        ],
+        "summary": "QA independen PASS pada pin T047: hash cocok, dua akar masalah benar, browser 360/768/1280 tanpa overflow atau error console, serta 25 tes/258 assertion, view cache, build, dan diff check lulus. Full regression dan HP fisik tidak diulang; perubahan tetap lokal."
       }
     }
   ]

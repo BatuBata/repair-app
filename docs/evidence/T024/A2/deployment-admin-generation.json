@@ -1,0 +1,1 @@
+{"status":"PASS","handover_file":"\/home\/muzib\/deploy-demo-repair-app\/initial-admin-password.txt","handover_mode":"0600","production_password_rule":"PASS","current_APP_KEY_preserved":true,"DB_password_preserved":true,"private_environments_updated":true,"password_output":false,"database_writes":false}

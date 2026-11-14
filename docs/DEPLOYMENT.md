@@ -1,5 +1,33 @@
 # Operasional Aplikasi Servis Anugerah
 
+## Demo aktif — 14 November 2026
+
+[Demo](https://demo-repair-app.scannara.asia) aktif sejak 10.43 WITA di `muzib@202.10.40.165:/var/www/demo-repair-app/current`, memakai revisi aplikasi `d047f25ea31d703660212e4205b937053c92adcb` yang sudah masuk `main`. [Receipt deployment](evidence/T024/A2/deployment-receipt.json) dan [serah terima operator](evidence/T024/A2/deployment-HANDOFF.md) merekam langkah serta hasil aktual. PHP 8.3 terpasang berdampingan dengan versi lama; MariaDB 10.11 existing sudah lulus [uji kompatibilitas independen](evidence/T024/A2/mariadb-qa/assessment.json). Let’s Encrypt, uji renewal, dan hook reload Nginx lulus.
+
+Keputusan PRD D-20/D-21/D-22 berlaku khusus demo ini: Debian 12 dan MariaDB existing disetujui; **seluruh backup ditunda oleh user**. Tidak ada backup/cron/offsite/restore demo yang diklaim berhasil, sehingga NFR-05 serta penerimaan produksi penuh belum terpenuhi. Bagian berikut tetap merupakan runbook umum T020; ketentuan Ubuntu/MySQL/backup di sana bukan gambaran keadaan demo dan tidak membatalkan pengecualian user ini.
+
+Admin demo: username `admin`; password awal hanya tersimpan di server pada `/home/muzib/deploy-demo-repair-app/initial-admin-password.txt` (pemilik `muzib`, mode `0600`, direktori induk `0700`). Owner dapat membacanya secara privat lewat SSH. Jangan memasukkan isinya ke Git, chat, laporan, atau tangkapan layar. Nilai instalasi `ADMIN_INITIAL_PASSWORD` sudah dikosongkan di kedua environment dan cache konfigurasi. Pertahankan APP_KEY pada `current/.env`; jangan menjalankan ulang bootstrap, key generation, atau seed instalasi pertama pada aplikasi live.
+
+Status pengujian web, transaksi, HP dan printer yang benar-benar dijalankan mengikuti T025 di `TODO.md`. Pengujian web tanpa perubahan data tidak membuktikan cetak fisik atau penerimaan penuh R001.
+
+## Auto-update GitHub Actions — D-23
+
+Workflow `.github/workflows/tests.yml` menjalankan pemeriksaan format (Pint), analisis tipe (PHPStan), unit/feature test, build aset, serta tes konkurensi penomoran pada MariaDB 10.11 sementara. Database CI `repair_app_test` berada di container GitHub, bukan database VPS. Kredensial CI bersifat sintetis. `npm ci` dan Composer menggunakan lockfile. Pemeriksaan keamanan deployment di `deploy/ci-checks.py` mencakup arsip terlarang, SHA yang salah, lingkungan privat, maintenance, kegagalan migrasi, dan health check.
+
+Push branch dan pull request menjalankan tes. **Hanya push `main` setelah job `ci` PASS yang memperbarui demo.** Job deploy mengambil arsip build dari run/commit yang sama; bila commit main sudah lebih baru, deploy lama dilewati. GitHub concurrency dan `flock` server mencegah dua deployment bersamaan. Action pihak ketiga dipin ke SHA mengikuti [panduan keamanan GitHub](https://docs.github.com/en/actions/reference/security/secure-use).
+
+Dua repository Actions Secrets diperlukan: `DEMO_DEPLOY_SSH_KEY` dan `DEMO_DEPLOY_KNOWN_HOSTS`. Kunci baru khusus CI memakai `restrict` dan forced command di `~muzib/.ssh/authorized_keys`, hanya menerima `deploy <40-hex-commit> <64-hex-archive-sha256>`. Kunci tersebut tidak membuka shell, PTY, agent forwarding atau port forwarding, serta tidak memiliki sudo. Password DB/admin dan APP_KEY tetap hanya di server. Host key diambil dari identitas SSH yang sudah diverifikasi, bukan `ssh-keyscan` tanpa pembandingan saat CI berjalan.
+
+Receiver terpasang di `/home/muzib/deploy-demo-repair-app/cicd/{ci-remote.sh,ci-archive.py}` dengan direktori privat `0700`. Perubahan receiver harus direview dan dipasang operator melalui SSH biasa; push aplikasi tidak mengubah pembatas SSH itu sendiri. Secret dibuat/diperbarui lewat `gh secret set --repo BatuBata/repair-app` menggunakan stdin privat. Untuk mencabut akses, hapus hanya baris kunci berkomentar `repair-app-github-actions-demo` dan kedua secret tersebut; jangan menimpa kunci SSH owner.
+
+Receiver memeriksa checksum, pin commit, isi arsip, kebutuhan PHP, serta maintenance existing sebelum mengubah aplikasi. Deploy memasang marker 503, menghapus cache framework lama tanpa mengosongkan cache data, menyalin file aplikasi/aset/dependency, menjalankan `migrate --force`, lalu cache config/route/view. Tidak ada `migrate:fresh`, seed akun, key generation, atau backup. Rsync mempertahankan `.env`, seluruh `storage`, `public/storage`, `.git`, dan direktori cache runtime; grup `www-data` diwariskan dari folder SGID existing tanpa chmod/chgrp massal. PHP FPM menggunakan pemeriksaan perubahan opcode cache existing; tidak memerlukan reload layanan atau sudo.
+
+Setelah readiness database dan HTTPS `/up` serta `/login` berhasil, SHA ditulis ke `/var/www/demo-repair-app/current/.release-revision`; ini identitas source auto-deploy yang berlaku. `.git` live dipertahankan sebagai riwayat instalasi awal dan **tidak lagi menjadi penanda versi deployment**. Receipt terakhir ada di `cicd/last-success.json`, log privat di `cicd/last-deploy.log`. Berkas unggahan dan konfigurasi privat tidak disertakan dalam arsip GitHub.
+
+Jika kegagalan terjadi setelah penerapan dimulai, receiver keluar nonzero dan mempertahankan marker 503. Operator membaca log privat dan menyiapkan perbaikan maju; jangan menghapus marker atau mereset database tanpa diagnosis. Backup/restore tetap ditunda D-22, sehingga pipeline tidak menjanjikan rollback data. Push `main` yang lolos tes adalah izin rilis demo berkelanjutan D-23; penerimaan Android/printer dan transaksi produksi T025 tetap terpisah.
+
+## Runbook umum T020
+
 Paket T020 menyiapkan **satu checkout Laravel di satu VPS**, dengan jeda maintenance saat rilis. Tidak ada staging, queue worker, scheduler aplikasi, container, atau layanan tambahan (PRD §7, §14, D-17). Semua perintah di bawah adalah **instruksi untuk operator setelah mendapat izin**, bukan catatan deployment yang sudah dijalankan. Hasil lokal yang benar-benar diperiksa ada di [bukti T020](evidence/T020/HANDOFF.md); uji backup/restore **MySQL lokal nyata sudah PASS** pada [assessment T020](evidence/T020/mysql-verification-assessment.json) dan [handoff MySQL](evidence/T020/mysql-verification-handoff.md). [FAIL awal](evidence/T020/mysql-verification-result.json) dipertahankan: pembandingan teks `SHOW CREATE` berubah karena charset redundan; isi, identitas, dan schema secara semantik sama. Bukti lokal ini belum membuktikan cron, salinan luar VPS, atau pemulihan produksi (Q-03/Q-04).
 
 ## Target dan gerbang

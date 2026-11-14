@@ -1,0 +1,2 @@
+No syntax errors detected in /home/muzib/deploy-demo-repair-app/deployment-artisan-safe.php
+{"phase":"production-admin-password-validation","command":"migrate","status":"FAIL","exception_class":"Illuminate\\Validation\\ValidationException","code":0,"raw_message":"suppressed","maintenance":"retained"}

@@ -1,0 +1,4 @@
+bash -n bootstrap.sh: exit 0; stdout=''; stderr=''
+bash -n backup-mariadb.sh: exit 0; stdout=''; stderr=''
+bash -n renewal-hook.sh: exit 0; stdout=''; stderr=''
+ShellCheck: NOT_RUN; executable unavailable

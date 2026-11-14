@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "case": "missing confirmation",
+      "expected": "nonzero before mutations",
+      "actual": 1,
+      "status": "PASS"
+    },
+    {
+      "case": "non-root refused",
+      "expected": "nonzero before mutations",
+      "actual": 1,
+      "status": "PASS"
+    },
+    {
+      "case": "bounded finalizer and single sudo command syntax",
+      "expected": 0,
+      "actual": 0,
+      "status": "PASS"
+    }
+  ],
+  "actual_host_finalization": "NOT_RUN by worker; parent after review",
+  "finalizer_sha256": "fb4e90944bc85627e57939ab9c455759509d3c160961b3f16b81962c9b716275"
+}

@@ -1,0 +1,585 @@
+{
+  "checked_revision": "d047f25ea31d703660212e4205b937053c92adcb",
+  "target": "https://demo-repair-app.scannara.asia",
+  "started_at": "2026-11-14T02:49:06.126Z",
+  "scope": "Independent READ-ONLY live web smoke; login/logout permitted; no business data writes",
+  "cases": [
+    {
+      "id": "http-https-redirect",
+      "status": 301
+    },
+    {
+      "id": "public-/up",
+      "status": 200
+    },
+    {
+      "id": "public-/login",
+      "status": 200
+    },
+    {
+      "id": "guest-redirect-/",
+      "status": 302
+    },
+    {
+      "id": "guest-redirect-/tts",
+      "status": 302
+    },
+    {
+      "id": "guest-redirect-/stok",
+      "status": 302
+    },
+    {
+      "id": "guest-redirect-/penjualan",
+      "status": 302
+    },
+    {
+      "id": "guest-redirect-/pengeluaran",
+      "status": 302
+    },
+    {
+      "id": "guest-redirect-/laporan",
+      "status": 302
+    },
+    {
+      "id": "guest-redirect-/pengaturan/pengguna",
+      "status": 302
+    },
+    {
+      "id": "guest-redirect-/pengaturan/kategori",
+      "status": 302
+    },
+    {
+      "id": "guest-redirect-/pengaturan/toko",
+      "status": 302
+    },
+    {
+      "id": "guest-redirect-/profil",
+      "status": 302
+    },
+    {
+      "id": "private-denial-/.env",
+      "status": 403
+    },
+    {
+      "id": "private-denial-/.git/config",
+      "status": 403
+    },
+    {
+      "id": "private-denial-/storage/logs/laravel.log",
+      "status": 404
+    },
+    {
+      "id": "private-denial-/vendor/autoload.php",
+      "status": 404
+    },
+    {
+      "id": "private-denial-/config/app.php",
+      "status": 404
+    },
+    {
+      "id": "private-denial-/storage/logos/a.php",
+      "status": 404
+    },
+    {
+      "id": "private-denial-/layout-preview",
+      "status": 404
+    },
+    {
+      "id": "23-frozen-assets-sha256",
+      "status": "PASS",
+      "count": 23
+    },
+    {
+      "id": "valid-admin-login-session",
+      "status": "PASS"
+    },
+    {
+      "id": "actual-navigation-link-tts",
+      "status": "PASS"
+    },
+    {
+      "id": "screen-/tts",
+      "status": "PASS",
+      "heading": "Servis",
+      "form_render_only": false
+    },
+    {
+      "id": "screen-/stok",
+      "status": "PASS",
+      "heading": "Stok",
+      "form_render_only": false
+    },
+    {
+      "id": "screen-/penjualan",
+      "status": "PASS",
+      "heading": "Penjualan",
+      "form_render_only": false
+    },
+    {
+      "id": "screen-/pengeluaran",
+      "status": "PASS",
+      "heading": "Pengeluaran",
+      "form_render_only": false
+    },
+    {
+      "id": "screen-/laporan",
+      "status": "PASS",
+      "heading": "Laporan",
+      "form_render_only": false
+    },
+    {
+      "id": "screen-/pengaturan/pengguna",
+      "status": "PASS",
+      "heading": "Pengguna",
+      "form_render_only": false
+    },
+    {
+      "id": "screen-/pengaturan/kategori",
+      "status": "PASS",
+      "heading": "Kategori",
+      "form_render_only": false
+    },
+    {
+      "id": "screen-/pengaturan/toko",
+      "status": "PASS",
+      "heading": "Pengaturan toko",
+      "form_render_only": true
+    },
+    {
+      "id": "screen-/profil",
+      "status": "PASS",
+      "heading": "Profil",
+      "form_render_only": true
+    },
+    {
+      "id": "own-session-logout",
+      "status": "PASS"
+    }
+  ],
+  "screens": [
+    {
+      "path": "/tts",
+      "heading": "Servis",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "forms": 3,
+      "inputs": 4,
+      "serverError": false,
+      "emptyBusiness": true
+    },
+    {
+      "path": "/stok",
+      "heading": "Stok",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "forms": 3,
+      "inputs": 3,
+      "serverError": false,
+      "emptyBusiness": true
+    },
+    {
+      "path": "/penjualan",
+      "heading": "Penjualan",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "forms": 3,
+      "inputs": 3,
+      "serverError": false,
+      "emptyBusiness": true
+    },
+    {
+      "path": "/pengeluaran",
+      "heading": "Pengeluaran",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "forms": 3,
+      "inputs": 5,
+      "serverError": false,
+      "emptyBusiness": true
+    },
+    {
+      "path": "/laporan",
+      "heading": "Laporan",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "forms": 3,
+      "inputs": 5,
+      "serverError": false,
+      "emptyBusiness": false
+    },
+    {
+      "path": "/pengaturan/pengguna",
+      "heading": "Pengguna",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "forms": 3,
+      "inputs": 3,
+      "serverError": false,
+      "emptyBusiness": false
+    },
+    {
+      "path": "/pengaturan/kategori",
+      "heading": "Kategori",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "forms": 3,
+      "inputs": 3,
+      "serverError": false,
+      "emptyBusiness": false
+    },
+    {
+      "path": "/pengaturan/toko",
+      "heading": "Pengaturan toko",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "forms": 4,
+      "inputs": 9,
+      "serverError": false,
+      "emptyBusiness": false
+    },
+    {
+      "path": "/profil",
+      "heading": "Profil",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "forms": 5,
+      "inputs": 7,
+      "serverError": false,
+      "emptyBusiness": false
+    }
+  ],
+  "assets": [
+    {
+      "path": "/build/assets/app-CDn1G0_W.css",
+      "status": 200,
+      "bytes": 397614,
+      "sha256": "63d14283ee0b6e1c6b07bee2a3478b8f935739643343c4df0eca71a15acaaeba"
+    },
+    {
+      "path": "/build/assets/app-TKBAM3lN.js",
+      "status": 200,
+      "bytes": 1757,
+      "sha256": "e0084906357a1e8dbae007de03328ce94f9b3fd02415f17b40fe16175ea9170f"
+    },
+    {
+      "path": "/build/assets/fonts-C9MNnjVw.css",
+      "status": 200,
+      "bytes": 2352,
+      "sha256": "3846a9bb60bfad92960eadcccaf0b4e129d74b11d48791506c8d1a827a385cc8"
+    },
+    {
+      "path": "/build/assets/instrument-sans-400-normal-D1W7dsQl.woff",
+      "status": 200,
+      "bytes": 21240,
+      "sha256": "797bd3eaa70edbd4757650ab44dad75fbfbfdf18bacedb4b71022c04621d30ad"
+    },
+    {
+      "path": "/build/assets/instrument-sans-400-normal-DRC__1Mx.woff2",
+      "status": 200,
+      "bytes": 16860,
+      "sha256": "9a91efaa3599a6ef01b2f49e9ec670e3a2f39baeef09c73198f1052cf3bb0850"
+    },
+    {
+      "path": "/build/assets/instrument-sans-500-normal-Dk9ku72i.woff2",
+      "status": 200,
+      "bytes": 17232,
+      "sha256": "9d3547da16d950d12a677c772a3ff9b69846e60e7dcd1b5efd540993f7286532"
+    },
+    {
+      "path": "/build/assets/instrument-sans-500-normal-Z6ESRlEs.woff",
+      "status": 200,
+      "bytes": 21652,
+      "sha256": "bd6a8dc8b0dc0cced0c32d3eda93f0e0e82c58ddefea8b53b3307b0c48da3089"
+    },
+    {
+      "path": "/build/assets/instrument-sans-600-normal-B7fBEWYG.woff2",
+      "status": 200,
+      "bytes": 17408,
+      "sha256": "efb770916eda95a0e31d80cccde9651d4e8617010b21220e9f227c4820d675da"
+    },
+    {
+      "path": "/build/assets/instrument-sans-600-normal-B9e8oLYv.woff",
+      "status": 200,
+      "bytes": 21676,
+      "sha256": "9b4ce1f2b26be7cb087fd87d6f99a202136292ec820af75bd38ab9e53895cf28"
+    },
+    {
+      "path": "/build/assets/layout-DAFmGKay.css",
+      "status": 200,
+      "bytes": 32149,
+      "sha256": "6b76534c3551b13f83b69959c988520f92d09ac7a13770287af8b35cfd3aa6bb"
+    },
+    {
+      "path": "/build/assets/layout-VbftPR1Q.js",
+      "status": 200,
+      "bytes": 2285,
+      "sha256": "c341bb7b6164371637f1c9a6732012308af41f20f51e2c1462f235c122bfa0d6"
+    },
+    {
+      "path": "/build/assets/passkeys-CsxEE3hN.js",
+      "status": 200,
+      "bytes": 12075,
+      "sha256": "ad776e742af479bdb7ac39623fb121e0046c181de471cdda0a1c57c7f7f57e72"
+    },
+    {
+      "path": "/build/fonts-manifest.json",
+      "status": 200,
+      "bytes": 5742,
+      "sha256": "66edf17c93351fe01158be7414a441a762f106417c74351881876b405b8b10ca"
+    },
+    {
+      "path": "/build/manifest.json",
+      "status": 200,
+      "bytes": 1982,
+      "sha256": "5b6607d5a0edb876e2a6c62714c355a55b84a9a2cd084a0502183beb685e6836"
+    },
+    {
+      "path": "/fonts/OFL-IBM-Plex.txt",
+      "status": 200,
+      "bytes": 4362,
+      "sha256": "d741e57d5f865e294df801f96b7b5161a88b211df65887e4358d271c9fc5fb4f"
+    },
+    {
+      "path": "/fonts/ibm-plex-mono-400.woff2",
+      "status": 200,
+      "bytes": 14708,
+      "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+    },
+    {
+      "path": "/fonts/ibm-plex-mono-500.ttf",
+      "status": 200,
+      "bytes": 41328,
+      "sha256": "4286ad15381bdde8da98fe92f0f7f209b32d94d2d9dea9b48143441cb869376f"
+    },
+    {
+      "path": "/fonts/ibm-plex-mono-500.woff2",
+      "status": 200,
+      "bytes": 14888,
+      "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+    },
+    {
+      "path": "/fonts/ibm-plex-sans-400.ttf",
+      "status": 200,
+      "bytes": 56724,
+      "sha256": "1872782504203650410eedd72d31279037355ff21e41336186b862dec220ca82"
+    },
+    {
+      "path": "/fonts/ibm-plex-sans-400.woff2",
+      "status": 200,
+      "bytes": 22588,
+      "sha256": "3b646991d30055a93a4ecc499713d4347953a74a947ecab435ab72070cbdab0e"
+    },
+    {
+      "path": "/fonts/ibm-plex-sans-500.woff2",
+      "status": 200,
+      "bytes": 24184,
+      "sha256": "0717336fb31fcdcde4b8deb3675bb4a0f7f6d484864afcd6751ac29975962203"
+    },
+    {
+      "path": "/fonts/ibm-plex-sans-600.ttf",
+      "status": 200,
+      "bytes": 56780,
+      "sha256": "071865beee84cb2eb52b399e4293b47bb71cf4659e5c875a9711262e31920cdf"
+    },
+    {
+      "path": "/fonts/ibm-plex-sans-600.woff2",
+      "status": 200,
+      "bytes": 24252,
+      "sha256": "8960851d691c054ed38e259bdcf1a6190d157b4203ed5bb32c632a863fb8ec2f"
+    }
+  ],
+  "documents": [
+    {
+      "path": "/login",
+      "status": 200,
+      "securityState": "secure",
+      "protocol": "TLS 1.3",
+      "issuer": "YE1",
+      "subjectName": "demo-repair-app.scannara.asia",
+      "validFrom": 1794618449,
+      "validTo": 1802394448
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "securityState": "secure",
+      "protocol": "TLS 1.3",
+      "issuer": "YE1",
+      "subjectName": "demo-repair-app.scannara.asia",
+      "validFrom": 1794618449,
+      "validTo": 1802394448
+    },
+    {
+      "path": "/tts",
+      "status": 200,
+      "securityState": "secure",
+      "protocol": "TLS 1.3",
+      "issuer": "YE1",
+      "subjectName": "demo-repair-app.scannara.asia",
+      "validFrom": 1794618449,
+      "validTo": 1802394448
+    },
+    {
+      "path": "/tts",
+      "status": 200,
+      "securityState": "secure",
+      "protocol": "TLS 1.3",
+      "issuer": "YE1",
+      "subjectName": "demo-repair-app.scannara.asia",
+      "validFrom": 1794618449,
+      "validTo": 1802394448
+    },
+    {
+      "path": "/stok",
+      "status": 200,
+      "securityState": "secure",
+      "protocol": "TLS 1.3",
+      "issuer": "YE1",
+      "subjectName": "demo-repair-app.scannara.asia",
+      "validFrom": 1794618449,
+      "validTo": 1802394448
+    },
+    {
+      "path": "/penjualan",
+      "status": 200,
+      "securityState": "secure",
+      "protocol": "TLS 1.3",
+      "issuer": "YE1",
+      "subjectName": "demo-repair-app.scannara.asia",
+      "validFrom": 1794618449,
+      "validTo": 1802394448
+    },
+    {
+      "path": "/pengeluaran",
+      "status": 200,
+      "securityState": "secure",
+      "protocol": "TLS 1.3",
+      "issuer": "YE1",
+      "subjectName": "demo-repair-app.scannara.asia",
+      "validFrom": 1794618449,
+      "validTo": 1802394448
+    },
+    {
+      "path": "/laporan",
+      "status": 200,
+      "securityState": "secure",
+      "protocol": "TLS 1.3",
+      "issuer": "YE1",
+      "subjectName": "demo-repair-app.scannara.asia",
+      "validFrom": 1794618449,
+      "validTo": 1802394448
+    },
+    {
+      "path": "/pengaturan/pengguna",
+      "status": 200,
+      "securityState": "secure",
+      "protocol": "TLS 1.3",
+      "issuer": "YE1",
+      "subjectName": "demo-repair-app.scannara.asia",
+      "validFrom": 1794618449,
+      "validTo": 1802394448
+    },
+    {
+      "path": "/pengaturan/kategori",
+      "status": 200,
+      "securityState": "secure",
+      "protocol": "TLS 1.3",
+      "issuer": "YE1",
+      "subjectName": "demo-repair-app.scannara.asia",
+      "validFrom": 1794618449,
+      "validTo": 1802394448
+    },
+    {
+      "path": "/pengaturan/toko",
+      "status": 200,
+      "securityState": "secure",
+      "protocol": "TLS 1.3",
+      "issuer": "YE1",
+      "subjectName": "demo-repair-app.scannara.asia",
+      "validFrom": 1794618449,
+      "validTo": 1802394448
+    },
+    {
+      "path": "/profil",
+      "status": 200,
+      "securityState": "secure",
+      "protocol": "TLS 1.3",
+      "issuer": "YE1",
+      "subjectName": "demo-repair-app.scannara.asia",
+      "validFrom": 1794618449,
+      "validTo": 1802394448
+    },
+    {
+      "path": "/pengaturan/toko",
+      "status": 200,
+      "securityState": "secure",
+      "protocol": "TLS 1.3",
+      "issuer": "YE1",
+      "subjectName": "demo-repair-app.scannara.asia",
+      "validFrom": 1794618449,
+      "validTo": 1802394448
+    },
+    {
+      "path": "/tts/baru",
+      "status": 200,
+      "securityState": "secure",
+      "protocol": "TLS 1.3",
+      "issuer": "YE1",
+      "subjectName": "demo-repair-app.scannara.asia",
+      "validFrom": 1794618449,
+      "validTo": 1802394448
+    },
+    {
+      "path": "/profil",
+      "status": 200,
+      "securityState": "secure",
+      "protocol": "TLS 1.3",
+      "issuer": "YE1",
+      "subjectName": "demo-repair-app.scannara.asia",
+      "validFrom": 1794618449,
+      "validTo": 1802394448
+    },
+    {
+      "path": "/login",
+      "status": 200,
+      "securityState": "secure",
+      "protocol": "TLS 1.3",
+      "issuer": "YE1",
+      "subjectName": "demo-repair-app.scannara.asia",
+      "validFrom": 1794618449,
+      "validTo": 1802394448
+    }
+  ],
+  "screenshots": [
+    "dashboard-1280.png",
+    "store-settings-1280.png"
+  ],
+  "javascript_exception_count": 0,
+  "console_error_count": 0,
+  "failed_asset_count": 0,
+  "logout": true,
+  "limits": [
+    "Production transaction UAT NOT_RUN",
+    "Actual Android device NOT_RUN",
+    "Physical printer NOT_RUN",
+    "Owner/technician handover NOT_RUN",
+    "Full T025/R001 acceptance NOT_GRANTED",
+    "Backup deferred by user D-22"
+  ],
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/157.0.8103.79",
+    "revision": "@6dc9bc3bdaea5c35ed6d41fceab2f7a3a2227c4f",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "jsVersion": "15.7.112.43"
+  },
+  "owned_profile": "/private/tmp/repair-app-t025-web/profiles/ad-chrome-rAMW7J",
+  "verdict": "FAIL",
+  "failure": {
+    "stage": "desktop-read-only-screens",
+    "check": "screen-/tts/baru",
+    "error_class": "Error"
+  },
+  "owned_browser_closed": true,
+  "finished_at": "2026-11-14T02:49:26.417Z"
+}

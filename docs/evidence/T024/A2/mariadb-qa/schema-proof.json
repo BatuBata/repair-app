@@ -1,0 +1,14 @@
+{
+    "migrate_not_fresh": true,
+    "seed_users": 1,
+    "seed_categories": 9,
+    "table_count": 20,
+    "all_innodb": true,
+    "stock_type": "int(10) unsigned",
+    "constraint_rejections": {
+        "unique": 1062,
+        "foreign_key": 1452,
+        "unsigned": 1264
+    },
+    "isolated_env_cache_storage": true
+}

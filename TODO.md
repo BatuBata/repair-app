@@ -13,7 +13,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 - Maksimal **dua worker aktif** (tester/integrator/deployer ikut dihitung).
 - Maksimal **dua attempt implementasi** per task; perubahan kode setelah itu perlu keputusan user.
 - Task implementation `done` = siap QA, **bukan** fitur diterima. Fitur diterima setelah QA atas hasil integrasi lulus.
-- Status eksekusi saat ini: **stopped pada batas T023**. T001–T023 dan QA perangkat lunak selesai; seluruh riwayat PASS/FAIL serta jatah percobaan dipertahankan. T024–T025 tetap menunggu izin/akses deployment dan perangkat fisik. Push normal diizinkan; deployment belum diizinkan.
+- Status eksekusi saat ini: **running T024–T025 untuk target demo D-20** atas permintaan user 14 November 2026. Goal T001–T023 tetap selesai; riwayat PASS/FAIL dipertahankan. Deployment demo dan smoke web diizinkan; akses sudo, password privat, lokasi backup dan uji perangkat fisik mengikuti bukti/keputusan aktual.
 
 ## Overview pekerjaan
 
@@ -43,8 +43,12 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T021 | Panduan pengguna singkat untuk owner dan teknisi | developer / 6-luna | easy / low | T017, T018, T019 | T020 | done |
 | T022 | Integrasi akhir v1 | integrator / 6.1-sol | medium / medium | T017, T018, T019, T020, T021 | — | done |
 | T023 | QA akhir v1: regresi penuh dan uji responsif semua layar | tester / 6.1-sol | medium / high | T022 | — | done |
-| T024 | Deploy v1 ke VPS produksi | deployer / 6.1-sol | medium / high | T022, T023 | — | pending |
-| T025 | Verifikasi produksi dan uji di HP dan printer klien | tester / 6.1-sol | medium / high | T024 | — | pending |
+| T024 | Deploy v1 ke VPS produksi | deployer / 6.1-sol | medium / high | T022, T023 | — | done |
+| T025 | Verifikasi produksi dan uji di HP dan printer klien | tester / 6.1-sol | medium / high | T024 | — | blocked |
+| T026 | GitHub CI/CD demo: workflow, artefak dan SSH deploy terbatas | developer / 6.1-sol | medium / high | — | — | done |
+| T027 | Integrasi konfigurasi CI/CD dengan main | integrator / 6.1-sol | medium / high | T026 | — | pending |
+| T028 | QA independen hasil integrasi CI/CD | tester / 6.1-sol | medium / high | T027 | — | pending |
+| T029 | Aktifkan dan verifikasi auto-deploy GitHub nyata | deployer / 6.1-sol | medium / high | T027, T028 | — | blocked |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -120,41 +124,21 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:474d11fc266bbb8a028f44fa9e8e7a4dde816d67fade00c78b33f69e6d73d1b0",
+    "prd_revision": "sha256:ff5952bd49ba433f78251c36e1dc1039f1262aaf1e6f9e5b769cae261af5a816",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
-      "state": "stopped",
-      "allowed_tasks": [],
+      "state": "running",
+      "allowed_tasks": [
+        "T026",
+        "T027",
+        "T028",
+        "T029"
+      ],
       "stop_after_tasks": [
-        "T023"
+        "T029"
       ],
-      "source_ref": "Goal user13Nov2026 T001–T023 boundary achieved with independentT023A2softwarePASS14Nov2026. Stop further task dispatch; T024–T025/deployment notauthorized. Coordinator closes Git main/CI handoff; Goalcomplete only after requiredclosingchecks.",
-      "resume_allowed_tasks": [
-        "T001",
-        "T002",
-        "T003",
-        "T004",
-        "T005",
-        "T006",
-        "T007",
-        "T008",
-        "T009",
-        "T010",
-        "T011",
-        "T012",
-        "T013",
-        "T014",
-        "T015",
-        "T016",
-        "T017",
-        "T018",
-        "T019",
-        "T020",
-        "T021",
-        "T022",
-        "T023"
-      ],
+      "source_ref": "User14Nov2026 new instruction D23: implement, independently review, integrate and prove GitHub CI/CD for demo. T025 physical/fullUAT remains blocked, not resumed.",
       "phase_history": [
         {
           "state": "paused",
@@ -359,6 +343,58 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
             "T022",
             "T023"
           ]
+        },
+        {
+          "state": "stopped",
+          "allowed_tasks": [],
+          "stop_after_tasks": [
+            "T023"
+          ],
+          "source_ref": "Goal user13Nov2026 T001–T023 boundary achieved with independentT023A2softwarePASS14Nov2026. Stop further task dispatch; T024–T025/deployment notauthorized. Coordinator closes Git main/CI handoff; Goalcomplete only after requiredclosingchecks.",
+          "resume_allowed_tasks": [
+            "T001",
+            "T002",
+            "T003",
+            "T004",
+            "T005",
+            "T006",
+            "T007",
+            "T008",
+            "T009",
+            "T010",
+            "T011",
+            "T012",
+            "T013",
+            "T014",
+            "T015",
+            "T016",
+            "T017",
+            "T018",
+            "T019",
+            "T020",
+            "T021",
+            "T022",
+            "T023"
+          ]
+        },
+        {
+          "state": "running",
+          "allowed_tasks": [
+            "T024",
+            "T025"
+          ],
+          "stop_after_tasks": [
+            "T025"
+          ],
+          "source_ref": "User14Nov2026 explicitly requests deployment to muzib@202.10.40.165 /var/www/newfolder, demo-repair-app.scannara.asia SSL LetsEncrypt, DB demo_repair_app/new_gym with private owner password; D-20/D-21. Previous Goal T001-T023 remains complete. T025 live software smoke implied; physical acceptance remains dependent on actual owner devices."
+        },
+        {
+          "state": "stopped",
+          "allowed_tasks": [],
+          "stop_after_tasks": [
+            "T025"
+          ],
+          "source_ref": "Authorized demo D20/D21/D22 deployed and independent read-only web verification completed14Nov2026. stop_after_tasks T025 reached blocked because full production UAT/physical HP/printer/owner acceptance unavailable. T024done; R001notaccepted. No further dispatch; retain user deployment authorization and wait for concrete remaining acceptance work."
         }
       ]
     },
@@ -384,14 +420,27 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       ],
       "evidence_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
     },
-    "authorizations": [],
+    "authorizations": [
+      {
+        "id": "deploy-demo-2026-11-14",
+        "environment": "production",
+        "scope": "deployment",
+        "source_ref": "User14Nov2026 explicit server/path/domain/SSL/database deployment request; PRD D-20 and MariaDB decision D-21. No destructive database rollback authorized."
+      },
+      {
+        "id": "autodeploy-demo-2026-11-14",
+        "environment": "production",
+        "scope": "deployment",
+        "source_ref": "User14Nov2026 asks GitHub Actions auto-update server on push and CI/CD tester; PRD D-23. Main-only after passing CI, demo D-20, preserve private configuration/uploads/business data, no destructive DB rollback."
+      }
+    ],
     "git": {
       "remote": "origin",
       "url": "https://github.com/BatuBata/repair-app.git",
       "push_authorized": true,
       "source_ref": "Instruksi user 12 Nov 2026: push ke GitHub BatuBata/repair-app, setiap pekerjaan selesai buat commit dan push",
       "policy": "Commit pekerjaan selesai dan push branch task/checkpoint setelah periksa perubahan; merge ke main tetap setelah QA/review relevan; tanpa force-push. Kandidat blocked disimpan sebagai checkpoint, bukan fitur diterima.",
-      "coordination_branch": "main"
+      "coordination_branch": "codex/github-cicd"
     },
     "browser_isolation_policy": {
       "source_ref": "Coordinator13Nov2026 verified existing scripts/lib/cdp.mjs Browser.launch: fresh headless Chrome process, unique user-data-dir and remote-debugging-port0; T010 uses private TASTE_SKILL_TMP.",
@@ -490,7 +539,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "acceptance_tasks": [
         "T025"
       ],
-      "status": "pending"
+      "status": "blocked"
     }
   ],
   "tasks": [
@@ -3492,7 +3541,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "difficulty": "medium",
       "risk": "high",
       "uncertainty": "medium",
-      "triage_reason": "Server dan domain belum diketahui (Q-03); deployment pertama membuat data produksi dan backup.",
+      "triage_reason": "First authorized deployment on shared Debian12 host; dedicated PHP8.3 and existing MariaDB10.11 approved and verified. Backup explicitly deferred for demo D-22.",
       "model_hint": "gpt-6.1-sol",
       "model_reason": "Sol untuk konfigurasi server, migrasi, dan rollback.",
       "depends_on": {
@@ -3514,19 +3563,85 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "conflicts_with": [],
       "parallel_candidates": [],
       "acceptance_criteria": [
-        "VPS menjalankan source_revision T022 dengan HTTPS, PHP ≥ 8.3, MySQL; .env produksi tidak masuk Git atau laporan.",
-        "Backup harian aktif dan salinan di luar VPS berjalan; satu restore uji berhasil (NFR-05).",
+        "VPS demo D-20 menjalankan source_revision T022 dengan HTTPS, PHP ≥ 8.3, MariaDB 10.11 yang diuji kompatibilitasnya (D-21); .env tidak masuk Git atau laporan.",
+        "Khusus demo D-20, backup pra-migrasi/harian/offsite dan restore ditunda oleh user melalui D-22; catat NOT_RUN/deferred, jangan klaim NFR-05 atau rilis produksi lengkap PASS.",
         "Receipt mencatat revisi, langkah, hasil migrasi, dan cara rollback."
       ],
       "verification_plan": [
-        "Ikuti docs/DEPLOYMENT.md; cocokkan izin deployment produksi yang dicatat di authorizations sebelum mulai."
+        "Ikuti docs/DEPLOYMENT.md dengan pengecualian demo D-20/D-21/D-22; cocokkan izin deployment, source pin, bukti SSL/izin berkas/migrasi, dan QA MariaDB independen."
       ],
-      "status": "pending",
+      "status": "done",
       "deployment": {
         "environment": "production",
         "source_task": "T022",
-        "source_revision": null,
-        "authorization_ref": null
+        "source_revision": "d047f25ea31d703660212e4205b937053c92adcb",
+        "authorization_ref": "deploy-demo-2026-11-14"
+      },
+      "preparation": {
+        "path": "/var/www/demo-repair-app",
+        "host": "202.10.40.165",
+        "domain": "demo-repair-app.scannara.asia",
+        "database": "demo_repair_app",
+        "database_user": "new_gym",
+        "phase": "live_demo_deployed",
+        "reviewer": "/root/t024_review",
+        "model_requested": "gpt-6.1-sol",
+        "model_effective": null,
+        "dispatch_ref": "native:collaboration.spawn_agent:/root/t024_review",
+        "notes": "D20/D21/D22 scoped deployment PASS at2026-11-14T02:43:12Z. HTTPSup/login200 TLSverified; exactclean d047253hashes; PHP8.3/MariaDB20InnoDB6migrations1admin9categoriesstore1; ownerapprovedstrongpassword0600handover, ADMINsecretclearedbothenv/configcache; key+DBsecretpreserved. IndependentMariaDBcompatPASS; ownQAdaemonstopped. Backup/restore/cronDEFERREDuserD22, noNFR05claim. T025independentweb+remainingphysical gates separate."
+      },
+      "workspace": "/private/tmp/repair-app-t024-ops-next",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root/t024_deploy",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.spawn_agent:/root/t024_deploy:T024-A1",
+          "outcome": "fail",
+          "receipt_ref": "docs/evidence/T024/A1/preparation.json",
+          "phases": [
+            {
+              "phase": "preparation_handoff",
+              "outcome": "blocked",
+              "source_ref": "750d88b reviewed bootstrap staged; waiting private sudo/environment input"
+            },
+            {
+              "phase": "real_host_bootstrap",
+              "outcome": "fail",
+              "reason": "PHP8.3/FPM/Nginx and valid LetsEncrypt cert installed; final renewal check unsupported --run-deploy-hooks on Certbot2.1.0. APT404 earlier repaired by PHP-repo-only metadata refresh; preserved as environment history."
+            }
+          ]
+        },
+        {
+          "id": "A2",
+          "kind": "implementation",
+          "worker_id": "/root/t024_deploy",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.send_message:/root/t024_deploy:T024-A2",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/T024/A2/receipt.json"
+        }
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T024/A2/deployment-go-live.jsonl",
+        "revision": "deployment:demo-repair-app.scannara.asia:2026-11-14T02:43:12Z:d047f25",
+        "checked_revision": "d047f25ea31d703660212e4205b937053c92adcb",
+        "inputs": {
+          "T022": "d047f25ea31d703660212e4205b937053c92adcb",
+          "T023": "c07b6c6a4245b86a594ba15e44a3a44bca31cdf0"
+        },
+        "evidence": [
+          "docs/evidence/T024/A2/receipt.json",
+          "docs/evidence/T024/A2/deployment-go-live.jsonl",
+          "docs/evidence/T024/A2/mariadb-qa/assessment.json",
+          "docs/evidence/T024/A2/private-env-db-preflight.json",
+          "docs/evidence/T024/A2/deployment-receipt.json"
+        ],
+        "summary": "Authorized demo live with TLS verified200 and exactacceptedsource. IndependentMariaDBcompatPASS; source/platform/migrations/seed/secrets/permissions/SSLrenew+hookPASS. PriorA1failurespreserved. BackupsdeferredexplicitD22, notclaimedproductionNFR05complete; T025remaining."
       }
     },
     {
@@ -3574,8 +3689,368 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Tester menjalankan smoke produksi dengan data uji yang kemudian dibatalkan/dihapus sesuai persetujuan owner; langkah HP dan printer dilakukan bersama owner/teknisi, bukti foto/video disimpan."
       ],
+      "status": "blocked",
+      "qa_for": "T024",
+      "workspace": "/private/tmp/repair-app-t025-web",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "verification",
+          "worker_id": "/root/t024_review",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.followup_task:/root/t024_review:T025-A1",
+          "outcome": "blocked",
+          "receipt_ref": "docs/evidence/T025/A1/assessment.json",
+          "phases": [
+            {
+              "phase": "initial_web_harness",
+              "outcome": "fail",
+              "failure_class": "evidence",
+              "receipt_ref": "docs/evidence/T025/A1/result.json",
+              "reason": "Expected form heading differed from actual source; no application failure or code change."
+            },
+            {
+              "phase": "remaining_web_checks_with_correct_heading",
+              "outcome": "pass",
+              "receipt_ref": "docs/evidence/T025/A1/result-a2.json",
+              "reason": "Reused earlier public/security/asset proof; only remaining form/mobile/runtime coverage continued."
+            },
+            {
+              "phase": "full_post_deploy_acceptance",
+              "outcome": "blocked",
+              "reason": "Production transactional UAT, physical Android/printer and owner/technician acceptance not performed."
+            }
+          ]
+        }
+      ],
+      "verification_scope": "Read-only live web smoke/admin login using ownerapprovedprivategeneratedpassword; no productionbusinessfixtures/accounts/settings changes. Backendtransactionalactions verified separatelyinprivateMariaDB T024. T025transactionalproductionUAT andphysicalHP/printer remainNOT_RUN; do notacceptR001 frompartialwebPASS.",
+      "result": {
+        "verdict": "blocked",
+        "artifact_ref": "docs/evidence/T025/A1/assessment.json",
+        "revision": "sha256:de2d225a55c458ff93d342701304468703cfc6d152163171534e5972b038d0b3",
+        "checked_revision": "d047f25ea31d703660212e4205b937053c92adcb",
+        "inputs": {
+          "T024": "deployment:demo-repair-app.scannara.asia:2026-11-14T02:43:12Z:d047f25"
+        },
+        "evidence": [
+          "docs/evidence/T025/A1/assessment.json",
+          "docs/evidence/T025/A1/result.json",
+          "docs/evidence/T025/A1/result-a2.json",
+          "docs/evidence/T025/A1/server-metadata-after.txt",
+          "docs/evidence/T025/A1/SHA256SUMS"
+        ],
+        "summary": "Independent partial web PASS:42 cases,23 frozen asset hashes,admin login/logout,9 read-only modules,3 forms without submit,360px screenshots and zero JS/missing asset errors. Source clean d047; no business mutations; credential kept private and own browser sessions closed. Full T025/R001 remains blocked by unperformed production transactions, physical Android/printer and owner/technician acceptance. Backup deliberately deferred D22."
+      },
+      "blocker": "Demo is live. Remaining acceptance needs an owner-agreed real transaction/UAT scope and actual Android/printer/technician evidence; no production test fixtures created during web verification."
+    },
+    {
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §14.3",
+        "PRD.md §15.1",
+        "PRD.md §20.3 D-23"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "high",
+      "uncertainty": "medium",
+      "triage_reason": "CI credentials and shared live VPS require tested main-only gating, protected private files and failure behavior.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Sol untuk CI/CD, keamanan SSH dan validasi deployment.",
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "id": "T026",
+      "title": "GitHub CI/CD demo: workflow, artefak dan SSH deploy terbatas",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "ops",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        ".github/workflows/tests.yml",
+        "deploy/ci-*",
+        "docs/DEPLOYMENT.md",
+        "docs/evidence/T026/**",
+        "tests/Feature/Domain/MySqlConcurrencyTest.php",
+        "pint.json"
+      ],
+      "shared_resources": [],
+      "acceptance_criteria": [
+        "Push/PR menjalankan lint, analisis tipe, unit/feature, build, dan tes konkurensi MariaDB di database CI sementara.",
+        "Hanya push main yang lolos CI melakukan deploy artefak SHA yang sama; SSH key khusus dan host key dipin, tanpa password aplikasi/database di GitHub.",
+        "Deployment terkunci, mempertahankan .env/APP_KEY/storage/public-storage, tanpa seed/keygenerate/backup; gagal menahan maintenance dan keluar nonzero."
+      ],
+      "verification_plan": [
+        "Tes terarah terhadap paket/guard/failure/concurrency/protected paths; validasi workflow; GitHub run nyata setelah integrasi."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": "gpt-6.1-sol",
+          "dispatch_ref": "user:D23:root implementation",
+          "outcome": "fail",
+          "receipt_ref": "docs/evidence/T026/A1/github-first-failure.json",
+          "phases": [
+            {
+              "phase": "developer_checks",
+              "outcome": "pass",
+              "receipt_ref": "docs/evidence/T026/A1/checks.json"
+            },
+            {
+              "phase": "actual_GitHub_CI",
+              "outcome": "fail",
+              "receipt_ref": "docs/evidence/T026/A1/github-first-failure.json",
+              "reason": "Pint included immutable PHP evidence."
+            }
+          ]
+        },
+        {
+          "id": "A2",
+          "kind": "implementation",
+          "worker_id": "/root",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": "gpt-6.1-sol",
+          "dispatch_ref": "D23 targeted Pint scope recovery after actual CI failure",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/T026/A2/checks.json"
+        }
+      ],
+      "prior_results": [
+        {
+          "verdict": "pass",
+          "artifact_ref": "docs/evidence/T026/A1/source-manifest.json",
+          "revision": "sha256:ed3c672c42f0b904b46e6e12ff3f7bf52d8c5d40c8fca4c38ada45c7682e9b1f",
+          "inputs": {},
+          "evidence": [
+            "docs/evidence/T026/A1/checks.json"
+          ],
+          "summary": "Workflow and restricted artifact receiver implemented. Twelve archive tests local and20 Linux disposable package/receiver cases PASS; real SGID file probe PASS; actionlint/Pint/bash syntax PASS. No application business code or migrations changed; MariaDB type assertion made semantic. Actual GitHub CI and auto-deploy remain T029 after independent QA."
+        }
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T026/A2/source-manifest.json",
+        "revision": "sha256:29303c7af137373e3c5b3e33161150dd173b038869fd386eb3bb44bdc8f28d12",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T026/A2/checks.json",
+          "docs/evidence/T026/A1/github-first-failure.json"
+        ],
+        "summary": "A2 corrects only Pint discovery to exclude immutable docs/evidence; full app/test lint PASS and PHPStan zero errors. Receiver/workflow behavior unchanged from independent A1 review; actual GitHub CI will verify corrected candidate."
+      }
+    },
+    {
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §14.3",
+        "PRD.md §15.1",
+        "PRD.md §20.3 D-23"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "high",
+      "uncertainty": "medium",
+      "triage_reason": "CI credentials and shared live VPS require tested main-only gating, protected private files and failure behavior.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Sol untuk CI/CD, keamanan SSH dan validasi deployment.",
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "id": "T027",
+      "title": "Integrasi konfigurasi CI/CD dengan main",
+      "kind": "integration",
+      "responsible_role": "integrator",
+      "work_type": "ops",
+      "depends_on": {
+        "hard": [
+          "T026"
+        ],
+        "contracts": []
+      },
+      "write_scope": [
+        ".github/workflows/tests.yml",
+        "deploy/ci-*",
+        "docs/**",
+        "TODO.md",
+        "PRD.md",
+        "AGENTS.md"
+      ],
+      "shared_resources": [],
+      "acceptance_criteria": [
+        "Kandidat gabungan mencakup main dan perubahan CI/CD tanpa perubahan kode bisnis; revisi immutable dicatat."
+      ],
+      "verification_plan": [
+        "Periksa ancestry main dan scope diff; commit kandidat gabungan."
+      ],
       "status": "pending",
-      "qa_for": "T024"
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": "gpt-6.1-sol",
+          "dispatch_ref": "coordinator integration of current main ancestor and T026",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/T026/A1/source-manifest.json"
+        }
+      ],
+      "prior_results": [
+        {
+          "verdict": "pass",
+          "artifact_ref": "docs/evidence/T026/A1/source-manifest.json",
+          "revision": "c3be1af3d34df2afac9a25db1ebd2272401dabc2",
+          "inputs": {
+            "T026": "sha256:ed3c672c42f0b904b46e6e12ff3f7bf52d8c5d40c8fca4c38ada45c7682e9b1f"
+          },
+          "evidence": [
+            "docs/evidence/T026/A1/checks.json"
+          ],
+          "summary": "Combined candidate contains main73229e3 plus reviewed demo history and T026 automation; no application business-code changes. Pin is actual candidate commit; metadata handoff follows separately."
+        }
+      ]
+    },
+    {
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §14.3",
+        "PRD.md §15.1",
+        "PRD.md §20.3 D-23"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "high",
+      "uncertainty": "medium",
+      "triage_reason": "CI credentials and shared live VPS require tested main-only gating, protected private files and failure behavior.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Sol untuk CI/CD, keamanan SSH dan validasi deployment.",
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "id": "T028",
+      "title": "QA independen hasil integrasi CI/CD",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "ops",
+      "depends_on": {
+        "hard": [
+          "T027"
+        ],
+        "contracts": []
+      },
+      "write_scope": [
+        "docs/evidence/T028/**"
+      ],
+      "shared_resources": [],
+      "acceptance_criteria": [
+        "Review independen memastikan gating push-main/needs CI, keamanan secret/SSH/archive dan perlindungan data.",
+        "Tes yang relevan pada revisi gabungan PASS; tidak ada deployment dari PR/branch atau saat CI gagal."
+      ],
+      "verification_plan": [
+        "Tester terpisah meninjau dan menjalankan tes terarah; source tidak diubah."
+      ],
+      "status": "pending",
+      "qa_for": "T027",
+      "workspace": "/private/tmp/repair-app-t028",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "verification",
+          "worker_id": "/root/cicd_qa",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.spawn_agent:/root/cicd_qa",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/T028/A1/assessment.json"
+        }
+      ],
+      "prior_results": [
+        {
+          "verdict": "pass",
+          "artifact_ref": "docs/evidence/T028/A1/assessment.json",
+          "revision": "sha256:d4af24d06ff74cc5b74586ad36d097474cc56ec2eaacb83d0887068b7f87925c",
+          "checked_revision": "c3be1af3d34df2afac9a25db1ebd2272401dabc2",
+          "inputs": {
+            "T027": "c3be1af3d34df2afac9a25db1ebd2272401dabc2"
+          },
+          "evidence": [
+            "docs/evidence/T028/A1/assessment.json",
+            "docs/evidence/T028/A1/dispatch.json",
+            "docs/evidence/T028/A1/linux-checks.txt",
+            "docs/evidence/T028/A1/local-checks.txt"
+          ],
+          "summary": "Independent QA PASS:20 disposable Linux safety cases,8 additional malicious archive probes,local12 cases,actionlint/bash syntax and main/CI/secrets/SSH/protected-files review. No source or production changes. Actual full GitHub CI and live deploy remain T029."
+        }
+      ]
+    },
+    {
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §14.3",
+        "PRD.md §15.1",
+        "PRD.md §20.3 D-23"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "high",
+      "uncertainty": "medium",
+      "triage_reason": "CI credentials and shared live VPS require tested main-only gating, protected private files and failure behavior.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Sol untuk CI/CD, keamanan SSH dan validasi deployment.",
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "id": "T029",
+      "title": "Aktifkan dan verifikasi auto-deploy GitHub nyata",
+      "kind": "deployment",
+      "responsible_role": "deployer",
+      "work_type": "release",
+      "depends_on": {
+        "hard": [
+          "T027",
+          "T028"
+        ],
+        "contracts": []
+      },
+      "write_scope": [
+        "docs/evidence/T029/**"
+      ],
+      "shared_resources": [],
+      "acceptance_criteria": [
+        "Kunci deploy terbatas dan GitHub Secrets terpasang tanpa nilai rahasia di evidence.",
+        "Push main nyata: CI PASS dan deployment PASS, server source marker sama SHA run, HTTPS/login siap dan konfigurasi/data dipertahankan.",
+        "Failure/history dicatat; full UAT HP/printer T025 tetap bukan cakupan ini."
+      ],
+      "verification_plan": [
+        "Pasang wrapper/key terbatas, push main setelah QA; amati job CI/deploy dan baca metadata/readiness server."
+      ],
+      "status": "blocked",
+      "deployment": {
+        "environment": "production",
+        "source_task": "T027",
+        "source_revision": null,
+        "authorization_ref": "autodeploy-demo-2026-11-14"
+      },
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": "gpt-6.1-sol",
+          "dispatch_ref": "user:D23 coordinator activation after independent T028 PASS",
+          "outcome": "blocked",
+          "receipt_ref": "docs/evidence/T029/A1/activation.json"
+        }
+      ],
+      "blocker": "Actual CI failed on archived evidence lint; targeted T026A2 correction and independent review required. Main modification also rejected by auto-review pending explicit owner approval after ready PR."
     }
   ]
 }

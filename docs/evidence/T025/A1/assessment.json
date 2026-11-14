@@ -1,0 +1,278 @@
+{
+  "verdict": "PARTIAL_WEB_PASS",
+  "overall_T025": "NOT_ACCEPTED",
+  "R001": "NOT_ACCEPTED",
+  "checked_revision": "d047f25ea31d703660212e4205b937053c92adcb",
+  "target": "https://demo-repair-app.scannara.asia",
+  "started_at": "2026-11-14T02:49:06.126Z",
+  "finished_at": "2026-11-14T02:51:20.185Z",
+  "browser": "Chrome/157.0.8103.79",
+  "tls": {
+    "path": "/login",
+    "status": 200,
+    "securityState": "secure",
+    "protocol": "TLS 1.3",
+    "issuer": "YE1",
+    "subjectName": "demo-repair-app.scannara.asia",
+    "validFrom": 1794618449,
+    "validTo": 1802394448
+  },
+  "unique_pass_cases": 42,
+  "cases": [
+    {
+      "id": "http-https-redirect",
+      "status": 301
+    },
+    {
+      "id": "public-/up",
+      "status": 200
+    },
+    {
+      "id": "public-/login",
+      "status": 200
+    },
+    {
+      "id": "guest-redirect-/",
+      "status": 302
+    },
+    {
+      "id": "guest-redirect-/tts",
+      "status": 302
+    },
+    {
+      "id": "guest-redirect-/stok",
+      "status": 302
+    },
+    {
+      "id": "guest-redirect-/penjualan",
+      "status": 302
+    },
+    {
+      "id": "guest-redirect-/pengeluaran",
+      "status": 302
+    },
+    {
+      "id": "guest-redirect-/laporan",
+      "status": 302
+    },
+    {
+      "id": "guest-redirect-/pengaturan/pengguna",
+      "status": 302
+    },
+    {
+      "id": "guest-redirect-/pengaturan/kategori",
+      "status": 302
+    },
+    {
+      "id": "guest-redirect-/pengaturan/toko",
+      "status": 302
+    },
+    {
+      "id": "guest-redirect-/profil",
+      "status": 302
+    },
+    {
+      "id": "private-denial-/.env",
+      "status": 403
+    },
+    {
+      "id": "private-denial-/.git/config",
+      "status": 403
+    },
+    {
+      "id": "private-denial-/storage/logs/laravel.log",
+      "status": 404
+    },
+    {
+      "id": "private-denial-/vendor/autoload.php",
+      "status": 404
+    },
+    {
+      "id": "private-denial-/config/app.php",
+      "status": 404
+    },
+    {
+      "id": "private-denial-/storage/logos/a.php",
+      "status": 404
+    },
+    {
+      "id": "private-denial-/layout-preview",
+      "status": 404
+    },
+    {
+      "id": "23-frozen-assets-sha256",
+      "status": "PASS",
+      "count": 23
+    },
+    {
+      "id": "valid-admin-login-session",
+      "status": "PASS"
+    },
+    {
+      "id": "actual-navigation-link-tts",
+      "status": "PASS"
+    },
+    {
+      "id": "screen-/tts",
+      "status": "PASS",
+      "heading": "Servis",
+      "form_render_only": false
+    },
+    {
+      "id": "screen-/stok",
+      "status": "PASS",
+      "heading": "Stok",
+      "form_render_only": false
+    },
+    {
+      "id": "screen-/penjualan",
+      "status": "PASS",
+      "heading": "Penjualan",
+      "form_render_only": false
+    },
+    {
+      "id": "screen-/pengeluaran",
+      "status": "PASS",
+      "heading": "Pengeluaran",
+      "form_render_only": false
+    },
+    {
+      "id": "screen-/laporan",
+      "status": "PASS",
+      "heading": "Laporan",
+      "form_render_only": false
+    },
+    {
+      "id": "screen-/pengaturan/pengguna",
+      "status": "PASS",
+      "heading": "Pengguna",
+      "form_render_only": false
+    },
+    {
+      "id": "screen-/pengaturan/kategori",
+      "status": "PASS",
+      "heading": "Kategori",
+      "form_render_only": false
+    },
+    {
+      "id": "screen-/pengaturan/toko",
+      "status": "PASS",
+      "heading": "Pengaturan toko",
+      "form_render_only": true
+    },
+    {
+      "id": "screen-/profil",
+      "status": "PASS",
+      "heading": "Profil",
+      "form_render_only": true
+    },
+    {
+      "id": "own-session-logout",
+      "status": "PASS"
+    },
+    {
+      "id": "screen-/tts/baru",
+      "status": "PASS",
+      "heading": "TTS baru",
+      "form_render_only": true
+    },
+    {
+      "id": "screen-/stok/baru",
+      "status": "PASS",
+      "heading": "Tambah barang",
+      "form_render_only": true
+    },
+    {
+      "id": "screen-/penjualan/baru",
+      "status": "PASS",
+      "heading": "Penjualan baru",
+      "form_render_only": true
+    },
+    {
+      "id": "screen-/",
+      "status": "PASS",
+      "heading": "Beranda",
+      "form_render_only": false
+    },
+    {
+      "id": "narrow-layout-/",
+      "status": "PASS",
+      "width": 360,
+      "scrollWidth": 360
+    },
+    {
+      "id": "narrow-layout-/tts/baru",
+      "status": "PASS",
+      "width": 360,
+      "scrollWidth": 360
+    },
+    {
+      "id": "narrow-layout-/laporan",
+      "status": "PASS",
+      "width": 360,
+      "scrollWidth": 360
+    },
+    {
+      "id": "post-logout-private-route-denied",
+      "status": "PASS"
+    },
+    {
+      "id": "browser-tls-js-assets",
+      "status": "PASS",
+      "documents": 21,
+      "js_exceptions": 0,
+      "console_errors": 0,
+      "missing_assets": 0
+    }
+  ],
+  "coverage": {
+    "http_https_redirect": 301,
+    "up_and_login": 200,
+    "guest_private_redirects": 10,
+    "private_file_denials": 7,
+    "frozen_assets_sha256": 23,
+    "read_only_modules": 9,
+    "desktop_create_forms_rendered_without_submit": 3,
+    "narrow_width": 360,
+    "narrow_screens": [
+      "dashboard",
+      "TTSform",
+      "report"
+    ],
+    "JS_exceptions": 0,
+    "console_errors": 0,
+    "missing_assets": 0,
+    "both_own_sessions_logged_out": true,
+    "owned_browsers_closed": true,
+    "owned_profile_directory_empty": true
+  },
+  "initial_harness_failure": {
+    "evidence": "result.json",
+    "classification": "wrong expected UI heading, not application failure",
+    "details": "Source uses TTS baru/Penjualan baru; A1 expected Buat TTS/Buat penjualan. A1 retained; A2 source-matched forms and remaining narrow/runtime checks.",
+    "reused_proof": "A1 public/guest/private-file/23assetSHA; those were not rerun in A2."
+  },
+  "screenshots": [
+    "dashboard-1280.png",
+    "store-settings-1280.png",
+    "a2-dashboard-360.png",
+    "a2-tts-form-360.png",
+    "a2-reports-360.png"
+  ],
+  "visual_observation": "Five screenshots inspected: desktop dashboard/store,360dashboard/TTSform/report; headings/controls legible, no page horizontal overflow on3narrow screens. Functional spotcheck, no repeated full visual/mockup audit.",
+  "credential_handling": "Server mode600 secret read by child SSH directly into automation memory only; verified exact HTTPS origin/password input; never printed, passed as CLI literal, saved locally, exposed via screenshots, HAR/traces or network/request body logs. Only in-memory CDP input used. Server handover file untouched.",
+  "production_business_mutations": "NONE; no create/edit/delete/Save/Submit except authorized LOGIN/LOGOUT; no synthetic customers/TTS/products/sales/expenses/users.",
+  "optional_logo_probe": "NOT_RUN to keep production files unchanged",
+  "not_run": [
+    "Production transactional UAT including TTS/invoice/sale/PDF/tracking fixture flow",
+    "Actual Android device",
+    "Physical printer/58mm calibration",
+    "Owner/technician handover",
+    "Backup per explicit user D-22"
+  ],
+  "independent_private_MariaDB_proof": "Previous T024 engine proof is separate and does not establish production transactional UAT.",
+  "ponytail_level": "full",
+  "model_requested": "gpt-6.1-sol",
+  "model_effective": null,
+  "limits": "This partial web PASS cannot accept T025 or R001 while remaining required checks are NOT_RUN."
+}

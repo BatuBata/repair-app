@@ -1,0 +1,331 @@
+{
+  "task": "T024",
+  "attempt": "A2",
+  "verdict": "PASS_DEMO_DEPLOYMENT_D20_D21_D22",
+  "application_revision": "d047f25ea31d703660212e4205b937053c92adcb",
+  "qa_revision": "c07b6c6a4245b86a594ba15e44a3a44bca31cdf0",
+  "authorization": [
+    "D-20 targetdemo",
+    "D-21 MariaDB10.11",
+    "D-22 allbackupdeferred",
+    "owner async call_a9cd91e35f0b4d2fbcc71fce951e071a private strong adminpasswordgeneration"
+  ],
+  "target": "muzib@202.10.40.165:/var/www/demo-repair-app/current",
+  "domain": "https://demo-repair-app.scannara.asia",
+  "runtime": {
+    "php": "8.3.36",
+    "laravel": "13.42.0",
+    "database": "MariaDB10.11.14"
+  },
+  "source": {
+    "revision_exact_clean": true,
+    "frozen_source": 230,
+    "frozen_build": 14,
+    "frozen_font": 9,
+    "unique_hashes_checked": 253,
+    "mismatches": 0,
+    "deploy_script_modified": false
+  },
+  "execution": {
+    "method": "Explicit PHP8.3 bounded runner invokes Laravel Artisan::call; rawconsole suppressed; fixedtarget+maintenance guards",
+    "runner_sha256": "bf1bee98e29433a6a28354d27f0614a0184d7d675684b16430ffbc195854f0c4",
+    "commands": [
+      {
+        "phase": "pre-migration",
+        "status": "PASS",
+        "database": "demo_repair_app",
+        "server": "10.11.14-MariaDB-0+deb12u2-log",
+        "account": "new_gym@localhost",
+        "hostname": "server.coachplay7gym.com",
+        "tables": 0,
+        "production_password_rule": "PASS",
+        "backup": "DEFERRED_D22"
+      },
+      {
+        "phase": "migrate",
+        "status": "PASS",
+        "exit": 0,
+        "raw_console_output": "suppressed",
+        "maintenance": "retained"
+      },
+      {
+        "phase": "config:cache",
+        "status": "PASS",
+        "exit": 0,
+        "raw_console_output": "suppressed",
+        "maintenance": "retained"
+      },
+      {
+        "phase": "route:cache",
+        "status": "PASS",
+        "exit": 0,
+        "raw_console_output": "suppressed",
+        "maintenance": "retained"
+      },
+      {
+        "phase": "view:cache",
+        "status": "PASS",
+        "exit": 0,
+        "raw_console_output": "suppressed",
+        "maintenance": "retained"
+      },
+      {
+        "phase": "db:seed",
+        "status": "PASS",
+        "exit": 0,
+        "raw_console_output": "suppressed",
+        "maintenance": "retained"
+      }
+    ],
+    "post_secret_clear_config_cache": "PASS exit0",
+    "pre_migration_table_count": 0,
+    "production_admin_password_rule": "PASS actual default incl uncompromised"
+  },
+  "database_metadata": {
+    "status": "PASS",
+    "php": "8.3.36",
+    "laravel": "13.42.0",
+    "database": "demo_repair_app",
+    "table_count": 20,
+    "tables": [
+      {
+        "table_name": "cache",
+        "engine": "InnoDB",
+        "rows": 0
+      },
+      {
+        "table_name": "cache_locks",
+        "engine": "InnoDB",
+        "rows": 0
+      },
+      {
+        "table_name": "categories",
+        "engine": "InnoDB",
+        "rows": 9
+      },
+      {
+        "table_name": "expenses",
+        "engine": "InnoDB",
+        "rows": 0
+      },
+      {
+        "table_name": "failed_jobs",
+        "engine": "InnoDB",
+        "rows": 0
+      },
+      {
+        "table_name": "jobs",
+        "engine": "InnoDB",
+        "rows": 0
+      },
+      {
+        "table_name": "job_batches",
+        "engine": "InnoDB",
+        "rows": 0
+      },
+      {
+        "table_name": "migrations",
+        "engine": "InnoDB",
+        "rows": 6
+      },
+      {
+        "table_name": "number_sequences",
+        "engine": "InnoDB",
+        "rows": 0
+      },
+      {
+        "table_name": "passkeys",
+        "engine": "InnoDB",
+        "rows": 0
+      },
+      {
+        "table_name": "password_reset_tokens",
+        "engine": "InnoDB",
+        "rows": 0
+      },
+      {
+        "table_name": "products",
+        "engine": "InnoDB",
+        "rows": 0
+      },
+      {
+        "table_name": "sales",
+        "engine": "InnoDB",
+        "rows": 0
+      },
+      {
+        "table_name": "sale_items",
+        "engine": "InnoDB",
+        "rows": 0
+      },
+      {
+        "table_name": "service_orders",
+        "engine": "InnoDB",
+        "rows": 0
+      },
+      {
+        "table_name": "service_order_items",
+        "engine": "InnoDB",
+        "rows": 0
+      },
+      {
+        "table_name": "sessions",
+        "engine": "InnoDB",
+        "rows": 0
+      },
+      {
+        "table_name": "stock_entries",
+        "engine": "InnoDB",
+        "rows": 0
+      },
+      {
+        "table_name": "store_settings",
+        "engine": "InnoDB",
+        "rows": 1
+      },
+      {
+        "table_name": "users",
+        "engine": "InnoDB",
+        "rows": 1
+      }
+    ],
+    "migration_count": 6,
+    "migrations": [
+      {
+        "migration": "0001_01_01_000000_create_users_table",
+        "batch": 1
+      },
+      {
+        "migration": "0001_01_01_000001_create_cache_table",
+        "batch": 1
+      },
+      {
+        "migration": "0001_01_01_000002_create_jobs_table",
+        "batch": 1
+      },
+      {
+        "migration": "2024_01_01_000000_create_passkeys_table",
+        "batch": 1
+      },
+      {
+        "migration": "2025_08_14_170933_add_two_factor_columns_to_users_table",
+        "batch": 1
+      },
+      {
+        "migration": "2026_11_12_000000_create_domain_tables",
+        "batch": 1
+      }
+    ],
+    "seeds": {
+      "users_total": 1,
+      "active_admins": 1,
+      "categories": 9,
+      "store_settings": 1
+    },
+    "unsigned_columns": [
+      {
+        "table_name": "products",
+        "column_name": "stock",
+        "column_type": "int(10) unsigned"
+      },
+      {
+        "table_name": "service_order_items",
+        "column_name": "cost",
+        "column_type": "int(10) unsigned"
+      },
+      {
+        "table_name": "service_order_items",
+        "column_name": "price",
+        "column_type": "int(10) unsigned"
+      }
+    ],
+    "foreign_key_count": 11,
+    "initial_admin_secret_current_env_empty": true,
+    "initial_admin_secret_staging_env_empty": true,
+    "initial_admin_secret_cached_config_empty": true,
+    "APP_KEY_matches_cached_config": true,
+    "handover_file": "/home/muzib/deploy-demo-repair-app/initial-admin-password.txt",
+    "handover_mode": "0600",
+    "maintenance_retained": true,
+    "backup": "DEFERRED_D22"
+  },
+  "private_handover": {
+    "path": "/home/muzib/deploy-demo-repair-app/initial-admin-password.txt",
+    "mode": "0600",
+    "value_or_hash_or_length_logged": false,
+    "exclusive_once_generation": true,
+    "intentional_owner_requested_file_retained": true
+  },
+  "initial_secret_clear": {
+    "status": "PASS",
+    "initial_admin_password_cleared_current_env": true,
+    "initial_admin_password_cleared_staging_env": true,
+    "all_other_environment_values_preserved": true,
+    "current_APP_KEY_preserved": true,
+    "DB_password_preserved": true,
+    "intentional_handover_file_retained": true,
+    "handover_mode": "0600",
+    "secret_output": false
+  },
+  "maintenance": {
+    "artisan_up": "PASS exit0",
+    "laravel_down": false,
+    "nginx_pending_marker": false,
+    "removed_file": "only task-owned regular /var/www/demo-repair-app/.deploy-pending",
+    "failure_recovery": "guarded restoration prepared; NOT_NEEDED because actual checks passed"
+  },
+  "backup": {
+    "pre_migration": "NOT_RUN/deferred D-22",
+    "daily": "NOT_RUN/deferred D-22",
+    "offsite": "NOT_RUN/deferred D-22",
+    "restore": "NOT_RUN/deferred D-22",
+    "backup_files_created": false,
+    "cron_installed": false,
+    "NFR05": "NOT_CLAIMED"
+  },
+  "previous_failure": "deployment-receipt-password-blocked.json preserved; initialownerinput lackedsymbol, noDBwrite untilcredentialrecovery",
+  "rollback": "First install has no previousdeployedapplication. On failure restore only owned503marker and diagnoseforwardfix; no destructive DBrollback/reset/drop/restore. No backup by explicit D22.",
+  "not_run": [
+    "T025independentlivewebacceptance",
+    "physicalphone/printeracceptance",
+    "backup/restoreexplicitlydeferredD22"
+  ],
+  "evidence": [
+    "deployment-artisan-success.jsonl",
+    "deployment-admin-generation.json",
+    "deployment-secret-clear.json",
+    "deployment-final-check.jsonl",
+    "deployment-password-diagnosis.json",
+    "deployment-receipt-password-blocked.json",
+    "deployment-go-live.jsonl",
+    "deployment-receipt-preopen.json"
+  ],
+  "model_requested": "gpt-6.1-sol",
+  "model_effective": null,
+  "go_live": {
+    "go_live": "PASS",
+    "observed_utc": "2026-11-14T02:43:12Z",
+    "https_up": 200,
+    "https_login": 200,
+    "tls_verification": "enabled",
+    "source": "d047f25ea31d703660212e4205b937053c92adcb",
+    "git_clean": true,
+    "maintenance_removed": true,
+    "backup": "DEFERRED_D22",
+    "set_cookie_output": false
+  },
+  "readonly_business_counts": {
+    "service_orders": 0,
+    "sales": 0,
+    "products": 0,
+    "expenses": 0
+  },
+  "prerequisites_supplied_by_coordinator": {
+    "independent_private_MariaDB_QA": "PASS d047/253hashes; isolatedinstance stopped/mainPID851unchanged",
+    "bounded_root_FPM_read_code_no_write_runtime_ACL": "PASS actual",
+    "TLS_certificate_and_renewal_dry_run": "PASS actual",
+    "demo_renewal_hook_both_variables": "PASS actual nginx-t/reload",
+    "source": "explicit parent authorization immediately before go-live; worker did not substitute owncheck for independentQA"
+  },
+  "post_deploy_acceptance": "T025 pending; demo deploymentPASS is not fullproduction/NFR05acceptance"
+}

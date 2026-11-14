@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "success",
+      "expected": "success only for success case; preserve all runtime values/manual mode; scoped Nginx recovery; no go-live",
+      "actual": "matched",
+      "status": "PASS"
+    },
+    {
+      "case": "initial-http-validation-fails",
+      "expected": "success only for success case; preserve all runtime values/manual mode; scoped Nginx recovery; no go-live",
+      "actual": "matched",
+      "status": "PASS"
+    },
+    {
+      "case": "tls-validation-fails",
+      "expected": "success only for success case; preserve all runtime values/manual mode; scoped Nginx recovery; no go-live",
+      "actual": "matched",
+      "status": "PASS"
+    },
+    {
+      "case": "apt-install-fails",
+      "expected": "success only for success case; preserve all runtime values/manual mode; scoped Nginx recovery; no go-live",
+      "actual": "matched",
+      "status": "PASS"
+    }
+  ],
+  "limits": "Commands, root ownership and paths mocked; no real host/package/ACME changes."
+}

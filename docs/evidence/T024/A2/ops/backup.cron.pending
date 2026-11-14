@@ -1,0 +1,8 @@
+# NOT INSTALLED: Q-04 offsite destination, isolated backup OS/DB account,
+# real MariaDB restore + remote retrieval/checksum and monitoring must pass first.
+# Debian host stays Asia/Jakarta: 02:00 WIB = 03:00 WITA, no host TZ change.
+# Verify target host TZ still Asia/Jakarta before enabling this schedule.
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin
+MAILTO=root
+# 0 2 * * * BACKUP_ACCOUNT /var/www/demo-repair-app/ops/backup-mariadb.sh /etc/demo-repair-app/backup.cnf demo_repair_app /var/backups/demo-repair-app SSH_ALIAS /REMOTE_DIRECTORY >> /var/log/demo-repair-app-backup.log 2>&1

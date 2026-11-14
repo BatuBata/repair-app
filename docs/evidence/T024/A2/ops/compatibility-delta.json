@@ -1,0 +1,19 @@
+{
+  "attempt": "A2",
+  "A1": "preserved immutable FAIL actual Certbot2.1 unsupported --run-deploy-hooks",
+  "changed_host_files": [
+    "bootstrap.sh"
+  ],
+  "new_check": "supported certbot renew --cert-name exactdemo --dry-run then explicit hook with RENEWED_LINEAGE and RENEWED_DOMAINS",
+  "local_tests": {
+    "guard_backup_cases": 41,
+    "full_bootstrap_mock_paths": 4,
+    "shell_syntax_checks": 5,
+    "status": "PASS",
+    "finalizer_guard_checks": 2
+  },
+  "real_host_checks": "Coordinator running separately; no host TLS actions by this worker",
+  "no_first_install_rerun": true,
+  "new_bounded_script": "finalize-host.sh",
+  "root_shell": "NOT_OPENED; auto-review rejected persistent sudo-s; now bounded rootcopy/hashverify/script/exit"
+}

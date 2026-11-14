@@ -1,0 +1,170 @@
+{"phase":"config:cache","status":"PASS","exit":0,"raw_console_output":"suppressed","maintenance":"retained"}
+{
+    "status": "PASS",
+    "php": "8.3.36",
+    "laravel": "13.42.0",
+    "database": "demo_repair_app",
+    "table_count": 20,
+    "tables": [
+        {
+            "table_name": "cache",
+            "engine": "InnoDB",
+            "rows": 0
+        },
+        {
+            "table_name": "cache_locks",
+            "engine": "InnoDB",
+            "rows": 0
+        },
+        {
+            "table_name": "categories",
+            "engine": "InnoDB",
+            "rows": 9
+        },
+        {
+            "table_name": "expenses",
+            "engine": "InnoDB",
+            "rows": 0
+        },
+        {
+            "table_name": "failed_jobs",
+            "engine": "InnoDB",
+            "rows": 0
+        },
+        {
+            "table_name": "jobs",
+            "engine": "InnoDB",
+            "rows": 0
+        },
+        {
+            "table_name": "job_batches",
+            "engine": "InnoDB",
+            "rows": 0
+        },
+        {
+            "table_name": "migrations",
+            "engine": "InnoDB",
+            "rows": 6
+        },
+        {
+            "table_name": "number_sequences",
+            "engine": "InnoDB",
+            "rows": 0
+        },
+        {
+            "table_name": "passkeys",
+            "engine": "InnoDB",
+            "rows": 0
+        },
+        {
+            "table_name": "password_reset_tokens",
+            "engine": "InnoDB",
+            "rows": 0
+        },
+        {
+            "table_name": "products",
+            "engine": "InnoDB",
+            "rows": 0
+        },
+        {
+            "table_name": "sales",
+            "engine": "InnoDB",
+            "rows": 0
+        },
+        {
+            "table_name": "sale_items",
+            "engine": "InnoDB",
+            "rows": 0
+        },
+        {
+            "table_name": "service_orders",
+            "engine": "InnoDB",
+            "rows": 0
+        },
+        {
+            "table_name": "service_order_items",
+            "engine": "InnoDB",
+            "rows": 0
+        },
+        {
+            "table_name": "sessions",
+            "engine": "InnoDB",
+            "rows": 0
+        },
+        {
+            "table_name": "stock_entries",
+            "engine": "InnoDB",
+            "rows": 0
+        },
+        {
+            "table_name": "store_settings",
+            "engine": "InnoDB",
+            "rows": 1
+        },
+        {
+            "table_name": "users",
+            "engine": "InnoDB",
+            "rows": 1
+        }
+    ],
+    "migration_count": 6,
+    "migrations": [
+        {
+            "migration": "0001_01_01_000000_create_users_table",
+            "batch": 1
+        },
+        {
+            "migration": "0001_01_01_000001_create_cache_table",
+            "batch": 1
+        },
+        {
+            "migration": "0001_01_01_000002_create_jobs_table",
+            "batch": 1
+        },
+        {
+            "migration": "2024_01_01_000000_create_passkeys_table",
+            "batch": 1
+        },
+        {
+            "migration": "2025_08_14_170933_add_two_factor_columns_to_users_table",
+            "batch": 1
+        },
+        {
+            "migration": "2026_11_12_000000_create_domain_tables",
+            "batch": 1
+        }
+    ],
+    "seeds": {
+        "users_total": 1,
+        "active_admins": 1,
+        "categories": 9,
+        "store_settings": 1
+    },
+    "unsigned_columns": [
+        {
+            "table_name": "products",
+            "column_name": "stock",
+            "column_type": "int(10) unsigned"
+        },
+        {
+            "table_name": "service_order_items",
+            "column_name": "cost",
+            "column_type": "int(10) unsigned"
+        },
+        {
+            "table_name": "service_order_items",
+            "column_name": "price",
+            "column_type": "int(10) unsigned"
+        }
+    ],
+    "foreign_key_count": 11,
+    "initial_admin_secret_current_env_empty": true,
+    "initial_admin_secret_staging_env_empty": true,
+    "initial_admin_secret_cached_config_empty": true,
+    "APP_KEY_matches_cached_config": true,
+    "handover_file": "\/home\/muzib\/deploy-demo-repair-app\/initial-admin-password.txt",
+    "handover_mode": "0600",
+    "maintenance_retained": true,
+    "backup": "DEFERRED_D22"
+}
+{"source_frozen_hashes":253,"mismatches":0,"git_exact_clean":true,"artisan_up":"NOT_RUN","nginx_marker_removal":"NOT_RUN"}

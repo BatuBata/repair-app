@@ -85,8 +85,10 @@ class MySqlConcurrencyTest extends TestCase
         $this->assertSame(8, DB::table('sales')->count());
         $this->assertSame(8, DB::table('service_orders')->distinct()->count('tracking_token'));
         $columns = collect(Schema::getColumns('service_order_items'))->keyBy('name');
-        $this->assertSame('int unsigned', $columns['price']['type']);
-        $this->assertSame('int unsigned', $columns['cost']['type']);
+        foreach (['price', 'cost'] as $column) {
+            $this->assertSame('int', $columns[$column]['type_name']);
+            $this->assertStringContainsString('unsigned', $columns[$column]['type']);
+        }
         foreach (['status', 'invoiced_on', 'warranty_until', 'customer_phone'] as $column) {
             $this->assertTrue(Schema::hasIndex('service_orders', [$column]));
         }

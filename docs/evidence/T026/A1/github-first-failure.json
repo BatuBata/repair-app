@@ -1,0 +1,10 @@
+{
+  "run": "https://github.com/BatuBata/repair-app/actions/runs/43563583274",
+  "pr_run": "https://github.com/BatuBata/repair-app/actions/runs/43563626614",
+  "revision": "c3be1af3d34df2afac9a25db1ebd2272401dabc2",
+  "status": "FAIL",
+  "phase": "Pint lint check",
+  "reason": "Pint scanned six immutable deployment evidence PHP scripts under docs/evidence/T024/A2; original existing exclusions only covered other earlier evidence directories.",
+  "application_tests": "NOT_RUN because lint stopped",
+  "deployment": "SKIPPED as expected on work branch/PR"
+}

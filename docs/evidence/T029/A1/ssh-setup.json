@@ -1,0 +1,14 @@
+{
+  "restricted_key_installed": true,
+  "existing_owner_keys_preserved": true,
+  "sudo_used": false,
+  "private_key_value_logged": false,
+  "github_secret_names": [
+    "DEMO_DEPLOY_SSH_KEY",
+    "DEMO_DEPLOY_KNOWN_HOSTS"
+  ],
+  "actual_arbitrary_shell_rejected": true,
+  "hostkey": "Existing strict-verified known_hosts identities, no runtime trust-on-first-use",
+  "receiver_sha256": "333129a8adea45641dd12089e1025b706c4870244012436dffc751268108b878",
+  "archive_validator_sha256": "83fbf81c8a6173af3e7ed8d41bd20b580c34a45116276f15b703c971c1b1ee9a"
+}

@@ -1,0 +1,130 @@
+{
+  "timestamp": "2026-11-14T01:38:10.710065+00:00",
+  "phase": "host_preparation_applied_final_renewal_check_failed",
+  "source_revision": "d047f25ea31d703660212e4205b937053c92adcb",
+  "qa_revision": "c07b6c6a4245b86a594ba15e44a3a44bca31cdf0",
+  "authorization_ref": "deploy-demo-2026-11-14",
+  "host": "202.10.40.165",
+  "path": "/var/www/demo-repair-app",
+  "domain": "demo-repair-app.scannara.asia",
+  "database": "demo_repair_app",
+  "database_user": "new_gym",
+  "decisions": [
+    "PRD D-20",
+    "PRD D-21"
+  ],
+  "dispatches": [
+    {
+      "worker": "/root/t024_deploy",
+      "role": "deployer",
+      "model_requested": "gpt-6.1-sol",
+      "model_effective": null,
+      "receipt": "collaboration.spawn_agent returned task_name /root/t024_deploy",
+      "workspace": "/private/tmp/repair-app-t024-ops"
+    },
+    {
+      "worker": "/root/t024_review",
+      "role": "independent_readonly_reviewer",
+      "model_requested": "gpt-6.1-sol",
+      "model_effective": null,
+      "receipt": "collaboration.spawn_agent returned task_name /root/t024_review"
+    }
+  ],
+  "observed": {
+    "ssh_key_and_hostkey": "pass",
+    "sudo_noninteractive": "requires password",
+    "dns_A": [
+      "202.10.40.165"
+    ],
+    "dns_AAAA": [],
+    "os": "Debian12 bookworm",
+    "php_current": "8.2.35; 7.4 also installed",
+    "php_alternatives": "php/phar/phar.phar all AUTO, value8.2",
+    "php83_apt_candidate": "8.3.36-1+0~20261021.88+debian12~1.gbp250f7c",
+    "apt_simulation": "0 upgraded, 12 newly installed, 0 removed; existing Sury repo",
+    "nginx": "1.22.1 active",
+    "certbot": "2.1.0 existing root-private accounts; deployhook directory empty",
+    "mariadb": "10.11.14 active",
+    "host_timezone": "Asia/Jakarta",
+    "node": "22.23.3",
+    "composer": "2.7.8",
+    "target_folder_and_vhost": "absent",
+    "free_disk": "118GiB",
+    "frozen_manifest_checks": {
+      "source": 230,
+      "build": 14,
+      "font": 9,
+      "mismatches": 0
+    },
+    "certbot_timer": "active and enabled"
+  },
+  "not_run": [
+    "sudo installation",
+    "database connection/migration/seed",
+    "MariaDB compatibility and actual restore",
+    "SSL issue/renew",
+    "live application smoke",
+    "offsite backup",
+    "Android and physical printer"
+  ],
+  "pending_owner_input": [
+    "sudo execution via private SSH terminal",
+    "DB_PASSWORD and ADMIN_INITIAL_PASSWORD privately",
+    "backup destination choice"
+  ],
+  "secret_values_recorded": false,
+  "server_staging": {
+    "path": "/home/muzib/deploy-demo-repair-app",
+    "mode": "0700",
+    "source_checkout": "release-source",
+    "revision": "d047f25ea31d703660212e4205b937053c92adcb",
+    "git_status": "clean",
+    "build_files": 14,
+    "verified_on_server": {
+      "source": 230,
+      "build": 14,
+      "font": 9,
+      "hash_mismatches": 0
+    },
+    "archive_sha256": "401aa83606372d7981ee5064519f75ed78b2aafdd3281d907741b22b878b4062",
+    "metadata_cleanup": "Only task-created AppleDouble files from build archive removed; application data untouched.",
+    "ops": "ops",
+    "private_environment": "environment (0600, blank template only; never recorded)"
+  },
+  "operator_bundle": {
+    "host_manifest_sha256": "4b0484e966f9cb18ec20b7e4d91e2e0945f638242f45abcf9b41a1a7eb8404ac",
+    "full_manifest_sha256": "b9289e35459b7c61d16d8f6a5343f6a4e011baa429c399c5b8a7bf8e8bdcd1f1",
+    "transfer_archive_sha256": "39a1cb8f279280be95518cd073553cda29fa846919716baf514a78078bd73dc8",
+    "server_checksum_verification": "all17 entries PASS",
+    "deployer": "/root/t024_deploy",
+    "reviewer": "/root/t024_review",
+    "review_verdict": "pass_preparation_only",
+    "checks": "41 guard/backup mock cases + 4 full bootstrap mock paths, independently repeated; bash -n3 PASS",
+    "not_run": "ShellCheck unavailable; all real host installation/DB/SSL/restore/live acceptance still NOT_RUN",
+    "known_host_change": "php, phar, phar.phar alternatives auto to manual preserving existing8.2 executable values; documented in reviewed README",
+    "recovery": "HTTP invalid config disables only new demo link; TLS invalid config restores validated HTTP503; mocked independently"
+  },
+  "owner_request": "User asks agent handle setup directly. Read-only checks via SSH and existing iTerm both reported sudo password required. Coordinator launched same reviewed root staging/bootstrap commands through iTerm; confirmed sudo prompt visible. Owner was asked only to type sudo secret privately in iTerm; no terminal secrets printed.",
+  "access_recheck": {
+    "at": "2026-11-14T02:02:13.579751+00:00",
+    "ssh_user": "muzib",
+    "ssh_sudo_noninteractive": "password_required",
+    "existing_iterm_verified_host": "202.10.40.165",
+    "iterm_sudo_noninteractive": "password_required",
+    "bootstrap_result": "pending_sudo_prompt",
+    "runner": "/home/muzib/deploy-demo-repair-app/run-reviewed-bootstrap.sh",
+    "runner_syntax": "bash -n PASS",
+    "reviewed_host_manifest": "4b0484e966f9cb18ec20b7e4d91e2e0945f638242f45abcf9b41a1a7eb8404ac"
+  },
+  "actual_host_result": {
+    "at": "2026-11-14T02:08:25.132148+00:00",
+    "first_failure": "Stale Sury APT index; all12packageURLs404, no PHP8.3 or targetpaths created; alternatives8.2 pinnedmanual",
+    "recovery": "Refresh only existing php.list metadata; repeated simulation0upgraded12new0removed; reran unchanged verified bootstrap after absence checks",
+    "php": "8.3.36 installed; FPMactive; globalCLIstill8.2",
+    "ssl": "LetsEncrypt certificate issued; expires2027-02-12; external curl verifiedTLS with no insecureflag",
+    "http": "301 to HTTPS",
+    "https": "503 maintenance with expectedsecurityheaders",
+    "final_check_failure": "Certbot2.1.0 rejects --run-deploy-hooks; SSL itself active, renewal dry-run notyetproven atfailure",
+    "next": "A2 adapt operator verification to Certbot2.1 and independently review; keep A1 immutableops"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "verdict": "PASS",
+  "scope": "T024 isolated MariaDB10.11 compatibility only; not T025 or live release acceptance",
+  "source_revision": "d047f25ea31d703660212e4205b937053c92adcb",
+  "qa_input_revision": "c07b6c6a4245b86a594ba15e44a3a44bca31cdf0",
+  "frozen_input_manifest_sha256": "d98d5f99a8eae15ef63812af89772ecda1524998882a42ed988eadae2b09a46e",
+  "server_private_qa_path": "/home/muzib/deploy-demo-repair-app/qa-mariadb",
+  "runtime": {
+    "php": "8.3.36",
+    "mariadb": "10.11.14",
+    "no_tcp": true,
+    "buffer_pool": "64M",
+    "max_connections": 16
+  },
+  "commands_actual": [
+    "bash qa-mariadb/start-instance.sh",
+    "/usr/bin/php8.3 qa-mariadb/setup-private.php",
+    "/usr/bin/php8.3 qa-mariadb/probe.php init",
+    "/usr/bin/php8.3 qa-mariadb/probe.php run",
+    "read-only report diagnosis against private QA DB",
+    "/usr/bin/php8.3 qa-mariadb/report-proof.php",
+    "sha256sum -c source-install-evidence/FROZEN-SHA256SUMS; git rev-parse HEAD; clean git status assertion",
+    "/usr/bin/php8.3 qa-mariadb/stop-instance.php"
+  ],
+  "checks": {
+    "private_identity_before_sql_writes": "PASS",
+    "new_empty_schema_migrate_not_fresh": "PASS",
+    "synthetic_seed": "PASS",
+    "20_InnoDB_tables": "PASS",
+    "unique_FK_unsigned": "PASS",
+    "two_concurrent_TTS_real_actions": "PASS",
+    "two_concurrent_JL_real_actions": "PASS",
+    "two_concurrent_last_stock_real_actions": "PASS",
+    "five_report_rows_eight_exact_totals": "PASS",
+    "253_source_build_font_hashes_unchanged_git_clean": "PASS",
+    "only_own_instance_shutdown_main_PID851_unchanged": "PASS"
+  },
+  "initial_failure": {
+    "classification": "QA harness expected-cost error",
+    "preserved_in": [
+      "probe.php",
+      "run-output.log"
+    ],
+    "cause": "ServiceOrderItem saving normalizes jasa cost to0; probe wrongly expected cost1500/unit.",
+    "resolution": "Read-only recheck existing fixtures with model-correct cost50500/gross38500/net37500; no fixture/concurrency rerun and no source change."
+  },
+  "observed_concurrency_elapsed_seconds": 2.183663,
+  "observed_ssh_command_wall_seconds": {
+    "start_instance": 2.443092167,
+    "setup_private": 0.648424958,
+    "migrate_seed_schema": 1.549434083,
+    "concurrency_initial_report": 3.667277792,
+    "corrected_report_and_source_hashes": 1.466296667,
+    "shutdown": 1.5695489999999999
+  },
+  "boundaries": {
+    "production_env_read": false,
+    "production_db_accessed": false,
+    "application_source_modified": false,
+    "app_key_or_marker_modified": false,
+    "global_service_or_config_modified": false,
+    "shared_DB_user_or_grants_modified": false,
+    "only_synthetic_account_created_in_own_instance": true,
+    "private_fixtures_retained": true
+  },
+  "skipped": [
+    "Backup/dump/restore per user D-22",
+    "Full181test suite and build on unchanged source",
+    "T025 physical/browser/postdeploy acceptance",
+    "Actual production schema/data compatibility after its own migration"
+  ],
+  "ponytail": {
+    "level": "full",
+    "source": "/Users/muzib/.codex/plugins/cache/ponytail/ponytail/5.3.3/skills/ponytail/SKILL.md"
+  },
+  "model_requested": "gpt-6.1-sol",
+  "model_effective": null
+}

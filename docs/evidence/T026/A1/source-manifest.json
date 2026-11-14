@@ -1,0 +1,30 @@
+[
+  {
+    "path": ".github/workflows/tests.yml",
+    "sha256": "51c6495785cde17fff7481c57ae73d08af91eaa5596165c12cc7d286c0a01739"
+  },
+  {
+    "path": "deploy/ci-package.sh",
+    "sha256": "9e0e48ce5b48c9c946596c2f7e9114221b4ec4d7b618ce0c67c236c3920fc96a"
+  },
+  {
+    "path": "deploy/ci-archive.py",
+    "sha256": "83fbf81c8a6173af3e7ed8d41bd20b580c34a45116276f15b703c971c1b1ee9a"
+  },
+  {
+    "path": "deploy/ci-remote.sh",
+    "sha256": "333129a8adea45641dd12089e1025b706c4870244012436dffc751268108b878"
+  },
+  {
+    "path": "deploy/ci-checks.py",
+    "sha256": "7b7309b1c46e231c3e8256e05d2e4341b5dc61c67662256ba94f6ebf1bedd407"
+  },
+  {
+    "path": "tests/Feature/Domain/MySqlConcurrencyTest.php",
+    "sha256": "152e59a46b0f40d6d94f627241edfdeb1e2c5219af6ad7c111acfe3ef2af9852"
+  },
+  {
+    "path": "docs/DEPLOYMENT.md",
+    "sha256": "32919f526a6778762c2b30dd04490d10fd4e074f52138f16d663f4bb271949be"
+  }
+]

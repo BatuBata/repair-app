@@ -41,4 +41,17 @@ class ChangePasswordTest extends TestCase
         $component->call('updatePassword')->assertForbidden();
         $this->assertTrue(Hash::check('password', $user->fresh()->password));
     }
+
+    public function test_numeric_nine_character_password_is_accepted_but_eight_characters_are_rejected(): void
+    {
+        $this->actingAs($user = User::factory()->create());
+        $component = Livewire::test(ChangePassword::class)
+            ->set('current_password', 'password')
+            ->set('password', '22222222')->set('password_confirmation', '22222222')
+            ->call('updatePassword')->assertHasErrors('password');
+        $this->assertTrue(Hash::check('password', $user->fresh()->password));
+        $component->set('password', '222222222')->set('password_confirmation', '222222222')
+            ->call('updatePassword')->assertHasNoErrors();
+        $this->assertTrue(Hash::check('222222222', $user->fresh()->password));
+    }
 }

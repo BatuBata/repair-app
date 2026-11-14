@@ -636,6 +636,8 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 
 | D-23 | GitHub Actions menjalankan CI pada push/PR; push ke `main` yang lolos tes otomatis memperbarui demo D-20 dengan artefak commit yang sama. Setup SSH deploy terbatas dan GitHub Secrets diizinkan oleh permintaan user. Environment, APP_KEY, data dan unggahan server dipertahankan; backup tetap ditunda D-22 | User meminta auto-update server ketika push beserta CI/CD tester | User | Disetujui user 14 Nov 2026; izin deployment berkelanjutan hanya demo ini, bukan reset data atau perubahan aplikasi lain |
 
+| D-24 | Password minimal 9 karakter di semua lingkungan; tanpa kewajiban huruf besar, simbol, kombinasi huruf/angka atau pemeriksaan kebocoran. Reset hanya akun admin demo ke password pilihan user melalui kanal privat; tidak meng-hardcode password akun di Git/seeder atau mereset akun lain | User meminta aturan password sederhana dan penggantian password awal admin demo | User | Disetujui user 15 Nov 2026; deployment demo melalui CI/CD D-23 dan perubahan kredensial admin diizinkan |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

@@ -46,9 +46,13 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T024 | Deploy v1 ke VPS produksi | deployer / 6.1-sol | medium / high | T022, T023 | — | done |
 | T025 | Verifikasi produksi dan uji di HP dan printer klien | tester / 6.1-sol | medium / high | T024 | — | blocked |
 | T026 | GitHub CI/CD demo: workflow, artefak dan SSH deploy terbatas | developer / 6.1-sol | medium / high | — | — | done |
-| T027 | Integrasi konfigurasi CI/CD dengan main | integrator / 6.1-sol | medium / high | T026 | — | pending |
-| T028 | QA independen hasil integrasi CI/CD | tester / 6.1-sol | medium / high | T027 | — | pending |
-| T029 | Aktifkan dan verifikasi auto-deploy GitHub nyata | deployer / 6.1-sol | medium / high | T027, T028 | — | blocked |
+| T027 | Integrasi konfigurasi CI/CD dengan main | integrator / 6.1-sol | medium / high | T026 | — | done |
+| T028 | QA independen hasil integrasi CI/CD | tester / 6.1-sol | medium / high | T027 | — | done |
+| T029 | Aktifkan dan verifikasi auto-deploy GitHub nyata | deployer / 6.1-sol | medium / high | T027, T028 | — | done |
+| T030 | Aturan password9karakter dan petunjuk seragam | developer / 6.1-sol | medium / high | — | — | done |
+| T031 | Integrasi perubahan password | integrator / 6.1-sol | medium / high | T030 | — | running |
+| T032 | QA independen aturan password | tester / 6.1-sol | medium / high | T031 | — | pending |
+| T033 | Deploy aturan dan reset hanya admin demo | deployer / 6.1-sol | medium / high | T031, T032 | — | pending |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -124,21 +128,21 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:ff5952bd49ba433f78251c36e1dc1039f1262aaf1e6f9e5b769cae261af5a816",
+    "prd_revision": "sha256:9e4177eaae6bf1927a77626dcab5944bcae6e6f6f386abe880442bc6e8433cc5",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "running",
       "allowed_tasks": [
-        "T026",
-        "T027",
-        "T028",
-        "T029"
+        "T030",
+        "T031",
+        "T032",
+        "T033"
       ],
       "stop_after_tasks": [
-        "T029"
+        "T033"
       ],
-      "source_ref": "User14Nov2026 new instruction D23: implement, independently review, integrate and prove GitHub CI/CD for demo. T025 physical/fullUAT remains blocked, not resumed.",
+      "source_ref": "User15Nov2026 D24 requests9char simplepassword and reset admin demo to supplied value; implement/review and deploy under ongoing D23. T025 physical UAT remains blocked.",
       "phase_history": [
         {
           "state": "paused",
@@ -395,6 +399,27 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
             "T025"
           ],
           "source_ref": "Authorized demo D20/D21/D22 deployed and independent read-only web verification completed14Nov2026. stop_after_tasks T025 reached blocked because full production UAT/physical HP/printer/owner acceptance unavailable. T024done; R001notaccepted. No further dispatch; retain user deployment authorization and wait for concrete remaining acceptance work."
+        },
+        {
+          "state": "running",
+          "allowed_tasks": [
+            "T026",
+            "T027",
+            "T028",
+            "T029"
+          ],
+          "stop_after_tasks": [
+            "T029"
+          ],
+          "source_ref": "User14Nov2026 new instruction D23: implement, independently review, integrate and prove GitHub CI/CD for demo. T025 physical/fullUAT remains blocked, not resumed."
+        },
+        {
+          "state": "stopped",
+          "allowed_tasks": [],
+          "stop_after_tasks": [
+            "T029"
+          ],
+          "source_ref": "D23 setup T026-T029 completed14Nov2026 with actual main CI and auto-deploy43564251943 plus independent livePASS. Stop further agent dispatch at T029 boundary. Ongoing authorized main-push CI/CD policy remains active; T025 physical/fullUAT remains blocked."
         }
       ]
     },
@@ -431,7 +456,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "id": "autodeploy-demo-2026-11-14",
         "environment": "production",
         "scope": "deployment",
-        "source_ref": "User14Nov2026 asks GitHub Actions auto-update server on push and CI/CD tester; PRD D-23. Main-only after passing CI, demo D-20, preserve private configuration/uploads/business data, no destructive DB rollback."
+        "source_ref": "User14Nov2026 asks GitHub Actions auto-update server on push and CI/CD tester; PRD D-23. Main-only after passing CI, demo D-20, preserve private configuration/uploads/business data, no destructive DB rollback. Explicit owner async call_9c0bca9750364e0bb737b7253eb3add3 authorizes PR1 merge to main and first auto-deploy after auto-review rejection."
       }
     ],
     "git": {
@@ -440,7 +465,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "push_authorized": true,
       "source_ref": "Instruksi user 12 Nov 2026: push ke GitHub BatuBata/repair-app, setiap pekerjaan selesai buat commit dan push",
       "policy": "Commit pekerjaan selesai dan push branch task/checkpoint setelah periksa perubahan; merge ke main tetap setelah QA/review relevan; tanpa force-push. Kandidat blocked disimpan sebagai checkpoint, bukan fitur diterima.",
-      "coordination_branch": "codex/github-cicd"
+      "coordination_branch": "codex/password-nine-characters"
     },
     "browser_isolation_policy": {
       "source_ref": "Coordinator13Nov2026 verified existing scripts/lib/cdp.mjs Browser.launch: fresh headless Chrome process, unique user-data-dir and remote-debugging-port0; T010 uses private TASTE_SKILL_TMP.",
@@ -3820,7 +3845,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_effective": "gpt-6.1-sol",
           "dispatch_ref": "D23 targeted Pint scope recovery after actual CI failure",
           "outcome": "pass",
-          "receipt_ref": "docs/evidence/T026/A2/checks.json"
+          "receipt_ref": "docs/evidence/T026/A2/checks.json",
+          "phases": [
+            {
+              "phase": "actual_main_GitHub_CI",
+              "outcome": "pass",
+              "receipt_ref": "docs/evidence/T029/A1/postdeploy/assessment.json"
+            }
+          ]
         }
       ],
       "prior_results": [
@@ -3889,7 +3921,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Periksa ancestry main dan scope diff; commit kandidat gabungan."
       ],
-      "status": "pending",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -3901,6 +3933,29 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "dispatch_ref": "coordinator integration of current main ancestor and T026",
           "outcome": "pass",
           "receipt_ref": "docs/evidence/T026/A1/source-manifest.json"
+        },
+        {
+          "id": "A2",
+          "kind": "implementation",
+          "worker_id": "/root",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": "gpt-6.1-sol",
+          "dispatch_ref": "coordinator integration of targeted Pint correction after CI failure",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/T026/A2/source-manifest.json",
+          "phases": [
+            {
+              "phase": "candidate_integration",
+              "outcome": "pass",
+              "revision": "f13090847c04a0f7ba60ad6648053a98f7ccbca6"
+            },
+            {
+              "phase": "approved_actual_main_merge",
+              "outcome": "pass",
+              "revision": "b52a48e303bf60c5df046b0153a82b3ccee43d4a",
+              "receipt_ref": "docs/evidence/T028/A2/merge-attestation.json"
+            }
+          ]
         }
       ],
       "prior_results": [
@@ -3915,8 +3970,34 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
             "docs/evidence/T026/A1/checks.json"
           ],
           "summary": "Combined candidate contains main73229e3 plus reviewed demo history and T026 automation; no application business-code changes. Pin is actual candidate commit; metadata handoff follows separately."
+        },
+        {
+          "verdict": "pass",
+          "artifact_ref": "docs/evidence/T026/A2/source-manifest.json",
+          "revision": "f13090847c04a0f7ba60ad6648053a98f7ccbca6",
+          "inputs": {
+            "T026": "sha256:29303c7af137373e3c5b3e33161150dd173b038869fd386eb3bb44bdc8f28d12"
+          },
+          "evidence": [
+            "docs/evidence/T026/A2/checks.json",
+            "docs/evidence/T029/A1/merge-equivalence.json"
+          ],
+          "summary": "Combined candidate f130908 changes Pint discovery only from prior reviewed c3be1af; automation scripts/workflow and application runtime unchanged. Includes preserved first GitHub FAIL and independent QA history."
         }
-      ]
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T026/A2/source-manifest.json",
+        "revision": "b52a48e303bf60c5df046b0153a82b3ccee43d4a",
+        "inputs": {
+          "T026": "sha256:29303c7af137373e3c5b3e33161150dd173b038869fd386eb3bb44bdc8f28d12"
+        },
+        "evidence": [
+          "docs/evidence/T026/A2/checks.json",
+          "docs/evidence/T029/A1/merge-equivalence.json"
+        ],
+        "summary": "Combined candidate f130908 changes Pint discovery only from prior reviewed c3be1af; automation scripts/workflow and application runtime unchanged. Includes preserved first GitHub FAIL and independent QA history. Actual approved GitHub merge b52a48e has byte-identical Git tree to f130; independent attestation binds this final integration pin."
+      }
     },
     {
       "deliverable_id": null,
@@ -3956,7 +4037,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Tester terpisah meninjau dan menjalankan tes terarah; source tidak diubah."
       ],
-      "status": "pending",
+      "status": "done",
       "qa_for": "T027",
       "workspace": "/private/tmp/repair-app-t028",
       "attempts": [
@@ -3969,6 +4050,28 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "dispatch_ref": "native:collaboration.spawn_agent:/root/cicd_qa",
           "outcome": "pass",
           "receipt_ref": "docs/evidence/T028/A1/assessment.json"
+        },
+        {
+          "id": "A2",
+          "kind": "verification",
+          "worker_id": "/root/cicd_qa",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.followup_task:/root/cicd_qa:T028A2",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/T028/A2/assessment.json",
+          "phases": [
+            {
+              "phase": "targeted_fix_and_actual_branch_PR_CI",
+              "outcome": "pass",
+              "receipt_ref": "docs/evidence/T028/A2/assessment.json"
+            },
+            {
+              "phase": "independent_main_merge_tree_equivalence",
+              "outcome": "pass",
+              "receipt_ref": "docs/evidence/T028/A2/merge-attestation.json"
+            }
+          ]
         }
       ],
       "prior_results": [
@@ -3987,8 +4090,42 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
             "docs/evidence/T028/A1/local-checks.txt"
           ],
           "summary": "Independent QA PASS:20 disposable Linux safety cases,8 additional malicious archive probes,local12 cases,actionlint/bash syntax and main/CI/secrets/SSH/protected-files review. No source or production changes. Actual full GitHub CI and live deploy remain T029."
+        },
+        {
+          "verdict": "pass",
+          "artifact_ref": "docs/evidence/T028/A2/assessment.json",
+          "revision": "sha256:e4b97db687dd77b6575bb29a3e3316db27a462ca82c0ae77777e8d29a6ee3fe9",
+          "checked_revision": "f13090847c04a0f7ba60ad6648053a98f7ccbca6",
+          "inputs": {
+            "T027": "b52a48e303bf60c5df046b0153a82b3ccee43d4a"
+          },
+          "evidence": [
+            "docs/evidence/T028/A2/assessment.json",
+            "docs/evidence/T028/A2/github-jobs.json",
+            "docs/evidence/T028/A2/dispatch.json",
+            "docs/evidence/T028/A2/github-log-excerpt.json",
+            "docs/evidence/T028/A2/merge-attestation.json"
+          ],
+          "summary": "Independent targeted A2 PASS: all seven prior reviewed source hashes unchanged; Pint exclusion only for immutable evidence. Actual GitHub push43563864796 and PR43563868061 CI PASS:182 tests/1956 assertions including MariaDB concurrency,129 files Pint PASS,PHPStan zero errors,20 deployment safety PASS. Deployment skipped on branch/PR; main activation still owner permission."
         }
-      ]
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T028/A2/merge-attestation.json",
+        "revision": "sha256:f0bc0764e5119bd631c21193efaeb22aa7a655f73c7cd2cdb226ef188a4312d8",
+        "checked_revision": "b52a48e303bf60c5df046b0153a82b3ccee43d4a",
+        "inputs": {
+          "T027": "b52a48e303bf60c5df046b0153a82b3ccee43d4a"
+        },
+        "evidence": [
+          "docs/evidence/T028/A2/assessment.json",
+          "docs/evidence/T028/A2/github-jobs.json",
+          "docs/evidence/T028/A2/dispatch.json",
+          "docs/evidence/T028/A2/github-log-excerpt.json",
+          "docs/evidence/T028/A2/merge-attestation.json"
+        ],
+        "summary": "Independent targeted A2 PASS: all seven prior reviewed source hashes unchanged; Pint exclusion only for immutable evidence. Actual GitHub push43563864796 and PR43563868061 CI PASS:182 tests/1956 assertions including MariaDB concurrency,129 files Pint PASS,PHPStan zero errors,20 deployment safety PASS. Deployment skipped on branch/PR; main activation still owner permission. Independent main merge attestation: actual b52a and reviewed f130 tree27ac393 identical; prior tests reused by hash, not rerun."
+      }
     },
     {
       "deliverable_id": null,
@@ -4030,11 +4167,11 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Pasang wrapper/key terbatas, push main setelah QA; amati job CI/deploy dan baca metadata/readiness server."
       ],
-      "status": "blocked",
+      "status": "done",
       "deployment": {
         "environment": "production",
         "source_task": "T027",
-        "source_revision": null,
+        "source_revision": "b52a48e303bf60c5df046b0153a82b3ccee43d4a",
         "authorization_ref": "autodeploy-demo-2026-11-14"
       },
       "workspace": "/Users/muzib/Projects/web/repair-app",
@@ -4046,11 +4183,291 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": "gpt-6.1-sol",
           "dispatch_ref": "user:D23 coordinator activation after independent T028 PASS",
-          "outcome": "blocked",
-          "receipt_ref": "docs/evidence/T029/A1/activation.json"
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/T029/A1/postdeploy/assessment.json",
+          "phases": [
+            {
+              "phase": "restricted_SSH_and_GitHub_Secrets",
+              "outcome": "pass",
+              "receipt_ref": "docs/evidence/T029/A1/ssh-setup.json"
+            },
+            {
+              "phase": "actual_branch_and_PR_CI",
+              "outcome": "pass",
+              "receipt_ref": "docs/evidence/T028/A2/assessment.json"
+            },
+            {
+              "phase": "main_update_and_first_auto_deploy",
+              "outcome": "blocked",
+              "reason": "Automatic approval review requires explicit main modification authorization; owner async question pending."
+            },
+            {
+              "phase": "explicit_owner_merge_authorization",
+              "outcome": "pass",
+              "source_ref": "async call_9c0bca9750364e0bb737b7253eb3add3; PR1 merged normally mainb52a48e treeidenticalcandidatef130"
+            },
+            {
+              "phase": "actual_main_CI_and_auto_deploy",
+              "outcome": "pass",
+              "receipt_ref": "docs/evidence/T029/A1/activation.json"
+            },
+            {
+              "phase": "independent_live_post_deploy",
+              "outcome": "pass",
+              "receipt_ref": "docs/evidence/T029/A1/postdeploy/assessment.json",
+              "worker_id": "/root/cicd_qa",
+              "model_requested": "gpt-6.1-sol",
+              "model_effective": null
+            }
+          ]
         }
       ],
-      "blocker": "Actual CI failed on archived evidence lint; targeted T026A2 correction and independent review required. Main modification also rejected by auto-review pending explicit owner approval after ready PR."
+      "prior_results": [
+        {
+          "verdict": "blocked",
+          "artifact_ref": "docs/evidence/T029/A1/activation.json",
+          "revision": "preparation:ci-cd-demo-f130908",
+          "checked_revision": "f13090847c04a0f7ba60ad6648053a98f7ccbca6",
+          "inputs": {
+            "T027": "f13090847c04a0f7ba60ad6648053a98f7ccbca6",
+            "T028": "sha256:e4b97db687dd77b6575bb29a3e3316db27a462ca82c0ae77777e8d29a6ee3fe9"
+          },
+          "evidence": [
+            "docs/evidence/T029/A1/ssh-setup.json",
+            "docs/evidence/T028/A2/assessment.json",
+            "https://github.com/BatuBata/repair-app/pull/1"
+          ],
+          "summary": "Restricted SSH key/hostpin/Secrets ready; actual branch and PR CI PASS. Main update and first automatic deployment NOT_RUN because auto-review requires explicit owner main permission; request pending. Existing demo remains untouched."
+        }
+      ],
+      "actual_merged_revision": "b52a48e303bf60c5df046b0153a82b3ccee43d4a",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T029/A1/postdeploy/assessment.json",
+        "revision": "github-actions:43564251943:deployment:b52a48e",
+        "checked_revision": "b52a48e303bf60c5df046b0153a82b3ccee43d4a",
+        "inputs": {
+          "T027": "b52a48e303bf60c5df046b0153a82b3ccee43d4a",
+          "T028": "sha256:f0bc0764e5119bd631c21193efaeb22aa7a655f73c7cd2cdb226ef188a4312d8"
+        },
+        "evidence": [
+          "https://github.com/BatuBata/repair-app/pull/1",
+          "https://github.com/BatuBata/repair-app/actions/runs/43564251943",
+          "docs/evidence/T029/A1/ssh-setup.json",
+          "docs/evidence/T029/A1/github-jobs.json",
+          "docs/evidence/T029/A1/github-log-excerpt.txt",
+          "docs/evidence/T029/A1/postdeploy/assessment.json",
+          "docs/evidence/T029/A1/postdeploy/server-observation.jsonl"
+        ],
+        "summary": "Owner explicitly approved PR1 main merge after auto-review rejection. Main CI PASS182tests1956assertions, MariaDB concurrency/Pint/PHPStan/build and20safetycases. Exact same-run artifact14101283381 uploaded/downloaded and auto-deployed with restricted SSH. Independent postdeploy PASS: server revision+receipt exactb52a,HTTPSup/login200TLSverified,no maintenance,private paths denied. Private environment/uploads preserved by receiver; no business fixtures/seed/reset. Backups deferredD22; physical/fullUAT T025 remains blocked."
+      },
+      "independent_assessment_sha256": "84bd9d9af2498d3b88dc6657e30a8c0e113c530f01f563f04f55c73a271a91ca"
+    },
+    {
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-24",
+        "PRD.md §14.3"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "high",
+      "uncertainty": "low",
+      "triage_reason": "Shared password validation affects create/reset/change/seed and existing admin credential; scope must preserve confirmation/current-password/auth/rate-limit and other accounts.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Sol for auth validation and credential change.",
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "id": "T030",
+      "title": "Aturan password9karakter dan petunjuk seragam",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "backend",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "app/Providers/AppServiceProvider.php",
+        "resources/views/livewire/profile/change-password.blade.php",
+        "resources/views/livewire/users/index.blade.php",
+        "tests/Feature/Auth/PasswordPolicyTest.php",
+        "tests/Feature/Profile/ChangePasswordTest.php",
+        "docs/PANDUAN.md",
+        "docs/evidence/T030/**"
+      ],
+      "acceptance_criteria": [
+        "Password9digit/lowercase accepted in production/testing;8chars rejected.",
+        "Create/reset/change/seed use same shared rule; confirmation/current-password checks retained; UI says9characters.",
+        "No password hardcoded to config/seeder or fixture copied from actual account."
+      ],
+      "verification_plan": [
+        "Targeted unit/feature and independent source review; actual GitHub CI/CD plus limited live credential verification."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": "gpt-6.1-sol",
+          "dispatch_ref": "user:D24 root implementation",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/T030/A1/checks.json"
+        }
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T030/A1/source-manifest.json",
+        "revision": "sha256:2138dc75cc46dabc3d92e40399b6fac5dccfb2103bcbe8dd8fb16cae32e13e98",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T030/A1/checks.json"
+        ],
+        "summary": "Shared9character rule and both UI hints updated;30 targeted tests423assertions andPintPASS. No actual account credential in Git or seeded fallback."
+      }
+    },
+    {
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-24",
+        "PRD.md §14.3"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "high",
+      "uncertainty": "low",
+      "triage_reason": "Shared password validation affects create/reset/change/seed and existing admin credential; scope must preserve confirmation/current-password/auth/rate-limit and other accounts.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Sol for auth validation and credential change.",
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "id": "T031",
+      "title": "Integrasi perubahan password",
+      "kind": "integration",
+      "responsible_role": "integrator",
+      "work_type": "backend",
+      "depends_on": {
+        "hard": [
+          "T030"
+        ],
+        "contracts": []
+      },
+      "write_scope": [
+        "app/**",
+        "resources/**",
+        "tests/**",
+        "docs/**"
+      ],
+      "acceptance_criteria": [
+        "Candidate includes currentmain and password patch; immutable revision recorded."
+      ],
+      "verification_plan": [
+        "Targeted unit/feature and independent source review; actual GitHub CI/CD plus limited live credential verification."
+      ],
+      "status": "running",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": "gpt-6.1-sol",
+          "dispatch_ref": "coordinator D24 candidate integration",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/T030/A1/source-manifest.json"
+        }
+      ]
+    },
+    {
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-24",
+        "PRD.md §14.3"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "high",
+      "uncertainty": "low",
+      "triage_reason": "Shared password validation affects create/reset/change/seed and existing admin credential; scope must preserve confirmation/current-password/auth/rate-limit and other accounts.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Sol for auth validation and credential change.",
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "id": "T032",
+      "title": "QA independen aturan password",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "backend",
+      "depends_on": {
+        "hard": [
+          "T031"
+        ],
+        "contracts": []
+      },
+      "write_scope": [
+        "docs/evidence/T032/**"
+      ],
+      "acceptance_criteria": [
+        "Review shared validation and all callers; relevant tests PASS, no hidden credential defaults or auth regressions."
+      ],
+      "verification_plan": [
+        "Targeted unit/feature and independent source review; actual GitHub CI/CD plus limited live credential verification."
+      ],
+      "status": "pending",
+      "qa_for": "T031"
+    },
+    {
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-24",
+        "PRD.md §14.3"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "high",
+      "uncertainty": "low",
+      "triage_reason": "Shared password validation affects create/reset/change/seed and existing admin credential; scope must preserve confirmation/current-password/auth/rate-limit and other accounts.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Sol for auth validation and credential change.",
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "id": "T033",
+      "title": "Deploy aturan dan reset hanya admin demo",
+      "kind": "deployment",
+      "responsible_role": "deployer",
+      "work_type": "release",
+      "depends_on": {
+        "hard": [
+          "T031",
+          "T032"
+        ],
+        "contracts": []
+      },
+      "write_scope": [
+        "docs/evidence/T033/**"
+      ],
+      "acceptance_criteria": [
+        "CI/deploymainPASS and live source marker exact release; shared rule accepts nine-character numeric password.",
+        "Only active usernameadmin credential reset to owner value; private handoverfile updated, remembertoken rotated, other account/business data unchanged; login verified without logging secret."
+      ],
+      "verification_plan": [
+        "Targeted unit/feature and independent source review; actual GitHub CI/CD plus limited live credential verification."
+      ],
+      "status": "pending",
+      "deployment": {
+        "environment": "production",
+        "source_task": "T031",
+        "source_revision": null,
+        "authorization_ref": "autodeploy-demo-2026-11-14"
+      }
     }
   ]
 }

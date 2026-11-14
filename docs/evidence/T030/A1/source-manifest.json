@@ -1,0 +1,26 @@
+[
+  {
+    "path": "app/Providers/AppServiceProvider.php",
+    "sha256": "5d20aca3899afecc1c8285d9382fddf31520a1d38646479989b5da775ab4f746"
+  },
+  {
+    "path": "resources/views/livewire/profile/change-password.blade.php",
+    "sha256": "4f3457be8403ead73b25f4ef27a1c7ea148fb7efccd17beecbaffb03ee9775dd"
+  },
+  {
+    "path": "resources/views/livewire/users/index.blade.php",
+    "sha256": "83910ebc4b0e8812cc3d5c00a635895b2244cc69a1fc4529f2ce70eb5f12c6d8"
+  },
+  {
+    "path": "tests/Feature/Auth/PasswordPolicyTest.php",
+    "sha256": "145368898648943954e4ee48ca7cde03cb33d204760e947db3cfc8651c62e41e"
+  },
+  {
+    "path": "tests/Feature/Profile/ChangePasswordTest.php",
+    "sha256": "d574f3289a84fd58cc348b6e260b249227bb806b4364fcee0c6717b4eccd9017"
+  },
+  {
+    "path": "docs/PANDUAN.md",
+    "sha256": "89e2b689712a2017e649def4a920a3482e3e838dc5ccf3d8d7c3fbe8d3743e17"
+  }
+]

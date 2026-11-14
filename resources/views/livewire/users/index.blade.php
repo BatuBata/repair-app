@@ -32,7 +32,7 @@
         @if($mode !== 'edit')
 <div><x-ui.field name="password" label="Password baru" type="password" wire:model="password" autocomplete="new-password" required aria-invalid="{{ $errors->has('password') ? 'true' : 'false' }}" aria-describedby="password-error" />@error('password')<p class="error-text" id="password-error">{{ $message }}</p>@enderror</div>
 <div><x-ui.field name="password_confirmation" label="Konfirmasi password baru" type="password" wire:model="password_confirmation" autocomplete="new-password" required aria-invalid="{{ $errors->has('password_confirmation') ? 'true' : 'false' }}" aria-describedby="password_confirmation-error" />@error('password_confirmation')<p class="error-text" id="password_confirmation-error">{{ $message }}</p>@enderror</div>
-            <p class="hint">Gunakan minimal {{ app()->isProduction() ? '12 karakter, huruf besar, huruf kecil, angka, dan simbol' : '8 karakter' }}.</p>
+            <p class="hint">Gunakan minimal 9 karakter.</p>
         @endif
             <div class="actions"><button class="btn ghost" type="button" wire:click="cancel">Batal</button><button class="btn primary desktop-only" type="submit" wire:loading.attr="disabled" wire:target="save"><span wire:loading.remove wire:target="save">Simpan pengguna</span><span wire:loading wire:target="save">Menyimpan…</span></button></div>
             <div class="actionbar"><button class="btn primary" type="submit" wire:loading.attr="disabled" wire:target="save"><span wire:loading.remove wire:target="save">Simpan pengguna</span><span wire:loading wire:target="save">Menyimpan…</span></button></div>

@@ -1,0 +1,9 @@
+[
+  "2026-11-14T05:56:44.0727286Z     PASS   ......................................................... 129 files  ",
+  "2026-11-14T05:56:44.6608966Z Note: Using configuration file /home/runner/work/repair-app/repair-app/phpstan.neon.",
+  "2026-11-14T05:56:47.1696352Z  [OK] No errors                                                                 ",
+  "2026-11-14T05:57:00.1575639Z    PASS  Tests\\Feature\\Domain\\MySqlConcurrencyTest",
+  "2026-11-14T05:57:00.1578308Z   ✓ mysql fresh seed and parallel document creation                     10.98s  ",
+  "2026-11-14T05:57:05.5585618Z   Tests:    182 passed (1956 assertions)",
+  "2026-11-14T05:57:06.1717125Z PASS: 20 deployment safety cases"
+]

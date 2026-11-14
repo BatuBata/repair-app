@@ -3,7 +3,7 @@
   "revision": "c3be1af3d34df2afac9a25db1ebd2272401dabc2",
   "authorization": "PRD D23/autodeploy-demo-2026-11-14",
   "Ponytail": "full",
-  "status": "CI on work branch/PR running; no main push or deployment",
+  "status": "PASS: main CI/CD and independent live verification complete",
   "secrets_values_recorded": false,
   "auto_review_rejection": {
     "action": "git push candidate SHA directly to refs/heads/main",
@@ -12,5 +12,19 @@
     "safe_alternative": "Push work branch, create PR1 and complete actual CI; then request concrete merge authorization.",
     "reference": "https://github.com/BatuBata/repair-app/pull/1"
   },
-  "github_branch_run": "https://github.com/BatuBata/repair-app/actions/runs/43563583274"
+  "github_branch_run": "https://github.com/BatuBata/repair-app/actions/runs/43563583274",
+  "ci_push": "https://github.com/BatuBata/repair-app/actions/runs/43563864796",
+  "ci_pr": "https://github.com/BatuBata/repair-app/actions/runs/43563868061",
+  "ci_summary": "182tests1956assertions, MariaDB concurrency,20 safety cases PASS",
+  "actual_main_revision": "b52a48e303bf60c5df046b0153a82b3ccee43d4a",
+  "actual_main_run": "https://github.com/BatuBata/repair-app/actions/runs/43564251943",
+  "explicit_authorization": "async call_9c0bca9750364e0bb737b7253eb3add3",
+  "main_ci_job": "132354494817",
+  "main_deploy_job": "132354862532",
+  "actual_deployed_revision": "b52a48e303bf60c5df046b0153a82b3ccee43d4a",
+  "actual_deployed_utc": "2026-11-14T06:03:14Z",
+  "artifact_id": 14101283381,
+  "artifact_zip_sha256": "965632bfaa631efe66f53cad9bed2324fb5cd7262a7f2fd9fdccd29b5f1cce5e",
+  "postdeploy_assessment": "postdeploy/assessment.json",
+  "postdeploy_assessment_sha256": "84bd9d9af2498d3b88dc6657e30a8c0e113c530f01f563f04f55c73a271a91ca"
 }

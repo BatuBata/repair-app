@@ -2,7 +2,7 @@
 
 ## Demo aktif — 14 November 2026
 
-[Demo](https://demo-repair-app.scannara.asia) aktif sejak 10.43 WITA di `muzib@202.10.40.165:/var/www/demo-repair-app/current`, memakai revisi aplikasi `d047f25ea31d703660212e4205b937053c92adcb` yang sudah masuk `main`. [Receipt deployment](evidence/T024/A2/deployment-receipt.json) dan [serah terima operator](evidence/T024/A2/deployment-HANDOFF.md) merekam langkah serta hasil aktual. PHP 8.3 terpasang berdampingan dengan versi lama; MariaDB 10.11 existing sudah lulus [uji kompatibilitas independen](evidence/T024/A2/mariadb-qa/assessment.json). Let’s Encrypt, uji renewal, dan hook reload Nginx lulus.
+[Demo](https://demo-repair-app.scannara.asia) aktif sejak 10.43 WITA di `muzib@202.10.40.165:/var/www/demo-repair-app/current`. Instalasi pertama memakai revisi aplikasi `d047f25ea31d703660212e4205b937053c92adcb` yang sudah masuk `main`. Versi sesudah auto-deploy mengikuti `.release-revision` sebagaimana bagian D-23 di bawah. [Receipt deployment](evidence/T024/A2/deployment-receipt.json) dan [serah terima operator](evidence/T024/A2/deployment-HANDOFF.md) merekam langkah serta hasil aktual. PHP 8.3 terpasang berdampingan dengan versi lama; MariaDB 10.11 existing sudah lulus [uji kompatibilitas independen](evidence/T024/A2/mariadb-qa/assessment.json). Let’s Encrypt, uji renewal, dan hook reload Nginx lulus.
 
 Keputusan PRD D-20/D-21/D-22 berlaku khusus demo ini: Debian 12 dan MariaDB existing disetujui; **seluruh backup ditunda oleh user**. Tidak ada backup/cron/offsite/restore demo yang diklaim berhasil, sehingga NFR-05 serta penerimaan produksi penuh belum terpenuhi. Bagian berikut tetap merupakan runbook umum T020; ketentuan Ubuntu/MySQL/backup di sana bukan gambaran keadaan demo dan tidak membatalkan pengecualian user ini.
 
@@ -11,6 +11,8 @@ Admin demo: username `admin`; password awal hanya tersimpan di server pada `/hom
 Status pengujian web, transaksi, HP dan printer yang benar-benar dijalankan mengikuti T025 di `TODO.md`. Pengujian web tanpa perubahan data tidak membuktikan cetak fisik atau penerimaan penuh R001.
 
 ## Auto-update GitHub Actions — D-23
+
+Aktivasi pertama sudah **PASS**: [PR #1](https://github.com/BatuBata/repair-app/pull/1) digabung dengan izin eksplisit owner, [run main 43564251943](https://github.com/BatuBata/repair-app/actions/runs/43564251943) merilis `b52a48e303bf60c5df046b0153a82b3ccee43d4a` pada 14 November 2026 pukul 14.03 WITA. CI mencatat 182 tes/1.956 assertions, konkurensi MariaDB dan 20 kasus keselamatan PASS; [pemeriksaan independen server](evidence/T029/A1/postdeploy/assessment.json) juga PASS. Konfigurasi kunci/Secrets sudah terpasang; petunjuk berikut berlaku untuk pemeliharaan.
 
 Workflow `.github/workflows/tests.yml` menjalankan pemeriksaan format (Pint), analisis tipe (PHPStan), unit/feature test, build aset, serta tes konkurensi penomoran pada MariaDB 10.11 sementara. Database CI `repair_app_test` berada di container GitHub, bukan database VPS. Kredensial CI bersifat sintetis. `npm ci` dan Composer menggunakan lockfile. Pemeriksaan keamanan deployment di `deploy/ci-checks.py` mencakup arsip terlarang, SHA yang salah, lingkungan privat, maintenance, kegagalan migrasi, dan health check.
 

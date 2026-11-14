@@ -49,6 +49,6 @@ Pengingat garansi muncul sejak tiga hari sebelum tanggal akhir sampai tanggal ak
 - Dari **Menu** → **Pengaturan** → **Pengguna**, pilih **Tambah pengguna** untuk membuat akun. Pilih peran Admin atau Teknisi, lalu berikan nama pengguna dan password secara pribadi. Akun admin aktif minimal satu harus tetap tersedia.
 - Dari **Menu** → **Pengaturan** → **Kategori**, admin dapat menambah atau menonaktifkan kategori servis. Kategori nonaktif tidak muncul untuk TTS baru.
 - Dari **Pengaturan toko**, perbarui informasi toko, syarat garansi, atau lama garansi bawaan, lalu pilih **Simpan pengaturan toko**.
-- Pilih **Profil** untuk mengganti password sendiri. Pilih **Keluar** setelah selesai, terutama pada perangkat bersama.
+- Pilih **Profil** untuk mengganti password sendiri. Password minimal 9 karakter; huruf besar dan simbol tidak wajib. Pilih **Keluar** setelah selesai, terutama pada perangkat bersama.
 
 Jika tombol tidak tersedia, akun mungkin tidak memiliki akses ke tindakan itu. Hubungi admin toko.

@@ -1,0 +1,11 @@
+[
+  "2026-11-14T06:01:53.3200618Z     PASS   ......................................................... 129 files  ",
+  "2026-11-14T06:01:57.4024845Z  [OK] No errors                                                                 ",
+  "2026-11-14T06:02:11.1233624Z    PASS  Tests\\Feature\\Domain\\MySqlConcurrencyTest",
+  "2026-11-14T06:02:11.1236599Z   ✓ mysql fresh seed and parallel document creation                     11.23s  ",
+  "2026-11-14T06:02:18.2994530Z   Tests:    182 passed (1956 assertions)",
+  "2026-11-14T06:02:19.1794575Z PASS: 20 deployment safety cases",
+  "2026-11-14T06:02:23.2429755Z Artifact name is valid!",
+  "2026-11-14T06:02:25.1398880Z Artifact release-b52a48e303bf60c5df046b0153a82b3ccee43d4a.zip successfully finalized. Artifact ID 14101283381",
+  "2026-11-14T06:02:25.1400320Z Artifact release-b52a48e303bf60c5df046b0153a82b3ccee43d4a has been successfully uploaded! Final size is 13981498 bytes. Artifact ID is 14101283381"
+]

@@ -1,0 +1,26 @@
+{
+  "identicalCommonFiles": [
+    "public/build/assets/app-TKBAM3lN.js",
+    "public/build/assets/fonts-C9MNnjVw.css",
+    "public/build/assets/instrument-sans-400-normal-D1W7dsQl.woff",
+    "public/build/assets/instrument-sans-400-normal-DRC__1Mx.woff2",
+    "public/build/assets/instrument-sans-500-normal-Dk9ku72i.woff2",
+    "public/build/assets/instrument-sans-500-normal-Z6ESRlEs.woff",
+    "public/build/assets/instrument-sans-600-normal-B7fBEWYG.woff2",
+    "public/build/assets/instrument-sans-600-normal-B9e8oLYv.woff",
+    "public/build/assets/layout-DAFmGKay.css",
+    "public/build/assets/layout-VbftPR1Q.js",
+    "public/build/assets/passkeys-CsxEE3hN.js",
+    "public/build/fonts-manifest.json"
+  ],
+  "changedCommon": [
+    "public/build/manifest.json"
+  ],
+  "removedPaths": [
+    "public/build/assets/app-CxA26Lmt.css"
+  ],
+  "addedPaths": [
+    "public/build/assets/app-CDn1G0_W.css"
+  ],
+  "allOtherBundleBytesIdentical": true
+}

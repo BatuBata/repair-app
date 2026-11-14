@@ -1,0 +1,42 @@
+[
+  {
+    "path": "public/index.php",
+    "sha256": "eba77cba39695b6bd091fe5211d481f7ebb2ce2d8d26230b5a609465d0a4aff9",
+    "matches_A1": true
+  },
+  {
+    "path": "public/manifest.webmanifest",
+    "sha256": "50fabb380f928a7c7b52deac3960987e7f3420d12aca2f738f009eb9ae453a5f",
+    "matches_A1": true
+  },
+  {
+    "path": "public/icons/ticket-192.png",
+    "sha256": "1e44d80865125dbe39cb53bfce3720798bbd2e712a855ccca1c30d402bd57000",
+    "matches_A1": true
+  },
+  {
+    "path": "public/icons/ticket-512.png",
+    "sha256": "6d485097918bef1886890ad361c0c6af803723a29e1b88d63fde2c389b104f37",
+    "matches_A1": true
+  },
+  {
+    "path": "public/apple-touch-icon.png",
+    "sha256": "4001aa032ff113e1a268a9bbf1ab0fd9949439f9f54a85895956eb323aba977d",
+    "matches_A1": true
+  },
+  {
+    "path": "public/robots.txt",
+    "sha256": "e5c4b84484ee4216e9373be99380320c25dd94805f99f0a805846f087636553f",
+    "matches_A1": true
+  },
+  {
+    "path": "composer.lock",
+    "sha256": "247f7b1ac21fdf30ade477cf41f3a41843d4dbf56f663f2dd5253a1aef3e1c3e",
+    "matches_A1": true
+  },
+  {
+    "path": "package-lock.json",
+    "sha256": "649966e30391e4096e1e144be802c4d7f87ac5d005d6ef2a9e8ef06e9b309d81",
+    "matches_A1": true
+  }
+]

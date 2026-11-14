@@ -1,0 +1,41 @@
+{
+  "verdict": "pass",
+  "artifact_ref": "docs/evidence/T023/A2/README.md",
+  "checked_revision": "d047f25ea31d703660212e4205b937053c92adcb",
+  "inputs": {
+    "T022": "d047f25ea31d703660212e4205b937053c92adcb"
+  },
+  "evidence_revision": "evidence-only commit returned in handoff",
+  "softwareOnly": true,
+  "counts": {
+    "unchanged_sources": 228,
+    "changed_sources": 2,
+    "frozen_source_files": 230,
+    "frozen_build_files": 14,
+    "frozen_fonts": 9,
+    "A1evidenceHashesVerified": 404,
+    "targeted_report_layouts": 9,
+    "trusted_new_area_taps": 4,
+    "eye_dialog_focus_checks": 3,
+    "Chrome_asset_hash_checks": 23,
+    "actual_Edge_cases": 13,
+    "Edge_asset_hash_checks": 23,
+    "Edge_PDF_smoke": 2
+  },
+  "A1_reuse": {
+    "suite": "181PASS/1guardedMySQLSKIP/1913assert",
+    "primaryScreens": 111,
+    "large_cases": 30,
+    "PDFs": 10,
+    "QRdecodes": 5,
+    "actualMySQLcases": 6,
+    "baselineMySQLTablesPreserved": 20
+  },
+  "finding_closed": "T023-F01 on A2 only; historical A1FAIL retained",
+  "deferred": [
+    "physicalAndroid/keyboard/install/4G/pilot/printer/camera T025",
+    "productionVPSHTTPSFPMcron/offsitebackup T024-T025"
+  ],
+  "resources": "released; resource-release.json",
+  "summary": "All26softwareAC/16BR proven by independent targetedA2 + exactsource/conditionA1reuse. ActualEdge desktopPASS. Source/build/fonts frozen; no main/push/deploy."
+}

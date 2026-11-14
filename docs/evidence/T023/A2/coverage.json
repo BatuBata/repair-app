@@ -1,0 +1,294 @@
+{
+  "checked_revision": "d047f25ea31d703660212e4205b937053c92adcb",
+  "software_contract_verdict": "pass",
+  "acceptance": [
+    {
+      "id": "AC-01",
+      "software": "pass",
+      "reused_A1_evidence": "Auth AuthenticationTest::remember_me_issues_framework_recaller_cookie_and_rotates_session + RoleLauncherTest; flows remember persistent recaller in fresh Chrome process without session cookie. Actual Android shortcut/browser install deferred T025. Targeted remember-only-proof.json excludes both session/XSRF, server viaRemember=true and roleteknisi; initial expiresfilter gap preserved.",
+      "evidence": "A1 remember-only-proof.json explicitrecaller-only cookie whitelist + serverviaRemembertrue reused, unchanged auth. NewEdge admin/technician launcher+logout PASS; physicalAndroid shortcut deferredT025."
+    },
+    {
+      "id": "AC-02",
+      "software": "pass",
+      "reused_A1_evidence": "TtsTest required/phone/injection cases; flows tts-four-required, invalid-phone-retains-fields, normalized6281234567890 with success screenshot.",
+      "evidence": "A1 independent source/condition-equal proof in reuse-proof.json; historical A1 FAIL remains preserved."
+    },
+    {
+      "id": "AC-03",
+      "software": "pass",
+      "reused_A1_evidence": "DomainTest WITA month/min3/rollbacks + SalesTest WITA clock pin; actual parallel16 MySQL saves T002A4 reused only after identical numbering/model/migration hash proof. Guarded destructive MySQL test skipped here.",
+      "evidence": "A1 independent source/condition-equal proof in reuse-proof.json; historical A1 FAIL remains preserved."
+    },
+    {
+      "id": "AC-04",
+      "software": "pass",
+      "reused_A1_evidence": "Auth/Invoice/Sales/Stock/Expenses/Reports/Settings/Dashboard tests revoke and role guards; actual11 HTTP403 technician routes and HTML no amounts; tech-list/detail screenshots3widths.",
+      "evidence": "A1 serverauthorization/privacy suite+HTTP proof reused; newactualEdge six403routes and technician HTML nofinancialvalues, publicprivacy/PDFsmoke."
+    },
+    {
+      "id": "AC-05",
+      "software": "pass",
+      "reused_A1_evidence": "TtsTest own received/other owner/all states/stale actor lock; browser own received edit saved, tech-edit captures3widths.",
+      "evidence": "A1 independent source/condition-equal proof in reuse-proof.json; historical A1 FAIL remains preserved."
+    },
+    {
+      "id": "AC-06",
+      "software": "pass",
+      "reused_A1_evidence": "InvoiceTest active technician/time/duplicate assignment + browser assign->Dikerjakan/name.",
+      "evidence": "A1 independent source/condition-equal proof in reuse-proof.json; historical A1 FAIL remains preserved."
+    },
+    {
+      "id": "AC-07",
+      "software": "pass",
+      "reused_A1_evidence": "InvoiceTest all issue states/missing technician/rows/Jasa cost forced0; browser invalid invoice then Part+Jasa2lines; privateSQLite proof Jasa cost0.",
+      "evidence": "A1 independent source/condition-equal proof in reuse-proof.json; historical A1 FAIL remains preserved."
+    },
+    {
+      "id": "AC-08",
+      "software": "pass",
+      "reused_A1_evidence": "InvoiceTest exact arithmetic; browser LCD1m+Jasa100k =1.1m;10HTTP PDFs text checks no700.000; public/tracking HTML privacy; QR and renders reviewed.",
+      "evidence": "A1 independent source/condition-equal proof in reuse-proof.json; historical A1 FAIL remains preserved."
+    },
+    {
+      "id": "AC-09",
+      "software": "pass",
+      "reused_A1_evidence": "DashboardTest inclusive H-3/lastday30days/WITA/zero/contacted/expired + new MySQL service AND sale rowlocks at midnight and duplicate2admin mark; actual dashboard portalled mark removes row.",
+      "evidence": "A1 independent source/condition-equal proof in reuse-proof.json; historical A1 FAIL remains preserved."
+    },
+    {
+      "id": "AC-10",
+      "software": "pass",
+      "reused_A1_evidence": "InvoiceTest legal collect states/date; browser collect id7 ->Diambil; tracking-collected screenshots and exact status in TrackingTest.",
+      "evidence": "A1 independent source/condition-equal proof in reuse-proof.json; historical A1 FAIL remains preserved."
+    },
+    {
+      "id": "AC-11",
+      "software": "pass",
+      "reused_A1_evidence": "InvoiceTest cancel allowed/closed rejects; ReportsTest excludes cancelled; received/working/cancelled screenshots.",
+      "evidence": "A1 independent source/condition-equal proof in reuse-proof.json; historical A1 FAIL remains preserved."
+    },
+    {
+      "id": "AC-12",
+      "software": "pass",
+      "reused_A1_evidence": "TrackingTest exacttoken/noindex/no financial private fields, DocumentsTest invoice gate; fresh browser public404/noindex and no leaked HP/address/cost; MySQL wrong-casePDF404 despite rawCIlookup matching.",
+      "evidence": "A1 independent source/condition-equal proof in reuse-proof.json; historical A1 FAIL remains preserved."
+    },
+    {
+      "id": "AC-13",
+      "software": "pass",
+      "reused_A1_evidence": "TrackingTest WA exactencodednumber/template/role + DashboardTest warranty WA links. Browser inspected opaque redirect without opening/sending WA. Actual app switching deferred T025.",
+      "evidence": "A1 independent source/condition-equal proof in reuse-proof.json; historical A1 FAIL remains preserved."
+    },
+    {
+      "id": "AC-14",
+      "software": "pass",
+      "reused_A1_evidence": "10new HTTP PDFs A5/58mm sizes/fonts/text/bounds;5QR decoded with CoreImage to exact64token appURLs; long2/5/63page artifacts independently rechecked with source/hash provenance. Physical print/phone scan deferred T025.",
+      "evidence": "A1 tenPDF/fiveQR/long2/5/63pages renderer/fonts/source/inlineCSS byteequal reused; freshEdge2HTTPPDFsmoke/privacy PASS. Physicalprinter/camerascan deferredT025."
+    },
+    {
+      "id": "AC-15",
+      "software": "pass",
+      "reused_A1_evidence": "SalesTest shortage/rollback/restore-once/warranty/number + old actual MySQL parallelstock/delete proof reused with exactsource hashes. Browser warrantyphone rejection,2unit sale/PDF and ownsale deletion; privateSQLite stock restored5.",
+      "evidence": "A1 independent source/condition-equal proof in reuse-proof.json; historical A1 FAIL remains preserved."
+    },
+    {
+      "id": "AC-16",
+      "software": "pass",
+      "reused_A1_evidence": "StockTest restock/snapshot/notexpense/overflow/rollback; browser restock4->6/currentcost1.2m. Original sale snapshot1.1m retained in SQLite proof.",
+      "evidence": "A1 independent source/condition-equal proof in reuse-proof.json; historical A1 FAIL remains preserved."
+    },
+    {
+      "id": "AC-17",
+      "software": "pass",
+      "reused_A1_evidence": "ReportsTest PRDsample/currentrevision; actual11Nov browser report exact2.6m/1.8m/800k/65k/735k at3widths; newMySQL ownperiod report exact247912/222/247690.",
+      "evidence": "A1 exactmoney/domain/report proof reused; fresh Chrome and actualEdge report11Nov sample2.6m/1.8m/800k/65k/735k passes. Report layout normal/big/negative retested."
+    },
+    {
+      "id": "AC-18",
+      "software": "pass",
+      "reused_A1_evidence": "ExpensesTest inclusive date filters/invaliddates/category/revocation + ReportsTest expense date effect; browser expense created15k and edit form3widths; empty/reversed report captures.",
+      "evidence": "A1 independent source/condition-equal proof in reuse-proof.json; historical A1 FAIL remains preserved."
+    },
+    {
+      "id": "AC-19",
+      "software": "pass",
+      "reused_A1_evidence": "SettingsTest category deactivate/historicalname + TtsTest inactive category oldnames; browser category create/edit form callback/captures3widths.",
+      "evidence": "A1 independent source/condition-equal proof in reuse-proof.json; historical A1 FAIL remains preserved."
+    },
+    {
+      "id": "AC-20",
+      "software": "pass",
+      "reused_A1_evidence": "UsersTest all actions, lastadmin protection; ConcurrentAdminTest4cases; Auth inactive/stale session/passwordreset; browser users create/edit/reset forms3widths actual bodyportalled callbacks.",
+      "evidence": "A1 independent source/condition-equal proof in reuse-proof.json; historical A1 FAIL remains preserved."
+    },
+    {
+      "id": "AC-21",
+      "software": "pass",
+      "reused_A1_evidence": "InvoiceTest stale correction/date/status/pickup + ReportsTest updatedtotals originaldate; browser id7 correction1.1m->1.125m, retained invoiced_on proof.",
+      "evidence": "A1 independent source/condition-equal proof in reuse-proof.json; historical A1 FAIL remains preserved."
+    },
+    {
+      "id": "AC-22",
+      "software": "pass",
+      "reused_A1_evidence": "InvoiceTest zero/unrepairable/servicecharge; DocumentsTest actualHTML contains Tidak dapat diperbaiki; report includes Selesai/Diambil invoice independent of flag.",
+      "evidence": "A1 independent source/condition-equal proof in reuse-proof.json; historical A1 FAIL remains preserved."
+    },
+    {
+      "id": "AC-23",
+      "software": "pass",
+      "reused_A1_evidence": "SettingsTest fieldlimits/rasterupload/spoof/failedsave retainsold; actualUIlogo uploaded120x40,10PDF text/raster embedding, headers/store/address/phone/terms.255unbrokenname/65535address+terms full checks.",
+      "evidence": "A1 independent source/condition-equal proof in reuse-proof.json; historical A1 FAIL remains preserved."
+    },
+    {
+      "id": "AC-24",
+      "software": "pass",
+      "reused_A1_evidence": "111primary captures37states3widths plus extra forms/states compared same approved mockup when one exists; no horizontaloverflow/JSerror. F01 report number link20px violates DESIGN/NFR07 touch contract. Fullpage fixednav at original viewport boundary is capture behavior; normalfold/scroll reviewed.",
+      "evidence": "A1 unaffected screens/forms reused; F01 independently closed by A2 chrome-results.json: all anchors>=44x44 at360/768; 4trusted taps belowtext navigate service/sale; eye/focus/Tab3width;9sample/large/negative layouts/no horizontaloverflow; same-approved-mockup visualreview. Desktop inline unchanged. Hardware parts deferredT025."
+    },
+    {
+      "id": "AC-25",
+      "software": "pass",
+      "reused_A1_evidence": "StickyTTS/invoice Save/Publish and input modes numeric/tel/16px/groupedmoney proven; label22px checkbox expands through44px label. F01 report anchors108.42x20px fail44x44. Actual Android keyboard deferred T025; qty formatting follows detailed§10.2 nominal-only separator rule.",
+      "evidence": "A1 unaffected screens/forms reused; F01 independently closed by A2 chrome-results.json: all anchors>=44x44 at360/768; 4trusted taps belowtext navigate service/sale; eye/focus/Tab3width;9sample/large/negative layouts/no horizontaloverflow; same-approved-mockup visualreview. Desktop inline unchanged. Hardware parts deferredT025."
+    },
+    {
+      "id": "AC-26",
+      "software": "pass",
+      "reused_A1_evidence": "ManifestHTTP TokoAnugerah/Anugerah standalone /mulai and192/512icons200 actual dimensions; software launcherroles/auth proved. Android installation/addressbar-free installedlaunch deferred T025.",
+      "evidence": "A1 manifestnames/icons/standalone + currenttrackedpublicbytes unchanged (supporting-source-proof.json); newEdge rolelauncherPASS. ActualAndroid installation deferredT025."
+    }
+  ],
+  "business_rules": [
+    {
+      "id": "BR-01",
+      "status": "pass",
+      "reused_A1_evidence": "DomainTest numbers/WITA/transaction/rollback + reusedT00216parallelMySQL sourceequal.",
+      "evidence": "A1 independent BR case remainsPASS; all PHP/domain/schema/test/route dependencies unchanged and evidencehashes verified by reuse-proof.json."
+    },
+    {
+      "id": "BR-02",
+      "status": "pass",
+      "reused_A1_evidence": "DomainTest phone table; TtsTest/TrackingTest; browserinvalid/normalized.",
+      "evidence": "A1 independent BR case remainsPASS; all PHP/domain/schema/test/route dependencies unchanged and evidencehashes verified by reuse-proof.json."
+    },
+    {
+      "id": "BR-03",
+      "status": "pass",
+      "reused_A1_evidence": "TtsTest fourrequired+activecategory; browserfourfieldvalidation retainsdata.",
+      "evidence": "A1 independent BR case remainsPASS; all PHP/domain/schema/test/route dependencies unchanged and evidencehashes verified by reuse-proof.json."
+    },
+    {
+      "id": "BR-04",
+      "status": "pass",
+      "reused_A1_evidence": "DomainTest exactstatusgraph + InvoiceTest allowed/rejected transitions/stale locks; browser assign/publish/collect.",
+      "evidence": "A1 independent BR case remainsPASS; all PHP/domain/schema/test/route dependencies unchanged and evidencehashes verified by reuse-proof.json."
+    },
+    {
+      "id": "BR-05",
+      "status": "pass",
+      "reused_A1_evidence": "InvoiceTest allstates/technician/rows/zero; browser validation then publish.",
+      "evidence": "A1 independent BR case remainsPASS; all PHP/domain/schema/test/route dependencies unchanged and evidencehashes verified by reuse-proof.json."
+    },
+    {
+      "id": "BR-06",
+      "status": "pass",
+      "reused_A1_evidence": "DomainTest/InvoiceTest exactinteger/bounds/Jasa0; browser1.1m andlarge9.223e18 exactstrings; noNumber conversion ofmoney.",
+      "evidence": "A1 independent BR case remainsPASS; all PHP/domain/schema/test/route dependencies unchanged and evidencehashes verified by reuse-proof.json."
+    },
+    {
+      "id": "BR-07",
+      "status": "pass",
+      "reused_A1_evidence": "DashboardTest WITA inclusivewindow; newMySQL service/sale duplicate andmidnightlockedread; actualUICallback mark.",
+      "evidence": "A1 independent BR case remainsPASS; all PHP/domain/schema/test/route dependencies unchanged and evidencehashes verified by reuse-proof.json."
+    },
+    {
+      "id": "BR-08",
+      "status": "pass",
+      "reused_A1_evidence": "InvoiceTest correctionretainsdate + ReportsTest; browserid7invoiced_on retains13Nov.",
+      "evidence": "A1 independent BR case remainsPASS; all PHP/domain/schema/test/route dependencies unchanged and evidencehashes verified by reuse-proof.json."
+    },
+    {
+      "id": "BR-09",
+      "status": "pass",
+      "reused_A1_evidence": "TtsTest/InvoiceTest/ReportsTest revokedroles;11actualtechHTTP403; nofinancialHTML.",
+      "evidence": "A1 independent BR case remainsPASS; all PHP/domain/schema/test/route dependencies unchanged and evidencehashes verified by reuse-proof.json."
+    },
+    {
+      "id": "BR-10",
+      "status": "pass",
+      "reused_A1_evidence": "DomainTest tokenunique64 + TrackingTest exactcase/noindex/noleaks; existingT016CItracking sourceequal + newMySQLPDFwrongcase404.",
+      "evidence": "A1 independent BR case remainsPASS; all PHP/domain/schema/test/route dependencies unchanged and evidencehashes verified by reuse-proof.json."
+    },
+    {
+      "id": "BR-11",
+      "status": "pass",
+      "reused_A1_evidence": "SalesTest shortage+wholetransactionrollback; T016actualparallelstock1twoadmins sourceequal retained; currentMySQLnewown fixtures no baselinechange.",
+      "evidence": "A1 independent BR case remainsPASS; all PHP/domain/schema/test/route dependencies unchanged and evidencehashes verified by reuse-proof.json."
+    },
+    {
+      "id": "BR-12",
+      "status": "pass",
+      "reused_A1_evidence": "SalesTest snapshots + StockTest pricechanges; browserrestock changedproduct1cost1.2m whileorig sale1cost1.1m.",
+      "evidence": "A1 independent BR case remainsPASS; all PHP/domain/schema/test/route dependencies unchanged and evidencehashes verified by reuse-proof.json."
+    },
+    {
+      "id": "BR-13",
+      "status": "pass",
+      "reused_A1_evidence": "StockTest notexpense and SalesTest deleteonce/restoreoverflow rollback; browserownsale5delete restoredstock5; priorindependentMySQLonce-delete proofsourceequal.",
+      "evidence": "A1 independent BR case remainsPASS; all PHP/domain/schema/test/route dependencies unchanged and evidencehashes verified by reuse-proof.json."
+    },
+    {
+      "id": "BR-14",
+      "status": "pass",
+      "reused_A1_evidence": "ReportsTest PRDsample/inclusive dates/correction/delete/negative/large/31daywindows; actualsampleUI + newMySQL exact period.",
+      "evidence": "A1 independent BR case remainsPASS; all PHP/domain/schema/test/route dependencies unchanged and evidencehashes verified by reuse-proof.json."
+    },
+    {
+      "id": "BR-15",
+      "status": "pass",
+      "reused_A1_evidence": "TtsTest oldinactivecategory/creator & Users/Auth/Settings tests; renderedexistinghistory retainsnames.",
+      "evidence": "A1 independent BR case remainsPASS; all PHP/domain/schema/test/route dependencies unchanged and evidencehashes verified by reuse-proof.json."
+    },
+    {
+      "id": "BR-16",
+      "status": "pass",
+      "reused_A1_evidence": "ExpensesTest categories Bensin/Konsumsi/Gaji/Lainnya amountpositive/datebounds; browsercreate15k/edit callback.",
+      "evidence": "A1 independent BR case remainsPASS; all PHP/domain/schema/test/route dependencies unchanged and evidencehashes verified by reuse-proof.json."
+    }
+  ],
+  "deferred_T025": [
+    "physical Android installation/shortcut/browserclose/keyboard/4G/60sec pilot",
+    "physical58mmprinter/readability/photo/physicalQRscan"
+  ],
+  "primary_evidence": [
+    "input-proof.json",
+    "bundle-delta.json",
+    "reuse-proof.json",
+    "supporting-source-proof.json",
+    "chrome-results.json",
+    "chrome-assets.json",
+    "edge-runtime.json",
+    "edge-results.json",
+    "edge-assets.json",
+    "edge-pdf-smoke.json",
+    "visual-review.json",
+    "final-freeze.json",
+    "resource-release.json"
+  ],
+  "historical_A1_verdict": "fail preserved; F01 now independently closed, oldartifact not rewritten",
+  "NFR04desktopEdge": {
+    "status": "pass",
+    "product": "Edg/157.0.4341.57",
+    "evidence": [
+      "edge-runtime.json",
+      "edge-results.json",
+      "edge-assets.json",
+      "edge-pdf-smoke.json"
+    ]
+  },
+  "not_run_current": [
+    "physical Android browser/device/keyboard/install/4G/60secpilot/printer/camera T025",
+    "productionVPSHTTPSFPMcron/offsitebackup T024-T025 not authorized"
+  ]
+}

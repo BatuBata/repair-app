@@ -1,0 +1,11 @@
+{
+  "pid": 24014,
+  "port": 8193,
+  "privateRuntime": "/private/tmp/t023-a2-3of99won",
+  "privateConfig": "/private/tmp/t023-a2-3of99won/bootstrap/config.php",
+  "privateDatabase": "/private/tmp/t023-a2-3of99won/fixture.sqlite",
+  "explicitUseStoragePath": "/private/tmp/t023-a2-3of99won/storage",
+  "privateSessionViewsCacheLogs": true,
+  "initialFontCacheEmpty": true,
+  "noMySQL": true
+}

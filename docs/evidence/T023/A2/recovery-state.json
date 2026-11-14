@@ -1,0 +1,20 @@
+{
+  "serverPid": 24014,
+  "serverAlive": true,
+  "ownedProfiles": [],
+  "edgeDirectoryEntries": [],
+  "HEAD": "d047f25ea31d703660212e4205b937053c92adcb",
+  "source": {
+    "files": 230,
+    "mismatches": []
+  },
+  "build": {
+    "files": 14,
+    "mismatches": []
+  },
+  "font": {
+    "files": 9,
+    "mismatches": []
+  },
+  "ownedServerCommand": "24014 php -S 127.0.0.1:8193 -t . /private/tmp/t023-a2-3of99won/router.php"
+}

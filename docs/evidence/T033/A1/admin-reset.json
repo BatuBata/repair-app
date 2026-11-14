@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "revision": "c106424b856a42f30b6887318dbb9cbc578c11ea",
+  "username": "admin",
+  "active_admin_credential_changed": true,
+  "password_hash_verified": true,
+  "remember_token_rotated": true,
+  "other_accounts_unchanged": true,
+  "noncredential_admin_fields_unchanged": true,
+  "private_handover_updated": true,
+  "private_handover_mode": "0600",
+  "secret_output": false
+}

@@ -1,0 +1,21 @@
+{
+  "task": "T032",
+  "scope": "Read-only review of private one-shot operator; not executed by tester",
+  "verdict": "pass",
+  "file": "/private/tmp/repair-app-reset-admin.php",
+  "checks": [
+    "Input validates JSON password string and40hex revision; on-disk release stamp must match pinned input.",
+    "Requires production, debugfalse, exactHTTPSAPP_URL, fixed demoDBname+DBusername before validation/write.",
+    "Shared Password::default used; one locked active roleadmin usernameadmin row only.",
+    "Hashcast used through User save; fresh hash verified and remembertoken rotated.",
+    "Only password,remember_token,updated_at permitted to differ; all other admin fields and other account rows compared inside transaction, rollback on mismatch.",
+    "No business table writes, seeder, .env access, credential default or persistent password command.",
+    "Private handover existing regular non-symlink0600 in0700directory; same-directory temp0600; rename atomic filesystem replacement; content/mode verified.",
+    "Output contains booleans/revision/phase/errorclass only; exception message suppressed and no password/hash/token output."
+  ],
+  "limitations": [
+    "DBtransaction and filesystem handover rename are sequential, not a single atomic transaction. If handover rename/verification fails after DBcommit, password is changed while private handover may remain old. Script exitsFAIL phaseprivate-handover-update; operator must reconcile using already-authorized input and not claim success.",
+    "Guard expects operator to supply the intended deployed commit; no test execution/mutation performed by reviewer."
+  ],
+  "summary": "PASS for narrow authorized single-admin reset operator; report success only after both credential and private handover checks complete."
+}

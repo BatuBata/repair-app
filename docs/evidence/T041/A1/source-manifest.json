@@ -1,0 +1,13 @@
+{
+  "base_revision": "89e1c5b739c9d7036b085ba8753ea1c0eae2d6d2",
+  "files": {
+    "PRD.md": "sha256:a6d5536d689221d1ea8c03c2fa02159a97abc46405658267731f3a7777288a9a",
+    "resources/views/livewire/dashboard/index.blade.php": "sha256:21064de143b6d51af6e1202e4172beba76322d35c5b0813fcf19f73165468f10",
+    "tests/Feature/Dashboard/DashboardTest.php": "sha256:1a0d182cc9a3e35caa27cbc6152954c49b21ca567bf9c04a8efb69115cc16a7f",
+    "tests/Feature/DashboardTest.php": "sha256:c94043486ee68c06c071a8a97505b4e3baddc513487075f392f95a7c03cd32e4"
+  },
+  "excluded_from_hash": [
+    "TODO.md",
+    "docs/evidence/T041/**"
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "task": "T038",
+  "attempt": "A1",
+  "role": "independent_tester",
+  "verdict": "pass",
+  "checked_revision": "sha256:aa4cc7ca6e9f37da95c412858144484b20f3b33a93fb433dbc7f2fbe7be9751c",
+  "inputs": {
+    "T037": "sha256:aa4cc7ca6e9f37da95c412858144484b20f3b33a93fb433dbc7f2fbe7be9751c"
+  },
+  "model": {
+    "requested": "gpt-6.1-terra",
+    "effective": "not_exposed_by_runtime"
+  },
+  "skills": {
+    "ponytail": {
+      "level": "full",
+      "source": "/Users/muzib/.codex/plugins/cache/ponytail/ponytail/5.3.3/skills/ponytail/SKILL.md"
+    },
+    "project_delivery": "/Users/muzib/.agents/skills/project-delivery/SKILL.md"
+  },
+  "environment": {
+    "browser": "Codex in-app Chromium",
+    "database": "/tmp/repair-search-select.sqlite synthetic fixture",
+    "production_or_demo_touched": false
+  },
+  "source_pin": {
+    "manifest": "docs/evidence/T037/A1/source-manifest.json",
+    "aggregate_expected": "aa4cc7ca6e9f37da95c412858144484b20f3b33a93fb433dbc7f2fbe7be9751c",
+    "aggregate_before": "aa4cc7ca6e9f37da95c412858144484b20f3b33a93fb433dbc7f2fbe7be9751c",
+    "aggregate_after": "aa4cc7ca6e9f37da95c412858144484b20f3b33a93fb433dbc7f2fbe7be9751c",
+    "workflow_changed": false
+  },
+  "commands": [
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php artisan test tests/Feature/SearchSelectTest.php tests/Feature/Sales/SalesTest.php tests/Feature/Tts/TtsTest.php tests/Feature/Expenses/ExpensesTest.php",
+      "result": "pass",
+      "tests": 43,
+      "assertions": 412
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php artisan view:cache",
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "result": "pass"
+    }
+  ],
+  "cases": [
+    {
+      "id": "scope-four-callers",
+      "expected": "Dynamic choices and fixed choices over three use search select; fixed choices up to three remain simple.",
+      "actual": "Four search-select callers found; only native select left is role with two options.",
+      "result": "pass"
+    },
+    {
+      "id": "case-insensitive-keyboard-mouse",
+      "expected": "Search ignores capitalization and supports keyboard and mouse selection.",
+      "actual": "KaBeL filtered Kabel HDMI; ArrowDown/Enter selected it and price became35.000; mouse selected Adaptor and price became125.000.",
+      "result": "pass"
+    },
+    {
+      "id": "escape-reopen-no-result",
+      "expected": "Escape closes without changing selection; reopening lists all options; no-match has a clear status.",
+      "actual": "Escape restored Kabel and aria-expanded=false; reopen listed three products; no-match displayed Tidak ada hasil.",
+      "result": "pass"
+    },
+    {
+      "id": "sales-row-reindex",
+      "expected": "Removing the first of two selected rows keeps the second row's item and price.",
+      "actual": "Remaining row showed Remote TV Universal,50.000,totalRp50.000.",
+      "result": "pass"
+    },
+    {
+      "id": "inactive-tts-category",
+      "expected": "An inactive legacy category remains displayed and can be retained.",
+      "actual": "Laptop (nonaktif) was selected and listed with active categories; unchanged save returned to detail showing Laptop.",
+      "result": "pass"
+    },
+    {
+      "id": "dynamic-and-fixed-callers",
+      "expected": "Technicians and four expense categories are searchable; two roles remain native.",
+      "actual": "BUDI selected Teknisi Budi; GAJ selected Gaji; role tag was SELECT with Teknisi/Admin and zero search-select components.",
+      "result": "pass"
+    },
+    {
+      "id": "accessibility-contract",
+      "expected": "Combobox/listbox/option/status roles and relationships expose current state.",
+      "actual": "Required ARIA attributes and roles present in source and actual DOM; browser console had zero warnings/errors.",
+      "result": "pass"
+    },
+    {
+      "id": "responsive-reuse",
+      "expected": "Popup remains usable at360,768,1280 without horizontal overflow.",
+      "actual": "Hash-pinned screenshots with exact dimensions were independently inspected and passed.",
+      "result": "pass",
+      "evidence": [
+        "docs/evidence/T037/A1/search-select-360.png",
+        "docs/evidence/T037/A1/search-select-768.png",
+        "docs/evidence/T037/A1/search-select-1280.png"
+      ]
+    }
+  ],
+  "reused_evidence": {
+    "producer": "T037/A1 implementer",
+    "reason": "Responsive screenshots are unchanged artifacts on the exact verified source snapshot; visual review was repeated independently.",
+    "hashes": {
+      "360": "f32eb7e1abaa09a53f1db3663c9fd529859cb48cfe15ccc0a64002e85fc10d95",
+      "768": "bea5ee51040360ba807c424959c84f741e52e277d01c20e8f3f80b55c15f8fae",
+      "1280": "1490592826961e00228303ec87889caf15c5c29d407c92ec46054f971e65c7db"
+    }
+  },
+  "not_run": [
+    "Full suite, Pint, PHPStan, and asset build were not repeated on the identical source; developer results were reviewed and an affected independent subset was run.",
+    "Physical Android touch and physical screen-reader session.",
+    "Demo server and production database checks, because current revisions must remain local."
+  ],
+  "side_effects": {
+    "implementation_changed": false,
+    "todo_or_prd_changed": false,
+    "workflow_changed": false,
+    "committed": false,
+    "pushed": false,
+    "merged": false,
+    "deployed": false
+  }
+}

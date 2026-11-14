@@ -1,0 +1,10 @@
+{
+  "task": "T040", "attempt": "A3", "verdict": "blocked", "classification": "browser_environment_and_incomplete_evidence",
+  "checked_revision": "sha256:aa571baa88e28a0840eaf209f41925ff85c024ac4a333b6d87737167cfc451dc",
+  "model_requested": "gpt-6.1-terra", "model_effective": "not_exposed_by_runtime",
+  "pin": {"individual_files": "11/11 match", "aggregate": "match", "workflow_diff": "empty"},
+  "browser": {"environment": "IAB hidden, local synthetic fixture", "visible_iab": "unsupported in subagent", "chrome": "create failed: Cannot read properties of undefined (reading 'timeoutMs')", "grid": "pass: 6 rows, 42 cells", "page_navigation_focus": "inconsistent; visible-browser retest required", "prev_next": "pass", "outside_escape_today": "pass", "arrows": "partial", "hidden_iso": "not verified: browser redacted value", "live_filter": "range validation observed; data filtering not verified", "form": "empty category and amount validation and focus observed; date save/error not verified", "viewport": "360x800, 768x900, 1280x900 inside; minimum button 44x44 CSS px"},
+  "reused_evidence": ["docs/evidence/T039/A2/README.md", "docs/evidence/T039/A2/source-manifest.json", "docs/evidence/T040/A2/README.md"],
+  "limitations": ["PageDown and PageUp require visible-browser retest", "min/max disabled boundaries not exercised", "all eight callers not independently runtime tested", "date save and date error focus not verified", "no physical device or screen reader test"],
+  "evidence": ["docs/evidence/T040/A3/README.md"]
+}

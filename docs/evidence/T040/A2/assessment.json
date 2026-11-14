@@ -1,0 +1,9 @@
+{
+ "task":"T040", "attempt":"A2", "verdict":"blocked", "reason":"environment: independent browser unavailable",
+ "checked_revision":"sha256:aa571baa88e28a0840eaf209f41925ff85c024ac4a333b6d87737167cfc451dc",
+ "base_commit":"89e1c5b739c9d7036b085ba8753ea1c0eae2d6d2", "source_manifest":"docs/evidence/T039/A2/source-manifest.json",
+ "source_verification":"11 file hashes and documented aggregate match", "model_requested":"gpt-6.1-terra", "model_effective":"not_exposed_by_runtime",
+ "cases":{"targeted_suite":"pass: 62 tests, 718 assertions", "source_callers_workflow":"pass: eight controls mapped; no raw date input; workflow unchanged", "developer_screenshots":"reviewed 360, 768, 1280; popup visible", "independent_browser":"blocked: IAB unavailable; Chrome tab creation and navigation fail with timeoutMs error", "A1_fail_retests_and_remaining_browser_acceptance":"not_run"},
+ "evidence":["docs/evidence/T040/A2/README.md", "docs/evidence/T039/A2/source-manifest.json", "docs/evidence/T039/A2/date-picker-360.png", "docs/evidence/T039/A2/date-picker-768.png", "docs/evidence/T039/A2/date-picker-1280.png"],
+ "limitations":"No independent browser interaction; no commit, push, merge, or deployment."
+}

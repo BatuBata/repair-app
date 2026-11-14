@@ -27,7 +27,7 @@
             @error('name')<p class="error-text" id="name-error">{{ $message }}</p>@enderror
         </div>
         <div>
-            <label class="field"><span>Alamat</span><textarea class="input" name="address" wire:model="address" maxlength="65535" aria-invalid="{{ $errors->has('address') ? 'true' : 'false' }}" aria-describedby="address-error"></textarea></label>
+            <label class="field"><span>Alamat</span><textarea class="input" name="address" wire:model="address" maxlength="65535" placeholder="Masukkan alamat toko" aria-invalid="{{ $errors->has('address') ? 'true' : 'false' }}" aria-describedby="address-error"></textarea></label>
             @error('address')<p class="error-text" id="address-error">{{ $message }}</p>@enderror
         </div>
         <div>
@@ -40,7 +40,7 @@
             @if($logo && in_array($logo->getMimeType(), ['image/jpeg', 'image/png', 'image/gif', 'image/webp'], true)) <img class="logo-preview" src="{{ $logo->temporaryUrl() }}" alt="Pratinjau logo yang dipilih">@elseif($logoUrl) <img class="logo-preview" src="{{ $logoUrl }}" alt="Logo toko saat ini">@endif
         </div>
         <div>
-            <label class="field"><span>Teks syarat garansi</span><textarea class="input" name="warranty_terms" wire:model="warranty_terms" maxlength="65535" aria-invalid="{{ $errors->has('warranty_terms') ? 'true' : 'false' }}" aria-describedby="warranty_terms-error"></textarea></label>
+            <label class="field"><span>Teks syarat garansi</span><textarea class="input" name="warranty_terms" wire:model="warranty_terms" maxlength="65535" placeholder="Masukkan syarat garansi" aria-invalid="{{ $errors->has('warranty_terms') ? 'true' : 'false' }}" aria-describedby="warranty_terms-error"></textarea></label>
             @error('warranty_terms')<p class="error-text" id="warranty_terms-error">{{ $message }}</p>@enderror
         </div>
         <div>

@@ -1,0 +1,20 @@
+{
+  "task": "T037",
+  "attempt": "A1",
+  "snapshot_sha256": "aa4cc7ca6e9f37da95c412858144484b20f3b33a93fb433dbc7f2fbe7be9751c",
+  "base_head": "89e1c5b739c9d7036b085ba8753ea1c0eae2d6d2",
+  "workflow_changed": false,
+  "committed": false,
+  "pushed": false,
+  "deployed": false,
+  "files": {
+    "resources/views/components/ui/search-select.blade.php": "92014cb069f4010c891da464c0ad052129514520ce196e3c5e15905fc62d70d8",
+    "resources/css/layout.css": "d690910d789f12e6ca632921f65973db346b4cf82927812370abdd6a3b3a35d5",
+    "resources/views/livewire/expenses/index.blade.php": "65d68d84b7603399c79454610b8c24b5ca9c0da7c379558e97e7aa4cd8617c83",
+    "resources/views/livewire/sales/form.blade.php": "7170123013c7becd5eb9144f4c7751be32fee5d4091c8a317807de979bf76cbb",
+    "resources/views/livewire/tts/detail.blade.php": "96e7b7f8415ff9004289d2514ebf50dbc3785161259edbc8fbeaf0a13512a858",
+    "resources/views/livewire/tts/form.blade.php": "fb239aa269897aaf0e70e6c7c1384967461750a35057c5c5f15cbcf3204269d7",
+    "tests/Feature/SearchSelectTest.php": "d2c1943e51bdf723955f1c657eb090d347bd99e0459e7f25a738b098c5ad83c4",
+    "PRD.md": "b22840149eae87ab129ccf30f1465c53a3c7e108e39a497411d77ab842c4d25a"
+  }
+}

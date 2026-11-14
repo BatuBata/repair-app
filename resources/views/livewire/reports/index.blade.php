@@ -14,7 +14,7 @@
         </div>
         <div class="report-dates">
             @foreach(['from' => 'Dari tanggal', 'to' => 'Sampai tanggal'] as $field => $label)
-                <label class="field"><span class="small muted">{{ $label }}</span><input class="input num" type="date" min="1000-01-01" max="9999-12-31" wire:model.live="{{ $field }}" aria-invalid="{{ $filterErrors->has($field) ? 'true' : 'false' }}" aria-describedby="report-{{ $field }}-error">@if($filterErrors->has($field))<span class="error-text" id="report-{{ $field }}-error" role="alert">{{ $filterErrors->first($field) }}</span>@endif</label>
+                <div><x-ui.date-picker :name="$field" :label="$label" :value="$field === 'from' ? $from : $to" wire:model.live="{{ $field }}" :invalid="$filterErrors->has($field)" :describedby="'report-'.$field.'-error'" />@if($filterErrors->has($field))<span class="error-text" id="report-{{ $field }}-error" role="alert">{{ $filterErrors->first($field) }}</span>@endif</div>
             @endforeach
         </div>
     </div>

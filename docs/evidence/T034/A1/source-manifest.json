@@ -1,0 +1,8 @@
+{
+  "task": "T034",
+  "base_revision": "89e1c5b739c9d7036b085ba8753ea1c0eae2d6d2",
+  "source_diff_sha256": "86e6efb12b28f812b425b2b6024bf0b9e3802c1e5e5d4c6c035325b0b556cd50",
+  "scope": "resources/views/** and tests/Feature/ScaffoldTest.php",
+  "workflow_diff_from_head": false,
+  "pushed": false
+}

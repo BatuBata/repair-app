@@ -1,0 +1,19 @@
+{
+  "tool": "Codex CUA in-app browser",
+  "url": "http://127.0.0.1:8198/t/<synthetic-token>",
+  "database": "/tmp/repair-search-select.sqlite (synthetic only)",
+  "viewports": [
+    {"width": 360, "height": 800, "states": ["diterima", "selesai", "batal"], "result": "pass"},
+    {"width": 768, "height": 900, "states": ["selesai"], "result": "pass"},
+    {"width": 1280, "height": 900, "states": ["selesai"], "result": "pass"}
+  ],
+  "checks": {
+    "hierarchy": "pass",
+    "progress_labels": "pass",
+    "invoice_and_warranty": "pass",
+    "pdf_action": "pass",
+    "responsive_layout": "pass",
+    "visible_horizontal_overflow": "none",
+    "customer_sensitive_data": "not present"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "task": "T034",
+  "attempt": "A2",
+  "base_revision": "89e1c5b739c9d7036b085ba8753ea1c0eae2d6d2",
+  "source_diff_sha256": "2d31e5b2b6091fa2d301907bbef59b3301cf3bdc347a15333a473f51a998aa07",
+  "scope": "resources/views/** and tests/Feature/ScaffoldTest.php",
+  "fix_for": "docs/evidence/T035/A1/assessment.json",
+  "workflow_diff_from_head": false,
+  "pushed": false
+}

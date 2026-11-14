@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "PR": "https://github.com/BatuBata/repair-app/pull/2",
+  "main_revision": "c106424b856a42f30b6887318dbb9cbc578c11ea",
+  "reviewed_candidate": "9cbc94981794caae2c018bb7f228fcbf8d27647c",
+  "git_tree_identical": true,
+  "tree": "b051a14649e75b7d02b2c49a6bc71493a1d50410",
+  "authorization": "D24 explicit password policy and single admin reset; ongoing D23main auto-deploy",
+  "main_run": "https://github.com/BatuBata/repair-app/actions/runs/43620442091",
+  "operator_sha256": "3d950ea6ffaa493c3cb0b4cd8cd68626de9deb720318e16805155b46d2a660ea",
+  "operator_review": "docs/evidence/T032/A1/operator-review.json",
+  "actual_credential_value_in_evidence": false,
+  "reset_executed": true,
+  "main_ci_job": 132524721100,
+  "main_deploy_job": 132525131144,
+  "reset_receipt": "admin-reset.json",
+  "operator_archived": "reset-admin-operator.php",
+  "independent_postdeploy": "postdeploy/assessment.json",
+  "private_one_shot_operator_removed": true,
+  "scope": "Password policy and existing admin credential only; no business fixtures/transactions; no plaintext password in Git/evidence"
+}

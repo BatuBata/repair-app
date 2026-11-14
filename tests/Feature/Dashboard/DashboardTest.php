@@ -101,7 +101,23 @@ class DashboardTest extends TestCase
         $this->sale(['warranty_contacted_at' => now()]);
         $this->sale(['warranty_until' => '2026-12-07']);
         $this->sale(['warranty_until' => '2026-12-12']);
-        Livewire::test(Index::class)->assertViewHas('reminders', fn ($v) => $v->isEmpty())->assertSee('Tidak ada garansi yang akan habis');
+        Livewire::test(Index::class)->assertViewHas('reminders', fn ($v) => $v->isEmpty())->assertSee('Tidak ada garansi yang perlu dihubungi');
+    }
+
+    public function test_dashboard_prioritizes_daily_actions_before_monthly_performance(): void
+    {
+        $html = $this->get('/')->assertOk()
+            ->assertSee('Perlu tindakan')
+            ->assertSee('Alur servis')
+            ->assertSee('Siap diserahkan')
+            ->assertSee('Garansi perlu dihubungi')
+            ->assertSee('Performa bulan ini')
+            ->getContent();
+
+        $this->assertLessThan(strpos($html, 'Alur servis'), strpos($html, 'Ringkasan hari ini'));
+        $this->assertLessThan(strpos($html, 'Siap diserahkan'), strpos($html, 'Alur servis'));
+        $this->assertLessThan(strpos($html, 'Performa bulan ini'), strpos($html, 'Siap diserahkan'));
+        $this->assertSame(1, substr_count($html, 'TTS masuk hari ini'));
     }
 
     public function test_manual_whatsapp_links_use_existing_encoded_template_and_historical_names(): void

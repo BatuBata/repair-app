@@ -2,10 +2,16 @@
 
 namespace Tests\Feature;
 
+use App\Enums\UserRole;
+use App\Livewire\Users\Index as UsersIndex;
+use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
+use Livewire\Livewire;
 use Tests\TestCase;
 
 class ScaffoldTest extends TestCase
@@ -48,5 +54,54 @@ class ScaffoldTest extends TestCase
         $pdf = Pdf::loadHTML('<h1>Contoh Anugerah</h1>')->setPaper('a5');
 
         $this->assertStringStartsWith('%PDF-', $pdf->output());
+    }
+
+    public function test_form_fields_show_placeholders_when_empty(): void
+    {
+        $html = Blade::render(<<<'BLADE'
+            <x-ui.field name="name" label="Nama" />
+            <x-ui.field name="phone" label="Telepon" type="tel" />
+            <x-ui.field name="password" label="Password baru" type="password" />
+            <x-ui.field name="quantity" label="Jumlah" type="number" />
+            <x-ui.field name="date" label="Tanggal" type="date" />
+        BLADE);
+
+        $this->assertStringContainsString('placeholder="Masukkan nama"', $html);
+        $this->assertStringContainsString('placeholder="08xxxxxxxxxx"', $html);
+        $this->assertStringContainsString('placeholder="Minimal 9 karakter"', $html);
+        $this->assertMatchesRegularExpression('/name="quantity"[^>]*placeholder="0"/', $html);
+        $this->assertStringNotContainsString('type="date" placeholder=', $html);
+
+        $this->get('/login')
+            ->assertOk()
+            ->assertSee('placeholder="Masukkan username"', false)
+            ->assertSee('placeholder="Masukkan password"', false);
+
+        $admin = User::factory()->create(['role' => UserRole::Admin, 'is_active' => true]);
+        Livewire::actingAs($admin)->test(UsersIndex::class)
+            ->call('create')
+            ->assertSeeHtml('placeholder="mis. Budi Santoso"')
+            ->assertSeeHtml('placeholder="mis. budi"')
+            ->assertSeeHtml('placeholder="Minimal 9 karakter"')
+            ->assertSeeHtml('placeholder="Ulangi password baru"');
+    }
+
+    public function test_static_view_icons_exist_in_the_shared_sprite(): void
+    {
+        $usedIcons = [];
+
+        foreach (File::allFiles(resource_path('views')) as $view) {
+            preg_match_all('/<x-ui\.icon\b[^>]*\bname="([a-z0-9-]+)"/', $view->getContents(), $matches);
+            $usedIcons = [...$usedIcons, ...$matches[1]];
+        }
+
+        $sprite = File::get(public_path('icons/lucide.svg'));
+        $missingIcons = array_values(array_filter(
+            array_unique($usedIcons),
+            fn (string $icon): bool => ! str_contains($sprite, 'id="i-'.$icon.'"'),
+        ));
+
+        $this->assertNotEmpty($usedIcons);
+        $this->assertSame([], $missingIcons, 'Ikon tidak tersedia di sprite Lucide: '.implode(', ', $missingIcons));
     }
 }

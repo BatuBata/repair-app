@@ -1,0 +1,9 @@
+{
+  "task": "T032",
+  "revision": "9cbc94981794caae2c018bb7f228fcbf8d27647c",
+  "worker": "/root/cicd_qa",
+  "model_requested": "gpt-6.1-sol",
+  "model_effective": null,
+  "Ponytail": "full",
+  "scope": "Independent policy and integration review; no live credential mutation"
+}

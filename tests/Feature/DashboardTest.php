@@ -24,7 +24,7 @@ class DashboardTest extends TestCase
     public function test_admin_gets_real_dashboard_and_empty_states(): void
     {
         $this->actingAs(User::factory()->create(['role' => 'admin', 'email_verified_at' => null]));
-        $this->get('/')->assertOk()->assertSee('Beranda')->assertSee('Omzet hari ini')->assertSee('Rp0')->assertSee('Tidak ada garansi yang akan habis')->assertDontSee('Kelola pengguna');
+        $this->get('/')->assertOk()->assertSee('Beranda')->assertSee('Omzet hari ini')->assertSee('Rp0')->assertSee('Tidak ada garansi yang perlu dihubungi')->assertDontSee('Kelola pengguna');
         $this->get('/dashboard')->assertRedirect('/');
     }
 }

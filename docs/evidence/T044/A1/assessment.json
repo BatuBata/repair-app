@@ -1,0 +1,22 @@
+{
+  "verdict": "PASS",
+  "candidate": {
+    "head_initial_and_final": "89e1c5b739c9d7036b085ba8753ea1c0eae2d6d2",
+    "sha256_initial_and_final": {
+      "PRD.md": "b69b7999bf79c57b610b3df71a6b0b3dd47ac07bbb6dd16037ac125b0b318b17",
+      "resources/views/tracking/show.blade.php": "cad03b85556bfaa69edb9f6133a61b5fa4d41116e3bf144b60076a779f324718",
+      "tests/Feature/Tracking/TrackingTest.php": "7d11656096757305bb9415f76ba03d9882c9a3e0816d279c5eccf0543d83059f"
+    }
+  },
+  "checks": {
+    "tracking_test": "PASS: PHP 8.3 artisan test tests/Feature/Tracking/TrackingTest.php; 2 tests, 48 assertions, SQLite in-memory",
+    "view_cache": "PASS: PHP 8.3 artisan view:cache",
+    "build": "PASS: npm run build, 25 modules; optional fontaine and runtime font resolution warnings",
+    "diff": "PASS: git diff --check; no app, routes, dependency or workflow diff",
+    "privacy_and_state_audit": "PASS: source and feature tests; token exact case-sensitive, noindex, private no-store; no customer identity, cost or internal state in page text",
+    "browser": "PASS: CUA with synthetic SQLite; received, invoiced, cancelled at 360, 768, 1280; no horizontal overflow, long complaint and item wrap, large price legible, PDF height 44px and keyboard focus visible"
+  },
+  "findings": [],
+  "not_tested": ["Dikerjakan, Diambil and unrepairable were checked by source and feature tests, not separately in browser", "PDF download and contents were not exercised"],
+  "deployment": "none"
+}

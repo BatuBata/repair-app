@@ -1,0 +1,20 @@
+{
+  "task": "T040", "attempt": "A1", "verdict": "fail",
+  "checked_revision": "sha256:786a43d792389a26cf259ab561b0b9297f7f29d6a7a1b7ef252430c564db39a3",
+  "base_commit": "89e1c5b739c9d7036b085ba8753ea1c0eae2d6d2",
+  "source_manifest": "docs/evidence/T039/A1/source-manifest.json",
+  "manifest_file_sha256": "716f619713086a431f6078067b77779a855d52123d21e55f345c65fe034d6d7e",
+  "source_verification": "11/11 listed file hashes match; aggregate revision algorithm not documented",
+  "model_requested": "gpt-6.1-terra", "model_effective": "not_exposed_by_runtime",
+  "cases": {
+    "source_callers_and_workflow": "pass: eight mapped, no raw date input, workflow diff empty",
+    "feature_subset": "pass: 62 tests, 716 assertions",
+    "keyboard_pagedown_focus": "fail: November to December moves focus to body",
+    "grid_semantics": "fail: gridcells have no row container",
+    "arrow_right_enter_pageup_today_escape": "pass for observed expense filter scenario",
+    "viewport": "pass for expense filter at 360x800, 768x900, 1280x900; minimum button 44x44 at 360",
+    "remaining_required_cases": "not_run: min/max boundaries, month buttons, outside click, other arrows, all runtime callers, form save/error focus, hidden value and filter results"
+  },
+  "evidence": ["docs/evidence/T040/A1/README.md", "docs/evidence/T039/A1/date-picker-360.png"],
+  "limitations": "Browser fixture synthetic; no physical device or screen reader. No new screenshot. No commit, push, merge or deployment."
+}

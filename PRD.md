@@ -634,6 +634,8 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 | D-21 | Khusus deployment demo D-20, gunakan MariaDB 10.11 existing dan uji kompatibilitas; kebutuhan awal MySQL 8 tetap sebagai riwayat | Menggunakan layanan yang tersedia tanpa mengganti database aplikasi lain | User | Disetujui user 14 Nov 2026 melalui jawaban async call_92a3f86afce040759f23a9968dab36d4 |
 | D-22 | Khusus demo D-20, backup ditunda: tanpa backup pra-migrasi, backup terjadwal/offsite maupun uji restore sebelum demo dibuka; NFR-05 tetap untuk pemakaian produksi selanjutnya | Instruksi user: "ga usah pake backup dulu"; target demo sudah diverifikasi kosong sebelum migrasi | User | Disetujui user 14 Nov 2026; pengecualian sementara demo, tidak menyatakan backup/restore PASS |
 
+| D-23 | GitHub Actions menjalankan CI pada push/PR; push ke `main` yang lolos tes otomatis memperbarui demo D-20 dengan artefak commit yang sama. Setup SSH deploy terbatas dan GitHub Secrets diizinkan oleh permintaan user. Environment, APP_KEY, data dan unggahan server dipertahankan; backup tetap ditunda D-22 | User meminta auto-update server ketika push beserta CI/CD tester | User | Disetujui user 14 Nov 2026; izin deployment berkelanjutan hanya demo ini, bukan reset data atau perubahan aplikasi lain |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

@@ -1,0 +1,29 @@
+{
+  "Ponytail": "full",
+  "local_archive_cases": {
+    "status": "PASS",
+    "count": 12
+  },
+  "linux_server_disposable_safety_cases": {
+    "status": "PASS",
+    "count": 20,
+    "command": "python3 /home/muzib/deploy-demo-repair-app/cicd-candidate/ci-checks.py",
+    "scope": "temporary fixture only, no application/database access"
+  },
+  "real_linux_group_probe": {
+    "status": "PASS",
+    "directory": "2750 muzib:www-data",
+    "file": "640 muzib:www-data",
+    "cleanup": "own probe removed"
+  },
+  "actionlint": {
+    "version": "1.7.12",
+    "status": "PASS",
+    "checksum_verified": true,
+    "shellcheck": "not installed, bash syntax and behavioral tests used"
+  },
+  "pint_changed_test": "PASS",
+  "bash_syntax": "PASS",
+  "github_full_ci": "NOT_RUN until main activation after independent review",
+  "source_manifest_sha256": "ed3c672c42f0b904b46e6e12ff3f7bf52d8c5d40c8fca4c38ada45c7682e9b1f"
+}

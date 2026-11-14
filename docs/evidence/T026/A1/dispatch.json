@@ -1,0 +1,9 @@
+{
+  "task": "T026",
+  "worker": "/root",
+  "Ponytail": "full",
+  "model_requested": "gpt-6.1-sol",
+  "model_effective": "gpt-6.1-sol",
+  "model_source": "developer current-model receipt",
+  "scope": "CI/CD demo D23, independent QA before main, no production data reset"
+}

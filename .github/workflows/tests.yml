@@ -1,9 +1,9 @@
-name: tests
+name: CI / CD
 
 on:
   push:
     branches:
-      - main
+      - '**'
   pull_request:
 
 permissions:
@@ -12,9 +12,26 @@ permissions:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      mariadb:
+        image: mariadb:10.11
+        env:
+          MARIADB_ROOT_PASSWORD: ci-only-password
+          MARIADB_DATABASE: repair_app_test
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="healthcheck.sh --connect --innodb_initialized"
+          --health-interval=10s --health-timeout=5s --health-retries=10
     env:
       DB_CONNECTION: sqlite
       DB_DATABASE: ":memory:"
+      DB_HOST: 127.0.0.1
+      DB_PORT: 3306
+      DB_USERNAME: root
+      DB_PASSWORD: ci-only-password
+      ADMIN_INITIAL_PASSWORD: Synthetic-CI-Only-Password!123
 
     steps:
       - name: Checkout code
@@ -26,6 +43,7 @@ jobs:
         uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # v2
         with:
           php-version: '8.3'
+          extensions: pdo_mysql, pdo_sqlite, mbstring, intl, gd, dom, zip
           tools: composer:v2
           coverage: none
 
@@ -35,7 +53,90 @@ jobs:
           node-version: '22'
 
       - name: Setup Application
-        run: composer setup
+        run: |
+          composer install --no-interaction --prefer-dist
+          cp .env.example .env
+          php artisan key:generate
+          npm ci
+          npm run build
 
       - name: Run CI Checks
+        env:
+          RUN_MYSQL_DOMAIN: '1'
         run: composer ci:check
+
+      - name: Test deployment safety
+        run: python3 deploy/ci-checks.py
+
+      - name: Package production release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+          bash deploy/ci-package.sh "$GITHUB_SHA" "$RUNNER_TEMP/release.tar.gz"
+
+      - name: Upload tested release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: release-${{ github.sha }}
+          path: ${{ runner.temp }}/release.tar.gz
+          if-no-files-found: error
+          retention-days: 3
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: ci
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    concurrency:
+      group: demo-repair-app-deployment
+      cancel-in-progress: false
+    environment:
+      name: demo
+      url: https://demo-repair-app.scannara.asia
+    steps:
+      - name: Skip superseded commits
+        id: latest
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          latest=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/main" --jq .object.sha)
+          if [ "$latest" = "$GITHUB_SHA" ]; then
+            echo "deploy=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "A newer main commit exists; skipping this deployment."
+          fi
+
+      - name: Download tested release
+        if: steps.latest.outputs.deploy == 'true'
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: release-${{ github.sha }}
+          path: ${{ runner.temp }}/release
+
+      - name: Deploy demo and check HTTPS
+        if: steps.latest.outputs.deploy == 'true'
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEMO_DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEMO_DEPLOY_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          umask 077
+          ssh_dir=$(mktemp -d "$RUNNER_TEMP/demo-ssh.XXXXXX")
+          trap 'rm -rf -- "$ssh_dir"' EXIT
+          test -n "$DEPLOY_SSH_KEY" && test -n "$DEPLOY_KNOWN_HOSTS"
+          printf '%s\n' "$DEPLOY_SSH_KEY" > "$ssh_dir/key"
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > "$ssh_dir/known_hosts"
+          unset DEPLOY_SSH_KEY DEPLOY_KNOWN_HOSTS
+          archive="$RUNNER_TEMP/release/release.tar.gz"
+          digest=$(sha256sum "$archive" | cut -d ' ' -f 1)
+          ssh -T -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes \
+            -o UserKnownHostsFile="$ssh_dir/known_hosts" -o ConnectTimeout=15 \
+            -o ServerAliveInterval=15 -o ServerAliveCountMax=4 -i "$ssh_dir/key" \
+            muzib@202.10.40.165 "deploy $GITHUB_SHA $digest" < "$archive"
+          for path in up login; do
+            status=$(curl --fail --silent --show-error --retry 3 --retry-all-errors \
+              --output /dev/null --write-out '%{http_code}' \
+              "https://demo-repair-app.scannara.asia/$path")
+            test "$status" = 200
+          done

@@ -1,0 +1,21 @@
+{
+  "Ponytail": "full",
+  "model_requested": "gpt-6.1-sol",
+  "model_effective": "gpt-6.1-sol",
+  "pint_changed_php": "PASS",
+  "targeted_phpunit": {
+    "passed": 30,
+    "assertions": 423,
+    "duration_ms": 1569,
+    "suites": [
+      "PasswordPolicyTest",
+      "ChangePasswordTest",
+      "UsersTest",
+      "DomainTest",
+      "SeederCacheTest"
+    ]
+  },
+  "rule": "Password::min(9) for all environments, no composition/uncompromised checks",
+  "preserved": "current-password, confirmation, role/active-account checks, hash cast, no seeder/default credential added",
+  "not_run": "actual GitHub full CI and demo reset pending"
+}

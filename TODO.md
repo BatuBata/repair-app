@@ -49,6 +49,10 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T027 | Integrasi konfigurasi CI/CD dengan main | integrator / 6.1-sol | medium / high | T026 | — | done |
 | T028 | QA independen hasil integrasi CI/CD | tester / 6.1-sol | medium / high | T027 | — | done |
 | T029 | Aktifkan dan verifikasi auto-deploy GitHub nyata | deployer / 6.1-sol | medium / high | T027, T028 | — | done |
+| T030 | Aturan password9karakter dan petunjuk seragam | developer / 6.1-sol | medium / high | — | — | done |
+| T031 | Integrasi perubahan password | integrator / 6.1-sol | medium / high | T030 | — | running |
+| T032 | QA independen aturan password | tester / 6.1-sol | medium / high | T031 | — | pending |
+| T033 | Deploy aturan dan reset hanya admin demo | deployer / 6.1-sol | medium / high | T031, T032 | — | pending |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -124,16 +128,21 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:ff5952bd49ba433f78251c36e1dc1039f1262aaf1e6f9e5b769cae261af5a816",
+    "prd_revision": "sha256:9e4177eaae6bf1927a77626dcab5944bcae6e6f6f386abe880442bc6e8433cc5",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
-      "state": "stopped",
-      "allowed_tasks": [],
-      "stop_after_tasks": [
-        "T029"
+      "state": "running",
+      "allowed_tasks": [
+        "T030",
+        "T031",
+        "T032",
+        "T033"
       ],
-      "source_ref": "D23 setup T026-T029 completed14Nov2026 with actual main CI and auto-deploy43564251943 plus independent livePASS. Stop further agent dispatch at T029 boundary. Ongoing authorized main-push CI/CD policy remains active; T025 physical/fullUAT remains blocked.",
+      "stop_after_tasks": [
+        "T033"
+      ],
+      "source_ref": "User15Nov2026 D24 requests9char simplepassword and reset admin demo to supplied value; implement/review and deploy under ongoing D23. T025 physical UAT remains blocked.",
       "phase_history": [
         {
           "state": "paused",
@@ -403,6 +412,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
             "T029"
           ],
           "source_ref": "User14Nov2026 new instruction D23: implement, independently review, integrate and prove GitHub CI/CD for demo. T025 physical/fullUAT remains blocked, not resumed."
+        },
+        {
+          "state": "stopped",
+          "allowed_tasks": [],
+          "stop_after_tasks": [
+            "T029"
+          ],
+          "source_ref": "D23 setup T026-T029 completed14Nov2026 with actual main CI and auto-deploy43564251943 plus independent livePASS. Stop further agent dispatch at T029 boundary. Ongoing authorized main-push CI/CD policy remains active; T025 physical/fullUAT remains blocked."
         }
       ]
     },
@@ -448,7 +465,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "push_authorized": true,
       "source_ref": "Instruksi user 12 Nov 2026: push ke GitHub BatuBata/repair-app, setiap pekerjaan selesai buat commit dan push",
       "policy": "Commit pekerjaan selesai dan push branch task/checkpoint setelah periksa perubahan; merge ke main tetap setelah QA/review relevan; tanpa force-push. Kandidat blocked disimpan sebagai checkpoint, bukan fitur diterima.",
-      "coordination_branch": "codex/github-cicd"
+      "coordination_branch": "codex/password-nine-characters"
     },
     "browser_isolation_policy": {
       "source_ref": "Coordinator13Nov2026 verified existing scripts/lib/cdp.mjs Browser.launch: fresh headless Chrome process, unique user-data-dir and remote-debugging-port0; T010 uses private TASTE_SKILL_TMP.",
@@ -4245,6 +4262,212 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "summary": "Owner explicitly approved PR1 main merge after auto-review rejection. Main CI PASS182tests1956assertions, MariaDB concurrency/Pint/PHPStan/build and20safetycases. Exact same-run artifact14101283381 uploaded/downloaded and auto-deployed with restricted SSH. Independent postdeploy PASS: server revision+receipt exactb52a,HTTPSup/login200TLSverified,no maintenance,private paths denied. Private environment/uploads preserved by receiver; no business fixtures/seed/reset. Backups deferredD22; physical/fullUAT T025 remains blocked."
       },
       "independent_assessment_sha256": "84bd9d9af2498d3b88dc6657e30a8c0e113c530f01f563f04f55c73a271a91ca"
+    },
+    {
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-24",
+        "PRD.md §14.3"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "high",
+      "uncertainty": "low",
+      "triage_reason": "Shared password validation affects create/reset/change/seed and existing admin credential; scope must preserve confirmation/current-password/auth/rate-limit and other accounts.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Sol for auth validation and credential change.",
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "id": "T030",
+      "title": "Aturan password9karakter dan petunjuk seragam",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "backend",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "app/Providers/AppServiceProvider.php",
+        "resources/views/livewire/profile/change-password.blade.php",
+        "resources/views/livewire/users/index.blade.php",
+        "tests/Feature/Auth/PasswordPolicyTest.php",
+        "tests/Feature/Profile/ChangePasswordTest.php",
+        "docs/PANDUAN.md",
+        "docs/evidence/T030/**"
+      ],
+      "acceptance_criteria": [
+        "Password9digit/lowercase accepted in production/testing;8chars rejected.",
+        "Create/reset/change/seed use same shared rule; confirmation/current-password checks retained; UI says9characters.",
+        "No password hardcoded to config/seeder or fixture copied from actual account."
+      ],
+      "verification_plan": [
+        "Targeted unit/feature and independent source review; actual GitHub CI/CD plus limited live credential verification."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": "gpt-6.1-sol",
+          "dispatch_ref": "user:D24 root implementation",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/T030/A1/checks.json"
+        }
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T030/A1/source-manifest.json",
+        "revision": "sha256:2138dc75cc46dabc3d92e40399b6fac5dccfb2103bcbe8dd8fb16cae32e13e98",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T030/A1/checks.json"
+        ],
+        "summary": "Shared9character rule and both UI hints updated;30 targeted tests423assertions andPintPASS. No actual account credential in Git or seeded fallback."
+      }
+    },
+    {
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-24",
+        "PRD.md §14.3"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "high",
+      "uncertainty": "low",
+      "triage_reason": "Shared password validation affects create/reset/change/seed and existing admin credential; scope must preserve confirmation/current-password/auth/rate-limit and other accounts.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Sol for auth validation and credential change.",
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "id": "T031",
+      "title": "Integrasi perubahan password",
+      "kind": "integration",
+      "responsible_role": "integrator",
+      "work_type": "backend",
+      "depends_on": {
+        "hard": [
+          "T030"
+        ],
+        "contracts": []
+      },
+      "write_scope": [
+        "app/**",
+        "resources/**",
+        "tests/**",
+        "docs/**"
+      ],
+      "acceptance_criteria": [
+        "Candidate includes currentmain and password patch; immutable revision recorded."
+      ],
+      "verification_plan": [
+        "Targeted unit/feature and independent source review; actual GitHub CI/CD plus limited live credential verification."
+      ],
+      "status": "running",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": "gpt-6.1-sol",
+          "dispatch_ref": "coordinator D24 candidate integration",
+          "outcome": "running",
+          "receipt_ref": "docs/evidence/T030/A1/source-manifest.json"
+        }
+      ]
+    },
+    {
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-24",
+        "PRD.md §14.3"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "high",
+      "uncertainty": "low",
+      "triage_reason": "Shared password validation affects create/reset/change/seed and existing admin credential; scope must preserve confirmation/current-password/auth/rate-limit and other accounts.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Sol for auth validation and credential change.",
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "id": "T032",
+      "title": "QA independen aturan password",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "backend",
+      "depends_on": {
+        "hard": [
+          "T031"
+        ],
+        "contracts": []
+      },
+      "write_scope": [
+        "docs/evidence/T032/**"
+      ],
+      "acceptance_criteria": [
+        "Review shared validation and all callers; relevant tests PASS, no hidden credential defaults or auth regressions."
+      ],
+      "verification_plan": [
+        "Targeted unit/feature and independent source review; actual GitHub CI/CD plus limited live credential verification."
+      ],
+      "status": "pending",
+      "qa_for": "T031"
+    },
+    {
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-24",
+        "PRD.md §14.3"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "high",
+      "uncertainty": "low",
+      "triage_reason": "Shared password validation affects create/reset/change/seed and existing admin credential; scope must preserve confirmation/current-password/auth/rate-limit and other accounts.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Sol for auth validation and credential change.",
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "id": "T033",
+      "title": "Deploy aturan dan reset hanya admin demo",
+      "kind": "deployment",
+      "responsible_role": "deployer",
+      "work_type": "release",
+      "depends_on": {
+        "hard": [
+          "T031",
+          "T032"
+        ],
+        "contracts": []
+      },
+      "write_scope": [
+        "docs/evidence/T033/**"
+      ],
+      "acceptance_criteria": [
+        "CI/deploymainPASS and live source marker exact release; shared rule accepts nine-character numeric password.",
+        "Only active usernameadmin credential reset to owner value; private handoverfile updated, remembertoken rotated, other account/business data unchanged; login verified without logging secret."
+      ],
+      "verification_plan": [
+        "Targeted unit/feature and independent source review; actual GitHub CI/CD plus limited live credential verification."
+      ],
+      "status": "pending",
+      "deployment": {
+        "environment": "production",
+        "source_task": "T031",
+        "source_revision": null,
+        "authorization_ref": "autodeploy-demo-2026-11-14"
+      }
     }
   ]
 }

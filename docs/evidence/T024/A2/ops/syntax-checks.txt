@@ -1,0 +1,6 @@
+bash -n bootstrap.sh: exit0
+bash -n backup-mariadb.sh: exit0
+bash -n renewal-hook.sh: exit0
+bash -n finalize-host.sh: exit0
+bash -n single bounded sudo command: exit0
+ShellCheck NOT_RUN; executable unavailable

@@ -1,0 +1,27 @@
+{
+    "status": "PASS",
+    "expected": {
+        "service": "8000",
+        "sales": "81000",
+        "revenue": "89000",
+        "cost": "50500",
+        "gross": "38500",
+        "expenses": "1000",
+        "net": "37500",
+        "restock": "2000"
+    },
+    "actual": {
+        "service": "8000",
+        "sales": "81000",
+        "revenue": "89000",
+        "cost": "50500",
+        "gross": "38500",
+        "expenses": "1000",
+        "net": "37500",
+        "restock": "2000"
+    },
+    "rows": 5,
+    "daily_amount": "89000",
+    "initial_probe_failure": "Harness expected cost1500 for jasa, but model explicitly normalizes jasa cost to0; initial FAIL preserved, no fixture\/race rerun.",
+    "correction": "Read-only proof on existing committed synthetic fixtures."
+}

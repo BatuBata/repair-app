@@ -1,0 +1,11 @@
+{
+    "status": "PASS",
+    "only_owned_instance_shutdown": true,
+    "owned_pid": 564787,
+    "owned_process_absent": true,
+    "main_service_pid_before": 851,
+    "main_service_pid_after": 851,
+    "main_pid_unchanged": true,
+    "private_datadir_and_fixtures_retained": true,
+    "backup_restore": "SKIPPED by user D-22"
+}

@@ -1,6 +1,6 @@
 {
   "timestamp": "2026-11-14T01:38:10.710065+00:00",
-  "phase": "operator_bundle_ready_waiting_private_input",
+  "phase": "host_preparation_applied_final_renewal_check_failed",
   "source_revision": "d047f25ea31d703660212e4205b937053c92adcb",
   "qa_revision": "c07b6c6a4245b86a594ba15e44a3a44bca31cdf0",
   "authorization_ref": "deploy-demo-2026-11-14",
@@ -104,5 +104,27 @@
     "known_host_change": "php, phar, phar.phar alternatives auto to manual preserving existing8.2 executable values; documented in reviewed README",
     "recovery": "HTTP invalid config disables only new demo link; TLS invalid config restores validated HTTP503; mocked independently"
   },
-  "owner_request": "Async question sent with exact reviewed root staging/bootstrap commands and private editor path; sudo password never requested in chat."
+  "owner_request": "User asks agent handle setup directly. Read-only checks via SSH and existing iTerm both reported sudo password required. Coordinator launched same reviewed root staging/bootstrap commands through iTerm; confirmed sudo prompt visible. Owner was asked only to type sudo secret privately in iTerm; no terminal secrets printed.",
+  "access_recheck": {
+    "at": "2026-11-14T02:02:13.579751+00:00",
+    "ssh_user": "muzib",
+    "ssh_sudo_noninteractive": "password_required",
+    "existing_iterm_verified_host": "202.10.40.165",
+    "iterm_sudo_noninteractive": "password_required",
+    "bootstrap_result": "pending_sudo_prompt",
+    "runner": "/home/muzib/deploy-demo-repair-app/run-reviewed-bootstrap.sh",
+    "runner_syntax": "bash -n PASS",
+    "reviewed_host_manifest": "4b0484e966f9cb18ec20b7e4d91e2e0945f638242f45abcf9b41a1a7eb8404ac"
+  },
+  "actual_host_result": {
+    "at": "2026-11-14T02:08:25.132148+00:00",
+    "first_failure": "Stale Sury APT index; all12packageURLs404, no PHP8.3 or targetpaths created; alternatives8.2 pinnedmanual",
+    "recovery": "Refresh only existing php.list metadata; repeated simulation0upgraded12new0removed; reran unchanged verified bootstrap after absence checks",
+    "php": "8.3.36 installed; FPMactive; globalCLIstill8.2",
+    "ssl": "LetsEncrypt certificate issued; expires2027-02-12; external curl verifiedTLS with no insecureflag",
+    "http": "301 to HTTPS",
+    "https": "503 maintenance with expectedsecurityheaders",
+    "final_check_failure": "Certbot2.1.0 rejects --run-deploy-hooks; SSL itself active, renewal dry-run notyetproven atfailure",
+    "next": "A2 adapt operator verification to Certbot2.1 and independently review; keep A1 immutableops"
+  }
 }

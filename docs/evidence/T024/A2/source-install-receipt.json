@@ -1,0 +1,89 @@
+{
+  "attempt": "T024-A2",
+  "application_revision": "d047f25ea31d703660212e4205b937053c92adcb",
+  "qa_revision": "c07b6c6a4245b86a594ba15e44a3a44bca31cdf0",
+  "model_requested": "gpt-6.1-sol",
+  "model_effective": null,
+  "target": "muzib@202.10.40.165:/var/www/demo-repair-app/current",
+  "source_install": {
+    "status": "PASS",
+    "git_exact_clean": true,
+    "frozen_source": 230,
+    "frozen_build": 14,
+    "frozen_fonts": 9,
+    "unique_frozen_hashes": 253,
+    "mismatches": 0
+  },
+  "composer": {
+    "status": "PASS",
+    "php": "8.3.36",
+    "composer": "2.7.8",
+    "installs": 109,
+    "updates": 0,
+    "removals": 0,
+    "dev_dependencies": false,
+    "lock_changed": false,
+    "platform_check": "PASS",
+    "npm_rebuild": "NOT_RUN"
+  },
+  "permissions": {
+    "status": "BLOCKED_PENDING_NARROW_ROOT_CORRECTION",
+    "runtime_named_and_default_ACLs": "configured for muzib and www-data",
+    "actual_current_mode": "0750 expected2750",
+    "vendor_group": "muzib expectedwww-data",
+    "root_finalization_plan": "ROOT-FINALIZE.md",
+    "actual_fpm_read_write_tests": "NOT_RUN"
+  },
+  "private_environment": {
+    "sync": "PASS atomic0640 afterownerfilledclosed",
+    "target_validation": "PASS",
+    "secrets_output": false,
+    "APP_KEY_generation": "NOT_RUN"
+  },
+  "database_readonly_preflight": {
+    "environment_sync": "PASS",
+    "fixed_target_validation": "PASS",
+    "required_private_fields_present": true,
+    "existing_app_key_retained": false,
+    "key_generation": "NOT_RUN",
+    "mode": "0640",
+    "database_writes": false,
+    "server": {
+      "version": "10.11.14-MariaDB-0+deb12u2-log",
+      "authenticated_account": "new_gym@localhost",
+      "sql_mode": "STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
+    },
+    "database": "demo_repair_app",
+    "table_count": 0,
+    "tables": [],
+    "verdict": "PASS_EMPTY_TARGET"
+  },
+  "prohibited_actions_performed": {
+    "database_creation": false,
+    "database_grants": false,
+    "database_writes": false,
+    "key_generation": false,
+    "migrations": false,
+    "seed": false,
+    "artisan_up": false,
+    "pending_marker_removal": false,
+    "cron_install": false
+  },
+  "gates": [
+    "narrowrootgroupSGIDfix +actualFPMACLproof",
+    "APP_KEYonce +migration/seed assignment",
+    "MariaDBrestore/concurrencycompatibility",
+    "backupoffsiteuploadsprivateconfig +cron/monitoring",
+    "T025live+physicalacceptance"
+  ],
+  "isolated_db_tools": "present; no instance initialized or started; help command returnedexit1 afterdisplayingusage, no DBaction",
+  "coordinator_subsequent_actions": {
+    "source": "parent explicit message after worker source/env/PDO checks",
+    "APP_KEY": "generated once; no value printed; preserve on future environment sync",
+    "maintenance": "file marker active",
+    "public_storage": "link target exact",
+    "git": "clean",
+    "database_writes": "none reported",
+    "worker_actions_during_parent_phase": "local scratch only"
+  }
+}

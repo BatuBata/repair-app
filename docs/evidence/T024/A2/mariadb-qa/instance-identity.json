@@ -1,0 +1,9 @@
+{
+    "socket": "\/home\/muzib\/deploy-demo-repair-app\/qa-mariadb\/mariadb.sock",
+    "datadir": "\/home\/muzib\/deploy-demo-repair-app\/qa-mariadb\/data\/",
+    "skip_networking": 1,
+    "version": "10.11.14-MariaDB-0+deb12u2",
+    "identity_verified_before_sql_writes": true,
+    "database": "demo_repair_app_t024_verify",
+    "production_db_accessed": false
+}

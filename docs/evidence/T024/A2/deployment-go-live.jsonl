@@ -1,0 +1,3 @@
+{"artisan_up":"PASS","exit":0,"raw_output":"suppressed"}
+{"readonly_business_counts":{"service_orders":0,"sales":0,"products":0,"expenses":0},"handover_mode":"0600","backup":"DEFERRED_D22"}
+{"go_live":"PASS","observed_utc":"2026-11-14T02:43:12Z","https_up":200,"https_login":200,"tls_verification":"enabled","source":"d047f25ea31d703660212e4205b937053c92adcb","git_clean":true,"maintenance_removed":true,"backup":"DEFERRED_D22","set_cookie_output":false}

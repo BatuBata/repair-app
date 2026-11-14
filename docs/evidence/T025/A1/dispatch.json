@@ -1,0 +1,11 @@
+{
+  "task": "T025",
+  "attempt": "A1",
+  "worker": "/root/t024_review",
+  "model_requested": "gpt-6.1-sol",
+  "model_effective": null,
+  "source_revision": "d047f25ea31d703660212e4205b937053c92adcb",
+  "target": "https://demo-repair-app.scannara.asia",
+  "scope": "readonly live web smoke; physical and transactional UAT remainNOT_RUN",
+  "credential_handling": "Generated ownerapprovedsecret read onlywithinprivateautomationprocess, no model/tooloutput/trace/HAR/plaintext localfile; only intendedHTTPSorigin"
+}

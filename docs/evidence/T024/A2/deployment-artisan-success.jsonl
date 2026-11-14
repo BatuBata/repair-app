@@ -1,0 +1,6 @@
+{"phase":"pre-migration","status":"PASS","database":"demo_repair_app","server":"10.11.14-MariaDB-0+deb12u2-log","account":"new_gym@localhost","hostname":"server.coachplay7gym.com","tables":0,"production_password_rule":"PASS","backup":"DEFERRED_D22"}
+{"phase":"migrate","status":"PASS","exit":0,"raw_console_output":"suppressed","maintenance":"retained"}
+{"phase":"config:cache","status":"PASS","exit":0,"raw_console_output":"suppressed","maintenance":"retained"}
+{"phase":"route:cache","status":"PASS","exit":0,"raw_console_output":"suppressed","maintenance":"retained"}
+{"phase":"view:cache","status":"PASS","exit":0,"raw_console_output":"suppressed","maintenance":"retained"}
+{"phase":"db:seed","status":"PASS","exit":0,"raw_console_output":"suppressed","maintenance":"retained"}

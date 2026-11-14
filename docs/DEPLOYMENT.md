@@ -1,5 +1,17 @@
 # Operasional Aplikasi Servis Anugerah
 
+## Demo aktif — 14 November 2026
+
+[Demo](https://demo-repair-app.scannara.asia) aktif sejak 10.43 WITA di `muzib@202.10.40.165:/var/www/demo-repair-app/current`, memakai revisi aplikasi `d047f25ea31d703660212e4205b937053c92adcb` yang sudah masuk `main`. [Receipt deployment](evidence/T024/A2/deployment-receipt.json) dan [serah terima operator](evidence/T024/A2/deployment-HANDOFF.md) merekam langkah serta hasil aktual. PHP 8.3 terpasang berdampingan dengan versi lama; MariaDB 10.11 existing sudah lulus [uji kompatibilitas independen](evidence/T024/A2/mariadb-qa/assessment.json). Let’s Encrypt, uji renewal, dan hook reload Nginx lulus.
+
+Keputusan PRD D-20/D-21/D-22 berlaku khusus demo ini: Debian 12 dan MariaDB existing disetujui; **seluruh backup ditunda oleh user**. Tidak ada backup/cron/offsite/restore demo yang diklaim berhasil, sehingga NFR-05 serta penerimaan produksi penuh belum terpenuhi. Bagian berikut tetap merupakan runbook umum T020; ketentuan Ubuntu/MySQL/backup di sana bukan gambaran keadaan demo dan tidak membatalkan pengecualian user ini.
+
+Admin demo: username `admin`; password awal hanya tersimpan di server pada `/home/muzib/deploy-demo-repair-app/initial-admin-password.txt` (pemilik `muzib`, mode `0600`, direktori induk `0700`). Owner dapat membacanya secara privat lewat SSH. Jangan memasukkan isinya ke Git, chat, laporan, atau tangkapan layar. Nilai instalasi `ADMIN_INITIAL_PASSWORD` sudah dikosongkan di kedua environment dan cache konfigurasi. Pertahankan APP_KEY pada `current/.env`; jangan menjalankan ulang bootstrap, key generation, atau seed instalasi pertama pada aplikasi live.
+
+Status pengujian web, transaksi, HP dan printer yang benar-benar dijalankan mengikuti T025 di `TODO.md`. Pengujian web tanpa perubahan data tidak membuktikan cetak fisik atau penerimaan penuh R001.
+
+## Runbook umum T020
+
 Paket T020 menyiapkan **satu checkout Laravel di satu VPS**, dengan jeda maintenance saat rilis. Tidak ada staging, queue worker, scheduler aplikasi, container, atau layanan tambahan (PRD §7, §14, D-17). Semua perintah di bawah adalah **instruksi untuk operator setelah mendapat izin**, bukan catatan deployment yang sudah dijalankan. Hasil lokal yang benar-benar diperiksa ada di [bukti T020](evidence/T020/HANDOFF.md); uji backup/restore **MySQL lokal nyata sudah PASS** pada [assessment T020](evidence/T020/mysql-verification-assessment.json) dan [handoff MySQL](evidence/T020/mysql-verification-handoff.md). [FAIL awal](evidence/T020/mysql-verification-result.json) dipertahankan: pembandingan teks `SHOW CREATE` berubah karena charset redundan; isi, identitas, dan schema secara semantik sama. Bukti lokal ini belum membuktikan cron, salinan luar VPS, atau pemulihan produksi (Q-03/Q-04).
 
 ## Target dan gerbang

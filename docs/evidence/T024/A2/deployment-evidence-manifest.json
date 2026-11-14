@@ -1,0 +1,62 @@
+[
+  {
+    "path": "deployment-HANDOFF.md",
+    "bytes": 1833,
+    "sha256": "6035db4eab22a2463809e096a2c284f8b74ad2c3a2913adc7da1f8556bb0ddb5"
+  },
+  {
+    "path": "deployment-admin-generation.json",
+    "bytes": 305,
+    "sha256": "a918d97fcee7f993f68dfdb165ea867321064d85cf18e01a4e7fbf35bab481fe"
+  },
+  {
+    "path": "deployment-artisan-safe.php",
+    "bytes": 4233,
+    "sha256": "bf1bee98e29433a6a28354d27f0614a0184d7d675684b16430ffbc195854f0c4"
+  },
+  {
+    "path": "deployment-artisan-success.jsonl",
+    "bytes": 782,
+    "sha256": "980e8c734d5f0dfd1a902f450bf8e45802a1ccf6d36eda90f7bff990b714c94d"
+  },
+  {
+    "path": "deployment-artisan.jsonl",
+    "bytes": 302,
+    "sha256": "65b1426290f22d49f9d05a6c620fcfa53507a0885d1dbfca402b6b78855558b6"
+  },
+  {
+    "path": "deployment-final-check.jsonl",
+    "bytes": 4442,
+    "sha256": "0552fe24cc7e6e3a55323a390dd9e4c6b14b7b7343127d6017868f6562aa28fa"
+  },
+  {
+    "path": "deployment-go-live.jsonl",
+    "bytes": 455,
+    "sha256": "d03967649f204fd6c74243a1e0557e6c975d64e9e3eb91b66a6904fcc10c2a76"
+  },
+  {
+    "path": "deployment-password-diagnosis.json",
+    "bytes": 631,
+    "sha256": "e0639179b33d70999d42f7258898da468f146df23033df76899db3f15e2acc33"
+  },
+  {
+    "path": "deployment-receipt-password-blocked.json",
+    "bytes": 2136,
+    "sha256": "6721caa8278998c907a7dcc89d42862ec1e195f78c77571aa5eec20e4a099cfd"
+  },
+  {
+    "path": "deployment-receipt-preopen.json",
+    "bytes": 8195,
+    "sha256": "542876d6feee426f5e92e2306899e727c68e287e5ff18a041876d86579b56706"
+  },
+  {
+    "path": "deployment-receipt.json",
+    "bytes": 9444,
+    "sha256": "095a49b187b651dbf9dd05aefbbaf3909a30ad9d91f11e2cc56e239c33c3965c"
+  },
+  {
+    "path": "deployment-secret-clear.json",
+    "bytes": 313,
+    "sha256": "4fa6f30599a3c127f9bcdfd1487e23e0c7d561e2109b5200d0f29f404adbb625"
+  }
+]

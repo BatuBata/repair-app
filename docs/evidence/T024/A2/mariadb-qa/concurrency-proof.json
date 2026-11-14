@@ -1,0 +1,89 @@
+{
+    "workers": {
+        "TTS": [
+            {
+                "outcome": "success",
+                "number": "TTS-3301-002",
+                "index": 0,
+                "kind": "TTS",
+                "entered": 1794623589.523236,
+                "finished": 1794623590.153748,
+                "attempts": 1,
+                "product_lock_ms": []
+            },
+            {
+                "outcome": "success",
+                "number": "TTS-3301-001",
+                "index": 1,
+                "kind": "TTS",
+                "entered": 1794623589.521345,
+                "finished": 1794623589.849331,
+                "attempts": 1,
+                "product_lock_ms": []
+            }
+        ],
+        "JL": [
+            {
+                "outcome": "success",
+                "number": "JL-3301-001",
+                "index": 0,
+                "kind": "JL",
+                "entered": 1794623590.449849,
+                "finished": 1794623590.78298,
+                "attempts": 1,
+                "product_lock_ms": [
+                    0.65
+                ]
+            },
+            {
+                "outcome": "success",
+                "number": "JL-3301-002",
+                "index": 1,
+                "kind": "JL",
+                "entered": 1794623590.447987,
+                "finished": 1794623591.096005,
+                "attempts": 1,
+                "product_lock_ms": [
+                    315.42
+                ]
+            }
+        ],
+        "last": [
+            {
+                "outcome": "success",
+                "number": "JL-3301-003",
+                "index": 0,
+                "kind": "last",
+                "entered": 1794623591.373518,
+                "finished": 1794623591.705008,
+                "attempts": 1,
+                "product_lock_ms": [
+                    0.36
+                ]
+            },
+            {
+                "outcome": "shortage",
+                "qty_error": true,
+                "index": 1,
+                "kind": "last",
+                "entered": 1794623591.376348,
+                "finished": 1794623591.704428,
+                "attempts": 1,
+                "product_lock_ms": [
+                    309.55
+                ]
+            }
+        ]
+    },
+    "actual_actions": [
+        "App\\Services\\CreateServiceOrder",
+        "App\\Actions\\Sales\\CreateSale"
+    ],
+    "normal_stock": 6,
+    "last_stock": 0,
+    "sales": 3,
+    "sale_items": 3,
+    "service_orders": 2,
+    "distinct_tracking_tokens": 2,
+    "jl_sequence": 3
+}

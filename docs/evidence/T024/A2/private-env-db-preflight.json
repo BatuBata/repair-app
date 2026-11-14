@@ -1,0 +1,18 @@
+{
+    "environment_sync": "PASS",
+    "fixed_target_validation": "PASS",
+    "required_private_fields_present": true,
+    "existing_app_key_retained": false,
+    "key_generation": "NOT_RUN",
+    "mode": "0640",
+    "database_writes": false,
+    "server": {
+        "version": "10.11.14-MariaDB-0+deb12u2-log",
+        "authenticated_account": "new_gym@localhost",
+        "sql_mode": "STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
+    },
+    "database": "demo_repair_app",
+    "table_count": 0,
+    "tables": [],
+    "verdict": "PASS_EMPTY_TARGET"
+}

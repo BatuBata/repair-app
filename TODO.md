@@ -43,8 +43,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T021 | Panduan pengguna singkat untuk owner dan teknisi | developer / 6-luna | easy / low | T017, T018, T019 | T020 | done |
 | T022 | Integrasi akhir v1 | integrator / 6.1-sol | medium / medium | T017, T018, T019, T020, T021 | — | done |
 | T023 | QA akhir v1: regresi penuh dan uji responsif semua layar | tester / 6.1-sol | medium / high | T022 | — | done |
-| T024 | Deploy v1 ke VPS produksi | deployer / 6.1-sol | medium / high | T022, T023 | — | blocked |
-| T025 | Verifikasi produksi dan uji di HP dan printer klien | tester / 6.1-sol | medium / high | T024 | — | pending |
+| T024 | Deploy v1 ke VPS produksi | deployer / 6.1-sol | medium / high | T022, T023 | — | done |
+| T025 | Verifikasi produksi dan uji di HP dan printer klien | tester / 6.1-sol | medium / high | T024 | — | blocked |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -120,19 +120,16 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:95af88470f699dc95c22c0dd3d31c5694dc932a83aaf92f45376ad4926dc19bf",
+    "prd_revision": "sha256:78513c117de0c10dd2cf7d58b0023d72fb409093510862b07b1cffe8f441f4d0",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
-      "state": "running",
-      "allowed_tasks": [
-        "T024",
-        "T025"
-      ],
+      "state": "stopped",
+      "allowed_tasks": [],
       "stop_after_tasks": [
         "T025"
       ],
-      "source_ref": "User14Nov2026 explicitly requests deployment to muzib@202.10.40.165 /var/www/newfolder, demo-repair-app.scannara.asia SSL LetsEncrypt, DB demo_repair_app/new_gym with private owner password; D-20/D-21. Previous Goal T001-T023 remains complete. T025 live software smoke implied; physical acceptance remains dependent on actual owner devices.",
+      "source_ref": "Authorized demo D20/D21/D22 deployed and independent read-only web verification completed14Nov2026. stop_after_tasks T025 reached blocked because full production UAT/physical HP/printer/owner acceptance unavailable. T024done; R001notaccepted. No further dispatch; retain user deployment authorization and wait for concrete remaining acceptance work.",
       "phase_history": [
         {
           "state": "paused",
@@ -370,6 +367,17 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
             "T022",
             "T023"
           ]
+        },
+        {
+          "state": "running",
+          "allowed_tasks": [
+            "T024",
+            "T025"
+          ],
+          "stop_after_tasks": [
+            "T025"
+          ],
+          "source_ref": "User14Nov2026 explicitly requests deployment to muzib@202.10.40.165 /var/www/newfolder, demo-repair-app.scannara.asia SSL LetsEncrypt, DB demo_repair_app/new_gym with private owner password; D-20/D-21. Previous Goal T001-T023 remains complete. T025 live software smoke implied; physical acceptance remains dependent on actual owner devices."
         }
       ]
     },
@@ -508,7 +516,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "acceptance_tasks": [
         "T025"
       ],
-      "status": "pending"
+      "status": "blocked"
     }
   ],
   "tasks": [
@@ -3510,7 +3518,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "difficulty": "medium",
       "risk": "high",
       "uncertainty": "medium",
-      "triage_reason": "First authorized deployment on shared Debian12 host. PHP8.3 prerequisite and sudo password needed; MariaDB10.11 explicitly approved. Backup destination still pending.",
+      "triage_reason": "First authorized deployment on shared Debian12 host; dedicated PHP8.3 and existing MariaDB10.11 approved and verified. Backup explicitly deferred for demo D-22.",
       "model_hint": "gpt-6.1-sol",
       "model_reason": "Sol untuk konfigurasi server, migrasi, dan rollback.",
       "depends_on": {
@@ -3533,13 +3541,13 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "parallel_candidates": [],
       "acceptance_criteria": [
         "VPS demo D-20 menjalankan source_revision T022 dengan HTTPS, PHP ≥ 8.3, MariaDB 10.11 yang diuji kompatibilitasnya (D-21); .env tidak masuk Git atau laporan.",
-        "Backup harian aktif dan salinan di luar VPS berjalan; satu restore uji berhasil (NFR-05).",
+        "Khusus demo D-20, backup pra-migrasi/harian/offsite dan restore ditunda oleh user melalui D-22; catat NOT_RUN/deferred, jangan klaim NFR-05 atau rilis produksi lengkap PASS.",
         "Receipt mencatat revisi, langkah, hasil migrasi, dan cara rollback."
       ],
       "verification_plan": [
-        "Ikuti docs/DEPLOYMENT.md; cocokkan izin deployment produksi yang dicatat di authorizations sebelum mulai."
+        "Ikuti docs/DEPLOYMENT.md dengan pengecualian demo D-20/D-21/D-22; cocokkan izin deployment, source pin, bukti SSL/izin berkas/migrasi, dan QA MariaDB independen."
       ],
-      "status": "blocked",
+      "status": "done",
       "deployment": {
         "environment": "production",
         "source_task": "T022",
@@ -3552,14 +3560,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "domain": "demo-repair-app.scannara.asia",
         "database": "demo_repair_app",
         "database_user": "new_gym",
-        "phase": "reviewed_bundle_staged_waiting_owner_private_input",
+        "phase": "live_demo_deployed",
         "reviewer": "/root/t024_review",
         "model_requested": "gpt-6.1-sol",
         "model_effective": null,
         "dispatch_ref": "native:collaboration.spawn_agent:/root/t024_review",
-        "notes": "Operator bundle independently PASS (41+4 mocked cases, bash-n3). Server code d047f25 clean, 230source/14build/9font hashes match. No sudo/DB/migration/SSL mutation yet. Await owner sudo bootstrap, private DB/admin input and backup choice. Resume same A1 environment phase; no reset of implementation budget."
+        "notes": "D20/D21/D22 scoped deployment PASS at2026-11-14T02:43:12Z. HTTPSup/login200 TLSverified; exactclean d047253hashes; PHP8.3/MariaDB20InnoDB6migrations1admin9categoriesstore1; ownerapprovedstrongpassword0600handover, ADMINsecretclearedbothenv/configcache; key+DBsecretpreserved. IndependentMariaDBcompatPASS; ownQAdaemonstopped. Backup/restore/cronDEFERREDuserD22, noNFR05claim. T025independentweb+remainingphysical gates separate."
       },
-      "workspace": "/private/tmp/repair-app-t024-ops",
+      "workspace": "/private/tmp/repair-app-t024-ops-next",
       "attempts": [
         {
           "id": "A1",
@@ -3568,27 +3576,49 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native:collaboration.spawn_agent:/root/t024_deploy:T024-A1",
-          "outcome": "blocked",
-          "receipt_ref": "docs/evidence/T024/A1/preparation.json"
+          "outcome": "fail",
+          "receipt_ref": "docs/evidence/T024/A1/preparation.json",
+          "phases": [
+            {
+              "phase": "preparation_handoff",
+              "outcome": "blocked",
+              "source_ref": "750d88b reviewed bootstrap staged; waiting private sudo/environment input"
+            },
+            {
+              "phase": "real_host_bootstrap",
+              "outcome": "fail",
+              "reason": "PHP8.3/FPM/Nginx and valid LetsEncrypt cert installed; final renewal check unsupported --run-deploy-hooks on Certbot2.1.0. APT404 earlier repaired by PHP-repo-only metadata refresh; preserved as environment history."
+            }
+          ]
+        },
+        {
+          "id": "A2",
+          "kind": "implementation",
+          "worker_id": "/root/t024_deploy",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.send_message:/root/t024_deploy:T024-A2",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/T024/A2/receipt.json"
         }
       ],
       "result": {
-        "verdict": "blocked",
-        "artifact_ref": "docs/evidence/T024/A1/ops/README.md",
-        "revision": "sha256:b9289e35459b7c61d16d8f6a5343f6a4e011baa429c399c5b8a7bf8e8bdcd1f1",
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T024/A2/deployment-go-live.jsonl",
+        "revision": "deployment:demo-repair-app.scannara.asia:2026-11-14T02:43:12Z:d047f25",
+        "checked_revision": "d047f25ea31d703660212e4205b937053c92adcb",
         "inputs": {
           "T022": "d047f25ea31d703660212e4205b937053c92adcb",
           "T023": "c07b6c6a4245b86a594ba15e44a3a44bca31cdf0"
         },
         "evidence": [
-          "docs/evidence/T024/A1/preparation.json",
-          "docs/evidence/T024/A1/ops/SHA256SUMS",
-          "docs/evidence/T024/A1/ops/checks.json",
-          "docs/evidence/T024/A1/ops/bootstrap-path-checks.json",
-          "docs/evidence/T024/A1/REVIEW.md"
+          "docs/evidence/T024/A2/receipt.json",
+          "docs/evidence/T024/A2/deployment-go-live.jsonl",
+          "docs/evidence/T024/A2/mariadb-qa/assessment.json",
+          "docs/evidence/T024/A2/private-env-db-preflight.json",
+          "docs/evidence/T024/A2/deployment-receipt.json"
         ],
-        "failure_class": "environment",
-        "summary": "Prepared/staged only, not deployed: SSH/DNS PASS; exact QA source+assets staged, operator bundle independent review PASS. Sudo requires owner terminal password; DB/admin secrets owner input pending, backup choice unresolved. No claim of live SSL/MariaDB compatibility/restore/cron/offsite."
+        "summary": "Authorized demo live with TLS verified200 and exactacceptedsource. IndependentMariaDBcompatPASS; source/platform/migrations/seed/secrets/permissions/SSLrenew+hookPASS. PriorA1failurespreserved. BackupsdeferredexplicitD22, notclaimedproductionNFR05complete; T025remaining."
       }
     },
     {
@@ -3636,8 +3666,60 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Tester menjalankan smoke produksi dengan data uji yang kemudian dibatalkan/dihapus sesuai persetujuan owner; langkah HP dan printer dilakukan bersama owner/teknisi, bukti foto/video disimpan."
       ],
-      "status": "pending",
-      "qa_for": "T024"
+      "status": "blocked",
+      "qa_for": "T024",
+      "workspace": "/private/tmp/repair-app-t025-web",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "verification",
+          "worker_id": "/root/t024_review",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.followup_task:/root/t024_review:T025-A1",
+          "outcome": "blocked",
+          "receipt_ref": "docs/evidence/T025/A1/assessment.json",
+          "phases": [
+            {
+              "phase": "initial_web_harness",
+              "outcome": "fail",
+              "failure_class": "evidence",
+              "receipt_ref": "docs/evidence/T025/A1/result.json",
+              "reason": "Expected form heading differed from actual source; no application failure or code change."
+            },
+            {
+              "phase": "remaining_web_checks_with_correct_heading",
+              "outcome": "pass",
+              "receipt_ref": "docs/evidence/T025/A1/result-a2.json",
+              "reason": "Reused earlier public/security/asset proof; only remaining form/mobile/runtime coverage continued."
+            },
+            {
+              "phase": "full_post_deploy_acceptance",
+              "outcome": "blocked",
+              "reason": "Production transactional UAT, physical Android/printer and owner/technician acceptance not performed."
+            }
+          ]
+        }
+      ],
+      "verification_scope": "Read-only live web smoke/admin login using ownerapprovedprivategeneratedpassword; no productionbusinessfixtures/accounts/settings changes. Backendtransactionalactions verified separatelyinprivateMariaDB T024. T025transactionalproductionUAT andphysicalHP/printer remainNOT_RUN; do notacceptR001 frompartialwebPASS.",
+      "result": {
+        "verdict": "blocked",
+        "artifact_ref": "docs/evidence/T025/A1/assessment.json",
+        "revision": "sha256:de2d225a55c458ff93d342701304468703cfc6d152163171534e5972b038d0b3",
+        "checked_revision": "d047f25ea31d703660212e4205b937053c92adcb",
+        "inputs": {
+          "T024": "deployment:demo-repair-app.scannara.asia:2026-11-14T02:43:12Z:d047f25"
+        },
+        "evidence": [
+          "docs/evidence/T025/A1/assessment.json",
+          "docs/evidence/T025/A1/result.json",
+          "docs/evidence/T025/A1/result-a2.json",
+          "docs/evidence/T025/A1/server-metadata-after.txt",
+          "docs/evidence/T025/A1/SHA256SUMS"
+        ],
+        "summary": "Independent partial web PASS:42 cases,23 frozen asset hashes,admin login/logout,9 read-only modules,3 forms without submit,360px screenshots and zero JS/missing asset errors. Source clean d047; no business mutations; credential kept private and own browser sessions closed. Full T025/R001 remains blocked by unperformed production transactions, physical Android/printer and owner/technician acceptance. Backup deliberately deferred D22."
+      },
+      "blocker": "Demo is live. Remaining acceptance needs an owner-agreed real transaction/UAT scope and actual Android/printer/technician evidence; no production test fixtures created during web verification."
     }
   ]
 }

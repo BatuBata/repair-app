@@ -1,0 +1,53 @@
+{
+  "task": "T024",
+  "attempt": "A2",
+  "model_requested": "gpt-6.1-sol",
+  "model_effective": null,
+  "worker": "/root/t024_deploy",
+  "purpose": "Targeted Certbot2.1 operatorcheck fix after actual A1 failure; exactappsource unchanged",
+  "source_revision": "d047f25ea31d703660212e4205b937053c92adcb",
+  "authorization_ref": "deploy-demo-2026-11-14",
+  "status": "pass",
+  "preparation_review": "PASS independent /root/t024_review",
+  "source_install": "PASS exact d047;230source14build9font, cleanGit, Composer/platform PASS",
+  "private_env_and_database": "PASS secrets present without values logged; MariaDB10.11.14 new_gym@localhost demo_repair_app0tables",
+  "key_and_storage": "Coordinator keygenerateonce, filemaintenance and exact public/storage link PASS",
+  "ssl": "PASS actual valid certificate through2027-02-12; targeted renewal dry-run and hook with both variables nginx-t/reload",
+  "root_persistent_shell": "Rejected by automatic approval review for excessive privilege/blast radius; never executed. Use reviewed bounded one-shot finalizer instead.",
+  "finalizer_sha256": "fb4e90944bc85627e57939ab9c455759509d3c160961b3f16b81962c9b716275",
+  "operator_manifest_sha256": "c39403d00ea34b2b4c425c8caabe3272262f079e1df68ea4d6d42f2088b93a67",
+  "bounded_root_finalization": {
+    "at": "2026-11-14T02:30:54.887519+00:00",
+    "status": "PASS",
+    "script_sha256": "fb4e90944bc85627e57939ab9c455759509d3c160961b3f16b81962c9b716275",
+    "fpm_reads": [
+      "public/index.php",
+      "vendor/autoload.php",
+      ".env"
+    ],
+    "fpm_code_write": "denied as expected",
+    "runtime_acl": "FPM creates660files; muzib appends; both own probes cleaned",
+    "modes": {
+      "current": "muzib:www-data2750",
+      "vendor": "muzib:www-data2750",
+      "vendor/autoload.php": "muzib:www-data640",
+      ".env": "muzib:www-data640",
+      "storage": "muzib:www-data2770",
+      "bootstrap/cache": "muzib:www-data2770",
+      ".git": "700"
+    },
+    "hook": "BOTH RENEWED_LINEAGE and RENEWED_DOMAINS; actualnginx-t+reloadPASS",
+    "services": "nginx/php8.3-fpm/certbot.timer active",
+    "pending_marker": "retained",
+    "root_session": "one-shot process exited; no persistent shell"
+  },
+  "backup_decision": {
+    "ref": "PRD D-22",
+    "user_instruction": "ga usah pake backup dulu",
+    "scope": "demo only",
+    "status": "DEFERRED; no dump/cron/offsite/restore; not claimedPASS"
+  },
+  "final_deployment_receipt": "deployment-receipt.json",
+  "go_live": "2026-11-14T02:43:12Z",
+  "acceptance_limit": "Demo D20/D21/D22 only; T025 and full production R001 acceptance tracked separately"
+}

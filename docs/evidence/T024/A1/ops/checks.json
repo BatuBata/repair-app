@@ -1,0 +1,253 @@
+{
+  "status": "PASS",
+  "checks": 41,
+  "cases": [
+    {
+      "case": "original script rejects missing confirmation",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case": "reject bundle symlink before mutations",
+      "expected": [],
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "case": "reject group writable bundle before mutations",
+      "expected": [],
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "case": "reject existing app target before mutations",
+      "expected": [],
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "case": "reject existing vhost before mutations",
+      "expected": [],
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "case": "reject domain already in loaded config",
+      "expected": [],
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "case": "reject APT upgrade before alternatives mutation",
+      "expected": [],
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "case": "reject unrelated new APT package",
+      "expected": [],
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "case": "pin each existing alternative before install",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case": "pending gate is never removed by bootstrap",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case": "backup dump exit success",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case": "backup dump MariaDB compatible flags",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case": "backup dump old archive retained",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case": "backup dump secret/error output hidden",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case": "backup dump lock/temp cleaned",
+      "expected": [],
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "case": "backup scp exit success",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case": "backup scp MariaDB compatible flags",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case": "backup scp old archive retained",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case": "backup scp secret/error output hidden",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case": "backup scp lock/temp cleaned",
+      "expected": [],
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "case": "backup ssh exit success",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case": "backup ssh MariaDB compatible flags",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case": "backup ssh old archive retained",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case": "backup ssh secret/error output hidden",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case": "backup ssh lock/temp cleaned",
+      "expected": [],
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "case": "backup pending exit success",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case": "backup pending MariaDB compatible flags",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case": "backup pending old archive retained",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case": "backup pending secret/error output hidden",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case": "backup pending lock/temp cleaned",
+      "expected": [],
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "case": "pending saves valid local archive but stays nonzero",
+      "expected": 2,
+      "actual": 2,
+      "status": "PASS"
+    },
+    {
+      "case": "pending never transfers",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case": "backup success exit success",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case": "backup success MariaDB compatible flags",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case": "backup success old archive retained",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case": "backup success secret/error output hidden",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case": "backup success lock/temp cleaned",
+      "expected": [],
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "case": "backup rejects invalid DB without commands",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case": "backup rejects unsafe client mode without commands",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case": "backup rejects unsafe remote path without commands",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case": "backup rejects existing lock before dump",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    }
+  ],
+  "limits": "Mock preflight + dump/SSH tools only; no real Debian/Nginx/FPM/Certbot/MariaDB/offsite action tested."
+}

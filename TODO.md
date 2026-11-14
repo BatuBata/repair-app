@@ -13,7 +13,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 - Maksimal **dua worker aktif** (tester/integrator/deployer ikut dihitung).
 - Maksimal **dua attempt implementasi** per task; perubahan kode setelah itu perlu keputusan user.
 - Task implementation `done` = siap QA, **bukan** fitur diterima. Fitur diterima setelah QA atas hasil integrasi lulus.
-- Status eksekusi saat ini: **stopped pada batas T023**. T001–T023 dan QA perangkat lunak selesai; seluruh riwayat PASS/FAIL serta jatah percobaan dipertahankan. T024–T025 tetap menunggu izin/akses deployment dan perangkat fisik. Push normal diizinkan; deployment belum diizinkan.
+- Status eksekusi saat ini: **running T024–T025 untuk target demo D-20** atas permintaan user 14 November 2026. Goal T001–T023 tetap selesai; riwayat PASS/FAIL dipertahankan. Deployment demo dan smoke web diizinkan; akses sudo, password privat, lokasi backup dan uji perangkat fisik mengikuti bukti/keputusan aktual.
 
 ## Overview pekerjaan
 
@@ -43,7 +43,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T021 | Panduan pengguna singkat untuk owner dan teknisi | developer / 6-luna | easy / low | T017, T018, T019 | T020 | done |
 | T022 | Integrasi akhir v1 | integrator / 6.1-sol | medium / medium | T017, T018, T019, T020, T021 | — | done |
 | T023 | QA akhir v1: regresi penuh dan uji responsif semua layar | tester / 6.1-sol | medium / high | T022 | — | done |
-| T024 | Deploy v1 ke VPS produksi | deployer / 6.1-sol | medium / high | T022, T023 | — | pending |
+| T024 | Deploy v1 ke VPS produksi | deployer / 6.1-sol | medium / high | T022, T023 | — | blocked |
 | T025 | Verifikasi produksi dan uji di HP dan printer klien | tester / 6.1-sol | medium / high | T024 | — | pending |
 <!-- END GENERATED VIEW -->
 
@@ -120,41 +120,19 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:474d11fc266bbb8a028f44fa9e8e7a4dde816d67fade00c78b33f69e6d73d1b0",
+    "prd_revision": "sha256:95af88470f699dc95c22c0dd3d31c5694dc932a83aaf92f45376ad4926dc19bf",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
-      "state": "stopped",
-      "allowed_tasks": [],
+      "state": "running",
+      "allowed_tasks": [
+        "T024",
+        "T025"
+      ],
       "stop_after_tasks": [
-        "T023"
+        "T025"
       ],
-      "source_ref": "Goal user13Nov2026 T001–T023 boundary achieved with independentT023A2softwarePASS14Nov2026. Stop further task dispatch; T024–T025/deployment notauthorized. Coordinator closes Git main/CI handoff; Goalcomplete only after requiredclosingchecks.",
-      "resume_allowed_tasks": [
-        "T001",
-        "T002",
-        "T003",
-        "T004",
-        "T005",
-        "T006",
-        "T007",
-        "T008",
-        "T009",
-        "T010",
-        "T011",
-        "T012",
-        "T013",
-        "T014",
-        "T015",
-        "T016",
-        "T017",
-        "T018",
-        "T019",
-        "T020",
-        "T021",
-        "T022",
-        "T023"
-      ],
+      "source_ref": "User14Nov2026 explicitly requests deployment to muzib@202.10.40.165 /var/www/newfolder, demo-repair-app.scannara.asia SSL LetsEncrypt, DB demo_repair_app/new_gym with private owner password; D-20/D-21. Previous Goal T001-T023 remains complete. T025 live software smoke implied; physical acceptance remains dependent on actual owner devices.",
       "phase_history": [
         {
           "state": "paused",
@@ -359,6 +337,39 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
             "T022",
             "T023"
           ]
+        },
+        {
+          "state": "stopped",
+          "allowed_tasks": [],
+          "stop_after_tasks": [
+            "T023"
+          ],
+          "source_ref": "Goal user13Nov2026 T001–T023 boundary achieved with independentT023A2softwarePASS14Nov2026. Stop further task dispatch; T024–T025/deployment notauthorized. Coordinator closes Git main/CI handoff; Goalcomplete only after requiredclosingchecks.",
+          "resume_allowed_tasks": [
+            "T001",
+            "T002",
+            "T003",
+            "T004",
+            "T005",
+            "T006",
+            "T007",
+            "T008",
+            "T009",
+            "T010",
+            "T011",
+            "T012",
+            "T013",
+            "T014",
+            "T015",
+            "T016",
+            "T017",
+            "T018",
+            "T019",
+            "T020",
+            "T021",
+            "T022",
+            "T023"
+          ]
         }
       ]
     },
@@ -384,14 +395,21 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       ],
       "evidence_ref": "docs/evidence/coordinator/codex-resume-2026-11-13.json"
     },
-    "authorizations": [],
+    "authorizations": [
+      {
+        "id": "deploy-demo-2026-11-14",
+        "environment": "production",
+        "scope": "deployment",
+        "source_ref": "User14Nov2026 explicit server/path/domain/SSL/database deployment request; PRD D-20 and MariaDB decision D-21. No destructive database rollback authorized."
+      }
+    ],
     "git": {
       "remote": "origin",
       "url": "https://github.com/BatuBata/repair-app.git",
       "push_authorized": true,
       "source_ref": "Instruksi user 12 Nov 2026: push ke GitHub BatuBata/repair-app, setiap pekerjaan selesai buat commit dan push",
       "policy": "Commit pekerjaan selesai dan push branch task/checkpoint setelah periksa perubahan; merge ke main tetap setelah QA/review relevan; tanpa force-push. Kandidat blocked disimpan sebagai checkpoint, bukan fitur diterima.",
-      "coordination_branch": "main"
+      "coordination_branch": "codex/t024-demo-deploy"
     },
     "browser_isolation_policy": {
       "source_ref": "Coordinator13Nov2026 verified existing scripts/lib/cdp.mjs Browser.launch: fresh headless Chrome process, unique user-data-dir and remote-debugging-port0; T010 uses private TASTE_SKILL_TMP.",
@@ -3492,7 +3510,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "difficulty": "medium",
       "risk": "high",
       "uncertainty": "medium",
-      "triage_reason": "Server dan domain belum diketahui (Q-03); deployment pertama membuat data produksi dan backup.",
+      "triage_reason": "First authorized deployment on shared Debian12 host. PHP8.3 prerequisite and sudo password needed; MariaDB10.11 explicitly approved. Backup destination still pending.",
       "model_hint": "gpt-6.1-sol",
       "model_reason": "Sol untuk konfigurasi server, migrasi, dan rollback.",
       "depends_on": {
@@ -3514,19 +3532,63 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "conflicts_with": [],
       "parallel_candidates": [],
       "acceptance_criteria": [
-        "VPS menjalankan source_revision T022 dengan HTTPS, PHP ≥ 8.3, MySQL; .env produksi tidak masuk Git atau laporan.",
+        "VPS demo D-20 menjalankan source_revision T022 dengan HTTPS, PHP ≥ 8.3, MariaDB 10.11 yang diuji kompatibilitasnya (D-21); .env tidak masuk Git atau laporan.",
         "Backup harian aktif dan salinan di luar VPS berjalan; satu restore uji berhasil (NFR-05).",
         "Receipt mencatat revisi, langkah, hasil migrasi, dan cara rollback."
       ],
       "verification_plan": [
         "Ikuti docs/DEPLOYMENT.md; cocokkan izin deployment produksi yang dicatat di authorizations sebelum mulai."
       ],
-      "status": "pending",
+      "status": "blocked",
       "deployment": {
         "environment": "production",
         "source_task": "T022",
-        "source_revision": null,
-        "authorization_ref": null
+        "source_revision": "d047f25ea31d703660212e4205b937053c92adcb",
+        "authorization_ref": "deploy-demo-2026-11-14"
+      },
+      "preparation": {
+        "path": "/var/www/demo-repair-app",
+        "host": "202.10.40.165",
+        "domain": "demo-repair-app.scannara.asia",
+        "database": "demo_repair_app",
+        "database_user": "new_gym",
+        "phase": "reviewed_bundle_staged_waiting_owner_private_input",
+        "reviewer": "/root/t024_review",
+        "model_requested": "gpt-6.1-sol",
+        "model_effective": null,
+        "dispatch_ref": "native:collaboration.spawn_agent:/root/t024_review",
+        "notes": "Operator bundle independently PASS (41+4 mocked cases, bash-n3). Server code d047f25 clean, 230source/14build/9font hashes match. No sudo/DB/migration/SSL mutation yet. Await owner sudo bootstrap, private DB/admin input and backup choice. Resume same A1 environment phase; no reset of implementation budget."
+      },
+      "workspace": "/private/tmp/repair-app-t024-ops",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root/t024_deploy",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.spawn_agent:/root/t024_deploy:T024-A1",
+          "outcome": "blocked",
+          "receipt_ref": "docs/evidence/T024/A1/preparation.json"
+        }
+      ],
+      "result": {
+        "verdict": "blocked",
+        "artifact_ref": "docs/evidence/T024/A1/ops/README.md",
+        "revision": "sha256:b9289e35459b7c61d16d8f6a5343f6a4e011baa429c399c5b8a7bf8e8bdcd1f1",
+        "inputs": {
+          "T022": "d047f25ea31d703660212e4205b937053c92adcb",
+          "T023": "c07b6c6a4245b86a594ba15e44a3a44bca31cdf0"
+        },
+        "evidence": [
+          "docs/evidence/T024/A1/preparation.json",
+          "docs/evidence/T024/A1/ops/SHA256SUMS",
+          "docs/evidence/T024/A1/ops/checks.json",
+          "docs/evidence/T024/A1/ops/bootstrap-path-checks.json",
+          "docs/evidence/T024/A1/REVIEW.md"
+        ],
+        "failure_class": "environment",
+        "summary": "Prepared/staged only, not deployed: SSH/DNS PASS; exact QA source+assets staged, operator bundle independent review PASS. Sudo requires owner terminal password; DB/admin secrets owner input pending, backup choice unresolved. No claim of live SSL/MariaDB compatibility/restore/cron/offsite."
       }
     },
     {

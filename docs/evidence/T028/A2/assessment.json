@@ -1,0 +1,61 @@
+{
+  "task": "T028",
+  "attempt": "A2",
+  "verdict": "pass",
+  "revision": "f13090847c04a0f7ba60ad6648053a98f7ccbca6",
+  "checked_revision": "f13090847c04a0f7ba60ad6648053a98f7ccbca6",
+  "artifact_ref": "git:f13090847c04a0f7ba60ad6648053a98f7ccbca6",
+  "inputs": {
+    "T027": "f13090847c04a0f7ba60ad6648053a98f7ccbca6"
+  },
+  "skills": "Ponytail full and project-delivery loaded earlier in same tester session; same verified sources.",
+  "model_requested": "gpt-6.1-sol",
+  "model_effective": null,
+  "model_receipt": "Not exposed by runtime; no claim.",
+  "scope": "Independent targeted Pint correction and actual branch/PR GitHub CI verification. Main unchanged; no merge/deploy permission assumed.",
+  "checks": [
+    {
+      "name": "Pint correction",
+      "result": "PASS",
+      "detail": "Exact pint.json preserves laravel preset and excludes only docs/evidence. Historical executable PHP evidence is not active application source; app/tests/config/database remain in formatter scope. No business source, test logic, dependencies, workflow, or receiver changed."
+    },
+    {
+      "name": "Unchanged safety artifact",
+      "result": "PASS",
+      "detail": "git show byte comparison and SHA256 confirmed seven previously reviewed workflow/runtime/test/docs files identical from c3be1af to f130908. Prior independent20Linux/8probe cases retained without needless rerun."
+    },
+    {
+      "name": "Actual push CI",
+      "result": "PASS",
+      "url": "https://github.com/BatuBata/repair-app/actions/runs/43563864796",
+      "job": 132353291571,
+      "head_sha": "f13090847c04a0f7ba60ad6648053a98f7ccbca6",
+      "detail": "Setup Application(build) success; Pint129files PASS; PHPStan no errors; MySqlConcurrencyTest fresh seed+parallel creation PASS against MariaDB10.11;182tests1956assertions PASS;20deployment safety PASS; package/upload/deploy SKIPPED."
+    },
+    {
+      "name": "Actual PR CI",
+      "result": "PASS",
+      "url": "https://github.com/BatuBata/repair-app/actions/runs/43563868061",
+      "job": 132353300647,
+      "head_sha": "f13090847c04a0f7ba60ad6648053a98f7ccbca6",
+      "detail": "CI job completed success; Setup Application, Run CI Checks and Test deployment safety success; package/upload/deploy SKIPPED."
+    },
+    {
+      "name": "Preserved earlier failure",
+      "result": "PASS",
+      "detail": "c3be1af GitHub43563583274/43563626614 FAIL remains in docs/evidence/T026/A1/github-first-failure.json; not relabeled. A1 source/safety PASS did not prove actual full GitHub CI."
+    }
+  ],
+  "findings": [],
+  "not_run": [
+    "No repeated unchanged local safety/fullsuite runs.",
+    "Actual push main package/upload/deployment and live smoke T029 NOT_RUN; owner merge/deploy approval gate remains.",
+    "No database/live app/.env/uploads/secrets access; SSH key installation reported by coordinator not independently reverified here.",
+    "No HP/printer acceptance or backup/restore."
+  ],
+  "risks": [
+    "Main-only production package/upload/SSH and target health still need actual T029; branch/PR pass cannot prove deployment.",
+    "Backup remains deferred D22 and no rollback guarantee."
+  ],
+  "summary": "PASS narrowly on Pint exclusion and real branch/PR CI for f130908; deployment remains NOT_RUN."
+}

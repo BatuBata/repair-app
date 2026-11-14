@@ -1,0 +1,59 @@
+{
+  "task": "T029",
+  "role": "independent post-deployment tester",
+  "verdict": "pass",
+  "revision": "b52a48e303bf60c5df046b0153a82b3ccee43d4a",
+  "checked_revision": "b52a48e303bf60c5df046b0153a82b3ccee43d4a",
+  "artifact_ref": "https://github.com/BatuBata/repair-app/actions/runs/43564251943",
+  "inputs": {
+    "T027": "b52a48e303bf60c5df046b0153a82b3ccee43d4a",
+    "T028": "b52a48e303bf60c5df046b0153a82b3ccee43d4a"
+  },
+  "authorization_ref": "Owner async call_9c0bca9750364e0bb737b7253eb3add3: Izinkan merge ke main dan deploy otomatis (reported by coordinator)",
+  "model_requested": "gpt-6.1-sol",
+  "model_effective": null,
+  "skills": "Ponytail full + project-delivery verified sources loaded in same tester session",
+  "target": "https://demo-repair-app.scannara.asia",
+  "checks": [
+    {
+      "name": "Main actual CI/package",
+      "result": "PASS",
+      "detail": "Job132354494817 main exact b52a success; setup/build, CI checks,20safety, package production release and upload tested release all success. Logs Pint129files,PHPStan noerrors,MySqlConcurrencyTest PASS,182tests1956assertions. Artifact14101283381 named release-b52a48e303bf60c5df046b0153a82b3ccee43d4a"
+    },
+    {
+      "name": "Main actual deploy",
+      "result": "PASS",
+      "detail": "Job132354862532 success; current-main guard, download same-run SHA artifact, SSH deploy and HTTPS all success. Artifact ZIP digest965632bfaa631efe66f53cad9bed2324fb5cd7262a7f2fd9fdccd29b5f1cce5e; ZIP digest differs legitimately from inner release.tar.gz digest."
+    },
+    {
+      "name": "Independent server identity/maintenance",
+      "result": "PASS",
+      "detail": "Read-only SSH: current/.release-revision exact b52a; private last-success allowlisted revision exact b52a,status pass,UTC2026-11-14T06:03:14Z,archive_sha2567980fc1b7142eeac9554715a12a742cbef9c66f2cef26f48b204bbcabb0e03fd. No .deploy-pending nor storage/framework/down."
+    },
+    {
+      "name": "Independent HTTPS",
+      "result": "PASS",
+      "detail": "Server-side Python default TLS validation /up200 /login200; tester workstation system curl --fail /up200 /login200 ssl_verify_result0. No -k or custom insecure context."
+    },
+    {
+      "name": "Private paths HTTP",
+      "result": "PASS",
+      "detail": "Server-side independently issued HTTPS requests: /.env403; /.git/HEAD403; /storage/logs/laravel.log404. No body/private data printed."
+    }
+  ],
+  "findings": [],
+  "environment_notes": [
+    "Initial local sandbox DNS denial; approved network escalation used.",
+    "Local Python trust store lacks issuer CA, certificate verification failed; system curl verified public TLS successfully, no verification bypass."
+  ],
+  "not_run": [
+    "Physical Android/HP/printer and full business acceptance T025.",
+    "No DB transaction writes, login/session mutation, .env/password/key read, raw operational log, backup/restore or rollback.",
+    "No unchanged local fullsuite/safety reruns."
+  ],
+  "risks": [
+    "Backup remains deferred by D22; no data rollback guarantee.",
+    "Pinned download-artifact v4 action emits Node20 deprecation warning but successful current run; not a release blocker."
+  ],
+  "summary": "PASS independent actual main CI/CD and postdeploy on b52a. Source tree equivalence to reviewed f130 separately attested."
+}

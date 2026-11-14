@@ -1,0 +1,10 @@
+{
+  "main_revision": "b52a48e303bf60c5df046b0153a82b3ccee43d4a",
+  "qa_candidate_revision": "f13090847c04a0f7ba60ad6648053a98f7ccbca6",
+  "main_tree": "27ac39340d0e958be82f271d43fea6fa2d5e50b4",
+  "candidate_tree": "27ac39340d0e958be82f271d43fea6fa2d5e50b4",
+  "byte_identical_git_tree": true,
+  "authorization": "User explicit async call_9c0bca9750364e0bb737b7253eb3add3: Izinkan merge ke main dan deploy otomatis",
+  "PR": "https://github.com/BatuBata/repair-app/pull/1",
+  "method": "GitHub normal merge after two CI PASS; no force push"
+}

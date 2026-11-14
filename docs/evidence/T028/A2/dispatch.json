@@ -1,0 +1,9 @@
+{
+  "task": "T028",
+  "attempt": "A2",
+  "revision": "f13090847c04a0f7ba60ad6648053a98f7ccbca6",
+  "scope": "Only Pint evidence exclusion changed; preserve previous failure and reuse unchanged safety proof; verify new actual GitHub CI when available",
+  "model_requested": "gpt-6.1-sol",
+  "model_effective": null,
+  "Ponytail": "full"
+}

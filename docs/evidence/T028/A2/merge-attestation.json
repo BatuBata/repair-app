@@ -1,0 +1,13 @@
+{
+  "verdict": "pass",
+  "reviewed_revision": "f13090847c04a0f7ba60ad6648053a98f7ccbca6",
+  "integrated_revision": "b52a48e303bf60c5df046b0153a82b3ccee43d4a",
+  "tree_sha": "27ac39340d0e958be82f271d43fea6fa2d5e50b4",
+  "commands": [
+    "git rev-parse f13090847c04a0f7ba60ad6648053a98f7ccbca6^{tree} b52a48e303bf60c5df046b0153a82b3ccee43d4a^{tree}",
+    "git diff --exit-code f13090847c04a0f7ba60ad6648053a98f7ccbca6 b52a48e303bf60c5df046b0153a82b3ccee43d4a"
+  ],
+  "actual": "Identical tree hashes and empty diff exit0; no tracked file differs.",
+  "reuse": "T028A2 source and GitHub CI verification on f130 applies to the exact identical merged source tree b52a; no suite rerun claimed. Actual main CI/package/deploy remains separate T029 gate.",
+  "evidence": "/private/tmp/repair-app-t028-a2/assessment.json"
+}

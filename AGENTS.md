@@ -15,7 +15,7 @@ Bahasa: Indonesia sederhana. Jelaskan istilah teknis saat pertama dipakai, lapor
 
 ## Cara bekerja
 
-User 14 November 2026 melalui D-23 mengizinkan GitHub CI/CD: push `main` yang lolos tes memperbarui demo D-20. T026–T029 mencakup pipeline, QA independen, integrasi dan aktivasi nyata; ini tidak membuka kembali penerimaan HP/printer T025. Identitas source auto-deploy memakai `.release-revision`, bukan Git HEAD instalasi awal di VPS.
+User 14 November 2026 melalui D-23 mengizinkan GitHub CI/CD: push `main` yang lolos tes memperbarui demo D-20. T026–T029 sudah selesai: PR #1 digabung dengan izin eksplisit owner, main run43564251943 CI/deploy dan QA server independen PASS. Auto-update sesudah push main yang lolos CI tetap diizinkan D-23; setup ini tidak membuka kembali penerimaan HP/printer T025. Identitas source auto-deploy memakai `.release-revision`, bukan Git HEAD instalasi awal di VPS.
 
 Gunakan skill `project-delivery` (sumber: `~/.agents/skills/project-delivery/SKILL.md`) untuk triase, dependensi, penugasan, QA, integrasi, dan rilis. Batas eksekusi terkini dibaca dari `project.execution` di `TODO.md`; Goal T001–T023 sudah selesai. T024 demo sudah live; pekerjaan T025 terbatas pada izin dan bukti perangkat yang tersedia. Ikuti D-20/D-21/D-22 untuk target, database, dan penundaan backup. Gunakan koordinasi/worker bawaan Codex; jangan menjalankan orchestration Orca. Jangan menyamakan cakupan task dengan izin push/deploy.
 

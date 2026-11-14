@@ -1,0 +1,6 @@
+{"release_revision": "b52a48e303bf60c5df046b0153a82b3ccee43d4a", "receipt": {"revision": "b52a48e303bf60c5df046b0153a82b3ccee43d4a", "archive_sha256": "7980fc1b7142eeac9554715a12a742cbef9c66f2cef26f48b204bbcabb0e03fd", "status": "pass", "utc": "2026-11-14T06:03:14Z"}, "deploy_pending": false, "laravel_down": false}
+{"path": "/up", "status": 200, "tls_verified": true}
+{"path": "/login", "status": 200, "tls_verified": true}
+{"path": "/.env", "status": 403, "tls_verified": true}
+{"path": "/.git/HEAD", "status": 403, "tls_verified": true}
+{"path": "/storage/logs/laravel.log", "status": 404, "tls_verified": true}

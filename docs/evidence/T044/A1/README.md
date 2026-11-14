@@ -1,0 +1,13 @@
+# T044/A1 — QA independen tracking
+
+Verdict: **PASS** pada kandidat yang dipin. Tidak ditemukan defect. Tester menerapkan Ponytail full dari `/Users/muzib/.codex/plugins/cache/ponytail/ponytail/5.3.3/skills/ponytail/SKILL.md` dan project-delivery sebagai tester; model efektif tidak diverifikasi oleh tester.
+
+Pin awal dan akhir identik: HEAD `89e1c5b739c9d7036b085ba8753ea1c0eae2d6d2`; SHA-256 PRD `b69b7999bf79c57b610b3df71a6b0b3dd47ac07bbb6dd16037ac125b0b318b17`, view `cad03b85556bfaa69edb9f6133a61b5fa4d41116e3bf144b60076a779f324718`, tes `7d11656096757305bb9415f76ba03d9882c9a3e0816d279c5eccf0543d83059f`.
+
+- Audit view, controller, route dan tes: urutan toko → status/nomor → empat tahap → barang → langkah/nota; status Diterima, Dikerjakan, Selesai, Diambil, tidak dapat diperbaiki dan Batal dipetakan sesuai kondisi. Nama, HP, alamat customer, modal dan state internal tidak dirender. Token berada pada URL PDF yang diperlukan, bukan teks halaman. Controller memakai `hash_equals` untuk token tepat dan peka huruf besar-kecil; halaman memasang `X-Robots-Tag: noindex` serta `Cache-Control: private, no-store`. Tes mengecek token berbeda kapitalisasi dan informasi privat.
+- `php artisan test tests/Feature/Tracking/TrackingTest.php` dengan PHP 8.3: PASS, 2 tes dan 48 assertion. Menggunakan SQLite in-memory dari konfigurasi tes.
+- `php artisan view:cache`: PASS. `npm run build`: PASS, 25 modul. Build memperingatkan fontaine opsional dan font lokal diselesaikan saat runtime; font tampak pada browser.
+- `git diff --check`: PASS. `git diff --name-only -- app routes composer.json composer.lock package.json package-lock.json .github`: kosong; tidak ada perubahan controller, route, dependency atau workflow terhadap HEAD.
+- Browser CUA, SQLite sintetis saja: Diterima tanpa nota, Selesai bernota, dan Batal diuji pada 360×900, 768×900 dan 1280×900; tampilan 360×800 juga ditinjau. Lebar scroll sama dengan viewport pada setiap kombinasi, label dan progres terlihat, rincian serta langkah/nota sesuai. Teks keluhan dan item tanpa spasi yang panjang membungkus dengan baik; angka Rp999.999.999 terbaca pada 360. Tombol PDF setinggi 44px pada semua ukuran dan fokus keyboard dengan Tab terlihat jelas. Screenshot ditinjau langsung, tidak disimpan. Server lokal kedua menggunakan salinan SQLite sementara untuk Batal dan nilai panjang, lalu dihentikan; fixture asli tidak diubah.
+
+Pemeriksaan status Dikerjakan, Diambil dan tidak dapat diperbaiki dilakukan melalui audit source dan tes fitur, bukan interaksi browser tersendiri. Unduhan dan isi PDF tidak diuji karena bukan perubahan task. Tidak ada commit, push, merge atau deploy.

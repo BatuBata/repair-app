@@ -3,11 +3,11 @@
 | Metadata | Isi |
 |---|---|
 | Produk | Aplikasi Servis Anugerah — aplikasi web internal toko servis elektronik (nama kerja proyek: `repair-app`) |
-| Versi dokumen | 1.2 — §10.2 diselaraskan dengan mockup yang disetujui (D-19) |
+| Versi dokumen | 1.7 — halaman tracking customer diperjelas dan dipoles (D-30) |
 | Tanggal | 11 November 2026 |
 | Pemilik | Owner Toko Anugerah (klien); penyusun: muzib |
 | Pembaca | Owner/klien, developer, tester, deployer |
-| Status | v1.0 disetujui user 11 November 2026 (termasuk D-11–D-17). v1.1 menambah penekanan responsif/mobile-first. v1.2 (11 Nov 2026): §10.2 dan NFR-07 diselaraskan dengan mockup yang disetujui user (`mockup/`, `DESIGN.md`). Pertanyaan terbuka §19 tetap berlaku |
+| Status | v1.0 disetujui user 11 November 2026 (termasuk D-11–D-17). v1.1 menambah penekanan responsif/mobile-first. v1.2 menyelaraskan §10.2 dan NFR-07 dengan mockup. v1.3 (15 Nov 2026) mencatat D-25–D-26. v1.4 mencatat D-27. v1.5 mencatat D-28. v1.6 mencatat D-29. v1.7 (15 Nov 2026) mencatat D-30. Pertanyaan terbuka §19 tetap berlaku |
 | Target rilis | Belum ditetapkan (Q-05) |
 | Sumber keputusan | Transkrip wawancara klien `10-11-2026 22.24.txt`; sesi perencanaan 11 November 2026; dokumentasi rilis Laravel |
 
@@ -362,6 +362,8 @@ Aturan ini berlaku untuk **semua layar** (REQ-24). Setiap layar dirancang dan di
 | Daftar data (TTS, stok, penjualan, pengeluaran, rincian laporan) | Daftar dua baris tanpa kartu: nomor + status/jumlah, lalu nama dan keterangan abu | Tabel tanpa kartu di sekelilingnya, angka rata kanan |
 | Tombol aksi di tabel dan daftar baris | Di kolom paling kiri (44px). Satu aksi: tombol bertulisan langsung. Lebih dari satu aksi: satu tombol pilihan `···` yang membuka menu dropdown | Sama, tombol 32px di kolom kiri |
 | Form | Satu kolom, label di atas field, tombol aksi utama (Simpan/Terbitkan) menempel di bawah layar dan selalu terlihat | Boleh dua kolom untuk field pendek; tombol di akhir form |
+| Kontrol pilihan | Pilihan dinamis atau berisi lebih dari 3 opsi memakai selectbox dengan pencarian, navigasi keyboard, dan status tanpa hasil; pilihan tetap maksimal 3 boleh memakai kontrol sederhana | Aturan sama; daftar pilihan tidak boleh keluar dari lebar field |
+| Kontrol tanggal | Semua tanggal memakai datepicker bersama dengan tampilan `dd/mm/yyyy`, kalender popover, pilihan Hari ini, navigasi bulan dan keyboard; nilai data tetap `YYYY-MM-DD` | Aturan sama; popover tidak boleh keluar viewport |
 | Rincian nota (baris dinamis) | Setiap baris bertumpuk dan dipisah garis (hapus di kiri, Part/Jasa, deskripsi, qty, harga jual, modal); total menempel di bawah di samping tombol Terbitkan | Baris tabel yang dapat diedit dengan tombol hapus di kolom kiri; ringkasan dan tombol Terbitkan di panel kanan |
 | Ringkasan dashboard dan laporan | Beranda: jalur servis 2 × 2, angka KPI sebagai daftar label–nilai. Laporan: laba rugi, grafik omzet per hari, tabel transaksi | Beranda: jalur servis 4 sel, KPI sebagai tab grafik. Laporan: laba rugi dan grafik berdampingan, tabel transaksi selebar halaman dengan baris total |
 | Aksi pada detail TTS | Tombol utama sesuai status tampil paling atas (mis. "Tetapkan teknisi", "Isi rincian"); aksi lain (Kirim WA, Cetak, PDF, Batal) dalam baris tombol/menu di bawahnya | Sama, tata letak dua kolom: data di kiri, aksi di kanan |
@@ -637,6 +639,16 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 | D-23 | GitHub Actions menjalankan CI pada push/PR; push ke `main` yang lolos tes otomatis memperbarui demo D-20 dengan artefak commit yang sama. Setup SSH deploy terbatas dan GitHub Secrets diizinkan oleh permintaan user. Environment, APP_KEY, data dan unggahan server dipertahankan; backup tetap ditunda D-22 | User meminta auto-update server ketika push beserta CI/CD tester | User | Disetujui user 14 Nov 2026; izin deployment berkelanjutan hanya demo ini, bukan reset data atau perubahan aplikasi lain |
 
 | D-24 | Password minimal 9 karakter di semua lingkungan; tanpa kewajiban huruf besar, simbol, kombinasi huruf/angka atau pemeriksaan kebocoran. Reset hanya akun admin demo ke password pilihan user melalui kanal privat; tidak meng-hardcode password akun di Git/seeder atau mereset akun lain | User meminta aturan password sederhana dan penggantian password awal admin demo | User | Disetujui user 15 Nov 2026; deployment demo melalui CI/CD D-23 dan perubahan kredensial admin diizinkan |
+
+| D-25 | GitHub Actions dan auto-deploy D-23 tetap aktif, tetapi revisi baru ditahan hanya di lokal dan tidak boleh di-push sampai user memberi aba-aba | User mengklarifikasi “matikan auto push” berarti jangan push revisi yang sedang dikerjakan, bukan mematikan GitHub Actions | User | Disetujui user 15 Nov 2026; workflow yang sempat dinonaktifkan karena salah tafsir sudah dipulihkan ke status aktif, tanpa push kode atau deployment |
+
+| D-26 | Setiap input teks, angka, telepon, password, pencarian, nominal dan textarea menampilkan placeholder saat nilainya kosong. Kontrol native yang tidak mendukung placeholder—tanggal, pilihan, unggah berkas, radio dan checkbox—tetap memakai petunjuk/opsi bawaannya | Form kosong perlu memberi contoh atau petunjuk isian yang jelas dan konsisten | User | Disetujui user 15 Nov 2026 berdasarkan screenshot formulir pengguna |
+| D-27 | Pilihan dinamis atau berisi lebih dari 3 opsi memakai selectbox dengan pencarian. Pilihan tetap maksimal 3 tetap memakai kontrol sederhana. Selectbox dapat dipakai dengan keyboard, menampilkan pilihan aktif, dan memberi status bila pencarian kosong | Dropdown native panjang menutup layar dan sulit dicari, terutama di HP | User | Disetujui user 15 Nov 2026 berdasarkan screenshot pilihan barang |
+| D-28 | Seluruh kontrol tanggal memakai satu datepicker dengan tampilan `dd/mm/yyyy`, kalender popover yang konsisten, navigasi bulan/keyboard dan tombol Hari ini. Nilai yang dikirim ke aplikasi tetap `YYYY-MM-DD` agar kontrak validasi/database tidak berubah | Input tanggal native tidak konsisten antar browser dan tampilan pada form kurang jelas | User | Disetujui user 15 Nov 2026 berdasarkan screenshot tanggal jual |
+
+| D-29 | Dashboard memprioritaskan pertanyaan “apa yang perlu ditindaklanjuti hari ini”: ringkasan harian tampil sebelum alur servis, status batal tidak mengambang, daftar servis selesai dan garansi menjadi blok tindak lanjut yang ringkas, lalu performa bulanan. Ikon Lucide existing boleh dipakai sebagai penanda konteks, bukan ornamen; data, aturan bisnis, dan aksi tetap sama | Dashboard saat ini menyebarkan informasi harian, memakai ruang kosong besar, dan hierarkinya kurang membantu pengguna memahami tindakan berikutnya | User | Disetujui user 15 Nov 2026 berdasarkan screenshot dashboard |
+
+| D-30 | Halaman tracking customer memakai komposisi “tanda terima digital”: header toko yang jelas, ringkasan status sebagai fokus utama, progres empat tahap yang mudah dipindai, rincian barang/keluhan tersusun, serta nota/garansi/aksi PDF yang muncul setelah nota terbit. Ruang desktop dimanfaatkan tanpa membuat konten melebar berlebihan; pada HP tetap satu kolom. Ikon Lucide existing hanya membantu konteks dan seluruh data, privasi, route serta aturan bisnis tetap sama | Tampilan tracking lama berupa kartu kecil di tengah bidang kosong, hierarki status lemah dan kurang meyakinkan sebagai halaman yang dibuka customer dari WhatsApp/QR | User | Disetujui user 15 Nov 2026 berdasarkan screenshot halaman tracking publik |
 
 ### 20.4 Validasi diagram
 

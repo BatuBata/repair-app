@@ -1,0 +1,24 @@
+{
+  "environment": {
+    "url": "http://127.0.0.1:8195",
+    "database": "/tmp/repair-search-select.sqlite",
+    "data": "synthetic local fixture only"
+  },
+  "viewports": {
+    "360x900": { "inside_viewport": true, "popover_width": 328, "popover_height": 419, "min_cell_width": 44.28125, "min_cell_height": 44 },
+    "768x900": { "inside_viewport": true, "popover_width": 328, "popover_height": 419, "min_cell_width": 44.28125, "min_cell_height": 44 },
+    "1280x900": { "inside_viewport": true, "popover_width": 328, "popover_height": 419, "min_cell_width": 44.28125, "min_cell_height": 44 }
+  },
+  "interactions": {
+    "keyboard_arrow_right_enter": { "before": "15/11/2026", "after": "16/11/2026", "result": "pass" },
+    "next_month": { "before": "November 2026", "after": "Desember 2026", "result": "pass" },
+    "escape": { "expanded_after": false, "focus_returned_to_trigger": true, "result": "pass" },
+    "today_live_filter": { "display": "15/11/2026", "value": "2026-11-15", "closed": true, "result": "pass" },
+    "semantics": { "dialog_role": "dialog", "grid_role": "grid", "cells": 42, "result": "pass" }
+  },
+  "screenshots": [
+    "date-picker-360.png",
+    "date-picker-768.png",
+    "date-picker-1280.png"
+  ]
+}

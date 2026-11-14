@@ -20,7 +20,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 <!-- GENERATED VIEW: regenerate from canonical JSON; do not edit statuses here. -->
 | ID | Hasil | Petugas / model | Kesulitan / risiko | Dependensi | Calon paralel | Status |
 |---|---|---|---|---|---|---|
-| T001 | Scaffold Laravel 13 + Livewire starter kit, MySQL, WITA, Git | developer / 6.1-sol | medium / medium | — | — | done |
+| T001 | Scaffold Laravel 13 + Livewire starter kit, MySQL, WITA, Git | developer / 6.1-sol | medium / low | — | — | done |
 | T002 | Skema database, model, enum, seeder, dan layanan domain inti | developer / 6.1-sol | complex / high | T001 | T003, T006, T020 | done |
 | T003 | Layout lembar berbingkai, komponen UI dasar, dan web app manifest sesuai DESIGN.md | developer / 6.1-terra | medium / medium | T001 | T002, T006, T020 | done |
 | T004 | Login username, peran Admin/Teknisi, kelola pengguna, ganti password | developer / 6.1-sol | medium / high | T002, T003 | T006, T020 | done |
@@ -53,6 +53,19 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T031 | Integrasi perubahan password | integrator / 6.1-sol | medium / high | T030 | — | done |
 | T032 | QA independen aturan password | tester / 6.1-sol | medium / high | T031 | — | done |
 | T033 | Deploy aturan dan reset hanya admin demo | deployer / 6.1-sol | medium / high | T031, T032 | — | done |
+| T034 | Tambahkan placeholder seluruh form dan tahan push | developer / 6.1-sol | medium / medium | — | — | done |
+| T035 | QA independen placeholder seluruh form | tester / 6.1-sol | medium / medium | T034 | — | done |
+| T036 | Push dan integrasi setelah aba-aba user | integrator / 6.1-sol | easy / medium | T034, T035, T037, T038, T039, T041, T045, T046 | — | running |
+| T037 | Selectbox pencarian untuk pilihan dinamis atau lebih dari tiga | developer / 6.1-terra | medium / medium | T035 | — | done |
+| T038 | QA independen selectbox pencarian | tester / 6.1-terra | medium / medium | T037 | — | done |
+| T039 | Datepicker bersama untuk seluruh kontrol tanggal | developer / 6.1-terra | medium / medium | T038 | — | done |
+| T040 | QA independen datepicker seluruh form | tester / 6.1-terra | medium / medium | T039 | — | blocked |
+| T041 | Perjelas hierarki dan layout dashboard | developer / 6.1-terra | medium / medium | T039 | — | done |
+| T042 | QA independen layout dashboard | tester / 6.1-terra | medium / medium | T041 | — | blocked |
+| T043 | Perjelas dan percantik halaman tracking customer | developer / 6.1-terra | medium / medium | — | — | done |
+| T044 | QA independen halaman tracking customer | tester / 6.1-terra | medium / medium | T043 | — | done |
+| T045 | Perbaiki ikon aksi yang hilang pada sprite bersama | developer / 6-luna | easy / low | — | — | done |
+| T046 | QA independen kelengkapan ikon aksi | tester / 6-luna | easy / low | T045 | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -128,16 +141,18 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:9e4177eaae6bf1927a77626dcab5944bcae6e6f6f386abe880442bc6e8433cc5",
+    "prd_revision": "sha256:b69b7999bf79c57b610b3df71a6b0b3dd47ac07bbb6dd16037ac125b0b318b17",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
-      "state": "stopped",
-      "allowed_tasks": [],
-      "stop_after_tasks": [
-        "T033"
+      "state": "running",
+      "allowed_tasks": [
+        "T036"
       ],
-      "source_ref": "UserD24 password workT030–T033 completed15Nov2026: policy9chars,actualmainCI/deploy43620442091,singleadminreset andindependentliveLOGIN/POLICY/LOGOUTPASS. StopatT033;ongoingD23CI/CDauthorizationremainsactive,T025physical/fullUATnotresumed.",
+      "stop_after_tasks": [
+        "T036"
+      ],
+      "source_ref": "User15Nov2026 explicitly says push to main. T036 integration, main push and CI/CD observation are authorized; no force-push or workflow expansion.",
       "phase_history": [
         {
           "state": "paused",
@@ -428,6 +443,111 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
             "T033"
           ],
           "source_ref": "User15Nov2026 D24 requests9char simplepassword and reset admin demo to supplied value; implement/review and deploy under ongoing D23. T025 physical UAT remains blocked."
+        },
+        {
+          "state": "stopped",
+          "allowed_tasks": [],
+          "stop_after_tasks": [
+            "T033"
+          ],
+          "source_ref": "UserD24 password workT030–T033 completed15Nov2026: policy9chars,actualmainCI/deploy43620442091,singleadminreset andindependentliveLOGIN/POLICY/LOGOUTPASS. StopatT033; ongoing D23CI/CD authorization remains active. T025physical/fullUATnotresumed."
+        },
+        {
+          "state": "running",
+          "allowed_tasks": [
+            "T034",
+            "T035"
+          ],
+          "stop_after_tasks": [
+            "T035"
+          ],
+          "source_ref": "User15Nov2026 requests placeholders on every supported empty form control and clarifies revision must remain local until a later push instruction; GitHub Actions/auto-deploy D-23 remains active. PRD D-25/D-26."
+        },
+        {
+          "state": "stopped",
+          "allowed_tasks": [],
+          "stop_after_tasks": [
+            "T035"
+          ],
+          "source_ref": "T034 implementation and T035 independent QA completed locally15Nov2026 at snapshot sha256:2d31e5b2...; stop_after T035 reached. Per user D-25, no commit/push/merge/deploy; T036 remains pending until explicit user signal. GitHub Actions D-23 remains active; T025 physical UAT remains blocked."
+        },
+        {
+          "state": "running",
+          "allowed_tasks": [
+            "T037",
+            "T038"
+          ],
+          "stop_after_tasks": [
+            "T038"
+          ],
+          "source_ref": "User15Nov2026 requests searchable selectbox for every dynamic choice or fixed choice with more than3 options. Work remains local under D25; no commit/push/merge/deploy."
+        },
+        {
+          "state": "stopped",
+          "allowed_tasks": [],
+          "stop_after_tasks": [
+            "T038"
+          ],
+          "source_ref": "T037 implementation and T038 independent QA completed locally15Nov2026 at pinned snapshot sha256:aa4cc7ca...; stop_after T038 reached. Per D25 no commit/push/merge/deploy; T036 remains pending explicit user signal. GitHub Actions remains active and unchanged."
+        },
+        {
+          "state": "running",
+          "allowed_tasks": [
+            "T039",
+            "T040"
+          ],
+          "stop_after_tasks": [
+            "T040"
+          ],
+          "source_ref": "User15Nov2026 requests every date control use a visually polished datepicker. T039 implementation and T040 independent QA allowed locally under D25; no commit/push/merge/deploy."
+        },
+        {
+          "state": "stopped",
+          "allowed_tasks": [],
+          "stop_after_tasks": [
+            "T040"
+          ],
+          "source_ref": "T039/A2 candidate complete at sha256:aa571baa...; T040/A1 found defects, A2/A3 independent retest blocked by unavailable visible browser in subagent. Candidate remains local and unaccepted; no third implementation attempt or integration authorized."
+        },
+        {
+          "state": "running",
+          "allowed_tasks": [
+            "T041",
+            "T042"
+          ],
+          "stop_after_tasks": [
+            "T042"
+          ],
+          "source_ref": "User15Nov2026 D29 requests dashboard hierarchy/layout polish and purposeful existing icons. Work remains local under D25; no commit/push/merge/deploy. T040 remains blocked."
+        },
+        {
+          "state": "running",
+          "allowed_tasks": [
+            "T045",
+            "T046"
+          ],
+          "stop_after_tasks": [
+            "T046"
+          ],
+          "source_ref": "User15Nov2026 reports missing icons in row-action menus. T045 root sprite repair and T046 independent QA are authorized locally under D25; no commit/push/merge/deploy."
+        },
+        {
+          "state": "stopped",
+          "allowed_tasks": [],
+          "stop_after_tasks": [
+            "T046"
+          ],
+          "source_ref": "T045 and T046 completed PASS locally: all static view icon references resolve in the shared sprite and the TTS row-action menu renders eye and pencil icons. No commit/push/merge/deploy."
+        },
+        {
+          "state": "running",
+          "allowed_tasks": [
+            "T036"
+          ],
+          "stop_after_tasks": [
+            "T036"
+          ],
+          "source_ref": "User15Nov2026 explicitly says push to main. Integrate the held local revisions once, then observe the existing main CI/CD through deployment."
         }
       ]
     },
@@ -464,7 +584,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "id": "autodeploy-demo-2026-11-14",
         "environment": "production",
         "scope": "deployment",
-        "source_ref": "User14Nov2026 asks GitHub Actions auto-update server on push and CI/CD tester; PRD D-23. Main-only after passing CI, demo D-20, preserve private configuration/uploads/business data, no destructive DB rollback. Explicit owner async call_9c0bca9750364e0bb737b7253eb3add3 authorizes PR1 merge to main and first auto-deploy after auto-review rejection."
+        "source_ref": "User14Nov2026 asks GitHub Actions auto-update server on push and CI/CD tester; PRD D-23. Main-only after passing CI, demo D-20, preserve private configuration/uploads/business data, no destructive DB rollback. User15Nov2026 D-25 retains this automation but directs current revisions not be pushed until a later signal."
       }
     ],
     "git": {
@@ -473,7 +593,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "push_authorized": true,
       "source_ref": "Instruksi user 12 Nov 2026: push ke GitHub BatuBata/repair-app, setiap pekerjaan selesai buat commit dan push",
       "policy": "Commit pekerjaan selesai dan push branch task/checkpoint setelah periksa perubahan; merge ke main tetap setelah QA/review relevan; tanpa force-push. Kandidat blocked disimpan sebagai checkpoint, bukan fitur diterima.",
-      "coordination_branch": "codex/password-nine-characters"
+      "coordination_branch": "codex/form-placeholders"
     },
     "browser_isolation_policy": {
       "source_ref": "Coordinator13Nov2026 verified existing scripts/lib/cdp.mjs Browser.launch: fresh headless Chrome process, unique user-data-dir and remote-debugging-port0; T010 uses private TASTE_SKILL_TMP.",
@@ -590,7 +710,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       ],
       "priority": "must",
       "difficulty": "medium",
-      "risk": "medium",
+      "risk": "low",
       "uncertainty": "medium",
       "triage_reason": "Struktur starter kit Laravel 13 belum diperiksa langsung; keputusan di sini (struktur folder, registrasi dimatikan, pemuatan rute modul) dipakai semua task berikutnya.",
       "model_hint": "gpt-6.1-sol",
@@ -4609,6 +4729,982 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T033/A1/postdeploy/login-observation.jsonl"
         ],
         "summary": "Main CI/deployPASS,exactc106. Reviewed one-shot operator changed only activeusernameadmin password/hash+remembertoken andprivate0600handover; otheraccounts/noncredentialfields unchanged; noseed/keygeneration/businesswrites. Independent actualHTTPSlogin/profile9charhint/logout PASS; productionvalidator9numericPASS8numericrejected. Actualpassword neverinGit/evidence; one-shotserveroperator removed aftersuccess. Transactional/fullphysicalUAT notrerun."
+      }
+    },
+    {
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-25",
+        "PRD.md §20.3 D-26"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Perubahan lintas semua form perlu cakupan konsisten melalui komponen bersama dan audit kontrol yang tidak memakainya.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Sol untuk komponen UI yang dipakai lintas modul dan pemeriksaan regresi proyek.",
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "id": "T034",
+      "title": "Tambahkan placeholder seluruh form dan tahan push",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "resources/views/**",
+        "tests/Feature/ScaffoldTest.php",
+        "PRD.md",
+        "TODO.md"
+      ],
+      "acceptance_criteria": [
+        "GitHub Actions tetap aktif dan workflow CI/CD tidak diubah; seluruh revisi tetap lokal tanpa commit/push sampai aba-aba user.",
+        "Input teks, angka, telepon, password, pencarian, nominal dan textarea menampilkan placeholder bermakna hanya ketika nilainya kosong; kontrol native yang tidak mendukung placeholder tidak dipaksa.",
+        "Form pengguna pada screenshot menampilkan contoh nama/username, petunjuk password minimal9karakter dan konfirmasi password."
+      ],
+      "verification_plan": [
+        "Audit seluruh Blade input/textarea, tes render komponen dan login, full CI lokal, serta inspeksi browser form pengguna."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "user:D25-D26:hold-push-and-form-placeholders",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/T034/A1/README.md"
+        },
+        {
+          "id": "A2",
+          "kind": "implementation",
+          "worker_id": "/root",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "T035:A1:placeholder-zero-regression",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/T034/A2/README.md"
+        }
+      ],
+      "prior_results": [
+        {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T034/A1/source-manifest.json",
+        "revision": "sha256:86e6efb12b28f812b425b2b6024bf0b9e3802c1e5e5d4c6c035325b0b556cd50",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T034/A1/README.md",
+          "docs/evidence/T034/A1/users-create-360.png",
+          "docs/evidence/T034/A1/users-create-768.png",
+          "docs/evidence/T034/A1/users-create-1280.png"
+        ],
+        "summary": "Developer self-check passed but was invalidated by T035/A1: numeric placeholder string0 was suppressed by a truthiness check. Other checks and screenshots remain historical evidence, not feature acceptance."
+        }
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T034/A2/source-manifest.json",
+        "revision": "sha256:2d31e5b2b6091fa2d301907bbef59b3301cf3bdc347a15333a473f51a998aa07",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T034/A2/README.md",
+          "docs/evidence/T035/A1/assessment.json",
+          "docs/evidence/T034/A1/users-create-360.png",
+          "docs/evidence/T034/A1/users-create-768.png",
+          "docs/evidence/T034/A1/users-create-1280.png"
+        ],
+        "summary": "A2 fixes only placeholder string0 rendering with an explicit null check and adds numeric coverage. Independent A1 reproducer now PASS, full local CI PASS with1945assertions, workflow unchanged/active, and no commit/push/deployment."
+      }
+    },
+    {
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-25",
+        "PRD.md §20.3 D-26"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Bukti independen perlu memeriksa cakupan form tanpa mengubah workflow atau mengirim revisi ke remote.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Sol untuk QA UI lintas modul dan audit cakupan form.",
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "id": "T035",
+      "title": "QA independen placeholder seluruh form",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "qa",
+      "depends_on": {
+        "hard": [
+          "T034"
+        ],
+        "contracts": []
+      },
+      "write_scope": [
+        "docs/evidence/T035/**"
+      ],
+      "acceptance_criteria": [
+        "Tester independen memeriksa snapshot lokal yang dipin, seluruh kontrol form yang didukung, dan hasil browser form pengguna tanpa push.",
+        "Tes terarah dan pemeriksaan regresi yang proporsional lulus tanpa mengubah kode implementasi."
+      ],
+      "verification_plan": [
+        "Review source, audit Blade, tes otomatis, dan browser 360/768/1280 pada form pengguna."
+      ],
+      "status": "done",
+      "qa_for": "T034",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "verification",
+          "worker_id": "/root/t035_placeholder_qa",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": "gpt-6.1-sol",
+          "dispatch_ref": "collaboration:/root/t035_placeholder_qa",
+          "outcome": "fail",
+          "receipt_ref": "docs/evidence/T035/A1/assessment.json"
+        },
+        {
+          "id": "A2",
+          "kind": "verification",
+          "worker_id": "/root/t035_placeholder_qa",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": "gpt-6.1-sol",
+          "dispatch_ref": "collaboration:/root/t035_placeholder_qa:A2",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/T035/A2/assessment.json"
+        }
+      ],
+      "prior_results": [
+        {
+        "verdict": "fail",
+        "artifact_ref": "docs/evidence/T035/A1/README.md",
+        "revision": "sha256:86e6efb12b28f812b425b2b6024bf0b9e3802c1e5e5d4c6c035325b0b556cd50",
+        "checked_revision": "sha256:86e6efb12b28f812b425b2b6024bf0b9e3802c1e5e5d4c6c035325b0b556cd50",
+        "inputs": {
+          "T034": "sha256:86e6efb12b28f812b425b2b6024bf0b9e3802c1e5e5d4c6c035325b0b556cd50"
+        },
+        "evidence": [
+          "docs/evidence/T035/A1/README.md",
+          "docs/evidence/T035/A1/assessment.json",
+          "docs/evidence/T035/A1/render-probe.php"
+        ],
+        "summary": "FAIL: Blade truthiness suppressed placeholder string0 on numeric fields. Raw controls, requested user-form placeholders, screenshots and unchanged workflow passed. T034 reopened for its second implementation attempt."
+        }
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T035/A2/README.md",
+        "revision": "sha256:2d31e5b2b6091fa2d301907bbef59b3301cf3bdc347a15333a473f51a998aa07",
+        "checked_revision": "sha256:2d31e5b2b6091fa2d301907bbef59b3301cf3bdc347a15333a473f51a998aa07",
+        "inputs": {
+          "T034": "sha256:2d31e5b2b6091fa2d301907bbef59b3301cf3bdc347a15333a473f51a998aa07"
+        },
+        "evidence": [
+          "docs/evidence/T035/A2/README.md",
+          "docs/evidence/T035/A2/assessment.json",
+          "docs/evidence/T035/A1/assessment.json",
+          "docs/evidence/T034/A1/users-create-360.png",
+          "docs/evidence/T034/A1/users-create-768.png",
+          "docs/evidence/T034/A1/users-create-1280.png"
+        ],
+        "summary": "Independent A2 selective QA PASS: numeric string0 and actual store caller render correctly, date/file remain excluded, targeted5tests30assertionsPASS, and unchanged A1 coverage/screenshots/workflow evidence explicitly reused. No commit/push/deployment."
+      }
+    },
+    {
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-25",
+        "PRD.md §20.3 D-26"
+      ],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Push akan memicu CI/CD D-23, sehingga integrasi harus menunggu instruksi eksplisit user setelah meninjau revisi lokal.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Sol untuk integrasi main dan observasi CI/CD setelah diizinkan.",
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "id": "T036",
+      "title": "Push dan integrasi setelah aba-aba user",
+      "kind": "integration",
+      "responsible_role": "integrator",
+      "work_type": "ops",
+      "depends_on": {
+        "hard": [
+          "T034",
+          "T035",
+          "T037",
+          "T038",
+          "T039",
+          "T041",
+          "T045",
+          "T046"
+        ],
+        "contracts": []
+      },
+      "write_scope": [
+        "TODO.md",
+        "docs/evidence/T036/**"
+      ],
+      "acceptance_criteria": [
+        "Hanya setelah aba-aba user, revisi QA di-commit/push dan digabung sesuai instruksi saat itu.",
+        "GitHub Actions D-23 tetap aktif dan hasil CI/deployment aktual diperiksa bila push ke main diizinkan."
+      ],
+      "verification_plan": [
+        "Sesudah aba-aba user: pin revisi, push branch, review/merge sesuai instruksi, lalu observasi CI/CD nyata."
+      ],
+      "status": "running",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [{
+        "id": "A1",
+        "kind": "verification",
+        "worker_id": "/root",
+        "model_requested": "gpt-6.1-sol",
+        "model_effective": null,
+        "dispatch_ref": "user:push-main-2026-11-15",
+        "outcome": "running",
+        "receipt_ref": null
+      }]
+    },
+    {
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §10.2",
+        "PRD.md §20.3 D-25",
+        "PRD.md §20.3 D-27"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Komponen pilihan dipakai lintas modul dan perlu menjaga sinkronisasi Livewire, keyboard, pilihan nonaktif lama, serta tampilan mobile.",
+      "model_hint": "gpt-6.1-terra",
+      "model_reason": "Terra untuk perubahan komponen UI lintas layar dengan perilaku form terbatas.",
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "id": "T037",
+      "title": "Selectbox pencarian untuk pilihan dinamis atau lebih dari tiga",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "depends_on": {
+        "hard": [
+          "T035"
+        ],
+        "contracts": []
+      },
+      "write_scope": [
+        "app/Livewire/Sales/Form.php",
+        "resources/css/layout.css",
+        "resources/views/components/ui/search-select.blade.php",
+        "resources/views/livewire/expenses/index.blade.php",
+        "resources/views/livewire/sales/form.blade.php",
+        "resources/views/livewire/tts/detail.blade.php",
+        "resources/views/livewire/tts/form.blade.php",
+        "tests/**",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T037/**"
+      ],
+      "acceptance_criteria": [
+        "Barang penjualan, kategori TTS, teknisi, dan kategori pengeluaran memakai satu selectbox pencarian; peran dengan dua opsi tetap memakai select native.",
+        "Kontrol mendukung pencarian tanpa peka huruf besar/kecil, mouse/touch, panah atas/bawah, Enter, Escape, pilihan aktif, status tanpa hasil dan atribut combobox/listbox yang sesuai.",
+        "Pilihan kategori nonaktif pada TTS lama tetap dapat ditampilkan/disimpan; pemilihan barang penjualan menyinkronkan harga dengan aman.",
+        "Revisi tetap lokal; workflow GitHub Actions tidak diubah dan tidak ada commit/push/merge/deploy."
+      ],
+      "verification_plan": [
+        "Tes komponen dan perilaku Livewire terarah, full CI lokal, build aset, serta browser 360/768/1280 dengan pencarian dan keyboard."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root",
+          "model_requested": "gpt-6.1-terra",
+          "model_effective": null,
+          "dispatch_ref": "user:D27:searchable-selectbox",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/T037/A1/README.md"
+        }
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T037/A1/README.md",
+        "revision": "sha256:aa4cc7ca6e9f37da95c412858144484b20f3b33a93fb433dbc7f2fbe7be9751c",
+        "inputs": {
+          "T035": "sha256:2d31e5b2b6091fa2d301907bbef59b3301cf3bdc347a15333a473f51a998aa07"
+        },
+        "evidence": [
+          "docs/evidence/T037/A1/README.md",
+          "docs/evidence/T037/A1/source-manifest.json",
+          "docs/evidence/T037/A1/browser-results.json",
+          "docs/evidence/T037/A1/search-select-360.png",
+          "docs/evidence/T037/A1/search-select-768.png",
+          "docs/evidence/T037/A1/search-select-1280.png"
+        ],
+        "summary": "Developer localPASS: satu searchable combobox dipakai4kontrol sesuai D27; role2opsi tetap native. Browser actual search/keyboard/escape/no-result/reopen-all/Livewire sync PASS dan screenshot360/768/1280 direview. Full CI187tests(186pass1skip)1960assert, Pint/PHPStan/buildPASS. Workflow unchanged; no commit/push/merge/deploy. Menunggu T038 independent QA."
+      }
+    },
+    {
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §10.2",
+        "PRD.md §20.3 D-25",
+        "PRD.md §20.3 D-27"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Perilaku Alpine dan Livewire perlu diuji independen pada ukuran layar dan jalur input nyata.",
+      "model_hint": "gpt-6.1-terra",
+      "model_reason": "Terra untuk QA interaksi dan visual komponen lintas layar.",
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "id": "T038",
+      "title": "QA independen selectbox pencarian",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "visual",
+      "depends_on": {
+        "hard": [
+          "T037"
+        ],
+        "contracts": []
+      },
+      "write_scope": [
+        "docs/evidence/T038/**"
+      ],
+      "acceptance_criteria": [
+        "Tester independen mem-pin snapshot lokal T037 dan memeriksa aturan cakupan, interaksi, aksesibilitas, responsif, serta regresi form tanpa mengubah implementasi.",
+        "Tes terarah dan pemeriksaan visual lulus; hasil tidak dipush atau dideploy."
+      ],
+      "verification_plan": [
+        "Review source, tes otomatis, dan browser independen pada 360/768/1280 termasuk pencarian, keyboard, pilihan kosong, dan kontrol dua opsi yang tidak berubah."
+      ],
+      "status": "done",
+      "qa_for": "T037",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "verification",
+          "worker_id": "/root/t038_search_select_qa",
+          "model_requested": "gpt-6.1-terra",
+          "model_effective": "not_exposed_by_runtime",
+          "dispatch_ref": "collaboration:/root/t038_search_select_qa",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/T038/A1/assessment.json"
+        }
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T038/A1/README.md",
+        "revision": "sha256:aa4cc7ca6e9f37da95c412858144484b20f3b33a93fb433dbc7f2fbe7be9751c",
+        "checked_revision": "sha256:aa4cc7ca6e9f37da95c412858144484b20f3b33a93fb433dbc7f2fbe7be9751c",
+        "inputs": {
+          "T037": "sha256:aa4cc7ca6e9f37da95c412858144484b20f3b33a93fb433dbc7f2fbe7be9751c"
+        },
+        "evidence": [
+          "docs/evidence/T038/A1/README.md",
+          "docs/evidence/T038/A1/assessment.json",
+          "docs/evidence/T037/A1/search-select-360.png",
+          "docs/evidence/T037/A1/search-select-768.png",
+          "docs/evidence/T037/A1/search-select-1280.png"
+        ],
+        "summary": "Independent QA PASS exact T037snapshot:4searchable callers/role2native, actual browser case-insensitive mouse+keyboard Enter/Escape/reopen/no-result/ARIA/Livewire sync, sales row reindex and inactive TTS category PASS. 43tests412assert, Blade compile/diff check PASS; screenshots360/768/1280 independently reviewed. Full suite/Pint/PHPStan/build reused from exact developer snapshot. No commit/push/merge/deploy; physical HP/screen-reader not run."
+      }
+    },
+    {
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §10.2",
+        "PRD.md §20.3 D-25",
+        "PRD.md §20.3 D-28"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Delapan kontrol tanggal lintas modul perlu satu UI konsisten tanpa mengubah kontrak nilai tanggal atau validasi backend.",
+      "model_hint": "gpt-6.1-terra",
+      "model_reason": "Terra untuk komponen kalender visual dengan kontrak input dan caller yang terukur.",
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "id": "T039",
+      "title": "Datepicker bersama untuk seluruh kontrol tanggal",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "depends_on": {
+        "hard": [
+          "T038"
+        ],
+        "contracts": []
+      },
+      "write_scope": [
+        "resources/css/layout.css",
+        "resources/views/components/ui/date-picker.blade.php",
+        "resources/views/components/ui/field.blade.php",
+        "resources/views/livewire/expenses/index.blade.php",
+        "resources/views/livewire/reports/index.blade.php",
+        "resources/views/livewire/sales/form.blade.php",
+        "resources/views/livewire/stock/restock.blade.php",
+        "resources/views/livewire/tts/detail.blade.php",
+        "tests/**",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T039/**"
+      ],
+      "acceptance_criteria": [
+        "Seluruh8kontrol tanggal memakai satu datepicker; tidak ada input type=date tersisa pada view aplikasi.",
+        "Trigger menampilkan dd/mm/yyyy dan kalender menyediakan bulan sebelumnya/berikutnya, Hari ini, batas min/max, pilihan tanggal, klik luar, Escape dan navigasi keyboard.",
+        "Nilai Livewire tetap YYYY-MM-DD; filter live, simpan form, validasi error, dan fokus error tetap bekerja.",
+        "Popover rapi dan tidak keluar viewport pada360/768/1280; target sentuh mobile minimal44px dan atribut dialog/grid tersedia.",
+        "Revisi tetap lokal; workflow GitHub Actions tidak diubah dan tidak ada commit/push/merge/deploy."
+      ],
+      "verification_plan": [
+        "Tes render komponen dan audit caller, tes feature terdampak, full CI lokal, build aset, serta browser 360/768/1280 untuk pemilihan/keyboard/posisi popup."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root",
+          "model_requested": "gpt-6.1-terra",
+          "model_effective": null,
+          "dispatch_ref": "user:D28:all-datepickers",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/T039/A1/README.md"
+        },
+        {
+          "id": "A2",
+          "kind": "implementation",
+          "worker_id": "/root",
+          "model_requested": "gpt-6.1-terra",
+          "model_effective": null,
+          "dispatch_ref": "T040:A1:keyboard-focus-and-grid-row-fail",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/T039/A2/README.md"
+        }
+      ],
+      "prior_results": [{
+        "verdict": "fail",
+        "artifact_ref": "docs/evidence/T039/A1/source-manifest.json",
+        "revision": "sha256:786a43d792389a26cf259ab561b0b9297f7f29d6a7a1b7ef252430c564db39a3",
+        "inputs": {
+          "T038": "sha256:aa4cc7ca6e9f37da95c412858144484b20f3b33a93fb433dbc7f2fbe7be9751c"
+        },
+        "evidence": [
+          "docs/evidence/T039/A1/README.md",
+          "docs/evidence/T039/A1/source-manifest.json",
+          "docs/evidence/T039/A1/browser-results.json",
+          "docs/evidence/T039/A1/date-picker-360.png",
+          "docs/evidence/T039/A1/date-picker-768.png",
+          "docs/evidence/T039/A1/date-picker-1280.png",
+          "docs/evidence/T040/A1/README.md",
+          "docs/evidence/T040/A1/assessment.json"
+        ],
+        "summary": "Developer self-check A1 passed, tetapi T040/A1 menginvalidasi penerimaan: PageDown kehilangan fokus setelah pindah bulan dan gridcell tidak memiliki role=row. Bukti PASS lain tetap historis. A2 dibuka untuk dua akar masalah ini."
+      }],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T039/A2/source-manifest.json",
+        "revision": "sha256:aa571baa88e28a0840eaf209f41925ff85c024ac4a333b6d87737167cfc451dc",
+        "inputs": {
+          "T038": "sha256:aa4cc7ca6e9f37da95c412858144484b20f3b33a93fb433dbc7f2fbe7be9751c"
+        },
+        "evidence": [
+          "docs/evidence/T039/A2/README.md",
+          "docs/evidence/T039/A2/source-manifest.json",
+          "docs/evidence/T039/A2/browser-results.json",
+          "docs/evidence/T039/A2/date-picker-360.png",
+          "docs/evidence/T039/A2/date-picker-768.png",
+          "docs/evidence/T039/A2/date-picker-1280.png"
+        ],
+        "summary": "A2 fixes T040/A1: month rerender now restores keyboard focus after PageDown/PageUp and six role=row containers wrap42gridcells. Browser regression/viewport/click-outside PASS; targeted62tests718assert, fullCI189tests(188pass1skip)1981assert, Pint/PHPStan/buildPASS. Workflow unchanged; no commit/push/merge/deploy. Menunggu T040/A2 independent QA."
+      }
+    },
+    {
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §10.2",
+        "PRD.md §20.3 D-25",
+        "PRD.md §20.3 D-28"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Kalender Alpine dan sinkronisasi Livewire perlu diuji independen pada semua caller dan ukuran layar.",
+      "model_hint": "gpt-6.1-terra",
+      "model_reason": "Terra untuk QA visual/interaksi datepicker pada scope UI yang konkret.",
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "id": "T040",
+      "title": "QA independen datepicker seluruh form",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "visual",
+      "depends_on": {
+        "hard": [
+          "T039"
+        ],
+        "contracts": []
+      },
+      "write_scope": [
+        "docs/evidence/T040/**"
+      ],
+      "acceptance_criteria": [
+        "Tester independen mem-pin snapshot lokal T039 dan memeriksa seluruh caller, nilai data, keyboard, aksesibilitas, responsif dan regresi tanpa mengubah implementasi.",
+        "Tes terarah dan pemeriksaan browser lulus; hasil tidak dipush atau dideploy."
+      ],
+      "verification_plan": [
+        "Audit source, tes otomatis, dan browser independen pada360/768/1280 termasuk calendar boundaries, Hari ini, Escape, klik luar, filter live dan simpan form."
+      ],
+      "status": "blocked",
+      "qa_for": "T039",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "verification",
+          "worker_id": "/root/t040_date_picker_qa",
+          "model_requested": "gpt-6.1-terra",
+          "model_effective": "not_exposed_by_runtime",
+          "dispatch_ref": "collaboration:/root/t040_date_picker_qa",
+          "outcome": "fail",
+          "receipt_ref": "docs/evidence/T040/A1/assessment.json"
+        },
+        {
+          "id": "A2",
+          "kind": "verification",
+          "worker_id": "/root/t040_date_picker_qa",
+          "model_requested": "gpt-6.1-terra",
+          "model_effective": "not_exposed_by_runtime",
+          "dispatch_ref": "collaboration:/root/t040_date_picker_qa:A2",
+          "outcome": "blocked",
+          "receipt_ref": "docs/evidence/T040/A2/assessment.json"
+        },
+        {
+          "id": "A3",
+          "kind": "verification",
+          "worker_id": "/root/t040_browser_qa",
+          "model_requested": "gpt-6.1-terra",
+          "model_effective": "not_exposed_by_runtime",
+          "dispatch_ref": "collaboration:/root/t040_browser_qa:A3",
+          "outcome": "blocked",
+          "receipt_ref": "docs/evidence/T040/A3/assessment.json"
+        }
+      ],
+      "result": {
+        "verdict": "blocked",
+        "artifact_ref": "docs/evidence/T040/A3/assessment.json",
+        "revision": "sha256:aa571baa88e28a0840eaf209f41925ff85c024ac4a333b6d87737167cfc451dc",
+        "checked_revision": "sha256:aa571baa88e28a0840eaf209f41925ff85c024ac4a333b6d87737167cfc451dc",
+        "inputs": {
+          "T039": "sha256:aa571baa88e28a0840eaf209f41925ff85c024ac4a333b6d87737167cfc451dc"
+        },
+        "evidence": [
+          "docs/evidence/T040/A1/README.md",
+          "docs/evidence/T040/A1/assessment.json",
+          "docs/evidence/T040/A2/README.md",
+          "docs/evidence/T040/A2/assessment.json",
+          "docs/evidence/T040/A3/README.md",
+          "docs/evidence/T040/A3/assessment.json"
+        ],
+        "summary": "Independent QA remains BLOCKED, not product FAIL. A1 defects were fixed in T039/A2; A2/A3 pin/source/tests/grid6x7/viewport/44px/prev-next/outside/Escape/Today/range-validation passed. Visible-browser PageDown/PageUp retest, min/max boundary, hidden ISO, data filter, date-save/error-focus and all8runtime callers remain unproven because subagent visible IAB unsupported and Chrome CUA failed. No commit/push/merge/deploy."
+      }
+    },
+    {
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §10.2",
+        "PRD.md §20.3 D-25",
+        "PRD.md §20.3 D-29"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Dashboard utama dipakai untuk menentukan tindakan harian; hierarki, empty state, navigasi dan responsif perlu berubah bersama tanpa mengubah query atau aturan bisnis.",
+      "model_hint": "gpt-6.1-terra",
+      "model_reason": "Terra untuk restrukturisasi visual satu layar aplikasi dengan data dan perilaku existing yang stabil.",
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "id": "T041",
+      "title": "Perjelas hierarki dan layout dashboard",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "depends_on": {
+        "hard": ["T039"],
+        "contracts": []
+      },
+      "write_scope": [
+        "resources/views/livewire/dashboard/index.blade.php",
+        "tests/Feature/Dashboard/DashboardTest.php",
+        "tests/Feature/DashboardTest.php",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T041/**"
+      ],
+      "acceptance_criteria": [
+        "Dashboard menjawab tindakan hari ini lebih dulu: ringkasan harian, alur servis, dua daftar tindak lanjut, lalu performa bulanan; informasi Batal tidak mengambang.",
+        "Data, route, aksi, hak akses, query, grafik dan aturan bisnis tetap sama; tidak ada angka, fitur atau dependency baru.",
+        "Ikon existing hanya menandai konteks penting dan tidak menggantikan label; struktur heading, link, status dan fokus tetap dapat dipahami tanpa ikon.",
+        "Empty dan populated state rapi pada 360/768/1280 tanpa overflow, ruang kosong berlebihan, target sentuh kecil atau informasi penting di bawah hierarki yang salah.",
+        "Revisi tetap lokal; workflow GitHub Actions tidak diubah dan tidak ada commit/push/merge/deploy."
+      ],
+      "verification_plan": [
+        "Tes dashboard terarah dan regresi akses, build/lint, browser empty+populated pada360/768/1280, screenshot review dan audit workflow."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root",
+          "model_requested": "gpt-6.1-terra",
+          "model_effective": null,
+          "dispatch_ref": "user:D29:dashboard-layout-polish",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/T041/A1/README.md"
+        }
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T041/A1/README.md",
+        "revision": "sha256:21064de143b6d51af6e1202e4172beba76322d35c5b0813fcf19f73165468f10",
+        "checked_revision": "sha256:21064de143b6d51af6e1202e4172beba76322d35c5b0813fcf19f73165468f10",
+        "inputs": {
+          "T039": "sha256:aa571baa88e28a0840eaf209f41925ff85c024ac4a333b6d87737167cfc451dc"
+        },
+        "evidence": [
+          "docs/evidence/T041/A1/README.md",
+          "docs/evidence/T041/A1/source-manifest.json",
+          "docs/evidence/T041/A1/browser-results.json"
+        ],
+        "summary": "Dashboard lokal kini memprioritaskan ringkasan harian, alur servis, daftar tindakan dan performa bulanan. View cache, 15 tes/192 assertion, build, CI penuh (Pint, PHPStan 0 error, 190 tes/1.991 assertion dengan 1 skipped) dan browser empty+populated pada 360/768/1280 lulus. Query/action/route/dependency/workflow tidak berubah; tidak ada commit/push/merge/deploy. Menunggu QA independen T042."
+      }
+    },
+    {
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §10.2",
+        "PRD.md §20.3 D-25",
+        "PRD.md §20.3 D-29"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Perubahan hierarki dashboard perlu observasi independen pada state kosong/berisi, tiga viewport dan interaksi existing.",
+      "model_hint": "gpt-6.1-terra",
+      "model_reason": "Terra untuk QA visual dan keterpahaman dashboard aplikasi.",
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "id": "T042",
+      "title": "QA independen layout dashboard",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "visual",
+      "depends_on": {
+        "hard": ["T041"],
+        "contracts": []
+      },
+      "write_scope": ["docs/evidence/T042/**"],
+      "acceptance_criteria": [
+        "Tester independen mem-pin kandidat T041 dan memeriksa hierarki, keterpahaman, state kosong/berisi, aksesibilitas, responsif serta tidak berubahnya perilaku/data.",
+        "Tes terarah dan browser 360/768/1280 lulus; hasil tetap lokal tanpa push atau deploy."
+      ],
+      "verification_plan": [
+        "Audit source, tes dashboard, browser independen empty+populated, screenshot comparison dan pemeriksaan target sentuh/overflow."
+      ],
+      "status": "blocked",
+      "qa_for": "T041",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "verification",
+          "worker_id": "pending-native-codex-agent",
+          "model_requested": "gpt-6.1-terra",
+          "model_effective": null,
+          "dispatch_ref": "native-codex:T042:A1",
+          "outcome": "blocked",
+          "receipt_ref": "docs/evidence/T042/A1/README.md"
+        },
+        {
+          "id": "A2",
+          "kind": "verification",
+          "worker_id": "/root/t042_dashboard_qa",
+          "model_requested": "gpt-6.1-terra",
+          "model_effective": null,
+          "dispatch_ref": "native-codex:T042:A2",
+          "outcome": "blocked",
+          "receipt_ref": "docs/evidence/T042/A2/README.md"
+        }
+      ],
+      "result": {
+        "verdict": "blocked",
+        "artifact_ref": "docs/evidence/T042/A2/README.md",
+        "revision": "sha256:21064de143b6d51af6e1202e4172beba76322d35c5b0813fcf19f73165468f10",
+        "checked_revision": "sha256:21064de143b6d51af6e1202e4172beba76322d35c5b0813fcf19f73165468f10",
+        "inputs": {
+          "T041": "sha256:21064de143b6d51af6e1202e4172beba76322d35c5b0813fcf19f73165468f10"
+        },
+        "evidence": [
+          "docs/evidence/T042/A1/README.md",
+          "docs/evidence/T042/A1/assessment.json",
+          "docs/evidence/T042/A2/README.md",
+          "docs/evidence/T042/A2/assessment.json"
+        ],
+        "failure_class": "environment",
+        "summary": "Dua upaya QA independen mem-pin kandidat dan tidak menemukan cacat. Source audit, 17 tes/209 assertion, view cache, build, git diff check, populated 360/768/1280, empty desktop dan keyboard bermakna lulus. Verdict tetap BLOCKED karena tester tidak memperoleh kontrol viewport untuk membuktikan empty state tepat pada 360/768/1280; coordinator sudah melihat kombinasi tersebut tetapi tidak menggantikan gate independen. Tidak ada commit/push/merge/deploy."
+      }
+    },
+    {
+      "id": "T043",
+      "title": "Perjelas dan percantik halaman tracking customer",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "deliverable_id": null,
+      "prd_refs": ["PRD.md §10.2", "PRD.md §20.3 D-25", "PRD.md §20.3 D-30", "DESIGN.md"],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Satu layar publik perlu restrukturisasi visual menyeluruh pada markup dan CSS tanpa mengubah kontrak data atau privasi.",
+      "model_hint": "gpt-6.1-terra",
+      "model_reason": "Terra untuk komposisi visual halaman status publik yang terbatas dan terukur.",
+      "depends_on": {"hard": [], "contracts": []},
+      "write_scope": [
+        "resources/views/tracking/show.blade.php",
+        "tests/Feature/Tracking/TrackingTest.php",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T043/**"
+      ],
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Tracking tampil sebagai tanda terima digital yang meyakinkan: identitas toko, nomor TTS, status saat ini dan progres empat tahap menjadi hierarki utama.",
+        "Rincian barang/keluhan, nota, total, garansi, kontak toko dan tombol PDF tersusun jelas; seluruh data dan kondisi status existing tetap sama.",
+        "Tidak menampilkan nama, HP, alamat customer, modal, token atau state internal baru; header noindex/no-store dan route tetap sama.",
+        "State Diterima, Dikerjakan, Selesai, Diambil, tidak dapat diperbaiki dan Batal rapi pada 360/768/1280 tanpa overflow; target interaktif minimal 44px.",
+        "Revisi tetap lokal; workflow GitHub Actions tidak diubah dan tidak ada commit/push/merge/deploy."
+      ],
+      "verification_plan": [
+        "Tes tracking terarah, view compile, build dan git diff check; browser semua status representatif pada 360/768/1280; audit privasi source/HTML."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [{
+        "id": "A1",
+        "kind": "implementation",
+        "worker_id": "/root",
+        "model_requested": "gpt-6.1-terra",
+        "model_effective": null,
+        "dispatch_ref": "user:D30:tracking-visual-polish",
+        "outcome": "pass",
+        "receipt_ref": "docs/evidence/T043/A1/README.md"
+      }],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T043/A1/README.md",
+        "revision": "sha256:cad03b85556bfaa69edb9f6133a61b5fa4d41116e3bf144b60076a779f324718",
+        "checked_revision": "sha256:cad03b85556bfaa69edb9f6133a61b5fa4d41116e3bf144b60076a779f324718",
+        "inputs": {},
+        "evidence": ["docs/evidence/T043/A1/README.md", "docs/evidence/T043/A1/source-manifest.json", "docs/evidence/T043/A1/browser-results.json"],
+        "summary": "Tracking customer kini berbentuk tanda terima digital dengan status/progres utama, rincian dan nota terstruktur serta layout 360/768/1280. View cache, 2 tes/48 assertion, build, CI penuh (Pint, PHPStan 0 error, 190 tes/1.995 assertion dengan 1 skipped), diff check dan browser state Diterima/Selesai/Batal lulus. Privasi, route, controller, dependency dan workflow tidak berubah; tidak ada commit/push/merge/deploy."
+      }
+    },
+    {
+      "id": "T044",
+      "title": "QA independen halaman tracking customer",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "visual",
+      "deliverable_id": null,
+      "prd_refs": ["PRD.md §10.2", "PRD.md §13", "PRD.md §20.3 D-30", "DESIGN.md"],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Halaman publik perlu pemeriksaan independen visual, privasi, state status, dan responsif sebelum dinyatakan siap.",
+      "model_hint": "gpt-6.1-terra",
+      "model_reason": "Terra untuk QA visual dan keterpahaman halaman publik.",
+      "depends_on": {"hard": ["T043"], "contracts": []},
+      "write_scope": ["docs/evidence/T044/**"],
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Tester independen mem-pin kandidat dan memeriksa seluruh status, privasi, hierarki, aksesibilitas dan responsif 360/768/1280.",
+        "Tes terarah dan browser lulus; hasil tetap lokal tanpa push atau deploy."
+      ],
+      "verification_plan": ["Audit source/HTML, tes tracking, browser state representatif pada tiga viewport dan pemeriksaan target sentuh/overflow."],
+      "status": "done",
+      "qa_for": "T043",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [{
+        "id": "A1",
+        "kind": "verification",
+        "worker_id": "pending-native-codex-agent",
+        "model_requested": "gpt-6.1-terra",
+        "model_effective": null,
+        "dispatch_ref": "native-codex:T044:A1",
+        "outcome": "pass",
+        "receipt_ref": "docs/evidence/T044/A1/README.md"
+      }],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T044/A1/README.md",
+        "revision": "sha256:580f5862c95a855e9f3ef78cf28b3a9ef6bce000d1634c98283af51b86992628",
+        "checked_revision": "sha256:cad03b85556bfaa69edb9f6133a61b5fa4d41116e3bf144b60076a779f324718",
+        "inputs": {"T043": "sha256:cad03b85556bfaa69edb9f6133a61b5fa4d41116e3bf144b60076a779f324718"},
+        "evidence": ["docs/evidence/T044/A1/README.md", "docs/evidence/T044/A1/assessment.json"],
+        "summary": "QA independen PASS: pin awal/akhir cocok; 2 tes/48 assertion, view cache, build dan diff check lulus. Browser Diterima, Selesai bernota dan Batal pada 360/768/1280 tanpa overflow; teks/angka panjang, target PDF 44px dan fokus keyboard lulus. Privasi/header/token exact terjaga; tidak ada commit/push/merge/deploy."
+      }
+    },
+    {
+      "id": "T045",
+      "title": "Perbaiki ikon aksi yang hilang pada sprite bersama",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "deliverable_id": null,
+      "prd_refs": ["DESIGN.md", "PRD.md §20.3 D-25"],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "low",
+      "uncertainty": "low",
+      "triage_reason": "Caller ikon pensil sudah benar; simbol sprite bersama yang hilang membuat empat menu menampilkan ruang kosong.",
+      "model_hint": "gpt-6-luna",
+      "model_reason": "Luna untuk perbaikan aset bersama yang kecil, jelas, dan berisiko rendah.",
+      "depends_on": {"hard": [], "contracts": []},
+      "write_scope": [
+        "public/icons/lucide.svg",
+        "tests/Feature/ScaffoldTest.php",
+        "TODO.md",
+        "docs/evidence/T045/**"
+      ],
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Seluruh referensi ikon statis pada view mempunyai simbol yang sesuai di sprite Lucide bersama.",
+        "Menu aksi TTS menampilkan ikon Lihat dan Ubah secara konsisten tanpa mengubah label, rute, data, atau perilaku menu.",
+        "Guard test mencegah referensi ikon statis baru tanpa simbol sprite.",
+        "Revisi tetap lokal; tidak ada commit, push, merge, deploy, atau perubahan GitHub Actions."
+      ],
+      "verification_plan": [
+        "Audit referensi ikon terhadap sprite, ScaffoldTest, view cache, formatter, dan pemeriksaan browser menu aksi TTS."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [{
+        "id": "A1",
+        "kind": "implementation",
+        "worker_id": "/root",
+        "model_requested": "gpt-6-luna",
+        "model_effective": null,
+        "dispatch_ref": "user:missing-row-action-icons",
+        "outcome": "pass",
+        "receipt_ref": "docs/evidence/T045/A1/README.md"
+      }],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T045/A1/README.md",
+        "revision": "sha256:06ac7156d98a99f5312e7b20d3970acf8c4d02bb66712c61740f35caf7248918",
+        "checked_revision": "sha256:06ac7156d98a99f5312e7b20d3970acf8c4d02bb66712c61740f35caf7248918",
+        "inputs": {},
+        "evidence": ["docs/evidence/T045/A1/README.md"],
+        "summary": "Akar masalah diperbaiki sekali di sprite bersama: simbol i-pencil ditambahkan dan empat caller yang sudah memakai ikon itu kembali tampil. Audit 31 ikon statis, 6 tes/32 assertion, view cache, Pint PHP8.3 dan browser menu TTS lulus. Tidak ada commit/push/merge/deploy."
+      }
+    },
+    {
+      "id": "T046",
+      "title": "QA independen kelengkapan ikon aksi",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "visual",
+      "deliverable_id": null,
+      "prd_refs": ["DESIGN.md", "PRD.md §20.3 D-25"],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "low",
+      "uncertainty": "low",
+      "triage_reason": "Perubahan sprite bersama perlu dipastikan tidak menyisakan referensi ikon yang hilang dan benar-benar tampil di menu.",
+      "model_hint": "gpt-6-luna",
+      "model_reason": "Luna untuk audit aset dan tes terarah yang kecil serta deterministik.",
+      "depends_on": {"hard": ["T045"], "contracts": []},
+      "write_scope": ["docs/evidence/T046/**"],
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Tester independen mem-pin kandidat, mengaudit semua referensi ikon statis dan tidak menemukan simbol yang hilang.",
+        "Tes terarah dan view cache lulus; hasil visual menu TTS sesuai bila browser lokal tersedia.",
+        "Tidak ada perubahan kode, commit, push, merge, deploy, atau perubahan GitHub Actions."
+      ],
+      "verification_plan": [
+        "Audit source/sprite, ScaffoldTest, view cache dan pemeriksaan menu aksi TTS pada kandidat yang sama."
+      ],
+      "status": "done",
+      "qa_for": "T045",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [{
+        "id": "A1",
+        "kind": "verification",
+        "worker_id": "/root/t046_icon_qa",
+        "model_requested": "gpt-6-luna",
+        "model_effective": null,
+        "dispatch_ref": "native-codex:T046:A1",
+        "outcome": "pass",
+        "receipt_ref": "docs/evidence/T046/A1/README.md"
+      }],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T046/A1/README.md",
+        "revision": "sha256:f4123ce626a48f9fc1da4957645ff3c864f6a6b211ff99549db03dbb46cbf4ad",
+        "checked_revision": "sha256:06ac7156d98a99f5312e7b20d3970acf8c4d02bb66712c61740f35caf7248918",
+        "inputs": {"T045": "sha256:06ac7156d98a99f5312e7b20d3970acf8c4d02bb66712c61740f35caf7248918"},
+        "evidence": ["docs/evidence/T046/A1/README.md"],
+        "summary": "QA independen PASS: 31 ikon statis dibandingkan dengan 58 simbol sprite, 0 hilang dan 0 ID duplikat; i-pencil tunggal melayani empat caller. ScaffoldTest 6 tes/32 assertion, view cache dan browser menu TTS lulus; ikon mata/pensil 16x16 dengan href benar dan tanpa error browser. Tidak ada perubahan kode oleh tester, commit/push/merge/deploy."
       }
     }
   ]

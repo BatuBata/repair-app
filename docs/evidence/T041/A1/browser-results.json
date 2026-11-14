@@ -1,0 +1,25 @@
+{
+  "tool": "Codex CUA in-app browser",
+  "url": "http://127.0.0.1:8196/",
+  "database": "/tmp/repair-search-select.sqlite (synthetic only)",
+  "viewports": [
+    {"width": 360, "height": 800, "empty_or_initial": "pass", "populated": "pass"},
+    {"width": 768, "height": 900, "empty_or_initial": "pass", "populated": "pass"},
+    {"width": 1280, "height": 900, "empty_or_initial": "pass", "populated": "pass"}
+  ],
+  "checks": {
+    "hierarchy": "pass",
+    "labels_without_icons": "pass",
+    "cancelled_link_integrated": "pass",
+    "empty_state_density": "pass",
+    "populated_action_rows": "pass",
+    "responsive_layout": "pass",
+    "visible_horizontal_overflow": "none",
+    "existing_actions_preserved": "pass"
+  },
+  "notes": [
+    "At 360 px, Batal 0 remains on one line and the action panels stack.",
+    "At 768 px, the daily summary remains three columns to avoid excessive vertical height.",
+    "At 1280 px, the two action panels remain 7/5 columns and the monthly section follows them."
+  ]
+}

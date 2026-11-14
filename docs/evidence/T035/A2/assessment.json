@@ -1,0 +1,36 @@
+{
+  "task": "T035",
+  "attempt": "A2",
+  "role": "independent_tester",
+  "verdict": "pass",
+  "artifact_ref": "docs/evidence/T035/A2/README.md",
+  "revision": "sha256:2d31e5b2b6091fa2d301907bbef59b3301cf3bdc347a15333a473f51a998aa07",
+  "checked_revision": "sha256:2d31e5b2b6091fa2d301907bbef59b3301cf3bdc347a15333a473f51a998aa07",
+  "base_revision": "89e1c5b739c9d7036b085ba8753ea1c0eae2d6d2",
+  "inputs": {
+    "T034": "sha256:2d31e5b2b6091fa2d301907bbef59b3301cf3bdc347a15333a473f51a998aa07"
+  },
+  "evidence": [
+    "docs/evidence/T035/A2/README.md",
+    "docs/evidence/T035/A1/render-probe.php",
+    "docs/evidence/T035/A1/README.md",
+    "docs/evidence/T034/A1/users-create-360.png",
+    "docs/evidence/T034/A1/users-create-768.png",
+    "docs/evidence/T034/A1/users-create-1280.png"
+  ],
+  "checks": {
+    "snapshot_pin": "pass",
+    "a1_to_a2_scope": "pass: only explicit null condition and two number-test lines",
+    "a1_failed_render_cases": "pass: eight of eight render cases",
+    "actual_store_number_caller": "pass: type number and placeholder 0",
+    "date_file_excluded": "pass",
+    "targeted_scaffold_tests": "pass: 5 tests, 30 assertions",
+    "raw_supported_control_coverage": "pass: explicitly reused A1 unchanged source evidence",
+    "user_form_screenshot_text": "pass: explicitly reused A1; screenshot hashes rechecked",
+    "workflow_bytes_identical": "pass: rechecked",
+    "native_filled_clear_browser": "not_run: A1 local browser endpoint unavailable; not retried",
+    "remote_mutation_by_tester": "none",
+    "full_suite_repeat": "not_run: proportional selective QA; implementer full CI on A2"
+  },
+  "summary": "PASS selective QA: string 0 survives explicit null condition, actual default_warranty_days caller renders placeholder 0, date/file remain excluded. A1 unchanged PASS cases explicitly reused; A1 FAIL history retained. No source or remote changes by tester."
+}

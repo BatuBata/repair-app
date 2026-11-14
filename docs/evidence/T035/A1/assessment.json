@@ -1,0 +1,34 @@
+{
+  "task": "T035",
+  "attempt": "A1",
+  "role": "independent_tester",
+  "verdict": "fail",
+  "artifact_ref": "docs/evidence/T035/A1/README.md",
+  "revision": "sha256:86e6efb12b28f812b425b2b6024bf0b9e3802c1e5e5d4c6c035325b0b556cd50",
+  "checked_revision": "sha256:86e6efb12b28f812b425b2b6024bf0b9e3802c1e5e5d4c6c035325b0b556cd50",
+  "base_revision": "89e1c5b739c9d7036b085ba8753ea1c0eae2d6d2",
+  "inputs": {
+    "T034": "sha256:86e6efb12b28f812b425b2b6024bf0b9e3802c1e5e5d4c6c035325b0b556cd50"
+  },
+  "evidence": [
+    "docs/evidence/T035/A1/README.md",
+    "docs/evidence/T035/A1/render-probe.php",
+    "docs/evidence/T035/A1/native-placeholder.mjs",
+    "docs/evidence/T034/A1/users-create-360.png",
+    "docs/evidence/T034/A1/users-create-768.png",
+    "docs/evidence/T034/A1/users-create-1280.png"
+  ],
+  "checks": {
+    "snapshot_pin": "pass",
+    "workflow_bytes_identical": "pass",
+    "raw_supported_control_coverage": "pass",
+    "shared_number_component": "fail",
+    "unsupported_controls_not_forced": "pass",
+    "user_form_screenshot_text": "pass",
+    "targeted_scaffold_tests": "pass: 5 tests, 29 assertions",
+    "native_filled_clear_browser": "not_run: local Chrome endpoint refused connection",
+    "remote_mutation_by_tester": "none",
+    "full_suite_repeat": "not_run: unchanged snapshot; proportional targeted QA"
+  },
+  "summary": "FAIL: @if($placeholder) drops string 0, so empty default_warranty_days number field has no placeholder. Four requested user placeholders and all three screenshots pass. Candidate/source and workflow remain unchanged by tester."
+}

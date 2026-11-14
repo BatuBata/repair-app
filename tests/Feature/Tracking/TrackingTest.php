@@ -28,8 +28,10 @@ class TrackingTest extends TestCase
         $order->forceFill(['tracking_token' => str_repeat('aB', 32)])->save();
         $this->get('/t/'.str_repeat('Ab', 32))->assertNotFound()->assertHeader('X-Robots-Tag', 'noindex');
         $this->get('/t/short')->assertNotFound();
-        $this->get('/t/'.$order->tracking_token)->assertOk()->assertHeader('X-Robots-Tag', 'noindex')
-            ->assertHeader('Cache-Control', 'no-store, private')->assertSee('Diterima')->assertSee('Layar rusak')->assertDontSee('081234567890')->assertDontSee('6281234567890')->assertDontSee('Alamat Rahasia')->assertDontSee('Total');
+        $initial = $this->get('/t/'.$order->tracking_token)->assertOk()->assertHeader('X-Robots-Tag', 'noindex')
+            ->assertHeader('Cache-Control', 'no-store, private')->assertSee('Tanda terima servis')->assertSee('Rincian barang')->assertSee('Menunggu penanganan')
+            ->assertSee('Diterima')->assertSee('Layar rusak')->assertDontSee('081234567890')->assertDontSee('6281234567890')->assertDontSee('Alamat Rahasia')->assertDontSee('Total');
+        $this->assertLessThan(strpos($initial->getContent(), 'Rincian barang'), strpos($initial->getContent(), 'Tanda terima servis'));
         $order->update(['status' => 'dikerjakan', 'assigned_at' => now()]);
         $this->get('/t/'.$order->tracking_token)->assertSee('sedang')->assertSee('dikerjakan');
         $order->update(['status' => 'selesai', 'invoiced_on' => '2026-11-10', 'warranty_days' => 30, 'warranty_until' => '2026-12-10']);

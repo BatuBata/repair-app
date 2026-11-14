@@ -1,0 +1,22 @@
+{
+  "verdict": "blocked",
+  "reason": "Empty fixture accessible and meaningful keyboard checks passed; required visual 360/768/1280 checks remain blocked by browser viewport control failure.",
+  "head_initial_and_final": "89e1c5b739c9d7036b085ba8753ea1c0eae2d6d2",
+  "sha256_initial_and_final": {
+    "PRD.md": "a6d5536d689221d1ea8c03c2fa02159a97abc46405658267731f3a7777288a9a",
+    "resources/views/livewire/dashboard/index.blade.php": "21064de143b6d51af6e1202e4172beba76322d35c5b0813fcf19f73165468f10",
+    "tests/Feature/Dashboard/DashboardTest.php": "1a0d182cc9a3e35caa27cbc6152954c49b21ca567bf9c04a8efb69115cc16a7f",
+    "tests/Feature/DashboardTest.php": "c94043486ee68c06c071a8a97505b4e3baddc513487075f392f95a7c03cd32e4"
+  },
+  "checks": {
+    "empty_desktop_hierarchy_and_panels": "pass observed",
+    "cancel_navigation": "pass",
+    "keyboard_focus_links_tabs_chart": "pass sampled; arrow keys change series and select first chart day",
+    "empty_360_768_1280": "blocked: browser viewport API unavailable and native responsive selector failed",
+    "empty_412": "partial visual: summary and initial lane observed only",
+    "tests_build": "not repeated; unchanged pin and A1 results retained"
+  },
+  "findings": [],
+  "not_tested": ["empty visual, overflow and touch-target checks at 360/768/1280"],
+  "evidence": "docs/evidence/T042/A2/README.md"
+}

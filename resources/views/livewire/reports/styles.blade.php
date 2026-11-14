@@ -49,7 +49,7 @@
 .reports-page .segmented button { flex:1; min-height:44px; }
 .reports-page .report-dates { width:100%; }
 .reports-page .report-dates .field { flex:1; width:0; }
-.reports-page .report-dates input { width:100%; min-width:0; }
+.reports-page .report-dates .date-picker-trigger { width:100%; min-width:0; }
 .reports-page .daily-chart { height:230px; }
 .reports-page .chart-plot { min-width:calc(var(--days) * 44px); }
 .reports-page .report-table thead { display:none; }

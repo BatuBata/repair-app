@@ -1,0 +1,27 @@
+{
+  "browser": "Chrome headless and Codex in-app Chromium",
+  "database": "temporary SQLite /tmp/repair-search-select.sqlite",
+  "cases": {
+    "sales_product_search_keyboard_and_price_sync": "pass",
+    "selected_value_reopens_all_options": "pass",
+    "escape_preserves_selected_value": "pass",
+    "no_result_status": "pass",
+    "tts_dynamic_category": "pass",
+    "expense_four_categories": "pass",
+    "technician_dynamic_options": "pass",
+    "native_two_role_options_unchanged": "pass",
+    "viewport_360": "pass",
+    "viewport_768": "pass",
+    "viewport_1280": "pass"
+  },
+  "screenshots": {
+    "360": "search-select-360.png",
+    "768": "search-select-768.png",
+    "1280": "search-select-1280.png"
+  },
+  "limits": [
+    "No physical Android touch test",
+    "No physical screen-reader session",
+    "No demo server or production database access"
+  ]
+}

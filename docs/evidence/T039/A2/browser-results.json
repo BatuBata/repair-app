@@ -1,0 +1,14 @@
+{
+  "environment": { "url": "http://127.0.0.1:8195", "database": "/tmp/repair-search-select.sqlite", "data": "synthetic local fixture only" },
+  "regression": {
+    "pagedown_focus": { "before": "01/11/2026", "month_after": "Desember 2026", "focused_after": "01/12/2026 gridcell", "result": "pass" },
+    "grid_structure": { "rows": 6, "cells": 42, "browser_tree": "table > row > cell", "result": "pass" },
+    "outside_click": { "expanded_after": false, "result": "pass" }
+  },
+  "viewports": {
+    "360x900": { "inside_viewport": true, "popover_width": 328, "popover_height": 419, "min_cell_width": 44.28125, "min_cell_height": 44 },
+    "768x900": { "inside_viewport": true, "popover_width": 328, "popover_height": 419, "min_cell_width": 44.28125, "min_cell_height": 44 },
+    "1280x900": { "inside_viewport": true, "popover_width": 328, "popover_height": 419, "min_cell_width": 44.28125, "min_cell_height": 44 }
+  },
+  "screenshots": ["date-picker-360.png", "date-picker-768.png", "date-picker-1280.png"]
+}

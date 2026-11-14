@@ -1,0 +1,25 @@
+{
+  "verdict": "blocked",
+  "reason": "Browser visual empty/initial state at 360, 768, 1280 not independently verified; isolated server listen denied by environment.",
+  "base_head_initial_and_final": "89e1c5b739c9d7036b085ba8753ea1c0eae2d6d2",
+  "pins_initial_and_final": {
+    "PRD.md": "a6d5536d689221d1ea8c03c2fa02159a97abc46405658267731f3a7777288a9a",
+    "resources/views/livewire/dashboard/index.blade.php": "21064de143b6d51af6e1202e4172beba76322d35c5b0813fcf19f73165468f10",
+    "tests/Feature/Dashboard/DashboardTest.php": "1a0d182cc9a3e35caa27cbc6152954c49b21ca567bf9c04a8efb69115cc16a7f",
+    "tests/Feature/DashboardTest.php": "c94043486ee68c06c071a8a97505b4e3baddc513487075f392f95a7c03cd32e4"
+  },
+  "checks": {
+    "source_diff_and_behavior_surface": "pass; app, routes, dependencies and workflow unchanged against HEAD",
+    "dashboard_domain_tests": "pass: 15 tests, 192 assertions, SQLite in-memory",
+    "dashboard_shell_tests": "pass: 2 tests, 17 assertions, SQLite in-memory",
+    "blade_view_cache": "pass; temporary output",
+    "vite_build": "pass; 25 modules, temporary output; font warnings described in README",
+    "git_diff_check": "pass",
+    "browser_populated_360_768_1280": "pass for observed layout, document overflow and sampled interactions",
+    "browser_empty_360_768_1280": "blocked: separate localhost server listen operation not permitted",
+    "keyboard_focus_comprehensive": "not_run"
+  },
+  "findings": [],
+  "limitations": ["No browser visual verification of empty state", "Keyboard focus not comprehensively tested", "No real device or production data used"],
+  "evidence": "docs/evidence/T042/A1/README.md"
+}

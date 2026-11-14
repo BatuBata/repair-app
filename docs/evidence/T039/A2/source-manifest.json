@@ -1,0 +1,33 @@
+{
+  "task": "T039",
+  "attempt": "A2",
+  "base_commit": "89e1c5b739c9d7036b085ba8753ea1c0eae2d6d2",
+  "revision_algorithm": "sha256 of the UTF-8 output of `shasum -a 256` for the ordered files below, including the two-space separator and newline for every entry",
+  "revision": "sha256:aa571baa88e28a0840eaf209f41925ff85c024ac4a333b6d87737167cfc451dc",
+  "ordered_files": [
+    "PRD.md",
+    "resources/css/layout.css",
+    "resources/views/components/ui/date-picker.blade.php",
+    "resources/views/components/ui/field.blade.php",
+    "resources/views/livewire/expenses/index.blade.php",
+    "resources/views/livewire/reports/index.blade.php",
+    "resources/views/livewire/reports/styles.blade.php",
+    "resources/views/livewire/sales/form.blade.php",
+    "resources/views/livewire/stock/restock.blade.php",
+    "resources/views/livewire/tts/detail.blade.php",
+    "tests/Feature/DatePickerTest.php"
+  ],
+  "files": {
+    "PRD.md": "e5abe5ba64d6496fbf53a55b2c84d837428d0910eb7c00d3e2859d69c9e6dfb1",
+    "resources/css/layout.css": "108cfe4da574e8837e3318396c07c9f7a68dde576baf58b31000c2f0ab6e4996",
+    "resources/views/components/ui/date-picker.blade.php": "631630ed215fc27a212bde56fe5203c545160b98b61645e55e2779cfb7ef3911",
+    "resources/views/components/ui/field.blade.php": "dacaa186f26f9a17a94e7081f9d2845b0f2c9d705264fb9c64cd42c243cb2a1a",
+    "resources/views/livewire/expenses/index.blade.php": "df54e27209f1ccbef5dccd40522ce86c21b3dfb32a9facc95c274f9b55ccf28d",
+    "resources/views/livewire/reports/index.blade.php": "a77a0127aa4cfbab94984de95872b6fec564cad324cc2e3fc2ced9d6cc79c3fd",
+    "resources/views/livewire/reports/styles.blade.php": "d7170f4c27bdbaddd62275a5acaa23c4fc7a4e2eaefd4f283ecfa86dfca9857a",
+    "resources/views/livewire/sales/form.blade.php": "1264588202d4a95d126d47e230247e90c7b9e294df358ba253620381559fb4d7",
+    "resources/views/livewire/stock/restock.blade.php": "dc3e56052690283defee019392828f31f82e194b3c3506d66ec052e5f3f389f4",
+    "resources/views/livewire/tts/detail.blade.php": "3225e53f6ce3a9a1543487d09eca658ec29990e4a09104d20c1fea852dcc526a",
+    "tests/Feature/DatePickerTest.php": "6c408f6bde7c1766754444b0e643c5857c82b9eb3ccae78e26ed164e8c216f1a"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "task": "T028",
+  "worker": "/root/cicd_qa",
+  "model_requested": "gpt-6.1-sol",
+  "model_effective": null,
+  "checked_revision": "c3be1af3d34df2afac9a25db1ebd2272401dabc2",
+  "Ponytail": "full",
+  "scope": "independent read-only integrated CI/CD safety review; no production mutations"
+}

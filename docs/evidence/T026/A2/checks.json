@@ -1,0 +1,8 @@
+{
+  "change": "pint.json exclude docs/evidence; immutable evidence hashes retained and application/test code still linted",
+  "global_Pint": "PASS",
+  "PHPStan": "PASS zero errors",
+  "actionlint": "PASS",
+  "reuse": "T026A1/T028A1 source scripts unchanged:20 Linux safety cases,8 archive independent probes,workflow review. Only lint discovery configuration changed.",
+  "GitHub_CI": "NOT_RUN new candidate yet"
+}

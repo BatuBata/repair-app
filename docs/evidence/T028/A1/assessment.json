@@ -1,0 +1,79 @@
+{
+  "task": "T028",
+  "role": "independent tester",
+  "verdict": "pass",
+  "artifact_ref": "git:c3be1af3d34df2afac9a25db1ebd2272401dabc2",
+  "revision": "c3be1af3d34df2afac9a25db1ebd2272401dabc2",
+  "checked_revision": "c3be1af3d34df2afac9a25db1ebd2272401dabc2",
+  "inputs": {
+    "T027": "c3be1af3d34df2afac9a25db1ebd2272401dabc2"
+  },
+  "model_requested": "gpt-6.1-sol",
+  "model_effective": null,
+  "model_receipt": "Runtime did not expose an independently verifiable model receipt; no effective model claim.",
+  "skills": {
+    "ponytail": "full; /Users/muzib/.codex/plugins/cache/ponytail/ponytail/5.3.3/skills/ponytail/SKILL.md",
+    "project_delivery": "/Users/muzib/.agents/skills/project-delivery/SKILL.md and references/qa-and-release.md"
+  },
+  "checks": [
+    {
+      "case": "source pin",
+      "actual": "HEAD exact candidate; tracked source unchanged except coordinator TODO.md. Existing untracked deploy/__pycache__ and docs/evidence/T028 observed before QA."
+    },
+    {
+      "case": "workflow syntax",
+      "command": "/private/tmp/repair-app-actionlint/actionlint .github/workflows/tests.yml",
+      "actual": "exit 0, no findings"
+    },
+    {
+      "case": "shell syntax",
+      "command": "bash -n deploy/ci-package.sh deploy/ci-remote.sh",
+      "actual": "exit 0"
+    },
+    {
+      "case": "local archive tests",
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 deploy/ci-checks.py",
+      "actual": "12 PASS; Linux-only cases correctly NOT_RUN locally",
+      "evidence": "local-checks.txt"
+    },
+    {
+      "case": "Linux package/receiver fixture",
+      "command": "ssh -o BatchMode=yes -o StrictHostKeyChecking=yes muzib@202.10.40.165 cd cicd-candidate + sha256sum + python3 ci-checks.py",
+      "actual": "20 PASS; all four remote script hashes byte-identical to candidate. Temporary fake application only, no live application/database access. Initial sandbox network denial resolved with approved escalation.",
+      "evidence": "linux-checks.txt"
+    },
+    {
+      "case": "independent archive probes",
+      "actual": "8 PASS: duplicate public/index.php, double slash, dot component, nested traversal, invalid revision, nonempty extraction directory with sentinel preserved, missing required paths, oversized declared member. Rejections leave extraction untouched."
+    },
+    {
+      "case": "workflow gate/security review",
+      "actual": "PASS: PR/branch job deploy condition false; push-main job requires successful ci by needs default success semantics. Packaging/upload/download same github.sha and current run; latest-main guard; deploy concurrency and server flock. contents read only, pinned actions, no persist checkout credentials, dedicated secrets confined to deploy environment, hostkey strict, key temporary private and cleanup. No pull_request_target."
+    },
+    {
+      "case": "receiver failure and private preservation",
+      "actual": "PASS: restricted original command, checksum, archive validator and platform preflight before update; rejection of existing maintenance; .env hash preserved; storage/.git/public storage/cache excluded; no seed/key generation/reset; migrate failure and health failure nonzero with marker; successful fixture removes obsolete asset, writes exact revision/receipt; SGID inheritance implementation inspected, prior real SGID probe not independently repeated."
+    },
+    {
+      "case": "test/config/source scope",
+      "actual": "PASS: composer ci:check includes Pint, PHPStan, full PHP test suite; MariaDB10.11 synthetic isolated service env and RUN_MYSQL_DOMAIN=1. Semantic int type_name plus unsigned constraint retains intended schema assertion across MySQL/MariaDB. No business app/migration/package lock changes in candidate. docs accurately separate demo D23, backup deferred D22, and physical acceptance."
+    }
+  ],
+  "findings": [],
+  "not_run": [
+    "Actual GitHub CI run and live auto-deploy/forced key installation (T029).",
+    "Full PHP application suite/build and real MariaDB concurrency not repeated locally; actual pipeline remains required T029.",
+    "Independent live SGID probe, real migrations, business data mutations, DB/.env/uploads access.",
+    "Physical HP/printer/full T025 acceptance; backup remains explicitly deferred D22."
+  ],
+  "risks": [
+    "No rollback/backup provided by this pipeline per user D22; failed deployment after mutation requires operator forward fix and maintenance marker retained.",
+    "Fixture stubs PHP/curl; cannot substitute for actual GitHub and target deployment T029."
+  ],
+  "evidence": [
+    "/private/tmp/repair-app-t028/assessment.json",
+    "/private/tmp/repair-app-t028/local-checks.txt",
+    "/private/tmp/repair-app-t028/linux-checks.txt"
+  ],
+  "summary": "PASS independent integrated CI/CD source and safety QA on c3be1af; T029 real pipeline/deploy gate remains."
+}

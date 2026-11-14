@@ -46,9 +46,9 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T024 | Deploy v1 ke VPS produksi | deployer / 6.1-sol | medium / high | T022, T023 | — | done |
 | T025 | Verifikasi produksi dan uji di HP dan printer klien | tester / 6.1-sol | medium / high | T024 | — | blocked |
 | T026 | GitHub CI/CD demo: workflow, artefak dan SSH deploy terbatas | developer / 6.1-sol | medium / high | — | — | done |
-| T027 | Integrasi konfigurasi CI/CD dengan main | integrator / 6.1-sol | medium / high | T026 | — | running |
+| T027 | Integrasi konfigurasi CI/CD dengan main | integrator / 6.1-sol | medium / high | T026 | — | pending |
 | T028 | QA independen hasil integrasi CI/CD | tester / 6.1-sol | medium / high | T027 | — | pending |
-| T029 | Aktifkan dan verifikasi auto-deploy GitHub nyata | deployer / 6.1-sol | medium / high | T027, T028 | — | pending |
+| T029 | Aktifkan dan verifikasi auto-deploy GitHub nyata | deployer / 6.1-sol | medium / high | T027, T028 | — | blocked |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -3774,7 +3774,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "deploy/ci-*",
         "docs/DEPLOYMENT.md",
         "docs/evidence/T026/**",
-        "tests/Feature/Domain/MySqlConcurrencyTest.php"
+        "tests/Feature/Domain/MySqlConcurrencyTest.php",
+        "pint.json"
       ],
       "shared_resources": [],
       "acceptance_criteria": [
@@ -3795,19 +3796,55 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": "gpt-6.1-sol",
           "dispatch_ref": "user:D23:root implementation",
+          "outcome": "fail",
+          "receipt_ref": "docs/evidence/T026/A1/github-first-failure.json",
+          "phases": [
+            {
+              "phase": "developer_checks",
+              "outcome": "pass",
+              "receipt_ref": "docs/evidence/T026/A1/checks.json"
+            },
+            {
+              "phase": "actual_GitHub_CI",
+              "outcome": "fail",
+              "receipt_ref": "docs/evidence/T026/A1/github-first-failure.json",
+              "reason": "Pint included immutable PHP evidence."
+            }
+          ]
+        },
+        {
+          "id": "A2",
+          "kind": "implementation",
+          "worker_id": "/root",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": "gpt-6.1-sol",
+          "dispatch_ref": "D23 targeted Pint scope recovery after actual CI failure",
           "outcome": "pass",
-          "receipt_ref": "docs/evidence/T026/A1/dispatch.json"
+          "receipt_ref": "docs/evidence/T026/A2/checks.json"
+        }
+      ],
+      "prior_results": [
+        {
+          "verdict": "pass",
+          "artifact_ref": "docs/evidence/T026/A1/source-manifest.json",
+          "revision": "sha256:ed3c672c42f0b904b46e6e12ff3f7bf52d8c5d40c8fca4c38ada45c7682e9b1f",
+          "inputs": {},
+          "evidence": [
+            "docs/evidence/T026/A1/checks.json"
+          ],
+          "summary": "Workflow and restricted artifact receiver implemented. Twelve archive tests local and20 Linux disposable package/receiver cases PASS; real SGID file probe PASS; actionlint/Pint/bash syntax PASS. No application business code or migrations changed; MariaDB type assertion made semantic. Actual GitHub CI and auto-deploy remain T029 after independent QA."
         }
       ],
       "result": {
         "verdict": "pass",
-        "artifact_ref": "docs/evidence/T026/A1/source-manifest.json",
-        "revision": "sha256:ed3c672c42f0b904b46e6e12ff3f7bf52d8c5d40c8fca4c38ada45c7682e9b1f",
+        "artifact_ref": "docs/evidence/T026/A2/source-manifest.json",
+        "revision": "sha256:29303c7af137373e3c5b3e33161150dd173b038869fd386eb3bb44bdc8f28d12",
         "inputs": {},
         "evidence": [
-          "docs/evidence/T026/A1/checks.json"
+          "docs/evidence/T026/A2/checks.json",
+          "docs/evidence/T026/A1/github-first-failure.json"
         ],
-        "summary": "Workflow and restricted artifact receiver implemented. Twelve archive tests local and20 Linux disposable package/receiver cases PASS; real SGID file probe PASS; actionlint/Pint/bash syntax PASS. No application business code or migrations changed; MariaDB type assertion made semantic. Actual GitHub CI and auto-deploy remain T029 after independent QA."
+        "summary": "A2 corrects only Pint discovery to exclude immutable docs/evidence; full app/test lint PASS and PHPStan zero errors. Receiver/workflow behavior unchanged from independent A1 review; actual GitHub CI will verify corrected candidate."
       }
     },
     {
@@ -3852,7 +3889,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Periksa ancestry main dan scope diff; commit kandidat gabungan."
       ],
-      "status": "running",
+      "status": "pending",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -3862,8 +3899,22 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": "gpt-6.1-sol",
           "dispatch_ref": "coordinator integration of current main ancestor and T026",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/T026/A1/source-manifest.json"
+        }
+      ],
+      "prior_results": [
+        {
+          "verdict": "pass",
+          "artifact_ref": "docs/evidence/T026/A1/source-manifest.json",
+          "revision": "c3be1af3d34df2afac9a25db1ebd2272401dabc2",
+          "inputs": {
+            "T026": "sha256:ed3c672c42f0b904b46e6e12ff3f7bf52d8c5d40c8fca4c38ada45c7682e9b1f"
+          },
+          "evidence": [
+            "docs/evidence/T026/A1/checks.json"
+          ],
+          "summary": "Combined candidate contains main73229e3 plus reviewed demo history and T026 automation; no application business-code changes. Pin is actual candidate commit; metadata handoff follows separately."
         }
       ]
     },
@@ -3906,7 +3957,38 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Tester terpisah meninjau dan menjalankan tes terarah; source tidak diubah."
       ],
       "status": "pending",
-      "qa_for": "T027"
+      "qa_for": "T027",
+      "workspace": "/private/tmp/repair-app-t028",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "verification",
+          "worker_id": "/root/cicd_qa",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.spawn_agent:/root/cicd_qa",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/T028/A1/assessment.json"
+        }
+      ],
+      "prior_results": [
+        {
+          "verdict": "pass",
+          "artifact_ref": "docs/evidence/T028/A1/assessment.json",
+          "revision": "sha256:d4af24d06ff74cc5b74586ad36d097474cc56ec2eaacb83d0887068b7f87925c",
+          "checked_revision": "c3be1af3d34df2afac9a25db1ebd2272401dabc2",
+          "inputs": {
+            "T027": "c3be1af3d34df2afac9a25db1ebd2272401dabc2"
+          },
+          "evidence": [
+            "docs/evidence/T028/A1/assessment.json",
+            "docs/evidence/T028/A1/dispatch.json",
+            "docs/evidence/T028/A1/linux-checks.txt",
+            "docs/evidence/T028/A1/local-checks.txt"
+          ],
+          "summary": "Independent QA PASS:20 disposable Linux safety cases,8 additional malicious archive probes,local12 cases,actionlint/bash syntax and main/CI/secrets/SSH/protected-files review. No source or production changes. Actual full GitHub CI and live deploy remain T029."
+        }
+      ]
     },
     {
       "deliverable_id": null,
@@ -3948,13 +4030,27 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Pasang wrapper/key terbatas, push main setelah QA; amati job CI/deploy dan baca metadata/readiness server."
       ],
-      "status": "pending",
+      "status": "blocked",
       "deployment": {
         "environment": "production",
         "source_task": "T027",
         "source_revision": null,
         "authorization_ref": "autodeploy-demo-2026-11-14"
-      }
+      },
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": "gpt-6.1-sol",
+          "dispatch_ref": "user:D23 coordinator activation after independent T028 PASS",
+          "outcome": "blocked",
+          "receipt_ref": "docs/evidence/T029/A1/activation.json"
+        }
+      ],
+      "blocker": "Actual CI failed on archived evidence lint; targeted T026A2 correction and independent review required. Main modification also rejected by auto-review pending explicit owner approval after ready PR."
     }
   ]
 }

@@ -1,0 +1,16 @@
+{
+  "task": "T029",
+  "revision": "c3be1af3d34df2afac9a25db1ebd2272401dabc2",
+  "authorization": "PRD D23/autodeploy-demo-2026-11-14",
+  "Ponytail": "full",
+  "status": "CI on work branch/PR running; no main push or deployment",
+  "secrets_values_recorded": false,
+  "auto_review_rejection": {
+    "action": "git push candidate SHA directly to refs/heads/main",
+    "executed": false,
+    "reason": "Default branch modification triggers deployment; reviewer requires explicit user authorization to update main.",
+    "safe_alternative": "Push work branch, create PR1 and complete actual CI; then request concrete merge authorization.",
+    "reference": "https://github.com/BatuBata/repair-app/pull/1"
+  },
+  "github_branch_run": "https://github.com/BatuBata/repair-app/actions/runs/43563583274"
+}

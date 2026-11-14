@@ -1,0 +1,3 @@
+Production packager NOT_RUN: requires GNU tar; CI runs this case.
+Receiver integration NOT_RUN: requires Linux flock and rsync; CI runs these cases.
+PASS: 12 deployment safety cases

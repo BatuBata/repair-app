@@ -13,7 +13,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 - Maksimal **dua worker aktif** (tester/integrator/deployer ikut dihitung).
 - Maksimal **dua attempt implementasi** per task; perubahan kode setelah itu perlu keputusan user.
 - Task implementation `done` = siap QA, **bukan** fitur diterima. Fitur diterima setelah QA atas hasil integrasi lulus.
-- Status eksekusi saat ini: **running**, sesuai Goal user 13 November 2026: T001–T023 sampai siap rilis memakai worker bawaan Codex. T024–T025 menunggu izin/akses deployment dan perangkat fisik. Push normal branch tetap diizinkan; seluruh gate QA dan batas attempt dipertahankan.
+- Status eksekusi saat ini: **stopped pada batas T023**. T001–T023 dan QA perangkat lunak selesai; seluruh riwayat PASS/FAIL serta jatah percobaan dipertahankan. T024–T025 tetap menunggu izin/akses deployment dan perangkat fisik. Push normal diizinkan; deployment belum diizinkan.
 
 ## Overview pekerjaan
 
@@ -42,7 +42,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T020 | Paket deploy VPS: konfigurasi contoh, skrip deploy, backup dan restore | developer / 6.1-sol | medium / high | T001, T002 (artifact) | T002, T003, T004, T005, T006, T009, T012, T017, T018, T019 | done |
 | T021 | Panduan pengguna singkat untuk owner dan teknisi | developer / 6-luna | easy / low | T017, T018, T019 | T020 | done |
 | T022 | Integrasi akhir v1 | integrator / 6.1-sol | medium / medium | T017, T018, T019, T020, T021 | — | done |
-| T023 | QA akhir v1: regresi penuh dan uji responsif semua layar | tester / 6.1-sol | medium / high | T022 | — | running |
+| T023 | QA akhir v1: regresi penuh dan uji responsif semua layar | tester / 6.1-sol | medium / high | T022 | — | done |
 | T024 | Deploy v1 ke VPS produksi | deployer / 6.1-sol | medium / high | T022, T023 | — | pending |
 | T025 | Verifikasi produksi dan uji di HP dan printer klien | tester / 6.1-sol | medium / high | T024 | — | pending |
 <!-- END GENERATED VIEW -->
@@ -124,36 +124,12 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
-      "state": "running",
-      "allowed_tasks": [
-        "T001",
-        "T002",
-        "T003",
-        "T004",
-        "T005",
-        "T006",
-        "T007",
-        "T008",
-        "T009",
-        "T010",
-        "T011",
-        "T012",
-        "T013",
-        "T014",
-        "T015",
-        "T016",
-        "T017",
-        "T018",
-        "T019",
-        "T020",
-        "T021",
-        "T022",
-        "T023"
-      ],
+      "state": "stopped",
+      "allowed_tasks": [],
       "stop_after_tasks": [
         "T023"
       ],
-      "source_ref": "Native Goal reactivated 13 Nov 2026 updatedAt1794550614; latest goal continuation explicitly resumes T001–T023, verified active via get_goal. Resume latest T017/T018 A1 checkpoint, retain completed T004 and history.",
+      "source_ref": "Goal user13Nov2026 T001–T023 boundary achieved with independentT023A2softwarePASS14Nov2026. Stop further task dispatch; T024–T025/deployment notauthorized. Coordinator closes Git main/CI handoff; Goalcomplete only after requiredclosingchecks.",
       "resume_allowed_tasks": [
         "T001",
         "T002",
@@ -326,6 +302,63 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
             "T022",
             "T023"
           ]
+        },
+        {
+          "state": "running",
+          "allowed_tasks": [
+            "T001",
+            "T002",
+            "T003",
+            "T004",
+            "T005",
+            "T006",
+            "T007",
+            "T008",
+            "T009",
+            "T010",
+            "T011",
+            "T012",
+            "T013",
+            "T014",
+            "T015",
+            "T016",
+            "T017",
+            "T018",
+            "T019",
+            "T020",
+            "T021",
+            "T022",
+            "T023"
+          ],
+          "stop_after_tasks": [
+            "T023"
+          ],
+          "source_ref": "Native Goal reactivated 13 Nov 2026 updatedAt1794550614; latest goal continuation explicitly resumes T001–T023, verified active via get_goal. Resume latest T017/T018 A1 checkpoint, retain completed T004 and history.",
+          "resume_allowed_tasks": [
+            "T001",
+            "T002",
+            "T003",
+            "T004",
+            "T005",
+            "T006",
+            "T007",
+            "T008",
+            "T009",
+            "T010",
+            "T011",
+            "T012",
+            "T013",
+            "T014",
+            "T015",
+            "T016",
+            "T017",
+            "T018",
+            "T019",
+            "T020",
+            "T021",
+            "T022",
+            "T023"
+          ]
         }
       ]
     },
@@ -358,7 +391,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "push_authorized": true,
       "source_ref": "Instruksi user 12 Nov 2026: push ke GitHub BatuBata/repair-app, setiap pekerjaan selesai buat commit dan push",
       "policy": "Commit pekerjaan selesai dan push branch task/checkpoint setelah periksa perubahan; merge ke main tetap setelah QA/review relevan; tanpa force-push. Kandidat blocked disimpan sebagai checkpoint, bukan fitur diterima.",
-      "coordination_branch": "codex/t022-release"
+      "coordination_branch": "main"
     },
     "browser_isolation_policy": {
       "source_ref": "Coordinator13Nov2026 verified existing scripts/lib/cdp.mjs Browser.launch: fresh headless Chrome process, unique user-data-dir and remote-debugging-port0; T010 uses private TASTE_SKILL_TMP.",
@@ -417,7 +450,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "acceptance_tasks": [
         "T023"
       ],
-      "status": "pending"
+      "status": "accepted"
     },
     {
       "id": "F005",
@@ -430,7 +463,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "acceptance_tasks": [
         "T023"
       ],
-      "status": "pending"
+      "status": "accepted"
     },
     {
       "id": "F006",
@@ -443,7 +476,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "acceptance_tasks": [
         "T023"
       ],
-      "status": "pending"
+      "status": "accepted"
     },
     {
       "id": "R001",
@@ -3356,7 +3389,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Revalidasi bagian software AC-01, AC-25 dan AC-26 pada revisi akhir: remember-me/launcher peran, keyboard/inputmode dan aksi form menempel, manifest/nama/ikon toko. Bukti fondasi boleh dipakai ulang hanya dengan pin/hash sumber dan kondisi relevan tetap cocok; pemasangan Android/keyboard nyata/printer fisik tetap T025, tidak diklaim PASS lewat emulasi.",
         "T017 menyatakan batas belum terbukti: periksa nama toko legal255 karakter (termasuk kata panjang), alamat/syarat65535 karakter dan thermal melewati14000pt dengan fixture privat; buktikan isi akhir/QR tidak hilang dan batas halaman, bukan hanya HTTP200. Cek PDF dengan font-cache privat kosong dan data exactsource; F01 printwidth58mm serta F02 paginasi pairedlines harus tetapPASS. Field limits diverifikasi pada Store.php57–60 dan Dompdf mendukung overflow_wrap. Pertahankan fail; jangan patch candidate dalam sesi tester."
       ],
-      "status": "running",
+      "status": "done",
       "qa_for": "T022",
       "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
       "attempts": [
@@ -3377,7 +3410,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native:collaboration.followup_task:/root/t023_final:T023-A2",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/coordinator/t023-a2-dispatch.json"
         }
       ],
@@ -3386,9 +3419,19 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "task_id": "/root/t023_final",
         "base_revision": "d047f25ea31d703660212e4205b937053c92adcb",
         "branch": "codex/t023-final-qa-a2",
-        "phase": "independent_verification",
-        "resources": "privateSQLite/headless8193+isolatedEdge; noMySQLneededCSS-only, hardware/productionnotauthorized",
-        "model_observation": "Reuse independent original Solhigh QA session (notbuilder/integrator), effectivebackendnotexposed."
+        "phase": "closed",
+        "resources": "released8193/ownedChromeEdgeprofiles; privatefixture/runtime retained; noMySQL/globalinstall/deploy",
+        "model_observation": "Reuse independent original Solhigh QA session (notbuilder/integrator), effectivebackendnotexposed.",
+        "recoveries": [
+          {
+            "kind": "environment",
+            "same_attempt": "A2",
+            "checkpoint": "docs/evidence/T023/A2/chrome-results.json (2026-11-13T12:15Z)",
+            "observed_utc": "2026-11-14T00:59:33Z",
+            "condition": "No evidence after completedChrome, privateEdgefolderempty, nativeagentreportedrunning; interrupted+followup resumed sameverification. No source/proofdiscard/newimplementation.",
+            "actions": "Inspectownprocess before Edge; dateoracle14Nov explicit. First metadatawrite permissionreview timedout beforeprocesscreated; this is permittedonetime retry."
+          }
+        ]
       },
       "prior_results": [
         {
@@ -3411,7 +3454,28 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "summary": "F01 only: report number link108.42x20px on360, required44x44. Other24softwareAC and16BR PASS;181testsPASS/1guardedMySQLSKIP1913assert;111primaryscreens,10PDF,5QR,6actualMySQLcases, baseline20tablesunchanged. EdgeNOT_RUN A1 plannedfixedA2; physical/productionT02425 deferred."
         }
       ],
-      "revalidation_note": "A1 FAIL preserved in prior_results/attempts; waiting correctedT019A2 thenT021revalidation/T022A2 for independentA2. ActiveGoal requires T023PASS, not stop at failedcandidate. No new verification dispatched yet."
+      "revalidation_note": "A1 FAIL retained; F01 independently closed A2 on exactT022candidate. No apppatch intester session.",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T023/A2/README.md",
+        "revision": "c07b6c6a4245b86a594ba15e44a3a44bca31cdf0",
+        "checked_revision": "d047f25ea31d703660212e4205b937053c92adcb",
+        "inputs": {
+          "T022": "d047f25ea31d703660212e4205b937053c92adcb"
+        },
+        "evidence": [
+          "docs/evidence/T023/A2/coverage.json",
+          "docs/evidence/T023/A2/input-proof.json",
+          "docs/evidence/T023/A2/reuse-proof.json",
+          "docs/evidence/T023/A2/chrome-results.json",
+          "docs/evidence/T023/A2/edge-results.json",
+          "docs/evidence/T023/A2/edge-pdf-smoke.json",
+          "docs/evidence/T023/A2/final-freeze.json",
+          "docs/evidence/T023/A2/resource-release.json",
+          "docs/evidence/T023/A2/visual-review.json"
+        ],
+        "summary": "IndependentA2 PASS all26softwareAC/16BR; F01closed by4trustedaddedarea taps360/768,9reportlayouts/3eyefocuscases. ActualEdge157.0.4341.57 13cases/2PDF/23assetsPASS0JSerror.404A1evidencehashes and228unchangedsource proved; final230/14/9 frozen. Source/conditionequal A1suite181PASS1guardSKIP1913assert/111screens/PDF/MySQL reused explicitly. Coordinator readfullREADME/coverage/reuse/freeze/resource andvisual360sheet; no blockers. Physical/productionT02425 remainpending."
+      }
     },
     {
       "id": "T024",
@@ -3657,3 +3721,7 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-13 | T016 A2 independentPASS c66d038 checked22e26d2 menutupF01 dengan75state/225nilaiutuh/9simpan;157PASS1guardSKIP/1585assertbaru danreuseindepA1terpin. F002/F003accepted; kandidatbolehffmain setelahreview. Source211/build14tetapmatch, semuaresourceclosed. F004–F006/R001 belumaccepted. | QA independen + coordinator report/source/pins/images | T016,F002,F003,main | docs/evidence/T016/A2/README.md |
 
 | 2026-11-13 | Main6e6cb09 setelahT016PASS mendapatCI43374298609success. MulaiT017Terra/T018Sol native pada dua workspace terisolasi, max2worker. Nativeworktreeclean dipakaiulangpada6e6 dan14assetaccepteddisalin; buildlama dipindaharsipprivat tanpa hapus. TaskT019readymenunggu slot. | QA/CI source exact + native receipts/worktreepreflight | T017,T018,T019 | docs/evidence/coordinator/ci-m2-m4.json; native-T018-build-sync.json |
+
+| 2026-11-14 | T017A3 yang diizinkan user telah PASS; T023A1 FAIL target sentuh laporan dipertahankan. T019A2 memperbaiki satu aturan CSS; panduan identik direvalidasi tanpa attempt implementasi baru. T022A2 menstabilkan build dengan pengecualian subtree bukti, tanpa perubahan fitur. | Izin A3 eksplisit dan diagnosis QA; batas default task lain tetap | T017,T019,T021,T022 | User async call_4a4f2a2bc9334b239c34c0f5b91b7ca6 + bukti A3/A2 masing-masing |
+
+| 2026-11-14 | T023A2 PASS pada d047f25:26AC software/16BR, target sentuh ditutup independen,13 kasus Edge nyata lulus. F004–F006 accepted; eksekusi berhenti pada batas T023, T024–T025/R001 tetap pending. Kandidat boleh masuk main setelah review; CI pada main wajib diperiksa dalam handoff. | Goal siap rilis software terpenuhi, produksi/perangkat tetap gate terpisah | T023,F004–F006,main | docs/evidence/T023/A2/README.md; docs/evidence/coordinator/final-readiness.json |

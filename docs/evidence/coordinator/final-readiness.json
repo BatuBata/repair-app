@@ -1,0 +1,42 @@
+{
+  "verdict": "pass-software-readiness",
+  "candidate_revision": "d047f25ea31d703660212e4205b937053c92adcb",
+  "independent_QA_evidence_revision": "c07b6c6a4245b86a594ba15e44a3a44bca31cdf0",
+  "QA_report": "docs/evidence/T023/A2/README.md",
+  "tasks_done_PASS": 23,
+  "evidence_references_verified": 143,
+  "missing_evidence": [],
+  "PRD_unchanged": true,
+  "frozen_manifests": {
+    "source": {
+      "files": 230,
+      "mismatches": []
+    },
+    "build": {
+      "files": 14,
+      "mismatches": []
+    },
+    "font": {
+      "files": 9,
+      "mismatches": []
+    }
+  },
+  "accepted_features": [
+    "F001",
+    "F002",
+    "F003",
+    "F004",
+    "F005",
+    "F006"
+  ],
+  "production_release_R001": "pending",
+  "execution_boundary": "stopped afterT023, T024–T025 unauthorized/pending",
+  "independent_QA": "26softwareAC/16BR PASS; A1FAIL retained andclosed A2 byrealinteraction; Chrome+actualEdge; sourceequal evidence reuse",
+  "Git_policy": "Normal taskbranches push authorized; main merge only now afterindependentQA PASS; GitHub tests workflow mustbechecked onpushed main revision and reported in finalhandoff. No deployment workflow.",
+  "not_done": [
+    "production deployment/HTTPS/FPM/cron/offsitebackup",
+    "physicalAndroid/keyboard/install/4G/60sec pilot/printer/QRcamera",
+    "actualADMIN_INITIAL_PASSWORD remains ownersecureinput"
+  ],
+  "retention": "Allfailed/pass evidence, privatefixtures/buildarchives/Edge runtime/worktrees preserved; ownedbrowser/serverprocessesclosed. No cleanup ofuserdata."
+}

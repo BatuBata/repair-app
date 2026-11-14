@@ -1,6 +1,6 @@
 # Aturan proyek — Aplikasi Servis Anugerah (repair-app)
 
-**Status proyek: RUNNING — Goal native aktif; lanjut T001–T023 dari checkpoint terbaru di TODO.md sampai siap rilis memakai worker bawaan Codex. T024–T025/deployment belum diizinkan. Riwayat jeda/stop dipertahankan di TODO.md.**
+**Status proyek: T001–T023 SELESAI — QA perangkat lunak independen PASS pada 14 November 2026. Batas Goal tercapai; jangan meresume task tanpa instruksi baru. T024–T025, deployment dan uji perangkat fisik belum diizinkan. Riwayat PASS/FAIL dan checkpoint dipertahankan di TODO.md.**
 
 Bahasa: Indonesia sederhana. Jelaskan istilah teknis saat pertama dipakai, laporkan hasil pemeriksaan yang benar-benar dijalankan, dan minta persetujuan sebelum menghapus data atau deploy. Commit dan push branch pekerjaan ke origin sudah diizinkan user 12 November 2026; tidak perlu meminta ulang setiap task.
 
@@ -15,7 +15,7 @@ Bahasa: Indonesia sederhana. Jelaskan istilah teknis saat pertama dipakai, lapor
 
 ## Cara bekerja
 
-Gunakan skill `project-delivery` (sumber: `~/.agents/skills/project-delivery/SKILL.md`) untuk triase, dependensi, penugasan, QA, integrasi, dan rilis. Batas eksekusi terkini dibaca dari `project.execution` di `TODO.md`; Goal aktif mengizinkan T001–T023 mengikuti dependensi, project.execution dan gate izin. Gunakan koordinasi/worker bawaan Codex; jangan menjalankan orchestration Orca. Jangan menyamakan cakupan task dengan izin push/deploy.
+Gunakan skill `project-delivery` (sumber: `~/.agents/skills/project-delivery/SKILL.md`) untuk triase, dependensi, penugasan, QA, integrasi, dan rilis. Batas eksekusi terkini dibaca dari `project.execution` di `TODO.md`; Cakupan Goal T001–T023 sudah mencapai batas T023 dengan QA independen PASS; project.execution stopped. T024–T025 memerlukan keputusan dan izin baru. Gunakan koordinasi/worker bawaan Codex; jangan menjalankan orchestration Orca. Jangan menyamakan cakupan task dengan izin push/deploy.
 
 - Satu coordinator menulis ledger. Worker mengerjakan satu task dan mengembalikan perubahan serta bukti, tanpa mengubah status pusat atau membuat worker lain.
 - Maksimal dua worker aktif (termasuk tester). Maksimal dua upaya implementasi per task.
@@ -38,7 +38,7 @@ Gunakan skill `project-delivery` (sumber: `~/.agents/skills/project-delivery/SKI
 ## Blocker yang diketahui
 
 - Eksekusi lokal serta commit/push branch diizinkan user 12 November 2026; deployment produksi belum diizinkan.
-- Akses MySQL pulih. T020 backup/restore lokal nyata sudah PASS (evidence6095a5c); repair_app_test mempertahankan20 tabel dan fixture T002A4 (8TTS/8penjualan); uji T013 menambah2 akun/1barang/1penjualan/1item milik task serta JLcounter+1 tanpa mengubah baris lama lain (inventaris di bukti T013/TODO); snapshot21 tabel T020 sebelumnya dipertahankan privat. QA independen T016 menambah fixture miliknya (3 akun,1 kategori,1 barang,2 TTS dan2 counter periode3101; sale/item fixture sendiri dihapus lewat action untuk uji restore sekali); seluruh baris baseline20 tabel tetap byte-identik, bukti/provenance dipertahankan di T016/A1. T002 developer checks sudah PASS pada4a0667c termasuk16 penyimpanan MySQL; riwayat3 code attempts dan FAIL tetap disimpan. Jangan reset/drop database atau mengulang migrate:fresh atas fixture existing tanpa scope/izin yang sesuai. Resource db:mysql-test tetap eksklusif per assignment. Password admin aplikasi masih menunggu user; seed tes sintetis tidak menetapkan password aplikasi.
+- Akses MySQL pulih. T020 backup/restore lokal nyata sudah PASS (evidence6095a5c); repair_app_test mempertahankan20 tabel dan fixture T002A4 (8TTS/8penjualan); uji T013 menambah2 akun/1barang/1penjualan/1item milik task serta JLcounter+1 tanpa mengubah baris lama lain (inventaris di bukti T013/TODO); snapshot21 tabel T020 sebelumnya dipertahankan privat. QA independen T016 menambah fixture miliknya (3 akun,1 kategori,1 barang,2 TTS dan2 counter periode3101; sale/item fixture sendiri dihapus lewat action untuk uji restore sekali); seluruh baris baseline20 tabel tetap byte-identik, bukti/provenance dipertahankan di T016/A1. T023/A1 menambah fixture sendiri periode3201 dan mempertahankan seluruh baris/counter baseline20 tabel identik; rincian di docs/evidence/T023/A1/mysql-proof.json dan mysql-extension.json. T002 developer checks sudah PASS pada4a0667c termasuk16 penyimpanan MySQL; riwayat3 code attempts dan FAIL tetap disimpan. Jangan reset/drop database atau mengulang migrate:fresh atas fixture existing tanpa scope/izin yang sesuai. Resource db:mysql-test tetap eksklusif per assignment. Password admin aplikasi masih menunggu user; seed tes sintetis tidak menetapkan password aplikasi.
 - PRD §19: Q-02 printer (uji cetak T025), Q-03 VPS/domain dan izin deploy (T024–T025), Q-04 lokasi backup (T024). Q-01, Q-05–Q-08 tidak menghambat; pakai nilai bawaan PRD.
 
 ## Batas

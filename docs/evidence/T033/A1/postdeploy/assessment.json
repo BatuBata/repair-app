@@ -1,0 +1,69 @@
+{
+  "task": "T033",
+  "role": "independent post-deployment and credential-login verification",
+  "verdict": "pass",
+  "revision": "c106424b856a42f30b6887318dbb9cbc578c11ea",
+  "checked_revision": "c106424b856a42f30b6887318dbb9cbc578c11ea",
+  "artifact_ref": "https://github.com/BatuBata/repair-app/actions/runs/43620442091",
+  "inputs": {
+    "T031": "c106424b856a42f30b6887318dbb9cbc578c11ea",
+    "T032": "c106424b856a42f30b6887318dbb9cbc578c11ea"
+  },
+  "model_requested": "gpt-6.1-sol",
+  "model_effective": null,
+  "skills": "Ponytail full and project-delivery same verified sources as T032; no extra agents.",
+  "checks": [
+    {
+      "case": "Actualmainworkflow",
+      "result": "PASS",
+      "actual": "NativeGithub jobs CI132524721100 SUCCESS with tests/build/safety/package/upload;deploy132525131144 SUCCESS with download/SSH/HTTPS. Exact headc106424 onmain."
+    },
+    {
+      "case": "Release/maintenance",
+      "result": "PASS",
+      "actual": "Independent readonlySSH current/.release-revision exactc106424; no .deploy-pending or storage/framework/down."
+    },
+    {
+      "case": "Liveadminlogin",
+      "result": "PASS",
+      "actual": "Private regular nonsymlink handover mode0600 read directly into remote Python memory; exactHTTPSorigin redirect handler prevents crossorigin redirects. NormalGETlogin+CSRFPOSTadminlogin succeeded with updatedprivatepassword; GET/profil200 and hint Gunakan minimal9karakter. No password/cookie/token/body emitted or persisted by tester."
+    },
+    {
+      "case": "Ownsessionlogout",
+      "result": "PASS",
+      "actual": "POST/logout with ownCSRF then GET/profil redirects/login. Cookiejar remained memory only; no remember option. Only session/login/logout effects, no business writes."
+    },
+    {
+      "case": "Liveproductionrule",
+      "result": "PASS",
+      "actual": "RemotePHP booted deployed Laravel readonly: productiontrue;synthetic9numericPassword::default passes;8numeric fails. No database mutation."
+    },
+    {
+      "case": "HTTPS",
+      "result": "PASS",
+      "actual": "RemotePython urllib default certificate/hostname verification, HTTPS/up200;login/profile normalresponses. No TLSverificationdisabled."
+    },
+    {
+      "case": "Operatorresetreceipt",
+      "result": "reported_by_coordinator",
+      "actual": "Coordinator states reviewedone-shot executedexactlyonce, all target/adminhash/token/otheraccount/noncredentialfield/privatehandoverPASS; tester independently proves updatedhandoverlogin works, doesnotclaim independent comparison of pre/postotheraccountrows."
+    }
+  ],
+  "findings": [],
+  "not_run": [
+    "No credential reset executed by tester; no otheraccount/prepostbusinessdatabasecomparison independently repeated.",
+    "No physicalAndroid/printer/fullbusinessUAT or backup/restore.",
+    "No source/ledger change, .env/passwordvalue/logdump/screenshot/HAR output, no business fixture writes."
+  ],
+  "risks": [
+    "Backup deferredD22; existingdemo acceptance limits remain.",
+    "Only requested passwordpolicy/adminloginchange accepted; physical/business fullacceptance separate."
+  ],
+  "evidence": [
+    "/private/tmp/repair-app-t033/assessment.json",
+    "/private/tmp/repair-app-t033/login-observation.jsonl",
+    "/private/tmp/repair-app-t033/github-jobs.json",
+    "/private/tmp/repair-app-t033/deploy-log-excerpt.json"
+  ],
+  "summary": "PASS actual main deployment, deployed9characterpolicy, updatedadmincredentialnormalHTTPSlogin/profile and ownlogout. Secret kept memory-only."
+}

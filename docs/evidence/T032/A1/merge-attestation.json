@@ -1,0 +1,12 @@
+{
+  "verdict": "pass",
+  "reviewed_revision": "9cbc94981794caae2c018bb7f228fcbf8d27647c",
+  "integrated_revision": "c106424b856a42f30b6887318dbb9cbc578c11ea",
+  "tree_sha": "b051a14649e75b7d02b2c49a6bc71493a1d50410",
+  "commands": [
+    "git rev-parse reviewed^{tree} integrated^{tree}",
+    "git diff --exit-code reviewed integrated"
+  ],
+  "actual": "Both exacttree hashes identical; empty diff exit0.",
+  "reuse": "T032 reviewed source/independent15assertioncallerprobe/GitHub184test evidence apply to identical integratedsource. No suite rerun claimed. Actualmain deployment/credential login remains separateT033."
+}

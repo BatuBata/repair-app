@@ -50,9 +50,9 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T028 | QA independen hasil integrasi CI/CD | tester / 6.1-sol | medium / high | T027 | — | done |
 | T029 | Aktifkan dan verifikasi auto-deploy GitHub nyata | deployer / 6.1-sol | medium / high | T027, T028 | — | done |
 | T030 | Aturan password9karakter dan petunjuk seragam | developer / 6.1-sol | medium / high | — | — | done |
-| T031 | Integrasi perubahan password | integrator / 6.1-sol | medium / high | T030 | — | running |
-| T032 | QA independen aturan password | tester / 6.1-sol | medium / high | T031 | — | pending |
-| T033 | Deploy aturan dan reset hanya admin demo | deployer / 6.1-sol | medium / high | T031, T032 | — | pending |
+| T031 | Integrasi perubahan password | integrator / 6.1-sol | medium / high | T030 | — | done |
+| T032 | QA independen aturan password | tester / 6.1-sol | medium / high | T031 | — | done |
+| T033 | Deploy aturan dan reset hanya admin demo | deployer / 6.1-sol | medium / high | T031, T032 | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -132,17 +132,12 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
-      "state": "running",
-      "allowed_tasks": [
-        "T030",
-        "T031",
-        "T032",
-        "T033"
-      ],
+      "state": "stopped",
+      "allowed_tasks": [],
       "stop_after_tasks": [
         "T033"
       ],
-      "source_ref": "User15Nov2026 D24 requests9char simplepassword and reset admin demo to supplied value; implement/review and deploy under ongoing D23. T025 physical UAT remains blocked.",
+      "source_ref": "UserD24 password workT030–T033 completed15Nov2026: policy9chars,actualmainCI/deploy43620442091,singleadminreset andindependentliveLOGIN/POLICY/LOGOUTPASS. StopatT033;ongoingD23CI/CDauthorizationremainsactive,T025physical/fullUATnotresumed.",
       "phase_history": [
         {
           "state": "paused",
@@ -420,6 +415,19 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
             "T029"
           ],
           "source_ref": "D23 setup T026-T029 completed14Nov2026 with actual main CI and auto-deploy43564251943 plus independent livePASS. Stop further agent dispatch at T029 boundary. Ongoing authorized main-push CI/CD policy remains active; T025 physical/fullUAT remains blocked."
+        },
+        {
+          "state": "running",
+          "allowed_tasks": [
+            "T030",
+            "T031",
+            "T032",
+            "T033"
+          ],
+          "stop_after_tasks": [
+            "T033"
+          ],
+          "source_ref": "User15Nov2026 D24 requests9char simplepassword and reset admin demo to supplied value; implement/review and deploy under ongoing D23. T025 physical UAT remains blocked."
         }
       ]
     },
@@ -4369,7 +4377,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Targeted unit/feature and independent source review; actual GitHub CI/CD plus limited live credential verification."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -4379,8 +4387,36 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "model_requested": "gpt-6.1-sol",
           "model_effective": "gpt-6.1-sol",
           "dispatch_ref": "coordinator D24 candidate integration",
-          "outcome": "running",
+          "outcome": "pass",
           "receipt_ref": "docs/evidence/T030/A1/source-manifest.json"
+        }
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T030/A1/source-manifest.json",
+        "revision": "c106424b856a42f30b6887318dbb9cbc578c11ea",
+        "inputs": {
+          "T030": "sha256:2138dc75cc46dabc3d92e40399b6fac5dccfb2103bcbe8dd8fb16cae32e13e98"
+        },
+        "evidence": [
+          "docs/evidence/T030/A1/checks.json",
+          "docs/evidence/T032/A1/merge-attestation.json"
+        ],
+        "summary": "Password candidate includes current main and prior evidence checkpoint; only intended policy/hints/tests/guide changed. Approved normal merge mainc106 has identical Git tree to reviewed9cbc; independent attestation stored."
+      },
+      "prior_results": [
+        {
+          "verdict": "pass",
+          "artifact_ref": "docs/evidence/T030/A1/source-manifest.json",
+          "revision": "9cbc94981794caae2c018bb7f228fcbf8d27647c",
+          "inputs": {
+            "T030": "sha256:2138dc75cc46dabc3d92e40399b6fac5dccfb2103bcbe8dd8fb16cae32e13e98"
+          },
+          "evidence": [
+            "docs/evidence/T030/A1/checks.json",
+            "docs/evidence/T032/A1/merge-attestation.json"
+          ],
+          "summary": "Password candidate includes current main and prior evidence checkpoint; only intended policy/hints/tests/guide changed."
         }
       ]
     },
@@ -4420,8 +4456,63 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Targeted unit/feature and independent source review; actual GitHub CI/CD plus limited live credential verification."
       ],
-      "status": "pending",
-      "qa_for": "T031"
+      "status": "done",
+      "qa_for": "T031",
+      "workspace": "/private/tmp/repair-app-t032",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "verification",
+          "worker_id": "/root/cicd_qa",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native:collaboration.followup_task:/root/cicd_qa:T032",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/T032/A1/assessment.json"
+        }
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T032/A1/merge-attestation.json",
+        "revision": "sha256:22f65223cdaeca869fba1b512aa2189b2f8a3b7e3f2c9f355d9f5eb10a94a128",
+        "checked_revision": "c106424b856a42f30b6887318dbb9cbc578c11ea",
+        "inputs": {
+          "T031": "c106424b856a42f30b6887318dbb9cbc578c11ea"
+        },
+        "evidence": [
+          "docs/evidence/T032/A1/PasswordCallersTest.php",
+          "docs/evidence/T032/A1/assessment.json",
+          "docs/evidence/T032/A1/dispatch.json",
+          "docs/evidence/T032/A1/github-run.json",
+          "docs/evidence/T032/A1/callers-tests.txt",
+          "docs/evidence/T032/A1/github-log-excerpt.json",
+          "docs/evidence/T032/A1/merge-attestation.json",
+          "docs/evidence/T032/A1/operator-review.json"
+        ],
+        "summary": "Independent source and isolated SQLite caller boundary tests PASS; allshared callers and preserved confirmation/currentpassword/hash/role guards checked. Actual GitHubCI184tests1976assertions/Pint/PHPStan/MariaDB/20safetyPASS. Live reset remainsT033. Main treeequivalence independentlyPASS; operator scope reviewed withoutexecution."
+      },
+      "prior_results": [
+        {
+          "verdict": "pass",
+          "artifact_ref": "docs/evidence/T032/A1/assessment.json",
+          "revision": "sha256:7295f6407eb183b45cae37f6929857f674230211f2530744e7e113905ccc9ae1",
+          "checked_revision": "9cbc94981794caae2c018bb7f228fcbf8d27647c",
+          "inputs": {
+            "T031": "c106424b856a42f30b6887318dbb9cbc578c11ea"
+          },
+          "evidence": [
+            "docs/evidence/T032/A1/PasswordCallersTest.php",
+            "docs/evidence/T032/A1/assessment.json",
+            "docs/evidence/T032/A1/dispatch.json",
+            "docs/evidence/T032/A1/github-run.json",
+            "docs/evidence/T032/A1/callers-tests.txt",
+            "docs/evidence/T032/A1/github-log-excerpt.json",
+            "docs/evidence/T032/A1/merge-attestation.json",
+            "docs/evidence/T032/A1/operator-review.json"
+          ],
+          "summary": "Independent source and isolated SQLite caller boundary tests PASS; allshared callers and preserved confirmation/currentpassword/hash/role guards checked. Actual GitHubCI184tests1976assertions/Pint/PHPStan/MariaDB/20safetyPASS. Live reset remainsT033."
+        }
+      ]
     },
     {
       "deliverable_id": null,
@@ -4461,12 +4552,63 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Targeted unit/feature and independent source review; actual GitHub CI/CD plus limited live credential verification."
       ],
-      "status": "pending",
+      "status": "done",
       "deployment": {
         "environment": "production",
         "source_task": "T031",
-        "source_revision": null,
+        "source_revision": "c106424b856a42f30b6887318dbb9cbc578c11ea",
         "authorization_ref": "autodeploy-demo-2026-11-14"
+      },
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": "gpt-6.1-sol",
+          "dispatch_ref": "userD24 + ongoingD23 coordinator deploy and single admin credential reset",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/T033/A1/postdeploy/assessment.json",
+          "phases": [
+            {
+              "phase": "actual_main_CI_auto_deploy",
+              "outcome": "pass",
+              "receipt_ref": "https://github.com/BatuBata/repair-app/actions/runs/43620442091"
+            },
+            {
+              "phase": "bounded_single_admin_reset",
+              "outcome": "pass",
+              "receipt_ref": "docs/evidence/T033/A1/admin-reset.json"
+            },
+            {
+              "phase": "independent_live_login_policy_logout",
+              "outcome": "pass",
+              "worker_id": "/root/cicd_qa",
+              "model_requested": "gpt-6.1-sol",
+              "model_effective": null,
+              "receipt_ref": "docs/evidence/T033/A1/postdeploy/assessment.json"
+            }
+          ]
+        }
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T033/A1/postdeploy/assessment.json",
+        "revision": "github-actions:43620442091:password-policy:c106424",
+        "checked_revision": "c106424b856a42f30b6887318dbb9cbc578c11ea",
+        "inputs": {
+          "T031": "c106424b856a42f30b6887318dbb9cbc578c11ea",
+          "T032": "sha256:22f65223cdaeca869fba1b512aa2189b2f8a3b7e3f2c9f355d9f5eb10a94a128"
+        },
+        "evidence": [
+          "https://github.com/BatuBata/repair-app/pull/2",
+          "https://github.com/BatuBata/repair-app/actions/runs/43620442091",
+          "docs/evidence/T033/A1/admin-reset.json",
+          "docs/evidence/T033/A1/postdeploy/assessment.json",
+          "docs/evidence/T033/A1/postdeploy/login-observation.jsonl"
+        ],
+        "summary": "Main CI/deployPASS,exactc106. Reviewed one-shot operator changed only activeusernameadmin password/hash+remembertoken andprivate0600handover; otheraccounts/noncredentialfields unchanged; noseed/keygeneration/businesswrites. Independent actualHTTPSlogin/profile9charhint/logout PASS; productionvalidator9numericPASS8numericrejected. Actualpassword neverinGit/evidence; one-shotserveroperator removed aftersuccess. Transactional/fullphysicalUAT notrerun."
       }
     }
   ]

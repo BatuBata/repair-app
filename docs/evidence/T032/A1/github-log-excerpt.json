@@ -1,0 +1,11 @@
+[
+  "2026-11-14T17:16:20.0573884Z     PASS   ......................................................... 130 files  ",
+  "2026-11-14T17:16:24.4394061Z  [OK] No errors                                                                 ",
+  "2026-11-14T17:16:25.3451927Z    PASS  Tests\\Feature\\Auth\\PasswordPolicyTest",
+  "2026-11-14T17:16:25.3472950Z   ✓ nine characters are required without composition rules in every env… 0.01s  ",
+  "2026-11-14T17:16:38.1919821Z    PASS  Tests\\Feature\\Domain\\MySqlConcurrencyTest",
+  "2026-11-14T17:16:38.1924408Z   ✓ mysql fresh seed and parallel document creation                     11.05s  ",
+  "2026-11-14T17:16:39.9944743Z   ✓ numeric nine character password is accepted but eight characters ar… 0.04s  ",
+  "2026-11-14T17:16:45.0988444Z   Tests:    184 passed (1976 assertions)",
+  "2026-11-14T17:16:45.7840622Z PASS: 20 deployment safety cases"
+]

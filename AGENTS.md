@@ -25,6 +25,8 @@ Gunakan skill `project-delivery` (sumber: `~/.agents/skills/project-delivery/SKI
 - Model per task ada di `model_hint` (`gpt-6-luna`, `gpt-6.1-terra`, `gpt-6.1-sol`). Katalog Codex diverifikasi dari tool native; catat model yang diminta dan receipt aktual sebelum mengklaim model efektif.
 - Untuk pekerjaan tampilan, skill `design-taste-frontend` tersedia di `~/.codex/skills/`; aturannya sudah dituangkan ke `DESIGN.md`, yang berlaku bila ada perbedaan.
 
+D-24 user 15 November 2026 menetapkan password minimal 9 karakter tanpa kewajiban komposisi atau pemeriksaan kebocoran. T030–T033 selesai: main CI/deploy43620442091 dan login admin demo independen PASS. Hanya kredensial admin demo diganti ke pilihan owner secara privat; jangan menambahkan password default ke source/seeder atau mereset akun lain.
+
 ## Lingkungan lokal (diperiksa 12 Nov 2026)
 
 - `php` bawaan di PATH adalah **7.4** dan tidak cukup untuk Laravel 13. Gunakan PHP 8.3 khusus proyek ini tanpa mengubah PHP global:

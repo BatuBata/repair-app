@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\DocumentController;
+use App\Http\Middleware\EnsureActiveAccount;
+use App\Http\Middleware\EnsureTenant;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/t/{token}/pdf', [DocumentController::class, 'publicInvoice'])->name('tracking.pdf');
+Route::get('/t/{token}/pdf', [DocumentController::class, 'publicInvoice'])->withoutMiddleware([EnsureActiveAccount::class, EnsureTenant::class])->name('tracking.pdf');
 Route::middleware('auth')->group(function () {
     Route::get('/tts/{id}/struk', [DocumentController::class, 'receipt'])->whereNumber('id')->name('tts.print');
     Route::get('/tts/{id}/struk.pdf', [DocumentController::class, 'receiptPdf'])->whereNumber('id')->name('tts.receipt.pdf');

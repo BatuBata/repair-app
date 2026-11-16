@@ -33,7 +33,7 @@ class DocumentController extends Controller
     public function publicInvoice(string $token, Document $document): Response
     {
         $order = preg_match('/\A[a-zA-Z0-9]{64}\z/', $token)
-            ? ServiceOrder::query()->select(['id', 'tracking_token', 'invoiced_on'])->where('tracking_token', $token)->first() : null;
+            ? ServiceOrder::withoutGlobalScope('tenant')->select(['id', 'tracking_token', 'invoiced_on'])->where('tracking_token', $token)->first() : null;
         abort_unless($order && hash_equals($order->tracking_token, $token) && $order->invoiced_on, 404, '', ['X-Robots-Tag' => 'noindex']);
 
         return $document->respond($document->order($order->id, true, true, $token), 'a5')->header('X-Robots-Tag', 'noindex');

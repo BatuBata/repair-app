@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Support\TenantContext;
 use Carbon\CarbonImmutable;
 use DateTimeInterface;
 use Illuminate\Support\Facades\DB;
@@ -20,7 +21,7 @@ final class DocumentNumber
         }
         $period = ($createdAt ? CarbonImmutable::instance($createdAt) : CarbonImmutable::now('Asia/Makassar'))
             ->setTimezone('Asia/Makassar')->format('ym');
-        $key = ['prefix' => $prefix, 'period' => $period];
+        $key = ['tenant_id' => app(TenantContext::class)->id(), 'prefix' => $prefix, 'period' => $period];
         // Insert first: the unique primary key serializes concurrent first use of a month.
         DB::table('number_sequences')->insertOrIgnore([...$key, 'last_seq' => 0]);
         $sequence = DB::table('number_sequences')->where($key)->lockForUpdate()->first();

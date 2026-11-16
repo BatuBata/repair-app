@@ -5,6 +5,8 @@ namespace App\Services\Documents;
 use App\Models\Sale;
 use App\Models\ServiceOrder;
 use App\Models\StoreSetting;
+use App\Models\Tenant;
+use App\Support\TenantContext;
 use BaconQrCode\Renderer\Image\SvgImageBackEnd;
 use BaconQrCode\Renderer\ImageRenderer;
 use BaconQrCode\Renderer\RendererStyle\RendererStyle;
@@ -19,23 +21,35 @@ class Document
     /** @return array<string, mixed> */
     public function order(int $id, bool $public, bool $invoiceAllowed, ?string $token = null): array
     {
-        $fields = ['id', 'number', 'category_id', 'item_description', 'complaint', 'created_at', 'invoiced_on', 'technician_id', 'warranty_days', 'warranty_until', 'unrepairable', 'tracking_token'];
+        $fields = ['id', 'tenant_id', 'number', 'category_id', 'item_description', 'complaint', 'created_at', 'invoiced_on', 'technician_id', 'warranty_days', 'warranty_until', 'unrepairable', 'tracking_token'];
         if (! $public) {
             $fields = [...$fields, 'customer_name', 'customer_phone'];
         }
-        $order = ServiceOrder::query()->select($fields)->with(['category:id,name', 'technician:id,name'])->findOrFail($id);
+        abort_if($public && ($token === null || ! preg_match('/\A[a-zA-Z0-9]{64}\z/', $token)), 404);
+        $query = ServiceOrder::query();
         if ($public) {
-            abort_unless($token !== null && hash_equals($order->tracking_token, $token) && $order->invoiced_on, 404, '', ['X-Robots-Tag' => 'noindex']);
+            $query->withoutGlobalScope('tenant')->where('tracking_token', $token);
+        }
+        $order = $query->select($fields)->findOrFail($id);
+        $order->load([
+            'category' => fn ($query) => $query->withoutGlobalScope('tenant')->where('tenant_id', $order->tenant_id)->select(['id', 'name']),
+            'technician' => fn ($query) => $query->withoutGlobalScope('tenant')->where('tenant_id', $order->tenant_id)->select(['id', 'name']),
+        ]);
+        if ($public) {
+            abort_unless(hash_equals($order->tracking_token, $token) && $order->invoiced_on, 404, '', ['X-Robots-Tag' => 'noindex']);
         }
         $invoice = $invoiceAllowed && $order->invoiced_on !== null;
         $items = $invoice ? $order->items()->orderBy('id')->get(['description', 'qty', 'price']) : collect();
         $qr = (new Writer(new ImageRenderer(new RendererStyle(256, 4), new SvgImageBackEnd)))->writeString(rtrim(config('app.url'), '/').'/t/'.$order->tracking_token);
+
+        $store = StoreSetting::withoutGlobalScope('tenant')->where('tenant_id', $order->tenant_id)->first(['name', 'address', 'phone', 'logo_path', 'warranty_terms']);
 
         return ['kind' => $invoice ? 'Nota servis' : 'Tanda terima servis', 'number' => $order->number, 'date' => $order->created_at, 'invoiceDate' => $invoice ? $order->invoiced_on : null,
             'customer' => $public ? null : $order->customer_name, 'phone' => $public ? null : $order->customer_phone,
             'item' => trim($order->category->name.' '.$order->item_description), 'complaint' => $order->complaint,
             'technician' => $invoice ? $order->technician?->name : null, 'items' => $items, 'warrantyDays' => $invoice ? $order->warranty_days : null,
             'warrantyUntil' => $invoice ? $order->warranty_until : null, 'unrepairable' => $invoice && $order->unrepairable,
+            'store' => $store, 'storeName' => $store?->name ?: Tenant::findOrFail($order->tenant_id)->name,
             'qr' => 'data:image/svg+xml;base64,'.base64_encode($qr), 'public' => $public];
     }
 
@@ -53,7 +67,7 @@ class Document
     /** @param array<string, mixed> $data */
     public function respond(array $data, string $format): Response
     {
-        $store = StoreSetting::query()->first(['name', 'address', 'phone', 'logo_path', 'warranty_terms']);
+        $store = array_key_exists('store', $data) ? $data['store'] : StoreSetting::query()->first(['name', 'address', 'phone', 'logo_path', 'warranty_terms']);
         $logo = null;
         if ($store?->logo_path && Storage::disk('public')->exists($store->logo_path)) {
             $mime = Storage::disk('public')->mimeType($store->logo_path);
@@ -61,7 +75,7 @@ class Document
                 $logo = 'data:'.$mime.';base64,'.base64_encode(Storage::disk('public')->get($store->logo_path));
             }
         }
-        $data += ['store' => $store, 'logo' => $logo, 'format' => $format];
+        $data += ['store' => $store, 'storeName' => $data['storeName'] ?? ($store?->name ?: app(TenantContext::class)->tenant()->name), 'logo' => $logo, 'format' => $format];
         if ($format === 'html') {
             return response()->view('documents.document', $data)->header('Cache-Control', 'private, no-store');
         }

@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\ServiceOrder;
 use App\Models\User;
 use App\Support\PhoneNumber;
+use App\Support\TenantContext;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -15,11 +16,13 @@ final class CreateServiceOrder
     /** @param array<string, mixed> $input */
     public function create(array $input, User $creator): ServiceOrder
     {
+        $tenantId = app(TenantContext::class)->id();
+        abort_unless(User::query()->whereKey($creator->id)->exists(), 404);
         $data = Validator::make($input, [
             'customer_name' => ['required', 'string', 'max:100'],
             'customer_phone' => ['required', 'string'],
             'customer_address' => ['nullable', 'string'],
-            'category_id' => ['required', 'integer', Rule::exists('categories', 'id')->where('is_active', true)],
+            'category_id' => ['required', 'integer', Rule::exists('categories', 'id')->where('tenant_id', $tenantId)->where('is_active', true)],
             'item_description' => ['nullable', 'string'],
             'complaint' => ['required', 'string', 'max:500'],
         ])->validate();

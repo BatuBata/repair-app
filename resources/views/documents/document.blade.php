@@ -34,7 +34,7 @@ table { width: 100%; border-collapse: collapse; } th, td { text-align: left; ver
 @endif
 </style></head><body>
 @if($format === 'html')<nav class="toolbar" aria-label="Cetak"><a href="{{ url()->previous() }}">Kembali</a><button type="button" onclick="window.print()">Cetak struk</button></nav>@endif
-@if($format === 'html')<main>@endif<header>@if($thermal)@if($logo)<img src="{{ $logo }}" alt="">@endif<strong>{{ $store?->name ?: 'Anugerah' }}</strong>@foreach($blocks($store?->address) as $block)<p class="pre">{{ $block }}</p>@endforeach<p>{{ $store?->phone }}</p><h1>{{ $kind }}</h1><div class="number">{{ $number }}</div>@else<div>@if($logo)<img src="{{ $logo }}" alt="">@endif<strong>{{ $store?->name ?: 'Anugerah' }}</strong><div>{{ $store?->phone }}</div></div><h1>{{ $kind }}</h1><div class="number">{{ $number }}</div>@endif</header>@if($format !== 'html')<main>@endif
+@if($format === 'html')<main>@endif<header>@if($thermal)@if($logo)<img src="{{ $logo }}" alt="">@endif<strong>{{ $storeName }}</strong>@foreach($blocks($store?->address) as $block)<p class="pre">{{ $block }}</p>@endforeach<p>{{ $store?->phone }}</p><h1>{{ $kind }}</h1><div class="number">{{ $number }}</div>@else<div>@if($logo)<img src="{{ $logo }}" alt="">@endif<strong>{{ $storeName }}</strong><div>{{ $store?->phone }}</div></div><h1>{{ $kind }}</h1><div class="number">{{ $number }}</div>@endif</header>@if($format !== 'html')<main>@endif
 @if(! $thermal && $store?->address)<p class="pre">{{ $store->address }}</p>@endif
 <section class="section"><p>Tanggal terima / jual: {{ $date->format('d/m/Y') }}</p>@if($invoiceDate)<p>Tanggal nota: {{ $invoiceDate->format('d/m/Y') }}</p>@endif
 @if($customer)<p>Customer: {{ $customer }}</p>@endif @if($phone)<p>HP: {{ $phone }}</p>@endif

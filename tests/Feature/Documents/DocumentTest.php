@@ -6,9 +6,11 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Sale;
 use App\Models\StoreSetting;
+use App\Models\Tenant;
 use App\Models\User;
 use App\Services\CreateServiceOrder;
 use App\Services\Documents\Document;
+use App\Support\TenantContext;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -26,6 +28,7 @@ class DocumentTest extends TestCase
         $order->items()->create(['type' => 'part', 'description' => 'LCD', 'qty' => 2, 'price' => 100000, 'cost' => 734567]);
         $this->actingAs($tech)->get(route('tts.print', $order->id))->assertOk()->assertSee('Tanda terima servis')->assertDontSee('200.000')->assertDontSee('734.567');
         $this->get(route('tts.receipt.pdf', $order->id))->assertOk()->assertHeader('Content-Type', 'application/pdf');
+        app(TenantContext::class)->set(Tenant::findOrFail(1));
         $techDocument = app(Document::class)->order($order->id, false, false);
         $this->assertSame('Tanda terima servis', $techDocument['kind']);
         $this->assertCount(0, $techDocument['items']);

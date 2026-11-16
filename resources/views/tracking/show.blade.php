@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#f2f5f6">
     <meta name="robots" content="noindex">
-    <title>Status servis {{ $order->number }} — {{ $store?->name ?: 'Anugerah' }}</title>
+    <title>Status servis {{ $order->number }} — {{ $storeName }}</title>
     @vite(['resources/css/app.css', 'resources/css/layout.css'])
     <style>
         body.public { min-height:100svh; background:var(--ground); }
@@ -114,7 +114,7 @@
     };
 @endphp
 <header class="pub-head">
-    <div class="pub-brand"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 5h16a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-3a2 2 0 0 0 0-4V7a2 2 0 0 1 2-2z"/><path d="M15.5 6.5v11" stroke="#fff" stroke-width="1.5" stroke-dasharray="1.6 1.9" stroke-linecap="round"/></svg><div><strong>{{ $store?->name ?: 'Anugerah' }}</strong><span>Servis Elektronik</span></div></div>
+    <div class="pub-brand"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 5h16a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-3a2 2 0 0 0 0-4V7a2 2 0 0 1 2-2z"/><path d="M15.5 6.5v11" stroke="#fff" stroke-width="1.5" stroke-dasharray="1.6 1.9" stroke-linecap="round"/></svg><div><strong>{{ $storeName }}</strong><span>Servis Elektronik</span></div></div>
     <span class="pub-context">Status servis customer</span>
 </header>
 <main class="sheet state">

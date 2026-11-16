@@ -8,8 +8,10 @@ use App\Livewire\Tts\Form;
 use App\Livewire\Tts\Index;
 use App\Models\Category;
 use App\Models\ServiceOrder;
+use App\Models\Tenant;
 use App\Models\User;
 use App\Services\CreateServiceOrder;
+use App\Support\TenantContext;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\DB;
 use Livewire\Features\SupportLockedProperties\CannotUpdateLockedPropertyException;
@@ -78,6 +80,7 @@ class TtsTest extends TestCase
         $active = Category::create(['name' => 'Aktif']);
         $inactive = Category::create(['name' => 'Tidak ditawarkan', 'is_active' => false]);
         $this->get('/tts/baru')->assertSee('Aktif')->assertDontSee('Tidak ditawarkan');
+        app(TenantContext::class)->set(Tenant::findOrFail(1));
         $c = Livewire::test(Form::class)->set('customer_name', 'Nama')->set('complaint', 'Keluhan')->set('customer_phone', '12345')->set('category_id', (string) $active->id)->call('save')->assertHasErrors('customer_phone');
         $c->set('customer_phone', '081234567890');
         foreach ([$inactive->id, 99999, -1, 'bad'] as $id) {
@@ -100,6 +103,7 @@ class TtsTest extends TestCase
         $this->actingAs($owner);
         if ($status === 'diterima') {
             $this->get(route('tts.edit', $order->id))->assertOk();
+            app(TenantContext::class)->set(Tenant::findOrFail(1));
             Livewire::test(Form::class, ['id' => $order->id])->set('complaint', 'Diperbarui')->call('save')->assertHasNoErrors()->assertRedirect(route('tts.show', $order->id));
             $this->assertSame('Diperbarui', $order->fresh()->complaint);
         } else {
@@ -216,6 +220,7 @@ class TtsTest extends TestCase
         $actor->update(['is_active' => false]);
         $this->actingAs(User::factory()->create(['role' => 'admin']));
         $this->get(route('tts.show', $order->id))->assertSee('Mesin cuci')->assertSee($actor->name);
+        app(TenantContext::class)->set(Tenant::findOrFail(1));
         Livewire::test(Form::class, ['id' => $order->id])->set('complaint', 'Tetap kategori lama')->call('save')->assertHasNoErrors();
         $this->assertSame($order->category_id, $order->fresh()->category_id);
         $this->get('/tts/baru')->assertDontSee('Mesin cuci');

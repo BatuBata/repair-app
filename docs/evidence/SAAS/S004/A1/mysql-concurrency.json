@@ -1,0 +1,270 @@
+{
+    "result": "PASS",
+    "database": "saas_s004_20261116_164324_153",
+    "database_retained": true,
+    "existing_databases_touched": false,
+    "rounds": [
+        {
+            "offset": 0,
+            "workers": [
+                {
+                    "tenant": 1,
+                    "prefix": "TTS",
+                    "number": "TTS-3501-001",
+                    "entered": 1794847406.710385,
+                    "finished": 1794847406.886807
+                },
+                {
+                    "tenant": 1,
+                    "prefix": "TTS",
+                    "number": "TTS-3501-004",
+                    "entered": 1794847406.710323,
+                    "finished": 1794847407.372142
+                },
+                {
+                    "tenant": 1,
+                    "prefix": "TTS",
+                    "number": "TTS-3501-002",
+                    "entered": 1794847406.710339,
+                    "finished": 1794847407.048818
+                },
+                {
+                    "tenant": 1,
+                    "prefix": "TTS",
+                    "number": "TTS-3501-003",
+                    "entered": 1794847406.709827,
+                    "finished": 1794847407.2105
+                },
+                {
+                    "tenant": 1,
+                    "prefix": "JL",
+                    "number": "JL-3501-003",
+                    "entered": 1794847406.710376,
+                    "finished": 1794847407.209786
+                },
+                {
+                    "tenant": 1,
+                    "prefix": "JL",
+                    "number": "JL-3501-001",
+                    "entered": 1794847406.70983,
+                    "finished": 1794847406.886887
+                },
+                {
+                    "tenant": 1,
+                    "prefix": "JL",
+                    "number": "JL-3501-004",
+                    "entered": 1794847406.710319,
+                    "finished": 1794847407.372194
+                },
+                {
+                    "tenant": 1,
+                    "prefix": "JL",
+                    "number": "JL-3501-002",
+                    "entered": 1794847406.710334,
+                    "finished": 1794847407.049565
+                },
+                {
+                    "tenant": 2,
+                    "prefix": "TTS",
+                    "number": "TTS-3501-001",
+                    "entered": 1794847406.70993,
+                    "finished": 1794847406.88689
+                },
+                {
+                    "tenant": 2,
+                    "prefix": "TTS",
+                    "number": "TTS-3501-002",
+                    "entered": 1794847406.710781,
+                    "finished": 1794847407.045038
+                },
+                {
+                    "tenant": 2,
+                    "prefix": "TTS",
+                    "number": "TTS-3501-003",
+                    "entered": 1794847406.710942,
+                    "finished": 1794847407.203119
+                },
+                {
+                    "tenant": 2,
+                    "prefix": "TTS",
+                    "number": "TTS-3501-004",
+                    "entered": 1794847406.709941,
+                    "finished": 1794847407.36201
+                },
+                {
+                    "tenant": 2,
+                    "prefix": "JL",
+                    "number": "JL-3501-001",
+                    "entered": 1794847406.710317,
+                    "finished": 1794847406.889334
+                },
+                {
+                    "tenant": 2,
+                    "prefix": "JL",
+                    "number": "JL-3501-003",
+                    "entered": 1794847406.709848,
+                    "finished": 1794847407.209841
+                },
+                {
+                    "tenant": 2,
+                    "prefix": "JL",
+                    "number": "JL-3501-002",
+                    "entered": 1794847406.709951,
+                    "finished": 1794847407.048073
+                },
+                {
+                    "tenant": 2,
+                    "prefix": "JL",
+                    "number": "JL-3501-004",
+                    "entered": 1794847406.709842,
+                    "finished": 1794847407.369713
+                }
+            ],
+            "result": "PASS"
+        },
+        {
+            "offset": 4,
+            "workers": [
+                {
+                    "tenant": 1,
+                    "prefix": "TTS",
+                    "number": "TTS-3501-006",
+                    "entered": 1794847408.40781,
+                    "finished": 1794847408.745921
+                },
+                {
+                    "tenant": 1,
+                    "prefix": "TTS",
+                    "number": "TTS-3501-007",
+                    "entered": 1794847408.40695,
+                    "finished": 1794847408.910858
+                },
+                {
+                    "tenant": 1,
+                    "prefix": "TTS",
+                    "number": "TTS-3501-005",
+                    "entered": 1794847408.407815,
+                    "finished": 1794847408.582768
+                },
+                {
+                    "tenant": 1,
+                    "prefix": "TTS",
+                    "number": "TTS-3501-008",
+                    "entered": 1794847408.406921,
+                    "finished": 1794847409.073579
+                },
+                {
+                    "tenant": 1,
+                    "prefix": "JL",
+                    "number": "JL-3501-006",
+                    "entered": 1794847408.406938,
+                    "finished": 1794847408.748465
+                },
+                {
+                    "tenant": 1,
+                    "prefix": "JL",
+                    "number": "JL-3501-005",
+                    "entered": 1794847408.40693,
+                    "finished": 1794847408.579779
+                },
+                {
+                    "tenant": 1,
+                    "prefix": "JL",
+                    "number": "JL-3501-008",
+                    "entered": 1794847408.407519,
+                    "finished": 1794847409.073334
+                },
+                {
+                    "tenant": 1,
+                    "prefix": "JL",
+                    "number": "JL-3501-007",
+                    "entered": 1794847408.407043,
+                    "finished": 1794847408.91068
+                },
+                {
+                    "tenant": 2,
+                    "prefix": "TTS",
+                    "number": "TTS-3501-005",
+                    "entered": 1794847408.406956,
+                    "finished": 1794847408.579749
+                },
+                {
+                    "tenant": 2,
+                    "prefix": "TTS",
+                    "number": "TTS-3501-007",
+                    "entered": 1794847408.40702,
+                    "finished": 1794847408.910811
+                },
+                {
+                    "tenant": 2,
+                    "prefix": "TTS",
+                    "number": "TTS-3501-008",
+                    "entered": 1794847408.407869,
+                    "finished": 1794847409.072526
+                },
+                {
+                    "tenant": 2,
+                    "prefix": "TTS",
+                    "number": "TTS-3501-006",
+                    "entered": 1794847408.40702,
+                    "finished": 1794847408.750603
+                },
+                {
+                    "tenant": 2,
+                    "prefix": "JL",
+                    "number": "JL-3501-008",
+                    "entered": 1794847408.406923,
+                    "finished": 1794847409.073543
+                },
+                {
+                    "tenant": 2,
+                    "prefix": "JL",
+                    "number": "JL-3501-006",
+                    "entered": 1794847408.407795,
+                    "finished": 1794847408.750317
+                },
+                {
+                    "tenant": 2,
+                    "prefix": "JL",
+                    "number": "JL-3501-005",
+                    "entered": 1794847408.40756,
+                    "finished": 1794847408.582827
+                },
+                {
+                    "tenant": 2,
+                    "prefix": "JL",
+                    "number": "JL-3501-007",
+                    "entered": 1794847408.407282,
+                    "finished": 1794847408.912506
+                }
+            ],
+            "result": "PASS"
+        }
+    ],
+    "counters": [
+        {
+            "tenant_id": 1,
+            "prefix": "JL",
+            "period": "3501",
+            "last_seq": 8
+        },
+        {
+            "tenant_id": 1,
+            "prefix": "TTS",
+            "period": "3501",
+            "last_seq": 8
+        },
+        {
+            "tenant_id": 2,
+            "prefix": "JL",
+            "period": "3501",
+            "last_seq": 8
+        },
+        {
+            "tenant_id": 2,
+            "prefix": "TTS",
+            "period": "3501",
+            "last_seq": 8
+        }
+    ]
+}

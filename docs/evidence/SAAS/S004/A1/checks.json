@@ -1,0 +1,41 @@
+{
+  "cwd": "/Users/muzib/Projects/web/repair-app",
+  "candidate": "sha256:c721514661e503ee70abe9fbdd508896f18835b3e0070cb1d6c20664c4a66674",
+  "checks": [
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php artisan test tests/Feature/Tenancy/ServiceIsolationTest.php tests/Feature/Tts tests/Feature/Invoice tests/Feature/Tracking tests/Feature/Documents --compact",
+      "expected": "Semua case servis dan isolasi PASS; kegagalan commerce S005 dicatat terpisah",
+      "actual": "51 tests, 49 PASS, 2 ERROR: products.tenant_id dan sales.tenant_id belum ditangani S005; seluruh 6 isolasi dan seluruh TTS/Invoice/Tracking/service-document PASS",
+      "exit_code": 2,
+      "artifact": "regression-final.json"
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php docs/evidence/SAAS/S004/A1/mysql-concurrency.php",
+      "expected": "TTS/JL tiap tenant urut 1\u20138 tanpa duplikasi/gap; transaksi tiap grup overlap pada baris baru dan existing; DB lama tidak dipakai",
+      "actual": "PASS, 32 processes, 2 rounds, 4 counters last_seq=8; DB saas_s004_20261116_164324_153 retained",
+      "exit_code": 0,
+      "artifact": "mysql-concurrency.json"
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php vendor/bin/phpstan analyse app/Models/ServiceOrder.php app/Services/CreateServiceOrder.php app/Services/DocumentNumber.php app/Services/Documents/Document.php app/Http/Controllers/TrackingController.php app/Http/Controllers/DocumentController.php app/Actions/ServiceOrders app/Livewire/Tts app/Livewire/Invoice routes/modules/tracking.php routes/modules/documents.php --debug --no-progress --error-format=table",
+      "expected": "0 errors",
+      "actual": "PASS, 0 errors",
+      "exit_code": 0,
+      "artifact": "phpstan.txt"
+    },
+    {
+      "command": "git diff --check",
+      "expected": "Tidak ada kesalahan whitespace",
+      "actual": "PASS, output kosong",
+      "exit_code": 0,
+      "artifact": "diff-check.txt"
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php vendor/bin/pint --test app/Models/ServiceOrder.php app/Services/CreateServiceOrder.php app/Services/DocumentNumber.php app/Services/Documents/Document.php app/Http/Controllers/TrackingController.php app/Http/Controllers/DocumentController.php app/Livewire/Tts routes/modules/tracking.php routes/modules/documents.php tests/Feature/Tts tests/Feature/Invoice tests/Feature/Tracking tests/Feature/Documents tests/Feature/Tenancy/ServiceIsolationTest.php docs/evidence/SAAS/S004/A1/mysql-concurrency.php",
+      "expected": "Semua berkas sesuai style",
+      "actual": "PASS",
+      "exit_code": 0,
+      "artifact": "pint.txt"
+    }
+  ]
+}

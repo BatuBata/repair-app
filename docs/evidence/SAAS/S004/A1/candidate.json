@@ -1,0 +1,84 @@
+{
+  "task": "S004",
+  "attempt": "A1",
+  "base_revision": "6421faa496bda183ffe7473d94fcfc04860137e3",
+  "input_s003": "sha256:d5a8bb86214580207d73ca1e8039b84f20e34dc912cad3c924be5398320a3160",
+  "candidate": "sha256:c721514661e503ee70abe9fbdd508896f18835b3e0070cb1d6c20664c4a66674",
+  "algorithm": "SHA256 of sorted UTF-8 path + NUL + file bytes, concatenated; evidence excluded",
+  "files": [
+    {
+      "path": "app/Http/Controllers/DocumentController.php",
+      "sha256": "fbcfe3a0c9763c5515cc3a8a064d66c315da8b3042ae60b8fbe4f638d490b2fc"
+    },
+    {
+      "path": "app/Http/Controllers/TrackingController.php",
+      "sha256": "bd40917190b461f512219c6e92d3b65dc659fed9c3199ebaf7344001f360a3fd"
+    },
+    {
+      "path": "app/Livewire/Tts/Detail.php",
+      "sha256": "29ebbadd480cf4dee2a03a6840620e96e6ddc18e003692bcf5e4c377e85484e0"
+    },
+    {
+      "path": "app/Livewire/Tts/Form.php",
+      "sha256": "f6b59195add88d8690928e834541e8d38c18ade9c7c0b8d36000812ad8b601e2"
+    },
+    {
+      "path": "app/Models/ServiceOrder.php",
+      "sha256": "fb1e9f132776158a2a30a24a87eb7e46675d293f292b83f12c211c33cfdff55b"
+    },
+    {
+      "path": "app/Services/CreateServiceOrder.php",
+      "sha256": "e147517fb2916248ced039e675591df9d6d63d6b7732437b769a179d5186807c"
+    },
+    {
+      "path": "app/Services/DocumentNumber.php",
+      "sha256": "618297de64bda8d3d5351fcae63d4869bfe4c3d5e6e12663463f96afd83716d1"
+    },
+    {
+      "path": "app/Services/Documents/Document.php",
+      "sha256": "695a4922be96227c41cd1a2cbdb9148eceebbdb272b2bd939caaef74333ae861"
+    },
+    {
+      "path": "resources/views/documents/document.blade.php",
+      "sha256": "1625fb722e4b3fb4582cfad1b33a70edf84dbadebf5cc305a4affc43d52ec3f0"
+    },
+    {
+      "path": "resources/views/tracking/show.blade.php",
+      "sha256": "5d6e73be809d1cacf677ac7082d3decdb1b7f0527cdce95b1c695c974e4ffca3"
+    },
+    {
+      "path": "routes/modules/documents.php",
+      "sha256": "ff629ab3950f5701af573b1704a985026dd6cd9c7f3946d983295c0906faf47c"
+    },
+    {
+      "path": "routes/modules/tracking.php",
+      "sha256": "66314805d0f8bb4bb4df627137ecd34e60f9b6fba6e837781c78810c38f512d7"
+    },
+    {
+      "path": "tests/Feature/Documents/DocumentTest.php",
+      "sha256": "cf524086310c2882e04cbf6186a255c50036f3edab10752f4bd2ea85f7eb02d3"
+    },
+    {
+      "path": "tests/Feature/Invoice/InvoiceTest.php",
+      "sha256": "dcbb425a6ce1e7a89f6be121bfb4e540d362db99fc0e35dc42392c3e319683b9"
+    },
+    {
+      "path": "tests/Feature/Tenancy/ServiceIsolationTest.php",
+      "sha256": "0e4bd6316edce20b6917569992dc0ad50f99a2437d567f2d34aed5a957707b0a"
+    },
+    {
+      "path": "tests/Feature/Tracking/TrackingTest.php",
+      "sha256": "e42c612dd0792e1fd28f41031faeb8801cce5c21f04e47aab193e933375cf18d"
+    },
+    {
+      "path": "tests/Feature/Tts/TtsTest.php",
+      "sha256": "9dad38b20c94b62243445cdc47b2e05cdcc6e673cbfdd159e6edbcc63e6ec97a"
+    }
+  ],
+  "model_requested": "gpt-6.1-sol",
+  "effort_requested": "high",
+  "model_effective": null,
+  "receipt_ref": null,
+  "committed": false,
+  "pushed": false
+}

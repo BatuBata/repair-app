@@ -9,6 +9,7 @@ use App\Enums\UserRole;
 use App\Models\ServiceOrder;
 use App\Models\StoreSetting;
 use App\Models\User;
+use App\Support\TenantContext;
 use Illuminate\Contracts\View\View;
 use Illuminate\Validation\ValidationException;
 use Livewire\Attributes\Locked;
@@ -81,7 +82,7 @@ class Detail extends Component
         return view('livewire.tts.detail', [
             'order' => $order, 'canEdit' => $canEdit, 'user' => $user, 'isAdmin' => $isAdmin, 'financial' => $financial,
             'technicians' => $isAdmin ? User::query()->where('role', UserRole::Teknisi)->where('is_active', true)->orderBy('name')->get(['id', 'name']) : collect(),
-            'storeName' => StoreSetting::query()->value('name') ?: 'Anugerah',
+            'storeName' => StoreSetting::query()->value('name') ?: app(TenantContext::class)->tenant()->name,
         ])->layout('layouts.app', ['title' => $order->number, 'navigationPath' => $this->success ? '/tts/baru' : null]);
     }
 }

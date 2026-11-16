@@ -12,8 +12,10 @@ use App\Models\Category;
 use App\Models\ServiceOrder;
 use App\Models\ServiceOrderItem;
 use App\Models\StoreSetting;
+use App\Models\Tenant;
 use App\Models\User;
 use App\Services\CreateServiceOrder;
+use App\Support\TenantContext;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
@@ -88,6 +90,7 @@ class InvoiceTest extends TestCase
         $this->assertNotSame($assigned, $order->fresh()->assigned_at->toDateTimeString());
         $peer->update(['is_active' => false]);
         $this->get(route('tts.show', $order->id))->assertSee($peer->name);
+        app(TenantContext::class)->set(Tenant::findOrFail(1));
         $html = Livewire::test(Detail::class, ['id' => $order->id])->html();
         $this->assertStringNotContainsString('<option value="'.$peer->id.'">', $html);
         foreach ([$peer->id, $this->admin->id, 99999, -1, [], 'bad'] as $id) {

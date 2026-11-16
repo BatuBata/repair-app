@@ -10,6 +10,7 @@ use App\Models\StoreSetting;
 use App\Models\User;
 use App\Services\CreateServiceOrder;
 use App\Support\PhoneNumber;
+use App\Support\TenantContext;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
@@ -97,7 +98,7 @@ class Form extends Component
         return view('livewire.tts.form', [
             'categories' => Category::query()->where('is_active', true)->orderBy('id')->get(['id', 'name']),
             'currentCategory' => $order?->category,
-            'storeName' => StoreSetting::query()->value('name') ?: 'Anugerah',
+            'storeName' => StoreSetting::query()->value('name') ?: app(TenantContext::class)->tenant()->name,
         ])->layout('layouts.app', ['title' => $order === null ? 'TTS baru' : 'Ubah TTS']);
     }
 }

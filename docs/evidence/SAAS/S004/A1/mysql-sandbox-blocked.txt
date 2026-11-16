@@ -1,0 +1,6 @@
+
+In mysql-concurrency.php line 55:
+                                                  
+  SQLSTATE[HY000] [2002] Operation not permitted  
+                                                  
+

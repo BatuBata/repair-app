@@ -4,8 +4,10 @@ namespace Tests\Feature\Tracking;
 
 use App\Models\Category;
 use App\Models\ServiceOrder;
+use App\Models\Tenant;
 use App\Models\User;
 use App\Services\CreateServiceOrder;
+use App\Support\TenantContext;
 use App\Support\WhatsApp;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -16,10 +18,12 @@ class TrackingTest extends TestCase
 
     private function order(): ServiceOrder
     {
+        $creator = User::factory()->create(['role' => 'teknisi']);
+
         return app(CreateServiceOrder::class)->create([
             'customer_name' => 'Ibu Éka & Putra', 'customer_phone' => '081234567890', 'customer_address' => 'Alamat Rahasia',
             'category_id' => Category::firstOrCreate(['name' => 'Laptop'])->id, 'item_description' => 'Model α', 'complaint' => 'Layar rusak',
-        ], User::factory()->create(['role' => 'teknisi']));
+        ], $creator);
     }
 
     public function test_public_tracking_is_exact_and_discloses_only_public_information(): void
@@ -32,16 +36,20 @@ class TrackingTest extends TestCase
             ->assertHeader('Cache-Control', 'no-store, private')->assertSee('Tanda terima servis')->assertSee('Rincian barang')->assertSee('Menunggu penanganan')
             ->assertSee('Diterima')->assertSee('Layar rusak')->assertDontSee('081234567890')->assertDontSee('6281234567890')->assertDontSee('Alamat Rahasia')->assertDontSee('Total');
         $this->assertLessThan(strpos($initial->getContent(), 'Rincian barang'), strpos($initial->getContent(), 'Tanda terima servis'));
+        app(TenantContext::class)->set(Tenant::findOrFail(1));
         $order->update(['status' => 'dikerjakan', 'assigned_at' => now()]);
         $this->get('/t/'.$order->tracking_token)->assertSee('sedang')->assertSee('dikerjakan');
+        app(TenantContext::class)->set(Tenant::findOrFail(1));
         $order->update(['status' => 'selesai', 'invoiced_on' => '2026-11-10', 'warranty_days' => 30, 'warranty_until' => '2026-12-10']);
         $order->items()->create(['type' => 'part', 'description' => 'LCD', 'qty' => 1, 'price' => 1000000, 'cost' => 700000]);
         $order->items()->create(['type' => 'jasa', 'description' => 'Jasa', 'qty' => 1, 'price' => 100000, 'cost' => 0]);
         $this->get('/t/'.$order->tracking_token)->assertOk()->assertSee('Rp1.100.000')->assertSee('Garansi 30 hari')->assertDontSee('700.000')->assertDontSee('Alamat Rahasia')->assertDontSee('081234567890')->assertDontSee('6281234567890')->assertDontSee('wire:snapshot');
+        app(TenantContext::class)->set(Tenant::findOrFail(1));
         $order->update(['status' => 'diambil', 'picked_up_on' => '2026-11-11', 'unrepairable' => true, 'warranty_days' => 0, 'warranty_until' => null]);
         $this->get('/t/'.$order->tracking_token)->assertSee('sudah diambil')->assertSee('tidak dapat diperbaiki')->assertSee('Tidak ada garansi');
         $order->items()->update(['price' => 0]);
         $this->get('/t/'.$order->tracking_token)->assertSee('Rp0');
+        app(TenantContext::class)->set(Tenant::findOrFail(1));
         $order->update(['status' => 'batal', 'invoiced_on' => null, 'cancelled_at' => now()]);
         $this->get('/t/'.$order->tracking_token)->assertSee('dibatalkan')->assertDontSee('Rp1.100.000');
     }
@@ -60,10 +68,12 @@ class TrackingTest extends TestCase
         $message = rawurldecode(parse_url($url, PHP_URL_QUERY));
         $this->assertStringContainsString('Ibu Éka & Putra', $message);
         $this->assertStringContainsString('https://servis.example/t/'.$order->tracking_token, $message);
+        app(TenantContext::class)->set(Tenant::findOrFail(1));
         $order->update(['status' => 'selesai', 'invoiced_on' => '2026-11-10', 'warranty_until' => '2026-12-10']);
         $order->items()->create(['type' => 'part', 'description' => 'LCD', 'qty' => 1, 'price' => 1000000, 'cost' => 700000]);
         $url = $this->get(route('tts.whatsapp', $order->id))->headers->get('Location');
         $this->assertStringContainsString('Total Rp1.000.000', rawurldecode($url));
+        app(TenantContext::class)->set(Tenant::findOrFail(1));
         $order->update(['warranty_days' => 0, 'warranty_until' => '2026-11-10']);
         $url = $this->get(route('tts.whatsapp', $order->id))->headers->get('Location');
         $this->assertStringContainsString('Tanpa garansi', rawurldecode($url));

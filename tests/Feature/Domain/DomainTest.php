@@ -11,10 +11,12 @@ use App\Models\Product;
 use App\Models\Sale;
 use App\Models\ServiceOrder;
 use App\Models\StoreSetting;
+use App\Models\Tenant;
 use App\Models\User;
 use App\Services\CreateServiceOrder;
 use App\Services\DocumentNumber;
 use App\Support\PhoneNumber;
+use App\Support\TenantContext;
 use Carbon\CarbonImmutable;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\QueryException;
@@ -28,6 +30,12 @@ use Tests\TestCase;
 class DomainTest extends TestCase
 {
     use RefreshDatabase;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        app(TenantContext::class)->set(Tenant::findOrFail(1));
+    }
 
     public function test_numbers_use_wita_month_prefix_and_minimum_three_digits(): void
     {
@@ -162,9 +170,8 @@ class DomainTest extends TestCase
         foreach (['status', 'invoiced_on', 'warranty_until', 'customer_phone'] as $column) {
             $this->assertTrue(Schema::hasIndex('service_orders', [$column]));
         }
-        foreach (['number', 'tracking_token'] as $column) {
-            $this->assertTrue(Schema::hasIndex('service_orders', [$column], 'unique'));
-        }
+        $this->assertTrue(Schema::hasIndex('service_orders', ['tenant_id', 'number'], 'unique'));
+        $this->assertTrue(Schema::hasIndex('service_orders', ['tracking_token'], 'unique'));
         $order = $this->order();
         $order->items()->create(['type' => 'part', 'description' => 'Part', 'qty' => 1, 'price' => 0, 'cost' => 0]);
         $order->delete();
@@ -239,7 +246,6 @@ class DomainTest extends TestCase
         $cases = [
             fn () => Product::create(['name' => 'Synthetic', 'cost_price' => 0, 'sell_price' => 0, 'stock' => -1]),
             fn () => Expense::create(['spent_on' => '2026-11-12', 'category' => 'bensin', 'amount' => 0, 'created_by' => $creator->id]),
-            fn () => StoreSetting::create(['id' => 2, 'address' => '', 'default_warranty_days' => 30]),
             fn () => StoreSetting::create(['address' => '', 'default_warranty_days' => -1]),
         ];
         foreach ($cases as $create) {

@@ -1,0 +1,80 @@
+{
+  "S003": {
+    "commit": "8b03e0b59decd098fd411440a8bf548d9d80c7f9",
+    "manifest_files": 21,
+    "all_match_commit": true,
+    "ancestor_of_head": true
+  },
+  "S004": {
+    "commit": "1c022ff5f68500500442fe70b6bdf44509ef19ef",
+    "manifest_files": 17,
+    "all_match_commit": true,
+    "ancestor_of_head": true
+  },
+  "S005": {
+    "commit": "f720cb901b040611272e6b70f40a347e08667963",
+    "manifest_files": 12,
+    "all_match_commit": true,
+    "ancestor_of_head": true
+  },
+  "dependency_files": {
+    "composer.json": {
+      "sha256": "5aa190533af842bb2b8f6d3834e8df225cd819454c2242e667199366ff4c2090",
+      "unchanged_from_a03f6f1": true
+    },
+    "composer.lock": {
+      "sha256": "247f7b1ac21fdf30ade477cf41f3a41843d4dbf56f663f2dd5253a1aef3e1c3e",
+      "unchanged_from_a03f6f1": true
+    },
+    "package.json": {
+      "sha256": "d66e73443b766cd94b9f2eb6254e8aa3eed96e8c810cfd339dda8972680bf402",
+      "unchanged_from_a03f6f1": true
+    },
+    "package-lock.json": {
+      "sha256": "649966e30391e4096e1e144be802c4d7f87ac5d005d6ef2a9e8ef06e9b309d81",
+      "unchanged_from_a03f6f1": true
+    }
+  },
+  "added_migrations": [
+    "database/migrations/2026_11_17_000000_add_tenant_foundation.php"
+  ],
+  "mysql_reuse": {
+    "S004": {
+      "evidence": "docs/evidence/SAAS/S004/A1/mysql-concurrency.json",
+      "evidence_sha256": "13e1d96b343a80d28c313abcf99b5370811e3332affe3796ed70829bd9efd19c",
+      "case": "two-tenant TTS/JL first/existing counters, 32 workers",
+      "source_commit": "1c022ff",
+      "relevant_sources_unchanged": true,
+      "source_hashes": {
+        "app/Services/DocumentNumber.php": "618297de64bda8d3d5351fcae63d4869bfe4c3d5e6e12663463f96afd83716d1",
+        "app/Support/TenantContext.php": "b4d6b65b6b123e96cc82e978203156ab3fa10b1a6cd3e3dd167523a766f37d72",
+        "database/migrations/2026_11_17_000000_add_tenant_foundation.php": "9c4876fc1406af4b2a5fe8dbbeafa39120b48d2737cc77dbede6dc410591db7c"
+      },
+      "result": "reused PASS, not rerun",
+      "database": "saas_s004_20261116_164324_153",
+      "existing_databases_touched": false
+    },
+    "S005": {
+      "evidence": "docs/evidence/SAAS/S005/A1/mysql-concurrency.json",
+      "evidence_sha256": "fc2972bd1e111b43525af99e71c4d029e797b9c0ce9477aa8d2927fcce2aa044",
+      "case": "two tenants, each two admins compete for one stock unit, original rows preserved",
+      "source_commit": "f720cb9",
+      "relevant_sources_unchanged": true,
+      "source_hashes": {
+        "app/Actions/Sales/CreateSale.php": "0da38d1933e373117ab39d151ed583836dd500ae6b9a21bf76c7fc5e28f1ec72",
+        "app/Models/Product.php": "8063ffe93f2083f0b950072e1bdf3c9081c102151caec70c88f951a3ecb3d077",
+        "app/Models/Sale.php": "b66de691d3ad98928ad1b96168248b922898ecd7ba76f34b65ad5bb8c23b661d",
+        "app/Models/SaleItem.php": "c7cd1b0a05fe629566492f163d43ae3c46c13a76c5e6d6571ec191f8d5be5b2d",
+        "app/Models/User.php": "cce177692b8001238c449519f93be068e7df3aa5372928789273010636cf5c1b",
+        "app/Services/DocumentNumber.php": "618297de64bda8d3d5351fcae63d4869bfe4c3d5e6e12663463f96afd83716d1",
+        "app/Models/Concerns/BelongsToTenant.php": "ccc9504964fae45155d5dee1f82ded8dc5a3e2930f41b03e8ba5bfb5941b5328",
+        "app/Support/TenantContext.php": "b4d6b65b6b123e96cc82e978203156ab3fa10b1a6cd3e3dd167523a766f37d72",
+        "database/migrations/2026_11_17_000000_add_tenant_foundation.php": "9c4876fc1406af4b2a5fe8dbbeafa39120b48d2737cc77dbede6dc410591db7c",
+        "tests/Feature/Sales/mysql-concurrency.php": "5911394cbae00760943c9252d57fcb012ae7aecd71d430c314a9b834f6eb5609"
+      },
+      "result": "reused PASS, not rerun",
+      "database": "saas_s005_20261116_165831_3331",
+      "existing_databases_touched": false
+    }
+  }
+}

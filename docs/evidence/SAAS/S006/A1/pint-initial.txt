@@ -1,0 +1,1 @@
+{"tool":"pint","result":"fail","files":[{"path":"tests\/Feature\/Profile\/ChangePasswordTest.php","fixers":["ordered_imports"]}]}

@@ -1,0 +1,19 @@
+{
+  "database": "/tmp/s006-sqlite.Y2gLpl",
+  "created_new": true,
+  "migration_count": 7,
+  "tenant_count": 1,
+  "foreign_key_check": [],
+  "root_tenant_id_nonnullable": {
+    "users": true,
+    "categories": true,
+    "number_sequences": true,
+    "service_orders": true,
+    "products": true,
+    "sales": true,
+    "expenses": true,
+    "store_settings": true
+  },
+  "retained": true,
+  "existing_databases_touched": false
+}

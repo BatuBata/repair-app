@@ -3,7 +3,9 @@
 namespace Tests\Feature\Profile;
 
 use App\Livewire\Profile\ChangePassword;
+use App\Models\Tenant;
 use App\Models\User;
+use App\Support\TenantContext;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Livewire;
@@ -19,6 +21,7 @@ class ChangePasswordTest extends TestCase
             $user = User::factory()->create(['role' => $role]);
             $token = $user->remember_token;
             $this->actingAs($user)->get('/profil')->assertOk();
+            app(TenantContext::class)->set(Tenant::findOrFail($user->tenant_id));
             Livewire::test(ChangePassword::class)->set('current_password', 'password')->set('password', 'changed-password')->set('password_confirmation', 'changed-password')->call('updatePassword')->assertHasNoErrors()->assertSet('password', '')->assertSee('Password berhasil diubah.');
             $this->assertTrue(Hash::check('changed-password', $user->fresh()->password));
             $this->assertNotSame($token, $user->fresh()->remember_token);

@@ -17,7 +17,8 @@ class RoleLauncherTest extends TestCase
         $this->assertSame('/mulai', $manifest['start_url']);
         $this->assertSame('standalone', $manifest['display']);
         $this->assertSame('#f2f5f6', $manifest['theme_color']);
-        $this->assertSame('Toko Anugerah', $manifest['name']);
+        $this->assertSame('Aplikasi Servis', $manifest['name']);
+        $this->assertSame('Servis', $manifest['short_name']);
     }
 
     public function test_launcher_requires_login_then_redirects_to_the_current_role_home(): void

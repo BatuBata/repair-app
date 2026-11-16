@@ -1,0 +1,14 @@
+4329aa9330de4512552cd38e3e20d015447e1bc4 chore: start S006 SaaS integration
+f720cb901b040611272e6b70f40a347e08667963 feat: add S005 commerce isolation
+9805be8b0c8f444ab17a26f7eaa4b9ba4324b66b chore: start S005 commerce isolation
+1c022ff5f68500500442fe70b6bdf44509ef19ef feat: add S004 service isolation
+6421faa496bda183ffe7473d94fcfc04860137e3 chore: start S004 service isolation
+8b03e0b59decd098fd411440a8bf548d9d80c7f9 feat: add S003 tenant identity
+7b94f422f48a6ad8ae29635c2ee71145a4284a72 chore: clarify S003 auth scope
+4454e0cdda6ae93de5d268ee76d6d349a2d59c80 chore: start S003 tenant identity
+be9cc110e141726722368b3a9c9722653cd11f54 feat: add S002 tenant foundation
+4b12d61f1843f46d0a52b3185433c9d0dbd33e0d chore: start S002 tenant foundation
+f991677c950af4fa334c92aee329f6cabac8a150 docs: activate lean SaaS delivery goal
+c7181bb1f56813b98e8fff4cfac1fefc343f25e1 docs: add lean SaaS delivery plan
+f311ef4819c7da3e34d00181cdd140de9ab9394c docs: simplify SaaS plan to lean tenancy
+b34a56377db101fe4f951ec6836d61039ea7b7e6 docs: design multi-tenant SaaS architecture

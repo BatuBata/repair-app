@@ -27,7 +27,14 @@ class SeederCacheTest extends TestCase
             $build->run();
             $this->assertTrue($build->isSuccessful(), 'Synthetic config cache build failed.');
             $this->assertFileExists($cache);
-            $seed = new Process([PHP_BINARY, 'artisan', 'migrate', '--seed', '--force'], base_path(), [...$environment, 'ADMIN_INITIAL_PASSWORD' => false]);
+            $seed = new Process([PHP_BINARY, '-r', <<<'PHP'
+                require 'vendor/autoload.php';
+                $app = require 'bootstrap/app.php';
+                $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+                Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+                app(App\Support\TenantContext::class)->set(App\Models\Tenant::findOrFail(1));
+                exit(Illuminate\Support\Facades\Artisan::call('db:seed', ['--force' => true]));
+                PHP], base_path(), [...$environment, 'ADMIN_INITIAL_PASSWORD' => false]);
             $seed->run();
             $this->assertTrue($seed->isSuccessful(), 'Synthetic cached-config migration/seed failed.');
             $pdo = new PDO('sqlite:'.$database);

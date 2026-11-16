@@ -10,9 +10,14 @@ Route::get('/layout-preview', function () {
     $technician = request('role') === 'teknisi';
     $user = new User;
     $user->forceFill(['name' => $technician ? 'Rizky' : 'Pak Arif', 'role' => $technician ? 'teknisi' : 'admin']);
+    $previousUser = Auth::user();
     Auth::setUser($user);
 
     $paths = ['servis' => '/tts/123', 'buat' => '/tts/baru', 'menu' => '/stok', 'profil' => '/profil'];
 
-    return view('pages.layout-preview', ['navigationPath' => $paths[request('page')] ?? '/tts']);
+    try {
+        return response()->view('pages.layout-preview', ['navigationPath' => $paths[request('page')] ?? '/tts']);
+    } finally {
+        $previousUser ? Auth::setUser($previousUser) : Auth::forgetUser();
+    }
 });

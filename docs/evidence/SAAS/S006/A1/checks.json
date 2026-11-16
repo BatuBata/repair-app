@@ -1,0 +1,204 @@
+{
+  "checked_revision": "sha256:066bb9e82bd3ac5142a1ef516fc46c862c7e3b1b2cbc28ee4eb0a8ab402996f6",
+  "checks": [
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php artisan test --no-ansi",
+      "expected": "full regression pass",
+      "exit_code": 2,
+      "output": "tests-initial.txt",
+      "actual": {
+        "tool": "phpunit",
+        "result": "failed",
+        "tests": 217,
+        "passed": 204,
+        "assertions": 2297,
+        "duration_ms": 10538,
+        "failed": 5,
+        "errors": 7,
+        "skipped": 1
+      },
+      "failures": [
+        {
+          "test": "Tests\\Feature\\Domain\\DomainTest::test_domain_tables_indexes_foreign_keys_and_cascade",
+          "message": "Failed asserting that false is true."
+        },
+        {
+          "test": "Tests\\Feature\\Domain\\DomainTest::test_invalid_stock_expense_and_setting_values_are_rejected",
+          "message": "Invalid domain value accepted"
+        },
+        {
+          "test": "Tests\\Feature\\Domain\\SeederCacheTest::test_seed_uses_cached_configuration_without_password_in_process_environment",
+          "message": "Synthetic cached-config migration/seed failed."
+        },
+        {
+          "test": "Tests\\Feature\\Layout\\LayoutPreviewTest::test_preview_is_available_in_testing_with_components_and_manifest",
+          "message": "Expected response status code [200] but received 500."
+        },
+        {
+          "test": "Tests\\Feature\\Layout\\LayoutPreviewTest::test_role_and_navigation_match_paths_without_starter_links",
+          "message": "Expected response status code [200] but received 500."
+        },
+        {
+          "test": "Tests\\Feature\\Domain\\DomainTest::test_numbers_use_wita_month_prefix_and_minimum_three_digits",
+          "message": "Tenant aktif belum ditetapkan."
+        },
+        {
+          "test": "Tests\\Feature\\Domain\\DomainTest::test_counter_rolls_back_with_failed_document",
+          "message": "Tenant aktif belum ditetapkan."
+        },
+        {
+          "test": "Tests\\Feature\\Domain\\DomainTest::test_money_uses_integers_service_cost_is_zero_and_subtotals_are_exact",
+          "message": "Tenant aktif belum ditetapkan."
+        },
+        {
+          "test": "Tests\\Feature\\Domain\\DomainTest::test_secure_idempotent_seed_preserves_existing_password_and_settings",
+          "message": "Tenant aktif belum ditetapkan."
+        },
+        {
+          "test": "Tests\\Feature\\Domain\\DomainTest::test_seed_fails_safely_without_initial_password",
+          "message": "Tenant aktif belum ditetapkan."
+        },
+        {
+          "test": "Tests\\Feature\\Domain\\DomainTest::test_database_enforces_unique_tracking_token_and_document_number",
+          "message": "Tenant aktif belum ditetapkan."
+        },
+        {
+          "test": "Tests\\Feature\\Profile\\ChangePasswordTest::test_both_roles_change_only_their_own_password",
+          "message": "Invalid Livewire snapshot structure: expected [data], [memo], [checksum], [memo.id], and [memo.name]."
+        }
+      ]
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php artisan test tests/Feature/Domain tests/Feature/Layout tests/Feature/Profile tests/Feature/Auth/RoleLauncherTest.php --no-ansi",
+      "expected": "affected regression pass",
+      "exit_code": 1,
+      "output": "affected.txt",
+      "actual": {
+        "tool": "phpunit",
+        "result": "failed",
+        "tests": 26,
+        "passed": 24,
+        "assertions": 351,
+        "duration_ms": 1328,
+        "failed": 1,
+        "skipped": 1
+      },
+      "failures": [
+        {
+          "test": "Tests\\Feature\\Layout\\LayoutPreviewTest::test_role_and_navigation_match_paths_without_starter_links",
+          "message": "Expected response status code [200] but received 403."
+        }
+      ]
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php artisan test tests/Feature/Layout --no-ansi",
+      "expected": "preview regression pass",
+      "exit_code": 0,
+      "output": "layout-final.txt",
+      "actual": {
+        "tool": "phpunit",
+        "result": "passed",
+        "tests": 3,
+        "passed": 3,
+        "assertions": 22,
+        "duration_ms": 154
+      },
+      "failures": []
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php artisan test --no-ansi",
+      "expected": "full regression pass",
+      "exit_code": 0,
+      "output": "tests-final.txt",
+      "actual": {
+        "tool": "phpunit",
+        "result": "passed",
+        "tests": 217,
+        "passed": 216,
+        "assertions": 2368,
+        "duration_ms": 9480,
+        "skipped": 1
+      },
+      "failures": []
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php vendor/bin/pint --test",
+      "expected": "format pass",
+      "exit_code": 1,
+      "output": "pint-initial.txt",
+      "actual": {
+        "tool": "pint",
+        "result": "fail"
+      },
+      "failures": []
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php vendor/bin/pint tests/Feature/Profile/ChangePasswordTest.php",
+      "expected": "ordered imports fixed",
+      "exit_code": 0,
+      "output": "pint-fix.txt",
+      "actual": {
+        "tool": "pint",
+        "result": "fixed"
+      },
+      "failures": []
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php vendor/bin/pint --test",
+      "expected": "format pass",
+      "exit_code": 0,
+      "output": "pint-final.txt",
+      "actual": {
+        "tool": "pint",
+        "result": "passed"
+      },
+      "failures": []
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php vendor/bin/phpstan analyse --memory-limit=512M --debug",
+      "expected": "zero static errors",
+      "exit_code": 0,
+      "output": "phpstan.txt",
+      "actual": {
+        "tool": "phpstan",
+        "result": "passed",
+        "errors": 0
+      },
+      "failures": []
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php vendor/bin/phpstan analyse --memory-limit=512M --debug",
+      "expected": "zero static errors after preview route change",
+      "exit_code": 0,
+      "output": "phpstan-final.txt",
+      "actual": {
+        "tool": "phpstan",
+        "result": "passed",
+        "errors": 0
+      },
+      "failures": []
+    },
+    {
+      "command": "npm run build",
+      "expected": "production assets build",
+      "exit_code": 0,
+      "output": "build.txt"
+    },
+    {
+      "command": "APP_ENV=testing DB_CONNECTION=sqlite DB_DATABASE=<new /tmp/s006-sqlite.*> DB_URL= APP_CONFIG_CACHE=/tmp/s006-no-config-cache /opt/homebrew/opt/php@8.3/bin/php artisan migrate --force --no-ansi",
+      "expected": "seven migrations including single SaaS migration on a new SQLite file",
+      "exit_code": 0,
+      "output": "migrate-sqlite.txt"
+    },
+    {
+      "command": "git diff --check",
+      "expected": "no whitespace errors",
+      "exit_code": 0,
+      "output": "diff-check.txt"
+    }
+  ],
+  "suite_skip": "Legacy Domain/MySqlConcurrencyTest requires empty repair_app_test and RUN_MYSQL_DOMAIN=1; not enabled because existing database holds protected fixtures. S004/S005 isolated MySQL evidence reused with source identity checks.",
+  "npm_check": "No check/lint/test npm scripts exist; only build/dev.",
+  "mysql": "No MySQL command run by S006; prior real MySQL evidence reused per integration-review.json.",
+  "build_warnings": "Optional fontaine absent and five /fonts/ibm-plex paths deferred to runtime; build exit 0; no dependency added."
+}

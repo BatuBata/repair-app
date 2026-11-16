@@ -1,7 +1,10 @@
 @props(['title' => null, 'navigationPath' => null])
 @php
     $user = auth()->user();
-    $storeName = \App\Models\StoreSetting::query()->value('name') ?: app(\App\Support\TenantContext::class)->tenant()->name;
+    $tenantContext = app(\App\Support\TenantContext::class);
+    $storeName = $tenantContext->has()
+        ? (\App\Models\StoreSetting::query()->value('name') ?: $tenantContext->tenant()->name)
+        : 'Aplikasi Servis';
     $role = strtolower((string) ($user->role->value ?? $user->role ?? 'admin'));
     $technician = $role === 'teknisi';
     $path = '/'.ltrim($navigationPath ?? request()->path(), '/');

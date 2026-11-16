@@ -1,0 +1,82 @@
+app/Services/Reports/Report.php:30:        foreach (ServiceOrder::query()->whereIn('status', ['selesai', 'diambil'])->whereDate('invoiced_on', '>=', $from)->whereDate('invoiced_on', '<=', $to)->with('items')->get() as $order) {
+app/Services/Reports/Report.php:37:        foreach (Sale::query()->whereDate('sold_on', '>=', $from)->whereDate('sold_on', '<=', $to)->with('items')->get() as $sale) {
+app/Services/Reports/Report.php:45:        foreach (Expense::query()->whereDate('spent_on', '>=', $from)->whereDate('spent_on', '<=', $to)->get() as $expense) {
+app/Services/Reports/Report.php:64:        foreach (StockEntry::query()->whereHas('product')->whereDate('entry_date', '>=', $from)->whereDate('entry_date', '<=', $to)->cursor() as $entry) {
+app/Console/Commands/CreateTenant.php:58:            DB::transaction(function () use ($context, $data): void {
+app/Console/Commands/CreateTenant.php:59:                $tenant = Tenant::create(['name' => $data['store_name']]);
+app/Console/Commands/CreateTenant.php:61:                StoreSetting::create(['name' => '', 'address' => '', 'phone' => '']);
+app/Console/Commands/CreateTenant.php:62:                User::create([
+app/Services/CreateServiceOrder.php:20:        abort_unless(User::query()->whereKey($creator->id)->exists(), 404);
+app/Services/CreateServiceOrder.php:31:        return DB::transaction(function () use ($data, $creator) {
+app/Services/CreateServiceOrder.php:34:            return ServiceOrder::create([
+app/Livewire/Invoice/Form.php:42:        $order = ServiceOrder::query()->findOrFail($this->orderId);
+app/Livewire/Invoice/Form.php:54:        $this->rows = $order->items()->orderBy('id')->get(['type', 'description', 'qty', 'price', 'cost'])->toArray();
+app/Livewire/Invoice/Form.php:58:        $this->warranty_days = (string) ($this->correction ? $order->warranty_days : (StoreSetting::query()->value('default_warranty_days') ?? 30));
+app/Services/Documents/Document.php:29:        $query = ServiceOrder::query();
+app/Services/Documents/Document.php:42:        $items = $invoice ? $order->items()->orderBy('id')->get(['description', 'qty', 'price']) : collect();
+app/Services/Documents/Document.php:52:            'store' => $store, 'storeName' => $store?->name ?: Tenant::findOrFail($order->tenant_id)->name,
+app/Services/Documents/Document.php:59:        $sale = Sale::query()->select(['id', 'number', 'sold_on', 'customer_name', 'customer_phone', 'warranty_days', 'warranty_until'])->findOrFail($id);
+app/Services/Documents/Document.php:60:        $items = $sale->items()->orderBy('id')->get(['product_name', 'qty', 'price'])->map(fn ($item) => (object) ['description' => $item->product_name, 'qty' => $item->qty, 'price' => $item->price]);
+app/Services/Documents/Document.php:70:        $store = array_key_exists('store', $data) ? $data['store'] : StoreSetting::query()->first(['name', 'address', 'phone', 'logo_path', 'warranty_terms']);
+app/Livewire/Sales/Form.php:62:        $product = Product::query()->whereKey($data['id'])->where('is_active', true)->firstOrFail();
+app/Livewire/Sales/Form.php:109:        return view('livewire.sales.form', ['products' => Product::query()->where('is_active', true)->orderBy('name')->get(), 'previewTotal' => $this->previewTotal()])
+app/Livewire/Stock/Form.php:36:            $product = Product::query()->whereKey($data['id'])->firstOrFail();
+app/Livewire/Stock/Form.php:64:        DB::transaction(function () use ($data) {
+app/Livewire/Stock/Form.php:67:                Product::create($data);
+app/Livewire/Stock/Form.php:69:                Product::query()->lockForUpdate()->findOrFail($this->productId)->update($data);
+app/Livewire/Sales/Show.php:30:        $this->saleId = Sale::query()->whereKey($data['id'])->firstOrFail()->id;
+app/Livewire/Sales/Show.php:57:        $sale = Sale::query()->with(['items', 'creator'])->findOrFail($this->saleId);
+app/Livewire/Settings/Categories.php:75:            Category::create($data);
+app/Livewire/Settings/Categories.php:95:        return Category::query()->whereKey($validated['id'])->firstOrFail();
+app/Livewire/Settings/Categories.php:102:        return view('livewire.settings.categories', ['categories' => Category::query()->orderBy('name')->get()])
+app/Livewire/Sales/Index.php:21:        return view('livewire.sales.index', ['sales' => Sale::query()->with('items')->orderByDesc('sold_on')->orderByDesc('id')->get()])
+app/Livewire/Users/Index.php:113:                    User::create($data);
+app/Livewire/Users/Index.php:141:        return User::query()->whereKey($validated['id'])->lockForUpdate()->firstOrFail();
+app/Livewire/Users/Index.php:146:        DB::transaction(function () use ($action) {
+app/Livewire/Users/Index.php:148:            DB::table('users')->where('id', User::min('id'))->update(['id' => DB::raw('id')]);
+app/Livewire/Users/Index.php:157:            && ! User::where('role', 'admin')->where('is_active', true)->whereKeyNot($user->id)->lockForUpdate()->exists()) {
+app/Livewire/Users/Index.php:168:            'storeName' => StoreSetting::query()->value('name') ?: app(TenantContext::class)->tenant()->name,
+app/Livewire/Stock/Restock.php:39:        $product = Product::query()->whereKey($data['id'])->firstOrFail();
+app/Livewire/Stock/Restock.php:62:        DB::transaction(function () use ($data) {
+app/Livewire/Stock/Restock.php:64:            $product = Product::query()->lockForUpdate()->findOrFail($this->productId);
+app/Livewire/Stock/Restock.php:72:            StockEntry::create([...$data, 'product_id' => $product->id, 'created_by' => $admin->id]);
+app/Livewire/Stock/Restock.php:81:        $product = Product::findOrFail($this->productId);
+app/Livewire/Expenses/Index.php:98:        DB::transaction(function () use ($data): void {
+app/Livewire/Expenses/Index.php:101:                Expense::create([...$data, 'created_by' => $admin->id]);
+app/Livewire/Expenses/Index.php:126:        DB::transaction(function (): void {
+app/Livewire/Expenses/Index.php:138:        return Expense::query()->whereKey($valid['id'])->firstOrFail();
+app/Livewire/Expenses/Index.php:164:        $query = Expense::query();
+app/Livewire/Settings/Store.php:46:        $setting = StoreSetting::query()->first();
+app/Livewire/Settings/Store.php:91:            DB::transaction(function () use ($data, $newLogoPath) {
+app/Livewire/Tts/Detail.php:41:        $this->technician_id = (string) ServiceOrder::query()->findOrFail($id)->technician_id;
+app/Livewire/Tts/Detail.php:67:        $order = ServiceOrder::query()
+app/Livewire/Tts/Detail.php:76:                $financial = InvoiceLines::calculate($order->items()->orderBy('id')->get(['type', 'description', 'qty', 'price', 'cost'])->toArray());
+app/Livewire/Tts/Detail.php:84:            'technicians' => $isAdmin ? User::query()->where('role', UserRole::Teknisi)->where('is_active', true)->orderBy('name')->get(['id', 'name']) : collect(),
+app/Livewire/Tts/Detail.php:85:            'storeName' => StoreSetting::query()->value('name') ?: app(TenantContext::class)->tenant()->name,
+app/Services/DocumentNumber.php:19:        if (DB::transactionLevel() === 0) {
+app/Services/DocumentNumber.php:26:        DB::table('number_sequences')->insertOrIgnore([...$key, 'last_seq' => 0]);
+app/Services/DocumentNumber.php:27:        $sequence = DB::table('number_sequences')->where($key)->lockForUpdate()->first();
+app/Services/DocumentNumber.php:29:        DB::table('number_sequences')->where($key)->update(['last_seq' => $next]);
+app/Livewire/Tts/Form.php:56:        $order = ServiceOrder::query()->when($lock, fn ($query) => $query->lockForUpdate())->findOrFail($this->orderId);
+app/Livewire/Tts/Form.php:64:        $order = DB::transaction(function () {
+app/Livewire/Tts/Form.php:78:            $category = Category::query()->whereKey($data['category_id'])->lockForUpdate()->first();
+app/Livewire/Tts/Form.php:99:            'categories' => Category::query()->where('is_active', true)->orderBy('id')->get(['id', 'name']),
+app/Livewire/Tts/Form.php:101:            'storeName' => StoreSetting::query()->value('name') ?: app(TenantContext::class)->tenant()->name,
+app/Livewire/Dashboard/Index.php:55:        DB::transaction(function () use ($data) {
+app/Livewire/Dashboard/Index.php:57:            $query = $data['kind'] === 'service' ? ServiceOrder::query() : Sale::query();
+app/Livewire/Dashboard/Index.php:61:                ? $this->warranties(ServiceOrder::query(), $now)
+app/Livewire/Dashboard/Index.php:62:                : $this->warranties(Sale::query(), $now);
+app/Livewire/Dashboard/Index.php:101:            'service' => DB::table('service_order_items as items')->join('service_orders as orders', 'orders.id', '=', 'items.service_order_id')
+app/Livewire/Dashboard/Index.php:104:            'sales' => DB::table('sale_items as items')->join('sales', 'sales.id', '=', 'items.sale_id')
+app/Livewire/Dashboard/Index.php:122:        foreach (ServiceOrder::query()->whereIn('status', ['selesai', 'diambil'])->whereDate('invoiced_on', '>=', $start)->whereDate('invoiced_on', '<=', $end)->select('invoiced_on')->cursor() as $order) {
+app/Livewire/Dashboard/Index.php:216:        $incoming = ServiceOrder::query()->where('created_at', '>=', $start)->where('created_at', '<', $end)->count();
+app/Livewire/Dashboard/Index.php:217:        $counts = ServiceOrder::query()->select('status')->selectRaw('COUNT(*) AS total')->groupBy('status')->pluck('total', 'status');
+app/Livewire/Dashboard/Index.php:224:            $query = ServiceOrder::query()->where('status', $status);
+app/Livewire/Dashboard/Index.php:239:        $backlog = ServiceOrder::query()->where('status', 'selesai')->with('category:id,name')->orderBy('invoiced_on')->orderBy('id')->limit(5)->get();
+app/Livewire/Dashboard/Index.php:240:        $store = StoreSetting::query()->value('name') ?: app(TenantContext::class)->tenant()->name;
+app/Livewire/Dashboard/Index.php:242:        $records = $this->warranties(ServiceOrder::query(), $today)->with('category:id,name')->get()->toBase()
+app/Livewire/Dashboard/Index.php:243:            ->concat($this->warranties(Sale::query(), $today)->with('items:id,sale_id,product_name')->get());
+app/Livewire/Tts/Index.php:45:        $orders = ServiceOrder::query()
+app/Livewire/Stock/Index.php:25:        DB::transaction(function () use ($data) {
+app/Livewire/Stock/Index.php:27:            $product = Product::query()->whereKey($data['id'])->lockForUpdate()->firstOrFail();
+app/Livewire/Stock/Index.php:37:        return view('livewire.stock.index', ['products' => Product::query()->orderBy('name')->orderBy('id')->get()])

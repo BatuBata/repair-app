@@ -25,7 +25,7 @@ Goal aktif 17 November 2026 mengizinkan eksekusi S001–S012. Deployment produks
 | S001 | Tetapkan kontrak username dan tenant nonaktif | planner / 6.1-sol | easy / medium | — | — | done |
 | S002 | Bangun schema dan fondasi isolasi tenant | developer / 6.1-sol | complex / high | S001 | — | done |
 | S003 | Jadikan auth, pengguna, pengaturan, dan onboarding tenant-aware | developer / 6.1-sol | medium / high | S002 | — | done |
-| S004 | Isolasi alur servis, dokumen, dan tracking | developer / 6.1-sol | complex / high | S003 | — | pending |
+| S004 | Isolasi alur servis, dokumen, dan tracking | developer / 6.1-sol | complex / high | S003 | — | running |
 | S005 | Isolasi stok, penjualan, pengeluaran, dashboard, dan laporan | developer / 6.1-sol | complex / high | S004 | — | pending |
 | S006 | Integrasikan candidate Lean SaaS | integrator / 6.1-sol | medium / high | S003, S004, S005 | — | pending |
 | S007 | QA independen keamanan tenant dan regresi aplikasi | tester / 6.1-sol | complex / high | S006 | — | pending |
@@ -420,6 +420,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       },
       "write_scope": [
         "app/Actions/ServiceOrders/**",
+        "app/Models/ServiceOrder.php",
         "app/Services/CreateServiceOrder.php",
         "app/Services/DocumentNumber.php",
         "app/Services/Documents/**",
@@ -455,7 +456,20 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         "Tes dua tenant untuk list/detail/edit/action, relasi silang, PDF/struk/WhatsApp/tracking, dan 404 pada ID tenant lain.",
         "Uji konkurensi nomor per tenant pada MariaDB/MySQL test serta jalankan regresi TTS/Invoice/Tracking/Documents existing."
       ],
-      "status": "pending"
+      "status": "running",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root/s004_service",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native-codex:S004:A1",
+          "outcome": "running",
+          "receipt_ref": null
+        }
+      ]
     },
     {
       "id": "S005",

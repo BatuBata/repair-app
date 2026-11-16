@@ -1,4 +1,4 @@
-# Rancangan SaaS Multi-Toko Repair App
+# Rancangan Lean SaaS Multi-Toko
 
 Status: **Draft untuk direview**  
 Branch: `codex/saas-multitenant`  
@@ -7,311 +7,268 @@ Dasar: aplikasi produksi Anugerah pada commit `a03f6f1`
 
 ## 1. Tujuan
 
-Mengubah aplikasi satu toko menjadi layanan SaaS yang dapat dipakai banyak usaha servis tanpa membuat repo, deployment, atau database baru untuk setiap client.
+Satu aplikasi dapat dipakai beberapa toko servis tanpa membuat repo, database, atau deployment baru untuk setiap client.
 
-Target awal:
+Target pertama hanya:
 
-- toko servis komputer/laptop;
-- toko servis HP/tablet;
-- toko servis elektronik umum;
-- usaha jasa servis campuran.
+- mempertahankan semua fitur Anugerah;
+- menambahkan toko servis HP/komputer/elektronik lain;
+- memastikan data satu toko tidak dapat dibaca atau diubah toko lain;
+- membuat client baru dengan proses operasional sederhana.
 
-Setiap toko memiliki pengguna, kategori, nomor dokumen, transaksi, laporan, logo, pengaturan, dan data customer sendiri. Data satu toko tidak boleh terlihat atau dapat diubah oleh toko lain.
+Jenis usaha **tidak membuat versi aplikasi berbeda**. Toko HP dan toko komputer memakai alur servis yang sama. Perbedaannya cukup melalui nama toko, logo, kategori barang, pengguna, dan pengaturan yang sudah ada.
 
-## 2. Keputusan rancangan yang direkomendasikan
+## 2. Aturan anti-over-engineering
 
-| Topik | Rekomendasi awal | Alasan |
-|---|---|---|
-| Model aplikasi | Satu codebase dan satu deployment | Perbaikan dan fitur cukup dirilis sekali untuk semua client |
-| Model data | Shared database dengan `tenant_id` pada seluruh data milik toko | Paling sederhana dan hemat untuk tahap awal; tetap dapat dipisah nanti bila skala menuntut |
-| Istilah tenant | Tenant = satu toko/usaha | Mudah dipahami dan cocok dengan struktur aplikasi sekarang |
-| URL toko | Subdomain `{slug}.domain-saas` | Tenant diketahui sebelum login; username seperti `admin` boleh dipakai di toko berbeda |
-| Client pertama | Data Anugerah dimigrasikan menjadi tenant pertama | Tidak membuat ulang data dan tidak mengubah alur kerja client aktif |
-| Jenis usaha | Preset onboarding, bukan cabang kode | Toko HP dan komputer memakai alur servis yang sama; yang berbeda terutama kategori dan identitas |
-| Registrasi | Dibuat manual oleh pengelola platform pada tahap awal | Menghindari pembayaran, spam, dan provisioning otomatis sebelum operasional stabil |
-| Pembayaran SaaS | Pencatatan paket/status manual dahulu | Payment gateway bukan syarat untuk membuktikan multi-tenant aman |
-| Pengguna | Satu akun hanya menjadi anggota satu tenant pada v1 SaaS | Menghindari kompleksitas pindah toko dan membership yang belum dibutuhkan |
-| Admin platform | Guard dan tabel akun terpisah dari pengguna toko | Mengurangi risiko akun platform ikut terbawa query tenant |
+Aturan ini berlaku untuk seluruh implementasi SaaS:
 
-## 3. Yang tetap sama
+1. Fitur dibuat hanya bila diperlukan untuk isolasi tenant, migrasi Anugerah, atau dipakai client nyata.
+2. Jangan membuat konfigurasi generik hanya karena mungkin dibutuhkan nanti.
+3. Bila kebutuhan dua jenis toko dapat diselesaikan oleh kategori yang sudah ada, jangan membuat modul atau workflow baru.
+4. Gunakan komponen, model, dan pola Laravel yang sudah ada sebelum menambah abstraksi atau dependency.
+5. Jangan memasang package multi-tenancy; kebutuhan awal cukup dengan `tenant_id`, scope, middleware, dan test isolasi kecil yang dapat dibaca tim.
+6. Jangan membuat API, microservice, queue, event bus, feature flag, atau plugin system untuk pekerjaan yang masih dapat diselesaikan monolith sekarang.
+7. Satu perubahan harus menyelesaikan kebutuhan sekarang dan mempunyai acceptance test. Tidak ada kode “untuk nanti”.
+8. Backlog bukan izin implementasi. Fitur backlog baru dikerjakan setelah ada kebutuhan client dan keputusan user.
 
-Fitur inti yang sudah dipakai Anugerah dipertahankan:
+Pertanyaan wajib sebelum menambah fitur:
 
-- alur TTS Diterima → Dikerjakan → Selesai → Diambil;
-- teknisi dan admin toko;
-- dokumen struk 58mm dan PDF A5;
-- tracking customer melalui token;
+- Client mana yang membutuhkan ini sekarang?
+- Apakah fitur existing atau pengaturan toko sudah cukup?
+- Apa yang benar-benar gagal bila fitur ini tidak dibuat?
+- Bisakah diselesaikan dengan perubahan yang lebih kecil?
+
+## 3. Scope minimum v1 SaaS
+
+### Wajib dibuat
+
+- tabel tenant/toko;
+- `tenant_id` pada data utama milik toko;
+- pembatasan otomatis seluruh query berdasarkan tenant pengguna yang login;
+- nomor TTS/JL, kategori, pengguna, stok, laporan, dan pengaturan yang independen per tenant;
+- command internal untuk membuat tenant dan owner pertama;
+- migrasi semua data Anugerah menjadi tenant pertama;
+- test kebocoran data antartoko;
+- backup dan rollback sebelum migrasi produksi.
+
+### Tetap memakai fitur existing
+
+- login username/password;
+- peran Admin dan Teknisi;
+- form dan status TTS;
+- struk/PDF/tracking;
 - stok, penjualan, pengeluaran, dashboard, dan laporan;
-- WhatsApp manual melalui `wa.me`;
-- tampilan mobile-first.
+- identitas toko, logo, garansi, kategori;
+- deployment dan CI/CD yang sudah berjalan.
 
-SaaS tidak membuat versi kode khusus “toko HP” dan “toko komputer”. Saat onboarding, jenis usaha hanya mengisi kategori awal yang berbeda.
+### Sengaja tidak dibuat pada v1 SaaS
 
-Contoh preset:
-
-| Jenis usaha | Kategori awal |
-|---|---|
-| Servis HP | HP Android, iPhone, Tablet, Smartwatch, Aksesori |
-| Servis komputer | Laptop, PC, Monitor, Printer, UPS |
-| Elektronik umum | TV, Mesin cuci, AC, Kulkas, Elektronik kecil |
-| Campuran | Tidak mengisi preset; owner memilih sendiri |
-
-Kategori tetap dapat ditambah, diubah, atau dinonaktifkan oleh admin toko.
-
-## 4. Batas v1 SaaS
-
-Masuk v1 SaaS:
-
-- isolasi data tenant;
-- subdomain dan login per toko;
-- onboarding tenant oleh admin platform;
-- jenis usaha dan preset kategori;
-- branding/pengaturan per toko;
-- status tenant dan paket manual;
-- migrasi Anugerah tanpa kehilangan data;
-- backup, restore, audit keamanan tenant, dan observabilitas dasar.
-
-Belum masuk:
-
-- registrasi publik dan trial otomatis;
-- payment gateway dan invoice langganan otomatis;
-- satu akun mengelola banyak toko;
-- custom domain client;
-- custom field atau workflow berbeda per toko;
+- panel admin platform;
+- registrasi client secara publik;
+- paket Starter/Growth dan pembatasan fitur;
+- pembayaran atau invoice langganan otomatis;
+- trial otomatis;
+- subdomain atau custom domain per client;
+- satu user menjadi anggota banyak toko;
+- impersonasi/login sebagai client;
+- custom field dan custom workflow;
 - plugin per jenis usaha;
+- tema/white-label selain pengaturan toko existing;
 - aplikasi mobile native/offline;
 - database terpisah per tenant;
-- white-label penuh selain nama, logo, alamat, telepon, dan syarat garansi.
+- analitik lintas semua tenant;
+- sistem notifikasi atau queue baru.
 
-## 5. Arsitektur target
+Billing dan kontrak client dicatat di luar aplikasi dahulu. Bila jumlah client membuat pekerjaan manual tidak praktis, barulah panel platform atau billing dipertimbangkan.
 
-| Lapisan | Rancangan |
+## 4. Arsitektur minimum
+
+| Bagian | Rancangan lean |
 |---|---|
-| Browser | Membuka `{slug}.domain-saas`; tracking customer tetap memakai link bertoken |
-| Resolver tenant | Middleware membaca subdomain, memastikan tenant aktif, lalu memasang `TenantContext` untuk request tersebut |
-| Autentikasi toko | Login mencari username hanya di tenant aktif; unik per tenant, bukan global |
-| Aplikasi | Laravel/Livewire yang sama; seluruh model milik toko memakai scope tenant |
-| Admin platform | Area `/platform` dengan guard dan tabel akun terpisah; tidak memakai scope tenant toko |
-| Database | Satu MariaDB/MySQL; semua data toko memiliki `tenant_id` dan indeks yang sesuai |
-| File | Logo/dokumen upload disimpan di folder `tenants/{tenant_uuid}/...` |
-| Deployment | Satu pipeline CI/CD dan satu release untuk seluruh tenant |
-| Backup | Backup database dan file lengkap, terenkripsi, disalin ke lokasi di luar VPS, serta diuji restore |
+| Codebase | Satu repo Laravel/Livewire yang sekarang |
+| Deployment | Satu aplikasi dan satu pipeline CI/CD |
+| Database | Satu MariaDB/MySQL bersama |
+| Identitas tenant | `tenant_id` milik user yang sudah login |
+| Login | Tetap satu halaman login; username tetap unik global untuk menghindari perubahan UX dan DNS |
+| Data toko | Query otomatis dibatasi ke `tenant_id` aktif |
+| Tracking publik | Tetap memakai token global yang sulit ditebak; tenant diambil dari TTS pemilik token |
+| File logo | Path memasukkan ID tenant agar file tidak bertabrakan |
+| Onboarding | Command Artisan internal, dijalankan operator |
 
-### 5.1 Resolusi tenant
+Konsekuensi username global: akun client baru memakai nama unik seperti `admin.sumberhp`. Ini lebih sederhana daripada menambah kode toko pada login atau wildcard subdomain. Bila nanti user menilai pengalaman ini buruk, login berbasis kode toko/subdomain dapat dirancang sebagai perubahan terpisah.
 
-Alur request internal:
+Login adalah satu-satunya query user yang boleh berjalan sebelum tenant diketahui: Fortify mencari username unik global, lalu middleware mengambil tenant dari user yang berhasil login. Setelah itu, daftar pengguna dan seluruh data bisnis wajib memakai scope tenant.
 
-1. Host `anugerah.domain-saas` menghasilkan slug `anugerah`.
-2. Middleware mencari tenant aktif berdasarkan slug.
-3. `TenantContext` menyimpan tenant selama request.
-4. Login dan semua query bisnis otomatis dibatasi oleh `tenant_id` tersebut.
-5. ID milik tenant lain menghasilkan 404, bukan 403, agar keberadaan datanya tidak bocor.
+## 5. Model data minimum
 
-Domain produksi Anugerah yang sekarang dapat tetap menjadi alias tenant Anugerah agar shortcut dan link lama tidak langsung rusak.
+### 5.1 Tabel baru `tenants`
 
-### 5.2 Tracking customer
-
-`tracking_token` tetap unik global dan sulit ditebak. Controller publik menemukan TTS dari token, lalu mengambil identitas toko melalui tenant milik TTS tersebut. Halaman tidak membuka nomor HP, alamat, modal, atau data tenant lain.
-
-## 6. Perubahan model data
-
-### 6.1 Tabel baru
-
-#### `tenants`
-
-Kolom minimum:
+Kolom yang benar-benar diperlukan:
 
 - `id`;
-- `uuid` publik untuk path file dan integrasi;
 - `name`;
-- `slug` unik global;
-- `business_type`: `phone`, `computer`, `electronics`, atau `general`;
-- `timezone`, default `Asia/Makassar` untuk Anugerah;
-- `currency`, default `IDR`;
-- `status`: `trial`, `active`, `suspended`, `cancelled`;
-- `plan_code`;
-- `trial_ends_at` dan `subscription_ends_at` opsional;
+- `is_active`, default aktif;
 - timestamps.
 
-#### `platform_users`
+Tidak perlu `slug`, jenis usaha, paket, trial, subscription, currency, atau feature flags pada tahap ini. Nama, alamat, telepon, logo, dan pengaturan garansi tetap berada di `store_settings`.
 
-Akun pengelola SaaS, terpisah dari admin dan teknisi toko. Password di-hash dan area platform memakai rate limit serta autentikasi terpisah.
+### 5.2 Tabel utama yang mendapat `tenant_id`
 
-### 6.2 Tabel yang menjadi tenant-aware
-
-| Tabel | Perubahan utama |
+| Tabel | Perubahan |
 |---|---|
-| `users` | Tambah `tenant_id`; username unik menjadi `(tenant_id, username)` |
+| `users` | Tambah `tenant_id`; username tetap unik global |
 | `categories` | Tambah `tenant_id`; nama unik menjadi `(tenant_id, name)` |
-| `number_sequences` | Tambah `tenant_id`; primary key menjadi `(tenant_id, prefix, period)` |
+| `number_sequences` | Tambah `tenant_id`; kunci menjadi `(tenant_id, prefix, period)` |
 | `service_orders` | Tambah `tenant_id`; nomor unik menjadi `(tenant_id, number)`; token tetap unik global |
-| `service_order_items` | Tambah `tenant_id` untuk pertahanan berlapis dan audit isolasi |
-| `products` | Tambah `tenant_id`; stok hanya milik tenant tersebut |
-| `stock_entries` | Tambah `tenant_id` |
+| `products` | Tambah `tenant_id` |
 | `sales` | Tambah `tenant_id`; nomor unik menjadi `(tenant_id, number)` |
-| `sale_items` | Tambah `tenant_id` |
 | `expenses` | Tambah `tenant_id` |
-| `store_settings` | Ganti singleton `id=1` menjadi satu baris per `tenant_id` |
+| `store_settings` | Satu baris per `tenant_id`, bukan singleton `id=1` |
 
-`sessions`, passkeys, dan token reset tetap terhubung ke pengguna; pemisahan tenant berasal dari user yang sudah memiliki `tenant_id`.
+Tabel anak tidak perlu menduplikasi `tenant_id` bila selalu diakses melalui parent yang sudah di-scope:
 
-### 6.3 Aturan relasi
+- `service_order_items` melalui `service_orders`;
+- `sale_items` melalui `sales`;
+- `stock_entries` melalui `products`.
 
-- Setiap relasi antardata bisnis harus memiliki tenant yang sama.
-- Request tidak boleh menerima `tenant_id` dari form/browser.
-- `tenant_id` selalu diambil dari `TenantContext` atau parent record yang sudah lolos scope.
-- Foreign key biasa tetap dipakai; service dan test wajib menolak hubungan silang tenant.
-- Model top-level dan child memakai trait tenant yang sama agar raw ID tenant lain tidak dapat dibuka.
+Jika audit implementasi menemukan query langsung yang membuat pola ini tidak aman atau rumit, lebih baik menambah `tenant_id` pada tabel terkait daripada membuat query abstrak yang sulit dipahami. Keputusan dibuat berdasarkan caller aktual, bukan antisipasi.
 
-## 7. Perubahan kode yang diperlukan
+## 6. Fondasi kode minimum
 
-### Fondasi tenant
+Hanya tiga bagian bersama yang diperlukan:
 
-- model `Tenant` dan `TenantContext` request-scoped;
-- middleware resolver host/subdomain;
-- trait `BelongsToTenant` untuk global scope dan pengisian `tenant_id` saat create;
-- policy/guard yang menghasilkan 404 untuk record tenant lain;
-- helper URL yang selalu memakai domain tenant yang benar.
+1. **`TenantContext`** — menyimpan tenant user yang login selama request.
+2. **`BelongsToTenant`** — scope model dan mengisi `tenant_id` saat record dibuat.
+3. **Middleware tenant** — memastikan user aktif, tenant tersedia, dan tenant masih aktif.
 
-### Query yang wajib diperbaiki
+Aturan keamanan:
 
-Saat ini banyak query mengasumsikan satu toko, antara lain:
+- browser/form tidak pernah mengirim atau menentukan `tenant_id`;
+- `tenant_id` berasal dari user yang login;
+- autentikasi hanya boleh mencari satu user dari username unik global, bukan menampilkan daftar atau data user lintas tenant;
+- query record tenant lain menghasilkan 404;
+- relasi teknisi, kategori, produk, dan transaksi harus berasal dari tenant yang sama;
+- command CLI yang menyentuh data bisnis wajib menerima tenant secara eksplisit;
+- tracking publik hanya membuka data aman yang sudah diizinkan sekarang.
 
-- dashboard, laporan, garansi, dan pencarian TTS;
-- pemilihan teknisi, kategori, produk, dan penjualan;
-- nomor dokumen di `DocumentNumber`;
-- `StoreSetting::find(1)` dan seluruh header dokumen;
-- validasi unik username dan kategori;
-- PDF, struk, tracking, WhatsApp, dan upload logo;
-- seeder admin awal.
+Tidak perlu repository layer, service locator, domain event, atau base controller baru. Model/action existing tetap dipakai dan hanya caller yang benar-benar terkait tenant yang diperbaiki.
 
-Perubahan harus dilakukan di fondasi bersama, lalu setiap caller diaudit. Menambahkan `tenant_id` tanpa memperbaiki query dan validasi unik tidak dianggap selesai.
+## 7. Caller yang wajib diaudit
 
-## 8. Onboarding client baru
+Perubahan tenant harus menjangkau:
 
-Alur v1 SaaS yang direkomendasikan:
+- autentikasi dan validasi username;
+- daftar/pembuatan pengguna dan teknisi;
+- kategori dan pilihan kategori TTS;
+- TTS, status, pencarian, dan tracking;
+- `DocumentNumber` untuk TTS/JL;
+- dashboard dan pengingat garansi;
+- stok, restok, penjualan, dan pengeluaran;
+- laporan;
+- `StoreSetting::find(1)` dan header dokumen;
+- PDF, struk, WhatsApp, dan logo;
+- seeder serta command operasional.
 
-1. Admin platform memilih **Tambah toko**.
-2. Isi nama toko, slug, jenis usaha, zona waktu, paket, dan masa aktif.
-3. Isi nama owner, username, dan password awal.
-4. Sistem membuat tenant, store setting, owner admin, number sequence kosong, serta kategori preset dalam satu transaksi.
-5. Sistem menampilkan URL login tenant dan checklist pengaturan awal.
-6. Owner mengganti password, melengkapi logo/alamat/telepon, memeriksa kategori, lalu membuat teknisi.
+Menambahkan kolom `tenant_id` tanpa mengaudit caller di atas tidak dianggap selesai.
 
-Tidak ada repo, database, `.env`, atau deployment baru untuk client tersebut.
+## 8. Toko HP tanpa fitur baru
 
-## 9. Paket dan status langganan
+Toko baru dibuat dengan pengaturan toko existing, lalu admin mengisi kategori sesuai kebutuhannya.
 
-Untuk tahap awal, paket cukup berupa konfigurasi internal:
+Contoh kategori:
 
-| Paket contoh | Batas awal |
+| Toko | Kategori |
 |---|---|
-| Starter | 1 admin, maksimal 3 teknisi, fitur inti |
-| Growth | Lebih banyak pengguna dan laporan lengkap |
+| Servis HP | Android, iPhone, Tablet, Smartwatch |
+| Servis komputer | Laptop, PC, Monitor, Printer |
+| Elektronik umum | TV, Mesin cuci, AC, Kulkas |
 
-Batas final dan harga belum diputuskan. Enforcement yang aman:
+Tidak perlu kolom `business_type` atau preset otomatis pada v1. Memasukkan beberapa kategori saat onboarding lebih murah dan lebih mudah diubah daripada memelihara sistem preset.
 
-- tenant `active` dapat menggunakan aplikasi;
-- tenant `suspended` tidak dapat membuat/mengubah data;
-- data tidak langsung dihapus;
-- platform admin dapat mengaktifkan kembali;
-- tracking customer lama tetap tersedia untuk periode yang akan diputuskan.
+## 9. Onboarding client baru
 
-Payment gateway ditambahkan setelah dua atau tiga tenant nyata membuktikan alur produk dan paketnya.
+Gunakan satu command internal, misalnya:
 
-## 10. Keamanan dan isolasi tenant
+```text
+php artisan tenant:create
+```
 
-Kriteria wajib sebelum client kedua masuk:
+Command meminta secara interaktif:
 
-- ID record tenant lain selalu 404 pada seluruh rute dan Livewire action;
-- pencarian, dashboard, laporan, selectbox, export, PDF, dan struk tidak pernah mencampur tenant;
-- username dan nomor dokumen boleh sama di tenant berbeda, tetapi tidak dalam tenant yang sama;
-- teknisi hanya dapat dipilih dari tenant yang sama;
-- kategori/produk milik tenant lain ditolak walaupun ID dikirim manual;
-- upload logo tidak dapat menimpa atau dibaca melalui path tenant lain;
-- log aplikasi memuat `tenant_id` dan request ID, tetapi tidak memuat password/token;
-- command, scheduler, queue/job, dan seeder wajib menerima tenant secara eksplisit;
-- cache key dan rate-limit key memasukkan tenant/host bila menyimpan data tenant;
-- akun platform tidak otomatis mendapat akses isi transaksi toko; akses dukungan harus eksplisit dan tercatat bila kelak dibutuhkan.
+- nama toko;
+- nama owner;
+- username unik;
+- password awal tanpa menampilkannya di terminal.
 
-## 11. Migrasi Anugerah tanpa kehilangan data
+Dalam satu transaksi, command membuat:
 
-Karena aplikasi sudah dipakai client, migrasi tidak boleh memakai `migrate:fresh`, reset database, atau backfill tanpa backup.
+- tenant;
+- store setting kosong/default;
+- akun admin owner.
 
-Urutan aman:
+Setelah login, owner sendiri mengisi identitas toko, kategori, dan akun teknisi melalui layar yang sudah ada. Command tidak perlu membuat paket, domain, preset, checklist onboarding, atau email undangan.
 
-1. Buat backup database dan folder upload produksi, salin keluar VPS, lalu uji restore pada database terpisah.
-2. Catat jumlah dan checksum baris setiap tabel penting.
-3. Buat tenant Anugerah dan kolom `tenant_id` yang masih nullable.
-4. Backfill seluruh data lama ke tenant Anugerah dalam transaksi/batch terkontrol.
-5. Verifikasi jumlah, relasi, total laporan, nomor dokumen, user, dan file sebelum/sesudah identik.
-6. Tambah indeks/unique composite dan ubah `tenant_id` menjadi wajib.
-7. Deploy kode tenant-aware dengan alias domain lama ke tenant Anugerah.
-8. Smoke test login, buat TTS, laporan, PDF/struk, tracking, stok, dan penjualan.
-9. Siapkan rollback kode dan database yang sudah diuji sebelum maintenance ditutup.
+## 10. Migrasi Anugerah
 
-Migrasi produksi harus memiliki maintenance window dan persetujuan terpisah. Pengecualian “tanpa backup” saat demo tidak aman untuk data client yang sudah dipakai.
+Aplikasi sudah dipakai client, sehingga migrasi wajib aman dan dapat dibatalkan.
 
-## 12. Strategi pengujian
+Urutan minimum:
 
-### Tes otomatis wajib
+1. Backup database dan folder upload, salin ke luar VPS, lalu buktikan restore pada database terpisah.
+2. Catat jumlah baris dan total penting sebagai baseline.
+3. Buat tenant Anugerah.
+4. Tambah `tenant_id` nullable pada tabel utama.
+5. Backfill seluruh data existing ke tenant Anugerah.
+6. Verifikasi jumlah baris, relasi, nomor dokumen, stok, dan laporan tidak berubah.
+7. Aktifkan scope tenant, unique/index baru, lalu jadikan `tenant_id` wajib.
+8. Smoke test login, TTS, tracking, PDF, stok, penjualan, dan laporan.
+9. Bila verifikasi gagal, rollback release dan database menggunakan prosedur yang telah diuji.
 
-- dua tenant dengan ID data yang tumpang tindih secara logis;
-- seluruh index/show/edit/action hanya mengembalikan tenant aktif;
-- percobaan mengirim ID kategori, teknisi, produk, TTS, penjualan, dan pengeluaran milik tenant lain ditolak;
-- penomoran TTS/JL berjalan independen dan aman terhadap konkurensi per tenant;
-- unique username/kategori/nomor berlaku per tenant;
-- dashboard dan laporan dihitung hanya dari tenant aktif;
-- dokumen dan tracking memakai identitas tenant pemilik;
-- suspend/activate tenant sesuai aturan;
-- provisioning tenant bersifat atomik: gagal sebagian tidak meninggalkan tenant rusak;
-- migrasi fixture Anugerah mempertahankan semua baris dan total.
+Tidak boleh memakai `migrate:fresh`, reset database, atau eksperimen langsung pada produksi. Pengecualian backup saat masih demo tidak berlaku lagi karena aplikasi sudah dipakai client.
 
-### QA integrasi
+## 11. Pengujian wajib
 
-- login dua tenant pada browser/sesi berbeda;
-- uji URL tenant salah dan tenant nonaktif;
-- uji seluruh layar 360/768/1280;
-- uji tracking dan PDF dari kedua tenant;
-- security review khusus IDOR, Livewire payload, upload, cache, dan command CLI;
-- backup/restore nyata sebelum pilot tenant kedua.
+Gunakan dua tenant sintetis. Test minimum:
 
-## 13. Tahapan implementasi
+- list, detail, edit, dan action tidak dapat membaca ID tenant lain;
+- payload manual tidak dapat memakai teknisi, kategori, atau produk tenant lain;
+- dashboard dan laporan hanya menghitung tenant aktif;
+- nomor TTS/JL independen per tenant dan tetap aman saat konkurensi;
+- kategori bernama sama boleh ada di tenant berbeda;
+- dokumen, WhatsApp, tracking, dan logo memakai identitas tenant pemilik;
+- tenant nonaktif tidak dapat login atau mengubah data;
+- migrasi fixture Anugerah mempertahankan semua baris dan total;
+- seluruh regresi fitur existing tetap lulus.
 
-| Tahap | Hasil | Gate keluar |
+Tidak perlu membuat framework test tenant sendiri. Gunakan factory/helper kecil bila duplikasi setup test mulai mengganggu pembacaan.
+
+## 12. Tahapan implementasi kecil
+
+| Tahap | Isi | Gate |
 |---|---|---|
-| S0 — Keputusan produk | Brand/domain, model URL, onboarding, paket, suspend, zona waktu disetujui | Draft ini direview |
-| S1 — Fondasi schema | Tenant, context, scope, unique per tenant, migrasi kompatibel | Tes isolasi model dan migrasi lulus |
-| S2 — Tenant-aware app | Semua query, auth, nomor, dokumen, tracking, file, laporan terisolasi | Regresi fitur + security tenant PASS |
-| S3 — Platform onboarding | Platform admin membuat/aktifkan/suspend tenant dan owner | Provisioning atomik dan audit PASS |
-| S4 — Migrasi Anugerah | Data produksi menjadi tenant pertama dengan domain lama tetap berfungsi | Backup/restore, checksum, smoke PASS |
-| S5 — Pilot client kedua | Toko HP nyata memakai preset dan alur yang sama | Tidak ada kebocoran data; feedback operasional diterima |
-| S6 — Komersialisasi | Paket final, billing, landing/onboarding publik bila dibutuhkan | Diputuskan dari data pilot |
+| L1 — Schema dan scope | `tenants`, `tenant_id`, context, trait, middleware | Test isolasi model PASS |
+| L2 — Audit fitur existing | Perbaiki caller di §7 dan test dua tenant | Full regression + QA security PASS |
+| L3 — Migrasi Anugerah | Backup/restore, backfill, constraint, smoke test | Data dan total identik |
+| L4 — Client kedua | Command onboarding dan pilot satu toko HP | Tidak ada kebocoran; alur harian berhasil |
 
-Implementasi tidak dimulai sekaligus. S1–S4 harus selesai dan lulus QA independen sebelum client kedua diberi akses.
+Jangan mengerjakan L4 sebelum L1–L3 lulus. Setelah pilot client kedua, evaluasi kebutuhan nyata sebelum menambah fitur SaaS lain.
 
-## 14. Kriteria selesai v1 SaaS
+## 13. Kriteria selesai v1 SaaS
 
-- Client baru dapat dibuat tanpa repo, database, atau deployment baru.
-- Anugerah tetap dapat memakai data dan URL lamanya setelah migrasi.
-- Toko HP dan komputer dapat memakai alur yang sama melalui kategori preset/pengaturan toko.
-- Seluruh data internal dan dokumen terisolasi per tenant.
-- Tes kebocoran lintas tenant lulus untuk semua modul dan Livewire action.
-- Penomoran, laporan, stok, pengguna, dan pengaturan independen per tenant.
-- Backup offsite dan restore telah diuji.
-- Pipeline satu codebase dapat merilis tanpa menghapus data tenant.
-- Pilot tenant kedua selesai sebelum registrasi publik atau billing otomatis dibuat.
+- Client kedua dapat dibuat tanpa repo, database, atau deployment baru.
+- Anugerah tetap bekerja dengan data lama yang utuh.
+- Setiap user hanya melihat data tenant-nya.
+- Seluruh modul existing lulus test isolasi dan regresi.
+- Nomor dokumen, kategori, pengguna, stok, dan laporan independen per tenant.
+- Toko HP berjalan cukup dengan pengaturan dan kategori existing.
+- Backup/restore migrasi sudah dibuktikan.
+- Tidak ada panel, billing, domain, paket, atau sistem konfigurasi baru yang belum dipakai client.
 
-## 15. Keputusan yang perlu dikonfirmasi
+## 14. Keputusan yang masih diperlukan
 
-Rancangan memakai default rekomendasi berikut sampai user memilih berbeda:
+Hanya dua keputusan yang menghambat implementasi:
 
-1. **Domain SaaS:** subdomain per toko, misalnya `anugerah.nama-saas.com`.
-2. **Onboarding:** client dibuat manual oleh admin platform, bukan daftar sendiri.
-3. **Billing:** status dan paket diatur manual; belum ada payment gateway.
-4. **Keanggotaan:** satu user hanya berada di satu toko.
-5. **Jenis usaha:** hanya preset kategori dan contoh, bukan fitur/kode terpisah.
-6. **Suspend:** aplikasi toko menjadi read-only/blok perubahan; data tidak dihapus dan aturan masa aktif tracking perlu ditentukan.
-7. **Zona waktu:** disimpan per tenant; mata uang v1 tetap Rupiah.
+1. Username boleh dibuat unik global seperti `admin.sumberhp` agar login tetap sederhana. Rekomendasi: **ya untuk v1 SaaS**.
+2. Tenant nonaktif diblokir login sepenuhnya, sementara tracking customer lama tetap dapat dibuka. Rekomendasi: **ya**, agar customer tidak kehilangan akses status/nota.
 
-Setelah keputusan ini disetujui, dokumen dapat dinaikkan menjadi PRD SaaS dan dibuatkan `SAAS-TODO.md` terpisah. `PRD.md` dan `TODO.md` lama tetap menjadi catatan produk produksi satu toko sampai migrasi SaaS benar-benar diterima.
+Setelah dua keputusan tersebut disetujui, rancangan dapat dinaikkan menjadi PRD SaaS dan dibuatkan `SAAS-TODO.md`. `PRD.md` dan `TODO.md` existing tetap menjadi sumber produk produksi sampai migrasi SaaS diterima.

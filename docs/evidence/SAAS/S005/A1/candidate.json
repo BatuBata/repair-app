@@ -1,0 +1,65 @@
+{
+  "task": "S005",
+  "attempt": "A1",
+  "base_revision": "9805be8b0c8f444ab17a26f7eaa4b9ba4324b66b",
+  "input_s004": "sha256:c721514661e503ee70abe9fbdd508896f18835b3e0070cb1d6c20664c4a66674",
+  "input_s004_verified": true,
+  "candidate": "sha256:9ab1f13ae929cb26cdac0c12aa61137e48d518e2617b886cf354f44b9340802f",
+  "algorithm": "SHA256 of sorted UTF-8 path + NUL + file bytes, concatenated; evidence excluded",
+  "files": [
+    {
+      "path": "app/Livewire/Dashboard/Index.php",
+      "sha256": "ebee2cbb7d58334aefee6c79ec79375796c9f0e75ae0dc1416aca52e03f03953"
+    },
+    {
+      "path": "app/Models/Expense.php",
+      "sha256": "f7370ec63d51cdccb0239e1b7dfec05980f467ddf55e264b32275549f293b8bd"
+    },
+    {
+      "path": "app/Models/Product.php",
+      "sha256": "8063ffe93f2083f0b950072e1bdf3c9081c102151caec70c88f951a3ecb3d077"
+    },
+    {
+      "path": "app/Models/Sale.php",
+      "sha256": "b66de691d3ad98928ad1b96168248b922898ecd7ba76f34b65ad5bb8c23b661d"
+    },
+    {
+      "path": "app/Models/SaleItem.php",
+      "sha256": "c7cd1b0a05fe629566492f163d43ae3c46c13a76c5e6d6571ec191f8d5be5b2d"
+    },
+    {
+      "path": "app/Models/StockEntry.php",
+      "sha256": "38798331530be4baac2310bad25e36a5b4c8b5f1812a9448d9694d74aaad97e3"
+    },
+    {
+      "path": "app/Services/Reports/Report.php",
+      "sha256": "26834aa1cff0f7f580e940cd517f1cd24a93376ff034340d46e2158d8037b27a"
+    },
+    {
+      "path": "tests/Feature/Reports/ReportsTest.php",
+      "sha256": "062856767e34577810f0e686b985963f0495f937d341ec7d6bf04526d69a6351"
+    },
+    {
+      "path": "tests/Feature/Sales/SalesTest.php",
+      "sha256": "5a6824bf97830fdfdedf30e55cb8369a41725f61983fba05064400c3262cdb59"
+    },
+    {
+      "path": "tests/Feature/Sales/mysql-concurrency.php",
+      "sha256": "5911394cbae00760943c9252d57fcb012ae7aecd71d430c314a9b834f6eb5609"
+    },
+    {
+      "path": "tests/Feature/Stock/StockTest.php",
+      "sha256": "e0710c6b19eecbc2d0a6cae05a4e8155c3303209968c60a70e17434fb5978c4f"
+    },
+    {
+      "path": "tests/Feature/Tenancy/CommerceIsolationTest.php",
+      "sha256": "c8dd4c31bc75f49be72e05dcba6c506a551cac9eaa573de98375d636abb56446"
+    }
+  ],
+  "model_requested": "gpt-6.1-sol",
+  "effort_requested": "high",
+  "model_effective": null,
+  "receipt_ref": null,
+  "committed": false,
+  "pushed": false
+}

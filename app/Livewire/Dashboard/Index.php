@@ -6,6 +6,7 @@ use App\Models\Sale;
 use App\Models\ServiceOrder;
 use App\Models\StoreSetting;
 use App\Models\User;
+use App\Support\TenantContext;
 use App\Support\WhatsApp;
 use Brick\Math\BigInteger;
 use Brick\Math\RoundingMode;
@@ -98,10 +99,10 @@ class Index extends Component
         }
         $queries = [
             'service' => DB::table('service_order_items as items')->join('service_orders as orders', 'orders.id', '=', 'items.service_order_id')
-                ->whereIn('orders.status', ['selesai', 'diambil'])->whereDate('orders.invoiced_on', '>=', $start)->whereDate('orders.invoiced_on', '<=', $end)
+                ->where('orders.tenant_id', app(TenantContext::class)->id())->whereIn('orders.status', ['selesai', 'diambil'])->whereDate('orders.invoiced_on', '>=', $start)->whereDate('orders.invoiced_on', '<=', $end)
                 ->select(['orders.invoiced_on as day', 'items.qty', 'items.price', 'items.cost']),
             'sales' => DB::table('sale_items as items')->join('sales', 'sales.id', '=', 'items.sale_id')
-                ->whereDate('sales.sold_on', '>=', $start)->whereDate('sales.sold_on', '<=', $end)
+                ->where('sales.tenant_id', app(TenantContext::class)->id())->whereDate('sales.sold_on', '>=', $start)->whereDate('sales.sold_on', '<=', $end)
                 ->select(['sales.sold_on as day', 'items.qty', 'items.price', 'items.cost']),
         ];
         foreach ($queries as $kind => $query) {
@@ -236,7 +237,7 @@ class Index extends Component
             $lane[$status] = ['count' => $count, 'tags' => $tags];
         }
         $backlog = ServiceOrder::query()->where('status', 'selesai')->with('category:id,name')->orderBy('invoiced_on')->orderBy('id')->limit(5)->get();
-        $store = StoreSetting::query()->value('name') ?: 'Anugerah';
+        $store = StoreSetting::query()->value('name') ?: app(TenantContext::class)->tenant()->name;
         $reminders = collect();
         $records = $this->warranties(ServiceOrder::query(), $today)->with('category:id,name')->get()->toBase()
             ->concat($this->warranties(Sale::query(), $today)->with('items:id,sale_id,product_name')->get());

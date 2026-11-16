@@ -12,8 +12,10 @@ use App\Models\Product;
 use App\Models\Sale;
 use App\Models\ServiceOrder;
 use App\Models\StockEntry;
+use App\Models\Tenant;
 use App\Models\User;
 use App\Services\Reports\Report;
+use App\Support\TenantContext;
 use Carbon\CarbonImmutable;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\DB;
@@ -79,6 +81,7 @@ class ReportsTest extends TestCase
         $this->assertSame('1100000', $report['days'][0]['servis']);
         $this->assertSame('1500000', $report['days'][0]['jual']);
         $this->get('/laporan')->assertOk()->assertSee('Laba rugi')->assertSee('Omzet per hari');
+        app(TenantContext::class)->set(Tenant::findOrFail($this->admin->tenant_id));
         Livewire::test(Index::class)->set('from', '2026-11-11')->set('to', '2026-11-11')->assertSeeText('Rp735.000')->assertSee('Restok (informasi)')->set('type', 'servis')->assertViewHas('rows', fn ($rows) => count($rows) === 1)->assertViewHas('totals', fn ($totals) => $totals['amount'] === '1100000')->set('type', 'keluar')->assertViewHas('totals', fn ($totals) => $totals['profit'] === '-65000')->set('detail', $report['rows'][0]['key'])->assertSee('report-detail-title', false);
     }
 

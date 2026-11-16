@@ -1,0 +1,77 @@
+{
+  "task": "S005",
+  "attempt": "A1",
+  "checks": [
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php vendor/bin/phpunit tests/Feature/Tenancy/CommerceIsolationTest.php tests/Feature/Stock tests/Feature/Sales tests/Feature/Expenses tests/Feature/Dashboard tests/Feature/Reports tests/Feature/Documents",
+      "expected": "All targeted regressions and isolation tests pass",
+      "actual": "66 tests PASS; 893 assertions; 3860 ms",
+      "exit_code": 0,
+      "artifact": "tests.txt"
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php vendor/bin/phpunit tests/Feature/Tenancy/CommerceIsolationTest.php",
+      "expected": "Final isolation checks pass after formatting/redundant condition cleanup",
+      "actual": {
+        "tool": "phpunit",
+        "result": "passed",
+        "tests": 6,
+        "passed": 6,
+        "assertions": 120,
+        "duration_ms": 894
+      },
+      "exit_code": 0,
+      "artifact": "isolation-final.txt"
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php docs/evidence/SAAS/S005/A1/mysql-concurrency.php",
+      "expected": "New local database only; existing stock race passes independently for two tenants, no existing data changed",
+      "actual": "PASS in saas_s005_20261116_165831_3331; each tenant one success/one shortage, stock0, sale/item+1, counter+1; both JL-2611-001; baseline byte-identical",
+      "exit_code": 0,
+      "artifact": "mysql-concurrency.json",
+      "permission": "require_escalated accepted after sandbox PDOException"
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php vendor/bin/phpstan analyse app/Models/Product.php app/Models/Sale.php app/Models/Expense.php app/Models/StockEntry.php app/Models/SaleItem.php app/Livewire/Dashboard/Index.php app/Services/Reports/Report.php --memory-limit=512M --debug",
+      "expected": "No type errors",
+      "actual": "PASS, 0 errors",
+      "exit_code": 0,
+      "artifact": "phpstan.txt"
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php vendor/bin/pint --test app/Models/Product.php app/Models/Sale.php app/Models/Expense.php app/Models/StockEntry.php app/Models/SaleItem.php app/Livewire/Dashboard/Index.php app/Services/Reports/Report.php tests/Feature/Stock/StockTest.php tests/Feature/Sales/SalesTest.php tests/Feature/Reports/ReportsTest.php tests/Feature/Tenancy/CommerceIsolationTest.php tests/Feature/Sales/mysql-concurrency.php docs/evidence/SAAS/S005/A1/mysql-concurrency.php",
+      "expected": "All changed PHP follows repository format",
+      "actual": "PASS",
+      "exit_code": 0,
+      "artifact": "pint.txt"
+    },
+    {
+      "command": "git diff --check",
+      "expected": "No whitespace errors",
+      "actual": "PASS; empty output",
+      "exit_code": 0,
+      "artifact": "diff-check.txt"
+    },
+    {
+      "command": "Python SHA256 verification of every S004 input file against docs/evidence/SAAS/S004/A1/candidate.json",
+      "expected": "Pinned input unchanged",
+      "actual": "PASS; sha256:c721514661e503ee70abe9fbdd508896f18835b3e0070cb1d6c20664c4a66674",
+      "exit_code": 0
+    }
+  ],
+  "not_run": [
+    "entire project suite",
+    "independent QA",
+    "visual browser",
+    "physical printer/device",
+    "production/deployment"
+  ],
+  "failure_history": [
+    "temporary undefined StoreSetting::current call corrected",
+    "regression.txt: two Stock fixture context errors and one Reports Livewire context error",
+    "isolation-initial.txt: missing required StoreSetting fixture columns",
+    "isolation-second.txt: jasa fixture cost mismatch",
+    "phpstan-initial.txt: tenant_id model PHPDoc",
+    "mysql-initial.txt: PDOException inside sandbox; escalated same runner passed"
+  ]
+}

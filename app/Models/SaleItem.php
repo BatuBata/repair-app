@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use App\Support\TenantContext;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 #[Fillable(['sale_id', 'product_id', 'product_name', 'qty', 'price', 'cost'])]
 class SaleItem extends Model
@@ -23,7 +25,13 @@ class SaleItem extends Model
     protected static function booted(): void
     {
         static::saving(function (self $model) {
+            $tenantId = app(TenantContext::class)->id();
+            if ($model->exists) {
+                Sale::query()->findOrFail($model->getRawOriginal('sale_id'));
+            }
             Validator::make($model->getAttributes(), [
+                'product_id' => ['required', Rule::exists('products', 'id')->where('tenant_id', $tenantId)],
+                'sale_id' => ['required', Rule::exists('sales', 'id')->where('tenant_id', $tenantId)],
                 'qty' => ['required', 'integer', 'min:1', 'max:4294967295'],
                 'price' => ['required', 'integer', 'min:0', 'max:4294967295'],
                 'cost' => ['required', 'integer', 'min:0', 'max:4294967295'],

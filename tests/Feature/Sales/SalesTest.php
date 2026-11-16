@@ -11,7 +11,9 @@ use App\Livewire\Stock\Restock;
 use App\Models\Product;
 use App\Models\Sale;
 use App\Models\SaleItem;
+use App\Models\Tenant;
 use App\Models\User;
+use App\Support\TenantContext;
 use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -365,6 +367,7 @@ class SalesTest extends TestCase
     {
         $this->admin();
         $this->get('/penjualan')->assertOk()->assertSee('Belum ada penjualan.');
+        app(TenantContext::class)->set(Tenant::findOrFail(auth()->user()->tenant_id));
         $product = $this->product(['name' => '<script>bad()</script>']);
         $sale = app(CreateSale::class)->handle($this->input($product, ['customer_name' => '<script>customer()</script>']));
         $this->get('/penjualan/'.$sale->id)->assertOk()->assertSee($product->name)->assertDontSee($product->name, false)->assertSee('Rp80.000')->assertSee('Tanpa garansi')->assertSee('Cetak struk')->assertSee(route('sales.print', $sale->id), false);

@@ -3,7 +3,9 @@
 use App\Actions\Sales\CreateSale;
 use App\Models\Product;
 use App\Models\Sale;
+use App\Models\Tenant;
 use App\Models\User;
+use App\Support\TenantContext;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
@@ -12,11 +14,18 @@ require getcwd().'/vendor/autoload.php';
 $app = require getcwd().'/bootstrap/app.php';
 $app->make(Kernel::class)->bootstrap();
 $root = getenv('QA_RUNTIME');
-if (! $root || ! is_dir($root) || ! str_starts_with(realpath($root), '/private/tmp/t013-mysql-')) {
+if (! $root || ! is_dir($root) || ! str_starts_with(realpath($root), '/private/tmp/saas-s005-')) {
     throw new RuntimeException('Private task runtime required.');
 }
+$database = getenv('QA_DATABASE');
+if (! $database || ! preg_match('/\Asaas_s005_[0-9_]+\z/', $database)) {
+    throw new RuntimeException('A dedicated S005 database is required.');
+}
 $source = Dotenv\Dotenv::parse(file_get_contents('/Users/muzib/Projects/web/repair-app/.env'));
-config(['database.default' => 'mysql', 'database.connections.mysql.url' => null, 'database.connections.mysql.host' => $source['DB_HOST'] ?? '127.0.0.1', 'database.connections.mysql.port' => $source['DB_PORT'] ?? '3306', 'database.connections.mysql.database' => 'repair_app_test', 'database.connections.mysql.username' => $source['DB_USERNAME'] ?? 'root', 'database.connections.mysql.password' => $source['DB_PASSWORD'] ?? '', 'database.connections.mysql.unix_socket' => $source['DB_SOCKET'] ?? '']);
+config(['database.default' => 'mysql', 'database.connections.mysql.url' => null, 'database.connections.mysql.host' => $source['DB_HOST'] ?? '127.0.0.1', 'database.connections.mysql.port' => $source['DB_PORT'] ?? '3306', 'database.connections.mysql.database' => $database, 'database.connections.mysql.username' => $source['DB_USERNAME'] ?? 'root', 'database.connections.mysql.password' => $source['DB_PASSWORD'] ?? '', 'database.connections.mysql.unix_socket' => $source['DB_SOCKET'] ?? '']);
+if (! in_array(config('database.connections.mysql.host'), ['127.0.0.1', 'localhost', '::1'], true)) {
+    throw new RuntimeException('Only a local S005 database is allowed.');
+}
 unset($source);
 DB::purge('mysql');
 $mode = $argv[1] ?? '';
@@ -56,17 +65,18 @@ if ($mode === 'inventory') {
             throw new RuntimeException('Required columns missing; no mutations permitted.');
         }
     }
-    $numberIndex = collect(DB::getSchemaBuilder()->getIndexes('sales'))->first(fn ($index) => $index['unique'] && $index['columns'] === ['number']);
+    $numberIndex = collect(DB::getSchemaBuilder()->getIndexes('sales'))->first(fn ($index) => $index['unique'] && $index['columns'] === ['tenant_id', 'number']);
     if (! $numberIndex) {
         throw new RuntimeException('Unique document number index missing; no mutations permitted.');
     }
     $save('baseline', $tables);
-    echo json_encode(['mode' => 'inventory', 'database' => 'repair_app_test', 'tables' => count($tables), 'counts' => array_map('count', $tables), 'required_engines' => 'InnoDB', 'stock_type' => 'int unsigned', 'baseline_saved_privately' => true])."\n";
+    echo json_encode(['mode' => 'inventory', 'database' => $database, 'tables' => count($tables), 'counts' => array_map('count', $tables), 'required_engines' => 'InnoDB', 'stock_type' => 'int unsigned', 'baseline_saved_privately' => true])."\n";
 } elseif ($mode === 'init') {
     if ($load('baseline') !== $rows()) {
         throw new RuntimeException('Baseline changed after inventory; no fixture appended.');
     }
-    $prefix = 't013a1_'.bin2hex(random_bytes(5));
+    app(TenantContext::class)->set(Tenant::findOrFail((int) getenv('QA_TENANT')));
+    $prefix = 's005a1_'.bin2hex(random_bytes(5));
     $owned = DB::transaction(function () use ($prefix) {
         $admins = [];
         foreach (['a', 'b'] as $suffix) {
@@ -74,12 +84,13 @@ if ($mode === 'inventory') {
         }
         $product = Product::create(['name' => $prefix.' stock race', 'cost_price' => 25000, 'sell_price' => 40000, 'stock' => 1]);
 
-        return ['prefix' => $prefix, 'admins' => $admins, 'product' => $product->id, 'period' => now('Asia/Makassar')->format('ym')];
+        return ['tenant' => app(TenantContext::class)->id(), 'prefix' => $prefix, 'admins' => $admins, 'product' => $product->id, 'period' => now('Asia/Makassar')->format('ym')];
     });
     $save('owned', $owned);
     echo json_encode(['mode' => 'init', 'appended_users' => 2, 'appended_products' => 1, 'preexisting_rows_untouched' => true])."\n";
 } elseif ($mode === 'worker') {
     $owned = $load('owned');
+    app(TenantContext::class)->set(Tenant::findOrFail($owned['tenant']));
     $worker = (int) $argv[2];
     auth()->login(User::findOrFail($owned['admins'][$worker]));
     Product::updating(function (Product $product) use ($owned) {
@@ -114,6 +125,7 @@ if ($mode === 'inventory') {
 } elseif ($mode === 'proof') {
     $baseline = $load('baseline');
     $owned = $load('owned');
+    app(TenantContext::class)->set(Tenant::findOrFail($owned['tenant']));
     $after = $rows();
     $results = [$load('worker-0'), $load('worker-1')];
     $outcomes = array_column($results, 'result');
@@ -124,7 +136,7 @@ if ($mode === 'inventory') {
         $delta[$table] = count($current) - count($baseline[$table]);
         $counts = array_count_values(array_map('serialize', $current));
         foreach ($baseline[$table] as $row) {
-            if ($table === 'number_sequences' && $row['prefix'] === 'JL' && $row['period'] === $owned['period']) {
+            if ($table === 'number_sequences' && $row['tenant_id'] === $owned['tenant'] && $row['prefix'] === 'JL' && $row['period'] === $owned['period']) {
                 $row['last_seq']++;
             }
             $key = serialize($row);
@@ -143,8 +155,8 @@ if ($mode === 'inventory') {
             throw new RuntimeException('Unexpected table count delta: '.$table);
         }
     }
-    $sequenceBefore = collect($baseline['number_sequences'])->first(fn ($r) => $r['prefix'] === 'JL' && $r['period'] === $owned['period']);
-    $sequence = DB::table('number_sequences')->where('prefix', 'JL')->where('period', $owned['period'])->value('last_seq');
+    $sequenceBefore = collect($baseline['number_sequences'])->first(fn ($r) => $r['tenant_id'] === $owned['tenant'] && $r['prefix'] === 'JL' && $r['period'] === $owned['period']);
+    $sequence = DB::table('number_sequences')->where('tenant_id', $owned['tenant'])->where('prefix', 'JL')->where('period', $owned['period'])->value('last_seq');
     if ((int) $sequence !== ($sequenceBefore['last_seq'] ?? 0) + 1 || $delta['number_sequences'] !== ($sequenceBefore ? 0 : 1)) {
         throw new RuntimeException('Document sequence did not increment exactly once.');
     }

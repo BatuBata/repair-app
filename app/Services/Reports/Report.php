@@ -61,7 +61,7 @@ class Report
             $daily[$row['date']][$row['type']] = (string) BigInteger::of($daily[$row['date']][$row['type']])->plus($row['amount']);
         }
         $restock = BigInteger::zero();
-        foreach (StockEntry::query()->whereDate('entry_date', '>=', $from)->whereDate('entry_date', '<=', $to)->cursor() as $entry) {
+        foreach (StockEntry::query()->whereHas('product')->whereDate('entry_date', '>=', $from)->whereDate('entry_date', '<=', $to)->cursor() as $entry) {
             $restock = $restock->plus(BigInteger::of($entry->qty)->multipliedBy($entry->cost_price));
         }
         $revenue = $service->plus($sales);

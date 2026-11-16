@@ -2,19 +2,26 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\BelongsToTenant;
+use App\Support\TenantContext;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Validator;
 
+/** @property int $tenant_id */
 #[Fillable(['name', 'cost_price', 'sell_price', 'stock', 'is_active'])]
 class Product extends Model
 {
+    use BelongsToTenant;
+
     protected $attributes = ['stock' => 0, 'is_active' => true];
 
     protected static function booted(): void
     {
         static::saving(function (self $model) {
+            $tenantId = app(TenantContext::class)->id();
+            abort_if($model->exists && ((int) $model->tenant_id !== $tenantId || (int) $model->getRawOriginal('tenant_id') !== $tenantId), 404);
             Validator::make($model->getAttributes(), [
                 'cost_price' => ['required', 'integer', 'min:0', 'max:4294967295'],
                 'sell_price' => ['required', 'integer', 'min:0', 'max:4294967295'],

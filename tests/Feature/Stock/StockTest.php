@@ -9,7 +9,9 @@ use App\Models\Product;
 use App\Models\Sale;
 use App\Models\SaleItem;
 use App\Models\StockEntry;
+use App\Models\Tenant;
 use App\Models\User;
+use App\Support\TenantContext;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Features\SupportLockedProperties\CannotUpdateLockedPropertyException;
 use Livewire\Livewire;
@@ -30,6 +32,8 @@ class StockTest extends TestCase
 
     private function product(array $attributes = []): Product
     {
+        app(TenantContext::class)->set(Tenant::findOrFail(1));
+
         return Product::create([...['name' => 'Kabel HDMI 2 meter', 'cost_price' => 25000, 'sell_price' => 40000, 'stock' => 3], ...$attributes]);
     }
 

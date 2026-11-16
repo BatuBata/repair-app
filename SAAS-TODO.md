@@ -26,7 +26,7 @@ Goal aktif 17 November 2026 mengizinkan eksekusi S001–S012. Deployment produks
 | S002 | Bangun schema dan fondasi isolasi tenant | developer / 6.1-sol | complex / high | S001 | — | done |
 | S003 | Jadikan auth, pengguna, pengaturan, dan onboarding tenant-aware | developer / 6.1-sol | medium / high | S002 | — | done |
 | S004 | Isolasi alur servis, dokumen, dan tracking | developer / 6.1-sol | complex / high | S003 | — | done |
-| S005 | Isolasi stok, penjualan, pengeluaran, dashboard, dan laporan | developer / 6.1-sol | complex / high | S004 | — | running |
+| S005 | Isolasi stok, penjualan, pengeluaran, dashboard, dan laporan | developer / 6.1-sol | complex / high | S004 | — | done |
 | S006 | Integrasikan candidate Lean SaaS | integrator / 6.1-sol | medium / high | S003, S004, S005 | — | pending |
 | S007 | QA independen keamanan tenant dan regresi aplikasi | tester / 6.1-sol | complex / high | S006 | — | pending |
 | S008 | Siapkan runbook dan rehearsal migrasi Anugerah | developer / 6.1-sol | medium / high | S007 | — | pending |
@@ -551,7 +551,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         "Tes dua tenant untuk CRUD/action, relasi silang, rollback stok, garansi, dashboard, dan total laporan.",
         "Jalankan regresi Stock/Sales/Expenses/Dashboard/Reports existing serta tes konkurensi stok yang sudah ada."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -561,10 +561,25 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native-codex:S005:A1",
-          "outcome": "running",
-          "receipt_ref": null
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/SAAS/S005/A1/README.md"
         }
-      ]
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/SAAS/S005/A1/README.md",
+        "revision": "sha256:9ab1f13ae929cb26cdac0c12aa61137e48d518e2617b886cf354f44b9340802f",
+        "checked_revision": "sha256:9ab1f13ae929cb26cdac0c12aa61137e48d518e2617b886cf354f44b9340802f",
+        "inputs": {
+          "S004": "sha256:c721514661e503ee70abe9fbdd508896f18835b3e0070cb1d6c20664c4a66674"
+        },
+        "evidence": [
+          "docs/evidence/SAAS/S005/A1/README.md",
+          "docs/evidence/SAAS/S005/A1/tests.txt",
+          "docs/evidence/SAAS/S005/A1/mysql-concurrency.json"
+        ],
+        "summary": "Stok, penjualan, pengeluaran, garansi, dashboard, laporan, dan dokumen penjualan terisolasi per tenant; 66 tes/893 assertion serta race stok MySQL dua tenant lulus."
+      }
     },
     {
       "id": "S006",

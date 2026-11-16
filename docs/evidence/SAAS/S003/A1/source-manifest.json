@@ -1,0 +1,23 @@
+{
+  "app/Console/Commands/CreateTenant.php": "e0ed5237eaef22ae9934189c9b7698fd5f4fd9912632b1e451496cc15c2dfc9f",
+  "app/Http/Middleware/EnsureActiveAccount.php": "95e856f0a25cf2cacd8719ea6f838a0de1e2d6802717841a35c51f359c524a69",
+  "app/Livewire/Settings/Categories.php": "c60a52e3b28b300558ac8b26a5644fc9362e5ee1c537ce6ad4a7071fafff4830",
+  "app/Livewire/Settings/Store.php": "7dde094e387637e0b11b470ccda4637c006bbf1c6e115fde6abae8502406c17a",
+  "app/Livewire/Users/Index.php": "033228baeef7f19854d25290954c5e4a8eb9a5108e56aafc45f96f279304c9f0",
+  "app/Models/Category.php": "0294653f1a243e35e82b272ade81102efd995fe52d2500af9f5544ab41089d96",
+  "app/Models/StoreSetting.php": "656c6cb0e7d435fb2528476b9fc9acc64502d5e27fcba0775099abd9bbab42d9",
+  "app/Models/User.php": "cce177692b8001238c449519f93be068e7df3aa5372928789273010636cf5c1b",
+  "app/Providers/FortifyServiceProvider.php": "65ac12b12ba29fe2e0c567ab47bc2a4c8c0cf4f9ddb0c1aebc00bc51dc6f4e94",
+  "database/factories/UserFactory.php": "555c5e23375834ea89601a9dd156e10bbb848d0b6e501d116c08e11d6ed2f226",
+  "database/seeders/DatabaseSeeder.php": "f58c4e9aac590a764c8886dcd63b33135171faaca0cb95356d23aa83be72b5d2",
+  "resources/views/layouts/app/sidebar.blade.php": "1d566bcc9d5037d5d8850c42c62187c012d1e7084af51dca3feb6f292d1742e0",
+  "resources/views/layouts/auth/simple.blade.php": "dc324cf0d5c51c9ac4092c082c69f8845c1654f416c154cd700611bf10b4e470",
+  "resources/views/livewire/users/index.blade.php": "5a712bd7ebab3708c33bab611fec68d8e7f1c7f25b5c611c6e3e6ac10122e6c6",
+  "resources/views/pages/auth/login.blade.php": "e49a7df077dce01ea6a36e95ac689d5925862f6c679c8e25c245d7f93f91d2cb",
+  "tests/Feature/Auth/AuthenticationTest.php": "812f6b2dff298828962744627a6e9d834a03649fcef14ba463d55344de42ef50",
+  "tests/Feature/Auth/RoleLauncherTest.php": "93119dcee52d4cc9f6eb31133c92f847753e1f57fb98048f0701a84ea75b2a34",
+  "tests/Feature/Settings/SettingsTest.php": "dedf8adec8d4fe5e34aa1267678e4f08f011cc7087b9e705ba324b2f5b1a084e",
+  "tests/Feature/Tenancy/IdentityTest.php": "36f3bfbe55fca416438ebebf2c3d091c4ac01caa19c178867910986d41beb558",
+  "tests/Feature/Users/ConcurrentAdminTest.php": "e1be3794f02520ea0aec0023de8a37f36d8d115594a9cda7570abff3363521af",
+  "tests/Feature/Users/concurrency-worker.php": "c137a33b5c3103f55ab11fc928bf9037e58fab6ff57efb94bff8ca8567a1fc03"
+}

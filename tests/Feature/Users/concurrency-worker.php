@@ -1,6 +1,8 @@
 <?php
 
 use App\Livewire\Users\Index;
+use App\Models\Tenant;
+use App\Support\TenantContext;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
@@ -10,6 +12,7 @@ $app = require dirname(__DIR__, 3).'/bootstrap/app.php';
 $app->make(Kernel::class)->bootstrap();
 [$script, $actor, $target, $operation, $barrier, $slot] = $argv;
 auth()->loginUsingId($actor);
+app(TenantContext::class)->set(Tenant::findOrFail(auth()->user()->tenant_id));
 $component = new Index;
 touch($barrier.'/ready-'.$slot);
 $deadline = microtime(true) + 10;

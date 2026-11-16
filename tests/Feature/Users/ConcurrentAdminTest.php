@@ -27,7 +27,7 @@ class ConcurrentAdminTest extends TestCase
         $this->assertSame(0, Artisan::call('migrate', ['--database' => 't004_race', '--force' => true]));
         $connection = DB::connection('t004_race');
         foreach ([1, 2] as $id) {
-            $connection->table('users')->insert(['id' => $id, 'name' => 'Admin '.$id, 'username' => 'admin'.$id, 'password' => Hash::make(bin2hex(random_bytes(16))), 'role' => 'admin', 'is_active' => true]);
+            $connection->table('users')->insert(['tenant_id' => 1, 'id' => $id, 'name' => 'Admin '.$id, 'username' => 'admin'.$id, 'password' => Hash::make(bin2hex(random_bytes(16))), 'role' => 'admin', 'is_active' => true]);
         }
         $processes = [];
         foreach ([$first, $second] as $slot => $operation) {

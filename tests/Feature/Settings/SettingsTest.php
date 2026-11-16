@@ -5,9 +5,10 @@ namespace Tests\Feature\Settings;
 use App\Livewire\Settings\Categories;
 use App\Livewire\Settings\Store;
 use App\Models\Category;
+use App\Models\ServiceOrder;
 use App\Models\StoreSetting;
 use App\Models\User;
-use App\Services\CreateServiceOrder;
+use App\Support\TenantContext;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
@@ -99,10 +100,12 @@ class SettingsTest extends TestCase
         $this->admin();
         Livewire::test(Categories::class)->call('create')->set('name', 'TV')->call('save')->assertHasNoErrors();
         $category = Category::where('name', 'TV')->firstOrFail();
-        $order = app(CreateServiceOrder::class)->create([
+        $order = new ServiceOrder;
+        $order->forceFill([
+            'tenant_id' => app(TenantContext::class)->id(), 'number' => 'TTS-SETTING-HISTORY', 'created_by' => User::firstOrFail()->id,
             'customer_name' => 'Rani', 'customer_phone' => '081234567890', 'category_id' => $category->id,
             'complaint' => 'Tidak menyala',
-        ], User::firstOrFail());
+        ])->save();
 
         Livewire::test(Categories::class)->call('edit', $category->id)->set('name', 'Televisi')->call('save')->assertHasNoErrors();
         Livewire::test(Categories::class)->call('toggleActive', $category->id)->assertHasNoErrors();

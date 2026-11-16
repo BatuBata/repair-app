@@ -1,6 +1,7 @@
 @props(['title' => null, 'navigationPath' => null])
 @php
     $user = auth()->user();
+    $storeName = \App\Models\StoreSetting::query()->value('name') ?: app(\App\Support\TenantContext::class)->tenant()->name;
     $role = strtolower((string) ($user->role->value ?? $user->role ?? 'admin'));
     $technician = $role === 'teknisi';
     $path = '/'.ltrim($navigationPath ?? request()->path(), '/');
@@ -20,7 +21,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ filled($title ?? null) ? $title.' — Anugerah' : 'Anugerah' }}</title>
+    <title>{{ filled($title ?? null) ? $title.' — '.$storeName : $storeName }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @fluxAppearance
     <meta name="theme-color" content="#f2f5f6">
@@ -29,8 +30,8 @@
 <body data-repair-shell>
 <div class="app">
     <nav class="sidebar" aria-label="Menu utama">
-        <a class="brand" href="/"><x-ui.mark /><strong>Anugerah</strong></a>
-        <div class="scope"><x-ui.icon name="store" />Toko Anugerah</div>
+        <a class="brand" href="/"><x-ui.mark /><strong>{{ $storeName }}</strong></a>
+        <div class="scope"><x-ui.icon name="store" />{{ $storeName }}</div>
         @foreach ($items as [$label, $href, $icon])
             <a class="nav-item" href="{{ $href }}" @if($active($href)) aria-current="page" @endif><x-ui.icon :name="$icon" />{{ $label }}</a>
         @endforeach
@@ -44,7 +45,7 @@
     </nav>
     <div class="main">
         <header class="topbar">
-            <a class="phone-brand" href="/"><x-ui.mark /><span>Anugerah</span></a>
+            <a class="phone-brand" href="/"><x-ui.mark /><span>{{ $storeName }}</span></a>
             <form class="search" action="/tts"><label><span class="sr-only">Cari nomor TTS, nama, atau HP</span><x-ui.icon name="search" /><input name="q" type="search" placeholder="Cari nomor TTS, nama, atau HP"><kbd>/</kbd></label></form>
             @auth<a class="icon-btn phone-only" href="{{ route('profile.edit') }}" aria-label="Akun"><span class="avatar">{{ $user->initials() }}</span></a>@endauth
         </header>

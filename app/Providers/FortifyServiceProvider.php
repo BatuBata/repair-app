@@ -5,9 +5,13 @@ namespace App\Providers;
 use App\Http\Middleware\EnsureActiveAccount;
 use App\Http\Middleware\EnsureAdmin;
 use App\Http\Responses\LoginResponse;
+use App\Models\Tenant;
 use App\Models\User;
+use App\Support\TenantContext;
+use Illuminate\Auth\EloquentUserProvider;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\MessageBag;
@@ -37,11 +41,25 @@ class FortifyServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        // Session dan remember-cookie mengenali user sebelum middleware menetapkan tenant.
+        Auth::provider('eloquent', fn ($app, array $config) => (new EloquentUserProvider($app['hash'], $config['model']))
+            ->withQuery(fn ($query) => $query->withoutGlobalScope('tenant'))
+        );
+
         Fortify::loginView(fn () => view('pages::auth.login'));
         Fortify::authenticateUsing(function (Request $request) {
-            $user = User::where('username', $request->input('username'))->first();
+            $user = User::withoutGlobalScope('tenant')->where('username', $request->input('username'))->first();
 
-            return $user && Hash::check($request->input('password'), $user->password) && $user->is_active ? $user : null;
+            if (! $user || ! Hash::check($request->input('password'), $user->password) || ! $user->is_active) {
+                return null;
+            }
+            $tenant = Tenant::whereKey($user->tenant_id)->where('is_active', true)->first();
+            if (! $tenant) {
+                return null;
+            }
+            app(TenantContext::class)->set($tenant);
+
+            return $user;
         });
         RateLimiter::for('login', function (Request $request) {
             $username = $request->input('username');

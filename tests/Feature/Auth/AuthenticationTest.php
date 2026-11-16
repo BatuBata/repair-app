@@ -70,7 +70,7 @@ class AuthenticationTest extends TestCase
     {
         $user = User::factory()->create(['role' => 'admin']);
         $this->actingAs($user)->get('/')->assertOk();
-        User::whereKey($user->id)->update(['is_active' => false]);
+        User::withoutGlobalScope('tenant')->whereKey($user->id)->update(['is_active' => false]);
         $this->get('/')->assertForbidden()->assertDontSee('Kelola pengguna');
         $this->assertGuest();
     }
@@ -79,7 +79,7 @@ class AuthenticationTest extends TestCase
     {
         $user = User::factory()->create(['role' => 'admin']);
         $this->actingAs($user)->get('/pengaturan/pengguna')->assertOk();
-        User::whereKey($user->id)->update(['role' => 'teknisi']);
+        User::withoutGlobalScope('tenant')->whereKey($user->id)->update(['role' => 'teknisi']);
         $this->get('/pengaturan/pengguna')->assertForbidden()->assertDontSee('Akun Toko Anugerah');
     }
 
@@ -96,7 +96,7 @@ class AuthenticationTest extends TestCase
     {
         $user = User::factory()->create();
         $this->post('/login', ['username' => $user->username, 'password' => 'password'])->assertRedirect('/tts/baru');
-        User::whereKey($user->id)->update(['password' => Hash::make('reset-password')]);
+        User::withoutGlobalScope('tenant')->whereKey($user->id)->update(['password' => Hash::make('reset-password')]);
         $this->get('/profil')->assertRedirect('/login');
         $this->assertGuest();
     }

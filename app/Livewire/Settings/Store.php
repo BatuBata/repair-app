@@ -4,6 +4,7 @@ namespace App\Livewire\Settings;
 
 use App\Models\StoreSetting;
 use App\Models\User;
+use App\Support\TenantContext;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -42,7 +43,7 @@ class Store extends Component
     public function mount(): void
     {
         User::activeAccount(admin: true);
-        $setting = StoreSetting::find(1);
+        $setting = StoreSetting::query()->first();
         if ($setting) {
             $this->fill($setting->only(['name', 'address', 'phone', 'default_warranty_days', 'logo_path']));
             $this->warranty_terms = $setting->warranty_terms ?? '';
@@ -80,7 +81,7 @@ class Store extends Component
 
         $newLogoPath = null;
         if ($this->logo) {
-            $newLogoPath = $this->logo->store('logos', 'public');
+            $newLogoPath = $this->logo->store('logos/'.app(TenantContext::class)->id(), 'public');
             if (! $newLogoPath) {
                 throw new \RuntimeException('Logo gagal disimpan.');
             }
@@ -89,7 +90,7 @@ class Store extends Component
         try {
             DB::transaction(function () use ($data, $newLogoPath) {
                 User::activeAccount(admin: true);
-                StoreSetting::updateOrCreate(['id' => 1], [...$data, ...($newLogoPath ? ['logo_path' => $newLogoPath] : [])]);
+                StoreSetting::updateOrCreate([], [...$data, ...($newLogoPath ? ['logo_path' => $newLogoPath] : [])]);
             });
         } catch (Throwable $exception) {
             if ($newLogoPath) {

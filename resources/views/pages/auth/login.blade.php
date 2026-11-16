@@ -1,7 +1,7 @@
 <x-layouts::auth title="Masuk">
     <form class="card" method="POST" action="{{ route('login.store') }}" novalidate x-data="{ show: false }">
         @csrf
-        <x-auth-header title="Masuk" description="Aplikasi servis Toko Anugerah" />
+        <x-auth-header title="Masuk" description="Kelola servis dan toko Anda" />
         <div class="field">
             <label for="username">Username</label>
             <input class="input" id="username" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required maxlength="100" value="{{ old('username') }}" placeholder="Masukkan username" @if($errors->has('username')) aria-invalid="true" aria-describedby="username-error" autofocus @elseif(!$errors->any()) autofocus @endif>

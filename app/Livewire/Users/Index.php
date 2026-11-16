@@ -4,7 +4,9 @@ namespace App\Livewire\Users;
 
 use App\Concerns\PasswordValidationRules;
 use App\Enums\UserRole;
+use App\Models\StoreSetting;
 use App\Models\User;
+use App\Support\TenantContext;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\DB;
@@ -161,6 +163,9 @@ class Index extends Component
     {
         User::activeAccount(admin: true);
 
-        return view('livewire.users.index', ['users' => User::orderBy('name')->get()])->layout('layouts.app', ['title' => 'Pengguna']);
+        return view('livewire.users.index', [
+            'users' => User::orderBy('name')->get(),
+            'storeName' => StoreSetting::query()->value('name') ?: app(TenantContext::class)->tenant()->name,
+        ])->layout('layouts.app', ['title' => 'Pengguna']);
     }
 }

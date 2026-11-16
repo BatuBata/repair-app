@@ -12,7 +12,7 @@ class EnsureActiveAccount
     public function handle(Request $request, Closure $next): Response
     {
         if (auth()->id() !== null) {
-            $user = User::find(auth()->id());
+            $user = User::withoutGlobalScope('tenant')->find(auth()->id());
             if (! $user || ! $user->is_active) {
                 auth()->logout();
                 $request->session()->invalidate();

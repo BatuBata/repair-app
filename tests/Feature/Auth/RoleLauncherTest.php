@@ -26,13 +26,13 @@ class RoleLauncherTest extends TestCase
         $admin = User::factory()->create(['role' => 'admin']);
         $this->actingAs($admin)->get('/mulai')->assertRedirect('/');
         $this->get(route('app.start'))->assertRedirect('/');
-        User::whereKey($admin->id)->update(['role' => 'teknisi']);
+        User::withoutGlobalScope('tenant')->whereKey($admin->id)->update(['role' => 'teknisi']);
         $this->get('/mulai')->assertRedirect('/tts/baru');
         $this->get('/profil')->assertOk()->assertSee('<link rel="manifest" href="/manifest.webmanifest">', false);
         $this->get('/')->assertForbidden();
         $this->get('/dashboard')->assertForbidden();
         $this->get('/tts/baru')->assertOk()->assertSee('TTS baru');
-        User::whereKey($admin->id)->update(['role' => 'admin']);
+        User::withoutGlobalScope('tenant')->whereKey($admin->id)->update(['role' => 'admin']);
         $this->get('/mulai')->assertRedirect('/');
     }
 
@@ -40,7 +40,7 @@ class RoleLauncherTest extends TestCase
     {
         $user = User::factory()->create(['role' => 'admin']);
         $this->actingAs($user);
-        User::whereKey($user->id)->update(['is_active' => false]);
+        User::withoutGlobalScope('tenant')->whereKey($user->id)->update(['is_active' => false]);
         $this->get('/mulai')->assertForbidden();
         $this->assertGuest();
     }

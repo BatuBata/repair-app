@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Tenant;
 use App\Models\User;
+use App\Support\TenantContext;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -12,6 +14,18 @@ use Illuminate\Support\Str;
  */
 class UserFactory extends Factory
 {
+    public function configure(): static
+    {
+        return $this->afterMaking(function (User $user): void {
+            $context = app(TenantContext::class);
+            if ($user->getAttribute('tenant_id') !== null) {
+                $context->set(Tenant::findOrFail($user->tenant_id));
+            } elseif (! $context->has()) {
+                $context->set(Tenant::findOrFail(1));
+            }
+        });
+    }
+
     /**
      * The current password being used by the factory.
      */

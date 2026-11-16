@@ -1,0 +1,1 @@
+PASS: terminal interaktif nyata; exit=0; password tidak terlihat pada transcript; tenant/owner/store atomik dan tanpa preset.

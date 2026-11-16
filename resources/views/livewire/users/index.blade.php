@@ -1,6 +1,6 @@
 <div class="account-screen" x-data>
     <style>.account-screen { overflow-wrap:anywhere; } .account-screen .actions { display:flex; flex-wrap:wrap; gap:8px; } .account-screen .form { margin-top:24px; } .account-screen .error-text { margin-top:4px; } .account-screen .notice { margin-bottom:20px; } .account-screen .field > span { font-weight:500; } .account-screen .check { align-items:center; min-height:44px; } .account-screen select[aria-invalid="true"] { border-color:var(--negative); } @media(max-width:1023.98px) { .account-screen:has(.actionbar) { padding-bottom:84px; } }</style>
-    <div class="title-row"><div><h1>{{ $mode === 'list' ? 'Pengguna' : ($mode === 'create' ? 'Tambah pengguna' : ($mode === 'reset' ? 'Reset password' : 'Ubah pengguna')) }}</h1><p class="sub">{{ $mode === 'reset' ? $name : 'Akun Toko Anugerah' }}</p></div>
+    <div class="title-row"><div><h1>{{ $mode === 'list' ? 'Pengguna' : ($mode === 'create' ? 'Tambah pengguna' : ($mode === 'reset' ? 'Reset password' : 'Ubah pengguna')) }}</h1><p class="sub">{{ $mode === 'reset' ? $name : 'Akun '.$storeName }}</p></div>
         @if($mode === 'list')<button class="btn primary desktop-only" type="button" wire:click="create">Tambah pengguna</button>@endif
     </div>
     @if($status)<p class="notice" role="status">{{ $status }}</p>@endif

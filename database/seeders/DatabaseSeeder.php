@@ -6,6 +6,7 @@ use App\Enums\UserRole;
 use App\Models\Category;
 use App\Models\StoreSetting;
 use App\Models\User;
+use App\Support\TenantContext;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -15,6 +16,7 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
+        app(TenantContext::class)->id();
         DB::transaction(function () {
             if (! User::where('role', UserRole::Admin)->exists()) {
                 $password = config('repair.admin_initial_password');
@@ -32,7 +34,7 @@ class DatabaseSeeder extends Seeder
             foreach (['Mesin cuci', 'TV', 'Laptop', 'Komputer', 'Monitor', 'Printer', 'Catokan', 'HP', 'Lainnya'] as $name) {
                 Category::firstOrCreate(['name' => $name], ['is_active' => true]);
             }
-            StoreSetting::firstOrCreate(['id' => 1], [
+            StoreSetting::firstOrCreate([], [
                 'name' => '', 'address' => '', 'phone' => '', 'default_warranty_days' => 30,
             ]);
         });

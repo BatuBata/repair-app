@@ -4,6 +4,7 @@ namespace App\Livewire\Settings;
 
 use App\Models\Category;
 use App\Models\User;
+use App\Support\TenantContext;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -62,7 +63,7 @@ class Categories extends Component
         abort_unless(in_array($this->mode, ['create', 'edit'], true), 422);
         $this->name = trim($this->name);
         $data = $this->validate([
-            'name' => ['required', 'string', 'max:255', Rule::unique('categories', 'name')->ignore($this->categoryId)],
+            'name' => ['required', 'string', 'max:255', Rule::unique('categories', 'name')->where('tenant_id', app(TenantContext::class)->id())->ignore($this->categoryId)],
         ], [
             'name.required' => 'Nama kategori wajib diisi.',
             'name.string' => 'Nama kategori harus berupa teks.',

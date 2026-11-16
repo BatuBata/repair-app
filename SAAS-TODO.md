@@ -23,7 +23,7 @@ Goal aktif 17 November 2026 mengizinkan eksekusi S001–S012. Deployment produks
 | ID | Hasil | Petugas / model | Kesulitan / risiko | Dependensi | Calon paralel | Status |
 |---|---|---|---|---|---|---|
 | S001 | Tetapkan kontrak username dan tenant nonaktif | planner / 6.1-sol | easy / medium | — | — | done |
-| S002 | Bangun schema dan fondasi isolasi tenant | developer / 6.1-sol | complex / high | S001 | — | running |
+| S002 | Bangun schema dan fondasi isolasi tenant | developer / 6.1-sol | complex / high | S001 | — | done |
 | S003 | Jadikan auth, pengguna, pengaturan, dan onboarding tenant-aware | developer / 6.1-sol | medium / high | S002 | — | pending |
 | S004 | Isolasi alur servis, dokumen, dan tracking | developer / 6.1-sol | complex / high | S003 | — | pending |
 | S005 | Isolasi stok, penjualan, pengeluaran, dashboard, dan laporan | developer / 6.1-sol | complex / high | S004 | — | pending |
@@ -272,7 +272,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         "Tes SQLite untuk scope/create/404/tenant nonaktif dan tes migrasi MariaDB/MySQL nyata pada database khusus SaaS.",
         "Audit schema, unique key, foreign key, rollback migration, Pint, dan static analysis yang sudah dipakai proyek."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -282,10 +282,24 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native-codex:S002:A1",
-          "outcome": "running",
-          "receipt_ref": null
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/SAAS/S002/A1/README.md"
         }
-      ]
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/SAAS/S002/A1/README.md",
+        "revision": "sha256:b2f96a6201d13e31997abab578edc0917f899f2b2c54657617c607907637626c",
+        "checked_revision": "sha256:b2f96a6201d13e31997abab578edc0917f899f2b2c54657617c607907637626c",
+        "inputs": {
+          "S001": "sha256:a2b342d0aabb9c1b9dbcf57668a5409b448b6df575dc1f571e568346b0b698c6"
+        },
+        "evidence": [
+          "docs/evidence/SAAS/S002/A1/README.md",
+          "tests/Feature/Tenancy/FoundationTest.php"
+        ],
+        "summary": "Fondasi tenant minimal, scope fail-closed, tenant nonaktif, migrasi data-preserving, rollback aman, dan DDL MySQL 8.0.31 lulus; tidak ada dependency atau fitur platform tambahan."
+      }
     },
     {
       "id": "S003",

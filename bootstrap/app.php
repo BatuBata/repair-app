@@ -2,6 +2,7 @@
 
 use App\Http\Middleware\EnsureActiveAccount;
 use App\Http\Middleware\EnsureAdmin;
+use App\Http\Middleware\EnsureTenant;
 use App\Models\User;
 use Illuminate\Contracts\Session\Middleware\AuthenticatesSessions;
 use Illuminate\Foundation\Application;
@@ -17,7 +18,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->web(append: [EnsureActiveAccount::class, AuthenticateSession::class]);
+        $middleware->web(append: [EnsureActiveAccount::class, AuthenticateSession::class, EnsureTenant::class]);
         $middleware->prependToPriorityList(AuthenticatesSessions::class, EnsureActiveAccount::class);
         $middleware->alias(['admin' => EnsureAdmin::class]);
         $middleware->redirectUsersTo(fn () => User::activeAccount()->homePath());

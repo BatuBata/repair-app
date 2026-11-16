@@ -264,11 +264,11 @@ Jangan mengerjakan L4 sebelum L1–L3 lulus. Setelah pilot client kedua, evaluas
 - Backup/restore migrasi sudah dibuktikan.
 - Tidak ada panel, billing, domain, paket, atau sistem konfigurasi baru yang belum dipakai client.
 
-## 14. Keputusan yang masih diperlukan
+## 14. Keputusan implementasi
 
-Hanya dua keputusan yang menghambat implementasi:
+Keputusan berikut disetujui melalui instruksi user 17 November 2026 untuk mengerjakan seluruh `SAAS-TODO.md`:
 
-1. Username boleh dibuat unik global seperti `admin.sumberhp` agar login tetap sederhana. Rekomendasi: **ya untuk v1 SaaS**.
-2. Tenant nonaktif diblokir login sepenuhnya, sementara tracking customer lama tetap dapat dibuka. Rekomendasi: **ya**, agar customer tidak kehilangan akses status/nota.
+1. Username tetap unik global seperti `admin.sumberhp` pada v1 SaaS agar login tidak memerlukan kode toko, subdomain, atau perubahan UX tambahan.
+2. Tenant nonaktif memblokir login internal sepenuhnya, sementara tracking customer lama tetap dapat dibuka agar customer tidak kehilangan akses status/nota.
 
-Setelah dua keputusan tersebut disetujui, rancangan dapat dinaikkan menjadi PRD SaaS dan dibuatkan `SAAS-TODO.md`. `PRD.md` dan `TODO.md` existing tetap menjadi sumber produk produksi sampai migrasi SaaS diterima.
+`PRD.md` dan `TODO.md` existing tetap menjadi sumber produk produksi sampai migrasi SaaS diterima. Perubahan di luar Lean SaaS tetap membutuhkan keputusan scope baru.

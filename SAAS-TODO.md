@@ -28,7 +28,7 @@ Goal aktif 17 November 2026 mengizinkan eksekusi S001–S012. Deployment produks
 | S004 | Isolasi alur servis, dokumen, dan tracking | developer / 6.1-sol | complex / high | S003 | — | done |
 | S005 | Isolasi stok, penjualan, pengeluaran, dashboard, dan laporan | developer / 6.1-sol | complex / high | S004 | — | done |
 | S006 | Integrasikan candidate Lean SaaS | integrator / 6.1-sol | medium / high | S003, S004, S005 | — | done |
-| S007 | QA independen keamanan tenant dan regresi aplikasi | tester / 6.1-sol | complex / high | S006 | — | pending |
+| S007 | QA independen keamanan tenant dan regresi aplikasi | tester / 6.1-sol | complex / high | S006 | — | running |
 | S008 | Siapkan runbook dan rehearsal migrasi Anugerah | developer / 6.1-sol | medium / high | S007 | — | pending |
 | S009 | QA independen rehearsal backup, migrasi, dan rollback | tester / 6.1-sol | complex / high | S008 | — | pending |
 | S010 | Deploy dan migrasikan Anugerah ke schema tenant | deployer / 6.1-sol | medium / high | S006, S007, S009 | — | pending |
@@ -705,7 +705,20 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         "Jalankan suite penuh pada SQLite dan test tenant/konkurensi pada MariaDB/MySQL khusus; audit query raw/global-scope bypass dan Livewire payload.",
         "Smoke browser tenant A/B pada alur login, TTS, stok, laporan, dokumen, dan tracking."
       ],
-      "status": "pending"
+      "status": "running",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "verification",
+          "worker_id": "/root/s007_qa",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native-codex:S007:A1",
+          "outcome": "running",
+          "receipt_ref": null
+        }
+      ]
     },
     {
       "id": "S008",

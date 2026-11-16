@@ -328,6 +328,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       },
       "write_scope": [
         "app/Providers/FortifyServiceProvider.php",
+        "app/Http/Middleware/EnsureActiveAccount.php",
         "app/Models/User.php",
         "app/Models/StoreSetting.php",
         "app/Livewire/Users/**",

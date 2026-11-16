@@ -23,7 +23,7 @@ Goal aktif 17 November 2026 mengizinkan eksekusi S001–S012. Deployment produks
 | ID | Hasil | Petugas / model | Kesulitan / risiko | Dependensi | Calon paralel | Status |
 |---|---|---|---|---|---|---|
 | S001 | Tetapkan kontrak username dan tenant nonaktif | planner / 6.1-sol | easy / medium | — | — | done |
-| S002 | Bangun schema dan fondasi isolasi tenant | developer / 6.1-sol | complex / high | S001 | — | pending |
+| S002 | Bangun schema dan fondasi isolasi tenant | developer / 6.1-sol | complex / high | S001 | — | running |
 | S003 | Jadikan auth, pengguna, pengaturan, dan onboarding tenant-aware | developer / 6.1-sol | medium / high | S002 | — | pending |
 | S004 | Isolasi alur servis, dokumen, dan tracking | developer / 6.1-sol | complex / high | S003 | — | pending |
 | S005 | Isolasi stok, penjualan, pengeluaran, dashboard, dan laporan | developer / 6.1-sol | complex / high | S004 | — | pending |
@@ -272,7 +272,20 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         "Tes SQLite untuk scope/create/404/tenant nonaktif dan tes migrasi MariaDB/MySQL nyata pada database khusus SaaS.",
         "Audit schema, unique key, foreign key, rollback migration, Pint, dan static analysis yang sudah dipakai proyek."
       ],
-      "status": "pending"
+      "status": "running",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root/s002_tenant_foundation",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native-codex:S002:A1",
+          "outcome": "running",
+          "receipt_ref": null
+        }
+      ]
     },
     {
       "id": "S003",

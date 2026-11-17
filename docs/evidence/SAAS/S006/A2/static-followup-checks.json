@@ -1,0 +1,40 @@
+[
+  {
+    "phase": "phpstan-test-baseline",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "vendor/bin/phpstan",
+      "analyse",
+      "--memory-limit=512M",
+      "--debug",
+      "/tmp/s006-a2-private/MySqlConcurrencyTest-baseline.php"
+    ],
+    "exit_code": 1,
+    "duration_seconds": 2.16
+  },
+  {
+    "phase": "phpstan-worker",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "vendor/bin/phpstan",
+      "analyse",
+      "--memory-limit=512M",
+      "--debug",
+      "tests/Feature/Domain/mysql-worker.php"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 1.687
+  },
+  {
+    "phase": "phpstan-project",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "vendor/bin/phpstan",
+      "analyse",
+      "--memory-limit=512M",
+      "--debug"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 3.106
+  }
+]

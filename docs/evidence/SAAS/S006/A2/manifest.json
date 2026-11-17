@@ -1,0 +1,143 @@
+{
+  "task": "S006",
+  "attempt": "A2",
+  "candidate": "sha256:6b01398fbd10ba0196919655f94c9f26917e906fedbef562abb94eec2c6549cd",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "378561216a7981f370f16d0fbadce76e21eea3f72ecb1f9c0be619170f31eea2",
+      "bytes": 6523
+    },
+    {
+      "path": "candidate.json",
+      "sha256": "d587ede1ccd2629a3a557a9ccbe4ced258337636b1368b125540fb92a349ad84",
+      "bytes": 37224
+    },
+    {
+      "path": "candidate.sha256",
+      "sha256": "59807c8a7f08299541ece77649e08e0fefcdaddf97474bf9240d5d76c2d68366",
+      "bytes": 72
+    },
+    {
+      "path": "checks.json",
+      "sha256": "a490f31ce0aeb7109cf55b41b3258b0b6cdb831a16929cdb436e4b49d817ce00",
+      "bytes": 3551
+    },
+    {
+      "path": "cleanup.json",
+      "sha256": "8098c185362f511ef7c80eeb0ce7161f8edafdda3a8ae1130f4687362948bdc8",
+      "bytes": 517
+    },
+    {
+      "path": "diff-check.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "fail-closed.json",
+      "sha256": "9c8715e6a10ebb0b6d4f7081bb551ff4be7ce864d53c5d38088bc7bb3da98893",
+      "bytes": 601
+    },
+    {
+      "path": "harness.patch",
+      "sha256": "6df0d6c45481dfed1201546139991b818557d1c8c602ba75db854fd027e3919e",
+      "bytes": 2051
+    },
+    {
+      "path": "mariadb-before.json",
+      "sha256": "555927339bed5c19b7dbc62208810064e4f7721cc585d116216c886b137aa78c",
+      "bytes": 447
+    },
+    {
+      "path": "mariadb-operations.json",
+      "sha256": "f7d461737073e69a38d07f6846d5f5c9465ffba633ce7cf92542243a15b476f9",
+      "bytes": 1413
+    },
+    {
+      "path": "mariadb-proof.json",
+      "sha256": "bd5427a577ed4890cafcb8c4dbcc32e60210ff2fc3e2fd1f08382e2fcaf59d15",
+      "bytes": 233
+    },
+    {
+      "path": "mysql-final.txt",
+      "sha256": "65975c875482414568038b492ff79d05bb13f2fa213fe162dbe154aa7b6f9e3c",
+      "bytes": 94
+    },
+    {
+      "path": "mysql-initial.txt",
+      "sha256": "5c4e599a80c533be3af3e87fbd3c514e405ea14cf54ea1ad2444045532863167",
+      "bytes": 695
+    },
+    {
+      "path": "mysql-timings.jsonl",
+      "sha256": "726800b539939972a4dc9bab3bbef57c56b1388502c5ded0239b608029840c57",
+      "bytes": 1955
+    },
+    {
+      "path": "phpstan-project.txt",
+      "sha256": "c10f74fb840de989bba7e9c2dfee7f8419b5d2ac0cc0daf18a4a187f6530aa43",
+      "bytes": 48
+    },
+    {
+      "path": "phpstan-test-baseline.txt",
+      "sha256": "c9b4a8106860b337b32880fb5019494fb08b99e16853998264ff8a6a26bebcfd",
+      "bytes": 1236
+    },
+    {
+      "path": "phpstan-worker.txt",
+      "sha256": "c10f74fb840de989bba7e9c2dfee7f8419b5d2ac0cc0daf18a4a187f6530aa43",
+      "bytes": 48
+    },
+    {
+      "path": "phpstan.txt",
+      "sha256": "ce30568392966be85787ec9d489598935022f345227d7fc76ef9750a0f410e09",
+      "bytes": 1400
+    },
+    {
+      "path": "pint.txt",
+      "sha256": "cd1a94fc2cf6a965b86e1a4809d6c7fb9148b1ee374e1010ed2ac96ff4876ec2",
+      "bytes": 33
+    },
+    {
+      "path": "result.json",
+      "sha256": "a6b22a03abcc04614d7b5ebf159b1f8e49d8e324c4fb2d84b149e9cdf692d88c",
+      "bytes": 2618
+    },
+    {
+      "path": "source-review.json",
+      "sha256": "c0a5f31825c6f2f2f4b47572908183e2de8e6772e0dea585a32ec369e936da28",
+      "bytes": 880
+    },
+    {
+      "path": "sqlite-check.json",
+      "sha256": "c60854bc6126a2d755db39cc6d0d4f5ca852921e4b62f21c8a6ce2d86571a3a5",
+      "bytes": 321
+    },
+    {
+      "path": "sqlite.txt",
+      "sha256": "d6269e80ab4af5bdbb9056d494a255edbaf3a85db1276acec4b1ee502f82433b",
+      "bytes": 96
+    },
+    {
+      "path": "static-checks.json",
+      "sha256": "f97bec05f9d3decd45f8c37e40dae9f6158480729b5ba61fc8c5a489df610152",
+      "bytes": 1070
+    },
+    {
+      "path": "static-followup-checks.json",
+      "sha256": "8263055ce4c34237e929195ff640b9c5969c2bad8ab2614790384c8111c3b7dd",
+      "bytes": 862
+    },
+    {
+      "path": "syntax-parent.txt",
+      "sha256": "c395c8ec8d639d342aef5e38939ddddc81e2e5e44fdb38362ff7de2fb7227403",
+      "bytes": 75
+    },
+    {
+      "path": "syntax-worker.txt",
+      "sha256": "ebb006d78d865ae69cc0483b21edeb23aa25a66c78ccd6947477ce214f7db1ed",
+      "bytes": 67
+    }
+  ],
+  "excluded": "manifest.json excludes itself; app/test/config candidate pinned separately in candidate.json"
+}

@@ -1,0 +1,145 @@
+[
+  {
+    "phase": "mysql-initial",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "artisan",
+      "test",
+      "tests/Feature/Domain/MySqlConcurrencyTest.php",
+      "--no-ansi"
+    ],
+    "exit_code": 2,
+    "result": "fail",
+    "database": "new task-only empty MariaDB 10.11.14 repair_app_test",
+    "actual": "1 error at parent migrate:fresh --seed: Tenant aktif belum ditetapkan; 7 assertions; before child runs",
+    "evidence": "mysql-initial.txt"
+  },
+  {
+    "phase": "mysql-final",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "artisan",
+      "test",
+      "tests/Feature/Domain/MySqlConcurrencyTest.php",
+      "--no-ansi"
+    ],
+    "duration_seconds": 12.156,
+    "exit_code": 0,
+    "result": "pass",
+    "environment": {
+      "RUN_MYSQL_DOMAIN": "1",
+      "REPAIR_MYSQL_ENV_FILE": "private synthetic credentials",
+      "APP_CONFIG_CACHE": "private absent path",
+      "DB_CONNECTION": "sqlite (parent; test explicitly switches to MySQL)",
+      "DB_DATABASE": ":memory: (parent; test explicitly switches to repair_app_test)",
+      "DB_HOST": "127.0.0.1",
+      "DB_PORT": "32769"
+    }
+  },
+  {
+    "phase": "syntax-worker",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "-l",
+      "tests/Feature/Domain/mysql-worker.php"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.199
+  },
+  {
+    "phase": "syntax-parent",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "-l",
+      "tests/Feature/Domain/MySqlConcurrencyTest.php"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.211
+  },
+  {
+    "phase": "pint",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "vendor/bin/pint",
+      "--test",
+      "tests/Feature/Domain/mysql-worker.php",
+      "tests/Feature/Domain/MySqlConcurrencyTest.php"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.917
+  },
+  {
+    "phase": "phpstan",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "vendor/bin/phpstan",
+      "analyse",
+      "--memory-limit=512M",
+      "--debug",
+      "tests/Feature/Domain/mysql-worker.php",
+      "tests/Feature/Domain/MySqlConcurrencyTest.php"
+    ],
+    "exit_code": 1,
+    "duration_seconds": 2.426
+  },
+  {
+    "phase": "phpstan-test-baseline",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "vendor/bin/phpstan",
+      "analyse",
+      "--memory-limit=512M",
+      "--debug",
+      "/tmp/s006-a2-private/MySqlConcurrencyTest-baseline.php"
+    ],
+    "exit_code": 1,
+    "duration_seconds": 2.16
+  },
+  {
+    "phase": "phpstan-worker",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "vendor/bin/phpstan",
+      "analyse",
+      "--memory-limit=512M",
+      "--debug",
+      "tests/Feature/Domain/mysql-worker.php"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 1.687
+  },
+  {
+    "phase": "phpstan-project",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "vendor/bin/phpstan",
+      "analyse",
+      "--memory-limit=512M",
+      "--debug"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 3.106
+  },
+  {
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "artisan",
+      "test",
+      "tests/Feature/Domain/DomainTest.php",
+      "tests/Feature/Domain/SeederCacheTest.php",
+      "--no-ansi"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 2.62,
+    "database": "SQLite :memory: plus SeederCacheTest own disposable fixture"
+  },
+  {
+    "phase": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0
+  }
+]

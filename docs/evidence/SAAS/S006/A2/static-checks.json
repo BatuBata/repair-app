@@ -1,0 +1,48 @@
+[
+  {
+    "phase": "syntax-worker",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "-l",
+      "tests/Feature/Domain/mysql-worker.php"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.199
+  },
+  {
+    "phase": "syntax-parent",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "-l",
+      "tests/Feature/Domain/MySqlConcurrencyTest.php"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.211
+  },
+  {
+    "phase": "pint",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "vendor/bin/pint",
+      "--test",
+      "tests/Feature/Domain/mysql-worker.php",
+      "tests/Feature/Domain/MySqlConcurrencyTest.php"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.917
+  },
+  {
+    "phase": "phpstan",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "vendor/bin/phpstan",
+      "analyse",
+      "--memory-limit=512M",
+      "--debug",
+      "tests/Feature/Domain/mysql-worker.php",
+      "tests/Feature/Domain/MySqlConcurrencyTest.php"
+    ],
+    "exit_code": 1,
+    "duration_seconds": 2.426
+  }
+]

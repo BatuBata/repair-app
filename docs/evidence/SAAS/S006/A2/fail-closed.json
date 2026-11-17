@@ -1,0 +1,18 @@
+[
+  {
+    "driver": "sqlite",
+    "database": ":memory:",
+    "exit_code": 0,
+    "guard_rejection_before_tenant_lookup": true,
+    "valid_worker_json": false,
+    "note": "Existing Laravel console exception renderer returns exit 0 here; parent rejects invalid JSON; no write is reached."
+  },
+  {
+    "driver": "mysql",
+    "database": "s006_forbidden_database",
+    "exit_code": 0,
+    "guard_rejection_before_tenant_lookup": true,
+    "valid_worker_json": false,
+    "note": "Existing Laravel console exception renderer returns exit 0 here; parent rejects invalid JSON; no write is reached."
+  }
+]

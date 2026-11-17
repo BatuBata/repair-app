@@ -1,0 +1,67 @@
+{
+  "context": "colima",
+  "inventory_before_command": [
+    "docker",
+    "--context",
+    "colima",
+    "ps",
+    "-a",
+    "--format",
+    "{{.ID}} {{.Image}} {{.Names}} {{.Status}}"
+  ],
+  "inventory_before_containers": [],
+  "run_command": [
+    "docker",
+    "--context",
+    "colima",
+    "run",
+    "--detach",
+    "--name",
+    "repair-s006-a2-30a353eead",
+    "--label",
+    "task=S006-A2",
+    "--env-file",
+    "/tmp/s006-a2-private/maria.env",
+    "--tmpfs",
+    "/var/lib/mysql:rw",
+    "--publish",
+    "127.0.0.1::3306",
+    "mariadb:10.11.14"
+  ],
+  "healthcheck_command": [
+    "docker",
+    "--context",
+    "colima",
+    "exec",
+    "repair-s006-a2-30a353eead",
+    "healthcheck.sh",
+    "--connect",
+    "--innodb_initialized"
+  ],
+  "query_command_pattern": [
+    "docker",
+    "--context",
+    "colima",
+    "exec",
+    "--env",
+    "MYSQL_PWD",
+    "repair-s006-a2-30a353eead",
+    "mariadb",
+    "--user=root",
+    "--batch",
+    "--skip-column-names",
+    "--execute",
+    "<SQL select only>"
+  ],
+  "query_environment": "MYSQL_PWD synthetic secret, inherited from private runtime; values never logged",
+  "cleanup_command": [
+    "docker",
+    "--context",
+    "colima",
+    "rm",
+    "--force",
+    "repair-s006-a2-30a353eead"
+  ],
+  "cleanup_guard": "inspect container Id + Config.Labels.task checked against runtime before each removal",
+  "existing_mysql_host_not_accessed": true
+}

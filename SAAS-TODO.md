@@ -27,8 +27,8 @@ Goal aktif 17 November 2026 mengizinkan eksekusi S001–S012. Deployment produks
 | S003 | Jadikan auth, pengguna, pengaturan, dan onboarding tenant-aware | developer / 6.1-sol | medium / high | S002 | — | done |
 | S004 | Isolasi alur servis, dokumen, dan tracking | developer / 6.1-sol | complex / high | S003 | — | done |
 | S005 | Isolasi stok, penjualan, pengeluaran, dashboard, dan laporan | developer / 6.1-sol | complex / high | S004 | — | done |
-| S006 | Integrasikan candidate Lean SaaS | integrator / 6.1-sol | medium / high | S003, S004, S005 | — | running |
-| S007 | QA independen keamanan tenant dan regresi aplikasi | tester / 6.1-sol | complex / high | S006 | — | pending |
+| S006 | Integrasikan candidate Lean SaaS | integrator / 6.1-sol | medium / high | S003, S004, S005 | — | done |
+| S007 | QA independen keamanan tenant dan regresi aplikasi | tester / 6.1-sol | complex / high | S006 | — | running |
 | S008 | Siapkan runbook dan rehearsal migrasi Anugerah | developer / 6.1-sol | medium / high | S007 | — | pending |
 | S009 | QA independen rehearsal backup, migrasi, dan rollback | tester / 6.1-sol | complex / high | S008 | — | pending |
 | S010 | Deploy dan migrasikan Anugerah ke schema tenant | deployer / 6.1-sol | medium / high | S006, S007, S009 | — | blocked |
@@ -626,7 +626,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "verification_plan": [
         "Review commit/diff, konflik, daftar file, schema, dependency, dan secret; jalankan formatter, static checks, build, serta suite software lengkap pada candidate gabungan."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -646,8 +646,8 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native-codex:S006:A2",
-          "outcome": "running",
-          "receipt_ref": null
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/SAAS/S006/A2/README.md"
         }
       ],
       "prior_results": [{
@@ -667,7 +667,26 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "docs/evidence/SAAS/S006/A1/candidate.json"
         ],
         "summary": "Candidate gabungan Lean SaaS memiliki satu pin immutable; 216 tes lulus, satu test historis terkontrol skipped, formatter, static analysis, build, dan migrasi SQLite bersih lulus tanpa dependency atau fitur platform baru."
-      }]
+      }],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/SAAS/S006/A2/README.md",
+        "revision": "sha256:6b01398fbd10ba0196919655f94c9f26917e906fedbef562abb94eec2c6549cd",
+        "checked_revision": "sha256:6b01398fbd10ba0196919655f94c9f26917e906fedbef562abb94eec2c6549cd",
+        "inputs": {
+          "S003": "sha256:d5a8bb86214580207d73ca1e8039b84f20e34dc912cad3c924be5398320a3160",
+          "S004": "sha256:c721514661e503ee70abe9fbdd508896f18835b3e0070cb1d6c20664c4a66674",
+          "S005": "sha256:9ab1f13ae929cb26cdac0c12aa61137e48d518e2617b886cf354f44b9340802f"
+        },
+        "evidence": [
+          "docs/evidence/SAAS/S006/A2/README.md",
+          "docs/evidence/SAAS/S006/A2/result.json",
+          "docs/evidence/SAAS/S006/A2/candidate.json",
+          "docs/evidence/SAAS/S006/A2/mysql-final.txt",
+          "docs/evidence/SAAS/S006/A2/mariadb-proof.json"
+        ],
+        "summary": "Candidate integrasi memperbaiki hanya dua harness MySQL agar menetapkan tenant eksplisit sebelum seed dan operasi child. MariaDB 10.11.14 lulus 1 tes/44 assertion dengan 16 worker paralel; 15 tes SQLite/286 assertion, syntax, formatter, dan static analysis resmi lulus tanpa perubahan source aplikasi."
+      }
     },
     {
       "id": "S007",
@@ -715,7 +734,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         "Jalankan suite penuh pada SQLite dan test tenant/konkurensi pada MariaDB/MySQL khusus; audit query raw/global-scope bypass dan Livewire payload.",
         "Smoke browser tenant A/B pada alur login, TTS, stok, laporan, dokumen, dan tracking."
       ],
-      "status": "pending",
+      "status": "running",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -727,6 +746,16 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "dispatch_ref": "native-codex:S007:A1",
           "outcome": "pass",
           "receipt_ref": "docs/evidence/SAAS/S007/A1/README.md"
+        },
+        {
+          "id": "A2",
+          "kind": "verification",
+          "worker_id": "/root/s007_ci_qa",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native-codex:S007:A2",
+          "outcome": "running",
+          "receipt_ref": null
         }
       ],
       "prior_results": [{

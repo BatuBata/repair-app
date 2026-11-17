@@ -1,9 +1,11 @@
 <?php
 
 use App\Models\Sale;
+use App\Models\Tenant;
 use App\Models\User;
 use App\Services\CreateServiceOrder;
 use App\Services\DocumentNumber;
+use App\Support\TenantContext;
 use Carbon\CarbonImmutable;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Support\Facades\DB;
@@ -14,6 +16,7 @@ $app->make(Kernel::class)->bootstrap();
 if (DB::connection()->getDriverName() !== 'mysql' || DB::connection()->getDatabaseName() !== 'repair_app_test') {
     throw new RuntimeException('Only repair_app_test on MySQL is permitted.');
 }
+app(TenantContext::class)->set(Tenant::findOrFail(1));
 $prefix = $argv[1];
 $start = (float) $argv[2];
 CarbonImmutable::setTestNow(new CarbonImmutable('2026-11-12 12:00:00 Asia/Makassar'));

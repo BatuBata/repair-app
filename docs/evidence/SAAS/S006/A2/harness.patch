@@ -1,0 +1,48 @@
+diff --git a/tests/Feature/Domain/MySqlConcurrencyTest.php b/tests/Feature/Domain/MySqlConcurrencyTest.php
+index 06d1886..9c785ac 100644
+--- a/tests/Feature/Domain/MySqlConcurrencyTest.php
++++ b/tests/Feature/Domain/MySqlConcurrencyTest.php
+@@ -2,6 +2,8 @@
+ 
+ namespace Tests\Feature\Domain;
+ 
++use App\Models\Tenant;
++use App\Support\TenantContext;
+ use Dotenv\Dotenv;
+ use Illuminate\Support\Facades\DB;
+ use Illuminate\Support\Facades\Schema;
+@@ -41,7 +43,9 @@ public function test_mysql_fresh_seed_and_parallel_document_creation(): void
+         $oldPassword = config('repair.admin_initial_password');
+         config(['repair.admin_initial_password' => $password]);
+         try {
+-            $this->artisan('migrate:fresh', ['--seed' => true, '--force' => true])->assertExitCode(0);
++            $this->artisan('migrate:fresh', ['--force' => true])->assertExitCode(0);
++            app(TenantContext::class)->set(Tenant::findOrFail(1));
++            $this->artisan('db:seed', ['--force' => true])->assertExitCode(0);
+         } finally {
+             config(['repair.admin_initial_password' => $oldPassword]);
+         }
+diff --git a/tests/Feature/Domain/mysql-worker.php b/tests/Feature/Domain/mysql-worker.php
+index 9e282ca..1b4449d 100644
+--- a/tests/Feature/Domain/mysql-worker.php
++++ b/tests/Feature/Domain/mysql-worker.php
+@@ -1,9 +1,11 @@
+ <?php
+ 
+ use App\Models\Sale;
++use App\Models\Tenant;
+ use App\Models\User;
+ use App\Services\CreateServiceOrder;
+ use App\Services\DocumentNumber;
++use App\Support\TenantContext;
+ use Carbon\CarbonImmutable;
+ use Illuminate\Contracts\Console\Kernel;
+ use Illuminate\Support\Facades\DB;
+@@ -14,6 +16,7 @@
+ if (DB::connection()->getDriverName() !== 'mysql' || DB::connection()->getDatabaseName() !== 'repair_app_test') {
+     throw new RuntimeException('Only repair_app_test on MySQL is permitted.');
+ }
++app(TenantContext::class)->set(Tenant::findOrFail(1));
+ $prefix = $argv[1];
+ $start = (float) $argv[2];
+ CarbonImmutable::setTestNow(new CarbonImmutable('2026-11-12 12:00:00 Asia/Makassar'));

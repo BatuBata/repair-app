@@ -1,0 +1,15 @@
+{
+  "context": "colima",
+  "requested_image": "mariadb:10.11.14",
+  "image_id": "sha256:dbe56e20372fc6d6b8e0e396866ba89c4c7f128c38c4f59aaa54d957db95790c",
+  "server_version": "10.11.14-MariaDB-ubu2204",
+  "database": "repair_app_test",
+  "tables_before": 0,
+  "views_before": 0,
+  "container_id": "cb9a4a41e3dcd54653a8ad745e1ccf358e2d3469540a07e87afd5caa0b627a9c",
+  "tmpfs": {
+    "/var/lib/mysql": "rw"
+  },
+  "binds": null,
+  "port": "32769"
+}

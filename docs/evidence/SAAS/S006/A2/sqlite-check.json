@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/opt/homebrew/opt/php@8.3/bin/php",
+    "artisan",
+    "test",
+    "tests/Feature/Domain/DomainTest.php",
+    "tests/Feature/Domain/SeederCacheTest.php",
+    "--no-ansi"
+  ],
+  "exit_code": 0,
+  "duration_seconds": 2.62,
+  "database": "SQLite :memory: plus SeederCacheTest own disposable fixture"
+}

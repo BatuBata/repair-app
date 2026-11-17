@@ -1,0 +1,64 @@
+{
+  "task": "S006",
+  "attempt": "A2",
+  "role": "integrator correction worker",
+  "verdict": "self-check-pass-with-recorded-exploratory-static-limit",
+  "candidate": "sha256:6b01398fbd10ba0196919655f94c9f26917e906fedbef562abb94eec2c6549cd",
+  "base_revision": "5b15eaab79d8a0f7f93750471340572cdaa6e59d",
+  "changed_source_files": [
+    "tests/Feature/Domain/MySqlConcurrencyTest.php",
+    "tests/Feature/Domain/mysql-worker.php"
+  ],
+  "production_source_unchanged": true,
+  "model_requested": "gpt-6.1-sol",
+  "effort_requested": "high",
+  "model_effective": null,
+  "runtime_receipt": null,
+  "model_note": "No backend receipt exposed to worker; no effective-model claim.",
+  "ponytail": {
+    "level": "full",
+    "loaded_source": "/Users/muzib/.codex/plugins/cache/ponytail/ponytail/5.3.3/skills/ponytail/SKILL.md"
+  },
+  "tests": {
+    "mariadb": {
+      "version": "10.11.14-MariaDB-ubu2204",
+      "tests_passed": 1,
+      "assertions": 44,
+      "child_workers": 16,
+      "empty_tables_before": 0,
+      "empty_views_before": 0,
+      "tenant_id": 1,
+      "tts_count": 8,
+      "sales_count": 8,
+      "number_ranges": [
+        "TTS-2611-001..008",
+        "JL-2611-001..008"
+      ],
+      "orphan_creators": 0
+    },
+    "sqlite": {
+      "tests_passed": 15,
+      "assertions": 286
+    },
+    "syntax": "pass both changed files",
+    "formatter": "pass both changed files",
+    "phpstan_configured_project": "pass zero errors",
+    "phpstan_child_explicit": "pass zero errors",
+    "phpstan_manual_test_files": "3 findings outside configured project paths; baseline had 2; one additional artisan assertExitCode union warning follows identical existing pattern. Kept evidence; no suppression/config change.",
+    "database_guards": "wrong driver/wrong DB rejected before tenant lookup; existing console renderer exit0 but non-JSON response rejected by parent"
+  },
+  "cleanup": "Both task-only containers disposed after ID and label checks; no remaining Colima containers; temporary synthetic credentials removed. No pre-existing DB accessed.",
+  "skipped": [
+    "full suite/build: no application/assets changed; S006/A1 baseline retained",
+    "independent QA",
+    "remote GitHub Actions rerun",
+    "commit/push/deploy",
+    "existing or production DB",
+    "physical devices/printer"
+  ],
+  "risks": [
+    "Remote CI result is not yet proved by local harness checks.",
+    "Manual PHPStan scan of tests remains outside configured project paths with recorded union warnings.",
+    "Existing worker guard exception renderer exit0 relies on parent JSON parse to fail; DB write is never reached."
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "tenants": "1\t1",
+  "users": "1\t1",
+  "categories": "1\t9",
+  "service_orders": "1\t8\t8\t8",
+  "sales": "1\t8\t8",
+  "counters": "1\tJL\t2611\t8\n1\tTTS\t2611\t8",
+  "orphan_service_creators": 0,
+  "orphan_sale_creators": 0
+}

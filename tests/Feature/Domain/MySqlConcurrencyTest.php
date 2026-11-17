@@ -2,6 +2,8 @@
 
 namespace Tests\Feature\Domain;
 
+use App\Models\Tenant;
+use App\Support\TenantContext;
 use Dotenv\Dotenv;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
@@ -41,7 +43,9 @@ class MySqlConcurrencyTest extends TestCase
         $oldPassword = config('repair.admin_initial_password');
         config(['repair.admin_initial_password' => $password]);
         try {
-            $this->artisan('migrate:fresh', ['--seed' => true, '--force' => true])->assertExitCode(0);
+            $this->artisan('migrate:fresh', ['--force' => true])->assertExitCode(0);
+            app(TenantContext::class)->set(Tenant::findOrFail(1));
+            $this->artisan('db:seed', ['--force' => true])->assertExitCode(0);
         } finally {
             config(['repair.admin_initial_password' => $oldPassword]);
         }

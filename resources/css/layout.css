@@ -604,7 +604,7 @@ dialog.sheet-dialog[open] { animation: rise .2s var(--ease); }
   .platform-table td.c-st { grid-column:3; grid-row:1; }
   .platform-table td.c-who { grid-column:2 / -1; grid-row:2; }
   .platform-table td.c-what { grid-column:2 / -1; grid-row:3; color:var(--muted); font-size:14px; }
-  .platform-table .act .btn { width:96px; white-space:normal; line-height:18px; }
+  .platform-table .act .btn { width:96px; max-width:none; white-space:nowrap; }
   .platform-login .card { padding:24px 20px; }
 }
 

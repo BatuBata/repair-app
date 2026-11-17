@@ -1,0 +1,75 @@
+{
+  "classification": "environment",
+  "commands": [
+    {
+      "command": "colima status",
+      "exit": 1,
+      "actual": "colima is not running"
+    },
+    {
+      "command": "colima start --cpu 2 --memory 2 (sandbox)",
+      "exit": 1,
+      "actual": "operation not permitted writing ~/.colima/default/colima.yaml; retried with approved escalation"
+    },
+    {
+      "command": "colima start --cpu 2 --memory 2 (approved escalated)",
+      "exit": 1,
+      "actual": "base disk downloaded; vmType \"vz\" is not a registered driver"
+    },
+    {
+      "command": "docker --context colima pull mariadb:10.11.14 (approved escalated, while startup pending)",
+      "exit": 1,
+      "actual": "context colima not found; no MariaDB image pulled"
+    },
+    {
+      "command": "limactl info",
+      "actual": "Lima 2.0.3 vmTypes=[qemu]; VZ absent"
+    },
+    {
+      "command": "colima start --vm-type qemu --mount-type 9p --cpu 2 --memory 2 (approved escalated)",
+      "exit": 1,
+      "actual": "qemu-img not found, run 'brew install qemu' to install"
+    },
+    {
+      "command": "limactl info + sysctl kern.hv_support (approved escalated)",
+      "exit": 0,
+      "actual": "Lima2.0.3 vmTypes=[qemu], VZ absent even outside sandbox; kern.hv_support=1"
+    },
+    {
+      "command": "colima start --vm-type qemu --mount-type 9p --cpu 2 --memory 2 --activate=false (approved escalated)",
+      "actual": "exit0; Colima qemu ready 2026-11-17 10:57:42 +08; --activate=false retained default context"
+    },
+    {
+      "command": "docker --context colima pull mariadb:10.11.14 after ready",
+      "exit": 1,
+      "actual": "short read expected66905490 got17273799: unexpected EOF; one finite retry with cached layers"
+    },
+    {
+      "command": "docker --context colima pull mariadb:10.11.14 retry",
+      "exit": 0,
+      "actual": "Exact image pinned in runtime.json; initial EOF retained"
+    },
+    {
+      "command": "docker run dedicated container + healthcheck.sh --connect --innodb_initialized",
+      "exit": 0,
+      "actual": "Own fresh container healthy; no shared DB used"
+    },
+    {
+      "command": "PATH=private-transport:$PATH php docs/evidence/SAAS/S009/A1/qa.php",
+      "exit": 0,
+      "actual": "Candidate FAIL observed; separate diagnostic workflow all cases PASS"
+    },
+    {
+      "command": "python3 docs/evidence/SAAS/S009/A1/inventory-check.py",
+      "exit": 0,
+      "actual": "Source capture, migrated-recovery verify, wrongDB and falsebaseline refusal PASS"
+    }
+  ],
+  "database_connections": "Only dedicated MariaDB container port13319 and five new S009 databases",
+  "containers_created": 1,
+  "image_digest": "mariadb@sha256:dbe56e20372fc6d6b8e0e396866ba89c4c7f128c38c4f59aaa54d957db95790c",
+  "expected_image": "mariadb:10.11.14",
+  "new_secret_runtime": "private temp only; no value printed or committed",
+  "diagnosis": "Environment recovered using coordinator-authorized QEMU runtime repair; no acceptance check remains blocked by environment",
+  "coordinator_runtime_repair_receipt": "Coordinator reports brew install qemu exit0, QEMU11.1.3; runtime only; no app dependency changed"
+}

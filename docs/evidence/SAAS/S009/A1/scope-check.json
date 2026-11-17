@@ -1,0 +1,9 @@
+{
+  "candidate_after": "sha256:066cd061d3b189d9873333a06e3ecf46a493469cc096715b1461b758157b8157",
+  "candidate_files": 260,
+  "mismatches": [],
+  "tracked_diff": "",
+  "git_status": "?? deploy/__pycache__/\n?? docs/evidence/SAAS/S009/\n",
+  "write_scope": "docs/evidence/SAAS/S009/** plus own private temporary runtime only",
+  "source_runbook_scripts_tests_ledger_changed": false
+}

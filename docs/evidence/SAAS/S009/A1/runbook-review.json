@@ -1,0 +1,40 @@
+{
+  "checks": [
+    {
+      "id": "pins",
+      "expected": "260 files and combined S008 digest equal",
+      "actual": "260 files; zero mismatch; digest equal",
+      "verdict": "pass"
+    },
+    {
+      "id": "maintenance",
+      "expected": "backup/offsite and MariaDB gate before mutation; maintenance persists until business validation",
+      "actual": "Explicit S009/backup-offsite gate, same receiver flock, marker prechecks, no automatic artisan up, exact DB targets and preserve failed DB",
+      "verdict": "pass"
+    },
+    {
+      "id": "privilege",
+      "expected": "restore explicit scratch DB + scoped account, no secrets in CLI/Git",
+      "actual": "Runbook requires fresh DB and nonroot scoped restore account, private mode600 client file, no credential values; SQL target is not falsely treated as security filter",
+      "verdict": "pass"
+    },
+    {
+      "id": "offsite",
+      "expected": "local copy never called offsite; real transfer and restore gate prior live migration",
+      "actual": "Mac local copy is marked non-offsite in S008; S010 requires actual operator pull, checksum and restore from pulled copy; daily backup still explicit unresolved gate",
+      "verdict": "pass"
+    },
+    {
+      "id": "partial",
+      "expected": "partial imports/DDL unhealthy; no blind retry; recovery to fresh DB",
+      "actual": "Explicit discard-only/new DB procedure, history not trusted as sole DDL state, second tenant guarded and owner reconciliation required",
+      "verdict": "pass"
+    },
+    {
+      "id": "backup-client",
+      "expected": "MariaDB native dump flags compatible; completed archive before Q04 pending exit1",
+      "actual": "backup.sh exit1 Dump/compression failed; no completed archive; exact mariadb-dump10.11.14 exit7 rejects set-gtid-purged and column-statistics",
+      "verdict": "fail"
+    }
+  ]
+}

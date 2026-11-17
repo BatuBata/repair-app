@@ -1,0 +1,12 @@
+{
+  "container_absent": true,
+  "volume_absent": true,
+  "private_runtime_removed": true,
+  "all_five_qa_databases_removed_with_own_volume": true,
+  "synthetic_credentials_removed_with_runtime_container_and_volume": true,
+  "shared_databases_touched": false,
+  "colima_retained": "running; shared runtime not stopped/deleted",
+  "image_retained": "nonsecret mariadb10.11.14 cache retained",
+  "preexisting_deploy_pycache": "left unchanged; present before S009",
+  "production_connected": false
+}

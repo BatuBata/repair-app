@@ -1,0 +1,51 @@
+{
+  "verdict": "fail",
+  "classification": "product: native MariaDB dump client incompatibility",
+  "artifact_ref": "docs/evidence/SAAS/S009/A1/README.md",
+  "revision": "sha256:066cd061d3b189d9873333a06e3ecf46a493469cc096715b1461b758157b8157",
+  "checked_revision": "sha256:066cd061d3b189d9873333a06e3ecf46a493469cc096715b1461b758157b8157",
+  "source_commit": "66795fb",
+  "workspace_revision": "2641f9396c46ff16304ccc7bb6a461ca15ecf339",
+  "inputs": {
+    "S008": "sha256:066cd061d3b189d9873333a06e3ecf46a493469cc096715b1461b758157b8157",
+    "S007": "sha256:6ba364a204d98ac1d9754182d2a4fd1c54de6f940d7341ad88bef207aea74ad4"
+  },
+  "model_requested": "gpt-6.1-sol",
+  "effort_requested": "high",
+  "model_effective": null,
+  "receipt_ref": null,
+  "evidence": [
+    "docs/evidence/SAAS/S009/A1/README.md",
+    "docs/evidence/SAAS/S009/A1/checks.json",
+    "docs/evidence/SAAS/S009/A1/ci-safety.log",
+    "docs/evidence/SAAS/S009/A1/cleanup.json",
+    "docs/evidence/SAAS/S009/A1/colima-start.log",
+    "docs/evidence/SAAS/S009/A1/deploy-safety.log",
+    "docs/evidence/SAAS/S009/A1/environment.json",
+    "docs/evidence/SAAS/S009/A1/image-pull-initial.log",
+    "docs/evidence/SAAS/S009/A1/image-pull.log",
+    "docs/evidence/SAAS/S009/A1/input-check.json",
+    "docs/evidence/SAAS/S009/A1/inventory-check.py",
+    "docs/evidence/SAAS/S009/A1/mariadb-qa.log",
+    "docs/evidence/SAAS/S009/A1/migration-test.log",
+    "docs/evidence/SAAS/S009/A1/mysql-transport.sh",
+    "docs/evidence/SAAS/S009/A1/mysqldump-transport.sh",
+    "docs/evidence/SAAS/S009/A1/qa.php",
+    "docs/evidence/SAAS/S009/A1/runbook-inventory.json",
+    "docs/evidence/SAAS/S009/A1/runbook-review.json",
+    "docs/evidence/SAAS/S009/A1/runtime.json",
+    "docs/evidence/SAAS/S009/A1/scope-check.json",
+    "docs/evidence/SAAS/S009/A1/secret-scan.json",
+    "docs/evidence/SAAS/S009/A1/manifest.json"
+  ],
+  "summary": "Actual MariaDB10.11.14 backup.sh fails with no archive because its native dump client rejects set-gtid-purged and column-statistics. Separate diagnostic native-client backup/copy/three restores/migration/app reads/rollback/reapply/failure recovery all pass with complete old-field preservation. Source unchanged; QA container/volume/credential runtime removed. S009/S010 gate remains closed.",
+  "not_run": [
+    "Successful candidate backup on MariaDB (observed FAIL; needs correction)",
+    "Actual off-machine/production backup or restore",
+    "Production Debian host, maintenance/deployment/HTTPS/cron/retention",
+    "Linux receiver/GNU tar packaging",
+    "Full browser/login and visual PDF QA",
+    "Physical device/printer",
+    "Unchanged full S007 regression/build"
+  ]
+}

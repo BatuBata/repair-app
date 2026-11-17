@@ -1,0 +1,9 @@
+{
+  "commit": "2641f9396c46ff16304ccc7bb6a461ca15ecf339",
+  "expected_candidate": "sha256:066cd061d3b189d9873333a06e3ecf46a493469cc096715b1461b758157b8157",
+  "actual_candidate": "sha256:066cd061d3b189d9873333a06e3ecf46a493469cc096715b1461b758157b8157",
+  "file_count": 260,
+  "mismatches": [],
+  "s007_result_sha256": "6ba364a204d98ac1d9754182d2a4fd1c54de6f940d7341ad88bef207aea74ad4",
+  "git_status_start": "?? deploy/__pycache__/\n"
+}

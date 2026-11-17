@@ -1,0 +1,50 @@
+time="2026-11-17T10:57:16+08:00" level=info msg="starting colima"
+time="2026-11-17T10:57:16+08:00" level=info msg="runtime: docker"
+time="2026-11-17T10:57:19+08:00" level=info msg="creating and starting ..." context=vm
+time="2026-11-17T10:57:19+08:00" level=info msg="downloading disk image ..." context=vm
+time="2026-11-17T10:57:21+08:00" level=info msg="Terminal is not available, proceeding without opening an editor"
+time="2026-11-17T10:57:22+08:00" level=info msg="Starting the instance \"colima\" with internal VM driver \"qemu\""
+time="2026-11-17T10:57:22+08:00" level=info msg="Attempting to download the image" arch=aarch64 digest= location=/Users/muzib/Library/Caches/colima/caches/a837ead25fc8b5a51db8347e9b28f7a46aadc1f99d4a8f133e6e5057c4efc46f.raw
+time="2026-11-17T10:57:22+08:00" level=info msg="Downloaded the image from \"/Users/muzib/Library/Caches/colima/caches/a837ead25fc8b5a51db8347e9b28f7a46aadc1f99d4a8f133e6e5057c4efc46f.raw\""
+time="2026-11-17T10:57:23+08:00" level=info msg="[hostagent] hostagent socket created at /Users/muzib/.colima/_lima/colima/ha.sock"
+time="2026-11-17T10:57:23+08:00" level=info msg="[hostagent] Using system firmware (\"/opt/homebrew/share/qemu/edk2-aarch64-code.fd\")"
+time="2026-11-17T10:57:23+08:00" level=info msg="[hostagent] Mounting disk \"colima\" on \"/mnt/lima-colima\""
+time="2026-11-17T10:57:23+08:00" level=info msg="[hostagent] Starting QEMU (hint: to watch the boot progress, see \"/Users/muzib/.colima/_lima/colima/serial*.log\")"
+time="2026-11-17T10:57:23+08:00" level=info msg="SSH Local Port: 49399"
+time="2026-11-17T10:57:23+08:00" level=info msg="[hostagent] Waiting for the essential requirement 1 of 3: \"ssh\""
+time="2026-11-17T10:57:33+08:00" level=info msg="[hostagent] Waiting for the essential requirement 1 of 3: \"ssh\""
+time="2026-11-17T10:57:33+08:00" level=info msg="[hostagent] The essential requirement 1 of 3 is satisfied"
+time="2026-11-17T10:57:33+08:00" level=info msg="[hostagent] Waiting for the essential requirement 2 of 3: \"user session is ready for ssh\""
+time="2026-11-17T10:57:33+08:00" level=info msg="[hostagent] The essential requirement 2 of 3 is satisfied"
+time="2026-11-17T10:57:33+08:00" level=info msg="[hostagent] Waiting for the essential requirement 3 of 3: \"Explicitly start ssh ControlMaster\""
+time="2026-11-17T10:57:33+08:00" level=info msg="[hostagent] The essential requirement 3 of 3 is satisfied"
+time="2026-11-17T10:57:33+08:00" level=info msg="[hostagent] Waiting for the guest agent to be running"
+time="2026-11-17T10:57:33+08:00" level=info msg="[hostagent] Forwarding \"/var/run/docker.sock\" (guest) to \"/Users/muzib/.colima/default/docker.sock\" (host)"
+time="2026-11-17T10:57:33+08:00" level=info msg="[hostagent] Forwarding \"/var/run/containerd/containerd.sock\" (guest) to \"/Users/muzib/.colima/default/containerd.sock\" (host)"
+time="2026-11-17T10:57:33+08:00" level=info msg="[hostagent] Forwarding \"/var/run/docker.sock\" (guest) to \"/Users/muzib/.colima/docker.sock\" (host)"
+time="2026-11-17T10:57:33+08:00" level=info msg="[hostagent] Forwarding \"/run/lima-guestagent.sock\" (guest) to \"/Users/muzib/.colima/_lima/colima/ga.sock\" (host)"
+time="2026-11-17T10:57:33+08:00" level=info msg="[hostagent] Guest agent is running"
+time="2026-11-17T10:57:33+08:00" level=info msg="[hostagent] Waiting for the final requirement 1 of 1: \"boot scripts must have finished\""
+time="2026-11-17T10:57:33+08:00" level=info msg="[hostagent] Not forwarding TCP 0.0.0.0:22"
+time="2026-11-17T10:57:33+08:00" level=info msg="[hostagent] Not forwarding TCP [::]:22"
+time="2026-11-17T10:57:39+08:00" level=info msg="[hostagent] The final requirement 1 of 1 is satisfied"
+time="2026-11-17T10:57:39+08:00" level=info msg="READY. Run `limactl shell colima` to open the shell."
+installing: 386 OK
+installing: amd64 OK
+{
+  "supported": [
+    "linux/arm64",
+    "linux/amd64",
+    "linux/386"
+  ],
+  "emulators": [
+    "python3.12",
+    "qemu-i386",
+    "qemu-x86_64"
+  ]
+}
+time="2026-11-17T10:57:40+08:00" level=info msg="provisioning ..." context=docker
+colima
+Successfully created context "colima"
+time="2026-11-17T10:57:42+08:00" level=info msg="starting ..." context=docker
+time="2026-11-17T10:57:42+08:00" level=info msg=done

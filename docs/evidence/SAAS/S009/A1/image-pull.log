@@ -1,0 +1,28 @@
+10.11.14: Pulling from library/mariadb
+f85691aa4b90: Pulling fs layer
+af8e29ba3d6c: Pulling fs layer
+f8a6ecf492c1: Pulling fs layer
+d65368cd5889: Pulling fs layer
+765a5e39e40e: Pulling fs layer
+3dca71b61206: Pulling fs layer
+5ec04f999abd: Pulling fs layer
+4225723d53b0: Pulling fs layer
+765a5e39e40e: Download complete
+d65368cd5889: Download complete
+5ec04f999abd: Download complete
+4225723d53b0: Download complete
+f8a6ecf492c1: Download complete
+3dca71b61206: Download complete
+f85691aa4b90: Download complete
+d65368cd5889: Pull complete
+f85691aa4b90: Pull complete
+765a5e39e40e: Pull complete
+4225723d53b0: Pull complete
+3dca71b61206: Pull complete
+af8e29ba3d6c: Download complete
+5ec04f999abd: Pull complete
+f8a6ecf492c1: Pull complete
+af8e29ba3d6c: Pull complete
+Digest: sha256:dbe56e20372fc6d6b8e0e396866ba89c4c7f128c38c4f59aaa54d957db95790c
+Status: Downloaded newer image for mariadb:10.11.14
+docker.io/library/mariadb:10.11.14

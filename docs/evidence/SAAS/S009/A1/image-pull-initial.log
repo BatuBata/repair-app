@@ -1,0 +1,16 @@
+10.11.14: Pulling from library/mariadb
+5ec04f999abd: Pulling fs layer
+f85691aa4b90: Pulling fs layer
+3dca71b61206: Pulling fs layer
+765a5e39e40e: Pulling fs layer
+4225723d53b0: Pulling fs layer
+af8e29ba3d6c: Pulling fs layer
+d65368cd5889: Pulling fs layer
+f8a6ecf492c1: Pulling fs layer
+f8a6ecf492c1: Download complete
+5ec04f999abd: Download complete
+765a5e39e40e: Download complete
+4225723d53b0: Download complete
+d65368cd5889: Download complete
+3dca71b61206: Download complete
+short read: expected 66905490 bytes but got 17273799: unexpected EOF

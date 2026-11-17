@@ -1,0 +1,116 @@
+{
+  "algorithm": "SHA256 of sorted UTF8 repository-relative path + NUL + bytes, manifest excluded",
+  "evidence_digest": "sha256:60479b256e0099f25ef0cb1875ec40aeca10e602a37ad044f58836a786c6ae11",
+  "files": [
+    {
+      "path": "docs/evidence/SAAS/S009/A1/README.md",
+      "bytes": 11208,
+      "sha256": "2ba69d84258888af0e2be591cf24a0d44c10783c4a759f3000b9d3f9585e435c"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A1/checks.json",
+      "bytes": 1960,
+      "sha256": "13a82dfd6421382681e611078a9dae695b71fbf87d5c3bab3a26eb0be1ae9856"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A1/ci-safety.log",
+      "bytes": 182,
+      "sha256": "c98955ca1b04029408b7ecdaa17aad7404c9a0863e8baec52d768de1e9d58af3"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A1/cleanup.json",
+      "bytes": 496,
+      "sha256": "f8112021c318cd8828dd56e899c4b01b403a16593322d8c1b720e06b81b1be1e"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A1/colima-start.log",
+      "bytes": 4244,
+      "sha256": "4a187d72e8e98f1ff64d4570036c902585957624a11bdd5ef71e04a1b2b53bd5"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A1/deploy-safety.log",
+      "bytes": 77,
+      "sha256": "e562327bd644c903a616b8d7c23b487b192298a9843058970321f6c1fa7753b8"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A1/environment.json",
+      "bytes": 3137,
+      "sha256": "fe8ac6d6c30092083e4b797c8afdf6fb625ce52d23826bb85aafeb90a0e3eb23"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A1/image-pull-initial.log",
+      "bytes": 548,
+      "sha256": "45458d222f3988772f50ba77ca85f519b8d1113ca894421f56f6527476af8791"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A1/image-pull.log",
+      "bytes": 934,
+      "sha256": "301a0a74319f9f668369458886511290bc66e9c0dce15f66b503c9eac7393c7f"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A1/input-check.json",
+      "bytes": 438,
+      "sha256": "0d8964fcdd4efd7343ed2faa3adc7b1909b7fc3f4bf7894ef1f7cdfa145a5ff4"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A1/inventory-check.py",
+      "bytes": 2424,
+      "sha256": "320f8b7072fb537efe453d45956ea2d477b817436b401ff2cf1ddac119d04f66"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A1/mariadb-qa.log",
+      "bytes": 6615,
+      "sha256": "a6cd4a3929fffcf45d7ceb650fae86b533b27fc17e2558f9180f311d5acb4fb9"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A1/migration-test.log",
+      "bytes": 92,
+      "sha256": "a76c2f17753b8bd633ebde4c7c958d61918fadb37ab081459178dbdc7bec30cf"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A1/mysql-transport.sh",
+      "bytes": 222,
+      "sha256": "0fe962fa9d335be7413feec0cf4352b59ff9274675027f44273040d281870323"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A1/mysqldump-transport.sh",
+      "bytes": 227,
+      "sha256": "4b4fdca1743a57b8c175f5358b9a875c36d87b6bdc70e246368716e9c6454b0b"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A1/qa.php",
+      "bytes": 14485,
+      "sha256": "8e407aee200b20ad38beeed5e2aade99f5a0f2cfc3618f3443d34bbf261bfb02"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A1/result.json",
+      "bytes": 2675,
+      "sha256": "88e21a2909217e9fb2616629a2bbf56eb49e0d648b69c007fc8493bb0f4b74ba"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A1/runbook-inventory.json",
+      "bytes": 906,
+      "sha256": "c4ab1d300d4c45f6c78efdc81e07e12679ca33427acffdaa9e7692c78e6f3195"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A1/runbook-review.json",
+      "bytes": 1855,
+      "sha256": "63b3267f4a8416f0056df4fd034917e834b215a1b1d5172290e54cc24e36f351"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A1/runtime.json",
+      "bytes": 1107,
+      "sha256": "e4237dcae6e5b85fe86f28e3cf078b9dd25d02abfa01afcc38eb380b0d8a3c3c"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A1/scope-check.json",
+      "bytes": 383,
+      "sha256": "1820affcffc8d89573f42851c699244de535f2ccf26571bf2d7f44f6e7530590"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A1/secret-scan.json",
+      "bytes": 90,
+      "sha256": "8455b08b84e6384674045c166d11120ed9496bcdd3723129eb888604f3bdcd97"
+    }
+  ]
+}

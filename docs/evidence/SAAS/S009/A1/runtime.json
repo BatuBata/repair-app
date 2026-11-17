@@ -1,0 +1,19 @@
+{
+  "image_tag": "mariadb:10.11.14",
+  "repo_digests": [
+    "mariadb@sha256:dbe56e20372fc6d6b8e0e396866ba89c4c7f128c38c4f59aaa54d957db95790c"
+  ],
+  "image_id": "sha256:dbe56e20372fc6d6b8e0e396866ba89c4c7f128c38c4f59aaa54d957db95790c",
+  "platform": "linux/arm64",
+  "container": "saas-s009-a1-mariadb",
+  "container_id": "59ce18d1607abfc255487844f0a29d4ea6ff4e426209f5f9354aeac3dffab7a8",
+  "volume": "saas-s009-a1-data",
+  "binding": "127.0.0.1:13319 ->3306",
+  "server_version": "10.11.14-MariaDB-ubu2204",
+  "client_version": "mariadb  Ver 15.1 Distrib 10.11.14-MariaDB, for debian-linux-gnu (aarch64) using  EditLine wrapper",
+  "dump_version": "mariadb-dump  Ver 10.19 Distrib 10.11.14-MariaDB, for debian-linux-gnu (aarch64)",
+  "restore_transport": "Exact arguments forwarded to native mariadb, config copied to same path inside own container; no argument filtering",
+  "dump_transport": "Exact arguments forwarded to native mariadb-dump, config copied to same path inside own container; no argument filtering",
+  "secret_values_printed": false,
+  "existing_mysql_or_production_connected": false
+}

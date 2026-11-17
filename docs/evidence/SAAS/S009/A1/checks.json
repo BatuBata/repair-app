@@ -1,0 +1,62 @@
+{
+  "checked_revision": "sha256:066cd061d3b189d9873333a06e3ecf46a493469cc096715b1461b758157b8157",
+  "checks": [
+    {
+      "case": "candidate-pins",
+      "verdict": "pass",
+      "evidence": "input-check.json"
+    },
+    {
+      "case": "MigrationTest",
+      "verdict": "pass",
+      "actual": "3 tests / 23 assertions",
+      "evidence": "migration-test.log"
+    },
+    {
+      "case": "deploy-host-safety",
+      "verdict": "pass",
+      "actual": "31 stub-only cases; real dump not covered",
+      "evidence": "deploy-safety.log"
+    },
+    {
+      "case": "CI-safety",
+      "verdict": "pass",
+      "actual": "12 cases; GNU tar packaging and Linux receiver NOT_RUN",
+      "evidence": "ci-safety.log"
+    },
+    {
+      "case": "shell-syntax",
+      "verdict": "pass",
+      "actual": "bash -n backup.sh restore.sh deploy.sh ci-remote.sh exit0"
+    },
+    {
+      "case": "runbook-audit",
+      "verdict": "pass",
+      "evidence": "runbook-review.json"
+    },
+    {
+      "case": "exact-MariaDB-native-client-backup",
+      "verdict": "fail",
+      "actual": "backup.sh exit1 no archive; native dump exit7 rejects both MySQL-only flags",
+      "evidence": "mariadb-qa.log"
+    },
+    {
+      "case": "fresh-MariaDB-backup-copy-restore-migrate-smoke-rollback-reapply",
+      "verdict": "pass",
+      "actual": "Diagnostic native dump omitting only unsupported flags; all20 restore/schema/rows, old19 table fields, tenant/report/docs/rollback/reapply pass; candidate backup remains FAIL",
+      "evidence": "mariadb-qa.log"
+    },
+    {
+      "case": "MariaDB-corrupt-gzip-partial-SQL-partial-DDL-recovery-tenant-guard",
+      "verdict": "pass",
+      "actual": "All negative cases and recovery pass; unhealthy partial targets not retried",
+      "evidence": "mariadb-qa.log"
+    },
+    {
+      "case": "real-offsite-production-deploy-physical",
+      "verdict": "not_run",
+      "reason": "Outside S009 authorization"
+    }
+  ],
+  "overall": "fail"
+}

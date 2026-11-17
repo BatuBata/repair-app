@@ -9,6 +9,7 @@ class LayoutPreviewTest extends TestCase
     public function test_preview_is_available_in_testing_with_components_and_manifest(): void
     {
         $this->get('/layout-preview')->assertOk()
+            ->assertSee('style="background:#f2f5f6;color-scheme:light"', false)
             ->assertSee('/manifest.webmanifest')
             ->assertSee('TTS-2611-014')
             ->assertSee('inputmode="numeric"', false)

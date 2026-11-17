@@ -20,13 +20,12 @@
     $bottom = $technician ? $items : [['Beranda', '/', 'layout-dashboard'], ['Servis', '/tts', 'clipboard-list'], ['Buat TTS', '/tts/baru', 'plus'], ['Laporan', '/laporan', 'chart-column']];
 @endphp
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" style="background:#f2f5f6;color-scheme:light">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ filled($title ?? null) ? $title.' — '.$storeName : $storeName }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @fluxAppearance
     <meta name="theme-color" content="#f2f5f6">
     <link rel="manifest" href="/manifest.webmanifest">
 </head>

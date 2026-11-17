@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f2f5f6">
     <link rel="manifest" href="/manifest.webmanifest">
-    <title>{{ $title }} — Aplikasi Servis</title>
+    <title>{{ $title }} — Repair App</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         body.public { min-height:100svh; display:grid; place-items:center; padding:24px 16px; background:var(--ground); }
@@ -27,7 +27,7 @@
 </head>
 <body data-repair-shell class="no-shell public">
 <main class="login">
-    <div class="brand"><x-ui.mark /><strong>Aplikasi Servis</strong></div>
+    <div class="brand"><x-ui.mark /><strong>Repair App</strong></div>
     {{ $slot }}
     <p class="small muted help">Lupa password? Minta admin toko untuk mengatur ulang.</p>
 </main>

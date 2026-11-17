@@ -4,7 +4,7 @@
     $tenantContext = app(\App\Support\TenantContext::class);
     $storeName = $tenantContext->has()
         ? (\App\Models\StoreSetting::query()->value('name') ?: $tenantContext->tenant()->name)
-        : 'Aplikasi Servis';
+        : 'Repair App';
     $role = strtolower((string) ($user->role->value ?? $user->role ?? 'admin'));
     $technician = $role === 'teknisi';
     $path = '/'.ltrim($navigationPath ?? request()->path(), '/');

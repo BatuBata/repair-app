@@ -38,7 +38,12 @@ class IdentityTest extends TestCase
 
     public function test_guest_login_has_generic_branding(): void
     {
-        $this->get('/login')->assertOk()->assertSee('Aplikasi Servis')->assertDontSee('Anugerah');
+        $this->get('/login')
+            ->assertOk()
+            ->assertSee('Repair App')
+            ->assertSee('/icons/repair-app-192.png')
+            ->assertSee('width="24" height="24"', false)
+            ->assertDontSee('Anugerah');
     }
 
     public function test_global_login_restores_the_right_tenant_from_a_session(): void

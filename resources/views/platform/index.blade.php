@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f2f5f6">
-    <title>Kelola toko — Aplikasi Servis</title>
+    <title>Kelola toko — Repair App</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body data-repair-shell class="platform-owner">
 <div class="app platform-app">
     <nav class="sidebar" aria-label="Menu owner SaaS">
-        <a class="brand" href="{{ route('platform.index') }}"><x-ui.mark /><strong>Aplikasi Servis</strong></a>
+        <a class="brand" href="{{ route('platform.index') }}"><x-ui.mark /><strong>Repair App</strong></a>
         <div class="scope"><x-ui.icon name="shield-check" />Owner SaaS</div>
         <a class="nav-item" href="{{ route('platform.index') }}" aria-current="page"><x-ui.icon name="store" />Toko</a>
         <form class="bottom" method="POST" action="{{ route('platform.logout') }}">@csrf<button class="nav-item" type="submit"><x-ui.icon name="log-out" />Keluar</button></form>

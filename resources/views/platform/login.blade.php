@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f2f5f6">
-    <title>Owner SaaS — Aplikasi Servis</title>
+    <title>Owner SaaS — Repair App</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body data-repair-shell class="no-shell public platform-login">
 <main class="login">
-    <div class="brand"><x-ui.mark /><strong>Aplikasi Servis</strong></div>
+    <div class="brand"><x-ui.mark /><strong>Repair App</strong></div>
     <form class="card" method="POST" action="{{ route('platform.login.store') }}" novalidate>
         @csrf
         <header><h1>Masuk owner SaaS</h1><p class="muted">Kelola toko yang memakai aplikasi.</p></header>

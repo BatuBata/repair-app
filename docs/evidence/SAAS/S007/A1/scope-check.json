@@ -1,0 +1,9 @@
+{
+  "base": "a03f6f1",
+  "dependency_manifests_and_locks_changed": false,
+  "migrations_changed": [
+    "database/migrations/2026_11_17_000000_add_tenant_foundation.php"
+  ],
+  "speculative_features_found": false,
+  "reviewed_app_changes": "tenant context/scope/middleware, existing feature callers, generic login, internal tenant:create only"
+}

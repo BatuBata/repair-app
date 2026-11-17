@@ -1,0 +1,3 @@
+{"case":"final-mysql-tenant-state","tenant":"A","stock":20,"sales":3,"service_orders":2,"report_revenue":"251000","result":"pass"}
+{"case":"final-mysql-tenant-state","tenant":"B","stock":20,"sales":3,"service_orders":2,"report_revenue":"2501000","result":"pass"}
+{"case":"legacy-baseline-after-browser","identical_tables":11,"result":"pass"}

@@ -1,0 +1,137 @@
+{
+  "candidate": "sha256:066bb9e82bd3ac5142a1ef516fc46c862c7e3b1b2cbc28ee4eb0a8ab402996f6",
+  "files": [
+    {
+      "path": "docs/evidence/SAAS/S007/A1/README.md",
+      "sha256": "45dc06393e8c523e94f2d0dd0e613aba83e11e58920c51bcde8418e5396b7c84"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/browser-error.txt",
+      "sha256": "ce6ec818075887a54a4f7d9b039aee1987cb21e8e7ea647f75ad7e2668f46864"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/browser-run.log",
+      "sha256": "6a437ef2c467528567eb42549894123e3ce859ab3a9cc64479aac6b88a69e758"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/browser.json",
+      "sha256": "f830c12bbcc4970e0296936a667d85a1720f06e157c183cc2867898a67788a1b"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/browser.mjs",
+      "sha256": "a862f27c0f4a2015b98d74ead8911f54728a47003f420e1ff7185af562a07dbf"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/build.log",
+      "sha256": "b1ed51473327025761b06565ef8b4943f84df2722359f1e47fcdf1096a578df6"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/cleanup.json",
+      "sha256": "8f59f34539f57a88a655b3ab1b04f241add923983fa7856e554dcb74efadff78"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/dashboard-A.png",
+      "sha256": "f538bd51ce9b58e82ea06cb3e988559f0fe1a799180af96d6bb71299033878fb"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/dashboard-B.png",
+      "sha256": "7ceb3a351e0d191db8ba7498a9931a62b52c7d830d3ac8f650b76b6aa5f8f0c1"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/harness-errors.txt",
+      "sha256": "ef1fef2c06e6d385ee952b836b2441c158a903ea61511db544dcffa9592f9225"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/inactive-tenant.png",
+      "sha256": "c13d1290293ce64ccf6f1832726d722bf69575f1d34dcf0741805ba361e44633"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/mysql-baseline.log",
+      "sha256": "66ddadac9b6090aaecc4bbb28f70a10535ad3add871ae8ff531832e977091486"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/mysql-existing-counter.log",
+      "sha256": "45a56641a2cda308512196c7537ce46a46263d140a5ae85231f77ebed388a510"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/mysql-final.log",
+      "sha256": "7f67c326fa81e45f0a88128fddef7a466e180ac157edb4ecf1f956b2560c5c5f"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/mysql-proof.log",
+      "sha256": "4c8f9600a9b9b0b4b19986915d692300f84fd6a7c7eb1ea171a0249dc57b233d"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/mysql-setup.log",
+      "sha256": "f900fd84c433eb22831d402de6547753947eec34d29ceb78ca40376c35fdb8f8"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/mysql.php",
+      "sha256": "ee2403c81482a41736532f2973700af18aacc76d562f0c175d1e01f09b9526d8"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/phpstan.log",
+      "sha256": "c10f74fb840de989bba7e9c2dfee7f8419b5d2ac0cc0daf18a4a187f6530aa43"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/pin.json",
+      "sha256": "79efff03143843294035a7c24df7612a18b5879258591034bdfbfeafe3e0f284"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/pint.log",
+      "sha256": "cd1a94fc2cf6a965b86e1a4809d6c7fb9148b1ee374e1010ed2ac96ff4876ec2"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/query-audit.txt",
+      "sha256": "6dc130f7c071522d3b94f2a3fd861cf907c635f1d4f8871e0866ce00c0937e0f"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/report-A.png",
+      "sha256": "0e34d919ede19c71bf598baaa34471f2756a6467248f31c254758db0a1e0ff16"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/report-B.png",
+      "sha256": "a168d7aa7d8b42278a2be0e1e7a99dafe39de5cc4b60635138436b3a3f19a17d"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/result.json",
+      "sha256": "6ba364a204d98ac1d9754182d2a4fd1c54de6f940d7341ad88bef207aea74ad4"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/scope-check.json",
+      "sha256": "dc4dccc876d5db0a841d83a6b0180bbcf9614e56b8d30b67129c877a4eac658f"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/security-browser.json",
+      "sha256": "74b20130c764259855c139f7e09b34f1d9af113b66a4db7b238c92fa66eab949"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/security-browser.log",
+      "sha256": "bf00d227cfca905df2f00a5a0809b6807da3c18f602d73a14a73e00d0c119175"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/security-browser.mjs",
+      "sha256": "aa118913b170961ad2077220d5bba6e77b552ab164959faec781063d8eba3323"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/sqlite.log",
+      "sha256": "94611f29a5aaf425abbcc25ed4c53ecebb57d0a661e6110d9f90926c65292ea0"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/tracking-owner-A.png",
+      "sha256": "ad82a6928e8ae164492f61a581e769562213f950ca92296da1d1b8a4d9fd100b"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/tracking-owner-B.png",
+      "sha256": "98042b59717f1775b8a32988a118dd569588ad94b12b9301e0d9cfa70f5e2c21"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/tts-A.png",
+      "sha256": "a34dfb665ab29d55651e852ea5e48c95b7cc075caaf94578b696e36346e7daa5"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A1/tts-B.png",
+      "sha256": "1d769e2b277608d744428bc44820b4490a911916a01397383d7e8a31c3216493"
+    }
+  ]
+}

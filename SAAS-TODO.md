@@ -28,7 +28,7 @@ Goal aktif 17 November 2026 mengizinkan eksekusi S001–S012. Deployment produks
 | S004 | Isolasi alur servis, dokumen, dan tracking | developer / 6.1-sol | complex / high | S003 | — | done |
 | S005 | Isolasi stok, penjualan, pengeluaran, dashboard, dan laporan | developer / 6.1-sol | complex / high | S004 | — | done |
 | S006 | Integrasikan candidate Lean SaaS | integrator / 6.1-sol | medium / high | S003, S004, S005 | — | done |
-| S007 | QA independen keamanan tenant dan regresi aplikasi | tester / 6.1-sol | complex / high | S006 | — | running |
+| S007 | QA independen keamanan tenant dan regresi aplikasi | tester / 6.1-sol | complex / high | S006 | — | done |
 | S008 | Siapkan runbook dan rehearsal migrasi Anugerah | developer / 6.1-sol | medium / high | S007 | — | pending |
 | S009 | QA independen rehearsal backup, migrasi, dan rollback | tester / 6.1-sol | complex / high | S008 | — | pending |
 | S010 | Deploy dan migrasikan Anugerah ke schema tenant | deployer / 6.1-sol | medium / high | S006, S007, S009 | — | pending |
@@ -127,7 +127,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "acceptance_tasks": [
         "S007"
       ],
-      "status": "pending"
+      "status": "accepted"
     },
     {
       "id": "SD2",
@@ -705,7 +705,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         "Jalankan suite penuh pada SQLite dan test tenant/konkurensi pada MariaDB/MySQL khusus; audit query raw/global-scope bypass dan Livewire payload.",
         "Smoke browser tenant A/B pada alur login, TTS, stok, laporan, dokumen, dan tracking."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -715,10 +715,27 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native-codex:S007:A1",
-          "outcome": "running",
-          "receipt_ref": null
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/SAAS/S007/A1/README.md"
         }
-      ]
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/SAAS/S007/A1/README.md",
+        "revision": "sha256:6ba364a204d98ac1d9754182d2a4fd1c54de6f940d7341ad88bef207aea74ad4",
+        "checked_revision": "sha256:066bb9e82bd3ac5142a1ef516fc46c862c7e3b1b2cbc28ee4eb0a8ab402996f6",
+        "inputs": {
+          "S006": "sha256:066bb9e82bd3ac5142a1ef516fc46c862c7e3b1b2cbc28ee4eb0a8ab402996f6"
+        },
+        "evidence": [
+          "docs/evidence/SAAS/S007/A1/README.md",
+          "docs/evidence/SAAS/S007/A1/result.json",
+          "docs/evidence/SAAS/S007/A1/mysql-final.log",
+          "docs/evidence/SAAS/S007/A1/browser.json",
+          "docs/evidence/SAAS/S007/A1/security-browser.json"
+        ],
+        "summary": "QA independen kandidat S006 lulus: suite lengkap, migrasi/backfill/rollback dan konkurensi MySQL terisolasi, 45 kasus browser dua tenant, replay payload asing, tenant nonaktif, dan public tracking terbukti aman."
+      }
     },
     {
       "id": "S008",

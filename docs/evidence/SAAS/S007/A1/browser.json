@@ -1,0 +1,154 @@
+[
+  {
+    "id": "dashboard-total-A",
+    "result": "pass",
+    "expected_revenue": 151000
+  },
+  {
+    "id": "reports-filters-totals-foreign-detail-A",
+    "result": "pass",
+    "expected_revenue": 151000
+  },
+  {
+    "id": "all-module-lists-A",
+    "result": "pass"
+  },
+  {
+    "id": "store-identity-A",
+    "result": "pass"
+  },
+  {
+    "id": "foreign-direct-routes-A",
+    "result": "pass",
+    "routes": 14,
+    "status": 404
+  },
+  {
+    "id": "foreign-livewire-action-ids-A",
+    "result": "pass",
+    "status": 404
+  },
+  {
+    "id": "locked-orderId-A",
+    "result": "pass",
+    "status": 419
+  },
+  {
+    "id": "locked-productId-A",
+    "result": "pass",
+    "status": 419
+  },
+  {
+    "id": "foreign-category-payload-A",
+    "result": "pass"
+  },
+  {
+    "id": "tts-create-detail-foreign-technician-A",
+    "result": "pass",
+    "created_id": 4
+  },
+  {
+    "id": "product-create-A",
+    "result": "pass"
+  },
+  {
+    "id": "stock-restock-A",
+    "result": "pass"
+  },
+  {
+    "id": "login-dashboard-A",
+    "result": "pass"
+  },
+  {
+    "id": "login-dashboard-B",
+    "result": "pass"
+  },
+  {
+    "id": "foreign-product-livewire-payload-A",
+    "result": "pass"
+  },
+  {
+    "id": "sale-create-detail-A",
+    "result": "pass"
+  },
+  {
+    "id": "own-documents-A",
+    "result": "pass"
+  },
+  {
+    "id": "public-tracking-owner-safe-fields-A",
+    "result": "pass"
+  },
+  {
+    "id": "dashboard-total-B",
+    "result": "pass",
+    "expected_revenue": 1501000
+  },
+  {
+    "id": "reports-filters-totals-foreign-detail-B",
+    "result": "pass",
+    "expected_revenue": 1501000
+  },
+  {
+    "id": "all-module-lists-B",
+    "result": "pass"
+  },
+  {
+    "id": "store-identity-B",
+    "result": "pass"
+  },
+  {
+    "id": "foreign-direct-routes-B",
+    "result": "pass",
+    "routes": 14,
+    "status": 404
+  },
+  {
+    "id": "foreign-livewire-action-ids-B",
+    "result": "pass",
+    "status": 404
+  },
+  {
+    "id": "locked-orderId-B",
+    "result": "pass",
+    "status": 419
+  },
+  {
+    "id": "locked-productId-B",
+    "result": "pass",
+    "status": 419
+  },
+  {
+    "id": "foreign-category-payload-B",
+    "result": "pass"
+  },
+  {
+    "id": "tts-create-detail-foreign-technician-B",
+    "result": "pass",
+    "created_id": 5
+  },
+  {
+    "id": "product-create-B",
+    "result": "pass"
+  },
+  {
+    "id": "stock-restock-B",
+    "result": "pass"
+  },
+  {
+    "id": "foreign-product-livewire-payload-B",
+    "result": "pass"
+  },
+  {
+    "id": "sale-create-detail-B",
+    "result": "pass"
+  },
+  {
+    "id": "own-documents-B",
+    "result": "pass"
+  },
+  {
+    "id": "public-tracking-owner-safe-fields-B",
+    "result": "pass"
+  }
+]

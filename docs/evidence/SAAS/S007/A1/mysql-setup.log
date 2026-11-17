@@ -1,0 +1,2 @@
+{"case":"mysql-migration","database":"saas_s007_20261117_01","legacy_tables":11,"legacy_rows_preserved":true,"nonnullable_tenant_keys":true,"scoped_unique_keys":true,"rollback_roundtrip":true,"result":"pass"}
+{"case":"fixtures","result":"pass","shops":2,"same_category_name_allowed":true}

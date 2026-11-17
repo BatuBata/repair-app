@@ -1,0 +1,45 @@
+app/Console/Commands/CreateTenant.php:58:            DB::transaction(function () use ($context, $data): void {
+app/Services/DocumentNumber.php:19:        if (DB::transactionLevel() === 0) {
+app/Services/DocumentNumber.php:26:        DB::table('number_sequences')->insertOrIgnore([...$key, 'last_seq' => 0]);
+app/Services/DocumentNumber.php:27:        $sequence = DB::table('number_sequences')->where($key)->lockForUpdate()->first();
+app/Services/DocumentNumber.php:29:        DB::table('number_sequences')->where($key)->update(['last_seq' => $next]);
+app/Services/CreateServiceOrder.php:31:        return DB::transaction(function () use ($data, $creator) {
+app/Services/Reports/Report.php:64:        foreach (StockEntry::query()->whereHas('product')->whereDate('entry_date', '>=', $from)->whereDate('entry_date', '<=', $to)->cursor() as $entry) {
+app/Models/Concerns/BelongsToTenant.php:17:                : $builder->whereRaw('1 = 0');
+app/Services/Documents/Document.php:31:            $query->withoutGlobalScope('tenant')->where('tracking_token', $token);
+app/Services/Documents/Document.php:35:            'category' => fn ($query) => $query->withoutGlobalScope('tenant')->where('tenant_id', $order->tenant_id)->select(['id', 'name']),
+app/Services/Documents/Document.php:36:            'technician' => fn ($query) => $query->withoutGlobalScope('tenant')->where('tenant_id', $order->tenant_id)->select(['id', 'name']),
+app/Services/Documents/Document.php:45:        $store = StoreSetting::withoutGlobalScope('tenant')->where('tenant_id', $order->tenant_id)->first(['name', 'address', 'phone', 'logo_path', 'warranty_terms']);
+app/Actions/ServiceOrders/ManageServiceOrder.php:26:        DB::transaction(function () use ($id, $technicianId) {
+app/Actions/ServiceOrders/ManageServiceOrder.php:49:        DB::transaction(function () use ($id, $input, $correction, $revision) {
+app/Actions/ServiceOrders/ManageServiceOrder.php:98:        DB::transaction(function () use ($id, $date) {
+app/Actions/ServiceOrders/ManageServiceOrder.php:108:        DB::transaction(function () use ($id, $reason) {
+app/Models/ServiceOrder.php:80:        return $this->hasMany(ServiceOrderItem::class);
+app/Providers/FortifyServiceProvider.php:46:            ->withQuery(fn ($query) => $query->withoutGlobalScope('tenant'))
+app/Providers/FortifyServiceProvider.php:51:            $user = User::withoutGlobalScope('tenant')->where('username', $request->input('username'))->first();
+app/Actions/Sales/CreateSale.php:52:        return DB::transaction(function () use ($data, $soldOn, $days) {
+app/Providers/AppServiceProvider.php:37:        DB::prohibitDestructiveCommands(
+app/Livewire/Tts/Form.php:64:        $order = DB::transaction(function () {
+app/Livewire/Dashboard/Index.php:55:        DB::transaction(function () use ($data) {
+app/Livewire/Dashboard/Index.php:101:            'service' => DB::table('service_order_items as items')->join('service_orders as orders', 'orders.id', '=', 'items.service_order_id')
+app/Livewire/Dashboard/Index.php:104:            'sales' => DB::table('sale_items as items')->join('sales', 'sales.id', '=', 'items.sale_id')
+app/Livewire/Dashboard/Index.php:217:        $counts = ServiceOrder::query()->select('status')->selectRaw('COUNT(*) AS total')->groupBy('status')->pluck('total', 'status');
+app/Models/Product.php:47:        return $this->hasMany(StockEntry::class);
+app/Models/Product.php:53:        return $this->hasMany(SaleItem::class);
+app/Livewire/Stock/Form.php:64:        DB::transaction(function () use ($data) {
+app/Actions/Sales/DeleteSale.php:18:        DB::transaction(function () use ($data) {
+app/Models/Sale.php:56:        return $this->hasMany(SaleItem::class);
+app/Livewire/Settings/Store.php:91:            DB::transaction(function () use ($data, $newLogoPath) {
+app/Livewire/Stock/Restock.php:62:        DB::transaction(function () use ($data) {
+app/Livewire/Stock/Restock.php:72:            StockEntry::create([...$data, 'product_id' => $product->id, 'created_by' => $admin->id]);
+app/Livewire/Expenses/Index.php:98:        DB::transaction(function () use ($data): void {
+app/Livewire/Expenses/Index.php:126:        DB::transaction(function (): void {
+app/Livewire/Expenses/Index.php:166:            $query->whereRaw('1 = 0');
+app/Http/Controllers/DocumentController.php:36:            ? ServiceOrder::withoutGlobalScope('tenant')->select(['id', 'tracking_token', 'invoiced_on'])->where('tracking_token', $token)->first() : null;
+app/Livewire/Stock/Index.php:25:        DB::transaction(function () use ($data) {
+app/Http/Controllers/TrackingController.php:19:            ? ServiceOrder::withoutGlobalScope('tenant')->select(['id', 'tenant_id', 'number', 'category_id', 'item_description', 'complaint', 'status', 'created_at', 'assigned_at', 'invoiced_on', 'picked_up_on', 'cancelled_at', 'warranty_days', 'warranty_until', 'unrepairable', 'tracking_token'])->where('tracking_token', $token)->first()
+app/Http/Controllers/TrackingController.php:23:        $order->load(['category' => fn ($query) => $query->withoutGlobalScope('tenant')->where('tenant_id', $order->tenant_id)->select(['id', 'name'])]);
+app/Http/Controllers/TrackingController.php:25:        $store = StoreSetting::withoutGlobalScope('tenant')->where('tenant_id', $order->tenant_id)->first(['name', 'address', 'phone']);
+app/Livewire/Users/Index.php:146:        DB::transaction(function () use ($action) {
+app/Livewire/Users/Index.php:148:            DB::table('users')->where('id', User::min('id'))->update(['id' => DB::raw('id')]);
+app/Http/Middleware/EnsureActiveAccount.php:15:            $user = User::withoutGlobalScope('tenant')->find(auth()->id());

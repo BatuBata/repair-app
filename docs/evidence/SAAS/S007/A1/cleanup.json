@@ -1,0 +1,10 @@
+{
+  "server": "stopped",
+  "port_8877": "closed",
+  "private_runtime": "removed",
+  "chrome_contexts": "closed by browser finally",
+  "database": "saas_s007_20261117_01",
+  "database_action": "retained; only synthetic QA data; tenant B inactive",
+  "existing_databases": "repair_app and repair_app_test not connected or modified by S007",
+  "secrets_in_text_evidence": false
+}

@@ -1,0 +1,1 @@
+{"case":"legacy-baseline-before-final-browser","rows":{"users":1,"categories":1,"products":1,"store_settings":1,"service_orders":1,"sales":1,"expenses":1,"number_sequences":2,"service_order_items":1,"sale_items":1,"stock_entries":1},"result":"pass"}

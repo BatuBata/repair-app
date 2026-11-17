@@ -1,0 +1,15 @@
+{
+  "target": "sha256:066bb9e82bd3ac5142a1ef516fc46c862c7e3b1b2cbc28ee4eb0a8ab402996f6",
+  "recomputed": "sha256:066bb9e82bd3ac5142a1ef516fc46c862c7e3b1b2cbc28ee4eb0a8ab402996f6",
+  "files": 246,
+  "requested_model": "gpt-6.1-sol high",
+  "effective_model": null,
+  "receipt": null,
+  "checked_source_revision": "dec7804547a6bb29154a23a1d97353bccc72dd15",
+  "workspace_revision_metadata_only": "009f1741f97f8ad05f6cbae1d0aefc9a430483ff",
+  "metadata_only_diff": [
+    "SAAS-TODO.md"
+  ],
+  "scope_independently_enumerated": true,
+  "final_recomputed": "sha256:066bb9e82bd3ac5142a1ef516fc46c862c7e3b1b2cbc28ee4eb0a8ab402996f6"
+}

@@ -1,0 +1,86 @@
+{
+  "verdict": "pass",
+  "artifact_ref": "sha256:066bb9e82bd3ac5142a1ef516fc46c862c7e3b1b2cbc28ee4eb0a8ab402996f6",
+  "revision": "dec7804547a6bb29154a23a1d97353bccc72dd15",
+  "checked_revision": "dec7804547a6bb29154a23a1d97353bccc72dd15",
+  "workspace_revision": "009f1741f97f8ad05f6cbae1d0aefc9a430483ff",
+  "inputs": {
+    "S003": "sha256:d5a8bb86214580207d73ca1e8039b84f20e34dc912cad3c924be5398320a3160",
+    "S004": "sha256:c721514661e503ee70abe9fbdd508896f18835b3e0070cb1d6c20664c4a66674",
+    "S005": "sha256:9ab1f13ae929cb26cdac0c12aa61137e48d518e2617b886cf354f44b9340802f"
+  },
+  "model_requested": "gpt-6.1-sol",
+  "effort_requested": "high",
+  "model_effective": null,
+  "receipt_ref": null,
+  "evidence": [
+    "docs/evidence/SAAS/S007/A1/README.md",
+    "docs/evidence/SAAS/S007/A1/pin.json",
+    "docs/evidence/SAAS/S007/A1/sqlite.log",
+    "docs/evidence/SAAS/S007/A1/pint.log",
+    "docs/evidence/SAAS/S007/A1/phpstan.log",
+    "docs/evidence/SAAS/S007/A1/build.log",
+    "docs/evidence/SAAS/S007/A1/mysql-setup.log",
+    "docs/evidence/SAAS/S007/A1/mysql-proof.log",
+    "docs/evidence/SAAS/S007/A1/mysql-existing-counter.log",
+    "docs/evidence/SAAS/S007/A1/mysql-final.log",
+    "docs/evidence/SAAS/S007/A1/browser.json",
+    "docs/evidence/SAAS/S007/A1/security-browser.json",
+    "docs/evidence/SAAS/S007/A1/scope-check.json",
+    "docs/evidence/SAAS/S007/A1/cleanup.json"
+  ],
+  "checks": [
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php artisan test --compact",
+      "expected": "regression pass; protected-baseline MySQL skip named",
+      "actual": {
+        "tests": 217,
+        "passed": 216,
+        "assertions": 2368,
+        "skipped": 1,
+        "skip": "Tests\\Feature\\Domain\\MySqlConcurrencyTest::test_mysql_fresh_seed_and_parallel_document_creation"
+      }
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php vendor/bin/pint --test",
+      "expected": "format valid",
+      "actual": "pass"
+    },
+    {
+      "command": "/opt/homebrew/opt/php@8.3/bin/php vendor/bin/phpstan analyse --memory-limit=512M",
+      "expected": "zero errors",
+      "actual": "zero errors"
+    },
+    {
+      "command": "npm run build",
+      "expected": "build succeeds",
+      "actual": "pass"
+    },
+    {
+      "command": "QA_RUNTIME=<private-runtime> php docs/evidence/SAAS/S007/A1/mysql.php setup|proof|number-proof|details|verify",
+      "expected": "migration/data/schema/parallel tenant counters/stock/foreign rejection",
+      "actual": "all assertions pass; new database saas_s007_20261117_01"
+    },
+    {
+      "command": "node docs/evidence/SAAS/S007/A1/browser.mjs inspect; node docs/evidence/SAAS/S007/A1/browser.mjs; node docs/evidence/SAAS/S007/A1/security-browser.mjs",
+      "expected": "two authenticated contexts isolate all modules, payloads and public identity",
+      "actual": "34 flow cases and 11 supplemental security cases pass"
+    }
+  ],
+  "summary": "Independent S007 QA of immutable S006 candidate passed locally. Source/dependencies unchanged, one approved SaaS migration, no speculative feature found. New isolated MySQL migration/backfill/rollback, TTS/JL concurrency, stock races, two browser tenants, raw Livewire foreign IDs and authentic snapshot replay, inactive tenant and public documents/tracking proven.",
+  "skipped": [
+    "One historical MySqlConcurrencyTest protected baseline skip; independently replaced by isolated MySQL proofs, not relabeled pass",
+    "Production migration/backup restore/deployment and physical printer/phone not run",
+    "Separate PDF text-render extraction not run; PDF response signatures and data privacy tests/source audited"
+  ],
+  "runtime_final": {
+    "server": "stopped",
+    "port_8877": "closed",
+    "private_runtime": "removed",
+    "chrome_contexts": "closed by browser finally",
+    "database": "saas_s007_20261117_01",
+    "database_action": "retained; only synthetic QA data; tenant B inactive",
+    "existing_databases": "repair_app and repair_app_test not connected or modified by S007",
+    "secrets_in_text_evidence": false
+  }
+}

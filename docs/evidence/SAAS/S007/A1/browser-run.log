@@ -1,0 +1,61 @@
+login-dashboard-A pass
+login-dashboard-B pass
+dashboard-total-A pass
+reports-filters-totals-foreign-detail-A pass
+all-module-lists-A pass
+store-identity-A pass
+foreign-direct-routes-A pass
+foreign-livewire-action-ids-A pass
+locked-orderId-A pass
+locked-productId-A pass
+foreign-category-payload-A pass
+tts-create-detail-foreign-technician-A pass
+locator.fill: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByLabel('Harga beli', { exact: true })[22m
+
+    at /Users/muzib/Projects/web/repair-app/docs/evidence/SAAS/S007/A1/browser.mjs:75:169 {
+  log: [ "  - waiting for getByLabel('Harga beli', { exact: true })" ],
+  name: 'TimeoutError'
+}
+login-dashboard-A pass
+login-dashboard-B pass
+product-create-A pass
+stock-restock-A pass
+ReferenceError: attack is not defined
+    at file:///Users/muzib/Projects/web/repair-app/docs/evidence/SAAS/S007/A1/browser.mjs:88:10
+login-dashboard-A pass
+login-dashboard-B pass
+foreign-product-livewire-payload-A pass
+page.waitForFunction: TypeError: Cannot read properties of undefined (reading '0')
+    at eval (eval at predicate (eval at evaluate (:311:30)), <anonymous>:1:35)
+    at predicate (eval at evaluate (:311:30), <anonymous>:7:27)
+    at next (eval at evaluate (:311:30), <anonymous>:29:33)
+    at eval (eval at evaluate (:311:30), <anonymous>:42:13)
+    at UtilityScript.evaluate (<anonymous>:313:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+    at /Users/muzib/Projects/web/repair-app/docs/evidence/SAAS/S007/A1/browser.mjs:92:15 {
+  log: []
+}
+login-dashboard-A pass
+login-dashboard-B pass
+foreign-product-livewire-payload-A pass
+sale-create-detail-A pass
+own-documents-A pass
+public-tracking-owner-safe-fields-A pass
+dashboard-total-B pass
+reports-filters-totals-foreign-detail-B pass
+all-module-lists-B pass
+store-identity-B pass
+foreign-direct-routes-B pass
+foreign-livewire-action-ids-B pass
+locked-orderId-B pass
+locked-productId-B pass
+foreign-category-payload-B pass
+tts-create-detail-foreign-technician-B pass
+product-create-B pass
+stock-restock-B pass
+foreign-product-livewire-payload-B pass
+sale-create-detail-B pass
+own-documents-B pass
+public-tracking-owner-safe-fields-B pass

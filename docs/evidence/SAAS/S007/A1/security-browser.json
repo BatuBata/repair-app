@@ -1,0 +1,60 @@
+[
+  {
+    "id": "foreign-expense-ids-and-locked-payload-A",
+    "result": "pass",
+    "actions_404": 2,
+    "locked_419": 2
+  },
+  {
+    "id": "other-locked-identity-fields-A",
+    "result": "pass",
+    "status": 419,
+    "components": 5
+  },
+  {
+    "id": "foreign-expense-ids-and-locked-payload-B",
+    "result": "pass",
+    "actions_404": 2,
+    "locked_419": 2
+  },
+  {
+    "id": "other-locked-identity-fields-B",
+    "result": "pass",
+    "status": 419,
+    "components": 5
+  },
+  {
+    "id": "signed-foreign-snapshot-replay",
+    "result": "pass",
+    "status": 404,
+    "components": 4
+  },
+  {
+    "id": "guest-tracking-and-public-pdf",
+    "result": "pass",
+    "tenants": 2,
+    "invalid_token_status": 404
+  },
+  {
+    "id": "inactive-tenant-livewire-mutation",
+    "result": "pass",
+    "status": 403
+  },
+  {
+    "id": "inactive-tenant-existing-remember-session",
+    "result": "pass",
+    "status": 403
+  },
+  {
+    "id": "inactive-tenant-login-rejected",
+    "result": "pass"
+  },
+  {
+    "id": "inactive-tenant-public-history-retained",
+    "result": "pass"
+  },
+  {
+    "id": "other-tenant-remains-active",
+    "result": "pass"
+  }
+]

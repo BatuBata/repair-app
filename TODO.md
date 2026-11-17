@@ -69,7 +69,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T047 | Perbaiki layout mobile laporan dan empty state servis | developer / 6.1-terra | easy / medium | T036 | — | done |
 | T048 | QA independen perbaikan responsif laporan dan servis | tester / 6.1-terra | easy / medium | T047 | — | done |
 | T049 | Tambahkan pembayaran sederhana dan filter laporan | developer / 6.1-sol | medium / medium | T048 | — | done |
-| T050 | QA independen pembayaran dan filter laporan | tester / 6.1-sol | medium / medium | T049 | — | pending |
+| T050 | QA independen pembayaran dan filter laporan | tester / 6.1-sol | medium / medium | T049 | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -152,9 +152,9 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "state": "stopped",
       "allowed_tasks": [],
       "stop_after_tasks": [
-        "T049"
+        "T050"
       ],
-      "source_ref": "User17Nov2026 authorizes simple payment implementation on local main plus report filters, explicitly without push. T049 is complete locally; T050 independent QA and all push/deploy remain outside this execution window.",
+      "source_ref": "User17Nov2026 authorized push and deployment. T050 passed after GitHub CI MariaDB 10.11 on the exact T049 commit; workflow deployed 1d8c2a9 and HTTPS health/login returned 200. Execution stops at T050.",
       "phase_history": [
         {
           "state": "paused",
@@ -5975,11 +5975,28 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": [
         "Audit diff/pin, migrate pada database uji terisolasi, tes penuh dan browser pembayaran/laporan 390/768/1440."
       ],
-      "status": "pending",
+      "status": "done",
       "qa_for": "T049",
-      "workspace": null,
-      "attempts": [],
-      "result": null
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "attempts": [{
+        "id": "A1",
+        "kind": "verification",
+        "worker_id": "/root/t050_payment_qa",
+        "model_requested": "gpt-6.1-sol",
+        "model_effective": null,
+        "dispatch_ref": "native-codex:T050:A1",
+        "outcome": "pass",
+        "receipt_ref": "docs/evidence/T050/A1/README.md"
+      }],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T050/A1/README.md",
+        "revision": "sha256:3d47fdb3a7725cd48687439c5bfd2df288671c371017b28c974e667cd4f92d50",
+        "checked_revision": "sha256:1e8464a094ec3d8a3b4db6f37e240cdd02229b7df1a009ccc19ccfcbe1fa0ccc",
+        "inputs": {"T049": "sha256:1e8464a094ec3d8a3b4db6f37e240cdd02229b7df1a009ccc19ccfcbe1fa0ccc"},
+        "evidence": ["docs/evidence/T050/A1/README.md"],
+        "summary": "QA independen PASS: source/hash, 50 tes terarah, suite 230 PASS/1 existing skip/2458 assertion, PHPStan/Pint/view/build, legacy-null migration, UI payment/filter, GitHub CI MariaDB 10.11, artifact deployment, dan HTTPS health/login lulus pada commit 1d8c2a9. Exact-width browser berasal dari T049 karena zoom runtime tester."
+      }
     }
   ]
 }
@@ -6131,3 +6148,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-14 | T023A2 PASS pada d047f25:26AC software/16BR, target sentuh ditutup independen,13 kasus Edge nyata lulus. F004–F006 accepted; eksekusi berhenti pada batas T023, T024–T025/R001 tetap pending. Kandidat boleh masuk main setelah review; CI pada main wajib diperiksa dalam handoff. | Goal siap rilis software terpenuhi, produksi/perangkat tetap gate terpisah | T023,F004–F006,main | docs/evidence/T023/A2/README.md; docs/evidence/coordinator/final-readiness.json |
 
 | 2026-11-17 | T049 menambah pembayaran penuh sederhana pada servis/penjualan dan filter metode/bank pada daftar laporan. Satu migrasi aditif baru diizinkan untuk scope pasca-v1 ini; data lama tetap null tanpa backfill. Implementasi dan pemeriksaan developer selesai lokal di main, tetapi push/deploy ditahan dan QA independen T050 belum dijalankan. | Permintaan user eksplisit; pilihan minimal sesuai D-31 tanpa modul pembayaran baru | T049,T050 | User: buat fitur di main, jangan push dulu; docs/evidence/T049/A1/README.md |
+
+| 2026-11-17 | User mengizinkan push dan deploy. Commit `1d8c2a9` dipush ke `main`; GitHub Actions run `44087631993` meluluskan CI dengan MariaDB 10.11, membuat artifact terpin, menjalankan migrasi aditif, dan deploy HTTPS. T050 diterima PASS; `/up` dan `/login` sama-sama HTTP 200. | Gate CI/CD D-23 memastikan hanya artifact commit yang lulus tes yang dipasang | T050,main,demo | User: push and deploy; GitHub Actions 44087631993; docs/evidence/T050/A1/README.md |

@@ -1,0 +1,8 @@
+{
+  "verdict": "pass",
+  "backup_manifest_sha256": "794d56a5e23bdb91fe14f5c5010c0920387b41bf82e24e044825009c623d0bcb",
+  "entries_verified": 12,
+  "backup_content_not_emitted": true,
+  "local_backup_mode": "0o700",
+  "minimum_retention_until_utc": "2026-12-01T04:19:41Z"
+}

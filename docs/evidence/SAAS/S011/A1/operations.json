@@ -1,0 +1,22 @@
+{
+  "verdict": "review",
+  "observed_utc": "2026-11-17T05:07:48.134497+00:00",
+  "revision": "99f64bf59ff1489825333aa821015a281db611ea",
+  "backup_manifest_sha256": "794d56a5e23bdb91fe14f5c5010c0920387b41bf82e24e044825009c623d0bcb",
+  "backup_entries_verified": 12,
+  "environment_identical": true,
+  "uploaded_files_identical": true,
+  "uploaded_files_count": 1,
+  "laravel_log_files": 0,
+  "laravel": [],
+  "nginx": {
+    "readable": false
+  },
+  "log_since_utc": "2026-11-17T04:37:24+00:00",
+  "raw_log_contents_saved": false,
+  "marker_exists": {
+    "/var/www/demo-repair-app/current/.deploy-pending": false,
+    "/var/www/demo-repair-app/.deploy-pending": false,
+    "/var/www/demo-repair-app/current/storage/framework/down": false
+  }
+}

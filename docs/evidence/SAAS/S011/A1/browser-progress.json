@@ -1,0 +1,82 @@
+{
+  "utc": "2026-11-17T05:06:04.285Z",
+  "browser": "Google Chrome / Playwright",
+  "mode": "headless real Chromium engine",
+  "checks": [
+    {
+      "id": "https-health-login-assets",
+      "result": "pass",
+      "health": 200,
+      "login": 200,
+      "entry_assets_200": 3,
+      "generic_login": true
+    },
+    {
+      "id": "admin-login-dashboard",
+      "result": "pass",
+      "login_success": true,
+      "store_identity_present": true,
+      "today_revenue_sql_match": true,
+      "monthly_revenue_gross_sql_match": true,
+      "timezone": "Asia/Makassar"
+    },
+    {
+      "id": "users-settings-navigation",
+      "result": "pass",
+      "store_name_consistent": true,
+      "legacy_logo_absent_preserved": true,
+      "users": true,
+      "categories": true,
+      "no_save_submitted": true
+    },
+    {
+      "id": "tts-list-detail-documents",
+      "result": "pass",
+      "existing_rows": 13,
+      "list_detail_identity_consistent": true,
+      "documents": [
+        {
+          "type": "/struk",
+          "status": 200,
+          "bytes": 10781,
+          "sha256": "c4e51657a95851628656870db7a7b941f116180b615d64b26e6796cc2532beaa",
+          "pdf": false
+        },
+        {
+          "type": "/struk.pdf",
+          "status": 200,
+          "bytes": 23016,
+          "sha256": "91f2a53c72f78f80ffa83fcd1434ba056b0f6bb5bf2f55731932663cc24ed729",
+          "pdf": true
+        },
+        {
+          "type": "/pdf",
+          "status": 200,
+          "bytes": 23037,
+          "sha256": "f8ef83b4d1b55ea9c9896ab550c5f9c1b2d73a5b0bc7db676c467a54e3a2e29a",
+          "pdf": true
+        }
+      ]
+    },
+    {
+      "id": "guest-tracking-existing-order",
+      "result": "pass",
+      "status": 200,
+      "guest_without_auth": true,
+      "owner_identity_and_order_match": true,
+      "noindex": true,
+      "no_store": true,
+      "external_message_not_sent": true,
+      "public_pdf": "not_available_for_uninvoiced_order"
+    }
+  ],
+  "console_errors": 0,
+  "page_errors": 0,
+  "failed_requests": 0,
+  "unexpected_http": [],
+  "raw_customer_data_saved": false,
+  "verdict": "fail",
+  "failed_stage": "stock-sales-expenses",
+  "error_class": "TimeoutError",
+  "finished_utc": "2026-11-17T05:06:25.326Z"
+}

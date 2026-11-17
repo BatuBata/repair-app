@@ -1,0 +1,53 @@
+{
+  "verdict": "fail",
+  "files_scanned": 16,
+  "known_private_values_checked": 62,
+  "findings": [
+    {
+      "file": "browser.mjs",
+      "category": "service_orders.customer_name",
+      "length": 5,
+      "authorized_operator_name": true
+    },
+    {
+      "file": "README.md",
+      "category": "users.name",
+      "length": 7,
+      "authorized_operator_name": false
+    },
+    {
+      "file": "README.md",
+      "category": "service_orders.customer_name",
+      "length": 5,
+      "authorized_operator_name": true
+    },
+    {
+      "file": "operations.py",
+      "category": "service_orders.customer_name",
+      "length": 5,
+      "authorized_operator_name": true
+    },
+    {
+      "file": "scan.py",
+      "category": "service_orders.customer_name",
+      "length": 5,
+      "authorized_operator_name": true
+    },
+    {
+      "file": "guest-invoice.mjs",
+      "category": "service_orders.customer_name",
+      "length": 5,
+      "authorized_operator_name": true
+    },
+    {
+      "file": "verify.php",
+      "category": "service_orders.customer_name",
+      "length": 5,
+      "authorized_operator_name": true
+    }
+  ],
+  "raw_values_emitted": false,
+  "raw_media_files": 0,
+  "private_fixture_export_was_rejected_and_not_created": true,
+  "temporary_task_directory_removed": true
+}

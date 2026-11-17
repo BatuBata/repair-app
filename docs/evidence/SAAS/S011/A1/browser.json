@@ -1,0 +1,134 @@
+{
+  "utc": "2026-11-17T05:07:00.075Z",
+  "browser": "Google Chrome / Playwright",
+  "mode": "headless real Chromium engine",
+  "checks": [
+    {
+      "id": "users-settings-navigation",
+      "result": "pass",
+      "store_name_consistent": true,
+      "legacy_logo_absent_preserved": true,
+      "users": true,
+      "categories": true,
+      "no_save_submitted": true
+    },
+    {
+      "id": "tts-list-detail-documents",
+      "result": "pass",
+      "existing_rows": 13,
+      "list_detail_identity_consistent": true,
+      "documents": [
+        {
+          "type": "/struk",
+          "status": 200,
+          "bytes": 10781,
+          "sha256": "c4e51657a95851628656870db7a7b941f116180b615d64b26e6796cc2532beaa",
+          "pdf": false
+        },
+        {
+          "type": "/struk.pdf",
+          "status": 200,
+          "bytes": 23016,
+          "sha256": "91f2a53c72f78f80ffa83fcd1434ba056b0f6bb5bf2f55731932663cc24ed729",
+          "pdf": true
+        },
+        {
+          "type": "/pdf",
+          "status": 200,
+          "bytes": 23037,
+          "sha256": "f8ef83b4d1b55ea9c9896ab550c5f9c1b2d73a5b0bc7db676c467a54e3a2e29a",
+          "pdf": true
+        }
+      ]
+    },
+    {
+      "id": "guest-tracking-existing-order",
+      "result": "pass",
+      "status": 200,
+      "guest_without_auth": true,
+      "owner_identity_and_order_match": true,
+      "noindex": true,
+      "no_store": true,
+      "external_message_not_sent": true,
+      "public_pdf": "not_available_for_uninvoiced_order"
+    },
+    {
+      "id": "https-health-login-assets",
+      "result": "pass",
+      "observed_utc": "2026-11-17T05:07:02.234Z",
+      "health": 200,
+      "login": 200,
+      "entry_assets_200": 3,
+      "generic_login": true
+    },
+    {
+      "id": "admin-login-dashboard",
+      "result": "pass",
+      "observed_utc": "2026-11-17T05:07:03.033Z",
+      "login_success": true,
+      "store_identity_present": true,
+      "today_revenue_sql_match": true,
+      "monthly_revenue_gross_sql_match": true,
+      "timezone": "Asia/Makassar"
+    },
+    {
+      "id": "stock-sales-expenses",
+      "result": "pass",
+      "observed_utc": "2026-11-17T05:07:04.046Z",
+      "stock_existing": true,
+      "sales_existing_detail": true,
+      "sale_documents": [
+        {
+          "type": "/struk",
+          "status": 200,
+          "bytes": 3126,
+          "sha256": "82df56b5c92b5fc621fa394dcc9ae039711d6ca784ee04dab23f871c147b205a"
+        },
+        {
+          "type": "/struk.pdf",
+          "status": 200,
+          "bytes": 21548,
+          "sha256": "b6dd587db4ff20f8572c7e4433a2a938370abf47ea3d02e4884cc30cad46f563"
+        },
+        {
+          "type": "/pdf",
+          "status": 200,
+          "bytes": 21538,
+          "sha256": "946bcb2c335e13e62b6da8b0e37e5aff981a08888eeb5a4b8c00c0903471ee76"
+        }
+      ],
+      "expenses_empty_baseline": true
+    },
+    {
+      "id": "report-db-totals-browser",
+      "result": "pass",
+      "observed_utc": "2026-11-17T05:07:04.912Z",
+      "month": {
+        "from": "2026-11-01",
+        "to": "2026-11-17",
+        "all_seven_totals_match_sql": true
+      },
+      "today": {
+        "from": "2026-11-17",
+        "to": "2026-11-17",
+        "all_seven_totals_match_sql": true
+      },
+      "filter_livewire_success": true
+    },
+    {
+      "id": "logout-generic-login",
+      "result": "pass",
+      "observed_utc": "2026-11-17T05:07:05.192Z",
+      "logout_success": true,
+      "post_logout_auth_redirect": 302,
+      "generic_login": true
+    }
+  ],
+  "console_errors": 0,
+  "page_errors": 0,
+  "failed_requests": 0,
+  "unexpected_http": [],
+  "raw_customer_data_saved": false,
+  "verdict": "pass",
+  "finished_utc": "2026-11-17T05:07:05.393Z"
+}

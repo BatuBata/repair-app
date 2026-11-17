@@ -32,8 +32,8 @@ Goal aktif 17 November 2026 mengizinkan eksekusi S001–S012. Deployment produks
 | S008 | Siapkan runbook dan rehearsal migrasi Anugerah | developer / 6.1-sol | medium / high | S007 | — | done |
 | S009 | QA independen rehearsal backup, migrasi, dan rollback | tester / 6.1-sol | complex / high | S008 | — | done |
 | S010 | Deploy dan migrasikan Anugerah ke schema tenant | deployer / 6.1-sol | medium / high | S006, S007, S009 | — | done |
-| S011 | Verifikasi independen produksi setelah migrasi | tester / 6.1-sol | medium / high | S010 | — | running |
-| S012 | Onboard dan verifikasi pilot client kedua | tester / 6.1-sol | medium / high | S010, S011 | — | pending |
+| S011 | Verifikasi independen produksi setelah migrasi | tester / 6.1-sol | medium / high | S010 | — | done |
+| S012 | Onboard dan verifikasi pilot client kedua | tester / 6.1-sol | medium / high | S010, S011 | — | blocked |
 <!-- END GENERATED VIEW -->
 
 ## Urutan minimum
@@ -141,7 +141,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "acceptance_tasks": [
         "S011"
       ],
-      "status": "pending"
+      "status": "accepted"
     },
     {
       "id": "SD3",
@@ -155,7 +155,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "acceptance_tasks": [
         "S012"
       ],
-      "status": "pending"
+      "status": "blocked"
     }
   ],
   "tasks": [
@@ -1174,7 +1174,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "verification_plan": [
         "Smoke read-only dahulu, lalu transaksi sintetis berizin dengan cleanup yang aman; bandingkan inventaris, laporan, log error, dan endpoint publik."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -1184,10 +1184,27 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native-codex:S011:A1",
-          "outcome": "running",
-          "receipt_ref": null
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/SAAS/S011/A1/README.md"
         }
-      ]
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/SAAS/S011/A1/README.md",
+        "revision": "sha256:984d1bfd0897b4ebb17f103888e593264fb80268103be70ff559d042c2867d21",
+        "checked_revision": "sha256:6b01398fbd10ba0196919655f94c9f26917e906fedbef562abb94eec2c6549cd",
+        "inputs": {
+          "S010": "99f64bf59ff1489825333aa821015a281db611ea"
+        },
+        "evidence": [
+          "docs/evidence/SAAS/S011/A1/README.md",
+          "docs/evidence/SAAS/S011/A1/result.json",
+          "docs/evidence/SAAS/S011/A1/manifest.json",
+          "docs/evidence/SAAS/S011/A1/browser.json",
+          "docs/evidence/SAAS/S011/A1/data-after.json"
+        ],
+        "summary": "QA produksi independen lulus pada 99f64bf: data bisnis, satu tenant, 19 relasi, backup/key/upload, login dan modul browser, dokumen/PDF/tracking, serta laporan cocok. Tidak ada mutasi bisnis; perubahan hanya cache, sesi, dan satu remember_token normal dari logout framework."
+      }
     },
     {
       "id": "S012",
@@ -1239,7 +1256,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "verification_plan": [
         "Operator menjalankan onboarding dengan credential melalui kanal privat; tester menguji alur inti kedua tenant dan percobaan akses silang tanpa menyalin data customer ke evidence."
       ],
-      "status": "pending"
+      "status": "blocked"
     }
   ]
 }

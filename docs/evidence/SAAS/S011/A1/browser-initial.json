@@ -1,0 +1,33 @@
+{
+  "utc": "2026-11-17T05:05:28.966Z",
+  "browser": "Google Chrome / Playwright",
+  "mode": "headless real Chromium engine",
+  "checks": [
+    {
+      "id": "https-health-login-assets",
+      "result": "pass",
+      "health": 200,
+      "login": 200,
+      "entry_assets_200": 3,
+      "generic_login": true
+    },
+    {
+      "id": "admin-login-dashboard",
+      "result": "pass",
+      "login_success": true,
+      "store_identity_present": true,
+      "today_revenue_sql_match": true,
+      "monthly_revenue_gross_sql_match": true,
+      "timezone": "Asia/Makassar"
+    }
+  ],
+  "console_errors": 0,
+  "page_errors": 0,
+  "failed_requests": 0,
+  "unexpected_http": [],
+  "raw_customer_data_saved": false,
+  "verdict": "fail",
+  "failed_stage": "users-settings-navigation",
+  "error_class": "AssertionError",
+  "finished_utc": "2026-11-17T05:05:32.848Z"
+}

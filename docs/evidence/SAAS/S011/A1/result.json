@@ -1,0 +1,38 @@
+{
+  "verdict": "pass",
+  "artifact_ref": "docs/evidence/SAAS/S011/A1/README.md",
+  "revision": "99f64bf59ff1489825333aa821015a281db611ea",
+  "checked_revision": "99f64bf59ff1489825333aa821015a281db611ea",
+  "inputs": {
+    "S010": "99f64bf59ff1489825333aa821015a281db611ea",
+    "S010_result_sha256": "4e18188d5a7163dce28e2f49cb6d0ecaaf1011a7bff2b46f1b9899243edf3bac",
+    "S010_manifest_sha256": "9dd6b7a6e6e8c7b60ec3a00216bbc55e8a69ff37a00584f655fbc8e54fdea1a7",
+    "backup_manifest_sha256": "794d56a5e23bdb91fe14f5c5010c0920387b41bf82e24e044825009c623d0bcb"
+  },
+  "model_requested": "gpt-6.1-sol",
+  "effort_requested": "high",
+  "model_effective": null,
+  "receipt_ref": null,
+  "target": "https://demo-repair-app.scannara.asia",
+  "observed_utc": "2026-11-17T05:17:57.264934+00:00",
+  "summary": "Independent exact-release production read-only QA PASS: legacy business fields, one tenant,19FK, backup/env/key/uploads, real Chrome auth/modules/documents/guest tracking/PDF, baseline reports and independent SQL/UI totals. Only framework auth cache/sessions/one remember_token changed; no business mutation. Nginx log inaccessible without sudo, explicitly not checked; Laravel logs empty and browser errors zero.",
+  "evidence": [
+    "docs/evidence/SAAS/S011/A1/README.md",
+    "docs/evidence/SAAS/S011/A1/data-before.json",
+    "docs/evidence/SAAS/S011/A1/data-after.json",
+    "docs/evidence/SAAS/S011/A1/browser.json",
+    "docs/evidence/SAAS/S011/A1/guest-invoice.json",
+    "docs/evidence/SAAS/S011/A1/operations.json",
+    "docs/evidence/SAAS/S011/A1/offsite.json",
+    "docs/evidence/SAAS/S011/A1/secret-scan.json",
+    "docs/evidence/SAAS/S011/A1/manifest.json"
+  ],
+  "not_run": [
+    "Nginx server error log: account lacks read access; no sudo used",
+    "Physical Android/printer",
+    "New production business transactions",
+    "Technician credential login",
+    "Second tenant/pilot S012",
+    "Ongoing daily backup scheduling/monitoring"
+  ]
+}

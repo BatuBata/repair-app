@@ -1,0 +1,128 @@
+{
+    "verdict": "pass",
+    "utc": "2026-11-17T05:02:50+00:00",
+    "version": "10.11.14-MariaDB-0+deb12u2-log",
+    "app_timezone": "Asia\/Makassar",
+    "db_timezone": {
+        "session_tz": "SYSTEM",
+        "system_tz": "WIB"
+    },
+    "tenant_count": 1,
+    "tenant_active": true,
+    "tenant_identity_matches_store": true,
+    "roots": {
+        "users": {
+            "rows": 5,
+            "required": true,
+            "fk": true,
+            "violations": 0
+        },
+        "categories": {
+            "rows": 10,
+            "required": true,
+            "fk": true,
+            "violations": 0
+        },
+        "service_orders": {
+            "rows": 13,
+            "required": true,
+            "fk": true,
+            "violations": 0
+        },
+        "products": {
+            "rows": 1,
+            "required": true,
+            "fk": true,
+            "violations": 0
+        },
+        "sales": {
+            "rows": 1,
+            "required": true,
+            "fk": true,
+            "violations": 0
+        },
+        "expenses": {
+            "rows": 0,
+            "required": true,
+            "fk": true,
+            "violations": 0
+        },
+        "number_sequences": {
+            "rows": 2,
+            "required": true,
+            "fk": true,
+            "violations": 0
+        },
+        "store_settings": {
+            "rows": 1,
+            "required": true,
+            "fk": true,
+            "violations": 0
+        }
+    },
+    "scoped_models_equal": 7,
+    "foreign_keys_checked": 19,
+    "orphan_violations": 0,
+    "cross_tenant_violations": 0,
+    "legacy_tables_identical": 18,
+    "sessions_excluded_symmetrically": true,
+    "legacy_inventory_projection_sha256": "eec585f3ddf1e1514f696f9d4130b07b1f96a713042f99c711da37e763505d71",
+    "legacy_counts": {
+        "cache": 38,
+        "cache_locks": 0,
+        "categories": 10,
+        "expenses": 0,
+        "failed_jobs": 0,
+        "job_batches": 0,
+        "jobs": 0,
+        "number_sequences": 2,
+        "passkeys": 0,
+        "password_reset_tokens": 0,
+        "products": 1,
+        "sale_items": 1,
+        "sales": 1,
+        "service_order_items": 7,
+        "service_orders": 13,
+        "stock_entries": 0,
+        "store_settings": 1,
+        "users": 5
+    },
+    "report_baseline_sha256": "db3934926ad86c3c0cf4f52fc2184c640d952216693be38c5da570c06f60ddaf",
+    "baseline_reports_identical": true,
+    "reports": {
+        "month": {
+            "from": "2026-11-01",
+            "to": "2026-11-17",
+            "totals": {
+                "service": "625001",
+                "sales": "570000",
+                "revenue": "1195001",
+                "cost": "830000",
+                "gross": "365001",
+                "expenses": "0",
+                "net": "365001",
+                "restock": "0"
+            },
+            "sql_app_equal": true
+        },
+        "today": {
+            "from": "2026-11-17",
+            "to": "2026-11-17",
+            "totals": {
+                "service": "300000",
+                "sales": "0",
+                "revenue": "300000",
+                "cost": "100000",
+                "gross": "200000",
+                "expenses": "0",
+                "net": "200000",
+                "restock": "0"
+            },
+            "sql_app_equal": true
+        }
+    },
+    "migration": "2026_11_17_000000_add_tenant_foundation",
+    "migration_batch": 2,
+    "key_preserved": true,
+    "logo_path_present": false
+}

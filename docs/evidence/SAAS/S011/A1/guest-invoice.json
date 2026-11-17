@@ -1,0 +1,20 @@
+{
+  "observed_utc": "2026-11-17T05:08:33.422Z",
+  "browser": "Google Chrome",
+  "raw_customer_data_saved": false,
+  "raw_pdf_saved": false,
+  "guest_tracking": {
+    "status": 200,
+    "owner_store_match": true,
+    "existing_invoiced_order_match": true,
+    "no_auth_context": true
+  },
+  "guest_pdf": {
+    "status": 200,
+    "bytes": 23866,
+    "sha256": "c2189f1d2749d59f5b58fed022c7b8449fb08539165c0a6848607e1a24fc4a35",
+    "content_type": "application/pdf",
+    "pdf_signature": true
+  },
+  "verdict": "pass"
+}

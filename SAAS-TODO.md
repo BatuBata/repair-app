@@ -33,7 +33,7 @@ Goal aktif 17 November 2026 mengizinkan eksekusi S001–S012. Deployment produks
 | S009 | QA independen rehearsal backup, migrasi, dan rollback | tester / 6.1-sol | complex / high | S008 | — | done |
 | S010 | Deploy dan migrasikan Anugerah ke schema tenant | deployer / 6.1-sol | medium / high | S006, S007, S009 | — | done |
 | S011 | Verifikasi independen produksi setelah migrasi | tester / 6.1-sol | medium / high | S010 | — | done |
-| S012 | Onboard dan verifikasi pilot client kedua | tester / 6.1-sol | medium / high | S010, S011 | — | running |
+| S012 | Onboard dan verifikasi pilot client kedua | tester / 6.1-sol | medium / high | S010, S011 | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Urutan minimum
@@ -61,7 +61,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
-      "state": "running",
+      "state": "stopped",
       "allowed_tasks": [
         "S001",
         "S002",
@@ -111,7 +111,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         "id": "saas-production-2026-11-17",
         "environment": "production",
         "scope": "deployment",
-        "source_ref": "User17Nov2026 explicitly activates Goal to execute every task S001–S012, including S010 deployment. Authorization remains conditional on S007/S009 PASS, offsite backup with proven restore, maintenance gate, and non-destructive rollback."
+      "source_ref": "User17Nov2026 Goal completed through stop-after S012 after RF Samarinda pilot PASS; no further task is authorized by this run."
       }
     ]
   },
@@ -155,7 +155,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "acceptance_tasks": [
         "S012"
       ],
-      "status": "pending"
+      "status": "accepted"
     }
   ],
   "tasks": [
@@ -1256,7 +1256,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "verification_plan": [
         "Operator menjalankan onboarding dengan credential melalui kanal privat; tester menguji alur inti kedua tenant dan percobaan akses silang tanpa menyalin data customer ke evidence."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -1266,10 +1266,28 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native-codex:S012:A1",
-          "outcome": "running",
-          "receipt_ref": null
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/SAAS/S012/A1/README.md"
         }
-      ]
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/SAAS/S012/A1/README.md",
+        "revision": "sha256:4daa6da7c84ca0e0234c4afbb7f344bce4606dc55794908e195a161ab0237d33",
+        "checked_revision": "sha256:6b01398fbd10ba0196919655f94c9f26917e906fedbef562abb94eec2c6549cd",
+        "inputs": {
+          "S010": "99f64bf59ff1489825333aa821015a281db611ea",
+          "S011": "sha256:984d1bfd0897b4ebb17f103888e593264fb80268103be70ff559d042c2867d21"
+        },
+        "evidence": [
+          "docs/evidence/SAAS/S012/A1/README.md",
+          "docs/evidence/SAAS/S012/A1/result.json",
+          "docs/evidence/SAAS/S012/A1/browser.json",
+          "docs/evidence/SAAS/S012/A1/manifest.sha256",
+          "docs/evidence/SAAS/S012/A1/secret-scan.txt"
+        ],
+        "summary": "Pilot RF Samarinda lulus pada produksi: tenant kedua dibuat sekali melalui tenant:create, owner/pengaturan/kategori/teknisi tersedia, dan alur TTS, dokumen, tracking, stok, penjualan, laporan serta dua sesi browser terisolasi. Semua row pilot berada di tenant 2; 19 FK tanpa orphan, akses silang ditolak, credential teknisi tetap privat, dan tidak ada fitur/infrastruktur baru."
+      }
     }
   ]
 }

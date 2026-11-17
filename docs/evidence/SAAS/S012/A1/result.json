@@ -1,0 +1,68 @@
+{
+  "verdict": "pass",
+  "release_revision": "99f64bf59ff1489825333aa821015a281db611ea",
+  "requested_model": "gpt-6.1-sol high",
+  "effective_model": "not_claimed_no_receipt",
+  "tenant_count": 2,
+  "pilot_tenant_id": 2,
+  "pilot": {
+    "store": "RF Samarinda",
+    "owner_username": "fahad",
+    "technician_username": "teknisi-rf",
+    "category": "HP",
+    "users": 2,
+    "categories": 1,
+    "products": 1,
+    "sales": 1,
+    "service_orders": 1,
+    "stock_after_sale": 4,
+    "report": {
+      "service": "50000",
+      "sales": "20000",
+      "revenue": "70000",
+      "cost": "10000",
+      "gross": "60000",
+      "sql_app_equal": true
+    }
+  },
+  "isolation": {
+    "root_null_tenant_ids": 0,
+    "root_unknown_tenant_ids": 0,
+    "foreign_keys_checked": 19,
+    "orphans": 0,
+    "cross_tenant_relation_mismatches": 0,
+    "scoped_model_counts_match_raw_for_both_tenants": true,
+    "direct_cross_tenant_urls_rejected_both_directions": true,
+    "browser_store_identity_isolated": true,
+    "tracking_and_documents_rf_branding": true,
+    "tracking_and_documents_legacy_brand_absent": true
+  },
+  "technician_login": {
+    "result": "pass",
+    "role_redirect": "/tts/baru",
+    "business_write": false
+  },
+  "credential_file": {
+    "path": "/home/muzib/deploy-demo-repair-app/pilot-rf-samarinda-credentials.txt",
+    "mode": "600",
+    "sha256": "715342c66faafbcfc112bf130a65f15102d13aa280e78a989664b515779171ee",
+    "secret_in_evidence": false
+  },
+  "runtime": {
+    "browser_console_errors": 0,
+    "browser_page_errors": 0,
+    "browser_failed_requests": 0,
+    "unexpected_http_errors": 0,
+    "new_relevant_laravel_log_errors": 0,
+    "maintenance_marker": "absent",
+    "deploy_marker": "absent"
+  },
+  "legacy_activity_note": {
+    "claim_unchanged": false,
+    "reason": "Client aktif; frozen S010/S011 bukan baseline immutable S012.",
+    "observed": "Tenant 1 tetap 13 service orders; service order dan item hash berbeda dari frozen reference.",
+    "attribution": "Concurrent client activity; tidak dapat diatribusikan ke pilot.",
+    "pilot_rows_in_tenant_1": 0
+  },
+  "product_feedback": "Onboarding dan core flow selesai memakai fitur existing: pengaturan toko, kategori, pengguna, stok, penjualan, TTS, nota, dokumen, tracking, dan laporan. Tidak membutuhkan fitur baru atau backlog spekulatif."
+}

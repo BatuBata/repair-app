@@ -1,0 +1,200 @@
+{
+  "utc": "2026-11-17T08:32:12.902Z",
+  "verdict": "pass",
+  "checks": [
+    {
+      "id": "separate-owner-logins",
+      "result": "pass",
+      "rf_store": "RF Samarinda",
+      "legacy_store_hash": "57ef7c0898496e69a4ae00ada7ef608620a2a696e095a4e7ae10efe19ad948ce",
+      "separate_contexts": true
+    },
+    {
+      "id": "store-settings",
+      "result": "pass",
+      "name": "RF Samarinda",
+      "address_empty": true,
+      "phone_empty": true,
+      "default_warranty_preserved": true
+    },
+    {
+      "id": "category-hp",
+      "result": "pass",
+      "category": "HP",
+      "active": true
+    },
+    {
+      "id": "technician-create",
+      "result": "pass",
+      "username": "teknisi-rf",
+      "role": "teknisi",
+      "credential_path": "/home/muzib/deploy-demo-repair-app/pilot-rf-samarinda-credentials.txt",
+      "credential_mode": "600",
+      "credential_sha256": "715342c66faafbcfc112bf130a65f15102d13aa280e78a989664b515779171ee"
+    },
+    {
+      "id": "separate-owner-logins",
+      "result": "pass",
+      "rf_store": "RF Samarinda",
+      "legacy_store_hash": "57ef7c0898496e69a4ae00ada7ef608620a2a696e095a4e7ae10efe19ad948ce",
+      "separate_contexts": true
+    },
+    {
+      "id": "separate-owner-logins",
+      "result": "pass",
+      "rf_store": "RF Samarinda",
+      "legacy_store_hash": "57ef7c0898496e69a4ae00ada7ef608620a2a696e095a4e7ae10efe19ad948ce",
+      "separate_contexts": true
+    },
+    {
+      "id": "separate-owner-logins",
+      "result": "pass",
+      "rf_store": "RF Samarinda",
+      "legacy_store_hash": "57ef7c0898496e69a4ae00ada7ef608620a2a696e095a4e7ae10efe19ad948ce",
+      "separate_contexts": true
+    },
+    {
+      "id": "product-stock",
+      "result": "pass",
+      "product_created": true,
+      "initial_stock": 5,
+      "cost": 10000,
+      "price": 20000
+    },
+    {
+      "id": "sale",
+      "result": "pass",
+      "sale_created": true,
+      "qty": 1,
+      "total": 20000,
+      "path_shape": "/penjualan/{id}"
+    },
+    {
+      "id": "separate-owner-logins",
+      "result": "pass",
+      "rf_store": "RF Samarinda",
+      "legacy_store_hash": "57ef7c0898496e69a4ae00ada7ef608620a2a696e095a4e7ae10efe19ad948ce",
+      "separate_contexts": true
+    },
+    {
+      "id": "pilot-records-recovered",
+      "result": "pass",
+      "product_count": 1,
+      "sale_count": 1,
+      "tts_count": 1,
+      "paths_redacted": true
+    },
+    {
+      "id": "separate-owner-logins",
+      "result": "pass",
+      "rf_store": "RF Samarinda",
+      "legacy_store_hash": "57ef7c0898496e69a4ae00ada7ef608620a2a696e095a4e7ae10efe19ad948ce",
+      "separate_contexts": true
+    },
+    {
+      "id": "pilot-records-recovered",
+      "result": "pass",
+      "product_count": 1,
+      "sale_count": 1,
+      "tts_count": 1,
+      "paths_redacted": true
+    },
+    {
+      "id": "separate-owner-logins",
+      "result": "pass",
+      "rf_store": "RF Samarinda",
+      "legacy_store_hash": "57ef7c0898496e69a4ae00ada7ef608620a2a696e095a4e7ae10efe19ad948ce",
+      "separate_contexts": true
+    },
+    {
+      "id": "pilot-records-recovered",
+      "result": "pass",
+      "product_count": 1,
+      "sale_count": 1,
+      "tts_count": 1,
+      "paths_redacted": true
+    },
+    {
+      "id": "assign-invoice-authoritative",
+      "result": "pass",
+      "technician_assigned": true,
+      "invoice_lines": 1,
+      "invoice_total": 50000,
+      "status": "selesai",
+      "warranty_days": 30
+    },
+    {
+      "id": "rf-documents-tracking",
+      "result": "pass",
+      "authenticated_documents_200": 3,
+      "tracking_200": true,
+      "public_pdf_200": true,
+      "rf_branding": true,
+      "legacy_brand_absent": true,
+      "token_not_saved": true
+    },
+    {
+      "id": "cross-tenant-direct-urls",
+      "result": "pass",
+      "rf_to_legacy_tts": 404,
+      "legacy_to_rf_tts": 404,
+      "legacy_to_rf_sale": 404
+    },
+    {
+      "id": "separate-owner-logins",
+      "result": "pass",
+      "rf_store": "RF Samarinda",
+      "legacy_store_hash": "57ef7c0898496e69a4ae00ada7ef608620a2a696e095a4e7ae10efe19ad948ce",
+      "separate_contexts": true
+    },
+    {
+      "id": "pilot-records-recovered",
+      "result": "pass",
+      "product_count": 1,
+      "sale_count": 1,
+      "tts_count": 1,
+      "paths_redacted": true
+    },
+    {
+      "id": "assign-invoice-authoritative",
+      "result": "pass",
+      "technician_assigned": true,
+      "invoice_lines": 1,
+      "invoice_total": 50000,
+      "status": "selesai",
+      "warranty_days": 30
+    },
+    {
+      "id": "rf-documents-tracking",
+      "result": "pass",
+      "authenticated_documents_200": 3,
+      "tracking_200": true,
+      "public_pdf_200": true,
+      "rf_branding": true,
+      "legacy_brand_absent": true,
+      "token_not_saved": true
+    },
+    {
+      "id": "cross-tenant-direct-urls",
+      "result": "pass",
+      "rf_to_legacy_tts": 404,
+      "legacy_to_rf_tts": 404,
+      "legacy_to_rf_sale": 404
+    },
+    {
+      "id": "isolated-options-dashboards-reports",
+      "result": "pass",
+      "rf_option_hp_present": true,
+      "category_screen_store_identity": true,
+      "store_identity_per_context": true,
+      "dashboard_and_reports_isolated": true
+    }
+  ],
+  "console_errors": 0,
+  "page_errors": 0,
+  "failed_requests": 0,
+  "unexpected_http": [],
+  "raw_secrets_saved": false,
+  "raw_customer_data_saved": false,
+  "finished_utc": "2026-11-17T08:32:21.251Z"
+}

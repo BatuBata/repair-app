@@ -1,0 +1,30 @@
+{
+    "actual_local_secrets_found_in_delivery": false,
+    "hit_files": [],
+    "files_scanned": 19,
+    "private_runtimes": [
+        {
+            "path": "/private/tmp/saas-s008-a1",
+            "exists": true,
+            "client_cnf_removed": true
+        },
+        {
+            "path": "/private/tmp/saas-s008-a1-run",
+            "exists": true,
+            "client_cnf_removed": true
+        },
+        {
+            "path": "/private/tmp/saas-s008-a1-verified",
+            "exists": true,
+            "client_cnf_removed": true
+        },
+        {
+            "path": "/private/tmp/saas-s008-a1-final",
+            "exists": true,
+            "client_cnf_removed": true
+        }
+    ],
+    "databases_retained": "15 new synthetic S008 databases (a1, a1b, a1c sets); none dropped/reset",
+    "generated_python_cache_removed": true,
+    "production_connected": false
+}

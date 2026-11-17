@@ -1,0 +1,45 @@
+{
+  "verdict": "pass",
+  "role": "developer self-check; independent QA required S009",
+  "artifact_ref": "docs/evidence/SAAS/S008/A1/README.md",
+  "revision": "sha256:066cd061d3b189d9873333a06e3ecf46a493469cc096715b1461b758157b8157",
+  "checked_revision": "sha256:066cd061d3b189d9873333a06e3ecf46a493469cc096715b1461b758157b8157",
+  "base_revision": "284f0acd310c2d2cb3500672d05b814faac7a425",
+  "inputs": {
+    "S007": "sha256:6ba364a204d98ac1d9754182d2a4fd1c54de6f940d7341ad88bef207aea74ad4",
+    "software": "sha256:066bb9e82bd3ac5142a1ef516fc46c862c7e3b1b2cbc28ee4eb0a8ab402996f6"
+  },
+  "model_requested": "gpt-6.1-sol",
+  "effort_requested": "high",
+  "model_effective": null,
+  "receipt_ref": null,
+  "evidence": [
+    "docs/evidence/SAAS/S008/A1/README.md",
+    "docs/evidence/SAAS/S008/A1/candidate.json",
+    "docs/evidence/SAAS/S008/A1/ci-safety.log",
+    "docs/evidence/SAAS/S008/A1/cleanup.json",
+    "docs/evidence/SAAS/S008/A1/deploy-safety.log",
+    "docs/evidence/SAAS/S008/A1/diff-check.log",
+    "docs/evidence/SAAS/S008/A1/input-check.json",
+    "docs/evidence/SAAS/S008/A1/migration-test.log",
+    "docs/evidence/SAAS/S008/A1/phpstan.log",
+    "docs/evidence/SAAS/S008/A1/pint-format.log",
+    "docs/evidence/SAAS/S008/A1/pint.log",
+    "docs/evidence/SAAS/S008/A1/rehearsal-harness-initial.log",
+    "docs/evidence/SAAS/S008/A1/rehearsal-initial.log",
+    "docs/evidence/SAAS/S008/A1/rehearsal-schema-normalization.log",
+    "docs/evidence/SAAS/S008/A1/rehearsal.log",
+    "docs/evidence/SAAS/S008/A1/rehearsal.php",
+    "docs/evidence/SAAS/S008/A1/runbook-inventory.log",
+    "docs/evidence/SAAS/S008/A1/runbook-negative-checks.json",
+    "docs/evidence/SAAS/S008/A1/scope-check.json"
+  ],
+  "summary": "Isolated synthetic MySQL dump/copy/upload/restore/SaaS migration and complete old-business-field preservation pass; single-tenant down/reapply, second-tenant guard, corrupt/partial restore, injected backfill failure and fresh-DB recovery pass. Existing deploy scripts reused unchanged. MariaDB and actual off-machine backup remain S009/S010 gates.",
+  "not_run": [
+    "MariaDB 10.11 actual target/client",
+    "real off-VPS transfer and production restore",
+    "Linux receiver integration/GNU tar packager on Mac",
+    "production/server connection, deployment, cron, physical devices",
+    "unchanged S007 full regression/build"
+  ]
+}

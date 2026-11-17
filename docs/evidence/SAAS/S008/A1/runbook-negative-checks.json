@@ -1,0 +1,7 @@
+{
+  "wrong_database_exit_1": true,
+  "tampered_baseline_exit_1": true,
+  "valid_legacy_comparison_exit_0": true,
+  "database_mutations": false,
+  "result": "pass"
+}

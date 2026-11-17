@@ -1,0 +1,2 @@
+{"case":"preflight","databases_absent":{"source":"saas_s008_20261117_a1_source","target":"saas_s008_20261117_a1_target","failed":"saas_s008_20261117_a1_failed","recovery":"saas_s008_20261117_a1_recovery","sqlfail":"saas_s008_20261117_a1_sqlfail"},"server":"8.0.31","result":"pass"}
+{"result":"fail","stage":"legacy","exception":"Illuminate\\Database\\QueryException","private_diagnostic":"/private/tmp/saas-s008-a1-run/private-error.log"}

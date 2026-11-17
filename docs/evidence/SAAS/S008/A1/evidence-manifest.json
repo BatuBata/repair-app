@@ -1,0 +1,85 @@
+{
+  "algorithm": "SHA256 per file; evidence-manifest.json excluded from itself",
+  "files": [
+    {
+      "path": "docs/evidence/SAAS/S008/A1/README.md",
+      "sha256": "61265d399da32eb0790cbefa4d9a0d1e85a2afc60157d319044ccb9004846db9"
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A1/candidate.json",
+      "sha256": "67cd7bd9320af5416b99467093a56dcb937f063358c35728d09ece45792488a0"
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A1/ci-safety.log",
+      "sha256": "c98955ca1b04029408b7ecdaa17aad7404c9a0863e8baec52d768de1e9d58af3"
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A1/cleanup.json",
+      "sha256": "8f4783019bb5a33974ac7e0d11703d944c35685dc24f87088ef88c0da2ebd4b2"
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A1/deploy-safety.log",
+      "sha256": "e562327bd644c903a616b8d7c23b487b192298a9843058970321f6c1fa7753b8"
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A1/diff-check.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A1/input-check.json",
+      "sha256": "4554f1b71eb23e8377e500b6b85b507f137068f68ef1b2bcce12db0fb5c653f0"
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A1/migration-test.log",
+      "sha256": "7f4811e92e67b9dd4e06a42e72e527c8a62b9473150cf64e79a4d1087ed7af3e"
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A1/phpstan.log",
+      "sha256": "c10f74fb840de989bba7e9c2dfee7f8419b5d2ac0cc0daf18a4a187f6530aa43"
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A1/pint-format.log",
+      "sha256": "2888f442ff558819bdcc33f78d07e8d018f11df384e283e205caf340429f2d9a"
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A1/pint.log",
+      "sha256": "cd1a94fc2cf6a965b86e1a4809d6c7fb9148b1ee374e1010ed2ac96ff4876ec2"
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A1/rehearsal-harness-initial.log",
+      "sha256": "0c600702d8f8ac0a4026f00a95b65ab5724f492e4b788e42edcf91645f6ac112"
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A1/rehearsal-initial.log",
+      "sha256": "30c7b22626944b0fd1bdb32db3f4fadff6edacca0356296989b87a9f5a5a923d"
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A1/rehearsal-schema-normalization.log",
+      "sha256": "879645203e202cc25aaec094271774147789698a6673dcb3d8308fe634a1ac23"
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A1/rehearsal.log",
+      "sha256": "637a278021d9b31f86a45c3064c9919815766d78512898af4c7e32a1243bdb9a"
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A1/rehearsal.php",
+      "sha256": "1c7eb41a34cbac1e58eee06fda4dc0d78604fd6fdfe8c9d625a5a700c018ab9c"
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A1/result.json",
+      "sha256": "6fbb98c5d98616eaa9fd2f2a3181b10b209f70876f9e9747ec11d803fabbdd5e"
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A1/runbook-inventory.log",
+      "sha256": "b9311c0fe6a9bf80e8682407fbd65b667f7243f385a24769a3d564deec0f42e5"
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A1/runbook-negative-checks.json",
+      "sha256": "20d72ba0189804c490c16a6a89ab650aa92a523d40ed58ab9ed46843025edfef"
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A1/scope-check.json",
+      "sha256": "e84894db4cd4d28304ff417df7f13e08254d51e0b1b046a1ca76ff7c2ff46a4f"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "changed_delivery_files": [
+    "docs/SAAS-MIGRATION-RUNBOOK.md",
+    "tests/Feature/Tenancy/MigrationTest.php",
+    "docs/evidence/SAAS/S008/A1/**"
+  ],
+  "existing_deploy_files_changed": [],
+  "dependency_or_application_source_changed": false,
+  "candidate_files_reverified": 260,
+  "whitespace_errors": [],
+  "ledger_edited_by_worker": false,
+  "commit_push_deploy_performed": false
+}

@@ -1,0 +1,39 @@
+{
+  "verdict": "blocked",
+  "artifact_ref": "docs/evidence/SAAS/S010/A1/README.md",
+  "revision": "f7b6804bb3d67e8f56060bcea61092e1dbf10301",
+  "checked_revision": "f7b6804bb3d67e8f56060bcea61092e1dbf10301",
+  "inputs": {
+    "S007": "sha256:6ba364a204d98ac1d9754182d2a4fd1c54de6f940d7341ad88bef207aea74ad4",
+    "S009": "sha256:ce45314d50e2a865026fab4ee75736fa3833e90b070990880adac047a0631c58"
+  },
+  "utc": "2026-11-17T03:46:51Z",
+  "target": "muzib@202.10.40.165:/var/www/demo-repair-app/current",
+  "production_revision_observed": "a03f6f1e2becd1f3168d475eae3a66ce2565cdb6",
+  "production_mutated": false,
+  "maintenance_started": false,
+  "model_requested": "gpt-6.1-sol",
+  "effort_requested": "high",
+  "model_effective": null,
+  "receipt_ref": null,
+  "blocker": {
+    "classification": "CI gate",
+    "run_id": 44012276104,
+    "url": "https://github.com/BatuBata/repair-app/actions/runs/44012276104",
+    "conclusion": "failure",
+    "test": "Tests\\Feature\\Domain\\MySqlConcurrencyTest",
+    "error": "LogicException: Tenant aktif belum ditetapkan.",
+    "location": "app/Support/TenantContext.php:24",
+    "passed": 219,
+    "failed": 1,
+    "assertions": 2398
+  },
+  "evidence": ["docs/evidence/SAAS/S010/A1/README.md"],
+  "summary": "Read-only preflight stopped before maintenance because exact candidate branch CI failed. No production code, schema, data, environment, marker or app state changes; no merge/push. Coordinator notified and directed checkpoint closure.",
+  "not_run": [
+    "Live DB engine/server version/InnoDB/migration absence and private inventory",
+    "Production backup, off-VPS copy and isolated restore",
+    "Merge main, packaging, manual deployment and migration",
+    "HTTPS, authenticated smoke and post-deployment acceptance"
+  ]
+}

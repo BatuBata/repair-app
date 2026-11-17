@@ -27,11 +27,11 @@ Goal aktif 17 November 2026 mengizinkan eksekusi S001–S012. Deployment produks
 | S003 | Jadikan auth, pengguna, pengaturan, dan onboarding tenant-aware | developer / 6.1-sol | medium / high | S002 | — | done |
 | S004 | Isolasi alur servis, dokumen, dan tracking | developer / 6.1-sol | complex / high | S003 | — | done |
 | S005 | Isolasi stok, penjualan, pengeluaran, dashboard, dan laporan | developer / 6.1-sol | complex / high | S004 | — | done |
-| S006 | Integrasikan candidate Lean SaaS | integrator / 6.1-sol | medium / high | S003, S004, S005 | — | done |
-| S007 | QA independen keamanan tenant dan regresi aplikasi | tester / 6.1-sol | complex / high | S006 | — | done |
-| S008 | Siapkan runbook dan rehearsal migrasi Anugerah | developer / 6.1-sol | medium / high | S007 | — | done |
-| S009 | QA independen rehearsal backup, migrasi, dan rollback | tester / 6.1-sol | complex / high | S008 | — | done |
-| S010 | Deploy dan migrasikan Anugerah ke schema tenant | deployer / 6.1-sol | medium / high | S006, S007, S009 | — | running |
+| S006 | Integrasikan candidate Lean SaaS | integrator / 6.1-sol | medium / high | S003, S004, S005 | — | running |
+| S007 | QA independen keamanan tenant dan regresi aplikasi | tester / 6.1-sol | complex / high | S006 | — | pending |
+| S008 | Siapkan runbook dan rehearsal migrasi Anugerah | developer / 6.1-sol | medium / high | S007 | — | pending |
+| S009 | QA independen rehearsal backup, migrasi, dan rollback | tester / 6.1-sol | complex / high | S008 | — | pending |
+| S010 | Deploy dan migrasikan Anugerah ke schema tenant | deployer / 6.1-sol | medium / high | S006, S007, S009 | — | blocked |
 | S011 | Verifikasi independen produksi setelah migrasi | tester / 6.1-sol | medium / high | S010 | — | pending |
 | S012 | Onboard dan verifikasi pilot client kedua | tester / 6.1-sol | medium / high | S010, S011 | — | pending |
 <!-- END GENERATED VIEW -->
@@ -127,7 +127,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "acceptance_tasks": [
         "S007"
       ],
-      "status": "accepted"
+      "status": "pending"
     },
     {
       "id": "SD2",
@@ -626,7 +626,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "verification_plan": [
         "Review commit/diff, konflik, daftar file, schema, dependency, dan secret; jalankan formatter, static checks, build, serta suite software lengkap pada candidate gabungan."
       ],
-      "status": "done",
+      "status": "running",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -638,9 +638,19 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "dispatch_ref": "native-codex:S006:A1",
           "outcome": "pass",
           "receipt_ref": "docs/evidence/SAAS/S006/A1/README.md"
+        },
+        {
+          "id": "A2",
+          "kind": "implementation",
+          "worker_id": "/root/s006_ci_fix",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native-codex:S006:A2",
+          "outcome": "running",
+          "receipt_ref": null
         }
       ],
-      "result": {
+      "prior_results": [{
         "verdict": "pass",
         "artifact_ref": "docs/evidence/SAAS/S006/A1/README.md",
         "revision": "sha256:066bb9e82bd3ac5142a1ef516fc46c862c7e3b1b2cbc28ee4eb0a8ab402996f6",
@@ -657,7 +667,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "docs/evidence/SAAS/S006/A1/candidate.json"
         ],
         "summary": "Candidate gabungan Lean SaaS memiliki satu pin immutable; 216 tes lulus, satu test historis terkontrol skipped, formatter, static analysis, build, dan migrasi SQLite bersih lulus tanpa dependency atau fitur platform baru."
-      }
+      }]
     },
     {
       "id": "S007",
@@ -705,7 +715,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         "Jalankan suite penuh pada SQLite dan test tenant/konkurensi pada MariaDB/MySQL khusus; audit query raw/global-scope bypass dan Livewire payload.",
         "Smoke browser tenant A/B pada alur login, TTS, stok, laporan, dokumen, dan tracking."
       ],
-      "status": "done",
+      "status": "pending",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -719,7 +729,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "receipt_ref": "docs/evidence/SAAS/S007/A1/README.md"
         }
       ],
-      "result": {
+      "prior_results": [{
         "verdict": "pass",
         "artifact_ref": "docs/evidence/SAAS/S007/A1/README.md",
         "revision": "sha256:6ba364a204d98ac1d9754182d2a4fd1c54de6f940d7341ad88bef207aea74ad4",
@@ -735,7 +745,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "docs/evidence/SAAS/S007/A1/security-browser.json"
         ],
         "summary": "QA independen kandidat S006 lulus: suite lengkap, migrasi/backfill/rollback dan konkurensi MySQL terisolasi, 45 kasus browser dua tenant, replay payload asing, tenant nonaktif, dan public tracking terbukti aman."
-      }
+      }]
     },
     {
       "id": "S008",
@@ -785,7 +795,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         "Rehearsal otomatis pada database khusus dari fixture representatif; bandingkan inventaris dan checksum sebelum/sesudah/restore.",
         "Review command untuk target eksplisit, redaksi secret, idempotensi aman, dan failure injection pada titik backfill."
       ],
-      "status": "done",
+      "status": "pending",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -887,7 +897,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "verification_plan": [
         "Ulangi runbook dari awal pada database bersih, periksa checksum/inventaris/log teredaksi, lalu jalankan smoke fitur pada hasil restore dan hasil migrasi."
       ],
-      "status": "done",
+      "status": "pending",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -1007,7 +1017,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "verification_plan": [
         "Catat commit, target, backup receipt, migration output teredaksi, inventaris sebelum/sesudah, health check, dan keputusan rollback/lanjut."
       ],
-      "status": "running",
+      "status": "blocked",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -1017,10 +1027,28 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native-codex:S010:A1",
-          "outcome": "running",
-          "receipt_ref": null
+          "outcome": "blocked",
+          "receipt_ref": "docs/evidence/SAAS/S010/A1/README.md"
         }
-      ]
+      ],
+      "result": {
+        "verdict": "blocked",
+        "artifact_ref": "docs/evidence/SAAS/S010/A1/README.md",
+        "revision": "sha256:8f59739afbf03eb14aaa8d98ed2448bf34aec81bb50922ea07b2d919f2a31ce1",
+        "checked_revision": "f7b6804bb3d67e8f56060bcea61092e1dbf10301",
+        "inputs": {
+          "S006": "sha256:066bb9e82bd3ac5142a1ef516fc46c862c7e3b1b2cbc28ee4eb0a8ab402996f6",
+          "S007": "sha256:6ba364a204d98ac1d9754182d2a4fd1c54de6f940d7341ad88bef207aea74ad4",
+          "S009": "sha256:332c5e7cefb7e3bd227a581c71f84a5a5b5908cec9083c7afccdc28cde1101de"
+        },
+        "evidence": [
+          "docs/evidence/SAAS/S010/A1/README.md",
+          "docs/evidence/SAAS/S010/A1/result.json",
+          "https://github.com/BatuBata/repair-app/actions/runs/44012276104"
+        ],
+        "failure_class": "product",
+        "summary": "Preflight berhenti sebelum maintenance karena CI kandidat gagal pada MySqlConcurrencyTest: proses worker belum menetapkan TenantContext. Produksi tetap online dan tidak berubah; backup, merge, migrasi, dan deployment belum dimulai."
+      }
     },
     {
       "id": "S011",

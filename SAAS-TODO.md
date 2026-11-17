@@ -31,7 +31,7 @@ Goal aktif 17 November 2026 mengizinkan eksekusi S001–S012. Deployment produks
 | S007 | QA independen keamanan tenant dan regresi aplikasi | tester / 6.1-sol | complex / high | S006 | — | done |
 | S008 | Siapkan runbook dan rehearsal migrasi Anugerah | developer / 6.1-sol | medium / high | S007 | — | done |
 | S009 | QA independen rehearsal backup, migrasi, dan rollback | tester / 6.1-sol | complex / high | S008 | — | done |
-| S010 | Deploy dan migrasikan Anugerah ke schema tenant | deployer / 6.1-sol | medium / high | S006, S007, S009 | — | pending |
+| S010 | Deploy dan migrasikan Anugerah ke schema tenant | deployer / 6.1-sol | medium / high | S006, S007, S009 | — | running |
 | S011 | Verifikasi independen produksi setelah migrasi | tester / 6.1-sol | medium / high | S010 | — | pending |
 | S012 | Onboard dan verifikasi pilot client kedua | tester / 6.1-sol | medium / high | S010, S011 | — | pending |
 <!-- END GENERATED VIEW -->
@@ -976,6 +976,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "deployment": {
         "environment": "production",
         "source_task": "S006",
+        "source_revision": "sha256:066bb9e82bd3ac5142a1ef516fc46c862c7e3b1b2cbc28ee4eb0a8ab402996f6",
         "authorization_ref": "saas-production-2026-11-17"
       },
       "write_scope": [
@@ -1006,7 +1007,20 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "verification_plan": [
         "Catat commit, target, backup receipt, migration output teredaksi, inventaris sebelum/sesudah, health check, dan keputusan rollback/lanjut."
       ],
-      "status": "pending"
+      "status": "running",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root/s010_deploy",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native-codex:S010:A1",
+          "outcome": "running",
+          "receipt_ref": null
+        }
+      ]
     },
     {
       "id": "S011",
@@ -1142,7 +1156,6 @@ Ide dipindahkan menjadi task hanya bila ada client nyata yang membutuhkan dan us
 
 | ID | Pertanyaan/blocker | Dampak | Menghambat |
 |---|---|---|---|
-| Q-S03 | Tentukan lokasi backup offsite dan maintenance window | Wajib sebelum menyentuh data client | S010 |
 | Q-S04 | Berikan identitas client kedua dan izin onboarding melalui kanal privat | Diperlukan untuk pilot nyata | S012 |
 
 ## Log keputusan
@@ -1153,3 +1166,4 @@ Ide dipindahkan menjadi task hanya bila ada client nyata yang membutuhkan dan us
 | 16 Nov 2026 | Gunakan Lean SaaS dan hindari fitur spekulatif | User menegaskan over-engineering sering menghasilkan fitur tidak perlu | Semua | User |
 | 17 Nov 2026 | TODO dibuat sebagai rencana saja; execution tetap planning | User meminta TODO, bukan implementasi atau deployment | Semua | User |
 | 17 Nov 2026 | Goal S001–S012 aktif; username unik global dan tracking lama untuk tenant nonaktif disetujui sesuai rekomendasi | User meminta mengerjakan semua TODO | S001–S012 | User |
+| 17 Nov 2026 | Window S010 dijalankan segera; salinan pra-migrasi disimpan privat di Mac operator minimal 14 hari dan wajib lulus checksum serta restore sebelum live diubah | Memenuhi gate off-VPS tanpa menambah layanan backup atau fitur baru | S010 | Goal user + runbook S008 |

@@ -71,7 +71,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T049 | Tambahkan pembayaran sederhana dan filter laporan | developer / 6.1-sol | medium / medium | T048 | — | done |
 | T050 | QA independen pembayaran dan filter laporan | tester / 6.1-sol | medium / medium | T049 | — | done |
 | T051 | Perbaiki daftar bank yang terpotong di dialog pembayaran | developer / 6.1-terra | easy / low | T050 | — | done |
-| T052 | QA independen daftar bank dalam dialog pembayaran | tester / 6.1-terra | easy / low | T051 | — | pending |
+| T052 | QA independen daftar bank dalam dialog pembayaran | tester / 6.1-terra | easy / low | T051 | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -154,9 +154,9 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "state": "stopped",
       "allowed_tasks": [],
       "stop_after_tasks": [
-        "T051"
+        "T052"
       ],
-      "source_ref": "User17Nov2026 reports bank choices clipped inside the payment dialog. T051 fixes the shared dialog/listbox layout locally; T052 independent QA and any push/deploy wait for a new instruction.",
+      "source_ref": "User17Nov2026 authorizes push and deploy after the clipped bank-list fix. T051 implementation and T052 independent QA are PASS; CI/CD D-23 remains the deployment gate.",
       "phase_history": [
         {
           "state": "paused",
@@ -6073,11 +6073,28 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "Tester tidak mengubah kode aplikasi, TODO, commit, push, atau deployment."
       ],
       "verification_plan": ["Audit CSS, tes terarah, build, dan browser HP/desktop."],
-      "status": "pending",
+      "status": "done",
       "qa_for": "T051",
-      "workspace": null,
-      "attempts": [],
-      "result": null
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "attempts": [{
+        "id": "A1",
+        "kind": "verification",
+        "worker_id": "/root/t052_bank_dialog_qa",
+        "model_requested": "gpt-6.1-terra",
+        "model_effective": null,
+        "dispatch_ref": "native-codex:T052:A1",
+        "outcome": "pass",
+        "receipt_ref": "docs/evidence/T052/A1/README.md"
+      }],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T052/A1/README.md",
+        "revision": "sha256:96866428db104f63b0a69a203df38d007a1b4df184941834e431fd44ba5517f1",
+        "checked_revision": "sha256:3e20dd33780404d0a27ef63b6fc1b125b9799a7e57dffa3b3798447f1c4bcde5",
+        "inputs": {"T051": "sha256:3e20dd33780404d0a27ef63b6fc1b125b9799a7e57dffa3b3798447f1c4bcde5"},
+        "evidence": ["docs/evidence/T052/A1/README.md"],
+        "summary": "QA independen PASS pada e8ebf10: 23 tes/134 assertion, build/view/diff, 9 bank termasuk BCA/Lainnya, scroll internal, tombol dialog, no overflow, dan search-select di luar dialog lulus pada browser HP/desktop sintetis."
+      }
     }
   ]
 }
@@ -6233,3 +6250,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-17 | User mengizinkan push dan deploy. Commit `1d8c2a9` dipush ke `main`; GitHub Actions run `44087631993` meluluskan CI dengan MariaDB 10.11, membuat artifact terpin, menjalankan migrasi aditif, dan deploy HTTPS. T050 diterima PASS; `/up` dan `/login` sama-sama HTTP 200. | Gate CI/CD D-23 memastikan hanya artifact commit yang lulus tes yang dipasang | T050,main,demo | User: push and deploy; GitHub Actions 44087631993; docs/evidence/T050/A1/README.md |
 
 | 2026-11-17 | T051 memperbaiki daftar bank yang terpotong dengan satu aturan CSS khusus dialog; seluruh pilihan dan tombol tetap terjangkau pada HP/desktop. Perubahan tetap lokal; T052 menunggu QA independen sebelum push berikutnya. | Screenshot user menunjukkan dropdown absolut dipotong batas modal | T051,T052 | User: pilihan bank tertutup, perbaiki; docs/evidence/T051/A1/README.md |
+
+| 2026-11-17 | T052 PASS pada `e8ebf10`: daftar bank dalam dialog dan search-select di luar dialog lulus browser HP/desktop sintetis. User mengizinkan push dan deploy; workflow CI/CD D-23 menjadi gate akhir. | QA independen menutup regresi visual sebelum deployment otomatis | T052,main,demo | User: push and deploy; docs/evidence/T052/A1/README.md |

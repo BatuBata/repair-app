@@ -8,14 +8,15 @@ Rencana ini mengubah aplikasi Anugerah menjadi aplikasi multi-toko dengan peruba
 
 Batas anti-over-engineering:
 
-- tidak membuat panel platform, billing, paket, trial, subdomain, plugin, feature flag, API, queue, atau microservice;
+- panel platform dibatasi pada login owner, daftar/buat tenant, dan aktif/nonaktifkan tenant;
+- tidak membuat billing, paket, trial, subdomain, impersonasi, analitik lintas tenant, plugin, feature flag, API, queue, atau microservice;
 - toko HP memakai kategori dan pengaturan existing, bukan modul baru;
 - tidak menambah dependency multi-tenancy;
 - hanya `S002` yang membuat migrasi schema SaaS;
 - pekerjaan dijalankan berurutan bila menyentuh fondasi tenant atau database yang sama;
 - deployment produksi dan migrasi data memerlukan izin terpisah, backup teruji, dan maintenance window.
 
-Goal aktif 17 November 2026 mengizinkan eksekusi S001–S012. Deployment produksi tetap mengikuti dependency, QA, backup/restore, dan maintenance gate di S010.
+Instruksi user 17 November 2026 mengizinkan implementasi S013–S016 pada branch SaaS. Deployment produksi belum diizinkan untuk perubahan ini.
 
 ## Overview pekerjaan
 
@@ -34,6 +35,10 @@ Goal aktif 17 November 2026 mengizinkan eksekusi S001–S012. Deployment produks
 | S010 | Deploy dan migrasikan Anugerah ke schema tenant | deployer / 6.1-sol | medium / high | S006, S007, S009 | — | done |
 | S011 | Verifikasi independen produksi setelah migrasi | tester / 6.1-sol | medium / high | S010 | — | done |
 | S012 | Onboard dan verifikasi pilot client kedua | tester / 6.1-sol | medium / high | S010, S011 | — | done |
+| S013 | Tetapkan kontrak panel owner SaaS minimum | planner / 6.1-sol | easy / high | S012 | — | done |
+| S014 | Bangun login dan pengelolaan tenant owner SaaS | developer / 6.1-sol | medium / high | S013 | — | running |
+| S015 | Integrasikan candidate panel owner SaaS | integrator / 6.1-sol | easy / medium | S014 | — | pending |
+| S016 | QA independen panel owner SaaS | tester / 6.1-sol | medium / high | S015 | — | pending |
 <!-- END GENERATED VIEW -->
 
 ## Urutan minimum
@@ -46,6 +51,7 @@ Goal aktif 17 November 2026 mengizinkan eksekusi S001–S012. Deployment produks
 | 4. Penerimaan software | S006 → S007 | Candidate gabungan dan QA independen |
 | 5. Migrasi produksi | S008 → S009 → S010 → S011 | Rehearsal, deployment berizin, dan smoke produksi |
 | 6. Pilot | S012 | Client kedua dibuat tanpa repo/database/deployment baru |
+| 7. Owner platform minimum | S013 → S014 → S015 → S016 | Login owner, daftar/buat tenant, dan status tenant lulus QA tanpa fitur tambahan |
 
 Walau beberapa caller dapat terlihat independen, rencana default menjalankannya berurutan karena semuanya memakai schema, fixture, dan kontrak tenant yang sama. Paralelisme hanya dibuka bila scope aktual terbukti tidak beririsan.
 
@@ -57,11 +63,11 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
   "project": {
     "id": "repair-app-saas",
     "prd_file": "docs/SAAS-RANCANGAN.md",
-    "prd_revision": "sha256:a2b342d0aabb9c1b9dbcf57668a5409b448b6df575dc1f571e568346b0b698c6",
+    "prd_revision": "sha256:155f85b1d80f8687201882bdd93bf26e2940f91f458cca0adc410411a3f22085",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
-      "state": "stopped",
+      "state": "running",
       "allowed_tasks": [
         "S001",
         "S002",
@@ -74,12 +80,16 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         "S009",
         "S010",
         "S011",
-        "S012"
+        "S012",
+        "S013",
+        "S014",
+        "S015",
+        "S016"
       ],
       "stop_after_tasks": [
-        "S012"
+        "S016"
       ],
-      "source_ref": "User17Nov2026 mengaktifkan Goal 'sekarang kerjakan semua todo SAAS-TODO.md'. Izin mencakup S001–S012, tetapi tidak menghapus gate dependency, QA, backup/restore, maintenance window, atau larangan tindakan destruktif."
+      "source_ref": "User17Nov2026 meminta dibuatkan tampilan owner admin SaaS dan menegaskan jangan over-engineering. Izin mencakup implementasi serta QA S013–S016 pada branch SaaS, bukan merge main atau deployment produksi."
     },
     "exclusive_resources": [
       "branch:saas-integration",
@@ -156,6 +166,18 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         "S012"
       ],
       "status": "accepted"
+    },
+    {
+      "id": "SD4",
+      "title": "Owner SaaS dapat mengelola client secara minimum",
+      "kind": "feature",
+      "prd_refs": [
+        "docs/SAAS-RANCANGAN.md §15"
+      ],
+      "acceptance_tasks": [
+        "S016"
+      ],
+      "status": "pending"
     }
   ],
   "tasks": [
@@ -1288,6 +1310,216 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         ],
         "summary": "Pilot RF Samarinda lulus pada produksi: tenant kedua dibuat sekali melalui tenant:create, owner/pengaturan/kategori/teknisi tersedia, dan alur TTS, dokumen, tracking, stok, penjualan, laporan serta dua sesi browser terisolasi. Semua row pilot berada di tenant 2; 19 FK tanpa orphan, akses silang ditolak, credential teknisi tetap privat, dan tidak ada fitur/infrastruktur baru."
       }
+    },
+    {
+      "id": "S013",
+      "title": "Tetapkan kontrak panel owner SaaS minimum",
+      "kind": "contract",
+      "responsible_role": "planner",
+      "work_type": "backend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "docs/SAAS-RANCANGAN.md §15"
+      ],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "high",
+      "uncertainty": "low",
+      "triage_reason": "Panel menyentuh autentikasi platform dan seluruh tenant sehingga batas akses harus diputuskan sebelum implementasi, tetapi scope produk sudah sempit dan jelas.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Sol untuk kontrak keamanan platform tanpa menambah arsitektur spekulatif.",
+      "depends_on": {
+        "hard": ["S012"],
+        "contracts": []
+      },
+      "write_scope": [
+        "docs/SAAS-RANCANGAN.md",
+        "docs/evidence/SAAS/S013/**"
+      ],
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Scope hanya login owner platform, daftar tenant, buat tenant dan owner pertama, serta aktif/nonaktifkan tenant.",
+        "Credential platform berasal dari konfigurasi server dan akses gagal tertutup bila belum tersedia.",
+        "Tidak ada schema, dependency, billing, paket, trial, impersonasi, analitik lintas tenant, hapus tenant, atau deployment."
+      ],
+      "verification_plan": [
+        "Review kontrak terhadap autentikasi, provisioning existing, isolasi tenant, dan aturan desain aplikasi."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "discovery",
+          "worker_id": "/root",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "user:platform-owner-minimal-2026-11-17",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/SAAS/S013/README.md"
+        }
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/SAAS/S013/README.md",
+        "revision": "sha256:155f85b1d80f8687201882bdd93bf26e2940f91f458cca0adc410411a3f22085",
+        "checked_revision": "sha256:155f85b1d80f8687201882bdd93bf26e2940f91f458cca0adc410411a3f22085",
+        "inputs": {
+          "S012": "sha256:4daa6da7c84ca0e0234c4afbb7f344bce4606dc55794908e195a161ab0237d33"
+        },
+        "evidence": [
+          "docs/evidence/SAAS/S013/README.md",
+          ".taste-skill/direction.json"
+        ],
+        "summary": "Kontrak panel owner dibatasi pada empat kemampuan inti, credential server fail-closed, reuse provisioning existing, dan tanpa schema, dependency, fitur langganan, atau deployment."
+      }
+    },
+    {
+      "id": "S014",
+      "title": "Bangun login dan pengelolaan tenant owner SaaS",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "backend",
+      "deliverable_id": "SD4",
+      "prd_refs": [
+        "docs/SAAS-RANCANGAN.md §15"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "high",
+      "uncertainty": "low",
+      "triage_reason": "Perubahan kecil secara produk tetapi login platform dan mutasi semua tenant berisiko tinggi bila session, validasi, atau transaksi salah.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Sol untuk autentikasi, session, transaksi provisioning, dan akses lintas tenant berisiko tinggi sekaligus UI terukur.",
+      "depends_on": {
+        "hard": [],
+        "contracts": ["S013"]
+      },
+      "write_scope": [
+        "app/Actions/CreateTenant.php",
+        "app/Console/Commands/CreateTenant.php",
+        "app/Http/Controllers/Platform/**",
+        "app/Http/Middleware/EnsurePlatformOwner.php",
+        "bootstrap/app.php",
+        "config/repair.php",
+        "routes/modules/platform.php",
+        "resources/views/platform/**",
+        "resources/css/layout.css",
+        "tests/Feature/Platform/**",
+        "tests/Feature/Tenancy/IdentityTest.php",
+        "docs/evidence/SAAS/S014/**"
+      ],
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Login platform terpisah, dibatasi percobaan, regenerasi session, tidak menerima user tenant, dan gagal tertutup tanpa credential server.",
+        "Dashboard hanya menampilkan identitas/status tenant serta owner pertama tanpa data bisnis tenant.",
+        "Form membuat tenant dan owner atomik memakai aturan validasi yang sama dengan tenant:create; password tidak dicatat atau ditampilkan ulang.",
+        "Owner platform dapat aktif/nonaktifkan tenant dengan CSRF; tracking publik existing tidak berubah.",
+        "Tampilan desktop dan ponsel mengikuti DESIGN.md/framed-sheet tanpa dependency, schema, atau fitur tambahan."
+      ],
+      "verification_plan": [
+        "Feature test credential tidak tersedia/salah/benar, throttle, session logout/fingerprint, akses tenant user ditolak, CSRF, daftar tanpa data bisnis, provisioning sukses/gagal/duplikat, toggle tenant, dan command regression.",
+        "Jalankan test terkait, formatter/static analysis existing, build frontend, lint/inspect app screen pada 1440/768/390, dan cek screenshot."
+      ],
+      "status": "running",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "implementation",
+          "worker_id": "/root/s014_platform_owner",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native-codex:S014:A1",
+          "outcome": "running",
+          "receipt_ref": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "id": "S015",
+      "title": "Integrasikan candidate panel owner SaaS",
+      "kind": "integration",
+      "responsible_role": "integrator",
+      "work_type": "general",
+      "deliverable_id": "SD4",
+      "prd_refs": [
+        "docs/SAAS-RANCANGAN.md §15"
+      ],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Satu candidate perlu dipin dan diperiksa terhadap branch SaaS sebelum QA independen; tidak ada merge main atau deployment.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Sol sebagai integrator branch dan gate keamanan sebelum QA.",
+      "depends_on": {
+        "hard": ["S014"],
+        "contracts": []
+      },
+      "write_scope": [
+        "docs/evidence/SAAS/S015/**"
+      ],
+      "shared_resources": [
+        {"name": "branch:saas-integration", "mode": "exclusive"}
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Candidate S014 berada pada revisi branch SaaS yang dipin tanpa file rahasia, artifact generated, schema, dependency, atau fitur di luar kontrak.",
+        "Pemeriksaan integrasi relevan lulus sebelum handoff QA."
+      ],
+      "verification_plan": [
+        "Review diff, status Git, secret scan terbatas, dan test/build relevan pada revisi candidate."
+      ],
+      "status": "pending",
+      "attempts": [],
+      "result": null
+    },
+    {
+      "id": "S016",
+      "title": "QA independen panel owner SaaS",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "backend",
+      "deliverable_id": "SD4",
+      "prd_refs": [
+        "docs/SAAS-RANCANGAN.md §15"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "high",
+      "uncertainty": "low",
+      "triage_reason": "QA harus membuktikan autentikasi platform, provisioning atomik, isolasi data, status tenant, dan responsivitas pada revisi integrasi.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Sol untuk QA independen keamanan serta regresi integrasi berisiko tinggi.",
+      "depends_on": {
+        "hard": ["S015"],
+        "contracts": []
+      },
+      "qa_for": "S015",
+      "write_scope": [
+        "docs/evidence/SAAS/S016/**"
+      ],
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Seluruh kontrak S014 terbukti pada revisi integrasi dan regresi tenant existing tidak rusak.",
+        "UI desktop, tablet, dan ponsel dapat digunakan tanpa overflow, teks terpotong, atau kontrol di bawah 44px pada ponsel.",
+        "Tidak ada credential, data customer, schema, dependency, atau fitur di luar scope pada candidate."
+      ],
+      "verification_plan": [
+        "Jalankan tes keamanan/perilaku independen, suite terkait, inspeksi browser dan screenshot 1440/768/390, serta review diff/scope."
+      ],
+      "status": "pending",
+      "attempts": [],
+      "result": null
     }
   ]
 }
@@ -1309,7 +1541,6 @@ Berikut hanya ide, bukan task dan bukan izin implementasi:
 
 - subdomain/custom domain;
 - username yang boleh sama antartoko;
-- panel admin platform;
 - paket, trial, billing, dan payment gateway;
 - satu user mengelola beberapa toko;
 - preset kategori otomatis;
@@ -1332,3 +1563,4 @@ Ide dipindahkan menjadi task hanya bila ada client nyata yang membutuhkan dan us
 | 17 Nov 2026 | Goal S001–S012 aktif; username unik global dan tracking lama untuk tenant nonaktif disetujui sesuai rekomendasi | User meminta mengerjakan semua TODO | S001–S012 | User |
 | 17 Nov 2026 | Window S010 dijalankan segera; salinan pra-migrasi disimpan privat di Mac operator minimal 14 hari dan wajib lulus checksum serta restore sebelum live diubah | Memenuhi gate off-VPS tanpa menambah layanan backup atau fitur baru | S010 | Goal user + runbook S008 |
 | 17 Nov 2026 | Pilot kedua memakai toko RF Samarinda, owner Fahad, username global `fahad`; credential diberikan user melalui chat dan tidak dicatat ke repo | Identitas client nyata tersedia sehingga onboarding produksi S012 diizinkan | S012 | User |
+| 17 Nov 2026 | Panel owner platform minimum disetujui setelah dua client nyata; scope hanya login, daftar/buat tenant, dan aktif/nonaktifkan tenant | Mengurangi operasi terminal tanpa membangun sistem langganan atau arsitektur baru | S013–S016 | User |

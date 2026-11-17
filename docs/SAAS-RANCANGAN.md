@@ -61,9 +61,9 @@ Pertanyaan wajib sebelum menambah fitur:
 - identitas toko, logo, garansi, kategori;
 - deployment dan CI/CD yang sudah berjalan.
 
-### Sengaja tidak dibuat pada v1 SaaS
+### Sengaja tidak dibuat pada v1 SaaS awal
 
-- panel admin platform;
+- panel admin platform (ditambahkan kemudian secara terbatas di §15 setelah ada dua client nyata);
 - registrasi client secara publik;
 - paket Starter/Growth dan pembatasan fitur;
 - pembayaran atau invoice langganan otomatis;
@@ -262,7 +262,7 @@ Jangan mengerjakan L4 sebelum L1–L3 lulus. Setelah pilot client kedua, evaluas
 - Nomor dokumen, kategori, pengguna, stok, dan laporan independen per tenant.
 - Toko HP berjalan cukup dengan pengaturan dan kategori existing.
 - Backup/restore migrasi sudah dibuktikan.
-- Tidak ada panel, billing, domain, paket, atau sistem konfigurasi baru yang belum dipakai client.
+- Tidak ada billing, domain, paket, atau sistem konfigurasi baru yang belum dipakai client.
 
 ## 14. Keputusan implementasi
 
@@ -272,3 +272,25 @@ Keputusan berikut disetujui melalui instruksi user 17 November 2026 untuk menger
 2. Tenant nonaktif memblokir login internal sepenuhnya, sementara tracking customer lama tetap dapat dibuka agar customer tidak kehilangan akses status/nota.
 
 `PRD.md` dan `TODO.md` existing tetap menjadi sumber produk produksi sampai migrasi SaaS diterima. Perubahan di luar Lean SaaS tetap membutuhkan keputusan scope baru.
+
+## 15. Panel owner SaaS minimum
+
+Setelah dua tenant nyata aktif, operator membutuhkan cara menambah dan menonaktifkan client tanpa masuk ke terminal. Instruksi user 17 November 2026 mengizinkan panel minimum berikut:
+
+- login owner platform terpisah dari akun tenant;
+- daftar tenant dengan nama toko, owner pertama, username, status, dan tanggal dibuat;
+- form membuat tenant dan owner pertama memakai validasi serta transaksi yang sama dengan `tenant:create`;
+- aksi aktif/nonaktifkan tenant.
+
+Kredensial owner platform disimpan sebagai `PLATFORM_OWNER_USERNAME` dan `PLATFORM_OWNER_PASSWORD_HASH` di konfigurasi server, bukan sebagai user tenant atau tabel baru. Bila salah satunya tidak ada, login platform gagal tertutup. Panel tidak membaca data bisnis tenant.
+
+Yang sengaja tetap tidak dibuat:
+
+- hapus tenant;
+- billing, paket, trial, invoice, atau payment gateway;
+- impersonasi/login sebagai tenant;
+- analitik lintas toko;
+- custom domain, registrasi publik, membership lintas toko, atau role platform bertingkat;
+- audit log platform, API, dependency baru, atau migrasi schema.
+
+Panel memakai gaya aplikasi existing dan harus nyaman di desktop maupun ponsel. Deployment produksi tetap membutuhkan izin baru setelah implementasi dan QA lulus.

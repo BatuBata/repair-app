@@ -579,6 +579,35 @@ dialog.sheet-dialog[open] { animation: rise .2s var(--ease); }
 .bottom-menu[aria-current="page"] { color:var(--text); }
 .bottom-menu[aria-current="page"] .icon { stroke-width:2; }
 
+/* Owner SaaS: shell yang sama, tanpa fitur tenant atau dashboard spekulatif. */
+.platform-app .topbar { justify-content:flex-end; }
+.platform-app .sidebar .bottom { margin-top:auto; }
+.platform-app .sidebar .bottom button { width:100%; border:0; background:transparent; cursor:pointer; }
+.platform-sheet > .notice { margin-bottom:20px; }
+.platform-create .form { max-width:none; gap:16px; }
+.platform-table .act { width:108px; }
+.platform-login { min-height:100svh; display:grid; place-items:center; padding:24px 16px; background:var(--ground); }
+.platform-login .login { width:100%; max-width:380px; display:grid; gap:24px; }
+.platform-login .brand { padding:0; height:auto; }
+.platform-login .card { display:grid; gap:20px; padding:28px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-sheet); }
+.platform-login .card header { display:grid; gap:4px; }
+.platform-login h1 { font-size:20px; line-height:28px; font-weight:600; }
+.platform-login .help { text-align:center; }
+@media(max-width:1023.98px) {
+  .platform-app .topbar { justify-content:space-between; }
+  .platform-app .sheet { padding-bottom:40px; }
+  .platform-grid { display:flex; flex-direction:column; }
+  .platform-grid > section { width:100%; }
+  .platform-table tbody tr { grid-template-columns:96px minmax(0,1fr) auto; }
+  .platform-table td.act { grid-column:1; grid-row:1 / span 3; }
+  .platform-table td.c-id { grid-column:2; grid-row:1; }
+  .platform-table td.c-st { grid-column:3; grid-row:1; }
+  .platform-table td.c-who { grid-column:2 / -1; grid-row:2; }
+  .platform-table td.c-what { grid-column:2 / -1; grid-row:3; color:var(--muted); font-size:14px; }
+  .platform-table .act .btn { width:96px; white-space:normal; line-height:18px; }
+  .platform-login .card { padding:24px 20px; }
+}
+
 .field > span { font-weight:500; }
 dialog.sheet-dialog { background:var(--surface); color:var(--text); }
 @media(max-width:1023.98px) {

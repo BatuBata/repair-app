@@ -31,8 +31,8 @@ Goal aktif 17 November 2026 mengizinkan eksekusi S001–S012. Deployment produks
 | S007 | QA independen keamanan tenant dan regresi aplikasi | tester / 6.1-sol | complex / high | S006 | — | done |
 | S008 | Siapkan runbook dan rehearsal migrasi Anugerah | developer / 6.1-sol | medium / high | S007 | — | done |
 | S009 | QA independen rehearsal backup, migrasi, dan rollback | tester / 6.1-sol | complex / high | S008 | — | done |
-| S010 | Deploy dan migrasikan Anugerah ke schema tenant | deployer / 6.1-sol | medium / high | S006, S007, S009 | — | running |
-| S011 | Verifikasi independen produksi setelah migrasi | tester / 6.1-sol | medium / high | S010 | — | pending |
+| S010 | Deploy dan migrasikan Anugerah ke schema tenant | deployer / 6.1-sol | medium / high | S006, S007, S009 | — | done |
+| S011 | Verifikasi independen produksi setelah migrasi | tester / 6.1-sol | medium / high | S010 | — | running |
 | S012 | Onboard dan verifikasi pilot client kedua | tester / 6.1-sol | medium / high | S010, S011 | — | pending |
 <!-- END GENERATED VIEW -->
 
@@ -1063,7 +1063,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "verification_plan": [
         "Catat commit, target, backup receipt, migration output teredaksi, inventaris sebelum/sesudah, health check, dan keputusan rollback/lanjut."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -1083,8 +1083,8 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native-codex:S010:A2",
-          "outcome": "running",
-          "receipt_ref": null
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/SAAS/S010/A2/README.md"
         }
       ],
       "prior_results": [{
@@ -1104,7 +1104,27 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         ],
         "failure_class": "product",
         "summary": "Preflight berhenti sebelum maintenance karena CI kandidat gagal pada MySqlConcurrencyTest: proses worker belum menetapkan TenantContext. Produksi tetap online dan tidak berubah; backup, merge, migrasi, dan deployment belum dimulai."
-      }]
+      }],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/SAAS/S010/A2/README.md",
+        "revision": "99f64bf59ff1489825333aa821015a281db611ea",
+        "checked_revision": "99f64bf59ff1489825333aa821015a281db611ea",
+        "inputs": {
+          "S006": "sha256:6b01398fbd10ba0196919655f94c9f26917e906fedbef562abb94eec2c6549cd",
+          "S007": "sha256:19cb224084ed1be979972a4ed3d05430d06b3243cd9dbbebb174a1ca4c6c4570",
+          "S009": "sha256:332c5e7cefb7e3bd227a581c71f84a5a5b5908cec9083c7afccdc28cde1101de"
+        },
+        "evidence": [
+          "docs/evidence/SAAS/S010/A2/README.md",
+          "docs/evidence/SAAS/S010/A2/result.json",
+          "docs/evidence/SAAS/S010/A2/manifest.json",
+          "docs/evidence/SAAS/S010/A2/backup.json",
+          "docs/evidence/SAAS/S010/A2/deployment.json",
+          "https://github.com/BatuBata/repair-app/actions/runs/44017276215"
+        ],
+        "summary": "Deployment manual berizin lulus pada 99f64bf setelah backup live, salinan Mac, dan restore scratch MariaDB 10.11.14 terbukti. Migrasi live dijalankan sekali; field lama, key, upload, relasi, tenant, laporan, dokumen, dan tracking cocok. HTTPS health/login/aset 200, marker/maintenance tidak ada, lock dilepas, backup VPS+Mac dipertahankan minimal 14 hari."
+      }
     },
     {
       "id": "S011",
@@ -1154,7 +1174,20 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "verification_plan": [
         "Smoke read-only dahulu, lalu transaksi sintetis berizin dengan cleanup yang aman; bandingkan inventaris, laporan, log error, dan endpoint publik."
       ],
-      "status": "pending"
+      "status": "running",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "verification",
+          "worker_id": "/root/s011_prod_qa",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native-codex:S011:A1",
+          "outcome": "running",
+          "receipt_ref": null
+        }
+      ]
     },
     {
       "id": "S012",

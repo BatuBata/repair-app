@@ -1,0 +1,65 @@
+{
+  "server_folder": "/home/muzib/deploy-demo-repair-app/saas-s010-20261117T041815Z/backup",
+  "off_vps_mac_folder": "/Users/muzib/Projects/web/repair-app/storage/app/private/saas-s010-20261117T041815Z",
+  "mac_folder_mode": "0700",
+  "holder": "muzib/operator Mac",
+  "retain_at_least_until_utc": "2026-12-01T04:19:41Z",
+  "manifest_sha256": "794d56a5e23bdb91fe14f5c5010c0920387b41bf82e24e044825009c623d0bcb",
+  "strict_ssh_transfer": true,
+  "all_12_archive_manifest_entries_verified_on_vps_and_mac": true,
+  "backup_exit": 1,
+  "expected_exact_message": "Local archive saved; Q-04 off-VPS destination missing; retention skipped (NOT a successful daily backup)",
+  "files": {
+    "inventory.json": {
+      "sha256": "76ddbc05045c5a1232d11e405394abde85deee92a98586357c1c619a9be1512d",
+      "bytes": 6894
+    },
+    "inventory.php": {
+      "sha256": "79f808b0c8672b2e435790e55521f6c8925989955c9fb63b37640957fadf2fec",
+      "bytes": 1854
+    },
+    "previous-release.tar.gz": {
+      "sha256": "8eae615f980908e6dcda2546fc2197af87c41251b536f8be3f8812696a014e3d",
+      "bytes": 14133928
+    },
+    "schema.json": {
+      "sha256": "924778a0bc61c195630c953235667e17192f2aee946444c7c9e8c81a993b112d",
+      "bytes": 12650
+    },
+    "environment.before.sha256": {
+      "sha256": "a20050869ed23b8d8e6115146d8d6c021145e0e25378a06a178d06b244a8314b",
+      "bytes": 71
+    },
+    "database.sql.gz": {
+      "sha256": "bb0558553c10e0c1215e2a6e548d45ddecb31dcfec3e51cf3d4c6424a41b8248",
+      "bytes": 9752
+    },
+    "environment.private": {
+      "sha256": "bf86c02c3ec2a9195ba4300b772f56d140c2d56fbc83056f78a969ed7c073acd",
+      "bytes": 1260
+    },
+    "backup.log": {
+      "sha256": "c17fe71837b7b543d3aeae9891a6249d8c58c04bac10e528e50dcca4aece0ab4",
+      "bytes": 105
+    },
+    "previous-revision.txt": {
+      "sha256": "ce25c3d53eaa413b6240aec512a525685ab0b8397808eab36d0274a3bbece9c8",
+      "bytes": 41
+    },
+    "appkey.sha256": {
+      "sha256": "d24bb5d7d6dbd1da4f7513a883283111ebb3987cefab6fcf2706ba1f4d4c29b1",
+      "bytes": 65
+    },
+    "uploads.tar.gz": {
+      "sha256": "e105d97b711809e3923758096e68204b6549d479017af0678d41ab31097d30fb",
+      "bytes": 172
+    },
+    "uploads.files.sha256": {
+      "sha256": "f145b2506d8357b87f05c360e81b8d02e15ada1e3a911e9e39e74827b87f6ff8",
+      "bytes": 79
+    }
+  },
+  "daily_backup_schedule_proven": false,
+  "restored_from_mac_copy": true,
+  "env_and_app_key_retained_privately": true
+}

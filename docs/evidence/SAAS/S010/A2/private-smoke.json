@@ -1,0 +1,18 @@
+{
+    "verdict": "pass",
+    "checks": {
+        "tenant_count_one_identity_matches": true,
+        "eight_roots_required_fk_backfilled": true,
+        "tenant_unique_constraints": true,
+        "scoped_model_counts_equal": true,
+        "report_equal": true,
+        "all_fk_relationships": true,
+        "foreign_keys_checked": 19,
+        "number_probe_rolled_back": true,
+        "order_document": "html_pdf_pass",
+        "sale_document": "html_pass",
+        "guest_tracking": "pass"
+    },
+    "app_baseline_sha256": "db3934926ad86c3c0cf4f52fc2184c640d952216693be38c5da570c06f60ddaf",
+    "key_preserved": true
+}

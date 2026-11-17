@@ -1,0 +1,11 @@
+{
+  "run": 44017276215,
+  "revision": "99f64bf59ff1489825333aa821015a281db611ea",
+  "artifact_id": 14299636930,
+  "artifact_name": "release-99f64bf59ff1489825333aa821015a281db611ea",
+  "artifact_zip_sha256": "71b5bb8e6c5fb4f612b1e0f4eaf209cfacc3e4acb3589ee5a0da750bd433f954",
+  "github_digest_verified": true,
+  "release_tar_sha256": "9a4d835b6c631f1205852a6bd5febae4cb973cb7d301574c1afc3734412a61a5",
+  "release_bytes": 14128986,
+  "artifact_created_at": "2026-11-17T04:28:37Z"
+}

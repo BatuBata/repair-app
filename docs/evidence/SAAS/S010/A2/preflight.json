@@ -1,0 +1,49 @@
+{
+  "utc": "2026-11-17T04:17Z",
+  "server": "202.10.40.165",
+  "account": "muzib uid1000",
+  "hostname": "server.coachplay7gym.com",
+  "release_before": "a03f6f1e2becd1f3168d475eae3a66ce2565cdb6",
+  "php_cli": "/usr/bin/php8.3 8.3.36",
+  "db_server": "10.11.14-MariaDB-0+deb12u2-log",
+  "dump_client": "/usr/bin/mysqldump -> /usr/bin/mariadb-dump 10.11.14-MariaDB",
+  "no_mylogin_cnf": true,
+  "live_tables": 20,
+  "all_innodb": true,
+  "live_migrations_before": 6,
+  "tenant_table_and_migration_absent": true,
+  "initial_maintenance_marker_absent": true,
+  "initial_app_up": true,
+  "vps_free": "118G",
+  "mac_free": "22Gi",
+  "database_bytes": 851968,
+  "uploads_disk_size": "12K",
+  "target_background_writers": 0,
+  "source_db_timezone": {
+    "session": "SYSTEM",
+    "global": "SYSTEM",
+    "system": "WIB",
+    "laravel_connection_timezone": null
+  },
+  "source_db_collation": "utf8mb4_general_ci",
+  "origin_main_ancestor_before_merge": true,
+  "divergence_before_merge": {
+    "main_only": 0,
+    "candidate_only": 27
+  },
+  "branch_ci_latest": {
+    "run": 44015956031,
+    "revision": "99f64bf59ff1489825333aa821015a281db611ea",
+    "conclusion": "success"
+  },
+  "branch_ci_qa_pin": {
+    "run": 44014653205,
+    "revision": "6d0254c2c0b54a42ed7c0a8917a4cf1400667f42",
+    "conclusion": "success"
+  },
+  "host_key_strict_check_pass": true,
+  "host_ed25519_fingerprint": "SHA256:Nuahmp9BH1wRxZUs8xZ9vwsTluSJUhBhSgAnfCWYLZI",
+  "sudo_used": false,
+  "opcache_validate_timestamps": true,
+  "opcache_revalidate_freq_seconds": 2
+}

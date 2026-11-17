@@ -1,0 +1,17 @@
+{
+  "version": "10.11.14-MariaDB-ubu2204",
+  "image_digest": "sha256:dbe56e20372fc6d6b8e0e396866ba89c4c7f128c38c4f59aaa54d957db95790c",
+  "container": "saas-s010-a2-20261117t041815z-c",
+  "binding": "127.0.0.1:32773",
+  "database": "saas_s010_restore_20261117_c",
+  "restore_exit": 0,
+  "mac_checksum_pass": true,
+  "old_schema_identical": true,
+  "legacy_fields_identical_before": true,
+  "key_identical": true,
+  "uploads_identical": true,
+  "backup_manifest_sha256": "794d56a5e23bdb91fe14f5c5010c0920387b41bf82e24e044825009c623d0bcb",
+  "snapshot_account": "s010 grants only on new isolated scratch database",
+  "candidate_migration_exit": 0,
+  "legacy_fields_identical_after_candidate_migration": true
+}

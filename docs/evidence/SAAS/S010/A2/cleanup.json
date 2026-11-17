@@ -1,0 +1,37 @@
+{
+  "own_containers": [
+    {
+      "name": "saas-s010-a2-20261117t041815z",
+      "container_id": "634b6b29463c068a13f2df3c933103ec6cb773d35574d32831aac105f5a4ad1b",
+      "owner_label": "S010-A2",
+      "removed": true,
+      "tmpfs_removed": true
+    },
+    {
+      "name": "saas-s010-a2-20261117t041815z-b",
+      "container_id": "fd39de420bc62f19f1ed40a3d5ee31bc41716f97582ba804d6315ee3c41dad0b",
+      "owner_label": "S010-A2",
+      "removed": true,
+      "tmpfs_removed": true
+    },
+    {
+      "name": "saas-s010-a2-20261117t041815z-c",
+      "container_id": "bee8aad91fb28f415765f1fc706e731b72004c116ccdd2266e1906b6e5e2dca1",
+      "owner_label": "S010-A2",
+      "removed": true,
+      "tmpfs_removed": true
+    }
+  ],
+  "existing_host_mysql_touched": false,
+  "shared_colima_runtime_and_image_retained": true,
+  "mac_backup_retained": true,
+  "server_backup_retained": true,
+  "private_local_runtime_removed": true,
+  "temporary_server_dump_cnf_removed": true,
+  "temporary_bypass_log_removed": true,
+  "lock_released_verified": true,
+  "own_marker_removed": true,
+  "laravel_maintenance_removed": true,
+  "retained_mac_folder": "/Users/muzib/Projects/web/repair-app/storage/app/private/saas-s010-20261117T041815Z",
+  "retained_server_folder": "/home/muzib/deploy-demo-repair-app/saas-s010-20261117T041815Z/backup"
+}

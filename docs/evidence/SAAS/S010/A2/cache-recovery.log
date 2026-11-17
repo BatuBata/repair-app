@@ -1,0 +1,26 @@
+
+   INFO  Configuration cached successfully.  
+
+
+   INFO  Routes cached successfully.  
+
+
+
+   INFO  Blade templates cached successfully.  
+
+
+   INFO  Compiled services and packages files removed successfully.  
+
+
+   INFO  Discovering packages.  
+
+  barryvdh/laravel-dompdf ............................................... DONE
+  laravel/fortify ....................................................... DONE
+  laravel/passkeys ...................................................... DONE
+  laravel/tinker ........................................................ DONE
+  livewire/blaze ........................................................ DONE
+  livewire/flux ......................................................... DONE
+  livewire/livewire ..................................................... DONE
+  nesbot/carbon ......................................................... DONE
+  nunomaduro/termwind ................................................... DONE
+

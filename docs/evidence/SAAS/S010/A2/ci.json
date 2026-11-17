@@ -1,0 +1,13 @@
+{
+  "run": 44017276215,
+  "job": 133818110278,
+  "job_conclusion": "success",
+  "test_summary": {
+    "passed": 220,
+    "failed": 0,
+    "assertions": 2435
+  },
+  "overall_workflow": "failure: automatic deployment expectedly rejected by held server lock",
+  "deployment_refusal": "Another deployment holds the server lock",
+  "deployment_safety_step": "success"
+}

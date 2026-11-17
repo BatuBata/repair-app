@@ -36,9 +36,9 @@ Instruksi user 17 November 2026 mengizinkan implementasi S013–S016 pada branch
 | S011 | Verifikasi independen produksi setelah migrasi | tester / 6.1-sol | medium / high | S010 | — | done |
 | S012 | Onboard dan verifikasi pilot client kedua | tester / 6.1-sol | medium / high | S010, S011 | — | done |
 | S013 | Tetapkan kontrak panel owner SaaS minimum | planner / 6.1-sol | easy / high | S012 | — | done |
-| S014 | Bangun login dan pengelolaan tenant owner SaaS | developer / 6.1-sol | medium / high | S013 | — | running |
-| S015 | Integrasikan candidate panel owner SaaS | integrator / 6.1-sol | easy / medium | S014 | — | pending |
-| S016 | QA independen panel owner SaaS | tester / 6.1-sol | medium / high | S015 | — | pending |
+| S014 | Bangun login dan pengelolaan tenant owner SaaS | developer / 6.1-sol | medium / high | S013 | — | done |
+| S015 | Integrasikan candidate panel owner SaaS | integrator / 6.1-sol | easy / medium | S014 | — | done |
+| S016 | QA independen panel owner SaaS | tester / 6.1-sol | medium / high | S015 | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Urutan minimum
@@ -67,7 +67,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
-      "state": "running",
+      "state": "stopped",
       "allowed_tasks": [
         "S001",
         "S002",
@@ -177,7 +177,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "acceptance_tasks": [
         "S016"
       ],
-      "status": "pending"
+      "status": "accepted"
     }
   ],
   "tasks": [
@@ -1425,7 +1425,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         "Feature test credential tidak tersedia/salah/benar, throttle, session logout/fingerprint, akses tenant user ditolak, CSRF, daftar tanpa data bisnis, provisioning sukses/gagal/duplikat, toggle tenant, dan command regression.",
         "Jalankan test terkait, formatter/static analysis existing, build frontend, lint/inspect app screen pada 1440/768/390, dan cek screenshot."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -1435,11 +1435,24 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native-codex:S014:A1",
-          "outcome": "running",
-          "receipt_ref": null
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/SAAS/S014/A1/README.md"
         }
       ],
-      "result": null
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/SAAS/S014/A1/README.md",
+        "revision": "6d3a0d3cb0458be71f9aff5e0e5226d341f5aa16",
+        "checked_revision": "6d3a0d3cb0458be71f9aff5e0e5226d341f5aa16",
+        "inputs": {
+          "S013": "sha256:155f85b1d80f8687201882bdd93bf26e2940f91f458cca0adc410411a3f22085"
+        },
+        "evidence": [
+          "docs/evidence/SAAS/S014/A1/README.md",
+          ".taste-skill/s014-login/report.json"
+        ],
+        "summary": "Panel owner minimal selesai tanpa schema/dependency: login config fail-closed, session fingerprint, throttle, daftar tenant tanpa data bisnis, provisioning bersama command, toggle status, dan UI responsif. Focused 18/150, full suite 228/2434 dengan 1 skip existing, PHPStan, Pint, build, dan browser checks lulus."
+      }
     },
     {
       "id": "S015",
@@ -1477,9 +1490,33 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "verification_plan": [
         "Review diff, status Git, secret scan terbatas, dan test/build relevan pada revisi candidate."
       ],
-      "status": "pending",
-      "attempts": [],
-      "result": null
+      "status": "done",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "verification",
+          "worker_id": "/root",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native-codex:S015:A1",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/SAAS/S015/A1/README.md"
+        }
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/SAAS/S015/A1/README.md",
+        "revision": "6d3a0d3cb0458be71f9aff5e0e5226d341f5aa16",
+        "checked_revision": "6d3a0d3cb0458be71f9aff5e0e5226d341f5aa16",
+        "inputs": {
+          "S014": "6d3a0d3cb0458be71f9aff5e0e5226d341f5aa16"
+        },
+        "evidence": [
+          "docs/evidence/SAAS/S015/A1/README.md"
+        ],
+        "summary": "Candidate S014 dipin pada branch SaaS setelah review diff, focused tests, validator, dan diff check; tidak ada secret, schema, dependency, main merge, atau deployment."
+      }
     },
     {
       "id": "S016",
@@ -1517,9 +1554,34 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "verification_plan": [
         "Jalankan tes keamanan/perilaku independen, suite terkait, inspeksi browser dan screenshot 1440/768/390, serta review diff/scope."
       ],
-      "status": "pending",
-      "attempts": [],
-      "result": null
+      "status": "done",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "verification",
+          "worker_id": "/root/s016_platform_qa",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native-codex:S016:A1",
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/SAAS/S016/A1/README.md"
+        }
+      ],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/SAAS/S016/A1/README.md",
+        "revision": "sha256:388e2f113c34f55f548c1a324a0c96be6f9e1171233283e7fa0d41a55211d0ed",
+        "checked_revision": "6d3a0d3cb0458be71f9aff5e0e5226d341f5aa16",
+        "inputs": {
+          "S015": "6d3a0d3cb0458be71f9aff5e0e5226d341f5aa16"
+        },
+        "evidence": [
+          "docs/evidence/SAAS/S016/A1/README.md",
+          ".taste-skill/s014-login/report.json"
+        ],
+        "summary": "QA independen PASS pada revisi 6d3a0d3: auth config/throttle/session, CSRF, isolasi tenant, provisioning atomik, toggle/status, tracking tenant nonaktif, scope minimum, serta browser desktop/tablet/mobile lulus tanpa kebocoran secret atau overflow."
+      }
     }
   ]
 }
@@ -1532,6 +1594,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
 | Candidate software multi-tenant diterima | S007 PASS pada revisi integrasi S006 |
 | Migrasi Anugerah diterima | S011 PASS pada deployment S010 yang berizin |
 | Lean SaaS terbukti untuk client baru | S012 PASS pada client kedua |
+| Panel owner SaaS minimum diterima | S016 PASS pada revisi integrasi S015 |
 
 SaaS v1 belum selesai hanya karena schema atau scope tersedia. Selesai berarti data Anugerah utuh, dua tenant terbukti terisolasi, dan client kedua memakai fitur existing tanpa infrastruktur atau fitur spekulatif baru.
 
@@ -1564,3 +1627,4 @@ Ide dipindahkan menjadi task hanya bila ada client nyata yang membutuhkan dan us
 | 17 Nov 2026 | Window S010 dijalankan segera; salinan pra-migrasi disimpan privat di Mac operator minimal 14 hari dan wajib lulus checksum serta restore sebelum live diubah | Memenuhi gate off-VPS tanpa menambah layanan backup atau fitur baru | S010 | Goal user + runbook S008 |
 | 17 Nov 2026 | Pilot kedua memakai toko RF Samarinda, owner Fahad, username global `fahad`; credential diberikan user melalui chat dan tidak dicatat ke repo | Identitas client nyata tersedia sehingga onboarding produksi S012 diizinkan | S012 | User |
 | 17 Nov 2026 | Panel owner platform minimum disetujui setelah dua client nyata; scope hanya login, daftar/buat tenant, dan aktif/nonaktifkan tenant | Mengurangi operasi terminal tanpa membangun sistem langganan atau arsitektur baru | S013–S016 | User |
+| 17 Nov 2026 | Panel owner minimum diterima di branch SaaS setelah QA independen PASS; deployment tetap ditahan | Semua kriteria S013–S016 lulus pada revisi `6d3a0d3`; konfigurasi produksi belum diuji dan belum diizinkan | S013–S016 | S016/A1 |

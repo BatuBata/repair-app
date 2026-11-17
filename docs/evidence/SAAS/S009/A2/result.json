@@ -1,0 +1,38 @@
+{
+  "verdict": "pass",
+  "artifact_ref": "docs/evidence/SAAS/S009/A2/README.md",
+  "revision": "sha256:ce45314d50e2a865026fab4ee75736fa3833e90b070990880adac047a0631c58",
+  "checked_revision": "sha256:ce45314d50e2a865026fab4ee75736fa3833e90b070990880adac047a0631c58",
+  "source_commit": "e790e7b019e2dd3b4569cf118f7136119658ad9f",
+  "inputs": {
+    "S008": "sha256:ce45314d50e2a865026fab4ee75736fa3833e90b070990880adac047a0631c58",
+    "S007": "sha256:6ba364a204d98ac1d9754182d2a4fd1c54de6f940d7341ad88bef207aea74ad4",
+    "S009_A1_result": "sha256:88e21a2909217e9fb2616629a2bbf56eb49e0d648b69c007fc8493bb0f4b74ba"
+  },
+  "model_requested": "gpt-6.1-sol",
+  "effort_requested": "high",
+  "model_effective": null,
+  "receipt_ref": null,
+  "evidence": [
+    "docs/evidence/SAAS/S009/A2/README.md",
+    "docs/evidence/SAAS/S009/A2/client-transport.py",
+    "docs/evidence/SAAS/S009/A2/deploy-safety.log",
+    "docs/evidence/SAAS/S009/A2/input-check.json",
+    "docs/evidence/SAAS/S009/A2/native-check-initial.log",
+    "docs/evidence/SAAS/S009/A2/native-check.log",
+    "docs/evidence/SAAS/S009/A2/native-check.py",
+    "docs/evidence/SAAS/S009/A2/native-result-initial.json",
+    "docs/evidence/SAAS/S009/A2/native-result.json",
+    "docs/evidence/SAAS/S009/A2/reuse-map.json",
+    "docs/evidence/SAAS/S009/A2/scope-check.json",
+    "docs/evidence/SAAS/S009/A2/manifest.json"
+  ],
+  "summary": "Independent exactMariaDB10.11.14 native candidate backup creates valid archive with safe flags and explicit target, exact pending-offsite gate, checksum/copy and scratch fields/schema/FK/trigger equality. Independent six failclosed cases and41 existing safety guards PASS. A1 independent migration/app/rollback/failure PASS cases reused only after261 source pins and22 A1 evidence hashes verified unchanged in relevant inputs. Own runtime/container/tmpfs/secrets removed; no production/source/ledger mutation.",
+  "not_run": [
+    "Native MySQL8 on A2; guards plus historical support only",
+    "Unchanged full migration/regression/build repeated; mapped independent A1 PASS reused",
+    "Actual offsite/production data/cron/retention",
+    "Production host/deploy/maintenance/HTTPS, Linux receiver/GNU packager",
+    "Full browser/login, visual PDF and physical devices"
+  ]
+}

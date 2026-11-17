@@ -1,0 +1,9 @@
+{
+  "candidate_after": "sha256:ce45314d50e2a865026fab4ee75736fa3833e90b070990880adac047a0631c58",
+  "files": 261,
+  "mismatches": [],
+  "tracked_diff": "",
+  "status": "?? deploy/__pycache__/\n?? docs/evidence/SAAS/S009/A2/\n",
+  "source_ledger_changed": false,
+  "preexisting_deploy_pycache": "present at start, left untouched"
+}

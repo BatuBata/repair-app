@@ -1,0 +1,66 @@
+{
+  "algorithm": "SHA256 sorted UTF8 repository-relative path + NUL + bytes; manifest excluded",
+  "evidence_digest": "sha256:2bcb9925bde90a78acf7409a2f800618c8eb4e95b6eecd0c5002185970d6e2a0",
+  "files": [
+    {
+      "path": "docs/evidence/SAAS/S009/A2/README.md",
+      "bytes": 7516,
+      "sha256": "54cb218620d2b93ffc2555d3fc168bd16613a9971ae8582d49123addf4245ca0"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A2/client-transport.py",
+      "bytes": 602,
+      "sha256": "b076e69ab9f29354669923025202f1ddd1959a6a49174ab7125c566aaf718e53"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A2/deploy-safety.log",
+      "bytes": 77,
+      "sha256": "96f00a060b2a744bcc36a73fdff67ff63decbf4cf9314a9891580454ea361e8b"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A2/input-check.json",
+      "bytes": 812,
+      "sha256": "2b176ed6ce703cacce2d32e3de9286b531e067b04617fddbb1de166a0cd4254f"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A2/native-check-initial.log",
+      "bytes": 716,
+      "sha256": "9bb508c80fad32b371e7cb738a34fbd4184b7a1a7c3434aecb24c8978a90777a"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A2/native-check.log",
+      "bytes": 4294,
+      "sha256": "1675747cc96b78d864481662982abcb3e2dc5cbaa60419367d3b8ee96a2381d6"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A2/native-check.py",
+      "bytes": 11412,
+      "sha256": "f8408c7793a2e9df1d1e1df81779460411389b1ea4504fd15639c870aa617558"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A2/native-result-initial.json",
+      "bytes": 716,
+      "sha256": "9bb508c80fad32b371e7cb738a34fbd4184b7a1a7c3434aecb24c8978a90777a"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A2/native-result.json",
+      "bytes": 4294,
+      "sha256": "1675747cc96b78d864481662982abcb3e2dc5cbaa60419367d3b8ee96a2381d6"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A2/result.json",
+      "bytes": 2270,
+      "sha256": "332c5e7cefb7e3bd227a581c71f84a5a5b5908cec9083c7afccdc28cde1101de"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A2/reuse-map.json",
+      "bytes": 6090,
+      "sha256": "22314799f9dc92c73d9fb344ba4d6d393b256eabb4b3204c3208858e49ddea72"
+    },
+    {
+      "path": "docs/evidence/SAAS/S009/A2/scope-check.json",
+      "bytes": 331,
+      "sha256": "234049ba911c0661cc02ade938e3690ca087f061d88877c75598bc7f37ecd1de"
+    }
+  ]
+}

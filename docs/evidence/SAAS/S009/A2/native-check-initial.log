@@ -1,0 +1,13 @@
+{
+  "verdict": "fail",
+  "commands": [],
+  "runtime": "/private/tmp/saas-s009-a2-hc_g_bpk",
+  "error": "('docker', 1, \"--------------\\nINSERT INTO qa_parent VALUES(7,125000,'Anugerah sintetis',0x0001FEFF,'2026-11-17 11:00:00'),(8,-50,NULL,0x00,'2026-10-31 08:00:00')\\n--------------\\n\\nERROR 1143 (42000) at line 10: UPDATE command denied to user 'qa_ops'@'localhost' for column 'amount' in table 'qa_parent'\\n\")",
+  "cleanup": {
+    "own_container_absent": true,
+    "tmpfs_databases_removed": true,
+    "shared_colima_image_retained": true,
+    "private_runtime_removed": true
+  },
+  "secret_redaction": "two actual private credential values absent from evidence/result; runtime/config/container removed"
+}

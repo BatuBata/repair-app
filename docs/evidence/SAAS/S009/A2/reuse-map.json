@@ -1,0 +1,135 @@
+{
+  "source_candidate": "sha256:066cd061d3b189d9873333a06e3ecf46a493469cc096715b1461b758157b8157",
+  "target_candidate": "sha256:ce45314d50e2a865026fab4ee75736fa3833e90b070990880adac047a0631c58",
+  "a1_result_overall_remains": "FAIL; old backup incompatibility not relabeled",
+  "closed_failure": "A2 native actual backup/new restore PASS replaces only A1 candidate-backup-failed/native-client-exact-repro acceptance outcome",
+  "reuse_justification": "Only backup client selection, its host guard, and runbook introductory/client gate changed; all246 software files, migration, fixture, restore and app read paths identical. A1 was independent exactMariaDB10.11.14 on same pinned image/PHP8.3.30. No relevant schema/migration/application condition changed. Reuse PASS cases, never old FAIL.",
+  "relevant_input_hashes": {
+    "deploy/restore.sh": "67d514da781fd45bc6a9f03c955601863e2bba1061768a0f7542eb33cad57ef1",
+    "tests/Feature/Tenancy/MigrationTest.php": "42b994a3a04d613664623820c2345826e804710ae118a485e220f8fab5da9a34",
+    "database/migrations/2026_11_17_000000_add_tenant_foundation.php": "9c4876fc1406af4b2a5fe8dbbeafa39120b48d2737cc77dbede6dc410591db7c",
+    "docs/evidence/SAAS/S008/A1/rehearsal.php": "1c7eb41a34cbac1e58eee06fda4dc0d78604fd6fdfe8c9d625a5a700c018ab9c"
+  },
+  "conditions": {
+    "a1_php": "8.3.30",
+    "a2_php": "8.3.30",
+    "a1_a2_image": "sha256:dbe56e20372fc6d6b8e0e396866ba89c4c7f128c38c4f59aaa54d957db95790c",
+    "engine": "10.11.14-MariaDB-ubu2204",
+    "source_runtime_fixture": "representative legacy fixture including third inactive user preserved in A1 immutable harness/evidence",
+    "a2_native_fixture": "fresh scalar/null/UTF8/binary/relationship/trigger fixture; new backup+restore only",
+    "offsite_maintenance_runbook_suffix": "byte-identical from Owner maintenance gate onward"
+  },
+  "cases": [
+    {
+      "case_id": "diagnostic-backup-copy-restore",
+      "producer": "independent S009/A1 tester",
+      "evidence": "docs/evidence/SAAS/S009/A1/mariadb-qa.log",
+      "verdict_preserved": "pass",
+      "details": {
+        "case": "diagnostic-backup-copy-restore",
+        "result": "pass",
+        "candidate_fixed": false,
+        "only_change_in_diagnostic_command": "omit MySQL-only --set-gtid-purged and --column-statistics flags",
+        "archive_checksums": {
+          "native.sql.gz": "7f25647bf8073525963c03b8909631b606ff22476b466881ef1acd5de2df2cac",
+          "uploads.tar.gz": "2ae80bd8f1fcde58323c7d0c2e328be7bbad371289476af307bc252468242c42"
+        },
+        "upload_sha256": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec",
+        "three_fresh_restores_all_20_tables_schema_rows_equal": true,
+        "off_machine_proof": false
+      }
+    },
+    {
+      "case_id": "restore-failures",
+      "producer": "independent S009/A1 tester",
+      "evidence": "docs/evidence/SAAS/S009/A1/mariadb-qa.log",
+      "verdict_preserved": "pass",
+      "details": {
+        "case": "restore-failures",
+        "result": "pass",
+        "corrupt_gzip_unchanged": true,
+        "valid_gzip_sql_error_partial_row_retained": true,
+        "sqlfail_state": "unhealthy/discard-only; not retried"
+      }
+    },
+    {
+      "case_id": "migrated-inventory-app-smoke",
+      "producer": "independent S009/A1 tester",
+      "evidence": "docs/evidence/SAAS/S009/A1/mariadb-qa.log",
+      "verdict_preserved": "pass",
+      "details": {
+        "case": "migrated-inventory-app-smoke",
+        "result": "pass",
+        "all_19_old_nonmigration_tables_fields_identical": true,
+        "tenant_eight_tables_all_one_required_fk": true,
+        "identity": "Anugerah",
+        "users": {
+          "active": 2,
+          "inactive": 1
+        },
+        "relations": true,
+        "stock": 7,
+        "report": {
+          "service": "1250",
+          "sales": "500",
+          "revenue": "1750",
+          "cost": "600",
+          "gross": "1150",
+          "expenses": "50",
+          "net": "1100",
+          "restock": "1600"
+        },
+        "numbers_probe_rolled_back": true,
+        "document_html_logo_public_pdf_sale_tracking": true,
+        "pdf_bytes": 23974
+      }
+    },
+    {
+      "case_id": "rollback-reapply-second-tenant-guard",
+      "producer": "independent S009/A1 tester",
+      "evidence": "docs/evidence/SAAS/S009/A1/mariadb-qa.log",
+      "verdict_preserved": "pass",
+      "details": {
+        "case": "rollback-reapply-second-tenant-guard",
+        "result": "pass",
+        "single_tenant_schema_data_equal": true,
+        "reapply_old_fields_equal": true,
+        "guard_all_schema_data_migration_history_unchanged": true,
+        "guard_sha256": "527c6dea0fed1cce135b87b435bd355d9e36263f062cf92f59ce7e91a3470752"
+      }
+    },
+    {
+      "case_id": "partial-ddl-recovery",
+      "producer": "independent S009/A1 tester",
+      "evidence": "docs/evidence/SAAS/S009/A1/mariadb-qa.log",
+      "verdict_preserved": "pass",
+      "details": {
+        "case": "partial-ddl-recovery",
+        "result": "pass",
+        "failed_state": "unhealthy/discard-only; no retry/down",
+        "partial_ddl_present": true,
+        "success_history_absent": true,
+        "all_old_fields_identical": true,
+        "separate_new_database_recovery_pass": true
+      }
+    }
+  ],
+  "also_reused": [
+    {
+      "case": "runbook-inventory-negative-guards",
+      "evidence": "docs/evidence/SAAS/S009/A1/runbook-inventory.json",
+      "reason": "PHP block and database/migration/app code identical; 4 casePASS preserved"
+    },
+    {
+      "case": "MigrationTest3tests23assertions",
+      "evidence": "docs/evidence/SAAS/S009/A1/migration-test.log",
+      "reason": "test, migrations and app246files unchanged"
+    },
+    {
+      "case": "MySQL8nativeHistoricalSupport",
+      "producer": "S008/A1 developer self-check, not new independent native QA",
+      "evidence": "docs/evidence/SAAS/S008/A1/rehearsal.log",
+      "reason": "original MySQL8 native dump success supports same common options; new independently executed safety41 confirms MySQL8-only flags preserved. No native MySQL8 A2 claim."
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "verdict": "pass",
+  "commands": [
+    [
+      "bash",
+      "deploy/backup.sh",
+      "/private/tmp/saas-s009-a2-agl0tyl7/client.cnf",
+      "saas_s009_a2_source",
+      "/private/tmp/saas-s009-a2-agl0tyl7/backup",
+      "-",
+      "-"
+    ],
+    [
+      "bash",
+      "deploy/restore.sh",
+      "/private/tmp/saas-s009-a2-agl0tyl7/client.cnf",
+      "saas_s009_a2_scratch",
+      "/private/tmp/saas-s009-a2-agl0tyl7/copied.sql.gz",
+      "RESTORE:saas_s009_a2_scratch"
+    ]
+  ],
+  "runtime": "/private/tmp/saas-s009-a2-agl0tyl7",
+  "native": {
+    "server": "10.11.14-MariaDB-ubu2204",
+    "image_digest": "sha256:dbe56e20372fc6d6b8e0e396866ba89c4c7f128c38c4f59aaa54d957db95790c",
+    "platform": "linux/arm64",
+    "dump_version": "mariadb-dump  Ver 10.19 Distrib 10.11.14-MariaDB, for debian-linux-gnu (aarch64)",
+    "client_version": "mariadb  Ver 15.1 Distrib 10.11.14-MariaDB, for debian-linux-gnu (aarch64) using  EditLine wrapper",
+    "backup_exit": 1,
+    "backup_stderr": "Local archive saved; Q-04 off-VPS destination missing; retention skipped (NOT a successful daily backup)",
+    "archive_bytes": 1272,
+    "sql_bytes": 3988,
+    "gzip_valid": true,
+    "archive_sha256": "2701a904a43edbd7e357d23808f4212df416ff38a9ed3121091837852b2a3dd9",
+    "copied_sha256_equal": true,
+    "restored_fields_schema_fk_trigger_equal": true,
+    "snapshot_sha256": [
+      "a65db1c6eb04dc8974f58b047f13b2a783895247673014541015184f4ad0b118",
+      "d1602cee48185130592ca725977819f16e08beddefbc13c7fb866c1886efe31a",
+      "e8121e142384fa6933ee9774e3ff44484bcee15b85225459d4a832a6e3724c8b",
+      "d730e31249bd1a3d6ae8892504e50dc7e3dc71441daa85c707ee1908370d9466",
+      "4f47d0c6b224414a1f3afbffb321c30a986b71054b0b3db861e9543633c51333"
+    ],
+    "explicit_target_no_database_or_use": true,
+    "retention_skipped_old_archive_retained": true,
+    "restore_exit": 0,
+    "restore_stdout": "Import complete for saas_s009_a2_scratch; validate data and application before reopening",
+    "actual_calls": [
+      [
+        "mysqldump",
+        "--no-defaults",
+        "--version"
+      ],
+      [
+        "mysqldump",
+        "--defaults-file=/private/tmp/saas-s009-a2-agl0tyl7/client.cnf",
+        "--single-transaction",
+        "--quick",
+        "--no-tablespaces",
+        "--hex-blob",
+        "--triggers",
+        "saas_s009_a2_source"
+      ],
+      [
+        "mysql",
+        "--defaults-file=/private/tmp/saas-s009-a2-agl0tyl7/client.cnf",
+        "--batch",
+        "--binary-mode",
+        "--database=saas_s009_a2_scratch"
+      ]
+    ],
+    "network": "none",
+    "storage": "dedicated tmpfs; no port or shared mount",
+    "account_scope": "qa_ops SELECT/SHOW VIEW/TRIGGER on source; ALL on scratch only; no global grants"
+  },
+  "independent_fail_closed": [
+    {
+      "case": "unknown",
+      "exit": 1,
+      "stderr": "Unsupported dump client; require MySQL 8 or MariaDB 10.11",
+      "dump_not_called": true,
+      "backup_directory_unchanged": true
+    },
+    {
+      "case": "empty",
+      "exit": 1,
+      "stderr": "Unsupported dump client; require MySQL 8 or MariaDB 10.11",
+      "dump_not_called": true,
+      "backup_directory_unchanged": true
+    },
+    {
+      "case": "unsupported-mariadb",
+      "exit": 1,
+      "stderr": "Unsupported dump client; require MySQL 8 or MariaDB 10.11",
+      "dump_not_called": true,
+      "backup_directory_unchanged": true
+    },
+    {
+      "case": "unsupported-mysql",
+      "exit": 1,
+      "stderr": "Unsupported dump client; require MySQL 8 or MariaDB 10.11",
+      "dump_not_called": true,
+      "backup_directory_unchanged": true
+    },
+    {
+      "case": "ambiguous",
+      "exit": 1,
+      "stderr": "Unsupported dump client; require MySQL 8 or MariaDB 10.11",
+      "dump_not_called": true,
+      "backup_directory_unchanged": true
+    },
+    {
+      "case": "probe-error",
+      "exit": 1,
+      "stderr": "Cannot identify dump client",
+      "dump_not_called": true,
+      "backup_directory_unchanged": true
+    }
+  ],
+  "cleanup": {
+    "own_container_absent": true,
+    "tmpfs_databases_removed": true,
+    "shared_colima_image_retained": true,
+    "private_runtime_removed": true
+  },
+  "secret_redaction": "two actual private credential values absent from evidence/result; runtime/config/container removed"
+}

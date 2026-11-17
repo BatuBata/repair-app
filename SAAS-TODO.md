@@ -30,7 +30,7 @@ Goal aktif 17 November 2026 mengizinkan eksekusi S001–S012. Deployment produks
 | S006 | Integrasikan candidate Lean SaaS | integrator / 6.1-sol | medium / high | S003, S004, S005 | — | done |
 | S007 | QA independen keamanan tenant dan regresi aplikasi | tester / 6.1-sol | complex / high | S006 | — | done |
 | S008 | Siapkan runbook dan rehearsal migrasi Anugerah | developer / 6.1-sol | medium / high | S007 | — | done |
-| S009 | QA independen rehearsal backup, migrasi, dan rollback | tester / 6.1-sol | complex / high | S008 | — | running |
+| S009 | QA independen rehearsal backup, migrasi, dan rollback | tester / 6.1-sol | complex / high | S008 | — | done |
 | S010 | Deploy dan migrasikan Anugerah ke schema tenant | deployer / 6.1-sol | medium / high | S006, S007, S009 | — | pending |
 | S011 | Verifikasi independen produksi setelah migrasi | tester / 6.1-sol | medium / high | S010 | — | pending |
 | S012 | Onboard dan verifikasi pilot client kedua | tester / 6.1-sol | medium / high | S010, S011 | — | pending |
@@ -887,7 +887,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "verification_plan": [
         "Ulangi runbook dari awal pada database bersih, periksa checksum/inventaris/log teredaksi, lalu jalankan smoke fitur pada hasil restore dan hasil migrasi."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -907,8 +907,8 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native-codex:S009:A2",
-          "outcome": "running",
-          "receipt_ref": null
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/SAAS/S009/A2/README.md"
         }
       ],
       "prior_results": [{
@@ -928,7 +928,24 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         ],
         "failure_class": "product",
         "summary": "MariaDB 10.11.14 menolak --set-gtid-purged=OFF dan --column-statistics=0 sehingga backup.sh gagal tanpa menghasilkan arsip. Alur native tanpa dua flag tersebut lulus untuk restore, migrasi, rollback, guard tenant kedua, failure injection, dan smoke aplikasi."
-      }]
+      }],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/SAAS/S009/A2/README.md",
+        "revision": "sha256:332c5e7cefb7e3bd227a581c71f84a5a5b5908cec9083c7afccdc28cde1101de",
+        "checked_revision": "sha256:ce45314d50e2a865026fab4ee75736fa3833e90b070990880adac047a0631c58",
+        "inputs": {
+          "S008": "sha256:ce45314d50e2a865026fab4ee75736fa3833e90b070990880adac047a0631c58"
+        },
+        "evidence": [
+          "docs/evidence/SAAS/S009/A2/README.md",
+          "docs/evidence/SAAS/S009/A2/result.json",
+          "docs/evidence/SAAS/S009/A2/manifest.json",
+          "docs/evidence/SAAS/S009/A2/native-result.json",
+          "docs/evidence/SAAS/S009/A2/reuse-map.json"
+        ],
+        "summary": "QA independen lulus pada MariaDB 10.11.14: backup menghasilkan gzip valid, restore scratch identik, 41 guard existing dan enam kasus fail-closed lulus. Bukti migrasi, rollback, guard tenant kedua, failure recovery, dan smoke A1 dipakai ulang setelah pin source serta kondisi relevan terbukti identik."
+      }
     },
     {
       "id": "S010",

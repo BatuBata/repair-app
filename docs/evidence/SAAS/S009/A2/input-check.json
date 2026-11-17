@@ -1,0 +1,21 @@
+{
+  "head": "e790e7b019e2dd3b4569cf118f7136119658ad9f",
+  "candidate": "sha256:ce45314d50e2a865026fab4ee75736fa3833e90b070990880adac047a0631c58",
+  "actual": "sha256:ce45314d50e2a865026fab4ee75736fa3833e90b070990880adac047a0631c58",
+  "files": 261,
+  "mismatches": [],
+  "changed_paths_from_A1": [
+    "deploy/backup.sh",
+    "deploy/check-scripts.py",
+    "docs/SAAS-MIGRATION-RUNBOOK.md"
+  ],
+  "added_paths": [
+    "docs/evidence/SAAS/S008/A2/mariadb-check.py"
+  ],
+  "unchanged_old_paths": 257,
+  "all_246_application_files_unchanged": true,
+  "s009_a1_manifest_files_verified": 22,
+  "s009_a1_evidence_mismatches": [],
+  "s009_a1_result_sha256": "88e21a2909217e9fb2616629a2bbf56eb49e0d648b69c007fc8493bb0f4b74ba",
+  "s007_result_sha256": "6ba364a204d98ac1d9754182d2a4fd1c54de6f940d7341ad88bef207aea74ad4"
+}

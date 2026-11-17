@@ -1,0 +1,16 @@
+{
+  "candidate": "sha256:6b01398fbd10ba0196919655f94c9f26917e906fedbef562abb94eec2c6549cd",
+  "checked_revision": "6d0254c2c0b54a42ed7c0a8917a4cf1400667f42",
+  "old_candidate": "sha256:066bb9e82bd3ac5142a1ef516fc46c862c7e3b1b2cbc28ee4eb0a8ab402996f6",
+  "scope_files": 246,
+  "identical_files": 244,
+  "changed_files": [
+    "tests/Feature/Domain/MySqlConcurrencyTest.php",
+    "tests/Feature/Domain/mysql-worker.php"
+  ],
+  "non_test_files_identical": 205,
+  "production_migration_workflow_dependencies_identical": true,
+  "s008_s009_operational_patch_changed": false,
+  "model_requested": "gpt-6.1-sol high",
+  "model_effective": null
+}

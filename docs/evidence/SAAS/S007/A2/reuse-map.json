@@ -1,0 +1,109 @@
+{
+  "source_candidate": "sha256:066bb9e82bd3ac5142a1ef516fc46c862c7e3b1b2cbc28ee4eb0a8ab402996f6",
+  "target_candidate": "sha256:6b01398fbd10ba0196919655f94c9f26917e906fedbef562abb94eec2c6549cd",
+  "producer": "independent tester /root/s007_qa S007/A1",
+  "condition": "205 non-test candidate files identical; no browser/auth/runtime/dependency/schema behavior changed by two test-harness edits",
+  "case_groups": [
+    {
+      "evidence": "docs/evidence/SAAS/S007/A1/browser.json",
+      "sha256": "f830c12bbcc4970e0296936a667d85a1720f06e157c183cc2867898a67788a1b",
+      "cases": [
+        "dashboard-total-A",
+        "reports-filters-totals-foreign-detail-A",
+        "all-module-lists-A",
+        "store-identity-A",
+        "foreign-direct-routes-A",
+        "foreign-livewire-action-ids-A",
+        "locked-orderId-A",
+        "locked-productId-A",
+        "foreign-category-payload-A",
+        "tts-create-detail-foreign-technician-A",
+        "product-create-A",
+        "stock-restock-A",
+        "login-dashboard-A",
+        "login-dashboard-B",
+        "foreign-product-livewire-payload-A",
+        "sale-create-detail-A",
+        "own-documents-A",
+        "public-tracking-owner-safe-fields-A",
+        "dashboard-total-B",
+        "reports-filters-totals-foreign-detail-B",
+        "all-module-lists-B",
+        "store-identity-B",
+        "foreign-direct-routes-B",
+        "foreign-livewire-action-ids-B",
+        "locked-orderId-B",
+        "locked-productId-B",
+        "foreign-category-payload-B",
+        "tts-create-detail-foreign-technician-B",
+        "product-create-B",
+        "stock-restock-B",
+        "foreign-product-livewire-payload-B",
+        "sale-create-detail-B",
+        "own-documents-B",
+        "public-tracking-owner-safe-fields-B"
+      ],
+      "verdict": "pass",
+      "reuse_reason": "same app and browser-relevant code; changed test harness not called by browser"
+    },
+    {
+      "evidence": "docs/evidence/SAAS/S007/A1/security-browser.json",
+      "sha256": "74b20130c764259855c139f7e09b34f1d9af113b66a4db7b238c92fa66eab949",
+      "cases": [
+        "foreign-expense-ids-and-locked-payload-A",
+        "other-locked-identity-fields-A",
+        "foreign-expense-ids-and-locked-payload-B",
+        "other-locked-identity-fields-B",
+        "signed-foreign-snapshot-replay",
+        "guest-tracking-and-public-pdf",
+        "inactive-tenant-livewire-mutation",
+        "inactive-tenant-existing-remember-session",
+        "inactive-tenant-login-rejected",
+        "inactive-tenant-public-history-retained",
+        "other-tenant-remains-active"
+      ],
+      "verdict": "pass",
+      "reuse_reason": "same app and browser-relevant code; changed test harness not called by browser"
+    },
+    {
+      "evidence": "docs/evidence/SAAS/S007/A1/sqlite.log",
+      "sha256": "94611f29a5aaf425abbcc25ed4c53ecebb57d0a661e6110d9f90926c65292ea0",
+      "reuse_reason": "unchanged relevant inputs; exact remote full CI supplements local A1 regression; new targeted MariaDB replaces historical skip"
+    },
+    {
+      "evidence": "docs/evidence/SAAS/S007/A1/pint.log",
+      "sha256": "cd1a94fc2cf6a965b86e1a4809d6c7fb9148b1ee374e1010ed2ac96ff4876ec2",
+      "reuse_reason": "unchanged relevant inputs; exact remote full CI supplements local A1 regression; new targeted MariaDB replaces historical skip"
+    },
+    {
+      "evidence": "docs/evidence/SAAS/S007/A1/phpstan.log",
+      "sha256": "c10f74fb840de989bba7e9c2dfee7f8419b5d2ac0cc0daf18a4a187f6530aa43",
+      "reuse_reason": "unchanged relevant inputs; exact remote full CI supplements local A1 regression; new targeted MariaDB replaces historical skip"
+    },
+    {
+      "evidence": "docs/evidence/SAAS/S007/A1/build.log",
+      "sha256": "b1ed51473327025761b06565ef8b4943f84df2722359f1e47fcdf1096a578df6",
+      "reuse_reason": "unchanged relevant inputs; exact remote full CI supplements local A1 regression; new targeted MariaDB replaces historical skip"
+    },
+    {
+      "evidence": "docs/evidence/SAAS/S007/A1/mysql-setup.log",
+      "sha256": "f900fd84c433eb22831d402de6547753947eec34d29ceb78ca40376c35fdb8f8",
+      "reuse_reason": "unchanged relevant inputs; exact remote full CI supplements local A1 regression; new targeted MariaDB replaces historical skip"
+    },
+    {
+      "evidence": "docs/evidence/SAAS/S007/A1/mysql-proof.log",
+      "sha256": "4c8f9600a9b9b0b4b19986915d692300f84fd6a7c7eb1ea171a0249dc57b233d",
+      "reuse_reason": "unchanged relevant inputs; exact remote full CI supplements local A1 regression; new targeted MariaDB replaces historical skip"
+    },
+    {
+      "evidence": "docs/evidence/SAAS/S007/A1/mysql-existing-counter.log",
+      "sha256": "45a56641a2cda308512196c7537ce46a46263d140a5ae85231f77ebed388a510",
+      "reuse_reason": "unchanged relevant inputs; exact remote full CI supplements local A1 regression; new targeted MariaDB replaces historical skip"
+    },
+    {
+      "evidence": "docs/evidence/SAAS/S007/A1/mysql-final.log",
+      "sha256": "7f67c326fa81e45f0a88128fddef7a466e180ac157edb4ecf1f956b2560c5c5f",
+      "reuse_reason": "unchanged relevant inputs; exact remote full CI supplements local A1 regression; new targeted MariaDB replaces historical skip"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "S007/A1": {
+    "manifest": "docs/evidence/SAAS/S007/A1/manifest.json",
+    "manifest_sha256": "832618d70071075d98037f45c7a2edeffaa6e3a5f88227a3ba5afe3be48b7a21",
+    "files_verified": 33
+  },
+  "S008/A2": {
+    "manifest": "docs/evidence/SAAS/S008/A2/evidence-manifest.json",
+    "manifest_sha256": "baf1d282db0f6b6d2fb28fdff38b904da42aaa8917549e0ae30024a5a29ed4ee",
+    "files_verified": 13
+  },
+  "S009/A2": {
+    "manifest": "docs/evidence/SAAS/S009/A2/manifest.json",
+    "manifest_sha256": "db32b70ba6759f1576485a7ddbc5c336ba1294576216afc8f83b0ff0328edc28",
+    "files_verified": 12
+  },
+  "S008_candidate": {
+    "candidate": "sha256:ce45314d50e2a865026fab4ee75736fa3833e90b070990880adac047a0631c58",
+    "scope_files": 261,
+    "unchanged_files": 259,
+    "changed_files": [
+      "tests/Feature/Domain/MySqlConcurrencyTest.php",
+      "tests/Feature/Domain/mysql-worker.php"
+    ],
+    "operational_source_unchanged": true,
+    "extra_migration_test_pin": {
+      "path": "tests/Feature/Tenancy/MigrationTest.php",
+      "sha256": "42b994a3a04d613664623820c2345826e804710ae118a485e220f8fab5da9a34"
+    }
+  }
+}

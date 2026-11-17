@@ -1,0 +1,117 @@
+{
+  "algorithm": "SHA256 sorted UTF8 repository-relative path + NUL + bytes; manifest excluded",
+  "report_sha256": "sha256:19cb224084ed1be979972a4ed3d05430d06b3243cd9dbbebb174a1ca4c6c4570",
+  "evidence_digest": "sha256:dac9f8984f1d7edc5516581dd5cf4bce6b8c6d93e53cc398d2d01c559c2b704a",
+  "files": [
+    {
+      "path": "docs/evidence/SAAS/S007/A2/README.md",
+      "bytes": 9061,
+      "sha256": "19cb224084ed1be979972a4ed3d05430d06b3243cd9dbbebb174a1ca4c6c4570"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A2/checks.json",
+      "bytes": 3038,
+      "sha256": "e9a8cea0dcd7a5033e121bfb197a7c1ede70ea65b2e41be447b3a53e0d7c0971"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A2/cleanup.json",
+      "bytes": 212,
+      "sha256": "128c2090ef09e4fb6d4ef219aaf32db8de5f098028b0f9fb2733e92a790cadc1"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A2/docker-before.json",
+      "bytes": 22,
+      "sha256": "1eb11fb0c362b4c5fb9b14efaa5c398d5b7bfb45273ebe795f6fe19f12f44828"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A2/followup.py",
+      "bytes": 2818,
+      "sha256": "8c7d413332ba88d7dea9d55d84707a89b63b14491aec6563a2558a3df788f38f"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A2/harness-adjustments.json",
+      "bytes": 451,
+      "sha256": "2bc232c8a6b54701f7bf16078d1d00f139b3f86b15ffe34d50137c9e737ab278"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A2/mariadb-before.json",
+      "bytes": 475,
+      "sha256": "320715a17304c5a3775d212eb84d2c0c991508826bfcf481d9e4978addf3b1cf"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A2/mariadb-proof.json",
+      "bytes": 942,
+      "sha256": "6e73868e8486eb7e2dbec499816e2a72c8f080c143e10daf576a2b4e58b697b2"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A2/mariadb-test.log",
+      "bytes": 94,
+      "sha256": "87441319a10d7d421b7217d16be7f68eb30d03cb1eb6818af2d85ec4c06f8f67"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A2/mysql-timings.jsonl",
+      "bytes": 1963,
+      "sha256": "f73c59e6a1e83fbc4326f9eab79204bea7368b6f96bc838388a4d04272ef1333"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A2/nonempty-guard.log",
+      "bytes": 471,
+      "sha256": "50d121bf940ed24a436d742048e090e84fdfe1e268241d5c1f528c698e68e983"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A2/phpstan-baseline.json",
+      "bytes": 1273,
+      "sha256": "d6bbf355c0493ba52e0b866c980feaa51efab97332b7b7bff385a03f78efe266"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A2/phpstan-candidate.json",
+      "bytes": 1410,
+      "sha256": "e95e30997a90e7347792807397ba93126ca9c044ab80e3873be815f710593d43"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A2/phpstan-environment-initial.json",
+      "bytes": 672,
+      "sha256": "2a4489d708bf390ad593ed835fd928f7d75e487a723857506387a8ccc01caf59"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A2/pin.json",
+      "bytes": 638,
+      "sha256": "861646a4254806a8ff0ba7a847bdd4656e91feff4add5961953341712d2791cb"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A2/remote-ci.json",
+      "bytes": 6564,
+      "sha256": "e51d5f8f3a5439ca9fde08b4b5ca24a95d4e28ba44d86ff9b1c6e254a7705b6b"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A2/result.json",
+      "bytes": 2706,
+      "sha256": "c777c0b120bfb50634e099ef1f149cc8da7b1ea71d37731c19374e726952fde6"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A2/reuse-inputs.json",
+      "bytes": 1123,
+      "sha256": "69f769be0fa85b40de91cd7a39de753ca0e7a156058e520df52dbf09f166fcf4"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A2/reuse-map.json",
+      "bytes": 5229,
+      "sha256": "17e2b92cf0b214d0dbdc887c748c7f14b5a0762ea7a8212d97ae80979b26dad4"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A2/static-comparison.json",
+      "bytes": 648,
+      "sha256": "e221605b0704d4893cd2a7ece02b6634b93c6b98a6d63af31ddbeee6450cad11"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A2/verify.py",
+      "bytes": 7066,
+      "sha256": "82f2f884b00006f1c0cc7f29634d249cf90f3c92ed3041d472f91c8b8b3e9619"
+    },
+    {
+      "path": "docs/evidence/SAAS/S007/A2/worker-guards.json",
+      "bytes": 696,
+      "sha256": "97700dc78b9ded84b63d46d43279b0d5f7c08c4809d9fbeb3deab9f0ed451119"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "initial_guard_assertion": "Incorrectly expected worker exception nonzero; actual Laravel renderer zero with invalid JSON and guard message. Main MariaDB pass and nonempty guard completed before this harness assertion.",
+  "followup": "Only unproven wrong-driver/database guards and standalone static run; main MariaDB not rerun.",
+  "phpstan_environment": "Initial parallel socket denied; --debug sequential completed.",
+  "source_fixes": false
+}

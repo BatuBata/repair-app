@@ -28,10 +28,10 @@ Goal aktif 17 November 2026 mengizinkan eksekusi S001–S012. Deployment produks
 | S004 | Isolasi alur servis, dokumen, dan tracking | developer / 6.1-sol | complex / high | S003 | — | done |
 | S005 | Isolasi stok, penjualan, pengeluaran, dashboard, dan laporan | developer / 6.1-sol | complex / high | S004 | — | done |
 | S006 | Integrasikan candidate Lean SaaS | integrator / 6.1-sol | medium / high | S003, S004, S005 | — | done |
-| S007 | QA independen keamanan tenant dan regresi aplikasi | tester / 6.1-sol | complex / high | S006 | — | running |
-| S008 | Siapkan runbook dan rehearsal migrasi Anugerah | developer / 6.1-sol | medium / high | S007 | — | pending |
-| S009 | QA independen rehearsal backup, migrasi, dan rollback | tester / 6.1-sol | complex / high | S008 | — | pending |
-| S010 | Deploy dan migrasikan Anugerah ke schema tenant | deployer / 6.1-sol | medium / high | S006, S007, S009 | — | blocked |
+| S007 | QA independen keamanan tenant dan regresi aplikasi | tester / 6.1-sol | complex / high | S006 | — | done |
+| S008 | Siapkan runbook dan rehearsal migrasi Anugerah | developer / 6.1-sol | medium / high | S007 | — | done |
+| S009 | QA independen rehearsal backup, migrasi, dan rollback | tester / 6.1-sol | complex / high | S008 | — | done |
+| S010 | Deploy dan migrasikan Anugerah ke schema tenant | deployer / 6.1-sol | medium / high | S006, S007, S009 | — | running |
 | S011 | Verifikasi independen produksi setelah migrasi | tester / 6.1-sol | medium / high | S010 | — | pending |
 | S012 | Onboard dan verifikasi pilot client kedua | tester / 6.1-sol | medium / high | S010, S011 | — | pending |
 <!-- END GENERATED VIEW -->
@@ -127,7 +127,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "acceptance_tasks": [
         "S007"
       ],
-      "status": "pending"
+      "status": "accepted"
     },
     {
       "id": "SD2",
@@ -734,7 +734,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         "Jalankan suite penuh pada SQLite dan test tenant/konkurensi pada MariaDB/MySQL khusus; audit query raw/global-scope bypass dan Livewire payload.",
         "Smoke browser tenant A/B pada alur login, TTS, stok, laporan, dokumen, dan tracking."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -754,8 +754,8 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native-codex:S007:A2",
-          "outcome": "running",
-          "receipt_ref": null
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/SAAS/S007/A2/README.md"
         }
       ],
       "prior_results": [{
@@ -774,7 +774,24 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "docs/evidence/SAAS/S007/A1/security-browser.json"
         ],
         "summary": "QA independen kandidat S006 lulus: suite lengkap, migrasi/backfill/rollback dan konkurensi MySQL terisolasi, 45 kasus browser dua tenant, replay payload asing, tenant nonaktif, dan public tracking terbukti aman."
-      }]
+      }],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/SAAS/S007/A2/README.md",
+        "revision": "sha256:19cb224084ed1be979972a4ed3d05430d06b3243cd9dbbebb174a1ca4c6c4570",
+        "checked_revision": "sha256:6b01398fbd10ba0196919655f94c9f26917e906fedbef562abb94eec2c6549cd",
+        "inputs": {
+          "S006": "sha256:6b01398fbd10ba0196919655f94c9f26917e906fedbef562abb94eec2c6549cd"
+        },
+        "evidence": [
+          "docs/evidence/SAAS/S007/A2/README.md",
+          "docs/evidence/SAAS/S007/A2/result.json",
+          "docs/evidence/SAAS/S007/A2/manifest.json",
+          "docs/evidence/SAAS/S007/A2/mariadb-proof.json",
+          "https://github.com/BatuBata/repair-app/actions/runs/44014653205"
+        ],
+        "summary": "QA independen lulus: MariaDB 10.11.14 menjalankan 44 assertion dan 16 child writes, sedangkan CI exact commit lulus 220 tes/2.435 assertion serta 20 deployment safety. Seluruh 205 file non-test identik; bukti browser, isolasi, migrasi, dan operasi lama dipakai ulang setelah pin hash."
+      }
     },
     {
       "id": "S008",
@@ -824,7 +841,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         "Rehearsal otomatis pada database khusus dari fixture representatif; bandingkan inventaris dan checksum sebelum/sesudah/restore.",
         "Review command untuk target eksplisit, redaksi secret, idempotensi aman, dan failure injection pada titik backfill."
       ],
-      "status": "pending",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -870,7 +887,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         "revision": "sha256:ce45314d50e2a865026fab4ee75736fa3833e90b070990880adac047a0631c58",
         "checked_revision": "sha256:ce45314d50e2a865026fab4ee75736fa3833e90b070990880adac047a0631c58",
         "inputs": {
-          "S007": "sha256:6ba364a204d98ac1d9754182d2a4fd1c54de6f940d7341ad88bef207aea74ad4"
+          "S007": "sha256:19cb224084ed1be979972a4ed3d05430d06b3243cd9dbbebb174a1ca4c6c4570"
         },
         "evidence": [
           "docs/SAAS-MIGRATION-RUNBOOK.md",
@@ -879,7 +896,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "docs/evidence/SAAS/S008/A2/deploy-safety.log",
           "docs/evidence/SAAS/S008/A2/mariadb-result.json"
         ],
-        "summary": "A2 memperbaiki satu jalur backup existing dengan deteksi fail-closed: MySQL 8 tetap memakai dua opsi khusus MySQL, MariaDB 10.11 tidak. Empat puluh satu guard host dan backup/restore scratch MariaDB 10.11.14 nyata lulus; offsite dan produksi tetap menjadi gate berikutnya."
+        "summary": "A2 memperbaiki satu jalur backup existing dengan deteksi fail-closed: MySQL 8 tetap memakai dua opsi khusus MySQL, MariaDB 10.11 tidak. Empat puluh satu guard host dan backup/restore scratch MariaDB 10.11.14 nyata lulus; QA S007/A2 membuktikan hanya harness tes berubah sehingga bukti operasi ini tetap berlaku."
       }
     },
     {
@@ -926,7 +943,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "verification_plan": [
         "Ulangi runbook dari awal pada database bersih, periksa checksum/inventaris/log teredaksi, lalu jalankan smoke fitur pada hasil restore dan hasil migrasi."
       ],
-      "status": "pending",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -1015,7 +1032,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "deployment": {
         "environment": "production",
         "source_task": "S006",
-        "source_revision": "sha256:066bb9e82bd3ac5142a1ef516fc46c862c7e3b1b2cbc28ee4eb0a8ab402996f6",
+        "source_revision": "sha256:6b01398fbd10ba0196919655f94c9f26917e906fedbef562abb94eec2c6549cd",
         "authorization_ref": "saas-production-2026-11-17"
       },
       "write_scope": [
@@ -1046,7 +1063,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "verification_plan": [
         "Catat commit, target, backup receipt, migration output teredaksi, inventaris sebelum/sesudah, health check, dan keputusan rollback/lanjut."
       ],
-      "status": "blocked",
+      "status": "running",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -1058,9 +1075,19 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "dispatch_ref": "native-codex:S010:A1",
           "outcome": "blocked",
           "receipt_ref": "docs/evidence/SAAS/S010/A1/README.md"
+        },
+        {
+          "id": "A2",
+          "kind": "implementation",
+          "worker_id": "/root/s010_deploy",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native-codex:S010:A2",
+          "outcome": "running",
+          "receipt_ref": null
         }
       ],
-      "result": {
+      "prior_results": [{
         "verdict": "blocked",
         "artifact_ref": "docs/evidence/SAAS/S010/A1/README.md",
         "revision": "sha256:8f59739afbf03eb14aaa8d98ed2448bf34aec81bb50922ea07b2d919f2a31ce1",
@@ -1077,7 +1104,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         ],
         "failure_class": "product",
         "summary": "Preflight berhenti sebelum maintenance karena CI kandidat gagal pada MySqlConcurrencyTest: proses worker belum menetapkan TenantContext. Produksi tetap online dan tidak berubah; backup, merge, migrasi, dan deployment belum dimulai."
-      }
+      }]
     },
     {
       "id": "S011",

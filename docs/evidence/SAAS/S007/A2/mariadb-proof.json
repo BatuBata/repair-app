@@ -1,0 +1,49 @@
+{
+  "verdict": "pass",
+  "command": [
+    "/opt/homebrew/opt/php@8.3/bin/php",
+    "vendor/bin/phpunit",
+    "--filter",
+    "MySqlConcurrencyTest",
+    "--colors=never"
+  ],
+  "exit_code": 0,
+  "version": "10.11.14-MariaDB-ubu2204",
+  "tenant1_seeded": true,
+  "counts": {
+    "tenants": 1,
+    "admin_tenant1": 1,
+    "tts": 8,
+    "sales": 8,
+    "distinct_tracking_tokens": 8,
+    "categories": 9
+  },
+  "number_sequences": [
+    "1\tJL\t2611\t8",
+    "1\tTTS\t2611\t8"
+  ],
+  "numbers": {
+    "service_orders": [
+      "TTS-2611-001",
+      "TTS-2611-002",
+      "TTS-2611-003",
+      "TTS-2611-004",
+      "TTS-2611-005",
+      "TTS-2611-006",
+      "TTS-2611-007",
+      "TTS-2611-008"
+    ],
+    "sales": [
+      "JL-2611-001",
+      "JL-2611-002",
+      "JL-2611-003",
+      "JL-2611-004",
+      "JL-2611-005",
+      "JL-2611-006",
+      "JL-2611-007",
+      "JL-2611-008"
+    ]
+  },
+  "overlapping_rounds": 4,
+  "child_writes": 16
+}

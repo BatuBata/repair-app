@@ -1,0 +1,13 @@
+{
+  "container_id": "4edf2da2107019880cbd794eed6feb322b8ed559e0d655dd12e29fc4aaf49496",
+  "name": "repair-s007-a2-e0c2456c2e",
+  "task_label": "S007-A2",
+  "version": "10.11.14-MariaDB-ubu2204",
+  "image_tag": "mariadb:10.11.14",
+  "image_id": "sha256:dbe56e20372fc6d6b8e0e396866ba89c4c7f128c38c4f59aaa54d957db95790c",
+  "host": "127.0.0.1",
+  "port": "32770",
+  "database": "repair_app_test",
+  "initial_tables": 0,
+  "storage": "new owned container tmpfs, no host volume"
+}

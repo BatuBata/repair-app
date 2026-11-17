@@ -1,0 +1,20 @@
+[
+  {
+    "driver": "sqlite",
+    "database": ":memory:",
+    "exit_code": 0,
+    "guard_message_observed": true,
+    "valid_worker_json": false,
+    "database_server_needed": false,
+    "reason": "Guard executes before Tenant::findOrFail or any SQL; parent rejects invalid child JSON even though Laravel exception renderer returns zero."
+  },
+  {
+    "driver": "mysql",
+    "database": "saas_s007_forbidden",
+    "exit_code": 0,
+    "guard_message_observed": true,
+    "valid_worker_json": false,
+    "database_server_needed": false,
+    "reason": "Guard executes before Tenant::findOrFail or any SQL; parent rejects invalid child JSON even though Laravel exception renderer returns zero."
+  }
+]

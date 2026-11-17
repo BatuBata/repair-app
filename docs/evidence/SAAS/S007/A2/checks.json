@@ -1,0 +1,103 @@
+{
+  "syntax": {
+    "commands": [
+      "php -l tests/Feature/Domain/MySqlConcurrencyTest.php",
+      "php -l tests/Feature/Domain/mysql-worker.php"
+    ],
+    "actual": "No syntax errors detected for both",
+    "verdict": "pass"
+  },
+  "pint": {
+    "command": "php vendor/bin/pint --test tests/Feature/Domain/MySqlConcurrencyTest.php tests/Feature/Domain/mysql-worker.php",
+    "actual": "passed",
+    "verdict": "pass"
+  },
+  "targeted_static": {
+    "command": "python3 docs/evidence/SAAS/S007/A2/followup.py --static-only",
+    "actual": "baseline 2 vs candidate 3 diagnostics; repeated PendingCommand|int message on new seed line; no new diagnostic class; not clean static PASS",
+    "verdict": "known_test_typing_diagnostics"
+  },
+  "mariadb": {
+    "verdict": "pass",
+    "command": [
+      "/opt/homebrew/opt/php@8.3/bin/php",
+      "vendor/bin/phpunit",
+      "--filter",
+      "MySqlConcurrencyTest",
+      "--colors=never"
+    ],
+    "exit_code": 0,
+    "version": "10.11.14-MariaDB-ubu2204",
+    "tenant1_seeded": true,
+    "counts": {
+      "tenants": 1,
+      "admin_tenant1": 1,
+      "tts": 8,
+      "sales": 8,
+      "distinct_tracking_tokens": 8,
+      "categories": 9
+    },
+    "number_sequences": [
+      "1\tJL\t2611\t8",
+      "1\tTTS\t2611\t8"
+    ],
+    "numbers": {
+      "service_orders": [
+        "TTS-2611-001",
+        "TTS-2611-002",
+        "TTS-2611-003",
+        "TTS-2611-004",
+        "TTS-2611-005",
+        "TTS-2611-006",
+        "TTS-2611-007",
+        "TTS-2611-008"
+      ],
+      "sales": [
+        "JL-2611-001",
+        "JL-2611-002",
+        "JL-2611-003",
+        "JL-2611-004",
+        "JL-2611-005",
+        "JL-2611-006",
+        "JL-2611-007",
+        "JL-2611-008"
+      ]
+    },
+    "overlapping_rounds": 4,
+    "child_writes": 16
+  },
+  "nonempty_guard": {
+    "expected": "fail before reset",
+    "actual": "failed at empty assertion; inventory equality assertion on all21 owned tables passed",
+    "verdict": "pass"
+  },
+  "worker_guards": [
+    {
+      "driver": "sqlite",
+      "database": ":memory:",
+      "exit_code": 0,
+      "guard_message_observed": true,
+      "valid_worker_json": false,
+      "database_server_needed": false,
+      "reason": "Guard executes before Tenant::findOrFail or any SQL; parent rejects invalid child JSON even though Laravel exception renderer returns zero."
+    },
+    {
+      "driver": "mysql",
+      "database": "saas_s007_forbidden",
+      "exit_code": 0,
+      "guard_message_observed": true,
+      "valid_worker_json": false,
+      "database_server_needed": false,
+      "reason": "Guard executes before Tenant::findOrFail or any SQL; parent rejects invalid child JSON even though Laravel exception renderer returns zero."
+    }
+  ],
+  "remote_ci": {
+    "url": "https://github.com/BatuBata/repair-app/actions/runs/44014653205",
+    "commit": "6d0254c2c0b54a42ed7c0a8917a4cf1400667f42",
+    "conclusion": "success",
+    "tests": 220,
+    "assertions": 2435,
+    "deploy_safety_cases": 20,
+    "deploy": "skipped_by_branch_condition"
+  }
+}

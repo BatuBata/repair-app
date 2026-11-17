@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Users/muzib/Projects/web/repair-app/deploy/check-scripts.py", line 174, in <module>
+    main()
+  File "/Users/muzib/Projects/web/repair-app/deploy/check-scripts.py", line 126, in main
+    assert not run('backup.sh', [cnf, 'repair_test', directory, '-', '-'], False)
+AssertionError

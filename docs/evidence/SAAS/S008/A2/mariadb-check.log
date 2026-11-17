@@ -1,0 +1,1 @@
+PASS exact MariaDB 10.11.14 candidate backup, valid archive, expected offsite gate, scratch restore, cleanup

@@ -15,6 +15,10 @@ import json, os, pathlib, subprocess, sys
 name = pathlib.Path(sys.argv[0]).name
 with open(os.environ['CALLS'], 'a') as f:
     f.write(json.dumps([name, *sys.argv[1:]]) + '\\n')
+if name == 'mysqldump' and sys.argv[1:] == ['--no-defaults', '--version']:
+    if os.environ.get('CLIENT_VERSION_FAIL'): sys.exit(17)
+    print(os.environ.get('CLIENT_VERSION', 'mysqldump  Ver 8.0.31 for macos13.0 on arm64 (MySQL Community Server - GPL)'))
+    sys.exit(0)
 if os.environ.get('FAIL') == name:
     print('synthetic private error', file=sys.stderr)
     sys.exit(19)
@@ -61,36 +65,53 @@ def main():
             passed += 1
             return [json.loads(line) for line in calls.read_text().splitlines()]
 
-        for fail in ('mysqldump', 'gzip', 'scp', 'ssh', 'pending', ''):
-            directory = root / ('backup-' + (fail or 'success'))
-            directory.mkdir(mode=0o700)
-            old = directory / 'repair_test-20200101T030000Z-ABC123.sql.gz'
-            old.write_bytes(gzip.compress(b'old'))
-            os.utime(old, (time.time() - 15 * 86400,) * 2)
-            recent = directory / 'repair_test-20200101T030000Z-ABC124.sql.gz'
-            recent.write_bytes(gzip.compress(b'recent'))
-            os.utime(recent, (time.time() - 13 * 86400,) * 2)
-            unrelated = directory / 'another.sql.gz'
-            unrelated.write_text('keep')
-            remote = ['-', '-'] if fail == 'pending' else ['offsite', '/private/backups']
-            seen = run('backup.sh', [cnf, 'repair_test', directory, *remote], not fail, fail)
-            assert old.exists() == bool(fail), fail
-            assert recent.exists() and unrelated.exists()
-            assert not (directory / '.backup-repair_test.lock').exists()
-            assert not list(directory.glob('.work-*'))
-            if fail in ('mysqldump', 'gzip'):
-                assert not any(x[0] in ('scp', 'ssh') for x in seen)
-                assert len(list(directory.glob('*.sql.gz'))) == 3
-            else:
-                assert len(list(directory.glob('*.sql.gz'))) == (3 if not fail else 4)
-            if not fail:
-                dump = next(x for x in seen if x[0] == 'mysqldump')
-                assert dump[1] == f'--defaults-file={cnf}'
-                assert '--databases' not in dump and '--set-gtid-purged=OFF' in dump
-                assert '--triggers' in dump
-                assert any(x[0] == 'ssh' for x in seen)
+        for family, version in (
+                ('mysql', 'mysqldump  Ver 8.0.31 for macos13.0 on arm64 (MySQL Community Server - GPL)'),
+                ('mariadb', 'mariadb-dump  Ver 10.19 Distrib 10.11.14-MariaDB, for debian-linux-gnu (aarch64)')):
+            for fail in ('mysqldump', 'gzip', 'scp', 'ssh', 'pending', ''):
+                directory = root / ('backup-' + family + '-' + (fail or 'success'))
+                directory.mkdir(mode=0o700)
+                old = directory / 'repair_test-20200101T030000Z-ABC123.sql.gz'
+                old.write_bytes(gzip.compress(b'old'))
+                os.utime(old, (time.time() - 15 * 86400,) * 2)
+                recent = directory / 'repair_test-20200101T030000Z-ABC124.sql.gz'
+                recent.write_bytes(gzip.compress(b'recent'))
+                os.utime(recent, (time.time() - 13 * 86400,) * 2)
+                unrelated = directory / 'another.sql.gz'
+                unrelated.write_text('keep')
+                remote = ['-', '-'] if fail == 'pending' else ['offsite', '/private/backups']
+                seen = run('backup.sh', [cnf, 'repair_test', directory, *remote], not fail, fail, extra={'CLIENT_VERSION': version})
+                assert old.exists() == bool(fail), fail
+                assert recent.exists() and unrelated.exists()
+                assert not (directory / '.backup-repair_test.lock').exists()
+                assert not list(directory.glob('.work-*'))
+                if fail in ('mysqldump', 'gzip'):
+                    assert not any(x[0] in ('scp', 'ssh') for x in seen)
+                    assert len(list(directory.glob('*.sql.gz'))) == 3
+                else:
+                    assert len(list(directory.glob('*.sql.gz'))) == (3 if not fail else 4)
+                if not fail:
+                    dump = next(x for x in seen if x[0] == 'mysqldump' and '--version' not in x)
+                    assert dump[1] == f'--defaults-file={cnf}'
+                    assert dump[-1] == 'repair_test' and '--databases' not in dump
+                    assert ('--set-gtid-purged=OFF' in dump) == (family == 'mysql')
+                    assert ('--column-statistics=0' in dump) == (family == 'mysql')
+                    assert all(x in dump for x in ('--single-transaction', '--quick',
+                                                  '--no-tablespaces', '--hex-blob', '--triggers'))
+                    archive = next(p for p in directory.glob('*.sql.gz')
+                                   if p not in (old, recent, unrelated))
+                    assert b'CREATE TABLE synthetic' in gzip.decompress(archive.read_bytes())
+                    assert any(x[0] == 'ssh' for x in seen)
 
-        directory = root / 'backup-success'
+        directory = root / 'backup-mysql-success'
+        for extra in ({'CLIENT_VERSION': 'unknown client'},
+                      {'CLIENT_VERSION': 'mysqldump  Ver 5.7.44 for Linux (MySQL Community Server - GPL)'},
+                      {'CLIENT_VERSION': 'mariadb-dump  Ver 10.19 Distrib 11.4.5-MariaDB, for Linux'},
+                      {'CLIENT_VERSION_FAIL': '1'}):
+            before = sorted(directory.iterdir())
+            seen = run('backup.sh', [cnf, 'repair_test', directory, '-', '-'], False, extra=extra)
+            assert seen == [['mysqldump', '--no-defaults', '--version']]
+            assert sorted(directory.iterdir()) == before
         for db, alias, remote_dir in [('bad*', 'offsite', '/safe'),
                                        ('repair_test', '-option', '/safe'),
                                        ('repair_test', 'offsite', '/bad/../path'),

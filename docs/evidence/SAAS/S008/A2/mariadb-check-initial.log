@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/muzib/Projects/web/repair-app/docs/evidence/SAAS/S008/A2/mariadb-check.py", line 146, in <module>
+    main()
+  File "/Users/muzib/Projects/web/repair-app/docs/evidence/SAAS/S008/A2/mariadb-check.py", line 123, in main
+    docker('exec', '-i', container, 'mariadb', '--defaults-file=/tmp/s008-root.cnf', '--database=saas_s008_a2_restore', input=sql.decode())
+  File "/Users/muzib/Projects/web/repair-app/docs/evidence/SAAS/S008/A2/mariadb-check.py", line 41, in docker
+    return subprocess.run([*DOCKER, *args], input=input, text=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/homebrew/bin/docker', '--context', 'colima', 'exec', '-i', 'saas-s008-a2-6668709c', 'mariadb', '--defaults-file=/tmp/s008-root.cnf', '--database=saas_s008_a2_restore']' returned non-zero exit status 1.

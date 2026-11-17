@@ -1,0 +1,11 @@
+{
+  "previous_candidate": "sha256:066cd061d3b189d9873333a06e3ecf46a493469cc096715b1461b758157b8157",
+  "compared_files": 260,
+  "changed_paths": [
+    "deploy/backup.sh",
+    "deploy/check-scripts.py",
+    "docs/SAAS-MIGRATION-RUNBOOK.md"
+  ],
+  "other_paths_identical": 257,
+  "software_S006_246_files_unchanged": true
+}

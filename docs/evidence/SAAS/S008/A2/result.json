@@ -1,0 +1,45 @@
+{
+  "task": "S008",
+  "attempt": "A2",
+  "role": "implementer",
+  "verdict": "pass_self_check",
+  "candidate": "sha256:ce45314d50e2a865026fab4ee75736fa3833e90b070990880adac047a0631c58",
+  "model_requested": "gpt-6.1-sol",
+  "effort_requested": "high",
+  "model_effective": null,
+  "runtime_receipt": "not available to worker; no effective-model claim",
+  "host_safety": {
+    "result": "pass",
+    "cases": 41,
+    "families": [
+      "MySQL 8",
+      "MariaDB 10.11"
+    ],
+    "unknown_unsupported_probe_error": "rejected before dump/offsite; lock cleaned",
+    "evidence": "deploy-safety.log"
+  },
+  "native_backup": {
+    "result": "pass_native_backup_expected_offsite_gate",
+    "engine": "10.11.14-MariaDB-ubu2204",
+    "client": "mariadb-dump  Ver 10.19 Distrib 10.11.14-MariaDB, for debian-linux-gnu (aarch64)",
+    "archive": {
+      "name": "saas_s008_a2_source-20261117T033214Z-YhjGsF.sql.gz",
+      "sha256": "f941b8a1e3bc015bfaef78520b2ef2f168fe26abfe5ca1a8dc2265e280981b17",
+      "bytes": 1013,
+      "sql_bytes": 2972,
+      "gzip_valid": true,
+      "explicit_target": true,
+      "triggers": true,
+      "hex_blob": true
+    },
+    "expected_offsite_gate_exit": 1,
+    "restored_row_matches": true,
+    "evidence": "mariadb-result.json"
+  },
+  "independent_qa": "not run by implementer; S009 must evaluate candidate",
+  "not_run": [
+    "native MySQL8 backup on new candidate (stub coverage plus historical S008/A1 native result)",
+    "full application suite/build (246 software files identical)",
+    "production/offsite transfer/cron/physical devices"
+  ]
+}

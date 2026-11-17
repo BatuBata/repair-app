@@ -1,0 +1,71 @@
+{
+  "algorithm": "per-file SHA256; manifest excludes itself",
+  "candidate": "sha256:ce45314d50e2a865026fab4ee75736fa3833e90b070990880adac047a0631c58",
+  "files": [
+    {
+      "path": "docs/evidence/SAAS/S008/A2/README.md",
+      "sha256": "21ee5a30c3b857b8f74059d41ecd606554fc3b0b4c0176856b4503438c95e6e9",
+      "bytes": 7034
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A2/candidate.json",
+      "sha256": "fc0f5eff14bd85afa8084e82ec9f46f06a3f9211c988fffcb6fd18ae4ae8f111",
+      "bytes": 39060
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A2/deploy-safety-initial.log",
+      "sha256": "16f6615c4a83d65874171cde87194263d1e2fb65df353a583b7b05e3123c1e25",
+      "bytes": 325
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A2/deploy-safety.log",
+      "sha256": "96f00a060b2a744bcc36a73fdff67ff63decbf4cf9314a9891580454ea361e8b",
+      "bytes": 77
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A2/diff-check.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A2/input-check.json",
+      "sha256": "bd42f9e827977e1fb19898d121bc79a8e38c9186cd65c034962e6bfbcfb33a58",
+      "bytes": 322
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A2/mariadb-check-initial.log",
+      "sha256": "b5c96716462bd7c5390814517bb9984123749577242e118c8a578be29024a63f",
+      "bytes": 1062
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A2/mariadb-check.log",
+      "sha256": "36ca9eaa5d0750d8382af55a067762217dd200e455625e8f0e1a1f3c7697c13a",
+      "bytes": 109
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A2/mariadb-check.py",
+      "sha256": "6368b9c57582c5f7dac7061137a5c744c3700ffd1257139ca36d6e4647ce70e1",
+      "bytes": 8354
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A2/mariadb-result-initial.json",
+      "sha256": "a761fe1a888baff7b16b865a44fad959da7d3dd402352b5c353ea12cfdf9d4f1",
+      "bytes": 5524
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A2/mariadb-result.json",
+      "sha256": "36368a3aba923a396403a74c1042a48dcf17a45457a4fa4c74f1508ff6f2d692",
+      "bytes": 5947
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A2/result.json",
+      "sha256": "58de6cd1c31b35f9c8a64f9fd20fa78a8d206489e806ceca6f70040d9bdf3bca",
+      "bytes": 1579
+    },
+    {
+      "path": "docs/evidence/SAAS/S008/A2/shell-syntax.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ]
+}

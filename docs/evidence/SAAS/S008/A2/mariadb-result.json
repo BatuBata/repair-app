@@ -1,0 +1,251 @@
+{
+  "base_revision": "4584b8f947418b099603de20bbbe94835e0f2df4",
+  "container": "saas-s008-a2-17bd0a5c",
+  "context": "colima",
+  "network": "none",
+  "image": "mariadb:10.11.14",
+  "commands": [
+    [
+      "/opt/homebrew/bin/docker",
+      "--context",
+      "colima",
+      "image",
+      "inspect",
+      "mariadb:10.11.14"
+    ],
+    [
+      "/opt/homebrew/bin/docker",
+      "--context",
+      "colima",
+      "run",
+      "--detach",
+      "--rm",
+      "--pull=never",
+      "--name",
+      "saas-s008-a2-17bd0a5c",
+      "--network",
+      "none",
+      "--mount",
+      "type=tmpfs,destination=/var/lib/mysql",
+      "--env-file",
+      "/var/folders/z3/lllr0gjd35z5pplbyrcr_wf00000gn/T/saas-s008-a2-8sp8eamx/container.env",
+      "mariadb:10.11.14"
+    ],
+    [
+      "/opt/homebrew/bin/docker",
+      "--context",
+      "colima",
+      "exec",
+      "saas-s008-a2-17bd0a5c",
+      "healthcheck.sh",
+      "--connect",
+      "--innodb_initialized"
+    ],
+    [
+      "/opt/homebrew/bin/docker",
+      "--context",
+      "colima",
+      "exec",
+      "saas-s008-a2-17bd0a5c",
+      "healthcheck.sh",
+      "--connect",
+      "--innodb_initialized"
+    ],
+    [
+      "/opt/homebrew/bin/docker",
+      "--context",
+      "colima",
+      "exec",
+      "saas-s008-a2-17bd0a5c",
+      "healthcheck.sh",
+      "--connect",
+      "--innodb_initialized"
+    ],
+    [
+      "/opt/homebrew/bin/docker",
+      "--context",
+      "colima",
+      "exec",
+      "saas-s008-a2-17bd0a5c",
+      "healthcheck.sh",
+      "--connect",
+      "--innodb_initialized"
+    ],
+    [
+      "/opt/homebrew/bin/docker",
+      "--context",
+      "colima",
+      "exec",
+      "saas-s008-a2-17bd0a5c",
+      "healthcheck.sh",
+      "--connect",
+      "--innodb_initialized"
+    ],
+    [
+      "/opt/homebrew/bin/docker",
+      "--context",
+      "colima",
+      "exec",
+      "saas-s008-a2-17bd0a5c",
+      "healthcheck.sh",
+      "--connect",
+      "--innodb_initialized"
+    ],
+    [
+      "/opt/homebrew/bin/docker",
+      "--context",
+      "colima",
+      "exec",
+      "saas-s008-a2-17bd0a5c",
+      "healthcheck.sh",
+      "--connect",
+      "--innodb_initialized"
+    ],
+    [
+      "/opt/homebrew/bin/docker",
+      "--context",
+      "colima",
+      "cp",
+      "/var/folders/z3/lllr0gjd35z5pplbyrcr_wf00000gn/T/saas-s008-a2-8sp8eamx/root.cnf",
+      "saas-s008-a2-17bd0a5c:/tmp/s008-root.cnf"
+    ],
+    [
+      "/opt/homebrew/bin/docker",
+      "--context",
+      "colima",
+      "exec",
+      "-i",
+      "saas-s008-a2-17bd0a5c",
+      "mariadb",
+      "--defaults-file=/tmp/s008-root.cnf"
+    ],
+    [
+      "/opt/homebrew/bin/docker",
+      "--context",
+      "colima",
+      "exec",
+      "saas-s008-a2-17bd0a5c",
+      "mariadb",
+      "--defaults-file=/tmp/s008-root.cnf",
+      "--batch",
+      "--skip-column-names",
+      "-e",
+      "SELECT VERSION()"
+    ],
+    [
+      "/opt/homebrew/bin/docker",
+      "--context",
+      "colima",
+      "exec",
+      "saas-s008-a2-17bd0a5c",
+      "/usr/bin/mariadb-dump",
+      "--no-defaults",
+      "--version"
+    ],
+    [
+      "/opt/homebrew/bin/docker",
+      "--context",
+      "colima",
+      "exec",
+      "saas-s008-a2-17bd0a5c",
+      "mkdir",
+      "-p",
+      "/var/folders/z3/lllr0gjd35z5pplbyrcr_wf00000gn/T/saas-s008-a2-8sp8eamx"
+    ],
+    [
+      "bash",
+      "/Users/muzib/Projects/web/repair-app/deploy/backup.sh",
+      "/var/folders/z3/lllr0gjd35z5pplbyrcr_wf00000gn/T/saas-s008-a2-8sp8eamx/client.cnf",
+      "saas_s008_a2_source",
+      "/var/folders/z3/lllr0gjd35z5pplbyrcr_wf00000gn/T/saas-s008-a2-8sp8eamx/backup",
+      "-",
+      "-"
+    ],
+    [
+      "/opt/homebrew/bin/docker",
+      "--context",
+      "colima",
+      "exec",
+      "-i",
+      "saas-s008-a2-17bd0a5c",
+      "mariadb",
+      "--defaults-file=/tmp/s008-root.cnf",
+      "--database=saas_s008_a2_restore"
+    ],
+    [
+      "/opt/homebrew/bin/docker",
+      "--context",
+      "colima",
+      "exec",
+      "saas-s008-a2-17bd0a5c",
+      "mariadb",
+      "--defaults-file=/tmp/s008-root.cnf",
+      "--batch",
+      "--skip-column-names",
+      "--database=saas_s008_a2_restore",
+      "-e",
+      "SELECT id, HEX(payload) FROM synthetic"
+    ],
+    [
+      "/opt/homebrew/bin/docker",
+      "--context",
+      "colima",
+      "rm",
+      "--force",
+      "saas-s008-a2-17bd0a5c"
+    ],
+    [
+      "/opt/homebrew/bin/docker",
+      "--context",
+      "colima",
+      "ps",
+      "--all",
+      "--filter",
+      "name=^/saas-s008-a2-17bd0a5c$",
+      "--format",
+      "{{.Names}}"
+    ]
+  ],
+  "image_id": "sha256:dbe56e20372fc6d6b8e0e396866ba89c4c7f128c38c4f59aaa54d957db95790c",
+  "repo_digests": [
+    "mariadb@sha256:dbe56e20372fc6d6b8e0e396866ba89c4c7f128c38c4f59aaa54d957db95790c"
+  ],
+  "server_version": "10.11.14-MariaDB-ubu2204",
+  "dump_version": "mariadb-dump  Ver 10.19 Distrib 10.11.14-MariaDB, for debian-linux-gnu (aarch64)",
+  "backup_exit": 1,
+  "backup_stdout": "",
+  "backup_stderr": "Local archive saved; Q-04 off-VPS destination missing; retention skipped (NOT a successful daily backup)",
+  "dump_calls": [
+    [
+      "--no-defaults",
+      "--version"
+    ],
+    [
+      "--defaults-file=/var/folders/z3/lllr0gjd35z5pplbyrcr_wf00000gn/T/saas-s008-a2-8sp8eamx/client.cnf",
+      "--single-transaction",
+      "--quick",
+      "--no-tablespaces",
+      "--hex-blob",
+      "--triggers",
+      "saas_s008_a2_source"
+    ]
+  ],
+  "archive": {
+    "name": "saas_s008_a2_source-20261117T033214Z-YhjGsF.sql.gz",
+    "sha256": "f941b8a1e3bc015bfaef78520b2ef2f168fe26abfe5ca1a8dc2265e280981b17",
+    "bytes": 1013,
+    "sql_bytes": 2972,
+    "gzip_valid": true,
+    "explicit_target": true,
+    "triggers": true,
+    "hex_blob": true
+  },
+  "restored_row_matches": true,
+  "verdict": "pass_native_backup_expected_offsite_gate",
+  "cleanup": {
+    "container": "saas-s008-a2-17bd0a5c",
+    "container_remove_exit": 0,
+    "container_absent": true,
+    "private_runtime_removed": true
+  }
+}

@@ -23,10 +23,19 @@ cleanup() { [[ -z $work ]] || rm -rf -- "$work"; rmdir "$lock"; }
 trap cleanup EXIT
 trap 'exit 130' INT
 trap 'exit 143' TERM
+dump_version=$(mysqldump --no-defaults --version 2>/dev/null) || die 'Cannot identify dump client'
+dump_flags=(--single-transaction --quick --no-tablespaces --hex-blob --triggers)
+if [[ $dump_version =~ [[:space:]]Distrib[[:space:]]10\.11\.[0-9]+-MariaDB ]]; then
+    : # MariaDB does not accept the MySQL GTID/column-statistics options.
+elif [[ $dump_version =~ [[:space:]]Ver[[:space:]]8\.[0-9]+\.[0-9]+[[:space:]] && $dump_version == *MySQL* && $dump_version != *MariaDB* ]]; then
+    dump_flags+=(--set-gtid-purged=OFF --column-statistics=0)
+else
+    die 'Unsupported dump client; require MySQL 8 or MariaDB 10.11'
+fi
 work=$(mktemp -d "$dir/.work-XXXXXX")
 name=$db-$(date -u +%Y%m%dT%H%M%SZ)-${work##*-}.sql.gz
 # No --databases: a restore must choose its target rather than replay CREATE DATABASE / USE.
-if ! mysqldump --defaults-file="$cnf" --single-transaction --quick --no-tablespaces --set-gtid-purged=OFF --column-statistics=0 --hex-blob --triggers "$db" 2>"$work/error" | gzip -c >"$work/dump.gz"; then
+if ! mysqldump --defaults-file="$cnf" "${dump_flags[@]}" "$db" 2>"$work/error" | gzip -c >"$work/dump.gz"; then
     die 'Dump/compression failed; no retention or off-VPS copy performed'
 fi
 gzip -t "$work/dump.gz" 2>"$work/error" || die 'Archive validation failed'

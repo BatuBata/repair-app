@@ -29,8 +29,8 @@ Goal aktif 17 November 2026 mengizinkan eksekusi S001–S012. Deployment produks
 | S005 | Isolasi stok, penjualan, pengeluaran, dashboard, dan laporan | developer / 6.1-sol | complex / high | S004 | — | done |
 | S006 | Integrasikan candidate Lean SaaS | integrator / 6.1-sol | medium / high | S003, S004, S005 | — | done |
 | S007 | QA independen keamanan tenant dan regresi aplikasi | tester / 6.1-sol | complex / high | S006 | — | done |
-| S008 | Siapkan runbook dan rehearsal migrasi Anugerah | developer / 6.1-sol | medium / high | S007 | — | running |
-| S009 | QA independen rehearsal backup, migrasi, dan rollback | tester / 6.1-sol | complex / high | S008 | — | failed |
+| S008 | Siapkan runbook dan rehearsal migrasi Anugerah | developer / 6.1-sol | medium / high | S007 | — | done |
+| S009 | QA independen rehearsal backup, migrasi, dan rollback | tester / 6.1-sol | complex / high | S008 | — | running |
 | S010 | Deploy dan migrasikan Anugerah ke schema tenant | deployer / 6.1-sol | medium / high | S006, S007, S009 | — | pending |
 | S011 | Verifikasi independen produksi setelah migrasi | tester / 6.1-sol | medium / high | S010 | — | pending |
 | S012 | Onboard dan verifikasi pilot client kedua | tester / 6.1-sol | medium / high | S010, S011 | — | pending |
@@ -785,7 +785,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         "Rehearsal otomatis pada database khusus dari fixture representatif; bandingkan inventaris dan checksum sebelum/sesudah/restore.",
         "Review command untuk target eksplisit, redaksi secret, idempotensi aman, dan failure injection pada titik backfill."
       ],
-      "status": "running",
+      "status": "done",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -805,8 +805,8 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "model_requested": "gpt-6.1-sol",
           "model_effective": null,
           "dispatch_ref": "native-codex:S008:A2",
-          "outcome": "running",
-          "receipt_ref": null
+          "outcome": "pass",
+          "receipt_ref": "docs/evidence/SAAS/S008/A2/README.md"
         }
       ],
       "prior_results": [{
@@ -824,7 +824,24 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "docs/evidence/SAAS/S008/A1/result.json"
         ],
         "summary": "A1 lulus pada MySQL 8, tetapi S009/A1 menginvalidasi penerimaan untuk target produksi: backup.sh gagal memakai client MariaDB 10.11.14 karena dua flag khusus MySQL. Bukti MySQL dan migrasi tetap dipertahankan sebagai hasil historis."
-      }]
+      }],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/SAAS/S008/A2/README.md",
+        "revision": "sha256:ce45314d50e2a865026fab4ee75736fa3833e90b070990880adac047a0631c58",
+        "checked_revision": "sha256:ce45314d50e2a865026fab4ee75736fa3833e90b070990880adac047a0631c58",
+        "inputs": {
+          "S007": "sha256:6ba364a204d98ac1d9754182d2a4fd1c54de6f940d7341ad88bef207aea74ad4"
+        },
+        "evidence": [
+          "docs/SAAS-MIGRATION-RUNBOOK.md",
+          "docs/evidence/SAAS/S008/A2/README.md",
+          "docs/evidence/SAAS/S008/A2/result.json",
+          "docs/evidence/SAAS/S008/A2/deploy-safety.log",
+          "docs/evidence/SAAS/S008/A2/mariadb-result.json"
+        ],
+        "summary": "A2 memperbaiki satu jalur backup existing dengan deteksi fail-closed: MySQL 8 tetap memakai dua opsi khusus MySQL, MariaDB 10.11 tidak. Empat puluh satu guard host dan backup/restore scratch MariaDB 10.11.14 nyata lulus; offsite dan produksi tetap menjadi gate berikutnya."
+      }
     },
     {
       "id": "S009",
@@ -870,7 +887,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "verification_plan": [
         "Ulangi runbook dari awal pada database bersih, periksa checksum/inventaris/log teredaksi, lalu jalankan smoke fitur pada hasil restore dan hasil migrasi."
       ],
-      "status": "failed",
+      "status": "running",
       "workspace": "/Users/muzib/Projects/web/repair-app",
       "attempts": [
         {
@@ -882,9 +899,19 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
           "dispatch_ref": "native-codex:S009:A1",
           "outcome": "fail",
           "receipt_ref": "docs/evidence/SAAS/S009/A1/README.md"
+        },
+        {
+          "id": "A2",
+          "kind": "verification",
+          "worker_id": "/root/s009_qa",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native-codex:S009:A2",
+          "outcome": "running",
+          "receipt_ref": null
         }
       ],
-      "result": {
+      "prior_results": [{
         "verdict": "fail",
         "artifact_ref": "docs/evidence/SAAS/S009/A1/README.md",
         "revision": "sha256:88e21a2909217e9fb2616629a2bbf56eb49e0d648b69c007fc8493bb0f4b74ba",
@@ -901,7 +928,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
         ],
         "failure_class": "product",
         "summary": "MariaDB 10.11.14 menolak --set-gtid-purged=OFF dan --column-statistics=0 sehingga backup.sh gagal tanpa menghasilkan arsip. Alur native tanpa dua flag tersebut lulus untuk restore, migrasi, rollback, guard tenant kedua, failure injection, dan smoke aplikasi."
-      }
+      }]
     },
     {
       "id": "S010",

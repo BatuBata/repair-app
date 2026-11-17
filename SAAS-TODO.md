@@ -30,7 +30,7 @@ Goal aktif 17 November 2026 mengizinkan eksekusi S001–S012. Deployment produks
 | S006 | Integrasikan candidate Lean SaaS | integrator / 6.1-sol | medium / high | S003, S004, S005 | — | done |
 | S007 | QA independen keamanan tenant dan regresi aplikasi | tester / 6.1-sol | complex / high | S006 | — | done |
 | S008 | Siapkan runbook dan rehearsal migrasi Anugerah | developer / 6.1-sol | medium / high | S007 | — | done |
-| S009 | QA independen rehearsal backup, migrasi, dan rollback | tester / 6.1-sol | complex / high | S008 | — | pending |
+| S009 | QA independen rehearsal backup, migrasi, dan rollback | tester / 6.1-sol | complex / high | S008 | — | running |
 | S010 | Deploy dan migrasikan Anugerah ke schema tenant | deployer / 6.1-sol | medium / high | S006, S007, S009 | — | pending |
 | S011 | Verifikasi independen produksi setelah migrasi | tester / 6.1-sol | medium / high | S010 | — | pending |
 | S012 | Onboard dan verifikasi pilot client kedua | tester / 6.1-sol | medium / high | S010, S011 | — | pending |
@@ -860,7 +860,20 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "verification_plan": [
         "Ulangi runbook dari awal pada database bersih, periksa checksum/inventaris/log teredaksi, lalu jalankan smoke fitur pada hasil restore dan hasil migrasi."
       ],
-      "status": "pending"
+      "status": "running",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "verification",
+          "worker_id": "/root/s009_qa",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native-codex:S009:A1",
+          "outcome": "running",
+          "receipt_ref": null
+        }
+      ]
     },
     {
       "id": "S010",

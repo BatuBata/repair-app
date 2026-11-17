@@ -114,7 +114,7 @@ class InvoiceTest extends TestCase
         $action = app(ManageServiceOrder::class);
         $order = $this->order($status);
         try {
-            $action->collect($order->id, '2026-11-13');
+            $action->collect($order->id, '2026-11-13', ['payment_method' => 'cash']);
             $this->assertSame('selesai', $status);
             $this->assertSame('diambil', $order->fresh()->status->value);
             $this->assertSame('2026-11-13', $order->fresh()->picked_up_on->toDateString());
@@ -179,7 +179,7 @@ class InvoiceTest extends TestCase
         $order = $this->order('dikerjakan');
         $this->issue($order);
         $this->travel(4)->days();
-        app(ManageServiceOrder::class)->collect($order->id, '2026-11-15');
+        app(ManageServiceOrder::class)->collect($order->id, '2026-11-15', ['payment_method' => 'cash']);
         $order->refresh();
         $revision = InvoiceLines::revision($order);
         app(ManageServiceOrder::class)->invoice($order->id, $this->input(['warranty_days' => 60]), true, $revision);
@@ -360,5 +360,34 @@ class InvoiceTest extends TestCase
         app(ManageServiceOrder::class)->cancel($order->id, 'Sudah batal');
         $form->call('save')->assertForbidden();
         $this->assertDatabaseCount('service_order_items', 0);
+    }
+
+    public function test_payment_can_be_recorded_before_or_during_pickup_and_transfer_requires_bank(): void
+    {
+        $action = app(ManageServiceOrder::class);
+        $prepaid = $this->order('dikerjakan');
+        $this->issue($prepaid);
+        $action->recordPayment($prepaid->id, ['payment_method' => 'qris']);
+        $paidAt = $prepaid->fresh()->paid_at;
+        $this->assertSame('qris', $prepaid->fresh()->payment_method);
+        $this->assertNotNull($paidAt);
+        $action->recordPayment($prepaid->id, ['payment_method' => 'cash']);
+        $this->assertSame($paidAt->toDateTimeString(), $prepaid->fresh()->paid_at->toDateTimeString());
+        $action->collect($prepaid->id, '2026-11-15');
+        $this->assertSame('diambil', $prepaid->fresh()->status->value);
+
+        $atPickup = $this->order('dikerjakan');
+        $this->issue($atPickup);
+        try {
+            $action->collect($atPickup->id, '2026-11-15', ['payment_method' => 'transfer']);
+            $this->fail('Transfer tanpa bank diterima.');
+        } catch (ValidationException $e) {
+            $this->assertArrayHasKey('payment_bank', $e->errors());
+        }
+        $action->collect($atPickup->id, '2026-11-15', ['payment_method' => 'transfer', 'payment_bank' => 'BCA']);
+        $atPickup->refresh();
+        $this->assertSame('transfer', $atPickup->payment_method);
+        $this->assertSame('BCA', $atPickup->payment_bank);
+        $this->assertNotNull($atPickup->paid_at);
     }
 }

@@ -9,6 +9,8 @@
 .reports-page .statement dd { margin:0; text-align:right; min-width:0; overflow-wrap:normal; }
 .reports-page .statement dt { flex-shrink:0; max-width:55%; }
 .reports-page .report-transactions { margin-top:16px; min-width:0; }
+.reports-page .report-payment-filters { display:flex; flex-wrap:wrap; gap:12px; margin:16px 0; }
+.reports-page .report-payment-filters .field { width:min(260px,100%); }
 .reports-page .tabs button[aria-pressed=true] { color:var(--text); font-weight:500; border-bottom:2px solid var(--accent); }
 .reports-page .report-table { table-layout:fixed; width:100%; }
 .reports-page .report-table .act { width:44px; }
@@ -20,6 +22,7 @@
 .reports-page .report-table tfoot td { border-top:1px solid var(--border); font-weight:500; padding-top:16px; }
 .reports-page .report-detail { width:44px; height:44px; padding:0; display:grid; place-items:center; }
 .reports-page .report-description .mobile-only,.reports-page .report-line-cost { display:block; }
+.reports-page .report-description > .small { display:block; }
 .reports-page .report-dialog { overflow-wrap:anywhere; }
 .reports-page .daily-chart { display:flex; height:300px; padding:20px 0 32px; margin-top:16px; min-width:0; }
 .reports-page .chart-axis { position:relative; width:100px; flex:none; color:var(--axis-ink,var(--muted)); font-size:11px; font-variant-numeric:tabular-nums; }
@@ -46,6 +49,7 @@
 @media(min-width:1024px) { .reports-page .report-description .mobile-only,.reports-page .report-table .mobile-only { display:none; } .reports-page .report-detail { width:32px; height:32px; } }
 @media(max-width:1023.98px) {
 .reports-page .period,.reports-page .segmented { width:100%; }
+.reports-page .report-payment-filters .field { width:100%; }
 .reports-page .segmented button { flex:1; min-height:44px; }
 .reports-page .report-dates { width:100%; }
 .reports-page .report-dates > div { flex:1; min-width:0; }

@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\Sale;
 use App\Models\User;
 use App\Services\DocumentNumber;
+use App\Support\Payment;
 use App\Support\PhoneNumber;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\DB;
@@ -18,6 +19,8 @@ final class CreateSale
     public function handle(array $input): Sale
     {
         User::activeAccount(admin: true);
+        $input += ['payment_method' => 'cash', 'payment_bank' => null];
+        $payment = Payment::validate($input);
         $data = Validator::make($input, [
             'sold_on' => ['required', 'date_format:Y-m-d'],
             'customer_name' => ['nullable', 'string', 'max:100'],
@@ -49,7 +52,7 @@ final class CreateSale
             throw ValidationException::withMessages(['warranty_days' => 'Masa garansi melewati batas tanggal 31/12/9999.']);
         }
 
-        return DB::transaction(function () use ($data, $soldOn, $days) {
+        return DB::transaction(function () use ($data, $soldOn, $days, $payment) {
             $admin = User::activeAccount(admin: true);
             $products = Product::query()->whereIn('id', array_column($data['items'], 'product_id'))->orderBy('id')->lockForUpdate()->get()->keyBy('id');
             $items = [];
@@ -86,6 +89,8 @@ final class CreateSale
                 'customer_phone' => $data['customer_phone'],
                 'warranty_days' => $days,
                 'warranty_until' => $days > 0 ? $soldOn->addDays($days)->toDateString() : null,
+                ...$payment,
+                'paid_at' => $createdAt,
                 'created_by' => $admin->id,
             ]);
             $sale->created_at = $createdAt;

@@ -68,6 +68,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T046 | QA independen kelengkapan ikon aksi | tester / 6-luna | easy / low | T045 | — | done |
 | T047 | Perbaiki layout mobile laporan dan empty state servis | developer / 6.1-terra | easy / medium | T036 | — | done |
 | T048 | QA independen perbaikan responsif laporan dan servis | tester / 6.1-terra | easy / medium | T047 | — | done |
+| T049 | Tambahkan pembayaran sederhana dan filter laporan | developer / 6.1-sol | medium / medium | T048 | — | done |
+| T050 | QA independen pembayaran dan filter laporan | tester / 6.1-sol | medium / medium | T049 | — | pending |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -143,16 +145,16 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:b69b7999bf79c57b610b3df71a6b0b3dd47ac07bbb6dd16037ac125b0b318b17",
+    "prd_revision": "sha256:9a13eb07c898400638b995b0ef0648a824b1f9f1ba9149b58f4bc3b9219e9612",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
       "stop_after_tasks": [
-        "T048"
+        "T049"
       ],
-      "source_ref": "User15Nov2026 reports broken mobile layout on reports and TTS pages. T047 repair and T048 independent QA are authorized locally; user explicitly says wait for a new signal before push/deploy.",
+      "source_ref": "User17Nov2026 authorizes simple payment implementation on local main plus report filters, explicitly without push. T049 is complete locally; T050 independent QA and all push/deploy remain outside this execution window.",
       "phase_history": [
         {
           "state": "paused",
@@ -5866,6 +5868,118 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         ],
         "summary": "QA independen PASS pada pin T047: hash cocok, dua akar masalah benar, browser 360/768/1280 tanpa overflow atau error console, serta 25 tes/258 assertion, view cache, build, dan diff check lulus. Full regression dan HP fisik tidak diulang; perubahan tetap lokal."
       }
+    },
+    {
+      "id": "T049",
+      "title": "Tambahkan pembayaran sederhana dan filter laporan",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "backend",
+      "deliverable_id": null,
+      "prd_refs": ["PRD.md §4.1 REQ-26", "PRD.md §8.2 BR-17", "PRD.md §15.2 AC-27", "PRD.md §20.3 D-31", "DESIGN.md"],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Pembayaran menyentuh dua transaksi dan laporan, tetapi cukup tiga kolom nullable pada tabel existing tanpa modul atau tabel pembayaran baru.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Sol untuk perubahan transaksi, migrasi aditif, validasi, dan regresi lintas modul.",
+      "depends_on": {"hard": ["T048"], "contracts": []},
+      "write_scope": [
+        "app/Actions/Sales/CreateSale.php",
+        "app/Actions/ServiceOrders/ManageServiceOrder.php",
+        "app/Livewire/Reports/Index.php",
+        "app/Livewire/Sales/Form.php",
+        "app/Livewire/Tts/Detail.php",
+        "app/Models/Sale.php",
+        "app/Models/ServiceOrder.php",
+        "app/Services/Reports/Report.php",
+        "app/Support/Payment.php",
+        "database/migrations/2026_11_17_120000_add_payment_details.php",
+        "resources/views/components/payment-fields.blade.php",
+        "resources/views/livewire/invoice/published.blade.php",
+        "resources/views/livewire/reports/**",
+        "resources/views/livewire/sales/**",
+        "resources/views/livewire/tts/**",
+        "tests/Feature/Invoice/InvoiceTest.php",
+        "tests/Feature/Reports/ReportsTest.php",
+        "tests/Feature/Sales/SalesTest.php",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T049/**"
+      ],
+      "shared_resources": [
+        {"name": "branch:main", "mode": "exclusive"},
+        {"name": "database-schema", "mode": "exclusive"}
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Servis dan penjualan menyimpan tepat satu pembayaran penuh Tunai, QRIS, atau Transfer bank; transfer wajib memilih bank dan metode lain tidak menyimpan bank.",
+        "Servis dapat dibayar setelah nota terbit atau saat pengambilan; pengambilan yang belum dibayar meminta pembayaran, sedangkan pembayaran lama tidak diminta ulang.",
+        "Data lama tetap nullable dan tampil Belum dicatat tanpa backfill atau perubahan perhitungan omzet/laba.",
+        "Daftar transaksi laporan dapat difilter menurut metode dan bank; ringkasan periode tetap memakai semua transaksi pada rentang tanggal.",
+        "Form dan filter responsif tanpa overflow pada 390px, 768px, dan 1440px.",
+        "Tidak ada DP/cicilan, refund, gateway, tabel pembayaran, laporan baru, push, atau deployment."
+      ],
+      "verification_plan": [
+        "Tes fitur Invoice, Sales, Reports dan seluruh suite; PHPStan, Pint, view cache, build, diff check; browser sintetis pada tiga lebar."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "attempts": [{
+        "id": "A1",
+        "kind": "implementation",
+        "worker_id": "/root",
+        "model_requested": "gpt-6.1-sol",
+        "model_effective": null,
+        "dispatch_ref": "user:payment-methods-2026-11-17",
+        "outcome": "pass",
+        "receipt_ref": "docs/evidence/T049/A1/README.md"
+      }],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T049/A1/README.md",
+        "revision": "sha256:1e8464a094ec3d8a3b4db6f37e240cdd02229b7df1a009ccc19ccfcbe1fa0ccc",
+        "checked_revision": "sha256:1e8464a094ec3d8a3b4db6f37e240cdd02229b7df1a009ccc19ccfcbe1fa0ccc",
+        "inputs": {"T048": "sha256:0ac3521ba33388c1368616e496ca7321b07c9ab8bf31c6abb08ad60d5b7869c5"},
+        "evidence": ["docs/evidence/T049/A1/README.md"],
+        "summary": "Pembayaran satu kali ditambahkan dengan tiga kolom nullable pada servis dan penjualan, satu validator bersama, UI existing, dan filter daftar laporan. Full suite 230 PASS/1 existing skipped/2458 assertion, PHPStan 0 error, build/view/Pint dan browser 390/768/1440 lulus; perubahan tetap lokal tanpa push/deploy."
+      }
+    },
+    {
+      "id": "T050",
+      "title": "QA independen pembayaran dan filter laporan",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "integration",
+      "deliverable_id": null,
+      "prd_refs": ["PRD.md §8.2 BR-17", "PRD.md §15.2 AC-27", "DESIGN.md"],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Perubahan transaksi dan migrasi memerlukan pemeriksaan independen sebelum push yang memicu deployment otomatis.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Sol untuk QA transaksi, kompatibilitas migrasi MariaDB, regresi laporan, dan UI responsif.",
+      "depends_on": {"hard": ["T049"], "contracts": []},
+      "write_scope": ["docs/evidence/T050/**"],
+      "shared_resources": [{"name": "db:mysql-test", "mode": "exclusive"}],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Tester independen mem-pin kandidat dan memverifikasi BR-17/AC-27, migrasi MariaDB, seluruh suite, analisis statis, dan browser tiga lebar.",
+        "Data lama tetap null/tidak di-backfill dan ringkasan laporan tidak berubah ketika filter pembayaran dipakai.",
+        "Tester tidak mengubah kode aplikasi, PRD/TODO, push, atau deployment."
+      ],
+      "verification_plan": [
+        "Audit diff/pin, migrate pada database uji terisolasi, tes penuh dan browser pembayaran/laporan 390/768/1440."
+      ],
+      "status": "pending",
+      "qa_for": "T049",
+      "workspace": null,
+      "attempts": [],
+      "result": null
     }
   ]
 }
@@ -6015,3 +6129,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-14 | T017A3 yang diizinkan user telah PASS; T023A1 FAIL target sentuh laporan dipertahankan. T019A2 memperbaiki satu aturan CSS; panduan identik direvalidasi tanpa attempt implementasi baru. T022A2 menstabilkan build dengan pengecualian subtree bukti, tanpa perubahan fitur. | Izin A3 eksplisit dan diagnosis QA; batas default task lain tetap | T017,T019,T021,T022 | User async call_4a4f2a2bc9334b239c34c0f5b91b7ca6 + bukti A3/A2 masing-masing |
 
 | 2026-11-14 | T023A2 PASS pada d047f25:26AC software/16BR, target sentuh ditutup independen,13 kasus Edge nyata lulus. F004–F006 accepted; eksekusi berhenti pada batas T023, T024–T025/R001 tetap pending. Kandidat boleh masuk main setelah review; CI pada main wajib diperiksa dalam handoff. | Goal siap rilis software terpenuhi, produksi/perangkat tetap gate terpisah | T023,F004–F006,main | docs/evidence/T023/A2/README.md; docs/evidence/coordinator/final-readiness.json |
+
+| 2026-11-17 | T049 menambah pembayaran penuh sederhana pada servis/penjualan dan filter metode/bank pada daftar laporan. Satu migrasi aditif baru diizinkan untuk scope pasca-v1 ini; data lama tetap null tanpa backfill. Implementasi dan pemeriksaan developer selesai lokal di main, tetapi push/deploy ditahan dan QA independen T050 belum dijalankan. | Permintaan user eksplisit; pilihan minimal sesuai D-31 tanpa modul pembayaran baru | T049,T050 | User: buat fitur di main, jangan push dulu; docs/evidence/T049/A1/README.md |

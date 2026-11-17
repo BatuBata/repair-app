@@ -32,19 +32,19 @@ class Report
             foreach ($order->items as $item) {
                 $lines[] = ['description' => $item->description, 'qty' => (string) $item->qty, 'amount' => (string) BigInteger::of($item->qty)->multipliedBy($item->price), 'cost' => (string) BigInteger::of($item->qty)->multipliedBy($item->cost)];
             }
-            $rows[] = $this->transaction('servis', $order->id, CarbonImmutable::parse((string) $order->getRawOriginal('invoiced_on'))->toDateString(), $order->number, $order->customer_name.' · '.($order->item_description ?? 'Servis'), $lines, route('tts.show', $order->id));
+            $rows[] = $this->transaction('servis', $order->id, CarbonImmutable::parse((string) $order->getRawOriginal('invoiced_on'))->toDateString(), $order->number, $order->customer_name.' · '.($order->item_description ?? 'Servis'), $lines, route('tts.show', $order->id), $order->payment_method, $order->payment_bank);
         }
         foreach (Sale::query()->whereDate('sold_on', '>=', $from)->whereDate('sold_on', '<=', $to)->with('items')->get() as $sale) {
             $lines = [];
             foreach ($sale->items as $item) {
                 $lines[] = ['description' => $item->product_name, 'qty' => (string) $item->qty, 'amount' => (string) BigInteger::of($item->qty)->multipliedBy($item->price), 'cost' => (string) BigInteger::of($item->qty)->multipliedBy($item->cost)];
             }
-            $rows[] = $this->transaction('jual', $sale->id, CarbonImmutable::parse((string) $sale->getRawOriginal('sold_on'))->toDateString(), $sale->number, $sale->customer_name ?: 'Penjualan langsung', $lines, route('sales.show', $sale->id));
+            $rows[] = $this->transaction('jual', $sale->id, CarbonImmutable::parse((string) $sale->getRawOriginal('sold_on'))->toDateString(), $sale->number, $sale->customer_name ?: 'Penjualan langsung', $lines, route('sales.show', $sale->id), $sale->payment_method, $sale->payment_bank);
         }
         $expenseTotal = BigInteger::zero();
         foreach (Expense::query()->whereDate('spent_on', '>=', $from)->whereDate('spent_on', '<=', $to)->get() as $expense) {
             $expenseTotal = $expenseTotal->plus($expense->amount);
-            $rows[] = $this->transaction('keluar', $expense->id, CarbonImmutable::parse((string) $expense->getRawOriginal('spent_on'))->toDateString(), ucfirst((string) $expense->getRawOriginal('category')), $expense->description ?: 'Tanpa keterangan', [['description' => $expense->description ?: ucfirst((string) $expense->getRawOriginal('category')), 'qty' => '1', 'amount' => (string) -$expense->amount, 'cost' => '0']], null);
+            $rows[] = $this->transaction('keluar', $expense->id, CarbonImmutable::parse((string) $expense->getRawOriginal('spent_on'))->toDateString(), ucfirst((string) $expense->getRawOriginal('category')), $expense->description ?: 'Tanpa keterangan', [['description' => $expense->description ?: ucfirst((string) $expense->getRawOriginal('category')), 'qty' => '1', 'amount' => (string) -$expense->amount, 'cost' => '0']], null, null, null);
         }
         usort($rows, fn (array $a, array $b): int => strcmp($b['date'], $a['date']) ?: strcmp($a['key'], $b['key']));
         $service = BigInteger::zero();
@@ -111,9 +111,9 @@ class Report
 
     /**
      * @param  list<array{description: string, qty: string, amount: string, cost: string}>  $lines
-     * @return array{key: string, type: string, date: string, number: string, description: string, amount: string, cost: string, profit: string, lines: list<array{description: string, qty: string, amount: string, cost: string}>, url: ?string}
+     * @return array{key: string, type: string, date: string, number: string, description: string, amount: string, cost: string, profit: string, lines: list<array{description: string, qty: string, amount: string, cost: string}>, url: ?string, payment_method: ?string, payment_bank: ?string}
      */
-    private function transaction(string $type, int $id, string $date, string $number, string $description, array $lines, ?string $url): array
+    private function transaction(string $type, int $id, string $date, string $number, string $description, array $lines, ?string $url, ?string $paymentMethod, ?string $paymentBank): array
     {
         $amount = BigInteger::zero();
         $cost = BigInteger::zero();
@@ -122,6 +122,6 @@ class Report
             $cost = $cost->plus($line['cost']);
         }
 
-        return ['key' => $type.'-'.$id, 'type' => $type, 'date' => $date, 'number' => $number, 'description' => $description, 'amount' => (string) $amount, 'cost' => (string) $cost, 'profit' => (string) $amount->minus($cost), 'lines' => $lines, 'url' => $url];
+        return ['key' => $type.'-'.$id, 'type' => $type, 'date' => $date, 'number' => $number, 'description' => $description, 'amount' => (string) $amount, 'cost' => (string) $cost, 'profit' => (string) $amount->minus($cost), 'lines' => $lines, 'url' => $url, 'payment_method' => $paymentMethod, 'payment_bank' => $paymentBank];
     }
 }

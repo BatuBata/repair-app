@@ -6,6 +6,7 @@ use App\Enums\ServiceOrderStatus;
 use App\Enums\UserRole;
 use App\Models\ServiceOrder;
 use App\Models\User;
+use App\Support\Payment;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -93,13 +94,30 @@ final class ManageServiceOrder
         return $invoiceDate->addDays($days);
     }
 
-    public function collect(mixed $id, mixed $date): void
+    /** @param array<string, mixed> $payment */
+    public function collect(mixed $id, mixed $date, array $payment = []): void
     {
-        DB::transaction(function () use ($id, $date) {
+        DB::transaction(function () use ($id, $date, $payment) {
             $order = $this->locked($id);
             $order->getAttribute('status')->assertTransitionTo(ServiceOrderStatus::Diambil, UserRole::Admin);
             $data = Validator::make(['picked_up_on' => $date], ['picked_up_on' => ['required', 'date_format:Y-m-d', 'after_or_equal:1000-01-01', 'before_or_equal:9999-12-31']], ['*' => 'Isi tanggal diambil yang valid (tahun 1000–9999).'])->validate();
-            $order->update(['status' => ServiceOrderStatus::Diambil, 'picked_up_on' => $data['picked_up_on']]);
+            $changes = ['status' => ServiceOrderStatus::Diambil, 'picked_up_on' => $data['picked_up_on']];
+            if ($order->paid_at === null) {
+                $changes = [...$changes, ...Payment::validate($payment), 'paid_at' => CarbonImmutable::now('Asia/Makassar')];
+            }
+            $order->update($changes);
+        }, 5);
+    }
+
+    /** @param array<string, mixed> $input */
+    public function recordPayment(mixed $id, array $input): void
+    {
+        DB::transaction(function () use ($id, $input) {
+            $order = $this->locked($id);
+            if (! in_array($order->getAttribute('status'), [ServiceOrderStatus::Selesai, ServiceOrderStatus::Diambil], true) || $order->invoiced_on === null) {
+                throw ValidationException::withMessages(['payment_method' => 'Pembayaran hanya dapat dicatat setelah nota terbit.']);
+            }
+            $order->update([...Payment::validate($input), 'paid_at' => $order->paid_at ?? CarbonImmutable::now('Asia/Makassar')]);
         }, 5);
     }
 

@@ -197,4 +197,27 @@ class ReportsTest extends TestCase
             DB::disableQueryLog();
         }
     }
+
+    public function test_transaction_list_filters_payment_method_and_bank_without_changing_report_totals(): void
+    {
+        $qris = $this->order();
+        $qris->update(['payment_method' => 'qris', 'paid_at' => now('Asia/Makassar')]);
+        $transfer = $this->sale();
+        $transfer->update(['payment_method' => 'transfer', 'payment_bank' => 'BCA', 'paid_at' => now('Asia/Makassar')]);
+        $this->sale();
+
+        $report = app(Report::class)->build('2026-11-11', '2026-11-11');
+        $this->assertSame('4100000', $report['revenue']);
+        $this->assertContains('qris', array_column($report['rows'], 'payment_method'));
+        $this->assertContains('BCA', array_column($report['rows'], 'payment_bank'));
+
+        Livewire::test(Index::class)
+            ->set('from', '2026-11-11')->set('to', '2026-11-11')
+            ->set('payment_method', 'qris')
+            ->assertViewHas('rows', fn ($rows) => count($rows) === 1 && $rows[0]['key'] === 'servis-'.$qris->id)
+            ->assertViewHas('report', fn ($value) => $value['revenue'] === '4100000')
+            ->set('payment_method', 'transfer')->set('payment_bank', 'BCA')
+            ->assertViewHas('rows', fn ($rows) => count($rows) === 1 && $rows[0]['key'] === 'jual-'.$transfer->id)
+            ->set('payment_bank', 'unknown')->assertViewHas('report', null)->assertSee('Bank pembayaran tidak valid.');
+    }
 }

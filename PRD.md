@@ -3,11 +3,11 @@
 | Metadata | Isi |
 |---|---|
 | Produk | Aplikasi Servis Anugerah — aplikasi web internal toko servis elektronik (nama kerja proyek: `repair-app`) |
-| Versi dokumen | 1.7 — halaman tracking customer diperjelas dan dipoles (D-30) |
+| Versi dokumen | 1.8 — pencatatan metode pembayaran sederhana (D-31) |
 | Tanggal | 11 November 2026 |
 | Pemilik | Owner Toko Anugerah (klien); penyusun: muzib |
 | Pembaca | Owner/klien, developer, tester, deployer |
-| Status | v1.0 disetujui user 11 November 2026 (termasuk D-11–D-17). v1.1 menambah penekanan responsif/mobile-first. v1.2 menyelaraskan §10.2 dan NFR-07 dengan mockup. v1.3 (15 Nov 2026) mencatat D-25–D-26. v1.4 mencatat D-27. v1.5 mencatat D-28. v1.6 mencatat D-29. v1.7 (15 Nov 2026) mencatat D-30. Pertanyaan terbuka §19 tetap berlaku |
+| Status | v1.0 disetujui user 11 November 2026 (termasuk D-11–D-17). v1.1 menambah penekanan responsif/mobile-first. v1.2 menyelaraskan §10.2 dan NFR-07 dengan mockup. v1.3 (15 Nov 2026) mencatat D-25–D-26. v1.4 mencatat D-27. v1.5 mencatat D-28. v1.6 mencatat D-29. v1.7 (15 Nov 2026) mencatat D-30. v1.8 (17 Nov 2026) mencatat D-31. Pertanyaan terbuka §19 tetap berlaku |
 | Target rilis | Belum ditetapkan (Q-05) |
 | Sumber keputusan | Transkrip wawancara klien `10-11-2026 22.24.txt`; sesi perencanaan 11 November 2026; dokumentasi rilis Laravel |
 
@@ -108,6 +108,7 @@ Saat ini teknisi melaporkan pekerjaan lewat **grup WhatsApp** (nama, alamat, bar
 | REQ-23 | Pengaturan toko: nama, alamat, telepon, logo, teks syarat garansi, default hari garansi | G-03 | Wajib | AC-23 |
 | REQ-24 | Semua layar responsif dan mobile-first sesuai aturan §10.2 dan tampilan yang disetujui (`DESIGN.md`, `mockup/`): navigasi bawah di HP, tabel menjadi daftar dua baris di HP, tombol aksi baris di kolom kiri, form satu kolom dengan tombol aksi mudah dijangkau, tanpa scroll horizontal | G-01 | Wajib | AC-24, AC-25 |
 | REQ-25 | Aplikasi dapat ditambahkan ke layar utama Android dengan nama dan ikon toko, terbuka tanpa bilah alamat browser (web app manifest, tanpa mode offline) | G-01 | Wajib | AC-01, AC-26 |
+| REQ-26 | Admin mencatat pembayaran penuh dengan Tunai, QRIS, atau Transfer bank; transfer wajib memilih bank. Pembayaran servis dapat dicatat setelah nota terbit atau saat barang diambil; penjualan mencatat pembayaran saat dibuat. Rincian laporan dapat difilter menurut metode dan bank | G-03 | Wajib | AC-27 |
 
 ### 4.2 Tidak termasuk v1
 
@@ -181,8 +182,9 @@ Asumsi: owner/admin memiliki akses internet di HP atau laptop, dan teknisi memak
 
 ### UC-04 — Customer mengambil barang
 
-- Alur utama: customer datang membawa struk/menyebut nomor TTS → admin mencari TTS → Tandai Diambil (tanggal default hari ini, bisa diubah).
-- Keterlacakan: REQ-11, AC-10.
+- Alur utama: customer datang membawa struk/menyebut nomor TTS → admin mencari TTS. Bila pembayaran belum dicatat, admin memilih metode pembayaran; transfer wajib memilih bank → Tandai Diambil (tanggal default hari ini, bisa diubah).
+- Cabang: pembayaran boleh dicatat lebih dahulu setelah nota terbit. Saat barang diambil, pembayaran yang sudah tercatat tidak diminta lagi.
+- Keterlacakan: REQ-11, REQ-26, AC-10, AC-27.
 
 ### UC-05 — Customer mengecek status
 
@@ -197,14 +199,14 @@ Asumsi: owner/admin memiliki akses internet di HP atau laptop, dan teknisi memak
 
 ### UC-07 — Admin mencatat penjualan
 
-- Alur utama: buat penjualan → tambah baris barang dari stok, qty, harga jual (default dari barang) → opsional nama/HP customer dan garansi → Simpan → stok berkurang → cetak struk/unduh PDF.
+- Alur utama: buat penjualan → tambah baris barang dari stok, qty, harga jual (default dari barang) → opsional nama/HP customer dan garansi → pilih metode pembayaran → Simpan → stok berkurang → cetak struk/unduh PDF.
 - Cabang: qty melebihi stok → ditolak. Garansi diisi tanpa nomor HP → ditolak.
-- Keterlacakan: REQ-19, REQ-20, BR-11–BR-13, AC-15, AC-16.
+- Keterlacakan: REQ-19, REQ-20, REQ-26, BR-11–BR-13, BR-17, AC-15, AC-16, AC-27.
 
 ### UC-08 — Admin mencatat pengeluaran dan melihat laporan
 
-- Alur utama: catat pengeluaran harian. Buka laporan → pilih tanggal awal dan akhir (default awal bulan s.d. hari ini) → lihat ringkasan dan rincian.
-- Keterlacakan: REQ-21, REQ-22, BR-14, AC-17, AC-18.
+- Alur utama: catat pengeluaran harian. Buka laporan → pilih tanggal awal dan akhir (default awal bulan s.d. hari ini) → lihat ringkasan dan rincian; daftar rincian dapat difilter menurut metode pembayaran dan bank.
+- Keterlacakan: REQ-21, REQ-22, REQ-26, BR-14, BR-17, AC-17, AC-18, AC-27.
 
 ### UC-09 — Admin membatalkan TTS
 
@@ -286,6 +288,7 @@ stateDiagram-v2
 | BR-14 | Rumus laporan | Rentang tanggal inklusif (WITA). Servis: nota berstatus Selesai/Diambil menurut tanggal nota. Penjualan menurut tanggal jual. Pengeluaran menurut tanggalnya | Omzet = Σ subtotal jual; Laba kotor = Omzet − Σ subtotal modal; Laba bersih = Laba kotor − Σ pengeluaran. Batal tidak dihitung. Restok ditampilkan sebagai info, tidak dikurangkan | Contoh hitung di §20.1 |
 | BR-15 | Kategori/pengguna nonaktif | Tidak muncul di pilihan baru | Data lama tetap menampilkan nama | — |
 | BR-16 | Pengeluaran | Kategori tetap: Bensin, Konsumsi, Gaji, Lainnya; nominal > 0 | — | — |
+| BR-17 | Pembayaran | Satu pembayaran penuh per transaksi: `cash`, `qris`, atau `transfer`. Transfer wajib memilih satu bank dari daftar tetap; metode lain tidak menyimpan bank | `paid_at` kosong berarti pembayaran belum dicatat; terisi berarti sudah dibayar. TTS lama dan penjualan lama tidak ditebak atau diisi ulang | Tanpa DP/cicilan, refund, gateway pembayaran, atau tabel pembayaran terpisah |
 
 ## 9. Alur Utama
 
@@ -322,15 +325,15 @@ Pekerjaan latar belakang: tidak ada di aplikasi. Hanya backup database harian le
 | `/` Dashboard | Admin | Ringkasan | TTS masuk hari ini, jumlah per status, omzet hari ini, daftar Selesai belum diambil, daftar garansi akan habis (Kirim WA, Tandai dihubungi) | REQ-17 |
 | `/tts/baru` | Admin, Teknisi | Buat TTS | Form 4 wajib + 2 opsional → halaman sukses (nomor, Kirim WA, Cetak struk, Buat TTS lagi) | REQ-03, REQ-04 |
 | `/tts` | Admin, Teknisi | Daftar TTS | Cari nomor/nama/HP, filter status; teknisi tanpa kolom harga | REQ-05 |
-| `/tts/{id}` | Admin, Teknisi | Detail TTS | Admin: tetapkan teknisi, rincian/nota, tandai diambil, batal, cetak/PDF, Kirim WA. Teknisi: lihat data, Edit (bila diizinkan) | REQ-06–REQ-14 |
+| `/tts/{id}` | Admin, Teknisi | Detail TTS | Admin: tetapkan teknisi, rincian/nota, catat/ubah pembayaran, tandai diambil, batal, cetak/PDF, Kirim WA. Teknisi: lihat data, Edit (bila diizinkan) | REQ-06–REQ-14, REQ-26 |
 | `/tts/{id}/edit` | Admin, Teknisi (milik sendiri, Diterima) | Ubah data TTS | Field sama dengan form TTS | REQ-06 |
 | `/tts/{id}/rincian` | Admin | Isi/koreksi rincian dan terbitkan nota | Baris dinamis (+/hapus), total jual, total modal, laba; garansi; tidak dapat diperbaiki | REQ-08–REQ-10 |
 | `/tts/{id}/struk`, `/tts/{id}/pdf` | Admin, Teknisi (struk TTS saja) | Cetak/unduh | Struk 58mm; PDF A5. Isi menyesuaikan status (TTS atau nota) | REQ-13, REQ-16 |
 | `/t/{token}`, `/t/{token}/pdf` | Publik | Tracking | Status, tanggal, rincian harga jual setelah nota terbit, unduh PDF | REQ-15 |
-| `/penjualan`, `/penjualan/baru`, `/penjualan/{id}` (+ struk/pdf) | Admin | Penjualan | Daftar, buat, detail, hapus, cetak | REQ-20 |
+| `/penjualan`, `/penjualan/baru`, `/penjualan/{id}` (+ struk/pdf) | Admin | Penjualan | Daftar, buat dengan metode pembayaran, detail, hapus, cetak | REQ-20, REQ-26 |
 | `/stok`, `/stok/baru`, `/stok/{id}/edit`, `/stok/{id}/restok` | Admin | Barang jualan | Nama, harga beli, harga jual, jumlah; riwayat restok | REQ-19 |
 | `/pengeluaran` | Admin | Pengeluaran | Daftar per rentang tanggal, tambah/ubah/hapus | REQ-21 |
-| `/laporan` | Admin | Laporan | Pilih tanggal awal–akhir; ringkasan dan rincian per transaksi | REQ-22 |
+| `/laporan` | Admin | Laporan | Pilih tanggal awal–akhir; ringkasan dan rincian per transaksi; filter daftar menurut metode pembayaran dan bank | REQ-22, REQ-26 |
 | `/pengaturan/toko`, `/pengaturan/kategori`, `/pengaturan/pengguna` | Admin | Pengaturan | Identitas toko, kategori, akun | REQ-02, REQ-18, REQ-23 |
 | `/profil` | Semua | Ganti password | — | REQ-01 |
 
@@ -415,11 +418,11 @@ Semua uang disimpan sebagai bilangan bulat Rupiah (`unsigned int`). Tanggal disi
 | `users`: id, name, username, password, role (`admin`/`teknisi`), is_active, remember_token, timestamps | `username` unique | Akun |
 | `categories`: id, name, is_active, timestamps | `name` unique | Kategori barang |
 | `number_sequences`: prefix, period (`YYMM`), last_seq | PK (prefix, period) | Counter nomor (BR-01) |
-| `service_orders`: id, number, customer_name, customer_phone, customer_address?, category_id, item_description?, complaint, status, created_by, technician_id?, assigned_at?, invoiced_on?, warranty_days?, warranty_until?, unrepairable (default false), picked_up_on?, cancelled_at?, cancel_reason?, warranty_contacted_at?, tracking_token, timestamps | `number` unique, `tracking_token` unique; FK category_id, created_by, technician_id → users; index status, invoiced_on, warranty_until, customer_phone | TTS dan nota |
+| `service_orders`: id, number, customer_name, customer_phone, customer_address?, category_id, item_description?, complaint, status, created_by, technician_id?, assigned_at?, invoiced_on?, warranty_days?, warranty_until?, unrepairable (default false), picked_up_on?, cancelled_at?, cancel_reason?, warranty_contacted_at?, tracking_token, payment_method?, payment_bank?, paid_at?, timestamps | `number` unique, `tracking_token` unique; FK category_id, created_by, technician_id → users; index status, invoiced_on, warranty_until, customer_phone | TTS, nota, dan pembayaran servis |
 | `service_order_items`: id, service_order_id, type (`part`/`jasa`), description, qty, price, cost, timestamps | FK cascade delete | Baris rincian |
 | `products`: id, name, cost_price, sell_price, stock, is_active, timestamps | stock ≥ 0 | Barang jualan |
 | `stock_entries`: id, product_id, qty, cost_price, entry_date, note?, created_by, timestamps | FK | Riwayat restok |
-| `sales`: id, number, sold_on, customer_name?, customer_phone?, warranty_days?, warranty_until?, warranty_contacted_at?, created_by, timestamps | `number` unique; index sold_on, warranty_until | Penjualan |
+| `sales`: id, number, sold_on, customer_name?, customer_phone?, warranty_days?, warranty_until?, warranty_contacted_at?, payment_method?, payment_bank?, paid_at?, created_by, timestamps | `number` unique; index sold_on, warranty_until | Penjualan dan pembayarannya |
 | `sale_items`: id, sale_id, product_id, product_name, qty, price, cost, timestamps | FK cascade delete | Baris penjualan (snapshot, BR-12) |
 | `expenses`: id, spent_on, category (`bensin`/`konsumsi`/`gaji`/`lainnya`), description?, amount, created_by, timestamps | index spent_on | Pengeluaran |
 | `store_settings`: id, name, address, phone, logo_path?, warranty_terms?, default_warranty_days | Satu baris | Pengaturan toko |
@@ -526,6 +529,7 @@ Staging terpisah tidak dibuat di v1. Uji dilakukan di lokal, lalu smoke test di 
 | AC-24 | Setiap layar di §10.1 dibuka pada lebar 360px, 768px, dan 1280px: tidak ada scroll horizontal halaman, tidak ada teks/tombol terpotong atau bertumpuk, semua aksi dapat dijangkau. Di 360px daftar tampil sebagai daftar dua baris dengan tombol aksi di kiri dan navigasi di bawah; di 1280px daftar tampil sebagai tabel dan navigasi di samping; tampilan sesuai `mockup/` dan `DESIGN.md` | Manual (screenshot 3 lebar per layar) |
 | AC-25 | Di HP 360px: tombol Simpan form TTS dan Terbitkan nota selalu terlihat tanpa scroll; field HP memunculkan keyboard angka; field nominal/qty memunculkan keyboard angka dan menampilkan pemisah ribuan; semua target sentuh ≥ 44 × 44px | Manual (HP Android nyata) |
 | AC-26 | Dari Chrome Android, "Tambahkan ke layar utama" memasang ikon dengan nama toko; membukanya menampilkan aplikasi tanpa bilah alamat dan langsung ke halaman sesuai peran | Manual (HP Android nyata) |
+| AC-27 | Penjualan Tunai/QRIS tersimpan tanpa bank; Transfer bank ditolak tanpa bank dan tersimpan dengan bank. Servis dapat dibayar setelah nota terbit atau sekaligus saat diambil; pengambilan servis yang belum dibayar wajib mengisi pembayaran. Filter laporan metode/bank hanya mengubah daftar dan total daftar, bukan ringkasan laba periode | Feature + manual responsif |
 
 ### 15.3 Penerimaan dan regresi
 
@@ -561,10 +565,10 @@ REQ-24 berlaku lintas milestone: setiap layar baru di M2–M5 baru dianggap sele
 
 ## 18. Definisi Selesai v1
 
-- [ ] REQ-01–REQ-25 memenuhi AC-01–AC-26 (REQ-16 boleh ditunda dengan keputusan owner).
+- [ ] REQ-01–REQ-26 memenuhi AC-01–AC-27 (REQ-16 boleh ditunda dengan keputusan owner).
 - [ ] Semua layar lulus uji responsif di 360px, 768px, dan 1280px (AC-24) dengan screenshot sebagai bukti; form TTS, rincian nota, dan tracking lulus di HP Android nyata (AC-25).
 - [ ] Aplikasi terpasang di layar utama HP teknisi dan owner (AC-26).
-- [ ] Aturan BR-01–BR-16 terverifikasi oleh feature test yang lulus pada hasil gabungan.
+- [ ] Aturan BR-01–BR-17 terverifikasi oleh feature test yang lulus pada hasil gabungan.
 - [ ] Teknisi membuat TTS di HP Android ≤ 60 detik dalam uji langsung.
 - [ ] Struk 58mm tercetak terbaca di printer klien; PDF A5 rapi.
 - [ ] Aplikasi berjalan di VPS dengan HTTPS; smoke test produksi lulus.
@@ -649,6 +653,7 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 | D-29 | Dashboard memprioritaskan pertanyaan “apa yang perlu ditindaklanjuti hari ini”: ringkasan harian tampil sebelum alur servis, status batal tidak mengambang, daftar servis selesai dan garansi menjadi blok tindak lanjut yang ringkas, lalu performa bulanan. Ikon Lucide existing boleh dipakai sebagai penanda konteks, bukan ornamen; data, aturan bisnis, dan aksi tetap sama | Dashboard saat ini menyebarkan informasi harian, memakai ruang kosong besar, dan hierarkinya kurang membantu pengguna memahami tindakan berikutnya | User | Disetujui user 15 Nov 2026 berdasarkan screenshot dashboard |
 
 | D-30 | Halaman tracking customer memakai komposisi “tanda terima digital”: header toko yang jelas, ringkasan status sebagai fokus utama, progres empat tahap yang mudah dipindai, rincian barang/keluhan tersusun, serta nota/garansi/aksi PDF yang muncul setelah nota terbit. Ruang desktop dimanfaatkan tanpa membuat konten melebar berlebihan; pada HP tetap satu kolom. Ikon Lucide existing hanya membantu konteks dan seluruh data, privasi, route serta aturan bisnis tetap sama | Tampilan tracking lama berupa kartu kecil di tengah bidang kosong, hierarki status lemah dan kurang meyakinkan sebagai halaman yang dibuka customer dari WhatsApp/QR | User | Disetujui user 15 Nov 2026 berdasarkan screenshot halaman tracking publik |
+| D-31 | Pembayaran dibuat sederhana: satu pembayaran penuh tanpa DP/cicilan/refund/gateway; metode Tunai, QRIS, atau Transfer bank; transfer memilih bank dari daftar tetap. Servis boleh dibayar setelah nota terbit atau saat diambil, sedangkan penjualan dibayar saat dibuat. Tidak ada tabel/status manual terpisah: `paid_at` kosong/terisi menjadi sumber status. Laporan yang sudah ada hanya mendapat filter daftar metode/bank; ringkasan laba tetap mengikuti tanggal transaksi. Data lama dibiarkan “Belum dicatat” tanpa backfill | Memenuhi kebutuhan operasional tanpa menambah modul, laporan, atau action yang tidak perlu | User | Disetujui user 17 Nov 2026 melalui diskusi pembayaran dan instruksi implementasi |
 
 ### 20.4 Validasi diagram
 

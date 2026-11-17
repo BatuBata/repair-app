@@ -19,6 +19,10 @@ class Form extends Component
 
     public string $warranty_days = '0';
 
+    public string $payment_method = 'cash';
+
+    public string $payment_bank = '';
+
     /** @var list<array{product_id: string, qty: string, price: string}> */
     public array $items = [['product_id' => '', 'qty' => '1', 'price' => '']];
 
@@ -68,7 +72,7 @@ class Form extends Component
     public function save(): void
     {
         User::activeAccount(admin: true);
-        $sale = app(CreateSale::class)->handle($this->only(['sold_on', 'customer_name', 'customer_phone', 'warranty_days', 'items']));
+        $sale = app(CreateSale::class)->handle($this->only(['sold_on', 'customer_name', 'customer_phone', 'warranty_days', 'payment_method', 'payment_bank', 'items']));
         session()->flash('sale-status', 'Penjualan berhasil disimpan.');
         $this->redirectRoute('sales.show', $sale->id);
     }

@@ -6,6 +6,7 @@ use App\Enums\ServiceOrderStatus;
 use App\Models\Concerns\BelongsToTenant;
 use App\Support\PhoneNumber;
 use App\Support\TenantContext;
+use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -14,8 +15,13 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
-/** @property int $tenant_id */
-#[Fillable(['number', 'customer_name', 'customer_phone', 'customer_address', 'category_id', 'item_description', 'complaint', 'status', 'created_by', 'technician_id', 'assigned_at', 'invoiced_on', 'warranty_days', 'warranty_until', 'unrepairable', 'picked_up_on', 'cancelled_at', 'cancel_reason', 'warranty_contacted_at', 'tracking_token', 'created_at'])]
+/**
+ * @property int $tenant_id
+ * @property ?string $payment_method
+ * @property ?string $payment_bank
+ * @property ?CarbonImmutable $paid_at
+ */
+#[Fillable(['number', 'customer_name', 'customer_phone', 'customer_address', 'category_id', 'item_description', 'complaint', 'status', 'created_by', 'technician_id', 'assigned_at', 'invoiced_on', 'warranty_days', 'warranty_until', 'unrepairable', 'picked_up_on', 'cancelled_at', 'cancel_reason', 'warranty_contacted_at', 'tracking_token', 'payment_method', 'payment_bank', 'paid_at', 'created_at'])]
 class ServiceOrder extends Model
 {
     use BelongsToTenant;
@@ -53,6 +59,7 @@ class ServiceOrder extends Model
             'picked_up_on' => 'immutable_date',
             'cancelled_at' => 'immutable_datetime',
             'warranty_contacted_at' => 'immutable_datetime',
+            'paid_at' => 'immutable_datetime',
         ];
     }
 

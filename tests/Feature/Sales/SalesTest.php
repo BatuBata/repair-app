@@ -376,4 +376,20 @@ class SalesTest extends TestCase
         $this->get('/penjualan/999')->assertNotFound();
         $this->assertDatabaseCount('sale_items', 1);
     }
+
+    public function test_sale_records_payment_and_transfer_requires_bank(): void
+    {
+        $this->admin();
+        $product = $this->product(['stock' => 4]);
+        $qris = app(CreateSale::class)->handle($this->input($product, ['payment_method' => 'qris']));
+        $this->assertSame('qris', $qris->payment_method);
+        $this->assertNull($qris->payment_bank);
+        $this->assertNotNull($qris->paid_at);
+
+        $this->invalid($this->input($product, ['payment_method' => 'transfer']), 'payment_bank');
+        $transfer = app(CreateSale::class)->handle($this->input($product, ['payment_method' => 'transfer', 'payment_bank' => 'Bank Mandiri', 'items' => [['product_id' => (string) $product->id, 'qty' => '1', 'price' => '40000']]]));
+        $this->assertSame('transfer', $transfer->payment_method);
+        $this->assertSame('Bank Mandiri', $transfer->payment_bank);
+        $this->get(route('sales.show', $transfer->id))->assertOk()->assertSee('Transfer bank · Bank Mandiri');
+    }
 }

@@ -29,6 +29,10 @@ class Detail extends Component
 
     public string $cancel_reason = '';
 
+    public string $payment_method = 'cash';
+
+    public string $payment_bank = '';
+
     public function boot(): void
     {
         User::activeAccount();
@@ -38,7 +42,10 @@ class Detail extends Component
     {
         $this->orderId = $id;
         $this->success = request()->route()?->getName() === 'tts.success';
-        $this->technician_id = (string) ServiceOrder::query()->findOrFail($id)->technician_id;
+        $order = ServiceOrder::query()->findOrFail($id);
+        $this->technician_id = (string) $order->technician_id;
+        $this->payment_method = $order->payment_method ?: 'cash';
+        $this->payment_bank = $order->payment_bank ?: '';
         $this->picked_up_on = now('Asia/Makassar')->toDateString();
     }
 
@@ -51,7 +58,15 @@ class Detail extends Component
 
     public function collect(): void
     {
-        app(ManageServiceOrder::class)->collect($this->orderId, $this->picked_up_on);
+        app(ManageServiceOrder::class)->collect($this->orderId, $this->picked_up_on, $this->only(['payment_method', 'payment_bank']));
+        session()->flash('tts-status', 'Barang sudah diambil dan pembayaran tersimpan.');
+        $this->redirectRoute('tts.show', ['id' => $this->orderId]);
+    }
+
+    public function recordPayment(): void
+    {
+        app(ManageServiceOrder::class)->recordPayment($this->orderId, $this->only(['payment_method', 'payment_bank']));
+        session()->flash('tts-status', 'Pembayaran berhasil disimpan.');
         $this->redirectRoute('tts.show', ['id' => $this->orderId]);
     }
 
@@ -65,7 +80,7 @@ class Detail extends Component
     {
         $user = User::activeAccount();
         $order = ServiceOrder::query()
-            ->select(['id', 'number', 'customer_name', 'customer_phone', 'customer_address', 'category_id', 'item_description', 'complaint', 'status', 'created_by', 'technician_id', 'created_at', 'assigned_at', 'invoiced_on', 'picked_up_on', 'cancelled_at', 'cancel_reason', 'warranty_days', 'warranty_until', 'unrepairable'])
+            ->select(['id', 'number', 'customer_name', 'customer_phone', 'customer_address', 'category_id', 'item_description', 'complaint', 'status', 'created_by', 'technician_id', 'created_at', 'assigned_at', 'invoiced_on', 'picked_up_on', 'cancelled_at', 'cancel_reason', 'warranty_days', 'warranty_until', 'unrepairable', 'payment_method', 'payment_bank', 'paid_at'])
             ->with(['category:id,name', 'creator:id,name', 'technician:id,name'])->findOrFail($this->orderId);
         $canEdit = $user->role === UserRole::Admin || ($order->created_by === $user->id && $order->getAttribute('status') === ServiceOrderStatus::Diterima);
 

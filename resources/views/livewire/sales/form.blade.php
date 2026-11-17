@@ -20,6 +20,7 @@
             @endforeach
             @if($products->isEmpty())<p class="notice">Belum ada barang aktif. <a class="btn ghost" href="{{ route('stock.create') }}">Tambah barang stok</a></p>@endif
         </section>
+        <section aria-labelledby="sale-payment-title"><div class="section-head"><h2 id="sale-payment-title">Pembayaran</h2></div><x-payment-fields :method="$payment_method" :bank="$payment_bank" prefix="sale" /></section>
         <div class="sale-summary"><div class="summary-line total"><span>Total sementara</span><strong>{{ $previewTotal === null ? 'Periksa isian' : 'Rp'.number_format($previewTotal, 0, ',', '.') }}</strong></div><p class="sub">Garansi memerlukan nomor HP. Penjualan yang sudah disimpan tidak dapat diubah; hapus lalu buat ulang bila ada koreksi.</p></div>
         <div class="form-actions"><a class="btn ghost" href="{{ route('sales.index') }}">Batal</a><button class="btn primary desktop-only" type="submit" wire:loading.attr="disabled" wire:target="save"><span wire:loading.remove wire:target="save">Simpan penjualan</span><span wire:loading wire:target="save">Menyimpan…</span></button></div>
         <div class="actionbar"><button class="btn primary" type="submit" wire:loading.attr="disabled" wire:target="save"><span wire:loading.remove wire:target="save">Simpan penjualan</span><span wire:loading wire:target="save">Menyimpan…</span></button></div>

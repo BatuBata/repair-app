@@ -70,6 +70,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T048 | QA independen perbaikan responsif laporan dan servis | tester / 6.1-terra | easy / medium | T047 | — | done |
 | T049 | Tambahkan pembayaran sederhana dan filter laporan | developer / 6.1-sol | medium / medium | T048 | — | done |
 | T050 | QA independen pembayaran dan filter laporan | tester / 6.1-sol | medium / medium | T049 | — | done |
+| T051 | Perbaiki daftar bank yang terpotong di dialog pembayaran | developer / 6.1-terra | easy / low | T050 | — | done |
+| T052 | QA independen daftar bank dalam dialog pembayaran | tester / 6.1-terra | easy / low | T051 | — | pending |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -152,9 +154,9 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "state": "stopped",
       "allowed_tasks": [],
       "stop_after_tasks": [
-        "T050"
+        "T051"
       ],
-      "source_ref": "User17Nov2026 authorized push and deployment. T050 passed after GitHub CI MariaDB 10.11 on the exact T049 commit; workflow deployed 1d8c2a9 and HTTPS health/login returned 200. Execution stops at T050.",
+      "source_ref": "User17Nov2026 reports bank choices clipped inside the payment dialog. T051 fixes the shared dialog/listbox layout locally; T052 independent QA and any push/deploy wait for a new instruction.",
       "phase_history": [
         {
           "state": "paused",
@@ -5997,6 +5999,85 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "evidence": ["docs/evidence/T050/A1/README.md"],
         "summary": "QA independen PASS: source/hash, 50 tes terarah, suite 230 PASS/1 existing skip/2458 assertion, PHPStan/Pint/view/build, legacy-null migration, UI payment/filter, GitHub CI MariaDB 10.11, artifact deployment, dan HTTPS health/login lulus pada commit 1d8c2a9. Exact-width browser berasal dari T049 karena zoom runtime tester."
       }
+    },
+    {
+      "id": "T051",
+      "title": "Perbaiki daftar bank yang terpotong di dialog pembayaran",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "deliverable_id": null,
+      "prd_refs": ["PRD.md §10.2", "PRD.md §15.2 AC-24", "DESIGN.md"],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "low",
+      "uncertainty": "low",
+      "triage_reason": "Dropdown absolut tidak menambah tinggi dialog sehingga pilihan di bawah batas modal terpotong.",
+      "model_hint": "gpt-6.1-terra",
+      "model_reason": "Terra untuk perbaikan visual responsif satu aturan CSS.",
+      "depends_on": {"hard": ["T050"], "contracts": []},
+      "write_scope": ["resources/css/layout.css", "TODO.md", "docs/evidence/T051/**"],
+      "shared_resources": [{"name": "branch:main", "mode": "exclusive"}],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Semua pilihan bank dapat dilihat dan dipilih dari dialog pembayaran tanpa keluar dari batas dialog.",
+        "Daftar tetap dapat digulir, tombol dialog tetap terjangkau, dan halaman tidak overflow horizontal pada HP maupun desktop.",
+        "Search-select di luar dialog tidak berubah; tidak ada perubahan data, validasi, dependency, push, atau deployment."
+      ],
+      "verification_plan": ["Invoice feature, build, view cache, diff check, dan browser 390x844 serta 1128x836."],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "attempts": [{
+        "id": "A1",
+        "kind": "implementation",
+        "worker_id": "/root",
+        "model_requested": "gpt-6.1-terra",
+        "model_effective": null,
+        "dispatch_ref": "user:clipped-bank-options-2026-11-17",
+        "outcome": "pass",
+        "receipt_ref": "docs/evidence/T051/A1/README.md"
+      }],
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T051/A1/README.md",
+        "revision": "sha256:3e20dd33780404d0a27ef63b6fc1b125b9799a7e57dffa3b3798447f1c4bcde5",
+        "checked_revision": "sha256:3e20dd33780404d0a27ef63b6fc1b125b9799a7e57dffa3b3798447f1c4bcde5",
+        "inputs": {"T050": "sha256:3d47fdb3a7725cd48687439c5bfd2df288671c371017b28c974e667cd4f92d50"},
+        "evidence": ["docs/evidence/T051/A1/README.md"],
+        "summary": "Satu aturan CSS membuat listbox bank mengikuti alur dialog sehingga tidak terpotong, sementara dropdown lain tetap mengambang. 23 tes/134 assertion, build/view/diff, pilihan bank pertama-terakhir, scroll dialog, serta viewport 390x844 dan 1128x836 lulus."
+      }
+    },
+    {
+      "id": "T052",
+      "title": "QA independen daftar bank dalam dialog pembayaran",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "visual",
+      "deliverable_id": null,
+      "prd_refs": ["PRD.md §10.2", "PRD.md §15.2 AC-24", "DESIGN.md"],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "low",
+      "uncertainty": "low",
+      "triage_reason": "Perubahan komponen bersama perlu dipastikan tidak mengganggu search-select di luar dialog sebelum push berikutnya.",
+      "model_hint": "gpt-6.1-terra",
+      "model_reason": "Terra untuk QA visual terarah.",
+      "depends_on": {"hard": ["T051"], "contracts": []},
+      "write_scope": ["docs/evidence/T052/**"],
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Tester independen mem-pin kandidat dan memeriksa pilihan pertama/terakhir, scroll, tombol dialog, overflow, serta search-select di luar dialog.",
+        "Tester tidak mengubah kode aplikasi, TODO, commit, push, atau deployment."
+      ],
+      "verification_plan": ["Audit CSS, tes terarah, build, dan browser HP/desktop."],
+      "status": "pending",
+      "qa_for": "T051",
+      "workspace": null,
+      "attempts": [],
+      "result": null
     }
   ]
 }
@@ -6150,3 +6231,5 @@ Ide dari PRD §4.2 yang belum ditriase menjadi task:
 | 2026-11-17 | T049 menambah pembayaran penuh sederhana pada servis/penjualan dan filter metode/bank pada daftar laporan. Satu migrasi aditif baru diizinkan untuk scope pasca-v1 ini; data lama tetap null tanpa backfill. Implementasi dan pemeriksaan developer selesai lokal di main, tetapi push/deploy ditahan dan QA independen T050 belum dijalankan. | Permintaan user eksplisit; pilihan minimal sesuai D-31 tanpa modul pembayaran baru | T049,T050 | User: buat fitur di main, jangan push dulu; docs/evidence/T049/A1/README.md |
 
 | 2026-11-17 | User mengizinkan push dan deploy. Commit `1d8c2a9` dipush ke `main`; GitHub Actions run `44087631993` meluluskan CI dengan MariaDB 10.11, membuat artifact terpin, menjalankan migrasi aditif, dan deploy HTTPS. T050 diterima PASS; `/up` dan `/login` sama-sama HTTP 200. | Gate CI/CD D-23 memastikan hanya artifact commit yang lulus tes yang dipasang | T050,main,demo | User: push and deploy; GitHub Actions 44087631993; docs/evidence/T050/A1/README.md |
+
+| 2026-11-17 | T051 memperbaiki daftar bank yang terpotong dengan satu aturan CSS khusus dialog; seluruh pilihan dan tombol tetap terjangkau pada HP/desktop. Perubahan tetap lokal; T052 menunggu QA independen sebelum push berikutnya. | Screenshot user menunjukkan dropdown absolut dipotong batas modal | T051,T052 | User: pilihan bank tertutup, perbaiki; docs/evidence/T051/A1/README.md |

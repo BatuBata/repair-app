@@ -33,7 +33,7 @@ Goal aktif 17 November 2026 mengizinkan eksekusi S001–S012. Deployment produks
 | S009 | QA independen rehearsal backup, migrasi, dan rollback | tester / 6.1-sol | complex / high | S008 | — | done |
 | S010 | Deploy dan migrasikan Anugerah ke schema tenant | deployer / 6.1-sol | medium / high | S006, S007, S009 | — | done |
 | S011 | Verifikasi independen produksi setelah migrasi | tester / 6.1-sol | medium / high | S010 | — | done |
-| S012 | Onboard dan verifikasi pilot client kedua | tester / 6.1-sol | medium / high | S010, S011 | — | blocked |
+| S012 | Onboard dan verifikasi pilot client kedua | tester / 6.1-sol | medium / high | S010, S011 | — | running |
 <!-- END GENERATED VIEW -->
 
 ## Urutan minimum
@@ -155,7 +155,7 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "acceptance_tasks": [
         "S012"
       ],
-      "status": "blocked"
+      "status": "pending"
     }
   ],
   "tasks": [
@@ -1256,7 +1256,20 @@ Walau beberapa caller dapat terlihat independen, rencana default menjalankannya 
       "verification_plan": [
         "Operator menjalankan onboarding dengan credential melalui kanal privat; tester menguji alur inti kedua tenant dan percobaan akses silang tanpa menyalin data customer ke evidence."
       ],
-      "status": "blocked"
+      "status": "running",
+      "workspace": "/Users/muzib/Projects/web/repair-app",
+      "attempts": [
+        {
+          "id": "A1",
+          "kind": "verification",
+          "worker_id": "/root/s012_pilot",
+          "model_requested": "gpt-6.1-sol",
+          "model_effective": null,
+          "dispatch_ref": "native-codex:S012:A1",
+          "outcome": "running",
+          "receipt_ref": null
+        }
+      ]
     }
   ]
 }
@@ -1290,7 +1303,6 @@ Ide dipindahkan menjadi task hanya bila ada client nyata yang membutuhkan dan us
 
 | ID | Pertanyaan/blocker | Dampak | Menghambat |
 |---|---|---|---|
-| Q-S04 | Berikan identitas client kedua dan izin onboarding melalui kanal privat | Diperlukan untuk pilot nyata | S012 |
 
 ## Log keputusan
 
@@ -1301,3 +1313,4 @@ Ide dipindahkan menjadi task hanya bila ada client nyata yang membutuhkan dan us
 | 17 Nov 2026 | TODO dibuat sebagai rencana saja; execution tetap planning | User meminta TODO, bukan implementasi atau deployment | Semua | User |
 | 17 Nov 2026 | Goal S001–S012 aktif; username unik global dan tracking lama untuk tenant nonaktif disetujui sesuai rekomendasi | User meminta mengerjakan semua TODO | S001–S012 | User |
 | 17 Nov 2026 | Window S010 dijalankan segera; salinan pra-migrasi disimpan privat di Mac operator minimal 14 hari dan wajib lulus checksum serta restore sebelum live diubah | Memenuhi gate off-VPS tanpa menambah layanan backup atau fitur baru | S010 | Goal user + runbook S008 |
+| 17 Nov 2026 | Pilot kedua memakai toko RF Samarinda, owner Fahad, username global `fahad`; credential diberikan user melalui chat dan tidak dicatat ke repo | Identitas client nyata tersedia sehingga onboarding produksi S012 diizinkan | S012 | User |

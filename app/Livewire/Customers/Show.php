@@ -3,6 +3,7 @@
 namespace App\Livewire\Customers;
 
 use App\Models\Customer;
+use App\Models\Sale;
 use App\Models\ServiceOrder;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
@@ -34,8 +35,17 @@ class Show extends Component
 
         return view('livewire.customers.show', [
             'customer' => $customer,
-            'orders' => ServiceOrder::query()->with('category')->where('customer_phone', $customer->phone)
+            'orders' => ServiceOrder::query()->with('category')->where(function ($query) use ($customer) {
+                $query->where('customer_id', $customer->id)->orWhere(function ($legacy) use ($customer) {
+                    $legacy->whereNull('customer_id')->where('customer_phone', $customer->phone);
+                });
+            })
                 ->orderByDesc('created_at')->orderByDesc('id')->paginate(20),
+            'sales' => Sale::query()->with('items')->where(function ($query) use ($customer) {
+                $query->where('customer_id', $customer->id)->orWhere(function ($legacy) use ($customer) {
+                    $legacy->whereNull('customer_id')->where('customer_phone', $customer->phone);
+                });
+            })->orderByDesc('sold_on')->orderByDesc('id')->paginate(20, pageName: 'salesPage'),
         ])->layout('layouts.app', ['title' => 'Pelanggan '.$customer->name]);
     }
 }

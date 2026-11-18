@@ -21,7 +21,7 @@ use Illuminate\Validation\Rule;
  * @property ?string $payment_bank
  * @property ?CarbonImmutable $paid_at
  */
-#[Fillable(['number', 'customer_name', 'customer_phone', 'customer_address', 'category_id', 'item_description', 'complaint', 'status', 'created_by', 'technician_id', 'assigned_at', 'invoiced_on', 'warranty_days', 'warranty_until', 'unrepairable', 'picked_up_on', 'cancelled_at', 'cancel_reason', 'warranty_contacted_at', 'tracking_token', 'payment_method', 'payment_bank', 'paid_at', 'created_at'])]
+#[Fillable(['number', 'customer_id', 'customer_name', 'customer_phone', 'customer_address', 'category_id', 'item_description', 'complaint', 'status', 'created_by', 'technician_id', 'assigned_at', 'invoiced_on', 'warranty_days', 'warranty_until', 'unrepairable', 'picked_up_on', 'cancelled_at', 'cancel_reason', 'warranty_contacted_at', 'tracking_token', 'payment_method', 'payment_bank', 'paid_at', 'created_at'])]
 class ServiceOrder extends Model
 {
     use BelongsToTenant;
@@ -37,6 +37,7 @@ class ServiceOrder extends Model
             $tenantId = app(TenantContext::class)->id();
             abort_if($model->exists && ((int) $model->tenant_id !== $tenantId || (int) $model->getRawOriginal('tenant_id') !== $tenantId), 404);
             Validator::make($model->getAttributes(), [
+                'customer_id' => ['nullable', 'integer', Rule::exists('customers', 'id')->where('tenant_id', $tenantId)],
                 'category_id' => ['required', Rule::exists('categories', 'id')->where('tenant_id', $tenantId)],
                 'created_by' => ['required', Rule::exists('users', 'id')->where('tenant_id', $tenantId)],
                 'technician_id' => ['nullable', Rule::exists('users', 'id')->where('tenant_id', $tenantId)],
@@ -67,6 +68,12 @@ class ServiceOrder extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+    /** @return BelongsTo<Customer, $this> */
+    public function customer(): BelongsTo
+    {
+        return $this->belongsTo(Customer::class);
     }
 
     /** @return BelongsTo<User, $this> */

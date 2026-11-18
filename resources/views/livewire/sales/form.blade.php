@@ -3,9 +3,18 @@
     <div class="title-row"><div><h1>Penjualan baru</h1><p class="sub">Stok berkurang setelah penjualan disimpan</p></div></div>
     @if($errors->any())<p class="notice" role="alert" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">Periksa kembali isian di bawah.</p>@endif
     <form class="sales-form" wire:submit="save" novalidate>
+        <div wire:key="sale-customer-{{ $customer_id ?: 'new' }}">
+            <x-ui.search-select name="customer_id" label="Cari pelanggan terdaftar" :options="$customers->map(fn ($customer) => ['value' => $customer->id, 'label' => $customer->name.' · '.$customer->phone])" :value="$customer_id" placeholder="Cari nama atau nomor HP pelanggan" wire:model.live="customer_id" :invalid="$errors->has('customer_id')" describedby="customer_id-error" />
+            @error('customer_id')<p class="error-text" id="customer_id-error">{{ $message }}</p>@enderror
+            @if($customer_id !== '')
+                <button class="btn ghost" type="button" wire:click="newCustomer"><x-ui.icon name="plus" />Pelanggan baru / pembeli umum</button>
+            @else
+                <p class="small muted">Pembeli umum boleh tanpa identitas. Isi nama dan nomor HP untuk mendaftarkan pelanggan baru.</p>
+            @endif
+        </div>
         <div class="customer-fields">
             @foreach(['sold_on' => ['Tanggal jual', 'date'], 'customer_name' => ['Nama customer (opsional)', 'text'], 'customer_phone' => ['Nomor HP / WhatsApp (opsional)', 'tel'], 'warranty_days' => ['Garansi (hari, 0 = tanpa garansi)', 'text']] as $field => [$label, $type])
-                <div><x-ui.field :name="$field" :label="$label" :type="$type" :value="$field === 'sold_on' ? $sold_on : ''" wire:model="{{ $field }}" inputmode="{{ $field === 'warranty_days' ? 'numeric' : ($field === 'customer_phone' ? 'tel' : 'text') }}" aria-invalid="{{ $errors->has($field) ? 'true' : 'false' }}" aria-describedby="{{ $field }}-error" />@error($field)<p class="error-text" id="{{ $field }}-error">{{ $message }}</p>@enderror</div>
+                <div><x-ui.field :name="$field" :label="$label" :type="$type" :value="$field === 'sold_on' ? $sold_on : ''" wire:model="{{ $field }}" :disabled="$customer_id !== '' && in_array($field, ['customer_name', 'customer_phone'])" inputmode="{{ $field === 'warranty_days' ? 'numeric' : ($field === 'customer_phone' ? 'tel' : 'text') }}" aria-invalid="{{ $errors->has($field) ? 'true' : 'false' }}" aria-describedby="{{ $field }}-error" />@error($field)<p class="error-text" id="{{ $field }}-error">{{ $message }}</p>@enderror</div>
             @endforeach
         </div>
         <section aria-labelledby="sale-lines-title"><div class="line-heading"><h2 id="sale-lines-title">Barang dijual</h2><button class="btn" type="button" wire:click="addItem">Tambah barang</button></div>

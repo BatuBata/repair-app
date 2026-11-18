@@ -77,6 +77,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T055 | Menu aksi pelanggan dan halaman riwayat servis | developer / 6.1-sol | medium / medium | — | — | done |
 | T056 | QA independen aksi dan history pelanggan | tester / 6.1-sol | medium / medium | T055 | — | done |
 | T057 | Permudah pencarian dan pergantian pelanggan TTS | developer / 6.1-sol | easy / medium | — | — | done |
+| T058 | Relasi customer_id nullable pada TTS dan penjualan | developer / 6.1-sol | medium / medium | — | — | done |
+| T059 | QA independen relasi pelanggan transaksi | tester / 6.1-sol | medium / medium | T058 | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -152,16 +154,16 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:6ea1ddce9974ff6d5873896079d213798476021dcd878e751ba9d5c9f080ea3c",
+    "prd_revision": "sha256:96ac5bd75f090dc110d98f9cdcd53b8da6777b10716cef491333762534b82a67",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
       "stop_after_tasks": [
-        "T057"
+        "T059"
       ],
-      "source_ref": "User18Nov2026 meminta perbaikan UX pencarian pelanggan. T057 implementasi dan pemeriksaan independen selesai lokal. T055/T056 tetap tersimpan; tidak push/deploy; Goal lama tetap selesai.",
+      "source_ref": "User18Nov2026 meminta customer_id nullable pada TTS dan penjualan, data lama tanpa backfill, jangan push. T058 implementasi dan T059 QA selesai lokal; tidak push/deploy; Goal lama tetap selesai.",
       "phase_history": [
         {
           "state": "paused",
@@ -6209,6 +6211,32 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": ["Tes Customers/SearchSelect/TTS, review shared, browser ketik/Enter/Escape/reset390px dan QA independen."],
       "status": "done", "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
       "result": {"verdict": "pass", "artifact_ref": "docs/evidence/T057/README.md", "revision": "sha256:0fa534539015ef9af64e2b3d521e96ae0b011a2bce52b2fd5e93a4e2136e5013", "checked_revision": "075871e + local T055/T057", "inputs": {}, "evidence": ["docs/evidence/T057/README.md", "/private/tmp/CustomerHistoryIndependentQaTest.php"], "summary": "27tes241assert dan full237PASS1SKIP2530assert, PHPStan/Pint PASS. Browser keyboard/search/reset390px PASS. Independent follow-up /root/customer_history_qa27tes241assert+3edge15assert PASS: reset preserve barang/keluhan dan edit legacy ditolak; source unchanged. Tidak push/deploy."}
+    },
+    {
+      "id": "T058", "title": "Relasi customer_id nullable pada TTS dan penjualan",
+      "kind": "implementation", "responsible_role": "developer", "work_type": "backend", "deliverable_id": null,
+      "prd_refs": ["PRD.md §20.3 D-35", "DESIGN.md"], "priority": "must", "difficulty": "medium", "risk": "medium", "uncertainty": "low",
+      "triage_reason": "Migrasi aditif, FK tenant, snapshot transaksi dan rollback stok/pelanggan perlu konsisten.",
+      "model_hint": "gpt-6.1-sol", "model_reason": "Perubahan model, transaksi dan histori tenant.",
+      "depends_on": {"hard": [], "contracts": []},
+      "write_scope": ["app/Models/Customer.php", "app/Models/Sale.php", "app/Models/ServiceOrder.php", "app/Services/CreateServiceOrder.php", "app/Actions/Sales/CreateSale.php", "app/Livewire/Customers/Show.php", "app/Livewire/Tts/Form.php", "app/Livewire/Sales/Form.php", "resources/views/livewire/customers/show.blade.php", "resources/views/livewire/sales/form.blade.php", "database/migrations/2026_11_18_010000_add_customer_id_to_transactions.php", "tests/Feature/Customers/CustomerRelationsTest.php", "PRD.md", "TODO.md", "docs/evidence/T058/**"],
+      "shared_resources": [{"name": "branch:main", "mode": "exclusive"}], "conflicts_with": [], "parallel_candidates": [],
+      "acceptance_criteria": ["TTS/penjualan baru menyimpan customer_id opsional valid dalam tenant aktif; pembeli umum tetap boleh.", "HP pelanggan berubah tidak memutus transaksi linked; snapshot tetap.", "Legacy null tanpa backfill dan fallback HP hanya null; hapus pelanggan tidak menghapus transaksi.", "Perubahan lokal, tanpa push/deploy atau migrasi database operator."],
+      "verification_plan": ["Tes relasi/migrasi/tenant/rollback, suite SQLite, PHPStan/Pint/build, browser sales dan history setelah ganti HP, QA independen."],
+      "status": "done", "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {"verdict": "pass", "artifact_ref": "docs/evidence/T058/README.md", "revision": "sha256:323e5ad89a60eb4ef98e3532466b430837d86d933899e2dabdfb1465db0ead61", "checked_revision": "e8cd716 + local customer relations", "inputs": {}, "evidence": ["docs/evidence/T058/README.md"], "summary": "Full243PASS1MySQLSKIP2576assert, PHPStan0/Pint/build PASS. Browser memilih pelanggan penjualan, simpan, edit HP dan kedua history tetap tampil;390px tanpa overflow. Satu migrasi nullableFK tanpa backfill. Tidak push/deploy."}
+    },
+    {
+      "id": "T059", "title": "QA independen relasi pelanggan transaksi",
+      "kind": "qa", "responsible_role": "tester", "work_type": "integration", "deliverable_id": null,
+      "prd_refs": ["PRD.md §20.3 D-35"], "priority": "must", "difficulty": "medium", "risk": "medium", "uncertainty": "low",
+      "triage_reason": "Relasi menyentuh privasi tenant, snapshot dan migrasi pada transaksi existing.",
+      "model_hint": "gpt-6.1-sol", "model_reason": "Review backend tenant/atomicity independen.",
+      "depends_on": {"hard": ["T058"], "contracts": []}, "write_scope": [], "shared_resources": [], "conflicts_with": [], "parallel_candidates": [],
+      "acceptance_criteria": ["QA membuktikan history ID stabil, tenant isolation, snapshot, legacy null, delete noncascade dan rollback transaksi."],
+      "verification_plan": ["Review source, Customers/Relations/TTS/Sales/Tenancy Migration SQLite dan edge independen."],
+      "qa_for": "T058", "status": "done", "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {"verdict": "pass", "artifact_ref": "docs/evidence/T058/README.md", "revision": "sha256:323e5ad89a60eb4ef98e3532466b430837d86d933899e2dabdfb1465db0ead61", "checked_revision": "sha256:323e5ad89a60eb4ef98e3532466b430837d86d933899e2dabdfb1465db0ead61", "inputs": {"T058": "sha256:323e5ad89a60eb4ef98e3532466b430837d86d933899e2dabdfb1465db0ead61"}, "evidence": ["docs/evidence/T058/README.md", "/private/tmp/CustomerRelationIndependentQaTest.php"], "summary": "Native /root/customer_relation_qa53tes484assert+2edge14assert PASS; linked transaksi pelanggan lain tidak bocor via fallbackHP, partial identity sale null, legacy migration dan rollback pass. Source tidak diubah; MariaDB/perangkat fisik belum."}
     }
   ]
 }

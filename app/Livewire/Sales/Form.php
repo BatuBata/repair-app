@@ -3,6 +3,7 @@
 namespace App\Livewire\Sales;
 
 use App\Actions\Sales\CreateSale;
+use App\Models\Customer;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
@@ -14,6 +15,8 @@ class Form extends Component
     public string $sold_on = '';
 
     public string $customer_name = '';
+
+    public string $customer_id = '';
 
     public string $customer_phone = '';
 
@@ -44,6 +47,26 @@ class Form extends Component
         $this->items[] = ['product_id' => '', 'qty' => '1', 'price' => ''];
     }
 
+    public function updatedCustomerId(): void
+    {
+        User::activeAccount(admin: true);
+        $this->resetValidation();
+        if ($this->customer_id === '') {
+            $this->reset(['customer_name', 'customer_phone']);
+
+            return;
+        }
+        $customer = Customer::findOrFail($this->customer_id);
+        $this->customer_name = $customer->name;
+        $this->customer_phone = $customer->phone;
+    }
+
+    public function newCustomer(): void
+    {
+        $this->customer_id = '';
+        $this->updatedCustomerId();
+    }
+
     public function removeItem(mixed $index): void
     {
         User::activeAccount(admin: true);
@@ -72,7 +95,9 @@ class Form extends Component
     public function save(): void
     {
         User::activeAccount(admin: true);
-        $sale = app(CreateSale::class)->handle($this->only(['sold_on', 'customer_name', 'customer_phone', 'warranty_days', 'payment_method', 'payment_bank', 'items']));
+        $input = $this->only(['sold_on', 'customer_name', 'customer_phone', 'warranty_days', 'payment_method', 'payment_bank', 'items']);
+        $input['customer_id'] = $this->customer_id === '' ? null : $this->customer_id;
+        $sale = app(CreateSale::class)->handle($input);
         session()->flash('sale-status', 'Penjualan berhasil disimpan.');
         $this->redirectRoute('sales.show', $sale->id);
     }
@@ -110,7 +135,7 @@ class Form extends Component
             'items.*.price' => ['present', 'string'],
         ])->validate();
 
-        return view('livewire.sales.form', ['products' => Product::query()->where('is_active', true)->orderBy('name')->get(), 'previewTotal' => $this->previewTotal()])
+        return view('livewire.sales.form', ['products' => Product::query()->where('is_active', true)->orderBy('name')->get(), 'customers' => Customer::query()->orderBy('name')->get(['id', 'name', 'phone']), 'previewTotal' => $this->previewTotal()])
             ->layout('layouts.app', ['title' => 'Penjualan baru']);
     }
 }

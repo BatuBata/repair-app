@@ -19,7 +19,7 @@ use Illuminate\Validation\Rule;
  * @property ?string $payment_bank
  * @property ?CarbonImmutable $paid_at
  */
-#[Fillable(['number', 'sold_on', 'customer_name', 'customer_phone', 'warranty_days', 'warranty_until', 'warranty_contacted_at', 'payment_method', 'payment_bank', 'paid_at', 'created_by'])]
+#[Fillable(['number', 'sold_on', 'customer_id', 'customer_name', 'customer_phone', 'warranty_days', 'warranty_until', 'warranty_contacted_at', 'payment_method', 'payment_bank', 'paid_at', 'created_by'])]
 class Sale extends Model
 {
     use BelongsToTenant;
@@ -30,6 +30,7 @@ class Sale extends Model
             $tenantId = app(TenantContext::class)->id();
             abort_if($model->exists && ((int) $model->tenant_id !== $tenantId || (int) $model->getRawOriginal('tenant_id') !== $tenantId), 404);
             Validator::make($model->getAttributes(), [
+                'customer_id' => ['nullable', 'integer', Rule::exists('customers', 'id')->where('tenant_id', $tenantId)],
                 'created_by' => ['required', Rule::exists('users', 'id')->where('tenant_id', $tenantId)],
                 'warranty_days' => ['nullable', 'integer', 'min:0', 'max:4294967295'],
             ])->validate();
@@ -55,6 +56,12 @@ class Sale extends Model
     public function creator(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by');
+    }
+
+    /** @return BelongsTo<Customer, $this> */
+    public function customer(): BelongsTo
+    {
+        return $this->belongsTo(Customer::class);
     }
 
     /** @return HasMany<SaleItem, $this> */

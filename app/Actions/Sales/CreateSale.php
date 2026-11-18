@@ -2,15 +2,18 @@
 
 namespace App\Actions\Sales;
 
+use App\Models\Customer;
 use App\Models\Product;
 use App\Models\Sale;
 use App\Models\User;
 use App\Services\DocumentNumber;
 use App\Support\Payment;
 use App\Support\PhoneNumber;
+use App\Support\TenantContext;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
 
 final class CreateSale
@@ -22,6 +25,7 @@ final class CreateSale
         $input += ['payment_method' => 'cash', 'payment_bank' => null];
         $payment = Payment::validate($input);
         $data = Validator::make($input, [
+            'customer_id' => ['nullable', 'integer', 'min:1', Rule::exists('customers', 'id')->where('tenant_id', app(TenantContext::class)->id())],
             'sold_on' => ['required', 'date_format:Y-m-d'],
             'customer_name' => ['nullable', 'string', 'max:100'],
             'customer_phone' => ['nullable', 'string', 'max:40'],
@@ -40,6 +44,11 @@ final class CreateSale
             'items.*.product_id.distinct' => 'Barang yang sama hanya boleh dipilih satu kali. Gabungkan jumlahnya.',
             'customer_name.max' => 'Nama customer maksimal 100 karakter.',
         ], ['sold_on' => 'Tanggal jual', 'customer_name' => 'Nama customer', 'customer_phone' => 'Nomor HP', 'warranty_days' => 'Hari garansi', 'items' => 'Barang', 'items.*.product_id' => 'Barang', 'items.*.qty' => 'Jumlah', 'items.*.price' => 'Harga jual'])->validate();
+        if (! empty($data['customer_id'])) {
+            $customer = Customer::query()->whereKey($data['customer_id'])->firstOrFail();
+            $data['customer_name'] = $customer->name;
+            $data['customer_phone'] = $customer->phone;
+        }
         $data['customer_name'] = trim($data['customer_name'] ?? '') ?: null;
         $phone = trim($data['customer_phone'] ?? '');
         $data['customer_phone'] = $phone === '' ? null : PhoneNumber::normalize($phone);
@@ -54,6 +63,11 @@ final class CreateSale
 
         return DB::transaction(function () use ($data, $soldOn, $days, $payment) {
             $admin = User::activeAccount(admin: true);
+            $customer = empty($data['customer_id']) ? null : Customer::query()->whereKey($data['customer_id'])->lockForUpdate()->firstOrFail();
+            if ($customer) {
+                $data['customer_name'] = $customer->name;
+                $data['customer_phone'] = $customer->phone;
+            }
             $products = Product::query()->whereIn('id', array_column($data['items'], 'product_id'))->orderBy('id')->lockForUpdate()->get()->keyBy('id');
             $items = [];
             $totalPrice = 0;
@@ -81,10 +95,14 @@ final class CreateSale
                 $items[] = ['product_id' => $product->id, 'product_name' => $product->name, 'qty' => $qty, 'price' => $price, 'cost' => $product->cost_price];
                 $product->update(['stock' => $product->stock - $qty]);
             }
+            if ($customer === null && $data['customer_name'] !== null && $data['customer_phone'] !== null) {
+                $customer = Customer::firstOrCreate(['phone' => $data['customer_phone']], ['name' => $data['customer_name']]);
+            }
             $createdAt = CarbonImmutable::now('Asia/Makassar');
             $sale = new Sale([
                 'number' => app(DocumentNumber::class)->next('JL', $createdAt),
                 'sold_on' => $soldOn->toDateString(),
+                'customer_id' => $customer?->id,
                 'customer_name' => $data['customer_name'],
                 'customer_phone' => $data['customer_phone'],
                 'warranty_days' => $days,

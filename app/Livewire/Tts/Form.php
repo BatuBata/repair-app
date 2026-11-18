@@ -117,14 +117,16 @@ class Form extends Component
             }
             $data['customer_phone'] = PhoneNumber::normalize($data['customer_phone']);
             if ($order === null) {
-                $order = app(CreateServiceOrder::class)->create($data, $user);
                 if ($this->customer_id === '') {
-                    Customer::firstOrCreate(['phone' => $data['customer_phone']], [
+                    $customer = Customer::firstOrCreate(['phone' => $data['customer_phone']], [
                         'name' => $data['customer_name'], 'address' => $data['customer_address'] ?? null,
                     ]);
+                    $data['customer_id'] = $customer->id;
+                } else {
+                    $data['customer_id'] = (int) $this->customer_id;
                 }
 
-                return $order;
+                return app(CreateServiceOrder::class)->create($data, $user);
             }
             $order->update($data);
 

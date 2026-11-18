@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Customer;
 use App\Models\ServiceOrder;
 use App\Models\User;
 use App\Support\PhoneNumber;
@@ -19,6 +20,7 @@ final class CreateServiceOrder
         $tenantId = app(TenantContext::class)->id();
         abort_unless(User::query()->whereKey($creator->id)->exists(), 404);
         $data = Validator::make($input, [
+            'customer_id' => ['nullable', 'integer', 'min:1', Rule::exists('customers', 'id')->where('tenant_id', $tenantId)],
             'customer_name' => ['required', 'string', 'max:100'],
             'customer_phone' => ['required', 'string'],
             'customer_address' => ['nullable', 'string'],
@@ -29,6 +31,12 @@ final class CreateServiceOrder
         $data['customer_phone'] = PhoneNumber::normalize($data['customer_phone']);
 
         return DB::transaction(function () use ($data, $creator) {
+            if (! empty($data['customer_id'])) {
+                $customer = Customer::query()->whereKey($data['customer_id'])->lockForUpdate()->firstOrFail();
+                $data['customer_name'] = $customer->name;
+                $data['customer_phone'] = $customer->phone;
+                $data['customer_address'] = $customer->address;
+            }
             $createdAt = CarbonImmutable::now('Asia/Makassar');
 
             return ServiceOrder::create([

@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Settings\Banks;
 use App\Livewire\Settings\Categories;
 use App\Livewire\Settings\Store;
 use Illuminate\Support\Facades\Route;
@@ -7,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/pengaturan/toko', Store::class)->name('settings.store');
     Route::get('/pengaturan/kategori', Categories::class)->name('settings.categories');
+    Route::get('/pengaturan/bank', Banks::class)->name('settings.banks');
 });
 
 Route::middleware('auth')->group(function () {

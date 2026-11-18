@@ -79,6 +79,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T057 | Permudah pencarian dan pergantian pelanggan TTS | developer / 6.1-sol | easy / medium | — | — | done |
 | T058 | Relasi customer_id nullable pada TTS dan penjualan | developer / 6.1-sol | medium / medium | — | — | done |
 | T059 | QA independen relasi pelanggan transaksi | tester / 6.1-sol | medium / medium | T058 | — | done |
+| T060 | Kelola bank pembayaran per tenant | developer / 6.1-sol | medium / medium | — | — | done |
+| T061 | QA independen bank per toko | tester / 6.1-sol | medium / medium | T060 | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -154,16 +156,16 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:96ac5bd75f090dc110d98f9cdcd53b8da6777b10716cef491333762534b82a67",
+    "prd_revision": "sha256:8b95b188845b28c03d786ba978a5878964e9b080b3035f2991938fbc80855b96",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
       "stop_after_tasks": [
-        "T059"
+        "T061"
       ],
-      "source_ref": "User18Nov2026 meminta customer_id nullable pada TTS dan penjualan, data lama tanpa backfill, jangan push. T058 implementasi dan T059 QA selesai lokal; tidak push/deploy; Goal lama tetap selesai.",
+      "source_ref": "User18Nov2026 meminta bank per toko: default readonly/hanya toggle tenant sendiri, custom CRUD. T060 implementasi dan T061 QA selesai lokal. Tidak push/deploy; Goal lama tetap selesai.",
       "phase_history": [
         {
           "state": "paused",
@@ -6237,6 +6239,32 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": ["Review source, Customers/Relations/TTS/Sales/Tenancy Migration SQLite dan edge independen."],
       "qa_for": "T058", "status": "done", "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
       "result": {"verdict": "pass", "artifact_ref": "docs/evidence/T058/README.md", "revision": "sha256:323e5ad89a60eb4ef98e3532466b430837d86d933899e2dabdfb1465db0ead61", "checked_revision": "sha256:323e5ad89a60eb4ef98e3532466b430837d86d933899e2dabdfb1465db0ead61", "inputs": {"T058": "sha256:323e5ad89a60eb4ef98e3532466b430837d86d933899e2dabdfb1465db0ead61"}, "evidence": ["docs/evidence/T058/README.md", "/private/tmp/CustomerRelationIndependentQaTest.php"], "summary": "Native /root/customer_relation_qa53tes484assert+2edge14assert PASS; linked transaksi pelanggan lain tidak bocor via fallbackHP, partial identity sale null, legacy migration dan rollback pass. Source tidak diubah; MariaDB/perangkat fisik belum."}
+    },
+    {
+      "id": "T060", "title": "Kelola bank pembayaran per tenant",
+      "kind": "implementation", "responsible_role": "developer", "work_type": "backend", "deliverable_id": null,
+      "prd_refs": ["PRD.md §20.3 D-36", "DESIGN.md"], "priority": "must", "difficulty": "medium", "risk": "medium", "uncertainty": "low",
+      "triage_reason": "Bank aktif untuk pembayaran harus tenant-scoped sementara default readonly dan laporan tetap mendukung snapshot bank lama.",
+      "model_hint": "gpt-6.1-sol", "model_reason": "Backend tenant dan validasi pembayaran dengan UI settings existing.",
+      "depends_on": {"hard": [], "contracts": []},
+      "write_scope": ["app/Models/Bank.php", "app/Livewire/Settings/Banks.php", "app/Support/Payment.php", "app/Livewire/Reports/Index.php", "resources/views/components/payment-fields.blade.php", "resources/views/livewire/settings/**", "routes/modules/settings.php", "database/migrations/2026_11_18_020000_create_banks_table.php", "tests/Feature/Settings/BanksTest.php", "PRD.md", "TODO.md", "docs/evidence/T060/**"],
+      "shared_resources": [{"name": "branch:main", "mode": "exclusive"}], "conflicts_with": [], "parallel_candidates": [],
+      "acceptance_criteria": ["Default bank aktif tanpa seed; hanya status per tenant yang dapat diubah, tidak edit/delete.", "Custom bank admin CRUD/toggle tenant sendiri, ID tenant lain ditolak.", "Pembayaran baru hanya menerima aktif; snapshot lama dan filter bank laporan tetap bisa digunakan setelah rename/delete/nonaktif.", "Tidak mengubah transaksi existing, push/deploy atau database operator."],
+      "verification_plan": ["Banks/Invoice/Sales/Reports, fullsuite SQLite, Pint/PHPStan/build, browser settings/payment390px dan QA independen."],
+      "status": "done", "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {"verdict": "pass", "artifact_ref": "docs/evidence/T060/README.md", "revision": "sha256:cf4cc4f2cb7d6eb8eaa204dc04bc6c7a940ffa76c86980d26de6863ec8232d2a", "checked_revision": "b3c4688 + local tenant banks", "inputs": {}, "evidence": ["docs/evidence/T060/README.md"], "summary": "Full248PASS1MySQLSKIP2637assert, PHPStan0/Pint/build PASS. Guard final6tes63assert PASS. Browser default onlytoggle/customedit/paymentoptions/390px PASS; snapshot report tested; satu tabel tenant override/custom, tanpa seed/backfill/push/deploy."}
+    },
+    {
+      "id": "T061", "title": "QA independen bank per toko",
+      "kind": "qa", "responsible_role": "tester", "work_type": "integration", "deliverable_id": null,
+      "prd_refs": ["PRD.md §20.3 D-36"], "priority": "must", "difficulty": "medium", "risk": "medium", "uncertainty": "low",
+      "triage_reason": "Review isolasi bank, perlindungan default, validasi transaksi dan snapshot laporan.",
+      "model_hint": "gpt-6.1-sol", "model_reason": "QA backend pembayaran dan tenant independen.",
+      "depends_on": {"hard": ["T060"], "contracts": []}, "write_scope": [], "shared_resources": [], "conflicts_with": [], "parallel_candidates": [],
+      "acceptance_criteria": ["QA membuktikan default immutable, custom CRUD tenant, tidak ada kebocoran opsi/history, all-inactive dan snapshot transaksi lama."],
+      "verification_plan": ["Review source dan Banks/Invoice/Sales/Reports SQLite, edge daftar kosong/foreign/unknown, guard dirtydefault retest."],
+      "qa_for": "T060", "status": "done", "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {"verdict": "pass", "artifact_ref": "docs/evidence/T060/README.md", "revision": "sha256:cf4cc4f2cb7d6eb8eaa204dc04bc6c7a940ffa76c86980d26de6863ec8232d2a", "checked_revision": "sha256:cf4cc4f2cb7d6eb8eaa204dc04bc6c7a940ffa76c86980d26de6863ec8232d2a", "inputs": {"T060": "sha256:cf4cc4f2cb7d6eb8eaa204dc04bc6c7a940ffa76c86980d26de6863ec8232d2a"}, "evidence": ["docs/evidence/T060/README.md", "/private/tmp/TenantBanksIndependentQaTest.php"], "summary": "Native /root/tenant_banks_qa55tes491assert+2edge21assert PASS; defense-only dirtyname guard finding corrected, final6tes63assert PASS. Source unchanged by QA; browser coordinator; MariaDB nyata belum."}
     }
   ]
 }

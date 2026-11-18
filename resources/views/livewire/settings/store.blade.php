@@ -17,6 +17,7 @@
     <nav class="settings-nav" aria-label="Pengaturan">
         <a href="{{ route('settings.store') }}" aria-current="page">Toko</a>
         <a href="{{ route('settings.categories') }}">Kategori</a>
+        <a href="{{ route('settings.banks') }}">Bank</a>
         <a href="{{ route('users.index') }}">Pengguna</a>
     </nav>
     @if($status)<p class="notice" role="status">{{ $status }}</p>@endif

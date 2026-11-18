@@ -663,6 +663,8 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 
 | D-35 | TTS dan penjualan memiliki customer_id nullable dengan FK customers dan nullOnDelete; validasi ID wajib tenant aktif. TTS baru memilih/mendaftarkan pelanggan dan menyimpan ID; penjualan dapat memilih pelanggan, mendaftarkan identitas lengkap nama+HP, atau tetap pembeli umum tanpa relasi. Snapshot identitas transaksi tetap disimpan. Riwayat memakai ID untuk transaksi terhubung dan fallback nomor HP hanya pada transaksi dengan ID null. Data lama tidak di-backfill; perubahan HP tidak memutus riwayat transaksi baru. Hapus pelanggan tidak menghapus transaksi | User meminta relasi pelanggan sederhana di TTS/penjualan, histori tetap terhubung dan data lama dipertahankan | User | Disetujui user 18 Nov 2026; satu migrasi aditif untuk scope ini, jangan push |
 
+| D-36 | Bank pembayaran dikelola per tenant melalui Pengaturan → Bank. Daftar bawaan tetap sembilan nama D-31, aktif secara default, nama tidak bisa diedit/dihapus; toko hanya mengubah status aktif sendiri. Bank tambahan tenant dapat ditambah/diedit/dihapus/diaktifkan. Tabel banks menyimpan custom dan override status default, tanpa seed seluruh tenant atau mengubah transaksi. Pembayaran baru hanya menerima bank aktif tenant; snapshot payment_bank pada transaksi lama tetap, laporan mengikutkan nama bank lama/nonaktif/dihapus. Tidak menambah nomor rekening atau modul pembayaran | User meminta pengelolaan bank masing-masing toko, default dilindungi dan status tidak memengaruhi toko lain | User | Disetujui user 18 Nov 2026; satu migrasi aditif, implementasi lokal tanpa push/deploy |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

@@ -8,6 +8,7 @@ use App\Support\Payment;
 use Brick\Math\BigInteger;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use Livewire\Component;
 
 class Index extends Component
@@ -68,7 +69,8 @@ class Index extends Component
     public function render(): View
     {
         User::activeAccount(admin: true);
-        $filters = Validator::make(['from' => $this->from, 'to' => $this->to, 'type' => $this->type, 'payment_method' => $this->payment_method, 'payment_bank' => $this->payment_bank], [...Report::dateRules(), 'type' => ['in:semua,servis,jual,keluar'], 'payment_method' => ['in:semua,'.implode(',', array_keys(Payment::METHODS))], 'payment_bank' => ['in:semua,'.implode(',', Payment::BANKS)]], [
+        $paymentBanks = Payment::bankOptions(all: true);
+        $filters = Validator::make(['from' => $this->from, 'to' => $this->to, 'type' => $this->type, 'payment_method' => $this->payment_method, 'payment_bank' => $this->payment_bank], [...Report::dateRules(), 'type' => ['in:semua,servis,jual,keluar'], 'payment_method' => ['in:semua,'.implode(',', array_keys(Payment::METHODS))], 'payment_bank' => [Rule::in(array_column($paymentBanks, 'value'))]], [
             'from.required' => 'Dari tanggal wajib diisi.', 'to.required' => 'Sampai tanggal wajib diisi.',
             'from.date_format' => 'Dari tanggal harus menggunakan format YYYY-MM-DD.', 'to.date_format' => 'Sampai tanggal harus menggunakan format YYYY-MM-DD.',
             'from.after_or_equal' => 'Dari tanggal paling awal 1000-01-01.', 'from.before_or_equal' => 'Dari tanggal paling akhir 9999-12-31.',
@@ -98,6 +100,6 @@ class Index extends Component
             }
         }
 
-        return view('livewire.reports.index', ['report' => $report, 'rows' => $rows, 'totals' => $totals, 'selected' => $selected, 'filterErrors' => $filters->errors(), 'paymentMethods' => Payment::methodOptions(all: true), 'paymentBanks' => Payment::bankOptions(all: true)])->layout('layouts.app', ['title' => 'Laporan']);
+        return view('livewire.reports.index', ['report' => $report, 'rows' => $rows, 'totals' => $totals, 'selected' => $selected, 'filterErrors' => $filters->errors(), 'paymentMethods' => Payment::methodOptions(all: true), 'paymentBanks' => $paymentBanks])->layout('layouts.app', ['title' => 'Laporan']);
     }
 }

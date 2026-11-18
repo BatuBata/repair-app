@@ -2,6 +2,9 @@
 
 namespace App\Support;
 
+use App\Models\Bank;
+use App\Models\Sale;
+use App\Models\ServiceOrder;
 use Illuminate\Validation\Rule;
 
 final class Payment
@@ -21,7 +24,7 @@ final class Payment
     {
         $data = validator($input, [
             'payment_method' => ['required', Rule::in(array_keys(self::METHODS))],
-            'payment_bank' => ['nullable', 'string', Rule::requiredIf(($input['payment_method'] ?? null) === 'transfer'), Rule::in(self::BANKS), Rule::prohibitedIf(($input['payment_method'] ?? null) !== 'transfer')],
+            'payment_bank' => ['nullable', 'string', 'max:50', Rule::requiredIf(($input['payment_method'] ?? null) === 'transfer'), Rule::in(array_column(self::bankOptions(), 'value')), Rule::prohibitedIf(($input['payment_method'] ?? null) !== 'transfer')],
         ], [
             'payment_method.required' => 'Pilih metode pembayaran.',
             'payment_method.in' => 'Metode pembayaran tidak valid.',
@@ -58,8 +61,18 @@ final class Payment
     public static function bankOptions(bool $all = false): array
     {
         $options = $all ? [['value' => 'semua', 'label' => 'Semua bank']] : [];
+        $configured = Bank::query()->orderBy('name')->get();
+        $active = $configured->pluck('is_active', 'name');
+        $banks = collect(self::BANKS)->merge($configured->pluck('name'))->unique();
+        if ($all) {
+            $banks = $banks->merge(ServiceOrder::query()->whereNotNull('payment_bank')->distinct()->pluck('payment_bank'))
+                ->merge(Sale::query()->whereNotNull('payment_bank')->distinct()->pluck('payment_bank'))->unique();
+        }
 
-        foreach (self::BANKS as $bank) {
+        foreach ($banks as $bank) {
+            if (! $all && $active->get($bank, true) === false) {
+                continue;
+            }
             $options[] = ['value' => $bank, 'label' => $bank];
         }
 

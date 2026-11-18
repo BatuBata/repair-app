@@ -80,6 +80,14 @@ class Form extends Component
         $this->customer_address = $customer->address ?? '';
     }
 
+    public function newCustomer(): void
+    {
+        User::activeAccount();
+        abort_unless($this->orderId === null, 422);
+        $this->customer_id = '';
+        $this->updatedCustomerId();
+    }
+
     public function save(): void
     {
         $order = DB::transaction(function () {

@@ -74,6 +74,9 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T052 | QA independen daftar bank dalam dialog pembayaran | tester / 6.1-terra | easy / low | T051 | — | done |
 | T053 | Data pelanggan sederhana dan pilihan pelanggan TTS baru | developer / 6.1-sol | medium / medium | — | — | done |
 | T054 | QA independen data pelanggan dan kompatibilitas TTS lama | tester / 6.1-sol | medium / medium | T053 | — | done |
+| T055 | Menu aksi pelanggan dan halaman riwayat servis | developer / 6.1-sol | medium / medium | — | — | done |
+| T056 | QA independen aksi dan history pelanggan | tester / 6.1-sol | medium / medium | T055 | — | done |
+| T057 | Permudah pencarian dan pergantian pelanggan TTS | developer / 6.1-sol | easy / medium | — | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -149,16 +152,16 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:4532b36b5ba8145072c25fc238f5644b890e8ef2c155689e6d1555afdf618f6b",
+    "prd_revision": "sha256:6ea1ddce9974ff6d5873896079d213798476021dcd878e751ba9d5c9f080ea3c",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
       "stop_after_tasks": [
-        "T054"
+        "T057"
       ],
-      "source_ref": "User18Nov2026 meminta fitur pelanggan sederhana dan pilihan pelanggan pada TTS baru, data lama tetap. T053 implementasi lokal dan T054 QA selesai; push/deploy menunggu aba-aba user. Goal lama tetap selesai.",
+      "source_ref": "User18Nov2026 meminta perbaikan UX pencarian pelanggan. T057 implementasi dan pemeriksaan independen selesai lokal. T055/T056 tetap tersimpan; tidak push/deploy; Goal lama tetap selesai.",
       "phase_history": [
         {
           "state": "paused",
@@ -6166,6 +6169,46 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "evidence": ["docs/evidence/T053/README.md", "/private/tmp/CustomerIndependentQaTest.php"],
         "summary": "Native /root/customer_qa read-only PASS: 25 tes/223 assertion dan 3 edge/8 assertion; foreign ID, demotion, atomic rollback dan legacy snapshot teruji. Browser oleh coordinator; MariaDB nyata belum diuji."
       }
+    },
+    {
+      "id": "T055", "title": "Menu aksi pelanggan dan halaman riwayat servis",
+      "kind": "implementation", "responsible_role": "developer", "work_type": "backend", "deliverable_id": null,
+      "prd_refs": ["PRD.md §20.3 D-33", "DESIGN.md"], "priority": "must", "difficulty": "medium", "risk": "medium", "uncertainty": "low",
+      "triage_reason": "Delete buku alamat dan query histori memerlukan scope tenant serta pelestarian TTS.",
+      "model_hint": "gpt-6.1-sol", "model_reason": "Perubahan akses dan query tenant serta UI existing.",
+      "depends_on": {"hard": [], "contracts": []},
+      "write_scope": ["app/Livewire/Customers/**", "resources/views/livewire/customers/**", "routes/modules/customers.php", "tests/Feature/Customers/**", "PRD.md", "TODO.md", "docs/evidence/T055/**"],
+      "shared_resources": [{"name": "branch:main", "mode": "exclusive"}], "conflicts_with": [], "parallel_candidates": [],
+      "acceptance_criteria": ["Aksi paling kiri memakai menu bersama Lihat/Edit/Hapus dengan ikon dan konfirmasi hapus.", "History berdasarkan nomor HP dalam tenant aktif mencakup barang/keluhan/tanggal/status dan tautan TTS, tanpa backfill.", "Delete hanya buku alamat; TTS tetap identik; tidak push/deploy."],
+      "verification_plan": ["Customers tests, full suite SQLite, Pint/PHPStan/build dan browser terarah."],
+      "status": "done", "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {"verdict": "pass", "artifact_ref": "docs/evidence/T055/README.md", "revision": "sha256:e8131c8a23cfa2941ff919d005747fe2cc5b1390e24e63543c841bd401c65271", "checked_revision": "075871e14c23414fe26f7087efd5b4f9039bf7ba + local customer actions", "inputs": {}, "evidence": ["docs/evidence/T055/README.md"], "summary": "237 tes PASS/1 SKIP/2527 assertion, PHPStan0/Pint/build/diff PASS; menu/history/edit browser dan history390px PASS; konfirmasi hapus browser timeout, tidak diklaim lulus."}
+    },
+    {
+      "id": "T056", "title": "QA independen aksi dan history pelanggan",
+      "kind": "qa", "responsible_role": "tester", "work_type": "integration", "deliverable_id": null,
+      "prd_refs": ["PRD.md §20.3 D-33"], "priority": "must", "difficulty": "medium", "risk": "medium", "uncertainty": "low",
+      "triage_reason": "Verifikasi isolasi histori dan penghapusan tanpa mengubah TTS.",
+      "model_hint": "gpt-6.1-sol", "model_reason": "QA independen backend tenant dan otorisasi.",
+      "depends_on": {"hard": ["T055"], "contracts": []}, "write_scope": [], "shared_resources": [], "conflicts_with": [], "parallel_candidates": [],
+      "acceptance_criteria": ["QA independen membuktikan query history tenant, preservation TTS setelah delete, admin aktif dan ID locked."],
+      "verification_plan": ["Review source dan tes SQLite memory serta edge pagination/demotion."],
+      "qa_for": "T055", "status": "done", "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {"verdict": "pass", "artifact_ref": "docs/evidence/T055/README.md", "revision": "sha256:e8131c8a23cfa2941ff919d005747fe2cc5b1390e24e63543c841bd401c65271", "checked_revision": "sha256:e8131c8a23cfa2941ff919d005747fe2cc5b1390e24e63543c841bd401c65271", "inputs": {"T055": "sha256:e8131c8a23cfa2941ff919d005747fe2cc5b1390e24e63543c841bd401c65271"}, "evidence": ["docs/evidence/T055/README.md", "/private/tmp/CustomerHistoryIndependentQaTest.php"], "summary": "Native /root/customer_history_qa PASS: Customers/TTS25tes223assert dan edge2tes7assert; source tidak berubah. Scope QA backend; browser coordinator terpisah, konfirmasi hapus belum terbukti end-to-end."}
+    },
+    {
+      "id": "T057", "title": "Permudah pencarian dan pergantian pelanggan TTS",
+      "kind": "implementation", "responsible_role": "developer", "work_type": "frontend", "deliverable_id": null,
+      "prd_refs": ["PRD.md §20.3 D-34", "DESIGN.md"], "priority": "must", "difficulty": "easy", "risk": "medium", "uncertainty": "low",
+      "triage_reason": "Default label menghalangi pencarian; perbaiki state query komponen shared dan reset pelanggan saja.",
+      "model_hint": "gpt-6.1-sol", "model_reason": "Perbaikan kecil state Blade/Alpine dan Livewire existing.",
+      "depends_on": {"hard": [], "contracts": []},
+      "write_scope": ["resources/views/components/ui/search-select.blade.php", "resources/views/livewire/tts/form.blade.php", "app/Livewire/Tts/Form.php", "tests/Feature/Customers/CustomersTest.php", "PRD.md", "TODO.md", "docs/evidence/T057/**"],
+      "shared_resources": [{"name": "branch:main", "mode": "exclusive"}], "conflicts_with": [], "parallel_candidates": [],
+      "acceptance_criteria": ["Cari pelanggan mulai kosong dan bisa langsung diketik tanpa menghapus label.", "Pencarian ulang mengganti query, batal mencari mempertahankan pilihan.", "Tombol Pelanggan baru mengosongkan identitas saja, tidak barang/keluhan, dan tidak berlaku untuk edit TTS lama."],
+      "verification_plan": ["Tes Customers/SearchSelect/TTS, review shared, browser ketik/Enter/Escape/reset390px dan QA independen."],
+      "status": "done", "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {"verdict": "pass", "artifact_ref": "docs/evidence/T057/README.md", "revision": "sha256:0fa534539015ef9af64e2b3d521e96ae0b011a2bce52b2fd5e93a4e2136e5013", "checked_revision": "075871e + local T055/T057", "inputs": {}, "evidence": ["docs/evidence/T057/README.md", "/private/tmp/CustomerHistoryIndependentQaTest.php"], "summary": "27tes241assert dan full237PASS1SKIP2530assert, PHPStan/Pint PASS. Browser keyboard/search/reset390px PASS. Independent follow-up /root/customer_history_qa27tes241assert+3edge15assert PASS: reset preserve barang/keluhan dan edit legacy ditolak; source unchanged. Tidak push/deploy."}
     }
   ]
 }

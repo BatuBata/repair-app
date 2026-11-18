@@ -31,6 +31,7 @@
             return query === '' || query === selected ? this.options : this.options.filter(option => option.label.toLocaleLowerCase('id').includes(query))
         },
         show() {
+            if (!this.open) this.query = ''
             this.open = true
             this.active = Math.max(0, this.filtered().findIndex(option => option.value === this.selected))
         },

@@ -14,7 +14,11 @@
         <div class="toolbar"><label class="field"><span class="sr-only">Cari pelanggan</span><input class="input" type="search" wire:model.live.debounce.300ms="search" placeholder="Cari nama atau nomor HP"></label></div>
         <table class="table"><thead><tr><th class="act">Aksi</th><th>Nama</th><th>Nomor HP</th><th>Alamat</th></tr></thead><tbody>
             @forelse($customers as $customer)
-                <tr wire:key="customer-{{ $customer->id }}"><td class="act"><button class="btn" type="button" wire:click="edit({{ $customer->id }})" aria-label="Ubah pelanggan {{ $customer->name }}">Ubah</button></td><td class="c-who">{{ $customer->name }}</td><td class="c-meta">{{ $customer->phone }}</td><td class="c-meta">{{ $customer->address ?: '—' }}</td></tr>
+                <tr wire:key="customer-{{ $customer->id }}"><td class="act"><x-ui.row-actions :id="'customer-actions-'.$customer->id" :label="$customer->name">
+                    <a role="menuitem" href="{{ route('customers.show', $customer->id) }}"><x-ui.icon name="eye" />Lihat pelanggan</a>
+                    <button type="button" role="menuitem" onclick="Livewire.find(@js($this->getId())).edit({{ $customer->id }})"><x-ui.icon name="pencil" />Edit pelanggan</button>
+                    <button type="button" class="danger" role="menuitem" onclick="if (confirm(@js('Hapus pelanggan '.$customer->name.' dari buku alamat? TTS dan nota tetap tersimpan.'))) Livewire.find(@js($this->getId())).delete({{ $customer->id }})"><x-ui.icon name="trash-2" />Hapus pelanggan</button>
+                </x-ui.row-actions></td><td class="c-who">{{ $customer->name }}</td><td class="c-meta">{{ $customer->phone }}</td><td class="c-meta">{{ $customer->address ?: '—' }}</td></tr>
             @empty
                 <tr><td colspan="4"><div class="empty">Belum ada pelanggan yang cocok.</div></td></tr>
             @endforelse

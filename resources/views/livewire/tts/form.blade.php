@@ -24,10 +24,15 @@
     <div class="compose">
         <form class="form" id="tts-form" wire:submit="save" novalidate>
             @unless($orderId)
-                <div>
-                    <x-ui.search-select name="customer_id" label="Pelanggan" :options="$customers->map(fn ($customer) => ['value' => $customer->id, 'label' => $customer->name.' · '.$customer->phone])->prepend(['value' => '', 'label' => 'Pelanggan baru'])" :value="$customer_id" placeholder="Pelanggan baru atau cari pelanggan terdaftar" wire:model.live="customer_id" :invalid="$errors->has('customer_id')" describedby="customer_id-error" />
+                <div wire:key="customer-picker-{{ $customer_id ?: 'new' }}">
+                    <x-ui.search-select name="customer_id" label="Cari pelanggan terdaftar" :options="$customers->map(fn ($customer) => ['value' => $customer->id, 'label' => $customer->name.' · '.$customer->phone])" :value="$customer_id" placeholder="Cari nama atau nomor HP pelanggan" wire:model.live="customer_id" :invalid="$errors->has('customer_id')" describedby="customer_id-error" />
                     @error('customer_id')<p class="error-text" id="customer_id-error">{{ $message }}</p>@enderror
-                    <p class="small muted">Pelanggan baru otomatis terdaftar setelah TTS disimpan.</p>
+                    @if($customer_id !== '')
+                        <button type="button" class="btn ghost" wire:click="newCustomer" wire:loading.attr="disabled" wire:target="newCustomer" style="margin-top:8px"><x-ui.icon name="plus" />Pelanggan baru</button>
+                        <p class="small muted">Data pelanggan terpilih terisi otomatis. Untuk mengganti pelanggan, klik kolom pencarian.</p>
+                    @else
+                        <p class="small muted" style="margin-top:8px">Pelanggan baru? Langsung isi data di bawah. Otomatis terdaftar setelah TTS disimpan.</p>
+                    @endif
                 </div>
             @endunless
             <fieldset @disabled(!$orderId && $customer_id !== '') style="border:0;padding:0;margin:0;display:grid;gap:20px;min-width:0">

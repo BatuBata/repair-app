@@ -657,6 +657,10 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 
 | D-32 | Buku alamat pelanggan per tenant hanya berisi nama, nomor HP, dan alamat opsional. Admin dapat mencari, menambah, dan mengubah pelanggan. TTS baru dapat memilih pelanggan terdaftar atau memasukkan pelanggan baru yang didaftarkan saat TTS tersimpan; nomor HP ternormalisasi mengenali pelanggan dalam toko yang sama. TTS menyimpan salinan identitas pelanggan sehingga perubahan buku alamat tidak mengubah histori. TTS lama tetap seperti semula, tanpa backfill atau impor otomatis. Satu migrasi aditif tabel customers diizinkan dalam scope ini | User meminta fitur pelanggan sederhana terhubung pembuatan TTS dan data lama dipertahankan | User | Disetujui user 18 Nov 2026; implementasi lokal, push/deploy mengikuti aba-aba user |
 
+| D-33 | Aksi pelanggan memakai menu bersama seperti Servis: Lihat, Edit, Hapus. Hapus memerlukan konfirmasi dan hanya menghapus buku alamat, tidak menghapus TTS/nota. Lihat menampilkan barang, keluhan, nomor/tanggal/status TTS dan tautan detail; query berdasarkan nomor HP pelanggan dalam tenant aktif, mencakup TTS lama tanpa backfill. UI menjelaskan riwayat mengikuti nomor HP saat ini | User meminta aksi lengkap dan riwayat barang yang pernah diservis di toko | User | Disetujui user 18 Nov 2026; implementasi lokal tanpa push/deploy |
+
+| D-34 | Pencarian pelanggan TTS mulai kosong dengan placeholder nama/HP. Pelanggan baru langsung mengisi data; setelah memilih pelanggan existing tersedia tombol Pelanggan baru untuk kembali ke input kosong. Search-select bersama mengosongkan query saat dibuka agar bisa langsung mengetik; menutup tanpa memilih memulihkan label pilihan sebelumnya | User melaporkan harus menghapus teks Pelanggan baru sebelum mencari | User | Disetujui user 18 Nov 2026; lokal tanpa push/deploy |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

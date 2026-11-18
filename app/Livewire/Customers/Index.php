@@ -66,6 +66,15 @@ class Index extends Component
         $this->resetValidation();
     }
 
+    public function delete(int $id): void
+    {
+        User::activeAccount(admin: true);
+        Customer::findOrFail($id)->delete();
+        $this->cancel();
+        $this->resetPage();
+        session()->flash('customer_status', 'Pelanggan berhasil dihapus. TTS dan nota tetap tersimpan.');
+    }
+
     public function save(): void
     {
         User::activeAccount(admin: true);

@@ -72,6 +72,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T050 | QA independen pembayaran dan filter laporan | tester / 6.1-sol | medium / medium | T049 | — | done |
 | T051 | Perbaiki daftar bank yang terpotong di dialog pembayaran | developer / 6.1-terra | easy / low | T050 | — | done |
 | T052 | QA independen daftar bank dalam dialog pembayaran | tester / 6.1-terra | easy / low | T051 | — | done |
+| T053 | Data pelanggan sederhana dan pilihan pelanggan TTS baru | developer / 6.1-sol | medium / medium | — | — | done |
+| T054 | QA independen data pelanggan dan kompatibilitas TTS lama | tester / 6.1-sol | medium / medium | T053 | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -147,16 +149,16 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:9a13eb07c898400638b995b0ef0648a824b1f9f1ba9149b58f4bc3b9219e9612",
+    "prd_revision": "sha256:4532b36b5ba8145072c25fc238f5644b890e8ef2c155689e6d1555afdf618f6b",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
       "stop_after_tasks": [
-        "T052"
+        "T054"
       ],
-      "source_ref": "User17Nov2026 authorizes push and deploy after the clipped bank-list fix. T051 implementation and T052 independent QA are PASS; CI/CD D-23 remains the deployment gate.",
+      "source_ref": "User18Nov2026 meminta fitur pelanggan sederhana dan pilihan pelanggan pada TTS baru, data lama tetap. T053 implementasi lokal dan T054 QA selesai; push/deploy menunggu aba-aba user. Goal lama tetap selesai.",
       "phase_history": [
         {
           "state": "paused",
@@ -6094,6 +6096,75 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         "inputs": {"T051": "sha256:3e20dd33780404d0a27ef63b6fc1b125b9799a7e57dffa3b3798447f1c4bcde5"},
         "evidence": ["docs/evidence/T052/A1/README.md"],
         "summary": "QA independen PASS pada e8ebf10: 23 tes/134 assertion, build/view/diff, 9 bank termasuk BCA/Lainnya, scroll internal, tombol dialog, no overflow, dan search-select di luar dialog lulus pada browser HP/desktop sintetis."
+      }
+    },
+    {
+      "id": "T053",
+      "title": "Data pelanggan sederhana dan pilihan pelanggan TTS baru",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "backend",
+      "deliverable_id": null,
+      "prd_refs": ["PRD.md §20.3 D-32", "DESIGN.md"],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Satu tabel pelanggan per tenant dan integrasi form existing; snapshot historis dipertahankan tanpa backfill.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Perubahan validasi, transaksi dan tenant scope.",
+      "depends_on": {"hard": [], "contracts": []},
+      "write_scope": ["app/Models/Customer.php", "app/Livewire/Customers/**", "app/Livewire/Tts/Form.php", "database/migrations/2026_11_18_000000_create_customers_table.php", "routes/modules/customers.php", "resources/views/livewire/customers/**", "resources/views/livewire/tts/form.blade.php", "resources/views/layouts/app/sidebar.blade.php", "tests/Feature/Customers/**", "PRD.md", "TODO.md", "docs/evidence/T053/**"],
+      "shared_resources": [{"name": "branch:main", "mode": "exclusive"}],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": ["Admin dapat menambah, mencari dan mengubah nama/HP/alamat pelanggan toko sendiri.", "TTS baru memilih pelanggan terdaftar atau mendaftarkan pelanggan baru secara atomik; nomor HP ternormalisasi unik per tenant.", "Data dan edit TTS lama tetap seperti semula; perubahan pelanggan tidak mengubah histori.", "Tidak ada push/deploy atau migrasi pada database existing."],
+      "verification_plan": ["Suite SQLite, PHPStan, Pint, build, browser TTS/pelanggan dan QA independen."],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T053/README.md",
+        "revision": "sha256:28e2a06b350ac494c8ed9771852418ff463607dfebbed3d392947ed6a2f8e895",
+        "checked_revision": "14abe389330dcbb73748176123b88cefa95ad677 + local customer feature",
+        "inputs": {},
+        "evidence": ["docs/evidence/T053/README.md"],
+        "summary": "234 tes PASS/1 MySQL SKIP/2504 assertion, PHPStan 0, Pint/build PASS; browser alur pilih pelanggan, tambah pelanggan dan simpan TTS lulus. Tidak push/deploy."
+      }
+    },
+    {
+      "id": "T054",
+      "title": "QA independen data pelanggan dan kompatibilitas TTS lama",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "integration",
+      "deliverable_id": null,
+      "prd_refs": ["PRD.md §20.3 D-32"],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Data pribadi pelanggan harus terisolasi antar tenant dan histori TTS tetap stabil.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Review transaksi dan otorisasi independen.",
+      "depends_on": {"hard": ["T053"], "contracts": []},
+      "write_scope": [],
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": ["QA independen memeriksa tenant, role, snapshot lama dan rollback transaksi pada perubahan pelanggan.", "Tidak mengubah kode aplikasi atau database existing."],
+      "verification_plan": ["Review source; Customers/TTS/Tenancy Migration serta edge tests SQLite in-memory."],
+      "qa_for": "T053",
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T053/README.md",
+        "revision": "sha256:28e2a06b350ac494c8ed9771852418ff463607dfebbed3d392947ed6a2f8e895",
+        "checked_revision": "sha256:28e2a06b350ac494c8ed9771852418ff463607dfebbed3d392947ed6a2f8e895",
+        "inputs": {"T053": "sha256:28e2a06b350ac494c8ed9771852418ff463607dfebbed3d392947ed6a2f8e895"},
+        "evidence": ["docs/evidence/T053/README.md", "/private/tmp/CustomerIndependentQaTest.php"],
+        "summary": "Native /root/customer_qa read-only PASS: 25 tes/223 assertion dan 3 edge/8 assertion; foreign ID, demotion, atomic rollback dan legacy snapshot teruji. Browser oleh coordinator; MariaDB nyata belum diuji."
       }
     }
   ]

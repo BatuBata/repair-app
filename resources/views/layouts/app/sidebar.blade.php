@@ -13,10 +13,10 @@
         if ($href === '/tts' && ($path === '/tts/baru' || str_starts_with($path, '/tts/baru/'))) return false;
         return $path === $href || str_starts_with($path, $href.'/');
     };
-    $menuActive = ! $technician && collect(['/penjualan', '/stok', '/pengeluaran', '/pengaturan', '/profil'])->contains(fn ($href) => $active($href));
+    $menuActive = ! $technician && collect(['/penjualan', '/stok', '/pelanggan', '/pengeluaran', '/pengaturan', '/profil'])->contains(fn ($href) => $active($href));
     $items = $technician
         ? [['Buat TTS', '/tts/baru', 'plus'], ['Daftar TTS', '/tts', 'clipboard-list'], ['Profil', '/profil', 'user-round']]
-        : [['Beranda', '/', 'layout-dashboard'], ['Servis', '/tts', 'clipboard-list'], ['Penjualan', '/penjualan', 'shopping-bag'], ['Stok barang', '/stok', 'boxes'], ['Pengeluaran', '/pengeluaran', 'wallet'], ['Laporan', '/laporan', 'chart-column']];
+        : [['Beranda', '/', 'layout-dashboard'], ['Servis', '/tts', 'clipboard-list'], ['Pelanggan', '/pelanggan', 'user-round'], ['Penjualan', '/penjualan', 'shopping-bag'], ['Stok barang', '/stok', 'boxes'], ['Pengeluaran', '/pengeluaran', 'wallet'], ['Laporan', '/laporan', 'chart-column']];
     $bottom = $technician ? $items : [['Beranda', '/', 'layout-dashboard'], ['Servis', '/tts', 'clipboard-list'], ['Buat TTS', '/tts/baru', 'plus'], ['Laporan', '/laporan', 'chart-column']];
 @endphp
 <!DOCTYPE html>
@@ -61,7 +61,7 @@
     @unless($technician)<button type="button" class="bottom-menu" @if($menuActive) aria-current="page" @endif data-open="navigation-menu"><x-ui.icon name="menu" />Menu</button>@endunless
 </nav>
 @unless($technician)
-<dialog class="sheet-dialog" id="navigation-menu" aria-labelledby="navigation-title"><div class="dialog-body"><h2 id="navigation-title">Menu</h2><nav class="menu-links"><a href="/penjualan">Penjualan</a><a href="/stok">Stok</a><a href="/pengeluaran">Pengeluaran</a><a href="/pengaturan/toko">Pengaturan</a><a href="/profil">Profil</a>@auth<a href="{{ route('profile.edit') }}">Pengaturan akun</a><form method="POST" action="{{ route('logout') }}">@csrf<button type="submit">Keluar</button></form>@endauth</nav><button class="btn" type="button" data-close>Tutup</button></div></dialog>
+<dialog class="sheet-dialog" id="navigation-menu" aria-labelledby="navigation-title"><div class="dialog-body"><h2 id="navigation-title">Menu</h2><nav class="menu-links"><a href="/pelanggan">Pelanggan</a><a href="/penjualan">Penjualan</a><a href="/stok">Stok</a><a href="/pengeluaran">Pengeluaran</a><a href="/pengaturan/toko">Pengaturan</a><a href="/profil">Profil</a>@auth<a href="{{ route('profile.edit') }}">Pengaturan akun</a><form method="POST" action="{{ route('logout') }}">@csrf<button type="submit">Keluar</button></form>@endauth</nav><button class="btn" type="button" data-close>Tutup</button></div></dialog>
 @endunless
 <div class="toast" role="status" aria-live="polite"><x-ui.icon name="info" /><span></span></div>
 @fluxScripts

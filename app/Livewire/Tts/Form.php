@@ -5,6 +5,7 @@ namespace App\Livewire\Tts;
 use App\Enums\ServiceOrderStatus;
 use App\Enums\UserRole;
 use App\Models\Category;
+use App\Models\Customer;
 use App\Models\ServiceOrder;
 use App\Models\StoreSetting;
 use App\Models\User;
@@ -23,6 +24,8 @@ class Form extends Component
     public ?int $orderId = null;
 
     public string $customer_name = '';
+
+    public string $customer_id = '';
 
     public string $customer_phone = '';
 
@@ -59,11 +62,36 @@ class Form extends Component
         return $order;
     }
 
+    public function updatedCustomerId(): void
+    {
+        User::activeAccount();
+        if ($this->orderId !== null) {
+            return;
+        }
+        $this->resetValidation();
+        if ($this->customer_id === '') {
+            $this->reset(['customer_name', 'customer_phone', 'customer_address']);
+
+            return;
+        }
+        $customer = Customer::findOrFail($this->customer_id);
+        $this->customer_name = $customer->name;
+        $this->customer_phone = $customer->phone;
+        $this->customer_address = $customer->address ?? '';
+    }
+
     public function save(): void
     {
         $order = DB::transaction(function () {
             $user = User::activeAccount();
             $order = $this->orderId === null ? null : $this->editableOrder(lock: true);
+            if ($order === null && $this->customer_id !== '') {
+                $this->validate(['customer_id' => ['integer', 'min:1']]);
+                $customer = Customer::findOrFail($this->customer_id);
+                $this->customer_name = $customer->name;
+                $this->customer_phone = $customer->phone;
+                $this->customer_address = $customer->address ?? '';
+            }
             $data = $this->validate([
                 'customer_name' => ['required', 'string', 'max:100'],
                 'customer_phone' => ['required', 'string', 'max:40'],
@@ -81,7 +109,14 @@ class Form extends Component
             }
             $data['customer_phone'] = PhoneNumber::normalize($data['customer_phone']);
             if ($order === null) {
-                return app(CreateServiceOrder::class)->create($data, $user);
+                $order = app(CreateServiceOrder::class)->create($data, $user);
+                if ($this->customer_id === '') {
+                    Customer::firstOrCreate(['phone' => $data['customer_phone']], [
+                        'name' => $data['customer_name'], 'address' => $data['customer_address'] ?? null,
+                    ]);
+                }
+
+                return $order;
             }
             $order->update($data);
 
@@ -98,6 +133,7 @@ class Form extends Component
         return view('livewire.tts.form', [
             'categories' => Category::query()->where('is_active', true)->orderBy('id')->get(['id', 'name']),
             'currentCategory' => $order?->category,
+            'customers' => $order === null ? Customer::query()->orderBy('name')->get(['id', 'name', 'phone']) : collect(),
             'storeName' => StoreSetting::query()->value('name') ?: app(TenantContext::class)->tenant()->name,
         ])->layout('layouts.app', ['title' => $order === null ? 'TTS baru' : 'Ubah TTS']);
     }

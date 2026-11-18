@@ -1,6 +1,8 @@
 @php
     $money = fn ($n) => 'Rp'.preg_replace('/\B(?=(\d{3})+(?!\d))/', '.', (string) $n);
-    $total = $items->sum(fn ($line) => $line->qty * $line->price);
+    $subtotal = $items->sum(fn ($line) => $line->qty * $line->price);
+    $discount = $discount ?? 0;
+    $total = $subtotal - $discount;
     $thermal = $format !== 'a5';
     $headerTop = $headerTop ?? 39;
     $blocks = function (?string $text) use ($thermal) {
@@ -39,6 +41,6 @@ table { width: 100%; border-collapse: collapse; } th, td { text-align: left; ver
 <section class="section"><p>Tanggal terima / jual: {{ $date->format('d/m/Y') }}</p>@if($invoiceDate)<p>Tanggal nota: {{ $invoiceDate->format('d/m/Y') }}</p>@endif
 @if($customer)<p>Customer: {{ $customer }}</p>@endif @if($phone)<p>HP: {{ $phone }}</p>@endif
 @if($item)<p>Barang: {{ $item }}</p>@endif @if($complaint)<p class="pre">Keluhan: {{ $complaint }}</p>@endif @if($technician)<p>Teknisi: {{ $technician }}</p>@endif</section>
-@if($items->isNotEmpty())<section class="section"><strong>Rincian</strong>@foreach($items as $line)<div class="line"><p class="pre">{{ $line->description }}</p>@if($thermal)<p>{{ $line->qty }} × {{ $money($line->price) }}</p><p class="right">{{ $money($line->qty * $line->price) }}</p>@else<table><tr><td>{{ $line->qty }} × {{ $money($line->price) }}</td><td class="right">{{ $money($line->qty * $line->price) }}</td></tr></table>@endif</div> @endforeach @if($thermal)<div class="total"><p>Total</p><p class="right">{{ $money($total) }}</p></div>@else<table><tr class="total"><td>Total</td><td class="right">{{ $money($total) }}</td></tr></table>@endif</section>@endif
+@if($items->isNotEmpty())<section class="section"><strong>Rincian</strong>@foreach($items as $line)<div class="line"><p class="pre">{{ $line->description }}</p>@if($thermal)<p>{{ $line->qty }} × {{ $money($line->price) }}</p><p class="right">{{ $money($line->qty * $line->price) }}</p>@else<table><tr><td>{{ $line->qty }} × {{ $money($line->price) }}</td><td class="right">{{ $money($line->qty * $line->price) }}</td></tr></table>@endif</div> @endforeach @if($discount > 0)<p>Subtotal <span class="right">{{ $money($subtotal) }}</span></p><p>Diskon <span class="right">−{{ $money($discount) }}</span></p>@endif @if($thermal)<div class="total"><p>Total</p><p class="right">{{ $money($total) }}{{ $total === 0 ? ' (Gratis)' : '' }}</p></div>@else<table><tr class="total"><td>Total</td><td class="right">{{ $money($total) }}{{ $total === 0 ? ' (Gratis)' : '' }}</td></tr></table>@endif</section>@endif
 @if($kind !== 'Tanda terima servis')<section class="section">@if($unrepairable)<p><strong>Tidak dapat diperbaiki</strong></p>@endif<p>{{ $warrantyDays ? 'Garansi '.$warrantyDays.' hari · sampai '.$warrantyUntil?->format('d/m/Y') : 'Tanpa garansi' }}</p>@foreach($blocks($store?->warranty_terms) as $block)<p class="pre">{{ $block }}</p>@endforeach</section>@else<p class="center">Simpan struk ini untuk pengambilan barang.</p>@endif
 @if($qr)<div class="line"><img class="qr" src="{{ $qr }}" alt="QR tracking"><p class="center">Pindai untuk melihat status servis</p></div>@endif</main></body></html>

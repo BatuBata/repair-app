@@ -81,6 +81,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T059 | QA independen relasi pelanggan transaksi | tester / 6.1-sol | medium / medium | T058 | — | done |
 | T060 | Kelola bank pembayaran per tenant | developer / 6.1-sol | medium / medium | — | — | done |
 | T061 | QA independen bank per toko | tester / 6.1-sol | medium / medium | T060 | — | done |
+| T062 | Rekap pembayaran, diskon servis dan WA tidak dapat diperbaiki | developer / 6.1-sol | medium / high | — | — | done |
+| T063 | QA independen tiga revisi transaksi servis | tester / 6.1-sol | medium / high | T062 | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -156,16 +158,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:8b95b188845b28c03d786ba978a5878964e9b080b3035f2991938fbc80855b96",
+    "prd_revision": "sha256:fb8f2ce66c0a6600690816d013b4ad53b13da859dfd68aa6a270bb03863727eb",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
-      "stop_after_tasks": [
-        "T061"
-      ],
-      "source_ref": "User18Nov2026 meminta bank per toko: default readonly/hanya toggle tenant sendiri, custom CRUD. T060 implementasi dan T061 QA selesai lokal. Tidak push/deploy; Goal lama tetap selesai.",
+      "stop_after_tasks": ["T063"],
+      "source_ref": "User18Nov2026: tiga revisi selesai lokal T062/T063, QA independen PASS. Tanggal transaksi existing. Berhenti tanpa push/deploy sesuai instruksi; Goal lama tetap selesai.",
       "phase_history": [
         {
           "state": "paused",
@@ -6265,6 +6265,127 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "verification_plan": ["Review source dan Banks/Invoice/Sales/Reports SQLite, edge daftar kosong/foreign/unknown, guard dirtydefault retest."],
       "qa_for": "T060", "status": "done", "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
       "result": {"verdict": "pass", "artifact_ref": "docs/evidence/T060/README.md", "revision": "sha256:cf4cc4f2cb7d6eb8eaa204dc04bc6c7a940ffa76c86980d26de6863ec8232d2a", "checked_revision": "sha256:cf4cc4f2cb7d6eb8eaa204dc04bc6c7a940ffa76c86980d26de6863ec8232d2a", "inputs": {"T060": "sha256:cf4cc4f2cb7d6eb8eaa204dc04bc6c7a940ffa76c86980d26de6863ec8232d2a"}, "evidence": ["docs/evidence/T060/README.md", "/private/tmp/TenantBanksIndependentQaTest.php"], "summary": "Native /root/tenant_banks_qa55tes491assert+2edge21assert PASS; defense-only dirtyname guard finding corrected, final6tes63assert PASS. Source unchanged by QA; browser coordinator; MariaDB nyata belum."}
+    },
+    {
+      "id": "T062",
+      "title": "Rekap pembayaran, diskon servis dan WA tidak dapat diperbaiki",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "backend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-37",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "high",
+      "uncertainty": "low",
+      "triage_reason": "Uang dan nota harus sama di seluruh caller serta isolasi tenant tetap.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Implementasi keuangan lintas caller existing.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "app/**",
+        "resources/views/**",
+        "database/migrations/2026_11_18_030000_add_service_discount.php",
+        "tests/Feature/Invoice/ServiceRevisionsTest.php",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T062/**",
+        "tests/Feature/Settings/BanksTest.php"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Rekap Tunai/QRIS/transfer dan per bank, servis+sales berdasarkan tanggal nota/jual; expenses tidak dihitung, tenant terisolasi, legacy tidak dibackfill.",
+        "Diskon nominal 0..subtotal, total0 Gratis; laporan/dashboard/nota/WA/tracking memakai total akhir, modal tetap.",
+        "Gratis tidak memerlukan pembayaran saat ambil; validasi atomik dan koreksi tetap tanggal asli.",
+        "WA unrepairable tidak menyatakan perbaikan selesai dan tidak membatalkan status otomatis.",
+        "Tidak push/deploy, tidak migrasi database operator."
+      ],
+      "verification_plan": [
+        "Tes SQLite terarah dan fullsuite, PHPStan/Pint; browser laporan/nota mobile-desktop; QA independen."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T062/README.md",
+        "revision": "sha256:cf11e12610ba88615f7d41013f64a6d1f14399c1875f6ab7e8cf43ae172dd460",
+        "checked_revision": "e3cf94e + local T062 A1",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T062/README.md",
+          "docs/evidence/T062/source-manifest.json"
+        ],
+        "summary": "Developer full254PASS1MySQLskip2699assert, selectivefinal13PASS167assert, Pint/PHPStan0, real PDF render PASS. Browser/independent QA pending T063. Tidak push/deploy."
+      }
+    },
+    {
+      "id": "T063",
+      "title": "QA independen tiga revisi transaksi servis",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "integration",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-37"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "high",
+      "uncertainty": "low",
+      "triage_reason": "Periksa konsistensi uang, tanggal, legacy dan tenant independen.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "QA backend pembayaran dan tenant independen.",
+      "depends_on": {
+        "hard": [
+          "T062"
+        ],
+        "contracts": []
+      },
+      "write_scope": [],
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Rekap Tunai/QRIS/transfer dan per bank, servis+sales berdasarkan tanggal nota/jual; expenses tidak dihitung, tenant terisolasi, legacy tidak dibackfill.",
+        "Diskon nominal 0..subtotal, total0 Gratis; laporan/dashboard/nota/WA/tracking memakai total akhir, modal tetap.",
+        "Gratis tidak memerlukan pembayaran saat ambil; validasi atomik dan koreksi tetap tanggal asli.",
+        "WA unrepairable tidak menyatakan perbaikan selesai dan tidak membatalkan status otomatis.",
+        "Tidak push/deploy, tidak migrasi database operator."
+      ],
+      "verification_plan": [
+        "Review source target; tes independen edge uang, tanggal, tenant, migration default0 dan output."
+      ],
+      "qa_for": "T062",
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T062/independent-qa.md",
+        "revision": "sha256:cf11e12610ba88615f7d41013f64a6d1f14399c1875f6ab7e8cf43ae172dd460",
+        "checked_revision": "sha256:cf11e12610ba88615f7d41013f64a6d1f14399c1875f6ab7e8cf43ae172dd460",
+        "inputs": {
+          "T062": "sha256:cf11e12610ba88615f7d41013f64a6d1f14399c1875f6ab7e8cf43ae172dd460"
+        },
+        "evidence": [
+          "docs/evidence/T062/independent-qa.md",
+          "docs/evidence/T062/source-manifest.json",
+          "docs/evidence/T062/README.md"
+        ],
+        "summary": "Native t063_revisions_qa31tests471assert PASS, migration legacy default0/preserve, money bounds/date/tenant/WA/privacy/correction. Coordinator browser390/1280 save/freecollect+PDFactual PASS. No push/deploy, MySQL/printer/WAactual notrun."
+      }
     }
   ]
 }

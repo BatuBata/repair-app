@@ -143,7 +143,9 @@
             @if($order->invoiced_on)
                 <div class="section-title"><x-ui.icon name="receipt" /><h2 id="next-heading">Rincian nota</h2></div>
                 <dl class="invoice-lines">@foreach($items as $item)<div><dt>{{ $item->description }} × {{ $item->qty }}</dt><dd>Rp{{ number_format($item->qty * $item->price, 0, ',', '.') }}</dd></div>@endforeach</dl>
-                <dl><div class="invoice-total"><dt>Total</dt><dd>Rp{{ number_format($items->sum(fn ($item) => $item->qty * $item->price), 0, ',', '.') }}</dd></div></dl>
+                @php $subtotal = $items->sum(fn ($item) => $item->qty * $item->price); $total = $subtotal - $order->discount; @endphp
+                @if($order->discount > 0)<dl class="invoice-lines"><div><dt>Subtotal</dt><dd>Rp{{ number_format($subtotal, 0, ',', '.') }}</dd></div><div><dt>Diskon</dt><dd>−Rp{{ number_format($order->discount, 0, ',', '.') }}</dd></div></dl>@endif
+                <dl><div class="invoice-total"><dt>Total</dt><dd>Rp{{ number_format($total, 0, ',', '.') }}{{ $total === 0 ? ' (Gratis)' : '' }}</dd></div></dl>
                 <p class="notice warranty"><x-ui.icon name="shield-check" /><span>@if($order->warranty_until && $order->warranty_days) Garansi {{ $order->warranty_days }} hari, berlaku sampai <strong>{{ $order->warranty_until->translatedFormat('j M Y') }}</strong>. @else Tidak ada garansi. @endif</span></p>
                 @if(\Illuminate\Support\Facades\Route::has('tracking.pdf'))<a class="btn primary block download" href="{{ route('tracking.pdf', $order->tracking_token) }}"><x-ui.icon name="download" />Unduh nota PDF</a>@endif
             @else

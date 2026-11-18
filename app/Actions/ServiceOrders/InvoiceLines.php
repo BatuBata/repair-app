@@ -11,9 +11,9 @@ use Illuminate\Validation\ValidationException;
 final class InvoiceLines
 {
     /** @param array<mixed> $rows
-     * @return array{rows: list<array{type: string, description: string, qty: int, price: int, cost: int}>, price: int, cost: int, profit: int}
+     * @return array{rows: list<array{type: string, description: string, qty: int, price: int, cost: int}>, subtotal: int, discount: int, price: int, cost: int, profit: int}
      */
-    public static function calculate(array $rows): array
+    public static function calculate(array $rows, mixed $discount = 0): array
     {
         foreach ($rows as &$row) {
             if (is_array($row) && ($row['type'] ?? null) === 'jasa') {
@@ -53,7 +53,11 @@ final class InvoiceLines
             $clean[] = ['type' => $row['type'], 'description' => (string) ($row['description'] ?? ''), 'qty' => $qty, 'price' => $unitPrice, 'cost' => $unitCost];
         }
 
-        return ['rows' => $clean, 'price' => $price, 'cost' => $cost, 'profit' => $price - $cost];
+        $discount = (int) Validator::make(['discount' => $discount], [
+            'discount' => ['required', 'integer', 'min:0', 'max:'.$price],
+        ], ['discount.*' => 'Diskon harus berupa rupiah bulat dari 0 sampai total biaya.'])->validate()['discount'];
+
+        return ['rows' => $clean, 'subtotal' => $price, 'discount' => $discount, 'price' => $price - $discount, 'cost' => $cost, 'profit' => $price - $discount - $cost];
     }
 
     public static function revision(ServiceOrder $order): string

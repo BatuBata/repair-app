@@ -1,0 +1,26 @@
+{
+  "base": "e3cf94ea9aa195ff8397bee54ff5e42401e74536",
+  "revision": "sha256:cf11e12610ba88615f7d41013f64a6d1f14399c1875f6ab7e8cf43ae172dd460",
+  "files": {
+    "app/Actions/ServiceOrders/InvoiceLines.php": "ce66cbc1552340a116934bedb807f51265cbae7df687d1b541335c3e6832b678",
+    "app/Actions/ServiceOrders/ManageServiceOrder.php": "3ac1a664cd68135551c3c52fee00eff19319997f94a72025e60ba53b39af9645",
+    "app/Http/Controllers/TrackingController.php": "a0b835d045af9cc7328a94133d8782d03524816a3309dfb60a0c4bf555c753a2",
+    "app/Livewire/Dashboard/Index.php": "6ca588ffffcc6fdaff86074459a06e5c1095d6a83b803cecfff56c3fe8d97dc9",
+    "app/Livewire/Invoice/Form.php": "221c50d33e3e873e3a8401da93c86907ea26d60f18ae1a0034d538f2f1bc143e",
+    "app/Livewire/Tts/Detail.php": "78e0272963f16297ce3d2e91f5f22ffc7a842a54406a5cd12c71fec43e260b55",
+    "app/Models/ServiceOrder.php": "978817e36f7ab0142794e640c7bb26ae4b6c34e067a54d2b61e965da89e03a74",
+    "app/Services/Documents/Document.php": "342f1456d9231cc2d62fc121ef9f81a95b297c80ada5bf39d18c6153883a65d7",
+    "app/Services/Reports/Report.php": "d007c805258ac49996ad0bd2ab5efa43d0445c3779886ca526804c6ddaa06911",
+    "app/Support/WhatsApp.php": "5484005c5d7a69ace71d2501812f168a7115df606a12e4987c2cbde45c33267c",
+    "database/migrations/2026_11_18_030000_add_service_discount.php": "e7dddb4ad0c0e9edc91e4bb46361697154b33dc9177e8b0129b41722941785c0",
+    "resources/views/documents/document.blade.php": "9b81688c6c67ee78dde738e56f3271e4a54c42119b171e6df47ec294fd3f1f5c",
+    "resources/views/livewire/invoice/form.blade.php": "e88265a59f533a1dd9b131fb8926cc3140e89a04cba7eef05afc68ee0615da62",
+    "resources/views/livewire/invoice/published.blade.php": "ab8de3b77404127888811fa149bbe53501fd981119695ffcf359add4f8caa39e",
+    "resources/views/livewire/reports/index.blade.php": "502c45aa92b0dd604e490fe5d1ad2d240b21f7e01ce459e415396ab0afb07929",
+    "resources/views/livewire/tts/admin-actions.blade.php": "3b69e7e7ad00bbf35edcf18686a0542e9cd95889f742724cdbb1b255dcac9431",
+    "resources/views/livewire/tts/detail.blade.php": "575b19f0837d775ef54f132d55f6af484acf1be37d4f0f0db0c06ee95226e281",
+    "resources/views/tracking/show.blade.php": "da0916bb01c58d0afc2c98263e6e6122a42d12393dcf258544eb8469ff8436a4",
+    "tests/Feature/Invoice/ServiceRevisionsTest.php": "c9011f74f3ae805ff1def3f039e3c580353860f8c2bf2cf887d1d5fac650d6db",
+    "tests/Feature/Settings/BanksTest.php": "6122b4c4ecdbc126a02288b12f7861154a646373d355afd3111a1895f902fd56"
+  }
+}

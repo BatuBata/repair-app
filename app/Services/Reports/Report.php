@@ -32,6 +32,9 @@ class Report
             foreach ($order->items as $item) {
                 $lines[] = ['description' => $item->description, 'qty' => (string) $item->qty, 'amount' => (string) BigInteger::of($item->qty)->multipliedBy($item->price), 'cost' => (string) BigInteger::of($item->qty)->multipliedBy($item->cost)];
             }
+            if ($order->discount > 0) {
+                $lines[] = ['description' => 'Diskon', 'qty' => '1', 'amount' => (string) -$order->discount, 'cost' => '0'];
+            }
             $rows[] = $this->transaction('servis', $order->id, CarbonImmutable::parse((string) $order->getRawOriginal('invoiced_on'))->toDateString(), $order->number, $order->customer_name.' · '.($order->item_description ?? 'Servis'), $lines, route('tts.show', $order->id), $order->payment_method, $order->payment_bank);
         }
         foreach (Sale::query()->whereDate('sold_on', '>=', $from)->whereDate('sold_on', '<=', $to)->with('items')->get() as $sale) {
@@ -51,15 +54,25 @@ class Report
         $sales = BigInteger::zero();
         $cost = BigInteger::zero();
         $daily = [];
+        $payments = array_fill_keys(['cash', 'qris', 'transfer', 'unrecorded'], '0');
+        $paymentBanks = [];
         foreach ($rows as $row) {
             if ($row['type'] === 'keluar') {
                 continue;
             }
             $row['type'] === 'servis' ? $service = $service->plus($row['amount']) : $sales = $sales->plus($row['amount']);
             $cost = $cost->plus($row['cost']);
+            $method = in_array($row['payment_method'], ['cash', 'qris', 'transfer'], true) ? $row['payment_method'] : 'unrecorded';
+            $payments[$method] = (string) BigInteger::of($payments[$method])->plus($row['amount']);
+            if ($method === 'transfer') {
+                $bank = $row['payment_bank'] ?: 'Bank belum dicatat';
+                $paymentBanks[$bank] = (string) BigInteger::of($paymentBanks[$bank] ?? '0')->plus($row['amount']);
+            }
             $daily[$row['date']] ??= ['servis' => '0', 'jual' => '0'];
             $daily[$row['date']][$row['type']] = (string) BigInteger::of($daily[$row['date']][$row['type']])->plus($row['amount']);
         }
+        ksort($paymentBanks);
+        $payments['total'] = (string) BigInteger::of($payments['cash'])->plus($payments['qris'])->plus($payments['transfer']);
         $restock = BigInteger::zero();
         foreach (StockEntry::query()->whereHas('product')->whereDate('entry_date', '>=', $from)->whereDate('entry_date', '<=', $to)->cursor() as $entry) {
             $restock = $restock->plus(BigInteger::of($entry->qty)->multipliedBy($entry->cost_price));
@@ -100,7 +113,7 @@ class Report
             $ticks[] = ['label' => self::money((string) $tick->quotient($axisUnit)).($axisUnit->isGreaterThan(1) ? ' T' : ''), 'bottom' => $tick->multipliedBy(10000)->quotient($ceiling)->toInt() / 100];
         }
 
-        return ['rows' => $rows, 'service' => (string) $service, 'sales' => (string) $sales, 'revenue' => (string) $revenue, 'cost' => (string) $cost, 'gross' => (string) $gross, 'expenses' => (string) $expenseTotal, 'net' => (string) $gross->minus($expenseTotal), 'restock' => (string) $restock, 'days' => $days, 'average' => (string) $average, 'averageRemainder' => (string) $revenue->remainder($dayCount), 'dayCount' => $dayCount, 'highest' => (string) $highest, 'averageHeight' => $average->multipliedBy(10000)->quotient($ceiling)->toInt() / 100, 'ticks' => $ticks, 'axisTrillions' => $axisUnit->isGreaterThan(1), 'page' => $page, 'lastPage' => $lastPage];
+        return ['payments' => $payments, 'paymentBanks' => $paymentBanks, 'rows' => $rows, 'service' => (string) $service, 'sales' => (string) $sales, 'revenue' => (string) $revenue, 'cost' => (string) $cost, 'gross' => (string) $gross, 'expenses' => (string) $expenseTotal, 'net' => (string) $gross->minus($expenseTotal), 'restock' => (string) $restock, 'days' => $days, 'average' => (string) $average, 'averageRemainder' => (string) $revenue->remainder($dayCount), 'dayCount' => $dayCount, 'highest' => (string) $highest, 'averageHeight' => $average->multipliedBy(10000)->quotient($ceiling)->toInt() / 100, 'ticks' => $ticks, 'axisTrillions' => $axisUnit->isGreaterThan(1), 'page' => $page, 'lastPage' => $lastPage];
     }
 
     /** @return array<string, list<string>> */

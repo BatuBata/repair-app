@@ -59,7 +59,7 @@ class Detail extends Component
     public function collect(): void
     {
         app(ManageServiceOrder::class)->collect($this->orderId, $this->picked_up_on, $this->only(['payment_method', 'payment_bank']));
-        session()->flash('tts-status', 'Barang sudah diambil dan pembayaran tersimpan.');
+        session()->flash('tts-status', 'Barang sudah diambil.');
         $this->redirectRoute('tts.show', ['id' => $this->orderId]);
     }
 
@@ -80,7 +80,7 @@ class Detail extends Component
     {
         $user = User::activeAccount();
         $order = ServiceOrder::query()
-            ->select(['id', 'number', 'customer_name', 'customer_phone', 'customer_address', 'category_id', 'item_description', 'complaint', 'status', 'created_by', 'technician_id', 'created_at', 'assigned_at', 'invoiced_on', 'picked_up_on', 'cancelled_at', 'cancel_reason', 'warranty_days', 'warranty_until', 'unrepairable', 'payment_method', 'payment_bank', 'paid_at'])
+            ->select(['id', 'number', 'customer_name', 'customer_phone', 'customer_address', 'category_id', 'item_description', 'complaint', 'status', 'created_by', 'technician_id', 'created_at', 'assigned_at', 'invoiced_on', 'picked_up_on', 'cancelled_at', 'cancel_reason', 'warranty_days', 'warranty_until', 'unrepairable', 'discount', 'payment_method', 'payment_bank', 'paid_at'])
             ->with(['category:id,name', 'creator:id,name', 'technician:id,name'])->findOrFail($this->orderId);
         $canEdit = $user->role === UserRole::Admin || ($order->created_by === $user->id && $order->getAttribute('status') === ServiceOrderStatus::Diterima);
 
@@ -88,7 +88,7 @@ class Detail extends Component
         $financial = null;
         if ($isAdmin && $order->invoiced_on) {
             try {
-                $financial = InvoiceLines::calculate($order->items()->orderBy('id')->get(['type', 'description', 'qty', 'price', 'cost'])->toArray());
+                $financial = InvoiceLines::calculate($order->items()->orderBy('id')->get(['type', 'description', 'qty', 'price', 'cost'])->toArray(), $order->discount ?? 0);
             } catch (ValidationException) {
                 $financial = null;
             }

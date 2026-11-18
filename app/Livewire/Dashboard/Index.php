@@ -119,10 +119,13 @@ class Index extends Component
                 $days[$day][$kind.'_profit'] = $days[$day][$kind.'_profit']->plus($profit);
             }
         }
-        foreach (ServiceOrder::query()->whereIn('status', ['selesai', 'diambil'])->whereDate('invoiced_on', '>=', $start)->whereDate('invoiced_on', '<=', $end)->select('invoiced_on')->cursor() as $order) {
+        foreach (ServiceOrder::query()->whereIn('status', ['selesai', 'diambil'])->whereDate('invoiced_on', '>=', $start)->whereDate('invoiced_on', '<=', $end)->select(['invoiced_on', 'discount'])->cursor() as $order) {
             $day = substr($order->getRawOriginal('invoiced_on'), 0, 10);
             if (! isset($days[$day])) {
                 throw new \LogicException('Tanggal nota di luar rentang dashboard.');
+            }
+            foreach (['revenue', 'profit', 'service', 'service_profit'] as $key) {
+                $days[$day][$key] = $days[$day][$key]->minus($order->discount);
             }
             $days[$day]['invoices'] = $days[$day]['invoices']->plus(1);
         }

@@ -70,7 +70,7 @@ final class ManageServiceOrder
                 'integer' => ':attribute harus berupa bilangan bulat.', 'array' => ':attribute tidak valid.',
                 'list' => ':attribute harus berupa daftar.', 'string' => ':attribute harus berupa teks.',
             ], ['rows' => 'Rincian pekerjaan', 'rows.*.description' => 'Deskripsi', 'warranty_days' => 'Lama garansi', 'unrepairable' => 'Kondisi barang'])->validate();
-            $lines = InvoiceLines::calculate($data['rows']);
+            $lines = InvoiceLines::calculate($data['rows'], $input['discount'] ?? 0);
             $invoiceDate = $correction ? $order->getAttribute('invoiced_on') : CarbonImmutable::today('Asia/Makassar');
             $days = (int) $data['warranty_days'];
             $until = self::warrantyUntil($invoiceDate, $days);
@@ -78,6 +78,8 @@ final class ManageServiceOrder
             $order->items()->createMany($lines['rows']);
             $order->update([
                 'status' => $correction ? $status : ServiceOrderStatus::Selesai,
+                'discount' => $lines['discount'],
+                ...($lines['price'] === 0 ? ['payment_method' => null, 'payment_bank' => null, 'paid_at' => null] : []),
                 'invoiced_on' => $invoiceDate->toDateString(), 'warranty_days' => $days,
                 'warranty_until' => $until->toDateString(), 'unrepairable' => $data['unrepairable'],
             ]);
@@ -102,7 +104,8 @@ final class ManageServiceOrder
             $order->getAttribute('status')->assertTransitionTo(ServiceOrderStatus::Diambil, UserRole::Admin);
             $data = Validator::make(['picked_up_on' => $date], ['picked_up_on' => ['required', 'date_format:Y-m-d', 'after_or_equal:1000-01-01', 'before_or_equal:9999-12-31']], ['*' => 'Isi tanggal diambil yang valid (tahun 1000–9999).'])->validate();
             $changes = ['status' => ServiceOrderStatus::Diambil, 'picked_up_on' => $data['picked_up_on']];
-            if ($order->paid_at === null) {
+            $total = InvoiceLines::calculate($order->items()->get()->toArray(), $order->discount ?? 0)['price'];
+            if ($order->paid_at === null && $total > 0) {
                 $changes = [...$changes, ...Payment::validate($payment), 'paid_at' => CarbonImmutable::now('Asia/Makassar')];
             }
             $order->update($changes);
@@ -116,6 +119,9 @@ final class ManageServiceOrder
             $order = $this->locked($id);
             if (! in_array($order->getAttribute('status'), [ServiceOrderStatus::Selesai, ServiceOrderStatus::Diambil], true) || $order->invoiced_on === null) {
                 throw ValidationException::withMessages(['payment_method' => 'Pembayaran hanya dapat dicatat setelah nota terbit.']);
+            }
+            if (InvoiceLines::calculate($order->items()->get()->toArray(), $order->discount ?? 0)['price'] === 0) {
+                throw ValidationException::withMessages(['payment_method' => 'Nota gratis tidak memerlukan pembayaran.']);
             }
             $order->update([...Payment::validate($input), 'paid_at' => $order->paid_at ?? CarbonImmutable::now('Asia/Makassar')]);
         }, 5);

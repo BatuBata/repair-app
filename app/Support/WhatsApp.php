@@ -16,13 +16,15 @@ final class WhatsApp
         return "Halo {$name}, barang {$item} sudah kami terima dengan nomor {$number}. Cek status: {$link} — {$store}";
     }
 
-    public static function invoiceMessage(string $name, string $number, int $total, ?string $warrantyUntil, string $link, string $store): string
+    public static function invoiceMessage(string $name, string $number, int $total, ?string $warrantyUntil, string $link, string $store, bool $unrepairable = false): string
     {
-        $amount = 'Rp'.number_format($total, 0, ',', '.');
+        $amount = 'Rp'.number_format($total, 0, ',', '.').($total === 0 ? ' (Gratis)' : '');
 
         $warranty = $warrantyUntil ? "Garansi s.d. {$warrantyUntil}" : 'Tanpa garansi';
 
-        return "Halo {$name}, servis {$number} sudah selesai. Total {$amount}. {$warranty}. Nota: {$link} — {$store}";
+        $status = $unrepairable ? 'tidak dapat dilanjutkan karena barang tidak dapat diperbaiki' : 'sudah selesai';
+
+        return "Halo {$name}, servis {$number} {$status}. Total {$amount}. {$warranty}. Nota: {$link} — {$store}";
     }
 
     public static function warrantyMessage(string $name, string $number, string $item, string $warrantyUntil, string $store): string

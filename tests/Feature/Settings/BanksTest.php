@@ -111,6 +111,7 @@ class BanksTest extends TestCase
         $category = Category::create(['name' => 'HP']);
         $order = app(CreateServiceOrder::class)->create(['customer_name' => 'Ratna', 'customer_phone' => '081234567890', 'category_id' => $category->id, 'complaint' => 'Mati'], $user);
         $order->update(['status' => 'selesai', 'invoiced_on' => '2026-11-18']);
+        $order->items()->create(['type' => 'jasa', 'description' => 'Pemeriksaan', 'qty' => 1, 'price' => 10000, 'cost' => 0]);
         Livewire::test(Banks::class)->call('toggleDefault', 'BCA');
         foreach (['sale', 'service'] as $type) {
             try {
@@ -139,6 +140,7 @@ class BanksTest extends TestCase
         $category = Category::create(['name' => 'HP']);
         $order = app(CreateServiceOrder::class)->create(['customer_name' => 'Ratna', 'customer_phone' => '081234567890', 'category_id' => $category->id, 'complaint' => 'Mati'], $user);
         $order->update(['status' => 'selesai', 'invoiced_on' => '2026-11-18']);
+        $order->items()->create(['type' => 'jasa', 'description' => 'Pemeriksaan', 'qty' => 1, 'price' => 10000, 'cost' => 0]);
         app(ManageServiceOrder::class)->recordPayment($order->id, ['payment_method' => 'transfer', 'payment_bank' => 'Bank Jago, Syariah']);
         Livewire::test(Banks::class)->call('edit', $bank->id)->set('name', 'Bank Jago Baru')->call('save')->assertHasNoErrors();
         Livewire::test(Banks::class)->call('delete', $bank->id)->assertHasNoErrors();

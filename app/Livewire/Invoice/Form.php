@@ -32,6 +32,8 @@ class Form extends Component
 
     public bool $unrepairable = false;
 
+    public string $discount = '0';
+
     public function boot(): void
     {
         User::activeAccount(admin: true);
@@ -57,6 +59,7 @@ class Form extends Component
         }
         $this->warranty_days = (string) ($this->correction ? $order->warranty_days : (StoreSetting::query()->value('default_warranty_days') ?? 30));
         $this->unrepairable = $order->unrepairable;
+        $this->discount = (string) ($order->discount ?? 0);
     }
 
     public function addRow(): void
@@ -76,7 +79,7 @@ class Form extends Component
 
     public function save(): void
     {
-        app(ManageServiceOrder::class)->invoice($this->orderId, ['rows' => $this->rows, 'warranty_days' => $this->warranty_days, 'unrepairable' => $this->unrepairable], $this->correction, $this->revision);
+        app(ManageServiceOrder::class)->invoice($this->orderId, ['rows' => $this->rows, 'warranty_days' => $this->warranty_days, 'unrepairable' => $this->unrepairable, 'discount' => $this->discount], $this->correction, $this->revision);
         $this->redirectRoute('tts.show', ['id' => $this->orderId]);
     }
 
@@ -85,7 +88,7 @@ class Form extends Component
         User::activeAccount(admin: true);
         $order = $this->order()->load(['category:id,name', 'technician:id,name']);
         try {
-            $totals = InvoiceLines::calculate($this->rows);
+            $totals = InvoiceLines::calculate($this->rows, $this->discount);
         } catch (ValidationException) {
             $totals = null;
         }

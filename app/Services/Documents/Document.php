@@ -21,7 +21,7 @@ class Document
     /** @return array<string, mixed> */
     public function order(int $id, bool $public, bool $invoiceAllowed, ?string $token = null): array
     {
-        $fields = ['id', 'tenant_id', 'number', 'category_id', 'item_description', 'complaint', 'created_at', 'invoiced_on', 'technician_id', 'warranty_days', 'warranty_until', 'unrepairable', 'tracking_token'];
+        $fields = ['id', 'tenant_id', 'number', 'category_id', 'item_description', 'complaint', 'created_at', 'invoiced_on', 'technician_id', 'warranty_days', 'warranty_until', 'unrepairable', 'discount', 'tracking_token'];
         if (! $public) {
             $fields = [...$fields, 'customer_name', 'customer_phone'];
         }
@@ -47,6 +47,7 @@ class Document
         return ['kind' => $invoice ? 'Nota servis' : 'Tanda terima servis', 'number' => $order->number, 'date' => $order->created_at, 'invoiceDate' => $invoice ? $order->invoiced_on : null,
             'customer' => $public ? null : $order->customer_name, 'phone' => $public ? null : $order->customer_phone,
             'item' => trim($order->category->name.' '.$order->item_description), 'complaint' => $order->complaint,
+            'discount' => $invoice ? $order->discount : 0,
             'technician' => $invoice ? $order->technician?->name : null, 'items' => $items, 'warrantyDays' => $invoice ? $order->warranty_days : null,
             'warrantyUntil' => $invoice ? $order->warranty_until : null, 'unrepairable' => $invoice && $order->unrepairable,
             'store' => $store, 'storeName' => $store?->name ?: Tenant::findOrFail($order->tenant_id)->name,

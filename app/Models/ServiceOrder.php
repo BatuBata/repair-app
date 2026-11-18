@@ -21,7 +21,7 @@ use Illuminate\Validation\Rule;
  * @property ?string $payment_bank
  * @property ?CarbonImmutable $paid_at
  */
-#[Fillable(['number', 'customer_id', 'customer_name', 'customer_phone', 'customer_address', 'category_id', 'item_description', 'complaint', 'status', 'created_by', 'technician_id', 'assigned_at', 'invoiced_on', 'warranty_days', 'warranty_until', 'unrepairable', 'picked_up_on', 'cancelled_at', 'cancel_reason', 'warranty_contacted_at', 'tracking_token', 'payment_method', 'payment_bank', 'paid_at', 'created_at'])]
+#[Fillable(['number', 'customer_id', 'customer_name', 'customer_phone', 'customer_address', 'category_id', 'item_description', 'complaint', 'status', 'created_by', 'technician_id', 'assigned_at', 'invoiced_on', 'warranty_days', 'warranty_until', 'unrepairable', 'discount', 'picked_up_on', 'cancelled_at', 'cancel_reason', 'warranty_contacted_at', 'tracking_token', 'payment_method', 'payment_bank', 'paid_at', 'created_at'])]
 class ServiceOrder extends Model
 {
     use BelongsToTenant;
@@ -52,6 +52,7 @@ class ServiceOrder extends Model
     {
         return [
             'status' => ServiceOrderStatus::class,
+            'discount' => 'integer',
             'assigned_at' => 'immutable_datetime',
             'invoiced_on' => 'immutable_date',
             'warranty_days' => 'integer',

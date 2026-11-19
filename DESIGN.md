@@ -566,3 +566,9 @@ Kotak `raised` sudut 6px dengan ikon `faint` dan teks abu; versi peringatan mema
 - **Don't** tulis nilai KPI yang tidak terpilih dengan warna abu; tetap tinta dengan berat 400.
 - **Don't** bedakan status hanya dengan warna.
 - **Don't** taruh tombol aksi di ujung kanan baris atau berjajar lebih dari satu tombol per baris.
+
+## Acuan detail yang diterima user — 19 November 2026
+
+Detail TTS pada D-42–D-44 dan revisi warna tombol menjadi acuan detail menu lain (D-45). Identitas serta konteks tampil di atas, data terkelompok dan langsung terbuka, panel isian ringkas, desktop memakai kolom sesuai kebutuhan data dan HP menjadi satu kolom. Jangan menyembunyikan informasi utama dalam accordion.
+
+Aksi cetak, unduh, ubah atau hapus yang tersedia dikumpulkan di menu titik tiga hitam berikon putih; setiap pilihan tetap memiliki ikon dan teks. Ini pengecualian lokal atas aturan satu tombol hitam: tombol menu boleh hitam bersama aksi utama. Satu aksi lihat pada baris riwayat cukup berupa tombol ikon mata berlabel aksesibel di kolom paling kiri. Jangan membuat aksi atau halaman baru hanya demi menyamakan susunan.

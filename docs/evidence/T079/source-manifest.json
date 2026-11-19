@@ -1,0 +1,11 @@
+{
+  "base": "0284f963b155d5862196d2d28eb1a6d315020c68",
+  "revision": "sha256:08d717292c9a3fbbc956de414cdefa32be657788480af5fb30a49324eedef478",
+  "files": {
+    "resources/views/livewire/detail-styles.blade.php": "8391059805a22b846d956dde1e21da04c38a281b5eeac476cc62f02634da1310",
+    "resources/views/livewire/sales/show.blade.php": "fecec224108bbe6fce44d156eed3f199a52e215d9fa33d4538479e6928c6b3cd",
+    "resources/views/livewire/customers/show.blade.php": "49d7cda846c667dce5b618aaf04337fa3cc2c077ab67379c6d2a0ef6b77d5a0e",
+    "resources/views/livewire/stock/restock.blade.php": "a49035ad3af7266da008e462d9f2415b66fa94e42a0b6ea067df7d2499a706ef",
+    "DESIGN.md": "b2fe3000fc78db70f4d86d35eb1373506574de0fbec1610261219505b3ee2764"
+  }
+}

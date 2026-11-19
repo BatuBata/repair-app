@@ -98,6 +98,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T076 | Aksi dokumen TTS di menu titik tiga | developer / 6.1-sol | easy / low | — | — | done |
 | T077 | QA menu dokumen TTS | tester / 6.1-sol | easy / low | T076 | — | done |
 | T078 | Tombol titik tiga detail TTS hitam | developer / 6.1-sol | easy / low | — | — | done |
+| T079 | Selaraskan detail penjualan pelanggan dan restok dengan TTS | developer / 6.1-sol | medium / medium | — | — | done |
+| T080 | QA independen keseragaman detail menu | tester / 6.1-sol | medium / medium | T079 | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -173,16 +175,16 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:5a05f1e2fdae88b85eecb933833c0306d828168594d4a240e947fb9457536b53",
+    "prd_revision": "sha256:7015d3f15b3fa07924c9a55a2352ad005be6d138f770735e6ef79b4a5e54dd9c",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
       "stop_after_tasks": [
-        "T078"
+        "T080"
       ],
-      "source_ref": "User19Nov2026 tombol titik tiga hitam T078 selesai main lokal, review dan browserPASS; no push/deploy.",
+      "source_ref": "User19Nov2026 D-45 tiga detail existing mengikuti acuan TTS T079/T080 selesai main lokal; QA PASS, no push/deploy. Penerimaan visual3halaman baru oleh owner belum diasumsikan.",
       "phase_history": [
         {
           "state": "paused",
@@ -7275,6 +7277,129 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T078/mobile.jpg"
         ],
         "summary": "Two scopedCSSrules; independentreviewPASS, CUA1440/375 colors/open/Escape/sizingPASS. No fullsuite/build for coloronly. No push/deploy."
+      }
+    },
+    {
+      "id": "T079",
+      "title": "Selaraskan detail penjualan pelanggan dan restok dengan TTS",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-45",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Perubahan3halaman dengan datauang, historytenant dan formrestok/dialoghapus existing.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Alur domain dan migrasi status existing lintas caller.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "resources/views/livewire/detail-styles.blade.php",
+        "resources/views/livewire/sales/show.blade.php",
+        "resources/views/livewire/customers/show.blade.php",
+        "resources/views/livewire/stock/restock.blade.php",
+        "DESIGN.md",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T079/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Tiga detail existing memakai informasiutama terbuka/header/kelompokdata/panelringkas; TTS acuan tetap.",
+        "Menuaksitambahanhitam danikon; customerhistory tetap20page dengan duapaginator; saledoc/deleteconfirm dan restok/error/inactive/stockhistory tetap.",
+        "Nominal, snapshot, guardrole/tenant dan routes tetap; tanpa status/schema/dependency/fiturbaru/push/deploy.",
+        "Browserdesktop1440/tablet768/HP375 populated/empty/longdata; testsrelevan dan QAindependen hasilgabungan."
+      ],
+      "verification_plan": [
+        "Baseline/after CUA tiga detail, menu/confirmcancel/restokfixture/error/pagination; targeted Sales/Customers/Stock/CommerceIsolation/Documentguards; independentcandidate QA."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T079/README.md",
+        "revision": "sha256:08d717292c9a3fbbc956de414cdefa32be657788480af5fb30a49324eedef478",
+        "checked_revision": "sha256:08d717292c9a3fbbc956de414cdefa32be657788480af5fb30a49324eedef478",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T079/README.md",
+          "docs/evidence/T079/source-manifest.json"
+        ],
+        "summary": "50PASS623assert; app lint0FAIL0WARN; CUA baseline/desktop3screens and saleconfirmcancelPASS. QA/remainingresponsive pending. No push/deploy."
+      }
+    },
+    {
+      "id": "T080",
+      "title": "QA independen keseragaman detail menu",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "integration",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-45",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Review seluruh state/role/action target sesudah susunan diubah.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "QA backend pembayaran dan tenant independen.",
+      "depends_on": {
+        "hard": [
+          "T079"
+        ],
+        "contracts": []
+      },
+      "write_scope": [],
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Tiga detail existing memakai informasiutama terbuka/header/kelompokdata/panelringkas; TTS acuan tetap.",
+        "Menuaksitambahanhitam danikon; customerhistory tetap20page dengan duapaginator; saledoc/deleteconfirm dan restok/error/inactive/stockhistory tetap.",
+        "Nominal, snapshot, guardrole/tenant dan routes tetap; tanpa status/schema/dependency/fiturbaru/push/deploy.",
+        "Browserdesktop1440/tablet768/HP375 populated/empty/longdata; testsrelevan dan QAindependen hasilgabungan."
+      ],
+      "verification_plan": [
+        "Render3screens + empty/longlegacy snapshot/money, actions/uniqueids/tenant/roles/restokvalidation, review screenshot coordinator."
+      ],
+      "qa_for": "T079",
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T079/independent-qa.md",
+        "revision": "sha256:08d717292c9a3fbbc956de414cdefa32be657788480af5fb30a49324eedef478",
+        "checked_revision": "sha256:08d717292c9a3fbbc956de414cdefa32be657788480af5fb30a49324eedef478",
+        "inputs": {
+          "T079": "sha256:08d717292c9a3fbbc956de414cdefa32be657788480af5fb30a49324eedef478"
+        },
+        "evidence": [
+          "docs/evidence/T079/independent-qa.md",
+          "docs/evidence/T079/README.md",
+          "docs/evidence/T079/source-manifest.json",
+          "docs/evidence/T079/sales-1440.jpg",
+          "docs/evidence/T079/customer-375.jpg",
+          "docs/evidence/T079/stock-bottom-375.jpg"
+        ],
+        "summary": "Independent6PASS234assert snapshot/totals/pagination20x2/legacy/errors/save/inactive/roletenant; reviewed final9viewports andemptylong. Coordinator50PASS623assert/CUA interactions PASS. No push/deploy."
       }
     }
   ]

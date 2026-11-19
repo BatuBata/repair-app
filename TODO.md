@@ -91,6 +91,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T069 | QA independen tampilan detail TTS | tester / 6.1-sol | medium / low | T068 | — | done |
 | T070 | Detail TTS mengikuti pekerjaan per status | developer / 6.1-sol | medium / medium | — | — | done |
 | T071 | QA independen alur kerja detail TTS | tester / 6.1-sol | medium / medium | T070 | — | done |
+| T072 | Detail TTS terbuka dan terbaca dalam satu halaman | developer / 6.1-sol | medium / medium | — | — | done |
+| T073 | QA independen detail TTS terbuka | tester / 6.1-sol | medium / medium | T072 | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -166,14 +168,16 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:08ca7ab4cb03af6139e0cc7ea1b56d66ff1700ed624c5b33fdbf0b727165e571",
+    "prd_revision": "sha256:024c5b392e60e92b961a3683de5430c0254ee58cb75c3d6084fe1bf196de9db5",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
-      "stop_after_tasks": ["T071"],
-      "source_ref": "User19Nov2026: task-first UX detail TTS T070/T071 selesai main lokal dan QA PASS; berhenti tanpa push/deploy sesuai batas user. Tidak migrasi.",
+      "stop_after_tasks": [
+        "T073"
+      ],
+      "source_ref": "User19Nov2026 D-42 detail TTS terbuka T072/T073 selesai teknis dan QA main lokal; berhenti tanpa push/deploy. Penerimaan visual user belum diasumsikan.",
       "phase_history": [
         {
           "state": "paused",
@@ -6863,6 +6867,121 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T070/source-manifest.json"
         ],
         "summary": "Independent10tests322assert PASS; allstates/roles/payment/formtargets/autosave/tenant/stale/escaping. Pin6files unchanged. Browser3751280 coordinator PASS, local8006HTTP200. No push/deploy/migration."
+      }
+    },
+    {
+      "id": "T072",
+      "title": "Detail TTS terbuka dan terbaca dalam satu halaman",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-42",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Susunan aksi dan pembayaran/ganti tahap harus tetap berfungsi, catatan jangan hilang.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Alur domain dan migrasi status existing lintas caller.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "resources/views/livewire/tts/detail.blade.php",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T072/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Barang, keluhan, pelanggan, progres bertanggal, teknisi, catatan dan nota bila ada tampil langsung tanpa disclosure detail.",
+        "Penetapan, pengecekan satu isian, WA, nota, pembayaran, pengambilan dan gratis tetap berfungsi dengan guard role/tenant existing.",
+        "Desktop memakai lebar halaman dua kolom, HP tersusun satu kolom tanpa overflow atau aksi tertutup navigasi.",
+        "Tidak ada domain/schema/dependency/status baru atau push/deploy. Penerimaan rasa desain oleh user belum diasumsikan."
+      ],
+      "verification_plan": [
+        "Targeted TTS/Invoice/tenant regression dan independent render semua stage/role, browser375/1440 dan cek konten terbuka."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T072/README.md",
+        "revision": "sha256:8f84cb36cfeab91fda504a62728b32a3f01546aedddfe4fdfcf1d0a91b82dbe8",
+        "checked_revision": "sha256:8f84cb36cfeab91fda504a62728b32a3f01546aedddfe4fdfcf1d0a91b82dbe8",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T072/README.md",
+          "docs/evidence/T072/source-manifest.json"
+        ],
+        "summary": "Targeted63PASS556assert; CUA1440/375 visible info without disclosure. IndependentQA pending; no push/deploy."
+      }
+    },
+    {
+      "id": "T073",
+      "title": "QA independen detail TTS terbuka",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "integration",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-42"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Review seluruh state/role/action target sesudah susunan diubah.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "QA backend pembayaran dan tenant independen.",
+      "depends_on": {
+        "hard": [
+          "T072"
+        ],
+        "contracts": []
+      },
+      "write_scope": [],
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Barang, keluhan, pelanggan, progres bertanggal, teknisi, catatan dan nota bila ada tampil langsung tanpa disclosure detail.",
+        "Penetapan, pengecekan satu isian, WA, nota, pembayaran, pengambilan dan gratis tetap berfungsi dengan guard role/tenant existing.",
+        "Desktop memakai lebar halaman dua kolom, HP tersusun satu kolom tanpa overflow atau aksi tertutup navigasi.",
+        "Tidak ada domain/schema/dependency/status baru atau push/deploy. Penerimaan rasa desain oleh user belum diasumsikan."
+      ],
+      "verification_plan": [
+        "Review diff dan render relevan seluruh status, unpaid/paid/free, role admin/tech/success serta form target."
+      ],
+      "qa_for": "T072",
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T072/independent-qa.md",
+        "revision": "sha256:8f84cb36cfeab91fda504a62728b32a3f01546aedddfe4fdfcf1d0a91b82dbe8",
+        "checked_revision": "sha256:8f84cb36cfeab91fda504a62728b32a3f01546aedddfe4fdfcf1d0a91b82dbe8",
+        "inputs": {
+          "T072": "sha256:8f84cb36cfeab91fda504a62728b32a3f01546aedddfe4fdfcf1d0a91b82dbe8"
+        },
+        "evidence": [
+          "docs/evidence/T072/independent-qa.md",
+          "docs/evidence/T072/source-manifest.json",
+          "docs/evidence/T072/detail-desktop.jpg"
+        ],
+        "summary": "Independent11PASS583assert and16date-matrixPASS; allstates/role/formtargets/notes/payment/tenant. No independentbrowser; coordinator375/1440 PASS; uservisualacceptance pending. No push/deploy."
       }
     }
   ]

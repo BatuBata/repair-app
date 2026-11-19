@@ -675,6 +675,8 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 
 | D-41 | Detail TTS menjadi ringkasan singkat lalu pekerjaan per status: Diterima pilih teknisi/jalur; Pengecekan catatan+simpan/bukaWA utama, mulai kerja sekunder setelah konfirmasi eksternal; Dikerjakan buatnota; Selesai catatpembayaran atau tandaiambil, bayar+ambil tetap tersedia; Diambil lihatnota. Satu aksi utama terlihat per viewport. Detail/riwayat/ganti teknisi/cetak di disclosure native, WA menyebut isinya. Catatan belum disimpan disimpan memakai validasi existing sebelum Mulai pengerjaan; tanpa state/module/schema baru | User menyetujui saran review UX, ui-ux-pro-max, main jangan push | User | Disetujui19Nov2026; implementasi/QA lokal |
 
+| D-42 | Detail TTS menjadi satu halaman terbuka: barang/keluhan dan pelanggan, progres bertanggal, pekerjaan/catatan/nota sesuai tahap, teknisi, dokumen dan komunikasi terlihat tanpa membuka disclosure. Desktop dua kolom isi dan penanganan, HP satu kolom; aksi domain dan privasi tetap existing | User menolak hasil D-41 karena informasi tersembunyi dan meminta satu halaman yang menjelaskan seluruh servis dengan rapi dan mudah dipahami | User | 19 Nov 2026; revisi lokal main, jangan push/deploy; menggantikan penyajian disclosure D-41, bukan aturan bisnis |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

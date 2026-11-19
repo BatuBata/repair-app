@@ -1,0 +1,29 @@
+{
+  "environment": "production",
+  "domain": "https://demo-repair-app.scannara.asia",
+  "path": "/var/www/demo-repair-app/current",
+  "authorization": "User19Nov2026 push and deploy T094; PRD D-58",
+  "revision": "029003eb7075fc33b8b3789510511fe5402ebad4",
+  "previous_revision": "3b5426158073ce2d90bcad256f45da374026d002",
+  "workflow": "https://github.com/BatuBata/repair-app/actions/runs/44559835155",
+  "run_id": 44559835155,
+  "ci": "success",
+  "deploy": "success",
+  "completed_at": "2026-11-19T15:56:08Z",
+  "ci_tests": {
+    "passed": 296,
+    "assertions": 3402,
+    "duration_seconds": 30.8,
+    "deployment_safety_cases": 20
+  },
+  "new_migrations": 0,
+  "post_deploy_evidence": "postdeploy-independent.json",
+  "limits": [
+    "No pickup performed on real customer orders",
+    "No actual customer transaction/WhatsApp/physical printer UAT",
+    "No private environment/seed/reset/APP_KEY change",
+    "Backup deferred D22"
+  ],
+  "post_deploy_result": "pass",
+  "verified_runtime_files": 4
+}

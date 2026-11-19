@@ -707,6 +707,8 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 
 | D-57 | TTS Batal dapat ditandai barang sudah diambil melalui tombol admin; memakai picked_up_on existing dengan tanggal hari ini WITA, status tetap Batal, informasi tampil juga pada link pelanggan. Tanpa nota/pembayaran/status/schema baru atau masuk pendapatan | User menyetujui rancangan sederhana pengambilan barang TTS batal | User | 19 Nov 2026; main lokal tanpa push/deploy |
 
+| D-58 | Push dan deploy fitur pengambilan TTS Batal T094 ke target existing melalui CI/CD; tanpa migrasi baru atau transaksi uji pada data pelanggan | User mengatakan push and deploy setelah T094 | User | 19 Nov 2026; target demo D-20/D-23 |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

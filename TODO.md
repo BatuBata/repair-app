@@ -114,6 +114,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T092 | Samakan logo dan subtitle tracking pelanggan | developer / 6.1-sol | easy / low | — | — | done |
 | T093 | Integrasikan dan rilis revisi tertahan ke demo melalui CI/CD | integrator / 6.1-sol | medium / high | T090, T091, T092 | — | done |
 | T094 | Catat pengambilan barang untuk TTS Batal tanpa mengubah status | developer / 6.1-sol | easy / medium | — | — | done |
+| T095 | Rilis pengambilan TTS Batal melalui CI/CD | integrator / 6.1-sol | medium / medium | T094 | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -189,14 +190,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:09006877ef26fb7dc878b726f530919362b0b5edb1a2782ad0eb8c4fa313d86a",
+    "prd_revision": "sha256:4b0cded9fd12e30b79fb9f77a117c22a1189e3281561afb38852bbf4660a3aaa",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
-      "stop_after_tasks": ["T094"],
-      "source_ref": "D57 selesai main lokal independentQA PASS; tanpa push/deploy.",
+      "stop_after_tasks": ["T095"],
+      "source_ref": "D58 selesai: main029003e CI/deploy44559835155 dan independentserverQA PASS; stop setelah rilis.",
       "phase_history": [
         {
           "state": "paused",
@@ -8375,6 +8376,73 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T094/customer-mobile-after.jpg"
         ],
         "summary": "Canceledpickup viaexistingcollect updatesonlypicked_up_on todayWITA ifnull, staysBatal/noinvoice/payment/revenue, idempotent/tenant/admin.66regressionPASS716assert+independent4casesPASS50finalassert,6hash/visualPASS. PHPStan0/Pint/diffPASS; CUA375actualbutton+1280/375anonymouspublic date/reason nooverflow. No schema/deps/operatorDB/push/deploy."
+      }
+    },
+    {
+      "id": "T095",
+      "title": "Rilis pengambilan TTS Batal melalui CI/CD",
+      "kind": "integration",
+      "responsible_role": "integrator",
+      "work_type": "release",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md \u00a720.3 D-58",
+        "PRD.md \u00a720.3 D-23"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Rilis action danview teruji tanpa schema baru; jaga sourcepin dan QAserverreadonly.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Integrasi/release dan verifikasi data/identitas target.",
+      "depends_on": {
+        "hard": [
+          "T094"
+        ],
+        "contracts": []
+      },
+      "write_scope": [
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T095/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Exactmain029003eb7075fc33b8b3789510511fe5402ebad4 dipush; CI lengkap/deploy existingPASS tanpa reset/seed/env/key/schema baru.",
+        "Servermarker/receipt exactSHA,maintenanceabsent,HTTPShealth/login200; independentremotehash action/views matchcandidate danbranchBatal+UIpickup/date terbukti; tidak mengubahtransaksi pelanggan."
+      ],
+      "verification_plan": [
+        "Pakaiulang QA T094 pinnedsource; preflightidle; pushmainwatchCI/deploy; independentreadonlySSHsource+HTTPS;receiptactual."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T095/deploy-receipt.json",
+        "revision": "029003eb7075fc33b8b3789510511fe5402ebad4",
+        "checked_revision": "029003eb7075fc33b8b3789510511fe5402ebad4",
+        "inputs": {
+          "T094": "sha256:566c56e9c776ed73f1786f5aaa4c0b4f6f958e8bf54eb6d26693c1b12fb93e7d"
+        },
+        "evidence": [
+          "https://github.com/BatuBata/repair-app/actions/runs/44559835155",
+          "docs/evidence/T095/README.md",
+          "docs/evidence/T095/github-run.json",
+          "docs/evidence/T095/ci-checks.log",
+          "docs/evidence/T095/deploy-checks.log",
+          "docs/evidence/T095/deploy-receipt.json",
+          "docs/evidence/T095/independent-qa.md",
+          "docs/evidence/T095/postdeploy-independent.json"
+        ],
+        "summary": "Main029003e pushed/deployedCI44559835155SUCCESS.296PASS3402assert30.80s/Pint176files/PHPStan0/20deploysafety. Independentactualmarker/receipt exact,maintenanceabsent,DBready,pendingmigration0,4runtimehashmatch/featureguard+UIpresent,HTTPSup/login/icon200TLSverified. No schema/privateenv/operatorbusinesswrites/actualpickup/physicalUAT."
       }
     }
   ]

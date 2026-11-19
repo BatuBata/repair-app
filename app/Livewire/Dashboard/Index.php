@@ -260,7 +260,7 @@ class Index extends Component
             $until = CarbonImmutable::parse($record->getRawOriginal('warranty_until'), 'Asia/Makassar');
             $until->locale('id');
             $reminders->push([
-                'kind' => $kind, 'id' => $record->id, 'name' => $record->customer_name ?: 'Tanpa nama', 'number' => $record->number,
+                'kind' => $kind, 'id' => $record->id, 'name' => ucwords($record->customer_name ?? '') ?: 'Tanpa nama', 'number' => $record->number,
                 'item' => $item, 'until' => $until, 'days' => (int) $today->diffInDays($until),
                 'url' => WhatsApp::url($record->customer_phone, WhatsApp::warrantyMessage($record->customer_name ?: 'Customer', $record->number, $item, $until->translatedFormat('d M Y'), $store)),
                 'detail' => route($kind === 'service' ? 'tts.show' : 'sales.show', $record->id),

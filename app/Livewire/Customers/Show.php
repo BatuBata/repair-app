@@ -46,6 +46,6 @@ class Show extends Component
                     $legacy->whereNull('customer_id')->where('customer_phone', $customer->phone);
                 });
             })->orderByDesc('sold_on')->orderByDesc('id')->paginate(20, pageName: 'salesPage'),
-        ])->layout('layouts.app', ['title' => 'Pelanggan '.$customer->name]);
+        ])->layout('layouts.app', ['title' => 'Pelanggan '.ucwords($customer->name)]);
     }
 }

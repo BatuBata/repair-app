@@ -11,7 +11,7 @@
         @media(max-width:1023.98px) { .invoice-form { padding-bottom:48px; } .invoice-form .line { grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; } .invoice-form .line .segmented button { padding:0 16px; } .invoice-form .check { min-height:44px; } .invoice-form .actionbar { flex-wrap:wrap; } .invoice-form .actionbar .total { min-width:0; max-width:100%; } .invoice-form .actionbar .btn.primary { flex:1 0 148px; } }
     </style>
     <a class="crumb" href="{{ route('tts.show', $orderId) }}"><x-ui.icon name="arrow-left" />{{ $order->number }}</a>
-    <div class="title-row"><div><h1>{{ $correction ? 'Koreksi nota' : 'Rincian & nota' }}</h1><p class="sub">{{ $order->category->name }} · {{ $order->customer_name }} · {{ $order->technician?->name ?? 'Belum ada teknisi' }}</p></div></div>
+    <div class="title-row"><div><h1>{{ $correction ? 'Koreksi nota' : 'Rincian & nota' }}</h1><p class="sub">{{ $order->category->name }} · {{ ucwords($order->customer_name) }} · {{ $order->technician?->name ?? 'Belum ada teknisi' }}</p></div></div>
     @if($errors->any())<x-ui.notice type="error" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">@foreach($errors->all() as $error)<p>{{ $error }}</p>@endforeach</x-ui.notice>@endif
     <form wire:submit="save" id="invoice-form" class="grid" novalidate><div class="span-8">
         <div class="section-head"><h2>Pekerjaan</h2><span class="admin-note"><x-ui.icon name="lock" />Modal hanya terlihat oleh admin</span></div>

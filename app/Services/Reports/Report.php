@@ -35,7 +35,7 @@ class Report
             if ($order->discount > 0) {
                 $lines[] = ['description' => 'Diskon', 'qty' => '1', 'amount' => (string) -$order->discount, 'cost' => '0'];
             }
-            $rows[] = $this->transaction('servis', $order->id, CarbonImmutable::parse((string) $order->getRawOriginal('invoiced_on'))->toDateString(), $order->number, $order->customer_name.' · '.($order->item_description ?? 'Servis'), $lines, route('tts.show', $order->id), $order->payment_method, $order->payment_bank);
+            $rows[] = $this->transaction('servis', $order->id, CarbonImmutable::parse((string) $order->getRawOriginal('invoiced_on'))->toDateString(), $order->number, ucwords($order->customer_name).' · '.($order->item_description ?? 'Servis'), $lines, route('tts.show', $order->id), $order->payment_method, $order->payment_bank);
         }
         foreach (Sale::query()->whereDate('sold_on', '>=', $from)->whereDate('sold_on', '<=', $to)->with('items')->get() as $sale) {
             $lines = [];
@@ -45,7 +45,7 @@ class Report
             if ($sale->discount > 0) {
                 $lines[] = ['description' => 'Diskon', 'qty' => '1', 'amount' => (string) -$sale->discount, 'cost' => '0'];
             }
-            $rows[] = $this->transaction('jual', $sale->id, CarbonImmutable::parse((string) $sale->getRawOriginal('sold_on'))->toDateString(), $sale->number, $sale->customer_name ?: 'Penjualan langsung', $lines, route('sales.show', $sale->id), $sale->payment_method, $sale->payment_bank);
+            $rows[] = $this->transaction('jual', $sale->id, CarbonImmutable::parse((string) $sale->getRawOriginal('sold_on'))->toDateString(), $sale->number, ucwords($sale->customer_name ?? '') ?: 'Penjualan langsung', $lines, route('sales.show', $sale->id), $sale->payment_method, $sale->payment_bank);
         }
         $expenseTotal = BigInteger::zero();
         foreach (Expense::query()->whereDate('spent_on', '>=', $from)->whereDate('spent_on', '<=', $to)->get() as $expense) {

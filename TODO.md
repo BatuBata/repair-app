@@ -119,6 +119,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T097 | Rilis keterangan pengambilan pada daftar Servis | integrator / 6.1-sol | medium / low | T096 | — | done |
 | T098 | Perbaiki tata letak filter Transaksi laporan dan rilis | integrator / 6.1-sol | medium / low | T097 | — | done |
 | T099 | Hapus jumlah transaksi duplikat pada pencarian laporan | developer / 6.1-sol | easy / low | — | — | done |
+| T100 | Seragamkan kapitalisasi tampilan nama pelanggan dengan ucwords | developer / 6.1-sol | medium / medium | — | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -194,14 +195,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:f61e470ed773328ce255060e2958ad5cf6f07faf78dc30008445913b5c0a79e6",
+    "prd_revision": "sha256:3ccff4efa3bf0b8d0c44ad775d13a09c52f1a5b6cb20d6dc2484bb287c49243e",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
-      "state": "running",
-      "allowed_tasks": ["T099"],
-      "stop_after_tasks": ["T099"],
-      "source_ref": "User20Nov2026 D62 satuhitungantransaksi disebelahjudul, mainlokal tanpa push/deploy.",
+      "state": "stopped",
+      "allowed_tasks": [],
+      "stop_after_tasks": ["T100"],
+      "source_ref": "D62/D63 selesai mainlokal independentQA PASS; jumlahtransaksitunggal danucwordsdisplaynamapelanggan ditahan tanpa push/deploy.",
       "phase_history": [
         {
           "state": "paused",
@@ -8719,6 +8720,80 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T099/desktop.jpg"
         ],
         "summary": "Optionalsharedsearchcount;Reportcountonlyheader updates50/4/0 once,other10counts incl0 preserved.14regressionPASS233assert+independent1PASS9assert;3hash/source/desktop/DOMmobileQA PASS,Pint/diffPASS. No backend/schema/deps/operatorDB/push/deploy."
+      }
+    },
+    {
+      "id": "T100",
+      "title": "Seragamkan kapitalisasi tampilan nama pelanggan dengan ucwords",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "fullstack",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md \u00a720.3 D-63",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Display lintas HTML/pilihan/customer snapshot/report/document; hindari mutator yang mengubah rawdata ketika edit/simpan.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Cakupan rendering lintas beberapa caller tanpa migrasi/aturan bisnis baru.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "resources/views/livewire/customers/**",
+        "resources/views/livewire/tts/**",
+        "resources/views/livewire/sales/**",
+        "resources/views/livewire/invoice/form.blade.php",
+        "resources/views/livewire/dashboard/index.blade.php",
+        "app/Livewire/Customers/Show.php",
+        "app/Livewire/Dashboard/Index.php",
+        "app/Services/Reports/Report.php",
+        "app/Services/Documents/Document.php",
+        "tests/Feature/**",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T100/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Nama pelanggan lowercase ditampilkanucwords padaSemuaUI relevant/pilihan/formpreview/laporan/printPDF tanpaformatitem/alamat/usernames; uppercaseexistingdipertahankan sesuaiucwords.",
+        "RawCustomername/TTSsalesnamesnapshot/valueinput tetapasis tanpa updateDB; pilihcustomer/save/edit tidakmemaksa perubahan case; input/previewvisualcapitalize tanpaubahpayload.",
+        "Fallbacksalecustomernull tidakerror; escaping/tenant/privacy trackingtetap; regression+focusedQA/browserPASS; no schema/deps/operatorDB/push/deploy."
+      ],
+      "verification_plan": [
+        "Inventorysemua namecustomer callers; fullfeature suite karena lintasrender+targeted rawdata/escape/case/snapshot/pilihan/report/document invariants; PHPStan/Pint; browserfixture daftardetail/selector/preview/reports;QAindependen."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T100/README.md",
+        "revision": "sha256:a1f051237cfd38380641c998ab36bf0726575c1f5dc2335b1bdb8283f2d396d5",
+        "checked_revision": "sha256:a1f051237cfd38380641c998ab36bf0726575c1f5dc2335b1bdb8283f2d396d5",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T100/README.md",
+          "docs/evidence/T100/source-manifest.json",
+          "docs/evidence/T100/independent-qa.md",
+          "docs/evidence/T100/browser-checks.json",
+          "docs/evidence/T100/service-list.jpg",
+          "docs/evidence/T100/customer-selection.jpg",
+          "docs/evidence/T100/dashboard.jpg",
+          "docs/evidence/T100/report.jpg"
+        ],
+        "summary": "ucwords displaynames in10Blades+4presentationclasses, input/previewvisualcapitalize only. Full299cases298PASS3401assert16736ms1guardedMySQLskip+independent3PASS88assert640ms;PHPStan0/Pint/diffPASS.15hash/source/screens/DOMQA PASS inclrawCustomer/TTS/Sale preserved afterread+realedit/selectedsave,RF/escape/null/tenant/publicprivacy. CUAchoices rawbudi vsdisplayBudi,reportcount2single. No Models/actions/schema/deps/operatorDB/push/deploy."
       }
     }
   ]

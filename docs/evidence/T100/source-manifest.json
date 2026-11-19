@@ -1,0 +1,17 @@
+{
+  "app/Livewire/Customers/Show.php": "d61193a67369aa6a03d3309b84755c90a772a0bb9cf6df8babb50ea3e7998814",
+  "app/Livewire/Dashboard/Index.php": "e5aa19cf5c4bb9628c64629704c7cd0ca399ee9c6e036008080b6c436819320c",
+  "app/Services/Documents/Document.php": "9bdae32a1b9ab28f5c4914ac04dfd1afeac51249ac1f7f532161a05538ba160a",
+  "app/Services/Reports/Report.php": "87bcf094950649b5cad30c25efc1ffbae473cf5a5ef6f4f42b1c2acdb603598b",
+  "resources/views/livewire/customers/index.blade.php": "86d326fb6a17fb300a21afb1832271bec653481b052268a5126444b720abf809",
+  "resources/views/livewire/customers/show.blade.php": "8a19808484d3e84b1a82179cf5f6435bbefba1a190bdf40ff5d092eaf2899562",
+  "resources/views/livewire/dashboard/index.blade.php": "9b1bdff3a1c05a2923ad16308334202e377743dd30f386a3772c898a23a995ec",
+  "resources/views/livewire/invoice/form.blade.php": "6231bc41693377433459bb04d318f989b19525f1ee397ce55dd721cc1afb283d",
+  "resources/views/livewire/sales/form.blade.php": "6d3d5b85c8b5e10a72eed3cf603781c0b2963c9ad6f3bb960908774c09670458",
+  "resources/views/livewire/sales/index.blade.php": "d24877b02f4784cd1ad767cb138de893a3319ead03cd075bce2143bd452d25a2",
+  "resources/views/livewire/sales/show.blade.php": "db0c1c4675ee288995a3c416ab115076bcc402328de05970fe0aecfb06c452bd",
+  "resources/views/livewire/tts/detail.blade.php": "6e586fcb9475bd6d4191a332a3bfc5b8304f6ee693ce0d86243add8ceb363ecb",
+  "resources/views/livewire/tts/form.blade.php": "6bded8356aaaf354ce38b228df17f58ca486ee31d1acd7d986baf54958a2d3d3",
+  "resources/views/livewire/tts/index.blade.php": "67758dad1973434028b4195fdcba9ba746ba02539bebec1667192d48b938ef64",
+  "tests/Feature/CustomerNameDisplayTest.php": "d0ca18eb0256c68288102f4c0f5f6009f5923bc35c03c065f6416e9032a0509e"
+}

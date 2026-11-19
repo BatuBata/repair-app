@@ -1,7 +1,7 @@
 <div class="record-detail">
     @include('livewire.detail-styles')
     <a class="crumb" href="{{ route('customers.index') }}"><x-ui.icon name="arrow-left" />Pelanggan</a>
-    <header class="title-row"><div><h1>{{ $customer->name }}</h1><p class="sub">Data pelanggan dan riwayat transaksi di toko ini</p></div></header>
+    <header class="title-row"><div><h1>{{ ucwords($customer->name) }}</h1><p class="sub">Data pelanggan dan riwayat transaksi di toko ini</p></div></header>
     <section class="detail-overview" aria-label="Kontak dan alamat pelanggan">
         <div class="detail-fact"><h2><x-ui.icon name="user" />Nomor HP / WhatsApp</h2><p class="detail-value">{{ $customer->phone }}</p></div>
         <div class="detail-fact"><h2><x-ui.icon name="store" />Alamat</h2><p class="detail-meta" style="white-space:pre-line">{{ $customer->address ?: 'Alamat belum diisi.' }}</p></div>

@@ -45,7 +45,7 @@ class Document
         $store = StoreSetting::withoutGlobalScope('tenant')->where('tenant_id', $order->tenant_id)->first(['name', 'address', 'phone', 'logo_path', 'warranty_terms']);
 
         return ['kind' => $invoice ? 'Nota servis' : 'Tanda terima servis', 'number' => $order->number, 'date' => $order->created_at, 'invoiceDate' => $invoice ? $order->invoiced_on : null,
-            'customer' => $public ? null : $order->customer_name, 'phone' => $public ? null : $order->customer_phone,
+            'customer' => $public ? null : ucwords($order->customer_name), 'phone' => $public ? null : $order->customer_phone,
             'item' => trim($order->category->name.' '.$order->item_description), 'complaint' => $order->complaint,
             'discount' => $invoice ? $order->discount : 0,
             'technician' => $invoice ? $order->technician?->name : null, 'items' => $items, 'warrantyDays' => $invoice ? $order->warranty_days : null,
@@ -61,7 +61,7 @@ class Document
         $items = $sale->items()->orderBy('id')->get(['product_name', 'qty', 'price'])->map(fn ($item) => (object) ['description' => $item->product_name, 'qty' => $item->qty, 'price' => $item->price]);
 
         return ['kind' => 'Penjualan', 'number' => $sale->number, 'date' => $sale->sold_on, 'invoiceDate' => null,
-            'customer' => $sale->customer_name, 'phone' => $sale->customer_phone, 'item' => null, 'complaint' => null, 'technician' => null,
+            'customer' => $sale->customer_name === null ? null : ucwords($sale->customer_name), 'phone' => $sale->customer_phone, 'item' => null, 'complaint' => null, 'technician' => null,
             'items' => $items, 'discount' => $sale->discount, 'warrantyDays' => $sale->warranty_days, 'warrantyUntil' => $sale->warranty_until, 'unrepairable' => false, 'qr' => null, 'public' => false];
     }
 

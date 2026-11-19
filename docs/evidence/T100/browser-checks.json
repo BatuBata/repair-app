@@ -1,0 +1,55 @@
+[
+  {
+    "hasName": true,
+    "hasUppercaseInitialism": false,
+    "path": "/tts/25",
+    "scrollWidth": 1280,
+    "title": "TTS-2611-025 — Toko QA Pagination",
+    "width": 1280
+  },
+  {
+    "hasName": true,
+    "hasUppercaseInitialism": false,
+    "path": "/pelanggan/1",
+    "scrollWidth": 1280,
+    "title": "Pelanggan Budi Santoso — Toko QA Pagination",
+    "width": 1280
+  },
+  {
+    "hasName": true,
+    "hasUppercaseInitialism": false,
+    "path": "/penjualan/25",
+    "scrollWidth": 1280,
+    "title": "JL-2611-25 — Toko QA Pagination",
+    "width": 1280
+  },
+  {
+    "hasName": true,
+    "hasUppercaseInitialism": true,
+    "path": "/",
+    "scrollWidth": 1280,
+    "title": "Beranda — Toko QA Pagination",
+    "width": 1280
+  },
+  {
+    "path": "/tts/baru",
+    "rawInput": "budi santoso",
+    "selected": "Budi Santoso · 6281200000001",
+    "visualTransform": "capitalize"
+  },
+  {
+    "path": "/penjualan/baru",
+    "rawInput": "budi santoso",
+    "selected": "Budi Santoso · 6281200000001",
+    "visualTransform": "capitalize"
+  },
+  {
+    "descriptions": [
+      "Budi Santoso · HP 25\nBelum dicatat",
+      "Budi Santoso\nTunai"
+    ],
+    "header": "2 transaksi",
+    "path": "/laporan",
+    "searchSideCount": 0
+  }
+]

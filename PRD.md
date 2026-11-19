@@ -717,6 +717,8 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 
 | D-62 | Jumlah transaksi pada bagian Transaksi laporan hanya ditampilkan di sebelah judul, hapus hitungan duplikat pada baris pencarian; pencarian/filter/pagination tetap | User meminta satu hitungan saja di sebelah judul | User | 20 Nov 2026; main lokal tanpa push/deploy |
 
+| D-63 | Nama pelanggan ditampilkan menggunakan ucwords pada seluruh tampilan relevan: daftar/detail/dashboard/pilihan pelanggan/laporan/halaman cetak-dokumen. Format presentasi saja; nilai tersimpan, username, alamat, item, dan izin tracking publik tetap | User meminta nama pelanggan ketika ditampilkan di semua halaman menggunakan ucwords | User | 20 Nov 2026; main lokal, mengikuti instruksi tanpa push/deploy |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

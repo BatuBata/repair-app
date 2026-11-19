@@ -685,6 +685,8 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 
 | D-46 | Pesan sukses/error/peringatan di seluruh menu memakai jarak konsisten dari kartu serta warna semantik lebih tegas, ikon dan label; error input/fokus dan seluruh aturan aksi tetap | User melaporkan pesan sukses menempel pada kartu dan meminta perbaikan di semua menu | User | 19 Nov 2026; main lokal tanpa push/deploy |
 
+| D-47 | Banner tetap berwarna semantik tetapi lebih ringkas, tanpa judul tambahan/garis tebal, dan memiliki tombol × melingkar untuk menutup pesan saat ini. Penutupan hanya tampilan; isian, validasi, dan data tetap, pesan aksi berikutnya tetap muncul | User menilai pesan D-46 terlalu berlebihan dan meminta tombol circular × | User | 19 Nov 2026; main lokal tanpa push/deploy |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

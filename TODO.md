@@ -103,6 +103,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T081 | Ringkas TTS diambil dan pindahkan catatan ke penanganan | developer / 6.1-sol | easy / low | — | — | done |
 | T082 | Seragamkan banner feedback seluruh menu | developer / 6.1-sol | medium / medium | — | — | done |
 | T083 | QA independen banner feedback bersama | tester / 6.1-sol | medium / medium | T082 | — | done |
+| T084 | Ringkas banner dan tombol tutup melingkar | developer / 6.1-sol | easy / low | — | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -178,16 +179,16 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:bc459b6f06cc44c96553251bdf2b2b938eefafb74cd9c0557eccbe0c2d4fb87b",
+    "prd_revision": "sha256:a16b7707836fca9766747bf8cf3bdf31c21087111a93bfdfdb18d1ae249be7d0",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
       "stop_after_tasks": [
-        "T083"
+        "T084"
       ],
-      "source_ref": "User19Nov2026 D-46 banner35menu T082/T083 selesai mainlokal; independentQA/fullsuite/build/CUA PASS, no push/deploy.",
+      "source_ref": "User19Nov2026 D-47 selesai lokal dengan QA independen PASS; tanpa push/deploy.",
       "phase_history": [
         {
           "state": "paused",
@@ -7591,6 +7592,74 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T082/warning-375.jpg"
         ],
         "summary": "Independent8casesPASS +35caller semantic inventory/25pins +6screenshotreviewPASS; focus/role/escaping/warnings validated. Parent full265PASS1skip/buildPASS/CUA20px. No push/deploy."
+      }
+    },
+    {
+      "id": "T084",
+      "title": "Ringkas banner dan tombol tutup melingkar",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-47",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "low",
+      "uncertainty": "low",
+      "triage_reason": "Perubahan kecil pada komponen banner bersama dan handler dismiss existing.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Implementasi komponen bersama dan QA independen terarah; tanpa perubahan domain.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "resources/views/components/ui/notice.blade.php",
+        "resources/css/layout.css",
+        "resources/js/layout.js",
+        "DESIGN.md",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T084/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Banner ringkas warna+ikon tetap, jenisSRlabel; tombolXlingkaran berlabel nativebutton/area44px, 20pxgap tetap.",
+        "Klik/keyboard hanya menghilangkan banner terkait, tidaksubmit/reset/data; pesan dari aksi berikutnya dapatmuncullagi.",
+        "Role/fokuserror/link/escaping tetap; success/error/warning/info35callers otomatis tanpa editindividual.",
+        "Build/targetedtest/JSselfcheck/browser1440/375 dan reviewindependen; tanpa dependency/schema/backend/push/deploy."
+      ],
+      "verification_plan": [
+        "JS vm actualhandler selfcheck; targeted InvoiceInspection/Stock/Platform28tests; CUA dismiss and repeat-error w/inputpreservation+keyboard; independent review/render+screenshots."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T084/README.md",
+        "revision": "sha256:9fd735ee13cb54d3b5579b2407fe624bcbabd5d29b9695c28b0fcdbcf11a5745",
+        "checked_revision": "sha256:9fd735ee13cb54d3b5579b2407fe624bcbabd5d29b9695c28b0fcdbcf11a5745",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T084/README.md",
+          "docs/evidence/T084/independent-qa.md",
+          "docs/evidence/T084/source-manifest.json",
+          "docs/evidence/T084/dismiss-check.mjs",
+          "docs/evidence/T084/error-open-1440.jpg",
+          "docs/evidence/T084/error-open-375.jpg",
+          "docs/evidence/T084/success-open-375.jpg"
+        ],
+        "summary": "Build PASS; targeted28tests/329assert PASS; actualJS4cases and independentBlade4variants/32assert PASS. CUA desktop/mobile dismiss, repeat messages, input preservation and keyboard PASS. Independent QA PASS. No push/deploy."
       }
     }
   ]

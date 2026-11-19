@@ -30,6 +30,8 @@ document.addEventListener('click', (event) => {
     if (open) document.getElementById(open.dataset.open)?.showModal();
     const close = event.target.closest('[data-close]');
     if (close) close.closest('dialog')?.close();
+    const dismissNotice = event.target.closest('[data-dismiss-notice]');
+    if (dismissNotice) dismissNotice.closest('.notice')?.remove();
     const notice = event.target.closest('[data-toast]');
     if (notice) {
         const toast = document.querySelector('.toast');

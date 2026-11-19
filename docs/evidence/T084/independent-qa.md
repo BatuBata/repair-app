@@ -1,0 +1,17 @@
+# T084 — Review/QA independen
+
+Peran tester; Ponytail **full** dibaca dari `/Users/muzib/.codex/plugins/cache/ponytail/ponytail/5.3.3/skills/ponytail/SKILL.md`, serta project-delivery QA, AGENTS.md, kontrak T084, PRD D-47 dan DESIGN.md. Model diwariskan dari parent; model_hint tidak dijadikan bukti model efektif.
+
+Target: base `805a67440ccbb64badc3800311cce12e7ac1da52` + snapshot `sha256:9fd735ee13cb54d3b5579b2407fe624bcbabd5d29b9695c28b0fcdbcf11a5745` pada `source-manifest.json`. SHA-256 keempat berkas dan Git HEAD diverifikasi cocok sebelum pemeriksaan.
+
+**PASS review/QA independen atas snapshot tersebut; tidak ada temuan yang perlu diperbaiki.** Pemeriksaan kode/render dan review gambar dijalankan tester; interaksi browser di bawah berasal dari receipt coordinator dan tidak diklaim sebagai sesi browser independen kedua.
+
+- Diff bersama seluruh caller notice: komponen meneruskan attributes/x-init, pesan slot dan tautan; role error tetap `alert`, tiga varian lain `status`. Label jenis dipindah ke `sr-only`. Tombol native `type="button"`, berlabel `Tutup pesan`, ikon dekoratif. CSS mempertahankan margin bawah 20px, garis 1px, padding 10px vertikal, lingkaran 28px dan target 44×44px; fokus global tetap tersedia.
+- `node docs/evidence/T084/dismiss-check.mjs`: **PASS 4 kasus** pada handler modul aktual (klik lain, notice terkait, target terlepas, pesan baru). Handler hanya menghapus notice terdekat; tidak mengubah input, storage, backend atau timer.
+- Render Blade aktual memakai `/opt/homebrew/opt/php@8.3/bin/php /private/tmp/t084-independent-render.php` dengan `APP_ENV=testing CACHE_STORE=array SESSION_DRIVER=array DB_CONNECTION=sqlite DB_DATABASE=:memory:` dan cache view privat sementara: **PASS 32 assert**, delapan per varian success/error/warning/info. Memeriksa role/atomic, label pembaca layar, tombol native/label/data, ikon × dekoratif, ikon semantik, href/teks tautan utuh, escaping payload `<img src=x onerror=alert(1)> & draf`, serta tidak ada heading tebal tambahan. Tidak meminta query database.
+- Membuka `error-open-1440.jpg` dan `error-open-375.jpg` yang dibuat coordinator: **PASS review visual** terhadap DESIGN/D-47; pesan ringkas, garis tipis, × melingkar di kanan, warna/ikon merah, jarak form terlihat sesuai; tidak terlihat clipping/overflow. Desktop masih memperlihatkan draf catatan dan error inline. Ini review gambar independen, bukan klaim menjalankan browser sendiri.
+
+- Membuka `success-open-375.jpg`: **PASS review visual** banner hijau dua baris, ikon sukses dan × tetap utuh pada lebar 375px.
+- Receipt CUA coordinator: Enter pada tombol tutup menghilangkan banner saja; draf catatan tetap, stok 21, error inline jumlah tetap; Tab berikutnya ke input jumlah. Mengirim ulang jumlah kosong memunculkan banner baru dan mempertahankan draf. Di HP, target 44×44px dan SVG 28px/radius 50% terukur; tap tutup error mempertahankan draf/error inline. Simpan fixture sintetis jumlah 1 memunculkan sukses baru dengan stok 22; menutup sukses mempertahankan stok 22. Lebar dokumen 375px. Bukti ini memenuhi perilaku yang tidak dibuktikan VM/render; hanya fixture uji coordinator, bukan DB operator.
+
+Build dan 28 tes terarah tidak diulang pada snapshot sama; hasilnya milik coordinator. Suite penuh/matriks backend, database operator, deploy, push dan uji perangkat fisik tidak dijalankan. Browser/keyboard diperiksa coordinator seperti di atas; pembacaan screen reader nyata dan HP/printer fisik tidak diperiksa. Tidak ditemukan risiko regresi baru dalam scope kecil ini.

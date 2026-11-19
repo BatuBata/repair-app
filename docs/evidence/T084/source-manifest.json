@@ -1,0 +1,10 @@
+{
+  "base": "805a67440ccbb64badc3800311cce12e7ac1da52",
+  "revision": "sha256:9fd735ee13cb54d3b5579b2407fe624bcbabd5d29b9695c28b0fcdbcf11a5745",
+  "files": {
+    "resources/views/components/ui/notice.blade.php": "7b98e46dffeb70ba3985c44e32abb5d8494ac27597181a0cdaf36a94d5031925",
+    "resources/css/layout.css": "106ddedecbfaa427cd4e370bec38e185b04b2e395cdde975176e5854e66b737f",
+    "resources/js/layout.js": "97ddfa9ba813b2dbe395b28846a9a6eddbb212afd64d3400cfc25bd2b2a81b5f",
+    "DESIGN.md": "5aa91068b827140bdc2cdcaf528fb3536490106fe0785da2bfff61ff63e6a224"
+  }
+}

@@ -93,6 +93,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T071 | QA independen alur kerja detail TTS | tester / 6.1-sol | medium / medium | T070 | — | done |
 | T072 | Detail TTS terbuka dan terbaca dalam satu halaman | developer / 6.1-sol | medium / medium | — | — | done |
 | T073 | QA independen detail TTS terbuka | tester / 6.1-sol | medium / medium | T072 | — | done |
+| T074 | Ringkas panel hasil pengecekan | developer / 6.1-sol | easy / low | — | — | done |
+| T075 | QA panel pengecekan ringkas | tester / 6.1-sol | easy / low | T074 | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -168,16 +170,16 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:024c5b392e60e92b961a3683de5430c0254ee58cb75c3d6084fe1bf196de9db5",
+    "prd_revision": "sha256:ed7ff8cf993f9b6e5068d276d15ea3eda6bca0a92fb974634d2aa17895a83bb6",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
       "stop_after_tasks": [
-        "T073"
+        "T075"
       ],
-      "source_ref": "User19Nov2026 D-42 detail TTS terbuka T072/T073 selesai teknis dan QA main lokal; berhenti tanpa push/deploy. Penerimaan visual user belum diasumsikan.",
+      "source_ref": "User19Nov2026 D-43 panel pengecekan ringkas T074/T075 selesai main lokal, QA PASS; berhenti tanpa push/deploy.",
       "phase_history": [
         {
           "state": "paused",
@@ -6982,6 +6984,119 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T072/detail-desktop.jpg"
         ],
         "summary": "Independent11PASS583assert and16date-matrixPASS; allstates/role/formtargets/notes/payment/tenant. No independentbrowser; coordinator375/1440 PASS; uservisualacceptance pending. No push/deploy."
+      }
+    },
+    {
+      "id": "T074",
+      "title": "Ringkas panel hasil pengecekan",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-43",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "low",
+      "uncertainty": "low",
+      "triage_reason": "Markup/CSS satu panel, tidak mengubah logic/domain.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Alur domain dan migrasi status existing lintas caller.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "resources/views/livewire/tts/detail.blade.php",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T074/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Satu judul/label, textarea awal tiga baris resizable, petunjuk dan jarak ringkas; seluruh isi detail tetap terbuka.",
+        "Simpan/WA/mulai, isi catatan, validasi dan akses tetap existing; touch target minimal44px dan label input terhubung.",
+        "Browser desktop/HP membuktikan panel lebih pendek dan tidak overflow; tanpa dependency/domain/schema/push/deploy."
+      ],
+      "verification_plan": [
+        "InspectionTest existing; browser1440/375 ukuran/input panjang/simpan; independent markup/role/errors review."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T074/README.md",
+        "revision": "sha256:f70d4ea1c481053045772f97f0b62f8f0b9bbf47a71c2b391051e3d105720511",
+        "checked_revision": "sha256:f70d4ea1c481053045772f97f0b62f8f0b9bbf47a71c2b391051e3d105720511",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T074/README.md",
+          "docs/evidence/T074/source-manifest.json"
+        ],
+        "summary": "Inspection8PASS85assert; desktop panel322px vs prior504px, browser labeled input savePASS; independentQA pending. No push/deploy."
+      }
+    },
+    {
+      "id": "T075",
+      "title": "QA panel pengecekan ringkas",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "integration",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-43"
+      ],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "low",
+      "uncertainty": "low",
+      "triage_reason": "Review seluruh state/role/action target sesudah susunan diubah.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "QA backend pembayaran dan tenant independen.",
+      "depends_on": {
+        "hard": [
+          "T074"
+        ],
+        "contracts": []
+      },
+      "write_scope": [],
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Satu judul/label, textarea awal tiga baris resizable, petunjuk dan jarak ringkas; seluruh isi detail tetap terbuka.",
+        "Simpan/WA/mulai, isi catatan, validasi dan akses tetap existing; touch target minimal44px dan label input terhubung.",
+        "Browser desktop/HP membuktikan panel lebih pendek dan tidak overflow; tanpa dependency/domain/schema/push/deploy."
+      ],
+      "verification_plan": [
+        "Review diff dan accessible label/forms, targeted render valid/error/readonly serta input persistence."
+      ],
+      "qa_for": "T074",
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T074/independent-qa.md",
+        "revision": "sha256:f70d4ea1c481053045772f97f0b62f8f0b9bbf47a71c2b391051e3d105720511",
+        "checked_revision": "sha256:f70d4ea1c481053045772f97f0b62f8f0b9bbf47a71c2b391051e3d105720511",
+        "inputs": {
+          "T074": "sha256:f70d4ea1c481053045772f97f0b62f8f0b9bbf47a71c2b391051e3d105720511"
+        },
+        "evidence": [
+          "docs/evidence/T074/independent-qa.md",
+          "docs/evidence/T074/source-manifest.json",
+          "docs/evidence/T074/desktop.jpg"
+        ],
+        "summary": "QA3PASS104assert labels/errors/save/roles/neighbors; coordinator CUA desktop1440/HP375 and actualsavePASS. No push/deploy."
       }
     }
   ]

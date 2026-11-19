@@ -677,6 +677,8 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 
 | D-42 | Detail TTS menjadi satu halaman terbuka: barang/keluhan dan pelanggan, progres bertanggal, pekerjaan/catatan/nota sesuai tahap, teknisi, dokumen dan komunikasi terlihat tanpa membuka disclosure. Desktop dua kolom isi dan penanganan, HP satu kolom; aksi domain dan privasi tetap existing | User menolak hasil D-41 karena informasi tersembunyi dan meminta satu halaman yang menjelaskan seluruh servis dengan rapi dan mudah dipahami | User | 19 Nov 2026; revisi lokal main, jangan push/deploy; menggantikan penyajian disclosure D-41, bukan aturan bisnis |
 
+| D-43 | Panel hasil pengecekan diringkas: satu judul merangkap label aksesibel, catatan tiga baris yang tetap dapat diperbesar, petunjuk singkat dan jarak tombol lebih rapat. Seluruh isi detail tetap terbuka dan aksi simpan/WA/mulai tetap existing | User menerima susunan detail TTS tetapi panel satu isian terlalu besar | User | 19 Nov 2026; main lokal, tanpa push/deploy |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

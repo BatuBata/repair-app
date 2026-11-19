@@ -1,0 +1,7 @@
+{
+  "base": "061fb7975db2c2b05872f5f1e2fc3afa17456722",
+  "revision": "sha256:f70d4ea1c481053045772f97f0b62f8f0b9bbf47a71c2b391051e3d105720511",
+  "files": {
+    "resources/views/livewire/tts/detail.blade.php": "c7c21e89811acbd436cbbb8d6e35874beec8aedbbe40e68f3b4c961b5bb11b75"
+  }
+}

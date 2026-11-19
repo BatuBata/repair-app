@@ -28,10 +28,13 @@
         .tts-detail .work-panel h2 { font-size:18px; line-height:26px; font-weight:600; }
         .tts-detail .work-panel > .muted { margin-top:6px; }
         .tts-detail .form { margin-top:16px; max-width:680px; }
-        .tts-detail textarea.input { height:auto; min-height:150px; padding:14px; line-height:1.6; resize:vertical; background:var(--surface); }
+        .tts-detail textarea.input { height:auto; min-height:88px; padding:12px; line-height:1.5; resize:vertical; background:var(--surface); }
+        .tts-detail .inspection-panel { padding:20px; }
+        .tts-detail .inspection-panel .form { margin-top:12px; max-width:none; gap:8px; }
+        .tts-detail .inspection-panel .work-actions { margin-top:12px; gap:8px; }
         .tts-detail .work-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:20px; }
         .tts-detail .work-actions .btn,.tts-detail .support-actions .btn,.tts-detail .approval-next .btn { min-height:44px; }
-        .tts-detail .approval-next { margin-top:24px; padding-top:20px; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+        .tts-detail .approval-next { margin-top:12px; padding-top:12px; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap; }
         .tts-detail .handler-card { border:1px solid var(--border); border-radius:var(--radius-card); padding:20px; }
         .tts-detail .handler-card > h2 { margin-bottom:16px; }
         .tts-detail .handler-name { font-size:18px; line-height:26px; font-weight:600; margin-bottom:4px; }
@@ -87,16 +90,16 @@
             <div class="receipt-actions"><a class="btn primary" href="{{ route('tts.show', $order->id) }}">Lihat TTS</a><a class="btn" href="{{ route('tts.create') }}">Buat TTS lagi</a></div>
         </section>
     @else
-        <section class="work-panel" aria-labelledby="current-work">
-            <h2 id="current-work">{{ match($stage) { 'diterima' => 'Tetapkan teknisi', 'pengecekan' => 'Catat hasil pengecekan', 'dikerjakan' => 'Perbaikan sedang dikerjakan', 'selesai' => 'Barang siap diambil', 'diambil' => 'Servis telah selesai', default => 'Servis dibatalkan' } }}</h2>
-            <p class="muted">{{ match($stage) { 'diterima' => 'Pilih teknisi dan tentukan apakah barang perlu diperiksa terlebih dahulu.', 'pengecekan' => 'Tuliskan hasil cek dan tindakan yang disarankan, lalu tawarkan kepada pelanggan lewat WhatsApp.', 'dikerjakan' => 'Setelah pekerjaan selesai, isi rincian biaya dan terbitkan nota.', 'selesai' => 'Periksa pembayaran sebelum menyerahkan barang kepada pelanggan.', 'diambil' => 'Barang sudah diserahkan kepada pelanggan.', default => $order->cancel_reason ?: 'Pengerjaan untuk TTS ini dihentikan.' } }}</p>
+        <section @class(['work-panel', 'inspection-panel' => $stage === 'pengecekan']) aria-labelledby="current-work">
+            <h2 id="current-work">{{ match($stage) { 'diterima' => 'Tetapkan teknisi', 'pengecekan' => 'Hasil pengecekan & rencana tindakan', 'dikerjakan' => 'Perbaikan sedang dikerjakan', 'selesai' => 'Barang siap diambil', 'diambil' => 'Servis telah selesai', default => 'Servis dibatalkan' } }}</h2>
+            @if($stage !== 'pengecekan')<p class="muted">{{ match($stage) { 'diterima' => 'Pilih teknisi dan tentukan apakah barang perlu diperiksa terlebih dahulu.', 'dikerjakan' => 'Setelah pekerjaan selesai, isi rincian biaya dan terbitkan nota.', 'selesai' => 'Periksa pembayaran sebelum menyerahkan barang kepada pelanggan.', 'diambil' => 'Barang sudah diserahkan kepada pelanggan.', default => $order->cancel_reason ?: 'Pengerjaan untuk TTS ini dihentikan.' } }}</p>@endif
             @if($isAdmin)
                 @if($stage === 'diterima')
                     @include('livewire.tts.technician-form')
                 @elseif($stage === 'pengecekan')
                     <form id="inspection-form" class="form" wire:submit="saveInspection">
-                        <label class="field"><span>Hasil pengecekan &amp; rencana tindakan</span><textarea class="input" wire:model="inspection_result" rows="6" maxlength="8100" placeholder="Mis. baterai drop. Disarankan ganti baterai dan uji pengisian." aria-describedby="inspection-help{{ $errors->has('inspection_result') ? ' inspection-error' : '' }}" aria-invalid="{{ $errors->has('inspection_result') ? 'true' : 'false' }}"></textarea></label>
-                        <p class="hint" id="inspection-help">Catatan disimpan sebelum WhatsApp dibuka. Pengiriman pesan dilakukan dari WhatsApp.</p>
+                        <textarea class="input" wire:model="inspection_result" rows="3" maxlength="8100" placeholder="Mis. baterai drop. Disarankan ganti baterai dan uji pengisian." aria-labelledby="current-work" aria-describedby="inspection-help{{ $errors->has('inspection_result') ? ' inspection-error' : '' }}" aria-invalid="{{ $errors->has('inspection_result') ? 'true' : 'false' }}"></textarea>
+                        <p class="hint" id="inspection-help">Catatan tersimpan saat membuka WhatsApp. Kirim pesannya dari sana.</p>
                         @error('inspection_result')<p class="error-text" id="inspection-error" role="alert">{{ $message }}</p>@enderror
 
                     </form>

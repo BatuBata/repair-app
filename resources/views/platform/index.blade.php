@@ -25,8 +25,8 @@
                 <div><h1>Kelola toko</h1><p class="sub"><strong>{{ $tenants->where('is_active', true)->count() }} aktif</strong> dari {{ $tenants->count() }} toko.</p></div>
             </div>
 
-            @if(session('status'))<p class="notice" role="status"><x-ui.icon name="circle-check" />{{ session('status') }}</p>@endif
-            @error('tenant')<p class="notice error-text" role="alert">{{ $message }}</p>@enderror
+            @if(session('status'))<x-ui.notice type="success">{{ session('status') }}</x-ui.notice>@endif
+            @error('tenant')<x-ui.notice type="error">{{ $message }}</x-ui.notice>@enderror
 
             <div class="grid platform-grid">
                 <section class="span-8" aria-labelledby="tenant-list-title">

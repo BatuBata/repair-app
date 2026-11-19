@@ -101,6 +101,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T079 | Selaraskan detail penjualan pelanggan dan restok dengan TTS | developer / 6.1-sol | medium / medium | — | — | done |
 | T080 | QA independen keseragaman detail menu | tester / 6.1-sol | medium / medium | T079 | — | done |
 | T081 | Ringkas TTS diambil dan pindahkan catatan ke penanganan | developer / 6.1-sol | easy / low | — | — | done |
+| T082 | Seragamkan banner feedback seluruh menu | developer / 6.1-sol | medium / medium | — | — | done |
+| T083 | QA independen banner feedback bersama | tester / 6.1-sol | medium / medium | T082 | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -176,16 +178,16 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:7015d3f15b3fa07924c9a55a2352ad005be6d138f770735e6ef79b4a5e54dd9c",
+    "prd_revision": "sha256:bc459b6f06cc44c96553251bdf2b2b938eefafb74cd9c0557eccbe0c2d4fb87b",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
       "stop_after_tasks": [
-        "T081"
+        "T083"
       ],
-      "source_ref": "User19Nov2026 TTS carddiambil/nota/catatan T081 selesai mainlokal dengan independentQA+CUA PASS; no push/deploy.",
+      "source_ref": "User19Nov2026 D-46 banner35menu T082/T083 selesai mainlokal; independentQA/fullsuite/build/CUA PASS, no push/deploy.",
       "phase_history": [
         {
           "state": "paused",
@@ -7466,6 +7468,129 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T081/mobile-notes-bottom.jpg"
         ],
         "summary": "63PASS556assert and independent6contexts/1test58assertPASS; CUA1440/375 noteactionsadjacent and notesbelowhandlerPASS. No push/deploy."
+      }
+    },
+    {
+      "id": "T082",
+      "title": "Seragamkan banner feedback seluruh menu",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-46",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "KomponenUIbersama35pemanggil, semantikstatus/errorwarning/fokus perlu dipertahankan.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Alur domain dan migrasi status existing lintas caller.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "resources/views/components/ui/notice.blade.php",
+        "resources/css/layout.css",
+        "resources/views/livewire/**",
+        "resources/views/platform/index.blade.php",
+        "DESIGN.md",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T082/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "35banner existing terklasifikasi success/error/warning/info tanpa false-success pada laporan invalid atau data nonaktif/kosong.",
+        "Batas20px dari kartu berikutnya, warna+icon+label, errorrolealert lainnya status; attrs/fokus/escaping/link tetap.",
+        "Semua menu toko/owner SaaS terkait memakai komponen yang sama; inlinefield errors tetap; tanpa logic/schema/dependency/push/deploy.",
+        "Fullsuite/build satu kali, browsersemantikwarna/jarak/fokus/HP, independentcaller/variant review."
+      ],
+      "verification_plan": [
+        "Fulltest/build existing, CUArealfixture success/error/warning1440/375 dan independentcomponent/allcaller rendering+XSS+roles."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T082/README.md",
+        "revision": "sha256:a604346b08f12782ae46f4f51d44c10b4e30049dfc90fb95cadc4e880ef3f17f",
+        "checked_revision": "sha256:a604346b08f12782ae46f4f51d44c10b4e30049dfc90fb95cadc4e880ef3f17f",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T082/README.md",
+          "docs/evidence/T082/source-manifest.json"
+        ],
+        "summary": "Full265PASS1guardedSKIP2820assert/buildPASS;35explicit notices, CSSsame. Browser/independentQA pending; no push/deploy."
+      }
+    },
+    {
+      "id": "T083",
+      "title": "QA independen banner feedback bersama",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "integration",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-46",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Review seluruh state/role/action target sesudah susunan diubah.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "QA backend pembayaran dan tenant independen.",
+      "depends_on": {
+        "hard": [
+          "T082"
+        ],
+        "contracts": []
+      },
+      "write_scope": [],
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "35banner existing terklasifikasi success/error/warning/info tanpa false-success pada laporan invalid atau data nonaktif/kosong.",
+        "Batas20px dari kartu berikutnya, warna+icon+label, errorrolealert lainnya status; attrs/fokus/escaping/link tetap.",
+        "Semua menu toko/owner SaaS terkait memakai komponen yang sama; inlinefield errors tetap; tanpa logic/schema/dependency/push/deploy.",
+        "Fullsuite/build satu kali, browsersemantikwarna/jarak/fokus/HP, independentcaller/variant review."
+      ],
+      "verification_plan": [
+        "Variantmatrix+allcaller semantic inventory; success/error focus/escaping and warnings/reports, review CUAcolor/gap shots."
+      ],
+      "qa_for": "T082",
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T082/independent-qa.md",
+        "revision": "sha256:a604346b08f12782ae46f4f51d44c10b4e30049dfc90fb95cadc4e880ef3f17f",
+        "checked_revision": "sha256:a604346b08f12782ae46f4f51d44c10b4e30049dfc90fb95cadc4e880ef3f17f",
+        "inputs": {
+          "T082": "sha256:a604346b08f12782ae46f4f51d44c10b4e30049dfc90fb95cadc4e880ef3f17f"
+        },
+        "evidence": [
+          "docs/evidence/T082/README.md",
+          "docs/evidence/T082/independent-qa.md",
+          "docs/evidence/T082/source-manifest.json",
+          "docs/evidence/T082/success-1440.jpg",
+          "docs/evidence/T082/error-375.jpg",
+          "docs/evidence/T082/warning-375.jpg"
+        ],
+        "summary": "Independent8casesPASS +35caller semantic inventory/25pins +6screenshotreviewPASS; focus/role/escaping/warnings validated. Parent full265PASS1skip/buildPASS/CUA20px. No push/deploy."
       }
     }
   ]

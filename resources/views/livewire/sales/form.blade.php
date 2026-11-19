@@ -1,7 +1,7 @@
 <div class="sales-page">
     @include('livewire.sales.styles')
     <div class="title-row"><div><h1>Penjualan baru</h1><p class="sub">Stok berkurang setelah penjualan disimpan</p></div></div>
-    @if($errors->any())<p class="notice" role="alert" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">Periksa kembali isian di bawah.</p>@endif
+    @if($errors->any())<x-ui.notice type="error" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">Periksa kembali isian di bawah.</x-ui.notice>@endif
     <form class="sales-form" wire:submit="save" novalidate>
         <div wire:key="sale-customer-{{ $customer_id ?: 'new' }}">
             <x-ui.search-select name="customer_id" label="Cari pelanggan terdaftar" :options="$customers->map(fn ($customer) => ['value' => $customer->id, 'label' => $customer->name.' · '.$customer->phone])" :value="$customer_id" placeholder="Cari nama atau nomor HP pelanggan" wire:model.live="customer_id" :invalid="$errors->has('customer_id')" describedby="customer_id-error" />
@@ -27,7 +27,7 @@
                     <div class="price-field"><x-ui.money :name="'price-'.$index" label="Harga jual per unit" :value="$row['price']" x-on:input="$wire.set('items.{{ $index }}.price', $el.value.replace(/\D/g, ''), false)" x-on:change="$wire.$refresh()" required aria-invalid="{{ $errors->has('items.'.$index.'.price') ? 'true' : 'false' }}" aria-describedby="price-{{ $index }}-error" />@error('items.'.$index.'.price')<p class="error-text" id="price-{{ $index }}-error">{{ $message }}</p>@enderror</div>
                 </div>
             @endforeach
-            @if($products->isEmpty())<p class="notice">Belum ada barang aktif. <a class="btn ghost" href="{{ route('stock.create') }}">Tambah barang stok</a></p>@endif
+            @if($products->isEmpty())<x-ui.notice type="warning">Belum ada barang aktif. <a class="btn ghost" href="{{ route('stock.create') }}">Tambah barang stok</a></x-ui.notice>@endif
         </section>
         <section aria-labelledby="sale-payment-title"><div class="section-head"><h2 id="sale-payment-title">Pembayaran</h2></div><x-payment-fields :method="$payment_method" :bank="$payment_bank" prefix="sale" /></section>
         <div class="sale-summary"><div class="summary-line total"><span>Total sementara</span><strong>{{ $previewTotal === null ? 'Periksa isian' : 'Rp'.number_format($previewTotal, 0, ',', '.') }}</strong></div><p class="sub">Garansi memerlukan nomor HP. Penjualan yang sudah disimpan tidak dapat diubah; hapus lalu buat ulang bila ada koreksi.</p></div>

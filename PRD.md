@@ -683,6 +683,8 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 
 | D-45 | Konsep detail TTS yang diterima user diterapkan pada detail penjualan, pelanggan serta restok/riwayat barang existing: identitas dan konteks di atas, informasi terbuka terkelompok, panel ringkas responsif, aksi tambahan menu titik tiga hitam berikon. Tidak menambah layar detail baru atau aturan bisnis | User menyukai detail TTS saat ini dan meminta detail menu lain memakai konsep sama | User | 19 Nov 2026; main lokal tanpa push/deploy |
 
+| D-46 | Pesan sukses/error/peringatan di seluruh menu memakai jarak konsisten dari kartu serta warna semantik lebih tegas, ikon dan label; error input/fokus dan seluruh aturan aksi tetap | User melaporkan pesan sukses menempel pada kartu dan meminta perbaikan di semua menu | User | 19 Nov 2026; main lokal tanpa push/deploy |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

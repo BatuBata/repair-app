@@ -2,7 +2,7 @@
     <div class="title-row"><div><h1>{{ $editing ? ($customerId ? 'Ubah pelanggan' : 'Tambah pelanggan') : 'Pelanggan' }}</h1><p class="sub">Nama, nomor HP, dan alamat pelanggan toko.</p></div>
         @unless($editing)<button class="btn primary" type="button" wire:click="create">Tambah pelanggan</button>@endunless
     </div>
-    @if(session('customer_status'))<p class="notice" role="status">{{ session('customer_status') }}</p>@endif
+    @if(session('customer_status'))<x-ui.notice type="success">{{ session('customer_status') }}</x-ui.notice>@endif
     @if($editing)
         <form class="form" wire:submit="save" style="max-width:560px" novalidate>
             <div class="field"><label for="name">Nama pelanggan</label><input id="name" class="input" wire:model="name" maxlength="100" required placeholder="mis. Bu Ratna Sari" aria-invalid="{{ $errors->has('name') ? 'true' : 'false' }}" aria-describedby="name-error">@error('name')<p id="name-error" class="error-text">{{ $message }}</p>@enderror</div>

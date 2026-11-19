@@ -20,7 +20,7 @@
         @media(max-width:1023.98px) { .tts-compose .compose { display:block; } .tts-compose summary { min-height:44px; height:auto; flex-wrap:wrap; } }
     </style>
     <div class="title-row"><div><h1>{{ $orderId ? 'Ubah TTS' : 'TTS baru' }}</h1><p class="sub desktop-only">Empat isian wajib. {{ $orderId ? 'Perbarui data barang dan customer.' : 'Nomor TTS dibuat otomatis saat disimpan.' }}</p></div></div>
-    @if($errors->any())<p class="notice" role="alert" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">Periksa kembali isian di bawah.</p>@endif
+    @if($errors->any())<x-ui.notice type="error" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">Periksa kembali isian di bawah.</x-ui.notice>@endif
     <div class="compose">
         <form class="form" id="tts-form" wire:submit="save" novalidate>
             @unless($orderId)
@@ -43,7 +43,7 @@
             <div>
                 <x-ui.search-select name="category_id" label="Barang" :options="$categoryOptions" :value="$category_id" placeholder="Cari dan pilih barang" wire:model="category_id" :invalid="$errors->has('category_id')" describedby="category_id-error" required />
                 @if($currentCategory && ! $currentCategory->is_active)<p class="small muted">Kategori sebelumnya: {{ $currentCategory->name }} (nonaktif). Tetap disimpan bila tidak diganti.</p>@endif
-                @if($categories->isEmpty())<p class="notice">Belum ada kategori aktif. Hubungi admin toko.</p>@endif
+                @if($categories->isEmpty())<x-ui.notice type="warning">Belum ada kategori aktif. Hubungi admin toko.</x-ui.notice>@endif
                 @error('category_id')<p class="error-text" id="category_id-error">{{ $message }}</p>@enderror
             </div>
             <div class="field"><label for="complaint">Keluhan / kerusakan</label><textarea class="textarea" id="complaint" wire:model="complaint" required maxlength="500" placeholder="mis. Pengering tidak berputar" aria-invalid="{{ $errors->has('complaint') ? 'true' : 'false' }}" aria-describedby="complaint-error"></textarea>@error('complaint')<p class="error-text" id="complaint-error">{{ $message }}</p>@enderror</div>

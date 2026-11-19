@@ -66,8 +66,8 @@
         @media(max-width:1023.98px) { .dashboard-page .kpis { grid-auto-flow:row; grid-template-columns:minmax(0,1fr); } .dashboard-page .kpi + .kpi { border-left:0; border-top:1px solid var(--border); } }
     </style>
     <div class="title-row"><div><h1>Beranda</h1><p class="sub">{{ $today->locale('id')->isoFormat('dddd, D MMM YYYY') }} · WITA</p></div><div class="actions desktop-only"><a class="btn primary" href="{{ route('tts.create') }}"><x-ui.icon name="plus" />Buat TTS</a></div></div>
-    @if(session('dashboard-status'))<p class="notice" role="status">{{ session('dashboard-status') }}</p>@endif
-    @if($errors->any())<div class="notice" role="alert">@foreach($errors->all() as $error)<p>{{ $error }}</p>@endforeach</div>@endif
+    @if(session('dashboard-status'))<x-ui.notice type="success">{{ session('dashboard-status') }}</x-ui.notice>@endif
+    @if($errors->any())<x-ui.notice type="error">@foreach($errors->all() as $error)<p>{{ $error }}</p>@endforeach</x-ui.notice>@endif
     <dl class="dashboard-summary" aria-label="Ringkasan hari ini">
         <div><x-ui.icon name="clock" /><dt class="summary-label">Perlu tindakan</dt><dd class="summary-value">{{ ($counts['diterima'] ?? 0) + ($counts['pengecekan'] ?? 0) + ($counts['selesai'] ?? 0) }}</dd><dd class="summary-note">Perlu teknisi, pengecekan, atau penyerahan</dd></div>
         <div><x-ui.icon name="clipboard-list" /><dt class="summary-label">TTS masuk hari ini</dt><dd class="summary-value">{{ $incoming }}</dd><dd class="summary-note">Sejak pukul 00.00 WITA</dd></div>

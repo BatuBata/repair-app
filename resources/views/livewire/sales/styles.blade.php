@@ -1,6 +1,6 @@
 <style>
     .sales-page { overflow-wrap:anywhere; }
-    .sales-page .notice { margin:0 0 20px; }
+
     .sales-page .error-text { margin:4px 0 0; }
     .sales-page .customer-fields { display:grid; grid-template-columns:1fr 1fr; gap:20px 24px; max-width:760px; }
     .sales-page .sales-form { display:grid; gap:32px; }

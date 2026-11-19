@@ -8,9 +8,9 @@
         <div class="detail-fact"><h2>Harga beli per unit</h2><p class="detail-value">Rp{{ number_format($product->cost_price, 0, ',', '.') }}</p></div>
         <div class="detail-fact"><h2>Harga jual per unit</h2><p class="detail-value">Rp{{ number_format($product->sell_price, 0, ',', '.') }}</p></div>
     </section>
-    @if($status)<p class="notice" role="status">{{ $status }}</p>@endif
-    @if(! $product->is_active)<p class="notice">Barang nonaktif. Aktifkan melalui menu barang di daftar stok sebelum restok.</p>@endif
-    @if($errors->any())<p class="notice" role="alert" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">Periksa kembali isian di bawah.</p>@endif
+    @if($status)<x-ui.notice type="success">{{ $status }}</x-ui.notice>@endif
+    @if(! $product->is_active)<x-ui.notice type="warning">Barang nonaktif. Aktifkan melalui menu barang di daftar stok sebelum restok.</x-ui.notice>@endif
+    @if($errors->any())<x-ui.notice type="error" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">Periksa kembali isian di bawah.</x-ui.notice>@endif
     <div class="detail-layout stock-layout"><section class="detail-panel restock-panel" aria-labelledby="restock-form-title"><h2 id="restock-form-title">Tambah stok</h2>
     <form class="stock-form" wire:submit="save" novalidate>
         <div><x-ui.field name="qty" label="Jumlah masuk (unit)" wire:model="qty" inputmode="numeric" required aria-invalid="{{ $errors->has('qty') ? 'true' : 'false' }}" :aria-describedby="$errors->has('qty') ? 'qty-error' : null" />@error('qty')<p class="error-text" id="qty-error">{{ $message }}</p>@enderror</div>

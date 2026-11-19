@@ -6,13 +6,13 @@
         .invoice-form .warranty { display:grid; gap:16px; margin-top:32px; padding-top:24px; border-top:1px solid var(--rule); }
         .invoice-form .row2 { display:flex; align-items:center; gap:12px; flex-wrap:wrap; } .invoice-form .row2 .input { width:96px; }
         .invoice-form .error-text { margin-top:4px; }
-        .invoice-form .negative-profit dd { color:var(--negative); } .invoice-form .notice { display:block; margin-bottom:16px; }
+        .invoice-form .negative-profit dd { color:var(--negative); }
         @media(min-width:1024px) and (max-width:1279px) { .invoice-form form.grid > .span-8 { grid-column:span 12; } .invoice-form form.grid > .span-4 { grid-column:span 12; } .invoice-form .summary { max-width:560px; margin-top:16px; } }
         @media(max-width:1023.98px) { .invoice-form { padding-bottom:48px; } .invoice-form .line { grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; } .invoice-form .line .segmented button { padding:0 16px; } .invoice-form .check { min-height:44px; } .invoice-form .actionbar { flex-wrap:wrap; } .invoice-form .actionbar .total { min-width:0; max-width:100%; } .invoice-form .actionbar .btn.primary { flex:1 0 148px; } }
     </style>
     <a class="crumb" href="{{ route('tts.show', $orderId) }}"><x-ui.icon name="arrow-left" />{{ $order->number }}</a>
     <div class="title-row"><div><h1>{{ $correction ? 'Koreksi nota' : 'Rincian & nota' }}</h1><p class="sub">{{ $order->category->name }} · {{ $order->customer_name }} · {{ $order->technician?->name ?? 'Belum ada teknisi' }}</p></div></div>
-    @if($errors->any())<div class="notice" role="alert" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">@foreach($errors->all() as $error)<p>{{ $error }}</p>@endforeach</div>@endif
+    @if($errors->any())<x-ui.notice type="error" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">@foreach($errors->all() as $error)<p>{{ $error }}</p>@endforeach</x-ui.notice>@endif
     <form wire:submit="save" id="invoice-form" class="grid" novalidate><div class="span-8">
         <div class="section-head"><h2>Pekerjaan</h2><span class="admin-note"><x-ui.icon name="lock" />Modal hanya terlihat oleh admin</span></div>
         <div class="lines-head" aria-hidden="true"><span></span><span>Jenis</span><span>Deskripsi</span><span>Qty</span><span>Harga jual</span><span>Modal</span></div>

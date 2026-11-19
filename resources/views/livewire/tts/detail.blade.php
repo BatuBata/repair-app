@@ -77,8 +77,8 @@
         <div class="obj-head"><h1>{{ $order->number }}</h1><x-ui.status :status="ucfirst($stage)" /></div>
         <p class="summary-line">Masuk {{ $order->created_at->format('d M Y, H.i') }} · dicatat oleh {{ $order->creator->name }}</p>
     </div>@if(!$success && $isAdmin)<div @class(['desktop-only' => $stage !== 'diambil'])>@include('livewire.tts.admin-actions', ['placement' => 'header', 'menuOnly' => true])</div>@else<x-ui.row-actions id="tts-document-actions" :label="$order->number">@include('livewire.tts.document-actions')</x-ui.row-actions>@endif</header>
-    @if(session('tts-status'))<p class="notice" role="status">{{ session('tts-status') }}</p>@endif
-    @if($errors->any())<div class="notice" role="alert" x-init="$nextTick(() => $el.closest('.tts-detail').querySelector('[aria-invalid=true]')?.focus())">@foreach($errors->all() as $error)<p>{{ $error }}</p>@endforeach</div>@endif
+    @if(session('tts-status'))<x-ui.notice type="success">{{ session('tts-status') }}</x-ui.notice>@endif
+    @if($errors->any())<x-ui.notice type="error" x-init="$nextTick(() => $el.closest('.tts-detail').querySelector('[aria-invalid=true]')?.focus())">@foreach($errors->all() as $error)<p>{{ $error }}</p>@endforeach</x-ui.notice>@endif
 
     <section class="service-overview" aria-label="Barang dan customer">
         <div class="overview-block"><h2><x-ui.icon name="package" />Barang servis</h2><p class="overview-value">{{ $order->category->name }}{{ $order->item_description ? ' · '.$order->item_description : '' }}</p><div class="complaint"><span class="fact-label">Keluhan pelanggan</span><p style="white-space:pre-line">{{ $order->complaint }}</p></div></div>

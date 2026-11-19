@@ -1,9 +1,9 @@
 <div class="account-screen" x-data>
     <style>.account-screen { overflow-wrap:anywhere; } .account-screen .actions { display:flex; flex-wrap:wrap; gap:8px; } .account-screen .form { margin-top:24px; } .account-screen .error-text { margin-top:4px; } .account-screen .notice { margin-bottom:20px; } .account-screen .field > span { font-weight:500; } .account-screen .check { align-items:center; min-height:44px; } .account-screen select[aria-invalid="true"] { border-color:var(--negative); } @media(max-width:1023.98px) { .account-screen:has(.actionbar) { padding-bottom:84px; } }</style>
     <div class="title-row"><div><h1>Profil</h1><p class="sub">{{ $user->name }} · {{ $user->username }}</p></div></div>
-    @if($status)<p class="notice" role="status">{{ $status }}</p>@endif
+    @if($status)<x-ui.notice type="success">{{ $status }}</x-ui.notice>@endif
     @if($errors->any())
-        <div class="notice" role="alert" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">Periksa kembali isian di bawah.</div>
+        <x-ui.notice type="error" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">Periksa kembali isian di bawah.</x-ui.notice>
     @endif
     <h2 style="font-size:var(--fs-section);font-weight:600">Ganti password</h2>
     <form class="form" wire:submit="updatePassword" novalidate>

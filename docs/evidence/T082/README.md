@@ -1,0 +1,11 @@
+# T082 — pesan seluruh menu
+
+User D-46, main lokal basec24f47c. Satu komponen ui.notice memakai tokenexisting: success hijau/circle-check/Berhasil/status; error merah/triangle-alert/Periksa kembali/alert; warning kuning/triangle-alert/Perhatian/status; info biru/info/Informasi/status. Marginbawah20px, bordertebal4px+label+icon, minwidthcontent0 dan wrap. Tanpa auto-dismiss, statebaru, dependency atau domain. Errorinline di dekatinput tetap existing. Atribut/fokuserror dan isi pesan/link existing tetap dipertahankan.
+
+35banner existing pada menu toko dan ownerplatform dikonversi explicit type; laporaninvalid, notaoverflow, barang/kategori tidakaktif/kosong bukan success. Pageoverride notice layout lama dihapus saat bentrok; semua defaultgap20px. Publicwarranty dan previewtoast tidak diklaim sebagai sukses; genericnotice tetap netral, loading sr-only/search-empty tidak dikonversi menjadi banner.
+
+PHP8.3 fullsuite265PASS1guardedMySQLconcurrencySKIP2820assert12450ms (/private/tmp/repair-t082-suite.log). npm buildPASS386ms (/private/tmp/repair-t082-build.log); warningfontaineoptional dan fontlokalruntime existing tidak ditangani dengan menambahdependency. Setelahnya hanya whitespaceakhirbaris Blade dibersihkan, CSS/artifact semantik sama; tidak mengulangbuild/suite. Source finalmanifest25files terpin. Browser/QAindependen menyusul. Tanpa push/deploy/DBoperator.
+
+CUAfinal fixtureSQLite8193: TTS1pengecekan→Mulai pengerjaan→success noticeBerhasil/status; jarak ke overview20px pada1440/375. Restok1qtykosong→erroralert, fokusqtytetap; gapdetail-layout20px pada375; warningproduk3nonaktif→Perhatian/status, gap20px. Semua375 scrollWidth375. Computedcolors: successbg220,250,229 text4,37,14 border30,123,79; errorbg255,237,234 text131,28,30 border196,36,42; warningbg253,243,220 text/border146,64,14. Enam screenshot *-{1440,375}.jpg menunjukkan label/ikon/warna dan ruang. Viewportreset/tabclosed, tidak loginplatform/ubahcredential/klikprint/WA atau DBoperator.
+
+T083 independentQA PASS8kasus/perilaku dan inventory35,25pinunchanged; enam screenshotdireview, independent-qa.md. Tidak menjalankan ulang semua35cabang di browser atau screenreader/perangkatfisik. Fixture8193 dihentikan; layanan8006tidakdiubah. Tanpa push/deploy.

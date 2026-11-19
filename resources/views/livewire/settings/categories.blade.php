@@ -7,7 +7,7 @@
         .category-settings .form { display:grid; gap:20px; max-width:560px; margin:24px 0 0; }
         .category-settings .field > span { font-weight:500; }
         .category-settings .actions { display:flex; flex-wrap:wrap; gap:8px; }
-        .category-settings .notice { margin:0 0 20px; }
+
         .category-settings .error-text { margin:4px 0 0; }
         @media(max-width:1023.98px) { .category-settings:has(.actionbar) { padding-bottom:84px; } }
     </style>
@@ -20,8 +20,8 @@
         <a href="{{ route('settings.banks') }}">Bank</a>
         <a href="{{ route('users.index') }}">Pengguna</a>
     </nav>
-    @if($status)<p class="notice" role="status">{{ $status }}</p>@endif
-    @if($errors->any())<p class="notice" role="alert" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">Periksa kembali isian di bawah.</p>@endif
+    @if($status)<x-ui.notice type="success">{{ $status }}</x-ui.notice>@endif
+    @if($errors->any())<x-ui.notice type="error" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">Periksa kembali isian di bawah.</x-ui.notice>@endif
     @if($mode === 'list')
         <table class="table"><thead><tr><th class="act">Aksi</th><th>Nama kategori</th><th>Status</th></tr></thead><tbody>
         @forelse($categories as $category)

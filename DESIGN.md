@@ -572,3 +572,7 @@ Kotak `raised` sudut 6px dengan ikon `faint` dan teks abu; versi peringatan mema
 Detail TTS pada D-42–D-44 dan revisi warna tombol menjadi acuan detail menu lain (D-45). Identitas serta konteks tampil di atas, data terkelompok dan langsung terbuka, panel isian ringkas, desktop memakai kolom sesuai kebutuhan data dan HP menjadi satu kolom. Jangan menyembunyikan informasi utama dalam accordion.
 
 Aksi cetak, unduh, ubah atau hapus yang tersedia dikumpulkan di menu titik tiga hitam berikon putih; setiap pilihan tetap memiliki ikon dan teks. Ini pengecualian lokal atas aturan satu tombol hitam: tombol menu boleh hitam bersama aksi utama. Satu aksi lihat pada baris riwayat cukup berupa tombol ikon mata berlabel aksesibel di kolom paling kiri. Jangan membuat aksi atau halaman baru hanya demi menyamakan susunan.
+
+## Pesan hasil aksi — 19 November 2026
+
+Semua banner hasil aksi memakai satu komponen notice, dengan jarak bawah 20px terhadap kartu/form berikutnya. Berhasil memakai hijau, error merah, peringatan kuning, dan informasi biru dari token yang sudah ada. Latar pucat, garis berwarna dan ikon memperjelas jenis pesan; label teks tetap ditampilkan agar tidak mengandalkan warna. Error tetap diumumkan sebagai alert dan fokus validasi yang sudah ada dipertahankan. Pesan singkat di bawah input tetap berdekatan dengan inputnya.

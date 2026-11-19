@@ -10,7 +10,7 @@
         .store-settings .logo-preview { display:block; max-width:180px; max-height:120px; object-fit:contain; margin-top:8px; }
         .store-settings .error-text { margin:4px 0 0; }
         .store-settings .actions { display:flex; flex-wrap:wrap; gap:8px; }
-        .store-settings .notice { margin:0 0 20px; }
+
         @media(max-width:1023.98px) { .store-settings:has(.actionbar) { padding-bottom:84px; } }
     </style>
     <div class="title-row"><div><h1>Pengaturan toko</h1><p class="sub">Informasi toko dan garansi</p></div></div>
@@ -20,8 +20,8 @@
         <a href="{{ route('settings.banks') }}">Bank</a>
         <a href="{{ route('users.index') }}">Pengguna</a>
     </nav>
-    @if($status)<p class="notice" role="status">{{ $status }}</p>@endif
-    @if($errors->any())<p class="notice" role="alert" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">Periksa kembali isian di bawah.</p>@endif
+    @if($status)<x-ui.notice type="success">{{ $status }}</x-ui.notice>@endif
+    @if($errors->any())<x-ui.notice type="error" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">Periksa kembali isian di bawah.</x-ui.notice>@endif
     <form class="form" wire:submit="save" novalidate>
         <div>
             <x-ui.field name="name" label="Nama toko" wire:model="name" maxlength="255" aria-invalid="{{ $errors->has('name') ? 'true' : 'false' }}" aria-describedby="name-error" />

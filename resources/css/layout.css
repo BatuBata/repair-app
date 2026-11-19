@@ -348,10 +348,16 @@ details.more .more-body { display: grid; gap: 20px; padding-top: 12px; }
 .totals .laba dd { color: var(--positive); }
 
 /* Notice */
-.notice { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border-radius: var(--radius-control); background: var(--raised); color: var(--muted); }
-.notice .icon { margin-top: 2px; color: var(--faint); }
-.notice.warn { background: var(--pill-warning-bg); color: var(--pill-warning-ink); }
-.notice.warn .icon { color: var(--pill-warning-ink); }
+.notice { display: flex; gap: 12px; align-items: flex-start; margin: 0 0 20px; padding: 14px 16px; border: 1px solid var(--border); border-left-width: 4px; border-radius: var(--radius-control); background: var(--raised); color: var(--text); }
+.notice .icon { flex: none; width: 20px; height: 20px; margin-top: 2px; color: inherit; }
+.notice .notice-content { min-width: 0; flex: 1; }
+.notice .notice-title { display: block; font-weight: 600; margin-bottom: 2px; }
+.notice .notice-message { overflow-wrap: anywhere; }
+.notice .notice-message > p + p { margin-top: 4px; }
+.notice.notice-success { border-color: var(--positive); background: var(--pill-positive-bg); color: var(--pill-positive-ink); }
+.notice.notice-error { border-color: var(--negative); background: var(--pill-negative-bg); color: var(--pill-negative-ink); }
+.notice.warn, .notice.notice-warning { border-color: var(--warning); background: var(--pill-warning-bg); color: var(--pill-warning-ink); }
+.notice.notice-info { border-color: var(--accent); background: var(--pill-info-bg); color: var(--pill-info-ink); }
 
 /* Report statement */
 .statement { margin: 0; }

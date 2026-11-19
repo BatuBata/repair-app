@@ -3,9 +3,9 @@
     <div class="title-row"><div><h1>{{ $mode === 'list' ? 'Pengguna' : ($mode === 'create' ? 'Tambah pengguna' : ($mode === 'reset' ? 'Reset password' : 'Ubah pengguna')) }}</h1><p class="sub">{{ $mode === 'reset' ? $name : 'Akun '.$storeName }}</p></div>
         @if($mode === 'list')<button class="btn primary desktop-only" type="button" wire:click="create">Tambah pengguna</button>@endif
     </div>
-    @if($status)<p class="notice" role="status">{{ $status }}</p>@endif
+    @if($status)<x-ui.notice type="success">{{ $status }}</x-ui.notice>@endif
     @if($errors->any())
-        <div class="notice" role="alert" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">Periksa kembali isian di bawah.</div>
+        <x-ui.notice type="error" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">Periksa kembali isian di bawah.</x-ui.notice>
     @endif
     @if($mode === 'list')
         @error('is_active')<p class="error-text" role="alert">{{ $message }}</p>@enderror

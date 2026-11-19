@@ -9,7 +9,7 @@
         @unless($editing)<button class="btn primary" type="button" wire:click="create">Tambah bank</button>@endunless
     </div>
     <nav class="settings-nav" aria-label="Pengaturan"><a href="{{ route('settings.store') }}">Toko</a><a href="{{ route('settings.categories') }}">Kategori</a><a href="{{ route('settings.banks') }}" aria-current="page">Bank</a><a href="{{ route('users.index') }}">Pengguna</a></nav>
-    @if(session('bank_status'))<p class="notice" role="status">{{ session('bank_status') }}</p>@endif
+    @if(session('bank_status'))<x-ui.notice type="success">{{ session('bank_status') }}</x-ui.notice>@endif
     @if($editing)
         <form class="form" wire:submit="save" style="max-width:560px" novalidate>
             <div class="field"><label for="bank-name">Nama bank</label><input class="input" id="bank-name" wire:model="name" maxlength="50" required placeholder="mis. Bank Jago" aria-invalid="{{ $errors->has('name') ? 'true' : 'false' }}" aria-describedby="bank-name-error">@error('name')<p id="bank-name-error" class="error-text">{{ $message }}</p>@enderror</div>

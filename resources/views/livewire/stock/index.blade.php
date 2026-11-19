@@ -1,7 +1,7 @@
 <div class="stock-page">
     @include('livewire.stock.styles')
     <div class="title-row"><div><h1>Stok</h1><p class="sub">Barang jualan dan jumlah yang tersedia</p></div><a class="btn primary desktop-only" href="{{ route('stock.create') }}">Tambah barang</a></div>
-    @if($status || session('stock-status'))<p class="notice" role="status">{{ $status ?: session('stock-status') }}</p>@endif
+    @if($status || session('stock-status'))<x-ui.notice type="success">{{ $status ?: session('stock-status') }}</x-ui.notice>@endif
     <table class="table stock-list"><thead><tr><th class="act">Aksi</th><th>Nama barang</th><th class="n price-col">Harga beli</th><th class="n price-col">Harga jual</th><th class="n qty-col">Stok</th><th class="status-col">Status</th></tr></thead><tbody>
     @forelse($products as $product)
         <tr wire:key="product-{{ $product->id }}"><td class="act"><x-ui.row-actions :id="'product-actions-'.$product->id" :label="$product->name">

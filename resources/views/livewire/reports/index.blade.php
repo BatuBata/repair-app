@@ -18,7 +18,7 @@
             @endforeach
         </div>
     </div>
-    @if($filterErrors->hasAny(['type', 'payment_method', 'payment_bank']))<p class="notice" role="alert">{{ $filterErrors->first() }}</p>@endif
+    @if($filterErrors->hasAny(['type', 'payment_method', 'payment_bank']))<x-ui.notice type="error">{{ $filterErrors->first() }}</x-ui.notice>@endif
     @if($report)
         <div class="grid" wire:loading.class="report-loading">
             <section class="span-5" aria-labelledby="report-statement">
@@ -100,7 +100,7 @@
             <dialog class="sheet-dialog report-dialog" x-init="$el.showModal()" x-on:cancel.prevent="$el.close(); $wire.set('detail', null).then(() => document.getElementById('report-view-{{ $selected['key'] }}')?.focus())" aria-labelledby="report-detail-title"><div class="dialog-body"><div class="section-head"><h2 id="report-detail-title">{{ $selected['number'] }}</h2><button type="button" class="btn ghost" x-on:click="$el.closest('dialog').close(); $wire.set('detail', null).then(() => document.getElementById('report-view-{{ $selected['key'] }}')?.focus())">Tutup</button></div><p class="muted">{{ $selected['date'] }} · {{ $selected['description'] }}@if($selected['type'] !== 'keluar') · {{ $selected['type'] === 'servis' && $selected['amount'] === '0' ? 'Gratis' : \App\Support\Payment::label($selected['payment_method'], $selected['payment_bank']) }}@endif</p><dl class="statement">@foreach($selected['lines'] as $line)<div><dt>{{ $line['description'] }} × {{ $line['qty'] }}<span class="small muted report-line-cost">Modal {{ $displayMoney($line['cost']) }}</span></dt><dd>{{ $displayMoney($line['amount']) }}</dd></div>@endforeach<div class="sum"><dt>Jumlah</dt><dd>{{ $displayMoney($selected['amount']) }}</dd></div><div><dt>Modal</dt><dd>{{ $displayMoney($selected['cost']) }}</dd></div><div><dt>Laba</dt><dd>{{ $displayMoney($selected['profit']) }}</dd></div></dl>@if($selected['url'])<a class="btn" href="{{ $selected['url'] }}">Buka transaksi</a>@endif</div></dialog>
         @endif
     @else
-        <p class="notice" role="status">Laporan belum ditampilkan. Perbaiki tanggal atau jenis transaksi.</p>
+        <x-ui.notice type="warning">Laporan belum ditampilkan. Perbaiki tanggal atau jenis transaksi.</x-ui.notice>
     @endif
     <span class="sr-only" role="status" wire:loading>Memuat laporan…</span>
 </div>

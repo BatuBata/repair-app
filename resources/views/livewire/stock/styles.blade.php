@@ -3,7 +3,7 @@
     .stock-page .stock-form { display:grid; gap:20px; max-width:560px; }
     .stock-page .form-actions { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
     .stock-page .error-text { margin:4px 0 0; }
-    .stock-page .notice { margin:0 0 20px; }
+
     .stock-page .stock-summary { display:flex; flex-wrap:wrap; gap:8px 24px; margin:0 0 24px; color:var(--muted); }
     .stock-page .stock-summary strong { color:var(--text); font-weight:500; font-variant-numeric:tabular-nums; }
     .stock-page .history { margin-top:40px; }

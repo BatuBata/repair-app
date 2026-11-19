@@ -30,9 +30,9 @@
     <div class="title-row"><div><h1>{{ $mode === 'list' ? 'Pengeluaran' : ($mode === 'create' ? 'Tambah pengeluaran' : 'Ubah pengeluaran') }}</h1><p class="sub">Catat biaya harian toko</p></div>
         @if($mode === 'list')<button class="btn primary desktop-only" type="button" wire:click="create">Tambah pengeluaran</button>@endif
     </div>
-    @if(session('expense-status'))<p class="notice" role="status">{{ session('expense-status') }}</p>@endif
+    @if(session('expense-status'))<x-ui.notice type="success">{{ session('expense-status') }}</x-ui.notice>@endif
     @if($mode !== 'list')
-        @if($errors->any())<p class="notice" role="alert" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">Periksa kembali isian di bawah.</p>@endif
+        @if($errors->any())<x-ui.notice type="error" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">Periksa kembali isian di bawah.</x-ui.notice>@endif
         <form class="expense-form" wire:submit="save" novalidate x-init="$nextTick(() => $el.querySelector('[aria-invalid=true]')?.focus())">
             <div><x-ui.date-picker name="spent_on" label="Tanggal" :value="$spent_on" wire:model="spent_on" :invalid="$errors->has('spent_on')" describedby="spent_on-error" required />@error('spent_on')<span class="error-text" id="spent_on-error">{{ $message }}</span>@enderror</div>
             <div><x-ui.search-select name="category" label="Kategori" :options="collect($categories)->map(fn ($item) => ['value' => $item->value, 'label' => ucfirst($item->value)])" :value="$category" placeholder="Cari kategori" wire:model="category" :invalid="$errors->has('category')" describedby="category-error" required />@error('category')<span class="error-text" id="category-error">{{ $message }}</span>@enderror</div>

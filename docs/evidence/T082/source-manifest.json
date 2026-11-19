@@ -1,0 +1,31 @@
+{
+  "base": "c24f47c4dba63f72e259d791b7d4c7e4d5d9f620",
+  "revision": "sha256:a604346b08f12782ae46f4f51d44c10b4e30049dfc90fb95cadc4e880ef3f17f",
+  "files": {
+    "DESIGN.md": "2a27c573569007c24cef756e45e20683eb6e046efc4674e5994c582d0d421aab",
+    "resources/css/layout.css": "b7f6c954c489a2c5bb56d11503573e6ab2d8ef333df136ec60f5cb3638f32a74",
+    "resources/views/components/ui/notice.blade.php": "207b59b192f5d04a02cbb844fb13eb4e67b3444bad36e55de994d7bcb015bd3b",
+    "resources/views/livewire/customers/index.blade.php": "58752adcd12ca86b9f324f61853324785a83733aa2364083832350e565a43bbc",
+    "resources/views/livewire/dashboard/index.blade.php": "fab884505745668ffd35febd917d6bcfa1d33ebfcbb63aa78b3e6991231d764a",
+    "resources/views/livewire/expenses/index.blade.php": "c1bbe59e6019a8ec8666782df54c91d4596878cf2b8201fe0e1ade4b096608f5",
+    "resources/views/livewire/invoice/form.blade.php": "0680838ccabe24f567004f3760466f22da5dbfc533284052176001b26de2cd70",
+    "resources/views/livewire/invoice/published.blade.php": "5752ea063ae9d16889d4018a4c8758e4fad2ae6431688a4cae945a0b584ffad1",
+    "resources/views/livewire/profile/change-password.blade.php": "11d526c233d3e26637c43627d14e09dbd1b9dc980c47f440b262470533c32ba3",
+    "resources/views/livewire/reports/index.blade.php": "c3681d28d8f963eb8a4c72f75d00d16677c1a4521acdab8dc883eaae57659bbb",
+    "resources/views/livewire/sales/form.blade.php": "3ffdaa33b79040d573989eb057e9f0dfb9112f29d8bdc8bbf5350afa99c34f35",
+    "resources/views/livewire/sales/index.blade.php": "b19c0624d68989692bc6c4c3881b1701e7a98e55cfbd243b9e603ef13ae8cf80",
+    "resources/views/livewire/sales/show.blade.php": "530a0306d6edec2a9e016529ac6450dfa7ba9d6727e960b2075342ab6c28b9b5",
+    "resources/views/livewire/sales/styles.blade.php": "8e49c124c04d657001beba90e128a441cba59189a2c34abb263e059cb0ab6f7b",
+    "resources/views/livewire/settings/banks.blade.php": "8022ce1c1d71c144a58f4d8d2bf3e6e22a3223ac49ffb78ec5861d2d0c7ea5fd",
+    "resources/views/livewire/settings/categories.blade.php": "5401de163d28d43968cac1f2f3b00bb87ccf0044473d768acc8117816b63183f",
+    "resources/views/livewire/settings/store.blade.php": "c464adace5b56924eb5de0ca3439842b5ce55ae422d0af87f8324e2e6eae00dc",
+    "resources/views/livewire/stock/form.blade.php": "7e17aaf8e978bc7c01cfc5fcd69051148cb6115cd6fc3ce3bf1601a957a55239",
+    "resources/views/livewire/stock/index.blade.php": "d99c942485b6b056584ba59aed278c8c9cd5acb1a33aa2ecfc482f3c277a4ec5",
+    "resources/views/livewire/stock/restock.blade.php": "9b4196216f7ca91c5d5c60ebbc74104e0f248fdafb7ec6acd6422d5a9eecb30c",
+    "resources/views/livewire/stock/styles.blade.php": "a5927b2a5e1edb471ad17176e05ad0e2a861ab10e8bcb196b31ca31fd5334373",
+    "resources/views/livewire/tts/detail.blade.php": "fa5601767c0d7aabeb4d63856648b9fdf08012432df2a261b20177ab6a1ae72c",
+    "resources/views/livewire/tts/form.blade.php": "a4f01a72a715f923d05aca082a510c5f34840191ec099738eddff5d1a31f84fc",
+    "resources/views/livewire/users/index.blade.php": "15977890509e748a5345c3b40e57a5cf4592bf8cad855b3ac0a1ab73de3333b9",
+    "resources/views/platform/index.blade.php": "8136019437fbd56a5035c47901f42a69da71b65e779b12f88234beba35ce15cc"
+  }
+}

@@ -13,8 +13,8 @@
         <a role="menuitem" href="{{ route('sales.pdf', $sale->id) }}"><x-ui.icon name="file-text" />PDF A5</a>
         <button role="menuitem" class="danger" type="button" onclick="Livewire.find(@js($this->getId())).confirmDelete()"><x-ui.icon name="trash-2" />Hapus penjualan</button>
     </x-ui.row-actions></header>
-    @if(session('sale-status'))<p class="notice" role="status">{{ session('sale-status') }}</p>@endif
-    @error('sale')<p class="notice error-text" role="alert">{{ $message }}</p>@enderror
+    @if(session('sale-status'))<x-ui.notice type="success">{{ session('sale-status') }}</x-ui.notice>@endif
+    @error('sale')<x-ui.notice type="error">{{ $message }}</x-ui.notice>@enderror
     <section class="detail-overview" aria-label="Pelanggan dan pembayaran">
         <div class="detail-fact"><h2><x-ui.icon name="user" />Pelanggan</h2><p class="detail-value">{{ $sale->customer_name ?: 'Customer umum' }}</p><p class="detail-meta">{{ $sale->customer_phone ?: 'Nomor HP belum dicatat' }}</p></div>
         <div class="detail-fact"><h2><x-ui.icon name="circle-check" />Pembayaran</h2><p class="detail-value">{{ $sale->paid_at ? \App\Support\Payment::label($sale->payment_method, $sale->payment_bank) : 'Belum dicatat' }}</p></div>

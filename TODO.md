@@ -87,6 +87,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T065 | QA independen pengecekan opsional | tester / 6.1-sol | medium / high | T064 | — | done |
 | T066 | Satu catatan hasil pengecekan dan rencana tindakan | developer / 6.1-sol | medium / medium | — | — | done |
 | T067 | QA independen catatan pengecekan tunggal | tester / 6.1-sol | medium / medium | T066 | — | done |
+| T068 | Poles tampilan detail TTS dengan UI UX Pro Max | developer / 6.1-sol | medium / low | — | — | done |
+| T069 | QA independen tampilan detail TTS | tester / 6.1-sol | medium / low | T068 | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -162,14 +164,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:b939d0796a8d67f16e2613ef74b1f50bfeecbf7a0e98d09b5f3c7b6310609c78",
+    "prd_revision": "sha256:6c716faba2f977bb60efc64277c00f0033092c4752e10ad7b89397eb6237e7b2",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
-      "stop_after_tasks": ["T067"],
-      "source_ref": "User19Nov2026: T066/T067 satu input hasilcek/rencana selesai dan QA PASS, berhenti tanpa push/deploy; tidak ada migrasi baru.",
+      "stop_after_tasks": ["T069"],
+      "source_ref": "User19Nov2026: T068/T069 detail TTS polish selesai QA PASS, berhenti tanpa push/deploy. Hanya view, tidak migrasi/backend.",
       "phase_history": [
         {
           "state": "paused",
@@ -6628,6 +6630,119 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T066/source-manifest.json"
         ],
         "summary": "Independent6tests104assert PASS; long/partiallegacy/read/save/reload/WA latest/bounds/tenant/guards. Pin7/7 unchanged. Coordinator browser390/1280 PASS. No push/deploy, no migration/operatorDB/actualWA."
+      }
+    },
+    {
+      "id": "T068",
+      "title": "Poles tampilan detail TTS dengan UI UX Pro Max",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-40",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "low",
+      "uncertainty": "low",
+      "triage_reason": "View existing tanpa perubahan domain/data; pertahankan semua aksi dan aksesibilitas.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Alur domain dan migrasi status existing lintas caller.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "resources/views/livewire/tts/detail.blade.php",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T068/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Satu form catatan dan semua aksi/status/peran tetap; informasi dikelompokkan, riwayat tidak mendahului pekerjaan utama.",
+        "HP375/desktop1280 tanpa overflow; label/help/error inline/fokus dan loading jelas; icon existing utuh.",
+        "Tanpa backend/dependency/migrasi/push/deploy."
+      ],
+      "verification_plan": [
+        "Inspection/Invoice/Tenant tests, browser375/1280 emptyerror/focus/save, source/icons review, QA independen."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T068/README.md",
+        "revision": "sha256:e4af36e60a72e2a8ae9490438fc97deb219c6282b102662081a1a73b0ed5ad35",
+        "checked_revision": "sha256:e4af36e60a72e2a8ae9490438fc97deb219c6282b102662081a1a73b0ed5ad35",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T068/README.md",
+          "docs/evidence/T068/source-manifest.json"
+        ],
+        "summary": "A1 38tests324assert/browser3751280 PASS; independent review found label-in-name mismatch. A2 removed aria-label override only; final rendered label QA T069 pending. No backend change."
+      }
+    },
+    {
+      "id": "T069",
+      "title": "QA independen tampilan detail TTS",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "integration",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-40"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "low",
+      "uncertainty": "low",
+      "triage_reason": "Pastikan semua form/aksi/peran tetap dari view existing.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "QA backend pembayaran dan tenant independen.",
+      "depends_on": {
+        "hard": [
+          "T068"
+        ],
+        "contracts": []
+      },
+      "write_scope": [],
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Satu form catatan dan semua aksi/status/peran tetap; informasi dikelompokkan, riwayat tidak mendahului pekerjaan utama.",
+        "HP375/desktop1280 tanpa overflow; label/help/error inline/fokus dan loading jelas; icon existing utuh.",
+        "Tanpa backend/dependency/migrasi/push/deploy."
+      ],
+      "verification_plan": [
+        "Diff review dan targeted rendering states/roles; browser evidence coordinator."
+      ],
+      "qa_for": "T068",
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T068/independent-qa.md",
+        "revision": "sha256:e4af36e60a72e2a8ae9490438fc97deb219c6282b102662081a1a73b0ed5ad35",
+        "checked_revision": "sha256:e4af36e60a72e2a8ae9490438fc97deb219c6282b102662081a1a73b0ed5ad35",
+        "inputs": {
+          "T068": "sha256:e4af36e60a72e2a8ae9490438fc97deb219c6282b102662081a1a73b0ed5ad35"
+        },
+        "evidence": [
+          "docs/evidence/T068/independent-qa.md",
+          "docs/evidence/T068/README.md",
+          "docs/evidence/T068/source-manifest.json"
+        ],
+        "summary": "Independent7tests158assert PASS; states/roles/form targets/accessibility/icons. Initial accessible-label mismatch fixed A2 and verified. Browser375/1280 coordinator PASS. One view only, no push/deploy."
       }
     }
   ]

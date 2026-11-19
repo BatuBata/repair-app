@@ -1,0 +1,8 @@
+{
+  "base": "d075cb3fc71c14b1b861ada14021545fc108efd2",
+  "revision": "sha256:e4af36e60a72e2a8ae9490438fc97deb219c6282b102662081a1a73b0ed5ad35",
+  "files": {
+    "resources/views/livewire/tts/detail.blade.php": "e4af36e60a72e2a8ae9490438fc97deb219c6282b102662081a1a73b0ed5ad35"
+  },
+  "prior_revision": "sha256:064c9374e1ec48d151a3b93d9f1094faf60bbfe7484772b1daf28e0b85b72912"
+}

@@ -671,6 +671,8 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 
 | D-39 | Hasil pengecekan dan rencana tindakan menjadi satu textarea dan satu isi catatan pada detail/WA. Pakai inspection_result existing; action_plan lama tetap terbaca dan digabung ketika membuka form/detail/WA, lalu disimpan dalam catatan gabungan saat user menyimpan. Tidak drop kolom atau backfill DB. Batas8100 karakter cukup untuk dua catatan lama4000+4000 beserta label pemisah. Izin/tahap tetap; tanpa migrasi/dependency atau push/deploy | User meminta mengganti dua form menjadi satu inputan gabungan | User | Disetujui19Nov2026; main lokal |
 
+| D-40 | Poles tampilan detail TTS memakai ui-ux-pro-max dan token/komponen DESIGN existing: kelompok informasi, panel catatan satu isian, label/help/error inline+fokus, loadingfeedback, riwayat setelah catatan, tombol dokumen ringkas, pilihan tahap teknisi lebih jelas. Hanya view, tanpa perubahan alur/data/dependency/migrasi | User meminta percantik detail TTS tanpa overengineering/push | User | Disetujui19Nov2026; lokal main |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

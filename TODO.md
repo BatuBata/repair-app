@@ -107,6 +107,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T085 | Rombak form tambah penjualan | developer / 6.1-sol | easy / low | — | — | done |
 | T086 | Master kategori pengeluaran per toko | developer / 6.1-sol | medium / medium | — | — | done |
 | T087 | Diskon nominal tambah penjualan dan output akhir | developer / 6.1-sol | medium / medium | — | — | done |
+| T088 | Rombak laporan dengan panel terbuka | developer / 6.1-sol | medium / low | — | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -182,14 +183,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:4db083ee0259dc63e7303bd03cddaca81ed59b86a61a92d50540441646aae1d2",
+    "prd_revision": "sha256:a2609e35565285b1b0bcbb515ffa199ab633939420ce59178dd0726f2704860d",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
-      "stop_after_tasks": ["T087"],
-      "source_ref": "User19Nov2026 D50 selesai mainlokal, QA independen PASS dan migrasilokal diterapkan; tanpa push/deploy.",
+      "stop_after_tasks": ["T088"],
+      "source_ref": "User19Nov2026 D51 laporan selesai lokal dengan QA independen finalA2PASS; tanpa push/deploy.",
       "phase_history": [
         {
           "state": "paused",
@@ -7878,6 +7879,82 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T087/local-migration.json"
         ],
         "summary": "Fullsuite283cases282PASS1guardedSKIP3100assert/build446ms PASS. Developer53tests708assert/MySQL20baseline unchanged PASS. Independent1case19assert+actualA5/thermalPDFtext PASS. CUA1440/375 partial/full/invaliddiscount/save/output PASS. Localrepair_app migrationonlynewpath60msPASS, prod untouched. No push/deploy."
+      }
+    },
+    {
+      "id": "T088",
+      "title": "Rombak laporan dengan panel terbuka",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-51",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "low",
+      "uncertainty": "low",
+      "triage_reason": "Tampilan laporan dan kontrol filter/grafik tanpa mengubah perhitungan.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "UI terarah pada dua Blade dengan review independen.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "resources/views/livewire/reports/index.blade.php",
+        "resources/views/livewire/reports/styles.blade.php",
+        "DESIGN.md",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T088/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Laporan baca-saja berpanel rapi, netprofit jelas, periode/grafik/pembayaran/transaksi terbuka memakai token detail existing.",
+        "Tanggal/globalperiod dan filterjenis/metode/bank daftar tetap semantikexisting; total/groupednumbers tidakberubah, dialog/charttooltip/paging berfungsi.",
+        "HP/tablet/desktop tanpa overflowhalaman/teksbertumpuk; nilai0/negatif/besar dan error/empty/loading terlihat jujur, tombolaksi kiri.",
+        "Build+targetedreports/revisions/discounttests, browser3widths/statechecks dan independentQA; tanpa backend/schema/deps/push/deploy."
+      ],
+      "verification_plan": [
+        "Before/after1440/768/375 CUA withSQLitetestfixture; periods, filters bank/method/type, empty/invalid, chartfocus/pager and dialog, targetedexistingtests+build, independentreview."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T088/README.md",
+        "revision": "sha256:e198c3a07a89f50f3975c8d9db8eda7850730ff9ab35f6a8f701c012c39fc813",
+        "checked_revision": "sha256:e198c3a07a89f50f3975c8d9db8eda7850730ff9ab35f6a8f701c012c39fc813",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T088/README.md",
+          "docs/evidence/T088/source-manifest.json",
+          "docs/evidence/T088/independent-qa.md",
+          "docs/evidence/T088/ReportUiQaTest.php",
+          "docs/evidence/T088/design-notes.md",
+          "docs/evidence/T088/direction.json",
+          "docs/evidence/T088/browser.md",
+          "docs/evidence/T088/before-desktop.jpg",
+          "docs/evidence/T088/report-desktop.jpg",
+          "docs/evidence/T088/report-tablet.jpg",
+          "docs/evidence/T088/mobile-top.jpg",
+          "docs/evidence/T088/report-1024.jpg",
+          "docs/evidence/T088/invalid-mobile.jpg",
+          "docs/evidence/T088/chart-mobile-final.jpg",
+          "docs/evidence/T088/large-1024.jpg",
+          "docs/evidence/T088/large-negative-mobile.jpg"
+        ],
+        "summary": "Targeted21tests344assertPASS/build420ms/source-lint0FAIL0WARN. Independent1test21assert+bindings/screenshots PASS. A1zero-widthtable1024FAIL preserved; A2listmode<=1199+autoheight/pagernowrap CUA1440/768/375/1024/1100+filters/date/error/empty/dialog/tooltip/pager/large-negative PASS. No backend/schema/deps/push/deploy; operatorDB untouched."
       }
     }
   ]

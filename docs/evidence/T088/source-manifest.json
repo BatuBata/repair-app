@@ -1,0 +1,8 @@
+{
+  "base": "eeacbfb2788d73f9490c3101d75cb9203e166ee6",
+  "revision": "sha256:e198c3a07a89f50f3975c8d9db8eda7850730ff9ab35f6a8f701c012c39fc813",
+  "files": {
+    "resources/views/livewire/reports/index.blade.php": "51191273f4b0d3f8de776c6c4ad2f0aeada30f67044d83c910f2b0c03d4e27d9",
+    "resources/views/livewire/reports/styles.blade.php": "92cf1f7ce19890c59807fde00dde44dcc6bf455ed762ff9e374f13355b00ac2d"
+  }
+}

@@ -693,6 +693,8 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 
 | D-50 | Tambah penjualan memiliki satu diskon nominal rupiah per transaksi, default0, valid0–subtotal dan boleh membuat total0. Subtotal barang/harga perunit/modal/stok tetap; totalbayar/laba/list/detail/nota/cetak/PDF/dashboard/laporan/metodebank memakai nilai akhir. Transaksi lama discount0 tanpa backfill. Satu kolom sales.discount, tanpa persen/diskon perbarang/kupon/alur baru | User meminta diskon di tambah penjualan | User | 19 Nov 2026; main lokal tanpa push/deploy; migrasi aditif dalam scope |
 
+| D-51 | Rombak tampilan laporan mengikuti panel terbuka detail/tambahpenjualan: periode tersendiri, laba bersih menonjol dengan rincian laba rugi, grafik harian, metode/bank, lalu transaksi terfilter. Tetap layar laporan baca-saja; filter tanggal berlaku semua ringkasan, filter jenis/metode/bank hanya daftar existing. Semua data/perhitungan/izin/rincian/grafik/paging/empty/error tetap; tanpa fitur atau dependency baru | User meminta rombak laporan memakai konsep layar yang sudah disukai | User | 19 Nov 2026; main lokal, tanpa push/deploy |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

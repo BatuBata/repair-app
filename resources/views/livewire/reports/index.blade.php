@@ -2,27 +2,31 @@
     use App\Services\Reports\Report;
     $displayMoney = fn (string $amount) => new \Illuminate\Support\HtmlString(str_replace('.', '.<wbr>', e(Report::money($amount))));
 @endphp
-<div class="reports-page">
+<div class="reports-page record-detail">
+    @include('livewire.detail-styles')
     @include('livewire.reports.styles')
-    <div class="title-row"><div><h1>Laporan</h1><p class="sub">@if($report)Laba bersih <strong>{{ $displayMoney($report['net']) }}</strong> dari omzet {{ $displayMoney($report['revenue']) }}.@else Periksa periode laporan di bawah.@endif</p></div></div>
-    <div class="period" role="group" aria-label="Periode laporan">
+    <header class="title-row"><div><h1>Laporan</h1><p class="sub">@if($report)Servis, penjualan, dan pengeluaran toko.@else Periksa periode laporan di bawah.@endif</p></div></header>
+    <section class="detail-panel report-period" aria-labelledby="report-period-title">
+        <div class="report-period-choices"><h2 id="report-period-title"><x-ui.icon name="calendar" />Periode laporan</h2>
         <div class="segmented" role="group" aria-label="Pilihan cepat">
             @foreach(['today' => 'Hari ini', 'week' => '7 hari', 'month' => 'Bulan ini'] as $value => $label)
                 @php $quickFrom = match($value) { 'today' => now('Asia/Makassar')->toDateString(), 'week' => now('Asia/Makassar')->subDays(6)->toDateString(), default => now('Asia/Makassar')->startOfMonth()->toDateString() }; @endphp
                 <button type="button" wire:click="period('{{ $value }}')" aria-pressed="{{ $from === $quickFrom && $to === now('Asia/Makassar')->toDateString() ? 'true' : 'false' }}">{{ $label }}</button>
             @endforeach
         </div>
+        </div>
         <div class="report-dates">
             @foreach(['from' => 'Dari tanggal', 'to' => 'Sampai tanggal'] as $field => $label)
                 <div><x-ui.date-picker :name="$field" :label="$label" :value="$field === 'from' ? $from : $to" wire:model.live="{{ $field }}" :invalid="$filterErrors->has($field)" :describedby="'report-'.$field.'-error'" />@if($filterErrors->has($field))<span class="error-text" id="report-{{ $field }}-error" role="alert">{{ $filterErrors->first($field) }}</span>@endif</div>
             @endforeach
         </div>
-    </div>
+    </section>
     @if($filterErrors->hasAny(['type', 'payment_method', 'payment_bank']))<x-ui.notice type="error">{{ $filterErrors->first() }}</x-ui.notice>@endif
     @if($report)
-        <div class="grid" wire:loading.class="report-loading">
-            <section class="span-5" aria-labelledby="report-statement">
+        <div class="report-sections" wire:loading.class="report-loading">
+            <section class="detail-panel report-finances" aria-labelledby="report-statement">
                 <div class="section-head"><h2 id="report-statement">Laba rugi</h2><span class="meta">{{ \Carbon\CarbonImmutable::parse($from)->format('d/m/Y') }}–{{ \Carbon\CarbonImmutable::parse($to)->format('d/m/Y') }} · WITA</span></div>
+                <dl @class(['detail-total', 'report-net', 'is-negative' => str_starts_with($report['net'], '-')])><dt>Laba bersih</dt><dd>{{ $displayMoney($report['net']) }}</dd></dl>
                 <dl class="statement">
                     <div class="{{ strlen($report['service']) > 15 ? 'statement-long' : '' }}"><dt>Omzet servis</dt><dd>{{ $displayMoney($report['service']) }}</dd></div>
                     <div class="{{ strlen($report['sales']) > 15 ? 'statement-long' : '' }}"><dt>Omzet penjualan</dt><dd>{{ $displayMoney($report['sales']) }}</dd></div>
@@ -30,13 +34,12 @@
                     <div class="{{ strlen($report['cost']) > 15 ? 'statement-long' : '' }}"><dt>Modal</dt><dd>{{ $report['cost'] === '0' ? '' : '−' }}{{ $displayMoney($report['cost']) }}</dd></div>
                     <div class="sum {{ strlen($report['gross']) > 15 ? 'statement-long' : '' }}"><dt>Laba kotor</dt><dd>{{ $displayMoney($report['gross']) }}</dd></div>
                     <div class="{{ strlen($report['expenses']) > 15 ? 'statement-long' : '' }}"><dt>Pengeluaran</dt><dd>{{ $report['expenses'] === '0' ? '' : '−' }}{{ $displayMoney($report['expenses']) }}</dd></div>
-                    <div class="final {{ strlen($report['net']) > 15 ? 'statement-long' : '' }}"><dt>Laba bersih</dt><dd>{{ $displayMoney($report['net']) }}</dd></div>
                 </dl>
                 <p class="small muted report-note">TTS batal dan nota yang belum terbit tidak dihitung.</p>
                 <p class="small muted">Restok (informasi): <span class="num">{{ $displayMoney($report['restock']) }}</span>. Tidak mengurangi laba.</p>
             </section>
-            <section class="span-7" aria-labelledby="report-daily">
-                <div class="section-head"><h2 id="report-daily">Omzet per hari</h2><span class="meta">Tertinggi {{ $displayMoney($report['highest']) }}</span></div>
+            <section class="detail-panel report-chart" aria-labelledby="report-daily">
+                <div class="section-head"><h2 id="report-daily"><x-ui.icon name="chart-column" />Omzet per hari</h2><span class="meta">Tertinggi {{ $displayMoney($report['highest']) }}</span></div>
                 <p class="small muted">Rata-rata periode {{ $displayMoney($report['average']) }}/hari @if($report['averageRemainder'] !== '0') (dibulatkan ke bawah)@endif · {{ $report['dayCount'] }} hari</p>
                 <p class="small muted report-note">Grafik {{ $report['days'][0]['date'] }}–{{ $report['days'][count($report['days']) - 1]['date'] }} · geser, ketuk, atau fokuskan hari untuk rincian. @if($report['axisTrillions']) Sumbu T = triliun rupiah. @endif</p>
                 <div class="daily-chart" aria-label="Grafik omzet harian">
@@ -62,31 +65,34 @@
                 @if($report['lastPage'] > 0)<div class="chart-paging"><button type="button" class="btn sm" wire:click="$set('chartPage', {{ max(0, $report['page'] - 1) }})" @disabled($report['page'] === 0)>Hari sebelumnya</button><span class="small muted">{{ $report['page'] + 1 }} / {{ $report['lastPage'] + 1 }}</span><button type="button" class="btn sm" wire:click="$set('chartPage', {{ $report['page'] + 1 }})" @disabled($report['page'] === $report['lastPage'])>Hari berikutnya</button></div>@endif
                 @if($report['revenue'] === '0')<p class="small muted">Tidak ada omzet pada rentang ini.</p>@endif
             </section>
-            <section class="span-12" aria-labelledby="report-payments">
-                <div class="section-head"><h2 id="report-payments">Ringkasan pembayaran</h2></div>
-                <p class="small muted">Servis dan penjualan berdasarkan tanggal transaksi pada periode di atas. Filter daftar transaksi di bawah tidak mengubah ringkasan ini.</p>
-                <div class="grid">
-                    <dl class="statement span-6">
+            <section class="detail-panel report-payments" aria-labelledby="report-payments">
+                <div class="section-head"><h2 id="report-payments"><x-ui.icon name="wallet" />Ringkasan pembayaran</h2></div>
+                <p class="small muted">Servis dan penjualan berdasarkan tanggal transaksi, bukan tanggal pembayaran. Filter daftar transaksi di bawah tidak mengubah ringkasan ini.</p>
+                <div class="report-payments-grid">
+                    <dl class="statement">
                         @foreach(['cash' => 'Tunai', 'qris' => 'QRIS', 'transfer' => 'Transfer bank'] as $method => $label)
                             <div><dt>{{ $label }}</dt><dd>{{ $displayMoney($report['payments'][$method]) }}</dd></div>
                         @endforeach
                         <div class="sum"><dt>Total pembayaran tercatat</dt><dd>{{ $displayMoney($report['payments']['total']) }}</dd></div>
                         <div><dt>Belum dibayar / belum dicatat</dt><dd>{{ $displayMoney($report['payments']['unrecorded']) }}</dd></div>
                     </dl>
-                    <div class="span-6"><h3 style="margin-top:16px">Rincian transfer</h3>
+                    <div class="report-banks"><h3>Rincian transfer</h3>
                         @if($report['paymentBanks'])<dl class="statement">@foreach($report['paymentBanks'] as $bank => $amount)<div><dt>{{ $bank }}</dt><dd>{{ $displayMoney($amount) }}</dd></div>@endforeach</dl>
-                        @else<p class="small muted" style="margin-top:12px">Belum ada pembayaran transfer pada periode ini.</p>@endif
+                        @else<p class="small muted report-note">Belum ada pembayaran transfer pada periode ini.</p>@endif
                     </div>
                 </div>
             </section>
-            <section class="span-12 report-transactions" aria-labelledby="report-transactions">
-                <div class="section-head"><h2 id="report-transactions">Transaksi</h2><span class="meta">{{ count($rows) }} transaksi</span></div>
+            <section class="detail-panel report-transactions" aria-labelledby="report-transactions">
+                <div class="section-head"><h2 id="report-transactions"><x-ui.icon name="receipt" />Transaksi</h2><span class="meta">{{ count($rows) }} transaksi</span></div>
+                <p class="small muted report-filter-hint">Filter jenis, metode, dan bank hanya berlaku untuk daftar transaksi ini.</p>
+                <div class="report-transactions-toolbar">
                 <div class="tabs" role="group" aria-label="Jenis transaksi">
                     @foreach(['semua' => 'Semua', 'servis' => 'Servis', 'jual' => 'Penjualan', 'keluar' => 'Pengeluaran'] as $value => $label)<button type="button" wire:click="$set('type', '{{ $value }}')" aria-pressed="{{ $type === $value ? 'true' : 'false' }}">{{ $label }}</button>@endforeach
                 </div>
                 <div class="report-payment-filters">
                     <x-ui.search-select name="report-payment-method" label="Metode pembayaran" :options="$paymentMethods" :value="$payment_method" placeholder="Cari metode" wire:model.live="payment_method" />
                     @if($payment_method === 'transfer')<x-ui.search-select name="report-payment-bank" label="Bank" :options="$paymentBanks" :value="$payment_bank" placeholder="Cari bank" wire:model.live="payment_bank" />@endif
+                </div>
                 </div>
                 <table class="table report-table"><thead><tr><th class="act"><span class="sr-only">Aksi</span></th><th class="desktop-only">Tanggal</th><th>Nomor</th><th class="desktop-only">Jenis</th><th>Keterangan</th><th class="n">Jumlah</th><th class="n desktop-only">Modal</th><th class="n desktop-only">Laba</th></tr></thead><tbody>
                     @forelse($rows as $row)
@@ -97,7 +103,7 @@
             </section>
         </div>
         @if($selected)
-            <dialog class="sheet-dialog report-dialog" x-init="$el.showModal()" x-on:cancel.prevent="$el.close(); $wire.set('detail', null).then(() => document.getElementById('report-view-{{ $selected['key'] }}')?.focus())" aria-labelledby="report-detail-title"><div class="dialog-body"><div class="section-head"><h2 id="report-detail-title">{{ $selected['number'] }}</h2><button type="button" class="btn ghost" x-on:click="$el.closest('dialog').close(); $wire.set('detail', null).then(() => document.getElementById('report-view-{{ $selected['key'] }}')?.focus())">Tutup</button></div><p class="muted">{{ $selected['date'] }} · {{ $selected['description'] }}@if($selected['type'] !== 'keluar') · {{ $selected['type'] === 'servis' && $selected['amount'] === '0' ? 'Gratis' : \App\Support\Payment::label($selected['payment_method'], $selected['payment_bank']) }}@endif</p><dl class="statement">@foreach($selected['lines'] as $line)<div><dt>{{ $line['description'] }} × {{ $line['qty'] }}<span class="small muted report-line-cost">Modal {{ $displayMoney($line['cost']) }}</span></dt><dd>{{ $displayMoney($line['amount']) }}</dd></div>@endforeach<div class="sum"><dt>Jumlah</dt><dd>{{ $displayMoney($selected['amount']) }}</dd></div><div><dt>Modal</dt><dd>{{ $displayMoney($selected['cost']) }}</dd></div><div><dt>Laba</dt><dd>{{ $displayMoney($selected['profit']) }}</dd></div></dl>@if($selected['url'])<a class="btn" href="{{ $selected['url'] }}">Buka transaksi</a>@endif</div></dialog>
+            <dialog class="sheet-dialog report-dialog" x-init="$el.showModal()" x-on:cancel.prevent="$el.close(); $wire.set('detail', null).then(() => document.getElementById('report-view-{{ $selected['key'] }}')?.focus())" aria-labelledby="report-detail-title"><div class="dialog-body"><div class="section-head"><h2 id="report-detail-title">{{ $selected['number'] }}</h2><button type="button" class="btn ghost" x-on:click="$el.closest('dialog').close(); $wire.set('detail', null).then(() => document.getElementById('report-view-{{ $selected['key'] }}')?.focus())"><x-ui.icon name="x" />Tutup</button></div><p class="muted">{{ $selected['date'] }} · {{ $selected['description'] }}@if($selected['type'] !== 'keluar') · {{ $selected['type'] === 'servis' && $selected['amount'] === '0' ? 'Gratis' : \App\Support\Payment::label($selected['payment_method'], $selected['payment_bank']) }}@endif</p><dl class="statement">@foreach($selected['lines'] as $line)<div><dt>{{ $line['description'] }} × {{ $line['qty'] }}<span class="small muted report-line-cost">Modal {{ $displayMoney($line['cost']) }}</span></dt><dd>{{ $displayMoney($line['amount']) }}</dd></div>@endforeach<div class="sum"><dt>Jumlah</dt><dd>{{ $displayMoney($selected['amount']) }}</dd></div><div><dt>Modal</dt><dd>{{ $displayMoney($selected['cost']) }}</dd></div><div><dt>Laba</dt><dd>{{ $displayMoney($selected['profit']) }}</dd></div></dl>@if($selected['url'])<a class="btn" href="{{ $selected['url'] }}">Buka transaksi<x-ui.icon name="chevron-right" /></a>@endif</div></dialog>
         @endif
     @else
         <x-ui.notice type="warning">Laporan belum ditampilkan. Perbaiki tanggal atau jenis transaksi.</x-ui.notice>

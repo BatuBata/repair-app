@@ -185,10 +185,8 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
-      "stop_after_tasks": [
-        "T084"
-      ],
-      "source_ref": "User19Nov2026 D-47 selesai lokal dengan QA independen PASS; tanpa push/deploy.",
+      "stop_after_tasks": ["T084"],
+      "source_ref": "User19Nov2026 koreksi ukuran X T084 selesai lokal dengan review independen PASS; tanpa push/deploy.",
       "phase_history": [
         {
           "state": "paused",
@@ -7634,7 +7632,7 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "conflicts_with": [],
       "parallel_candidates": [],
       "acceptance_criteria": [
-        "Banner ringkas warna+ikon tetap, jenisSRlabel; tombolXlingkaran berlabel nativebutton/area44px, 20pxgap tetap.",
+        "Banner ringkas warna+ikon tetap, jenisSRlabel; tombolXlingkaran visual18px berlabel nativebutton/area44px, 20pxgap tetap.",
         "Klik/keyboard hanya menghilangkan banner terkait, tidaksubmit/reset/data; pesan dari aksi berikutnya dapatmuncullagi.",
         "Role/fokuserror/link/escaping tetap; success/error/warning/info35callers otomatis tanpa editindividual.",
         "Build/targetedtest/JSselfcheck/browser1440/375 dan reviewindependen; tanpa dependency/schema/backend/push/deploy."
@@ -7646,20 +7644,16 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
       "result": {
         "verdict": "pass",
-        "artifact_ref": "docs/evidence/T084/README.md",
-        "revision": "sha256:9fd735ee13cb54d3b5579b2407fe624bcbabd5d29b9695c28b0fcdbcf11a5745",
-        "checked_revision": "sha256:9fd735ee13cb54d3b5579b2407fe624bcbabd5d29b9695c28b0fcdbcf11a5745",
+        "artifact_ref": "docs/evidence/T084/size-followup.md",
+        "revision": "sha256:1e1fcd969af584f184e11b609f43a1b226cd19ca06ba0c8eb21eb6cdd57b2aca",
+        "checked_revision": "sha256:1e1fcd969af584f184e11b609f43a1b226cd19ca06ba0c8eb21eb6cdd57b2aca",
         "inputs": {},
         "evidence": [
+          "docs/evidence/T084/size-followup.md",
           "docs/evidence/T084/README.md",
-          "docs/evidence/T084/independent-qa.md",
-          "docs/evidence/T084/source-manifest.json",
-          "docs/evidence/T084/dismiss-check.mjs",
-          "docs/evidence/T084/error-open-1440.jpg",
-          "docs/evidence/T084/error-open-375.jpg",
-          "docs/evidence/T084/success-open-375.jpg"
+          "docs/evidence/T084/independent-qa.md"
         ],
-        "summary": "Build PASS; targeted28tests/329assert PASS; actualJS4cases and independentBlade4variants/32assert PASS. CUA desktop/mobile dismiss, repeat messages, input preservation and keyboard PASS. Independent QA PASS. No push/deploy."
+        "summary": "User size correction: CSS circle28→18px, hitarea44px retained. Build386msPASS and independent diff reviewPASS; behavior unchanged from4cf8a27. No browser/backend suite rerun, push or deploy."
       }
     }
   ]

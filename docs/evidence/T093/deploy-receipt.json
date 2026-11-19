@@ -1,0 +1,36 @@
+{
+  "environment": "production",
+  "domain": "https://demo-repair-app.scannara.asia",
+  "path": "/var/www/demo-repair-app/current",
+  "authorization": "User19Nov2026 push and deploy; PRD D-56 / existing D-23",
+  "revision": "3b5426158073ce2d90bcad256f45da374026d002",
+  "previous_revision": "e3cf94ea9aa195ff8397bee54ff5e42401e74536",
+  "workflow": "https://github.com/BatuBata/repair-app/actions/runs/44555954136",
+  "run_id": 44555954136,
+  "ci": "success",
+  "deploy": "success",
+  "workflow_completed_at": "2026-11-19T15:35:19Z",
+  "ci_tests": {
+    "passed": 292,
+    "assertions": 3351,
+    "duration_seconds": 34.48,
+    "deployment_safety_cases": 20
+  },
+  "post_deploy_evidence": "independent-qa.md",
+  "migration_names": [
+    "2026_11_18_030000_add_service_discount",
+    "2026_11_19_000000_add_optional_inspection",
+    "2026_11_19_010000_create_expense_categories",
+    "2026_11_19_020000_add_sale_discount"
+  ],
+  "limits": [
+    "No business transactions or customer WhatsApp sent",
+    "No reseed/reset/APP_KEY/private environment change",
+    "Backup remains deferred per user D-22",
+    "Physical printer/phone UAT not repeated"
+  ],
+  "post_deploy_result": "pass",
+  "independent_evidence": "postdeploy-independent.json",
+  "verified_packaged_source_files": 211,
+  "runtime_revision": "3b5426158073ce2d90bcad256f45da374026d002"
+}

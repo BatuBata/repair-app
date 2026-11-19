@@ -1,0 +1,22 @@
+{
+  "verdict": "pass",
+  "target": "https://demo-repair-app.scannara.asia",
+  "revision": "3b5426158073ce2d90bcad256f45da374026d002",
+  "server_receipt": {"revision": "3b5426158073ce2d90bcad256f45da374026d002", "status": "pass", "utc": "2026-11-19T15:35:12Z"},
+  "release_marker_matches": true,
+  "maintenance": false,
+  "database_ready": true,
+  "migrations_ran": ["2026_11_18_030000_add_service_discount", "2026_11_19_000000_add_optional_inspection", "2026_11_19_010000_create_expense_categories", "2026_11_19_020000_add_sale_discount"],
+  "schema_checked_columns": 11,
+  "discount_columns": "service_orders.discount and sales.discount bigint(20) unsigned NOT NULL DEFAULT 0",
+  "service_status": "enum('diterima','pengecekan','dikerjakan','selesai','diambil','batal')",
+  "inspection_columns": "inspection_result/action_plan nullable text; inspection_started_at/work_started_at nullable datetime",
+  "expense_category": "expenses.category varchar(50); expense_categories tenant_id unsigned bigint/name varchar(50)/is_active tinyint default1",
+  "source_parity": {"matching_packaged_source_files": 211, "mismatches_within_package": [], "expected_exclusion": "package-lock.json is not included by deploy/ci-package.sh"},
+  "view_checks": {"logo_shared_mark": true, "neutral_status_copy": true, "no_fixed_servis_elektronik": true, "cancel_reason": true, "compiled_tracking_views": 1, "wa_cancellation_precedes_inspection": true},
+  "https": [{"path":"/up","status":200},{"path":"/login","status":200},{"path":"/icons/repair-app-192.png","status":200},{"path":"/platform/login","status":200},{"path":"/.env","status":403},{"path":"/.git/config","status":403},{"path":"/vendor/autoload.php","status":404}],
+  "https_tls_verify_result": 0,
+  "row_counts_only": {"tenants":3,"users":9,"service_orders":28,"sales":6,"expenses":0,"expense_categories":0},
+  "business_data_writes": false,
+  "credentials_read_or_printed": false
+}

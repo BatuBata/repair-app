@@ -139,6 +139,18 @@ class InspectionTest extends TestCase
         }
     }
 
+    public function test_start_work_preserves_unsaved_notes_and_rejects_oversized_notes(): void
+    {
+        $order = $this->order();
+        app(ManageServiceOrder::class)->assign($order->id, $this->technician->id, 'pengecekan');
+        $form = Livewire::test(Detail::class, ['id' => $order->id]);
+        $form->set('inspection_result', str_repeat('x', 8101))->call('startWork')->assertHasErrors('inspection_result');
+        $this->assertSame('pengecekan', $order->fresh()->status->value);
+        Livewire::test(Detail::class, ['id' => $order->id])->set('inspection_result', 'Baterai drop. Ganti baterai.')->call('startWork')->assertHasNoErrors();
+        $this->assertSame('dikerjakan', $order->fresh()->status->value);
+        $this->assertSame('Baterai drop. Ganti baterai.', $order->fresh()->inspection_result);
+    }
+
     public function test_admin_and_tenant_guards_cover_all_new_actions_and_whatsapp(): void
     {
         $order = $this->order();

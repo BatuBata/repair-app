@@ -673,6 +673,8 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 
 | D-40 | Poles tampilan detail TTS memakai ui-ux-pro-max dan token/komponen DESIGN existing: kelompok informasi, panel catatan satu isian, label/help/error inline+fokus, loadingfeedback, riwayat setelah catatan, tombol dokumen ringkas, pilihan tahap teknisi lebih jelas. Hanya view, tanpa perubahan alur/data/dependency/migrasi | User meminta percantik detail TTS tanpa overengineering/push | User | Disetujui19Nov2026; lokal main |
 
+| D-41 | Detail TTS menjadi ringkasan singkat lalu pekerjaan per status: Diterima pilih teknisi/jalur; Pengecekan catatan+simpan/bukaWA utama, mulai kerja sekunder setelah konfirmasi eksternal; Dikerjakan buatnota; Selesai catatpembayaran atau tandaiambil, bayar+ambil tetap tersedia; Diambil lihatnota. Satu aksi utama terlihat per viewport. Detail/riwayat/ganti teknisi/cetak di disclosure native, WA menyebut isinya. Catatan belum disimpan disimpan memakai validasi existing sebelum Mulai pengerjaan; tanpa state/module/schema baru | User menyetujui saran review UX, ui-ux-pro-max, main jangan push | User | Disetujui19Nov2026; implementasi/QA lokal |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

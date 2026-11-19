@@ -71,6 +71,9 @@ class Detail extends Component
 
     public function startWork(): void
     {
+        if (trim($this->inspection_result) !== '') {
+            app(ManageServiceOrder::class)->saveInspection($this->orderId, $this->only(['inspection_result']));
+        }
         app(ManageServiceOrder::class)->startWork($this->orderId);
         session()->flash('tts-status', 'Pengerjaan dimulai.');
         $this->redirectRoute('tts.show', ['id' => $this->orderId]);

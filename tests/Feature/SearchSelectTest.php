@@ -33,7 +33,7 @@ class SearchSelectTest extends TestCase
         foreach ([
             'resources/views/livewire/sales/form.blade.php',
             'resources/views/livewire/tts/form.blade.php',
-            'resources/views/livewire/tts/detail.blade.php',
+            'resources/views/livewire/tts/technician-form.blade.php',
             'resources/views/livewire/expenses/index.blade.php',
         ] as $path) {
             $this->assertStringContainsString('<x-ui.search-select', file_get_contents(base_path($path)), $path);

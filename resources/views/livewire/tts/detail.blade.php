@@ -1,95 +1,92 @@
+@php
+    $stage = $order->status->value;
+    $free = $financial && $financial['price'] === 0;
+    $needsPayment = $financial && $financial['price'] > 0 && !$order->paid_at;
+@endphp
 <div class="tts-detail">
     <style>
-        .tts-detail { overflow-wrap:anywhere; } .tts-detail .obj-head { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
-        .tts-detail h1 { font:500 26px/34px var(--mono); letter-spacing:-.02em; } .tts-detail .track { margin:24px 0 32px; max-width:760px; }
-        .tts-detail .blk + .blk { margin-top:32px; padding-top:24px; border-top:1px solid var(--rule); }
-        .tts-detail .success-layout { display:grid; grid-template-columns:minmax(0,560px) minmax(0,1fr); gap:48px; align-items:start; }
-        .tts-detail .done-head { display:grid; gap:8px; } .tts-detail .done-head h1 { font-size:34px; line-height:44px; }
-        .tts-detail .ok { display:flex; align-items:center; gap:6px; color:var(--positive); font-weight:500; }
-        .tts-detail .success-actions { display:grid; gap:8px; margin-top:24px; }
-        .tts-detail .paper-bed { padding:24px; background:var(--raised); border-radius:var(--radius-card); display:grid; justify-items:center; }
-        .tts-detail .paper { width:260px; background:white; padding:16px; border:1px solid var(--border); border-radius:4px; font-size:12px; line-height:17px; }
-        .tts-detail .totals > div { flex-wrap:wrap; } .tts-detail .totals dt { min-width:0; } .tts-detail .totals dd { max-width:100%; margin-left:auto; text-align:right; }
-        .tts-detail .paper hr { border:0; border-top:1px dashed var(--control); margin:8px 0; }
-        .tts-detail textarea.input { height:auto; min-height:100px; resize:vertical; }
-        .tts-detail .service-card { padding:24px; border:1px solid var(--border); border-radius:var(--radius-card); background:var(--surface); }
-        .tts-detail .service-card + .service-card { margin-top:20px; padding-top:24px; border:1px solid var(--border); }
-        .tts-detail .section-heading { display:flex; align-items:center; gap:8px; font-size:16px; line-height:24px; font-weight:600; }
-        .tts-detail .section-heading .icon { width:18px; height:18px; color:var(--muted); flex:none; }
-        .tts-detail .inspection-card { background:var(--raised); }
-        .tts-detail .inspection-card textarea { background:var(--surface); line-height:1.6; padding:14px; }
-        .tts-detail .inspection-card .form { gap:12px; }
-        .tts-detail .inspection-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:4px; }
-        .tts-detail .inspection-actions .btn { flex:1 1 180px; min-height:44px; }
-        .tts-detail .kv { gap:14px 16px; }
-        .tts-detail .history-card .timeline { margin-bottom:0; }
-        .tts-detail .assignment-choices { border:0; padding:0; margin:0; }
-        .tts-detail .assignment-choices legend { margin-bottom:8px; }
-        .tts-detail .assignment-choices .check { display:flex; align-items:flex-start; gap:10px; padding:12px; border:1px solid var(--border); border-radius:var(--radius-control); background:var(--surface); cursor:pointer; }
+        .tts-detail { overflow-wrap:anywhere; max-width:1000px; margin-inline:auto; }
+        .tts-detail .obj-head,.tts-detail .support-actions { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+        .tts-detail h1 { font:500 26px/34px var(--mono); }
+        .tts-detail .summary-line { margin-top:8px; color:var(--muted); line-height:1.6; }
+        .tts-detail .summary-line strong { color:var(--text); font-weight:500; }
+        .tts-detail .work-panel { margin:24px 0; padding:24px; border:1px solid var(--border); border-radius:var(--radius-card); background:var(--raised); }
+        .tts-detail .work-panel h2 { font-size:20px; line-height:28px; font-weight:600; }
+        .tts-detail .work-panel > .muted { margin-top:6px; }
+        .tts-detail .form { margin-top:20px; max-width:680px; }
+        .tts-detail textarea.input { height:auto; min-height:150px; padding:14px; line-height:1.6; resize:vertical; background:var(--surface); }
+        .tts-detail .work-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:20px; }
+        .tts-detail .work-actions .btn,.tts-detail .support-actions .btn { min-height:44px; }
+        .tts-detail .approval-next { margin-top:24px; padding-top:20px; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+        .tts-detail .approval-next .btn { min-height:44px; }
+        .tts-detail .support-section { border-top:1px solid var(--border); }
+        .tts-detail .support-section > summary { cursor:pointer; min-height:56px; padding:16px 0; font-weight:500; }
+        .tts-detail .support-body { padding:0 0 20px; }
+        .tts-detail .kv { margin-top:12px; }
+        .tts-detail .document-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; max-width:620px; }
+        .tts-detail .document-links .btn { min-height:44px; min-width:0; }
+        .tts-detail .assignment-choices { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; border:0; padding:0; margin:0; }
+        .tts-detail .assignment-choices legend { font-weight:500; margin-bottom:8px; }
+        .tts-detail .assignment-choices .check { display:flex; align-items:flex-start; gap:10px; padding:14px; border:1px solid var(--border); border-radius:var(--radius-control); background:var(--surface); cursor:pointer; }
         .tts-detail .assignment-choices .check:has(input:checked) { border-color:var(--accent); }
-        .tts-detail .assignment-choices input { margin-top:4px; flex:none; }
-        .tts-detail .assignment-choices small { display:block; margin-top:4px; color:var(--muted); font-size:13px; line-height:19px; font-weight:400; }
-        .tts-detail .document-heading { margin-top:28px; }
-        .tts-detail .document-actions { grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-top:12px; }
-        .tts-detail .document-actions .btn { min-width:0; min-height:44px; }
-        @media(max-width:1023.98px) { .tts-detail .service-card, .tts-detail .service-card + .service-card { padding:18px; } .tts-detail .document-actions { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-        @media(max-width:1023.98px) { .tts-detail h1 { font-size:24px; line-height:32px; } .tts-detail .done-head h1 { font-size:28px; line-height:36px; } .tts-detail .success-layout { display:block; } }
+        .tts-detail .assignment-choices input { flex:none; margin-top:4px; }
+        .tts-detail .assignment-choices small { display:block; font-size:13px; font-weight:400; color:var(--muted); margin-top:4px; }
+        .tts-detail .receipt-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:24px; }
+        .tts-detail .totals > div { flex-wrap:wrap; } .tts-detail .totals dd { max-width:100%; margin-left:auto; }
+        @media(max-width:1023.98px) { .tts-detail .work-panel { padding:18px; margin:20px 0; } .tts-detail .assignment-choices { grid-template-columns:1fr; } .tts-detail .approval-next { align-items:flex-start; flex-direction:column; } .tts-detail .work-actions .btn { flex:1 1 auto; } }
     </style>
-    @unless($success)<a class="crumb" href="{{ route('tts.index') }}"><x-ui.icon name="arrow-left" />Servis</a>@endunless
-    <div class="{{ $success ? 'success-layout' : '' }}">
-        <div>
-            @if($success)
-                <div class="done-head"><span class="ok"><x-ui.icon name="circle-check" />Tanda terima tersimpan</span><h1>{{ $order->number }}</h1><p class="muted">Tulis atau sebutkan nomor ini ke customer. Admin akan menetapkan teknisi.</p></div>
-            @else
-                <div class="title-row"><div><div class="obj-head"><h1>{{ $order->number }}</h1><x-ui.status :status="ucfirst($order->status->value)" /></div><p class="sub">{{ $order->category->name }} · {{ $order->customer_name }} · masuk {{ $order->created_at->format('d M Y, H.i') }}</p></div>@if($isAdmin)<div class="actions desktop-only">@include('livewire.tts.admin-actions', ['placement' => 'desktop'])</div>@elseif($canEdit)<a class="btn primary desktop-only" href="{{ route('tts.edit', $order->id) }}">Ubah TTS</a>@endif</div>
-            @endif
-            <ol class="track {{ $order->inspection_started_at ? 'has-inspection' : '' }}" aria-label="Tahap servis">
-                @foreach(['diterima' => ['Diterima', $order->created_at], ...($order->inspection_started_at ? ['pengecekan' => ['Pengecekan', $order->inspection_started_at]] : []), 'dikerjakan' => ['Dikerjakan', $order->work_started_at ?? ($order->inspection_started_at ? null : $order->assigned_at)], 'selesai' => ['Selesai', $order->invoiced_on], 'diambil' => ['Diambil', $order->picked_up_on]] as $stage => [$label, $date])
-                    <li class="{{ $order->status->value === $stage ? 'now' : ($date ? 'done' : '') }}">{{ $label }}@if($date)<time>{{ $date->format(in_array($stage, ['selesai', 'diambil'], true) ? 'd M Y' : 'd M H.i') }}</time>@endif</li>
-                @endforeach
-            </ol>
-            @if(session('tts-status'))<p class="notice" role="status">{{ session('tts-status') }}</p>@endif
-            @if($errors->any())<div class="notice" role="alert" x-init="$nextTick(() => $el.closest('.tts-detail').querySelector('[aria-invalid=true]')?.focus())">@foreach($errors->all() as $error)<p>{{ $error }}</p>@endforeach</div>@endif
-            @if($order->status === \App\Enums\ServiceOrderStatus::Batal)<p class="notice"><x-ui.status status="Batal" />{{ $order->cancelled_at ? ' · '.$order->cancelled_at->format('d M Y, H.i') : '' }} {{ $order->cancel_reason }}</p>@endif
-            <div class="{{ $success ? '' : 'grid' }}"><div class="{{ $success ? '' : 'span-8' }}">
-                <section class="blk {{ $success ? '' : 'service-card' }}" aria-label="Barang dan customer">@unless($success)<div class="section-head"><h2 class="section-heading"><x-ui.icon name="package" />Barang &amp; pelanggan</h2></div>@endunless<dl class="kv" style="margin-top:12px">
-                    @if($success)<dt>Customer</dt><dd>{{ $order->customer_name }}</dd><dt>Nomor HP</dt><dd class="num">{{ $order->customer_phone }}</dd>@endif
-                    <dt>Barang</dt><dd>{{ $order->category->name }}{{ $order->item_description ? ' · '.$order->item_description : '' }}</dd><dt>Keluhan</dt><dd style="white-space:pre-line">{{ $order->complaint }}</dd>@unless($success)<dt>Customer</dt><dd>{{ $order->customer_name }}</dd><dt>Nomor HP</dt><dd class="num">{{ $order->customer_phone }}</dd>@endunless<dt>Alamat</dt><dd style="white-space:pre-line">{{ $order->customer_address ?: '—' }}</dd><dt>Dicatat oleh</dt><dd>{{ $order->creator->name }}</dd>
-                </dl></section>
-                @if(!$success && ($order->status->value === 'pengecekan' || filled($order->inspection_result) || filled($order->action_plan)))
-                    <section class="blk service-card inspection-card" aria-labelledby="inspection-title"><h2 id="inspection-title" class="section-heading"><x-ui.icon name="search" />Hasil pengecekan &amp; rencana tindakan</h2>
-                        @if($isAdmin && $order->status->value === 'pengecekan')
-                            <p class="small muted" style="margin-top:8px">Tuliskan temuan dan tindakan yang disarankan. Setelah pelanggan setuju lewat WA, tekan Mulai pengerjaan.</p>
-                            <form class="form" wire:submit="saveInspection" style="margin-top:16px">
-                                <label class="field"><span>Catatan untuk pelanggan</span><textarea class="input" wire:model="inspection_result" rows="6" style="min-height:150px" maxlength="8100" placeholder="Mis. baterai drop. Disarankan ganti baterai, lalu uji pengisian dan daya tahan." aria-describedby="inspection-help{{ $errors->has('inspection_result') ? ' inspection-error' : '' }}" aria-invalid="{{ $errors->has('inspection_result') ? 'true' : 'false' }}"></textarea></label>
-                                <p class="hint" id="inspection-help">Catatan ini ikut dikirim melalui WhatsApp.</p>
-                                @error('inspection_result')<p class="error-text" id="inspection-error" role="alert">{{ $message }}</p>@enderror
-                                <div class="inspection-actions"><button class="btn" type="submit" wire:loading.attr="disabled" wire:target="saveInspection,sendInspection"><x-ui.icon name="file-text" /><span wire:loading.remove wire:target="saveInspection">Simpan hasil cek</span><span wire:loading wire:target="saveInspection">Menyimpan…</span></button><button class="btn primary" type="button" wire:click="sendInspection" wire:loading.attr="disabled" wire:target="saveInspection,sendInspection"><x-ui.icon name="message-circle" /><span wire:loading.remove wire:target="sendInspection">Simpan &amp; kirim WA</span><span wire:loading wire:target="sendInspection">Menyiapkan WA…</span></button></div>
-                            </form>
-                        @else
-                            <p style="margin-top:16px;white-space:pre-line">{{ $order->inspectionNotes() ?: 'Belum dicatat' }}</p>
-                            @if($isAdmin && $order->inspectionNotes() !== '')<a class="btn" style="margin-top:16px" href="{{ route('tts.whatsapp', ['id' => $order->id, 'inspection' => 1]) }}">Kirim hasil cek via WA</a>@endif
-                        @endif
-                    </section>
+    <a class="crumb" href="{{ route('tts.index') }}"><x-ui.icon name="arrow-left" />Servis</a>
+    <header class="title-row"><div>
+        @if($success)<p class="muted">Tanda terima tersimpan</p>@endif
+        <div class="obj-head"><h1>{{ $order->number }}</h1><x-ui.status :status="ucfirst($stage)" /></div>
+        <p class="summary-line"><strong>{{ $order->customer_name }}</strong> · {{ $order->category->name }}{{ $order->item_description ? ' · '.$order->item_description : '' }}<br>Teknisi: {{ $order->technician?->name ?? 'Belum ditetapkan' }}</p>
+    </div>@if(!$success && $isAdmin)<div class="desktop-only">@include('livewire.tts.admin-actions', ['placement' => 'header', 'menuOnly' => true])</div>@endif</header>
+    @if(session('tts-status'))<p class="notice" role="status">{{ session('tts-status') }}</p>@endif
+    @if($errors->any())<div class="notice" role="alert" x-init="$nextTick(() => $el.closest('.tts-detail').querySelector('[aria-invalid=true]')?.focus())">@foreach($errors->all() as $error)<p>{{ $error }}</p>@endforeach</div>@endif
+
+    @if($success)
+        <section class="work-panel"><h2>Tanda terima siap dibagikan</h2><p class="muted">Berikan struk kepada pelanggan. Penetapan teknisi dapat dilanjutkan dari detail TTS.</p>
+            <div class="receipt-actions"><a class="btn primary" href="{{ route('tts.show', $order->id) }}">Lihat TTS</a><a class="btn" href="{{ route('tts.create') }}">Buat TTS lagi</a></div>
+        </section>
+    @else
+        <section class="work-panel" aria-labelledby="current-work">
+            <h2 id="current-work">{{ match($stage) { 'diterima' => 'Tetapkan teknisi', 'pengecekan' => 'Catat hasil pengecekan', 'dikerjakan' => 'Perbaikan sedang dikerjakan', 'selesai' => 'Barang siap diambil', 'diambil' => 'Servis telah selesai', default => 'Servis dibatalkan' } }}</h2>
+            <p class="muted">{{ match($stage) { 'diterima' => 'Pilih teknisi dan tentukan apakah barang perlu diperiksa terlebih dahulu.', 'pengecekan' => 'Tuliskan hasil cek dan tindakan yang disarankan, lalu tawarkan kepada pelanggan lewat WhatsApp.', 'dikerjakan' => 'Setelah pekerjaan selesai, isi rincian biaya dan terbitkan nota.', 'selesai' => 'Periksa pembayaran sebelum menyerahkan barang kepada pelanggan.', 'diambil' => 'Barang sudah diserahkan kepada pelanggan.', default => $order->cancel_reason ?: 'Pengerjaan untuk TTS ini dihentikan.' } }}</p>
+            @if($isAdmin)
+                @if($stage === 'diterima')
+                    @include('livewire.tts.technician-form')
+                @elseif($stage === 'pengecekan')
+                    <form id="inspection-form" class="form" wire:submit="saveInspection">
+                        <label class="field"><span>Hasil pengecekan &amp; rencana tindakan</span><textarea class="input" wire:model="inspection_result" rows="6" maxlength="8100" placeholder="Mis. baterai drop. Disarankan ganti baterai dan uji pengisian." aria-describedby="inspection-help{{ $errors->has('inspection_result') ? ' inspection-error' : '' }}" aria-invalid="{{ $errors->has('inspection_result') ? 'true' : 'false' }}"></textarea></label>
+                        <p class="hint" id="inspection-help">Catatan disimpan sebelum WhatsApp dibuka. Pengiriman pesan dilakukan dari WhatsApp.</p>
+                        @error('inspection_result')<p class="error-text" id="inspection-error" role="alert">{{ $message }}</p>@enderror
+                        <div><button class="btn" type="submit" wire:loading.attr="disabled" wire:target="saveInspection,sendInspection,startWork"><span wire:loading.remove wire:target="saveInspection">Simpan catatan</span><span wire:loading wire:target="saveInspection">Menyimpan…</span></button></div>
+                    </form>
+                @elseif(in_array($stage, ['selesai','diambil'], true))
+                    @if($financial)<p style="margin-top:20px;font-size:24px;font-weight:600">Rp{{ number_format($financial['price'], 0, ',', '.') }}</p><p>{{ $free ? 'Gratis' : ($order->paid_at ? 'Lunas · '.\App\Support\Payment::label($order->payment_method,$order->payment_bank) : 'Belum dibayar') }}</p>@endif
+                    @if($stage === 'selesai')
+                        <form id="collect-order" class="form" wire:submit="collect">
+                            <details @if(!$needsPayment) open @endif><summary>Pengambilan barang</summary><div class="form">
+                                <x-ui.date-picker name="picked_up_on" label="Tanggal diambil" :value="$picked_up_on" wire:model="picked_up_on" />
+                                @if($needsPayment)<x-payment-fields :method="$payment_method" :bank="$payment_bank" prefix="collect" /><button class="btn" type="submit" wire:loading.attr="disabled" wire:target="collect">Bayar &amp; Diambil</button>@endif
+                            </div></details>
+                        </form>
+                    @endif
                 @endif
-                @if($isAdmin && $order->invoiced_on)@include('livewire.invoice.published')@endif
-                @unless($success)<section class="blk service-card history-card"><div class="section-head"><h2 class="section-heading"><x-ui.icon name="clock" />Riwayat servis</h2></div><ol class="timeline" style="margin-top:12px">@if($order->assigned_at)<li><strong>Ditetapkan ke {{ $order->technician?->name ?? '—' }}</strong><time>{{ $order->assigned_at->format('d M Y, H.i') }}</time></li>@endif<li><strong>TTS dibuat</strong><time>{{ $order->created_at->format('d M Y, H.i') }} · oleh {{ $order->creator->name }}</time></li></ol></section>@endunless
-            </div>@unless($success)<aside class="span-4"><section class="panel technician-card"><h2 class="section-heading"><x-ui.icon name="user" />Teknisi</h2><p style="margin-top:12px">{{ $order->technician?->name ?? 'Belum ditetapkan' }}</p>
-                @if($isAdmin && in_array($order->status->value, ['diterima', 'pengecekan', 'dikerjakan'], true))
-                    <form id="assign-technician" class="form" wire:submit="assign" style="margin-top:16px"><x-ui.search-select name="technician_id" :label="$order->technician_id ? 'Ganti teknisi' : 'Pilih teknisi'" :options="$technicians->map(fn ($technician) => ['value' => $technician->id, 'label' => $technician->name])" :value="$technician_id" placeholder="Cari teknisi aktif" wire:model="technician_id" />@if($order->status->value === 'diterima')<fieldset class="field assignment-choices"><legend>Setelah teknisi ditetapkan</legend><label class="check"><input type="radio" wire:model="assignment_stage" value="pengecekan"><span>Pengecekan dulu<small>Periksa barang sebelum mulai perbaikan.</small></span></label><label class="check"><input type="radio" wire:model="assignment_stage" value="dikerjakan"><span>Langsung dikerjakan<small>Pelanggan sudah menyetujui perbaikan.</small></span></label></fieldset>@else<button class="btn" type="submit" wire:loading.attr="disabled" wire:target="assign">Simpan teknisi</button>@endif</form>
-                @endif
-                @if($isAdmin && $order->status->value === 'selesai')<form class="form" id="collect-order" wire:submit="collect" style="margin-top:16px"><x-ui.date-picker name="picked_up_on" label="Tanggal diambil" :value="$picked_up_on" wire:model="picked_up_on" />@if(!$order->paid_at && $financial && $financial['price'] > 0)<x-payment-fields :method="$payment_method" :bank="$payment_bank" prefix="collect" />@endif</form>@endif@unless($canEdit)<p class="notice" style="margin-top:12px">TTS hanya bisa diedit oleh pembuatnya saat statusnya Diterima. Hubungi admin untuk perubahan.</p>@endunless</section></aside>@endunless</div>
-            @unless($success)<h2 class="section-heading document-heading"><x-ui.icon name="file-text" />Dokumen &amp; komunikasi</h2>@endunless
-            <div class="success-actions {{ $success ? '' : 'document-actions' }}">
-                @if($isAdmin && \Illuminate\Support\Facades\Route::has('tts.whatsapp'))<a class="btn" href="{{ route('tts.whatsapp', $order->id) }}"><x-ui.icon name="message-circle" />Kirim WA</a>@endif
-                @if(\Illuminate\Support\Facades\Route::has('tts.print'))<a class="btn" href="{{ route('tts.print', $order->id) }}"><x-ui.icon name="printer" />Cetak struk</a>@endif
-                <a class="btn" href="{{ route('tts.receipt.pdf', $order->id) }}"><x-ui.icon name="download" />PDF struk</a>@if($isAdmin)<a class="btn" href="{{ route('tts.pdf', $order->id) }}"><x-ui.icon name="download" />PDF A5</a>@endif
-                @if($success)<a class="btn primary block" href="{{ route('tts.create') }}"><x-ui.icon name="plus" />Buat TTS lagi</a><a class="btn" href="{{ route('tts.show', $order->id) }}">Lihat TTS</a>@endif
-            </div>
-            @if(! $success && $isAdmin)<div class="actionbar">@include('livewire.tts.admin-actions', ['placement' => 'mobile'])</div>@elseif(! $success && $canEdit)<div class="actionbar"><a class="btn primary" href="{{ route('tts.edit', $order->id) }}">Ubah TTS</a></div>@endif
-        </div>
-        @if($success)<aside class="paper-bed desktop-only" aria-label="Tanda terima"><div class="paper"><p style="text-align:center;font-weight:600">{{ $storeName }}</p><hr><p style="text-align:center">TANDA TERIMA SERVIS</p><p class="id" style="text-align:center;font-size:17px">{{ $order->number }}</p><p style="text-align:center">{{ $order->created_at->format('d-m-Y H:i') }}</p><hr><p>{{ $order->customer_name }}</p><p>{{ $order->customer_phone }}</p><p>{{ $order->category->name }} · {{ $order->item_description }}</p><p>{{ $order->complaint }}</p><hr><p>Simpan tanda terima ini untuk pengambilan barang.</p></div></aside>@endif
-    </div>
+                <div class="work-actions desktop-only">@include('livewire.tts.admin-actions', ['placement' => 'work', 'primaryOnly' => true])</div>
+                @if($stage === 'pengecekan')<div class="approval-next"><p>Pelanggan sudah setuju lewat WA?</p><button class="btn" type="button" wire:click="startWork" wire:loading.attr="disabled" wire:target="startWork,sendInspection,saveInspection">Mulai pengerjaan</button></div>@endif
+            @else<p class="hint" style="margin-top:16px">Perubahan tahap dan penetapan teknisi dilakukan oleh admin toko.</p>@endif
+        </section>
+    @endif
+
+    @if(!$success && $isAdmin && $order->invoiced_on)<details class="support-section"><summary>Lihat rincian nota</summary><div class="support-body">@include('livewire.invoice.published')</div></details>@endif
+    @if(!$success && ($stage !== 'pengecekan' || !$isAdmin) && $order->inspectionNotes() !== '')<details class="support-section"><summary>Hasil pengecekan &amp; rencana tindakan</summary><p class="support-body" style="white-space:pre-line">{{ $order->inspectionNotes() }}</p></details>@endif
+    @if(!$success && $isAdmin && in_array($stage,['pengecekan','dikerjakan'],true))<details class="support-section"><summary>Ganti teknisi · {{ $order->technician?->name }}</summary><div class="support-body">@include('livewire.tts.technician-form')</div></details>@endif
+    <details class="support-section" @if($success) open @endif><summary>Detail barang &amp; pelanggan</summary><div class="support-body"><dl class="kv" aria-label="Barang dan customer"><dt>Barang</dt><dd>{{ $order->category->name }} · {{ $order->item_description }}</dd><dt>Keluhan</dt><dd style="white-space:pre-line">{{ $order->complaint }}</dd><dt>Customer</dt><dd>{{ $order->customer_name }}</dd><dt>Nomor HP</dt><dd>{{ $order->customer_phone }}</dd><dt>Alamat</dt><dd style="white-space:pre-line">{{ $order->customer_address ?: '—' }}</dd><dt>Dicatat oleh</dt><dd>{{ $order->creator->name }}</dd><dt>Diterima</dt><dd>{{ $order->created_at->format('d M Y, H.i') }}</dd></dl>@if(!$isAdmin && $canEdit)<a class="btn" href="{{ route('tts.edit',$order->id) }}">Ubah TTS</a>@endif</div></details>
+    @unless($success)<details class="support-section"><summary>Riwayat servis</summary><div class="support-body"><ol class="track {{ $order->inspection_started_at ? 'has-inspection' : '' }}" aria-label="Tahap servis">@foreach(['diterima' => ['Diterima',$order->created_at], ...($order->inspection_started_at ? ['pengecekan'=>['Pengecekan',$order->inspection_started_at]] : []), 'dikerjakan'=>['Dikerjakan',$order->work_started_at ?? ($order->inspection_started_at ? null : $order->assigned_at)], 'selesai'=>['Selesai',$order->invoiced_on], 'diambil'=>['Diambil',$order->picked_up_on]] as $key=>[$label,$date])<li class="{{ $key === $stage ? 'now' : ($date ? 'done' : '') }}">{{ $label }}@if($date)<time>{{ $date->format('d M Y') }}</time>@endif</li>@endforeach</ol><p class="small muted" style="margin-top:16px">Ditetapkan ke {{ $order->technician?->name ?? '—' }}{{ $order->assigned_at ? ' · '.$order->assigned_at->format('d M Y, H.i') : '' }}</p></div></details>@endunless
+    <details class="support-section"><summary>Cetak / unduh</summary><div class="support-body document-links"><a class="btn" href="{{ route('tts.print',$order->id) }}">Cetak struk</a><a class="btn" href="{{ route('tts.receipt.pdf',$order->id) }}">PDF struk</a>@if($isAdmin)<a class="btn" href="{{ route('tts.pdf',$order->id) }}">PDF A5</a>@endif</div></details>
+    @if($isAdmin && ($success || $stage !== 'pengecekan'))<div class="support-actions" style="margin-top:20px">@if($order->invoiced_on)<a class="btn" href="{{ route('tts.whatsapp',$order->id) }}">WA nota</a>@elseif(!$success && $order->inspectionNotes() !== '')<a class="btn" href="{{ route('tts.whatsapp',['id'=>$order->id,'inspection'=>1]) }}">WA hasil pengecekan</a>@else<a class="btn" href="{{ route('tts.whatsapp',$order->id) }}">WA tanda terima</a>@endif</div>@endif
+    @if(!$success && $isAdmin)<div class="actionbar">@include('livewire.tts.admin-actions',['placement'=>'mobile'])</div>@endif
     @if($isAdmin && ! $success && in_array($order->status->value, ['diterima', 'pengecekan', 'dikerjakan'], true))
         <dialog id="cancel-order" class="sheet-dialog" wire:ignore.self><div class="dialog-body"><h2>Batalkan {{ $order->number }}?</h2><p class="muted">TTS yang dibatalkan tidak masuk laporan dan tidak bisa diaktifkan lagi.</p><form class="form" wire:submit="cancel"><div class="field"><label for="cancel_reason">Alasan <span class="opt">opsional</span></label><input class="input" id="cancel_reason" wire:model="cancel_reason" maxlength="500" placeholder="Masukkan alasan pembatalan"></div><div class="dialog-actions"><button class="btn ghost" type="button" data-close>Kembali</button><button class="btn danger" type="submit" wire:loading.attr="disabled" wire:target="cancel">Batalkan TTS</button></div></form></div></dialog>
     @endif

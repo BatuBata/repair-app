@@ -1,0 +1,12 @@
+{
+  "base": "85afa1ca9203c84cd3fbe846f0635554e63843c9",
+  "revision": "sha256:7ed96549e127344168f7e206b30354b5487a3f95572cd77771d1cef8dc7be5e3",
+  "files": {
+    "app/Livewire/Tts/Detail.php": "f60bf5036973ed91ecc88bafbd5517b0e4ad066f353a6a71c5b660dfb9d39ff8",
+    "resources/views/livewire/tts/admin-actions.blade.php": "503f70f489e45e5ffb254106d8dda16ab36b4161afc9116bb19f816ab5230795",
+    "resources/views/livewire/tts/detail.blade.php": "4faed5f398f89087478fab55366395ebd0c8b34c1fd1fa09934b7bad1818d36c",
+    "resources/views/livewire/tts/technician-form.blade.php": "0755bd41e2abeb7ba1582604582100f6d6e5065480dcdee1ff592ccfdbc87b9f",
+    "tests/Feature/Invoice/InspectionTest.php": "0075d5e16b61fcd0f3d4a44194d6c8ed7cd4d570a42d24792ba1ca1500c0503d",
+    "tests/Feature/SearchSelectTest.php": "7fe06aac6f18bb8fd22ca9eb606183eed8003f917d606c183d7a686181666ed8"
+  }
+}

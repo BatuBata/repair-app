@@ -10,9 +10,12 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Livewire\Attributes\Locked;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Categories extends Component
 {
+    use WithPagination;
+
     #[Locked]
     public ?int $categoryId = null;
 
@@ -22,6 +25,13 @@ class Categories extends Component
     public string $name = '';
 
     public string $status = '';
+
+    public string $search = '';
+
+    public function updatedSearch(): void
+    {
+        $this->resetPage();
+    }
 
     public function boot(): void
     {
@@ -77,6 +87,7 @@ class Categories extends Component
             $this->findCategory($this->categoryId)->update($data);
         }
         $this->reset(['categoryId', 'mode', 'name']);
+        $this->resetPage();
         $this->status = 'Kategori berhasil disimpan.';
     }
 
@@ -99,7 +110,7 @@ class Categories extends Component
     {
         User::activeAccount(admin: true);
 
-        return view('livewire.settings.categories', ['categories' => Category::query()->orderBy('name')->get()])
+        return view('livewire.settings.categories', ['categories' => Category::query()->when(trim($this->search) !== '', fn ($query) => $query->where(fn ($query) => $query->where('name', 'like', '%'.trim($this->search).'%')))->orderBy('name')->orderBy('id')->paginate(20)])
             ->layout('layouts.app', ['title' => 'Kategori']);
     }
 }

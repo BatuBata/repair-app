@@ -23,16 +23,18 @@
     @if($status)<x-ui.notice type="success">{{ $status }}</x-ui.notice>@endif
     @if($errors->any())<x-ui.notice type="error" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">Periksa kembali isian di bawah.</x-ui.notice>@endif
     @if($mode === 'list')
-        <table class="table"><thead><tr><th class="act">Aksi</th><th>Nama kategori</th><th>Status</th></tr></thead><tbody>
+        <x-ui.index-search label="Cari kategori" placeholder="Cari nama kategori" :total="$categories->total()" unit="kategori" wire:model.live.debounce.300ms="search" />
+    <table class="table"><thead><tr><th class="act">Aksi</th><th>Nama kategori</th><th>Status</th></tr></thead><tbody>
         @forelse($categories as $category)
             <tr wire:key="category-{{ $category->id }}"><td class="act"><x-ui.row-actions :id="'category-actions-'.$category->id" :label="$category->name">
                 <button type="button" role="menuitem" onclick="Livewire.find(@js($this->getId())).edit({{ $category->id }})"><x-ui.icon name="settings" />Ubah kategori</button>
                 <button class="danger" type="button" role="menuitem" onclick="if (confirm(@js(($category->is_active ? 'Nonaktifkan' : 'Aktifkan').' kategori '.$category->name.'?'))) Livewire.find(@js($this->getId())).toggleActive({{ $category->id }})"><x-ui.icon name="ban" />{{ $category->is_active ? 'Nonaktifkan' : 'Aktifkan' }}</button>
             </x-ui.row-actions></td><td class="c-who">{{ $category->name }}</td><td class="c-meta"><span class="pill">{{ $category->is_active ? 'Aktif' : 'Nonaktif' }}</span></td></tr>
         @empty
-            <tr><td colspan="3"><div class="empty">Belum ada kategori.</div></td></tr>
+            <tr><td colspan="3"><div class="empty">{{ $search !== '' ? 'Tidak ada kategori yang cocok.' : 'Belum ada kategori.' }}</div></td></tr>
         @endforelse
         </tbody></table>
+    {{ $categories->onEachSide(1)->links('components.ui.pagination', ['livewire' => true]) }}
         <div class="actionbar"><button class="btn primary" type="button" wire:click="create">Tambah kategori</button></div>
     @else
         <form class="form" wire:submit="save" novalidate>

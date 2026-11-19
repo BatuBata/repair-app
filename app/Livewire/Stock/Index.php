@@ -8,10 +8,20 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
+    use WithPagination;
+
     public string $status = '';
+
+    public string $search = '';
+
+    public function updatedSearch(): void
+    {
+        $this->resetPage();
+    }
 
     public function boot(): void
     {
@@ -34,7 +44,7 @@ class Index extends Component
     {
         User::activeAccount(admin: true);
 
-        return view('livewire.stock.index', ['products' => Product::query()->orderBy('name')->orderBy('id')->get()])
+        return view('livewire.stock.index', ['products' => Product::query()->when(trim($this->search) !== '', fn ($query) => $query->where(fn ($query) => $query->where('name', 'like', '%'.trim($this->search).'%')))->orderBy('name')->orderBy('id')->paginate(20)])
             ->layout('layouts.app', ['title' => 'Stok']);
     }
 }

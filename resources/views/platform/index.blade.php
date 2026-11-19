@@ -22,7 +22,7 @@
         </header>
         <main class="sheet platform-sheet">
             <div class="title-row">
-                <div><h1>Kelola toko</h1><p class="sub"><strong>{{ $tenants->where('is_active', true)->count() }} aktif</strong> dari {{ $tenants->count() }} toko.</p></div>
+                <div><h1>Kelola toko</h1><p class="sub"><strong>{{ $activeTenants }} aktif</strong> dari {{ $totalTenants }} toko.</p></div>
             </div>
 
             @if(session('status'))<x-ui.notice type="success">{{ session('status') }}</x-ui.notice>@endif
@@ -30,9 +30,13 @@
 
             <div class="grid platform-grid">
                 <section class="span-8" aria-labelledby="tenant-list-title">
-                    <div class="section-head"><h2 id="tenant-list-title">Client</h2><span class="meta num">{{ $tenants->count() }} toko</span></div>
+                    <div class="section-head"><h2 id="tenant-list-title">Client</h2><span class="meta num">{{ $tenants->total() }} toko</span></div>
+                    <form method="GET" action="{{ route('platform.index') }}" class="index-search-form">
+                        <x-ui.index-search label="Cari toko" placeholder="Cari toko, owner, atau username" :total="$tenants->total()" unit="toko" name="search" :value="$search" />
+                        <button class="btn sm" type="submit">Cari</button>
+                    </form>
                     @if($tenants->isEmpty())
-                        <div class="empty"><strong>Belum ada toko.</strong><span>Tambahkan client pertama melalui form.</span></div>
+                        <div class="empty"><strong>{{ $search !== '' ? 'Tidak ada toko yang cocok.' : 'Belum ada toko.' }}</strong><span>Tambahkan client pertama melalui form.</span></div>
                     @else
                         <table class="table platform-table">
                             <thead><tr><th>Aksi</th><th>Toko</th><th>Owner</th><th>Dibuat</th><th>Status</th></tr></thead>
@@ -50,6 +54,7 @@
                             </tbody>
                         </table>
                     @endif
+                    {{ $tenants->onEachSide(1)->links('components.ui.pagination') }}
                 </section>
 
                 <section class="panel span-4 platform-create" aria-labelledby="create-tenant-title">

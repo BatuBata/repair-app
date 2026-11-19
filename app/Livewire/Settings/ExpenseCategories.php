@@ -6,12 +6,16 @@ use App\Models\ExpenseCategory;
 use App\Models\User;
 use App\Support\TenantContext;
 use Illuminate\Contracts\View\View;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Validation\Rule;
 use Livewire\Attributes\Locked;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class ExpenseCategories extends Component
 {
+    use WithPagination;
+
     #[Locked]
     public ?int $categoryId = null;
 
@@ -21,6 +25,11 @@ class ExpenseCategories extends Component
     public string $name = '';
 
     public string $search = '';
+
+    public function updatedSearch(): void
+    {
+        $this->resetPage();
+    }
 
     public function boot(): void
     {
@@ -66,6 +75,7 @@ class ExpenseCategories extends Component
         $category = $this->categoryId === null ? new ExpenseCategory : $this->customExpenseCategory($this->categoryId);
         $category->fill($data)->save();
         $this->cancel();
+        $this->resetPage();
         session()->flash('expense_category_status', 'Kategori berhasil disimpan.');
     }
 
@@ -90,6 +100,7 @@ class ExpenseCategories extends Component
     {
         User::activeAccount(admin: true);
         $this->customExpenseCategory($id)->delete();
+        $this->resetPage();
         session()->flash('expense_category_status', 'Kategori tambahan dihapus. Pengeluaran lama tetap tersimpan.');
     }
 
@@ -108,7 +119,11 @@ class ExpenseCategories extends Component
         $defaults = collect(ExpenseCategory::defaultNames())->map(fn ($name) => ['id' => null, 'name' => $name, 'is_default' => true, 'is_active' => $configured->firstWhere('name', $name)->is_active ?? true]);
         $custom = $configured->reject(fn ($category) => $category->isDefault())->map(fn ($category) => ['id' => $category->id, 'name' => $category->name, 'is_default' => false, 'is_active' => $category->is_active]);
 
-        return view('livewire.settings.expense-categories', ['categories' => $defaults->concat($custom)->filter(fn ($category) => str_contains(mb_strtolower($category['name']), mb_strtolower(trim($this->search))))])
+        $rows = $defaults->concat($custom)->filter(fn ($row) => str_contains(mb_strtolower($row['name']), mb_strtolower(trim($this->search))))->values();
+        $page = $this->getPage();
+        $categories = new LengthAwarePaginator($rows->forPage($page, 20)->values(), $rows->count(), 20, $page);
+
+        return view('livewire.settings.expense-categories', compact('categories'))
             ->layout('layouts.app', ['title' => 'Kategori pengeluaran']);
     }
 }

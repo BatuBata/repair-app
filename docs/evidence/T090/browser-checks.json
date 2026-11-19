@@ -1,0 +1,210 @@
+{
+  "stockSearchReset": [
+    {
+      "overflow": false,
+      "rows": 1,
+      "summary": "Menampilkan 1–1 dari 1 hasil",
+      "url": "http://127.0.0.1:8193/stok"
+    }
+  ],
+  "listings": [
+    {
+      "initial": {
+        "overflow": false,
+        "rows": 20,
+        "search": "Cari nomor, nama, atau HP",
+        "summary": "Menampilkan 1–20 dari 25 hasil",
+        "url": "/tts"
+      },
+      "next": {
+        "rows": 5,
+        "summary": "Menampilkan 21–25 dari 25 hasil",
+        "url": "http://127.0.0.1:8193/tts?page=2"
+      }
+    },
+    {
+      "initial": {
+        "overflow": false,
+        "rows": 20,
+        "search": "Cari nama atau nomor HP",
+        "summary": "Menampilkan 1–20 dari 25 hasil",
+        "url": "/pelanggan"
+      },
+      "next": {
+        "rows": 5,
+        "summary": "Menampilkan 21–25 dari 25 hasil",
+        "url": "http://127.0.0.1:8193/pelanggan?page=2"
+      }
+    },
+    {
+      "initial": {
+        "overflow": false,
+        "rows": 20,
+        "search": "Cari nomor, nama, atau HP",
+        "summary": "Menampilkan 1–20 dari 25 hasil",
+        "url": "/penjualan"
+      },
+      "next": {
+        "rows": 5,
+        "summary": "Menampilkan 21–25 dari 25 hasil",
+        "url": "http://127.0.0.1:8193/penjualan?page=2"
+      }
+    },
+    {
+      "initial": {
+        "overflow": false,
+        "rows": 20,
+        "search": "Cari kategori atau keterangan",
+        "summary": "Menampilkan 1–20 dari 25 hasil",
+        "url": "/pengeluaran"
+      },
+      "next": {
+        "rows": 5,
+        "summary": "Menampilkan 21–25 dari 25 hasil",
+        "url": "http://127.0.0.1:8193/pengeluaran?page=2"
+      }
+    },
+    {
+      "initial": {
+        "overflow": false,
+        "rows": 20,
+        "search": "Cari nama atau username",
+        "summary": "Menampilkan 1–20 dari 26 hasil",
+        "url": "/pengaturan/pengguna"
+      },
+      "next": {
+        "rows": 6,
+        "summary": "Menampilkan 21–26 dari 26 hasil",
+        "url": "http://127.0.0.1:8193/pengaturan/pengguna?page=2"
+      }
+    },
+    {
+      "initial": {
+        "overflow": false,
+        "rows": 20,
+        "search": "Cari nama kategori",
+        "summary": "Menampilkan 1–20 dari 26 hasil",
+        "url": "/pengaturan/kategori"
+      },
+      "next": {
+        "rows": 6,
+        "summary": "Menampilkan 21–26 dari 26 hasil",
+        "url": "http://127.0.0.1:8193/pengaturan/kategori?page=2"
+      }
+    },
+    {
+      "initial": {
+        "overflow": false,
+        "rows": 20,
+        "search": "Cari nama bank",
+        "summary": "Menampilkan 1–20 dari 34 hasil",
+        "url": "/pengaturan/bank"
+      },
+      "next": {
+        "rows": 14,
+        "summary": "Menampilkan 21–34 dari 34 hasil",
+        "url": "http://127.0.0.1:8193/pengaturan/bank?page=2"
+      }
+    },
+    {
+      "initial": {
+        "overflow": false,
+        "rows": 20,
+        "search": "Cari nama kategori",
+        "summary": "Menampilkan 1–20 dari 29 hasil",
+        "url": "/pengaturan/kategori-pengeluaran"
+      },
+      "next": {
+        "rows": 9,
+        "summary": "Menampilkan 21–29 dari 29 hasil",
+        "url": "http://127.0.0.1:8193/pengaturan/kategori-pengeluaran?page=2"
+      }
+    },
+    {
+      "initial": {
+        "overflow": false,
+        "rows": 20,
+        "search": "Cari nomor atau keterangan transaksi",
+        "summary": "Menampilkan 1–20 dari 50 hasil",
+        "url": "/laporan"
+      },
+      "next": {
+        "rows": 20,
+        "summary": "Menampilkan 21–40 dari 50 hasil",
+        "url": "http://127.0.0.1:8193/laporan?page=2"
+      }
+    }
+  ],
+  "mobile": [
+    {
+      "scrollWidth": 375,
+      "search": 343,
+      "summary": "Menampilkan 21–25 dari 25 hasil",
+      "url": "/tts",
+      "width": 375
+    },
+    {
+      "scrollWidth": 375,
+      "search": 343,
+      "summary": "Menampilkan 21–25 dari 25 hasil",
+      "url": "/pelanggan",
+      "width": 375
+    },
+    {
+      "scrollWidth": 375,
+      "search": 343,
+      "summary": "Menampilkan 21–25 dari 25 hasil",
+      "url": "/penjualan",
+      "width": 375
+    },
+    {
+      "scrollWidth": 375,
+      "search": 343,
+      "summary": "Menampilkan 21–25 dari 25 hasil",
+      "url": "/pengeluaran",
+      "width": 375
+    },
+    {
+      "scrollWidth": 375,
+      "search": 343,
+      "summary": "Menampilkan 21–26 dari 26 hasil",
+      "url": "/pengaturan/pengguna",
+      "width": 375
+    },
+    {
+      "scrollWidth": 375,
+      "search": 343,
+      "summary": "Menampilkan 21–26 dari 26 hasil",
+      "url": "/pengaturan/kategori",
+      "width": 375
+    },
+    {
+      "scrollWidth": 375,
+      "search": 343,
+      "summary": "Menampilkan 21–34 dari 34 hasil",
+      "url": "/pengaturan/bank",
+      "width": 375
+    },
+    {
+      "scrollWidth": 375,
+      "search": 343,
+      "summary": "Menampilkan 21–29 dari 29 hasil",
+      "url": "/pengaturan/kategori-pengeluaran",
+      "width": 375
+    },
+    {
+      "scrollWidth": 375,
+      "search": 305,
+      "summary": "Menampilkan 21–40 dari 50 hasil",
+      "url": "/laporan",
+      "width": 375
+    }
+  ],
+  "platform": {
+    "total": 26,
+    "search": "Client QA",
+    "matched": 24,
+    "page2": 4,
+    "preservedQuery": true
+  }
+}

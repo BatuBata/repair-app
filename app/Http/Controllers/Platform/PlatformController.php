@@ -58,18 +58,24 @@ class PlatformController extends Controller
         return redirect()->route('platform.login');
     }
 
-    public function index(): View
+    public function index(Request $request): View
     {
-        $tenants = Tenant::query()->orderBy('created_at')->orderBy('id')->get();
+        $search = trim($request->validate(['search' => ['nullable', 'string', 'max:100']])['search'] ?? '');
+        $totalTenants = Tenant::count();
+        $activeTenants = Tenant::where('is_active', true)->count();
+        $tenants = Tenant::query()->when($search !== '', fn ($query) => $query->where(fn ($query) => $query
+            ->where('name', 'like', '%'.$search.'%')
+            ->orWhereIn('id', User::withoutGlobalScope('tenant')->select('tenant_id')->where('role', UserRole::Admin)->where(fn ($query) => $query->where('name', 'like', '%'.$search.'%')->orWhere('username', 'like', '%'.$search.'%')))))
+            ->orderBy('created_at')->orderBy('id')->paginate(20)->withQueryString();
         $owners = User::withoutGlobalScope('tenant')
-            ->whereIn('tenant_id', $tenants->modelKeys())
+            ->whereIn('tenant_id', $tenants->getCollection()->modelKeys())
             ->where('role', UserRole::Admin)
             ->orderBy('id')
             ->get(['tenant_id', 'name', 'username'])
             ->unique('tenant_id')
             ->keyBy('tenant_id');
 
-        return view('platform.index', compact('tenants', 'owners'));
+        return view('platform.index', compact('tenants', 'owners', 'search', 'totalTenants', 'activeTenants'));
     }
 
     public function store(Request $request, CreateTenant $createTenant): RedirectResponse

@@ -16,10 +16,12 @@ use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
 use Livewire\Attributes\Locked;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
     use PasswordValidationRules;
+    use WithPagination;
 
     #[Locked]
     public ?int $userId = null;
@@ -40,6 +42,13 @@ class Index extends Component
     public string $password_confirmation = '';
 
     public string $status = '';
+
+    public string $search = '';
+
+    public function updatedSearch(): void
+    {
+        $this->resetPage();
+    }
 
     public function boot(): void
     {
@@ -120,6 +129,7 @@ class Index extends Component
         }
         $this->reset('password', 'password_confirmation');
         $this->mode = 'list';
+        $this->resetPage();
         $this->status = 'Pengguna berhasil disimpan.';
     }
 
@@ -164,7 +174,7 @@ class Index extends Component
         User::activeAccount(admin: true);
 
         return view('livewire.users.index', [
-            'users' => User::orderBy('name')->get(),
+            'users' => User::query()->when(trim($this->search) !== '', fn ($query) => $query->where(fn ($query) => $query->where('name', 'like', '%'.trim($this->search).'%')->orWhere('username', 'like', '%'.trim($this->search).'%')))->orderBy('name')->orderBy('id')->paginate(20),
             'storeName' => StoreSetting::query()->value('name') ?: app(TenantContext::class)->tenant()->name,
         ])->layout('layouts.app', ['title' => 'Pengguna']);
     }

@@ -697,6 +697,8 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 
 | D-52 | Perbaiki dua daftar dashboard Siap diserahkan dan Garansi perlu dihubungi: kartu mengikuti isi, baris tidak ditarik memenuhi kartu sebelah, tombolaksi dan teks sejajar atas; nama/keterangan panjang tetap terbaca HP/desktop. Menu existing diberi ikon tanpa mengubah aksi/data/izin | User menerima laporan dan melaporkan dashboard berantakan pada dua panel melalui screenshot | User | 19 Nov 2026; main lokal tanpa push/deploy |
 
+| D-53 | Seragamkan semua daftar index: pencarian, 20 baris per halaman, jumlah hasil dan navigasi yang konsisten termasuk master, toko platform dan transaksi laporan; filter/aksi existing tetap, ringkasan laporan tidak dibatasi halaman | User meminta pagination semua tabel index dan pencarian yang belum tersedia | User | 19 Nov 2026; main lokal tanpa push/deploy |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

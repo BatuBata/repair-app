@@ -627,3 +627,23 @@ dialog.sheet-dialog { background:var(--surface); color:var(--text); }
   .sheet:has(.actionbar) { padding-bottom:calc(var(--nav-h) + 112px); }
 }
 .dialog-body h2 { font-weight:600; }
+
+/* Shared index search and pagination, including ordinary platform GET links. */
+.index-toolbar { margin:16px 0 12px; flex-wrap:wrap; }
+.index-toolbar .search { width:min(400px,100%); flex:1 1 240px; max-width:480px; }
+.index-toolbar .search input { height:44px; }
+.index-toolbar .total { white-space:nowrap; }
+.index-pagination { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; padding:16px 0; border-top:1px solid var(--rule); }
+.index-page-summary { margin:0; font-size:var(--fs-small); color:var(--muted); font-variant-numeric:tabular-nums; }
+.index-page-controls { display:flex; flex-wrap:wrap; align-items:center; gap:4px; }
+.index-page-controls .btn { min-width:36px; min-height:36px; padding:4px 8px; }
+.index-page-controls [aria-disabled="true"] { opacity:.4; cursor:default; }
+.index-page-gap { padding:0 4px; color:var(--muted); }
+@media(max-width:639.98px) {
+    .index-toolbar .total { display:block; margin-left:0; font-size:var(--fs-small); }
+    .index-page-controls .index-page-number,.index-page-gap { display:none; }
+    .index-page-controls .btn { min-width:44px; min-height:44px; }
+}
+
+.index-search-form { display:flex; align-items:center; gap:8px; }
+.index-search-form .index-toolbar { flex:1; min-width:0; }

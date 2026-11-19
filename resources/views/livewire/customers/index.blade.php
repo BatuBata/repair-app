@@ -11,7 +11,7 @@
             <div><button class="btn ghost" type="button" wire:click="cancel">Batal</button><button class="btn primary" type="submit" wire:loading.attr="disabled">Simpan pelanggan</button></div>
         </form>
     @else
-        <div class="toolbar"><label class="field"><span class="sr-only">Cari pelanggan</span><input class="input" type="search" wire:model.live.debounce.300ms="search" placeholder="Cari nama atau nomor HP"></label></div>
+        <x-ui.index-search label="Cari pelanggan" placeholder="Cari nama atau nomor HP" :total="$customers->total()" unit="pelanggan" wire:model.live.debounce.300ms="search" />
         <table class="table"><thead><tr><th class="act">Aksi</th><th>Nama</th><th>Nomor HP</th><th>Alamat</th></tr></thead><tbody>
             @forelse($customers as $customer)
                 <tr wire:key="customer-{{ $customer->id }}"><td class="act"><x-ui.row-actions :id="'customer-actions-'.$customer->id" :label="$customer->name">
@@ -23,6 +23,6 @@
                 <tr><td colspan="4"><div class="empty">Belum ada pelanggan yang cocok.</div></td></tr>
             @endforelse
         </tbody></table>
-        {{ $customers->links() }}
+    {{ $customers->onEachSide(1)->links('components.ui.pagination', ['livewire' => true]) }}
     @endif
 </div>

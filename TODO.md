@@ -109,6 +109,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T087 | Diskon nominal tambah penjualan dan output akhir | developer / 6.1-sol | medium / medium | — | — | done |
 | T088 | Rombak laporan dengan panel terbuka | developer / 6.1-sol | medium / low | — | — | done |
 | T089 | Rapikan daftar siap diserahkan dan garansi dashboard | developer / 6.1-sol | easy / low | — | — | done |
+| T090 | Seragamkan pencarian dan pagination semua daftar index | developer / 6.1-sol | medium / medium | — | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -184,14 +185,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:fae0dbc456ed91122078d02c296fc74af56c901e9eeb8f9f4b034a8f9f96af8a",
+    "prd_revision": "sha256:f509653c78171eec44475cb863caad86653f5d53b18778fedf9a86275ad621c9",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
-      "stop_after_tasks": ["T089"],
-      "source_ref": "User19Nov2026 D52 dashboard selesai lokal dengan independentQA PASS; tanpa push/deploy.",
+      "stop_after_tasks": ["T090"],
+      "source_ref": "User19Nov2026 D53 selesai lokal main, independentQA PASS; tanpa push/deploy.",
       "phase_history": [
         {
           "state": "paused",
@@ -8024,6 +8025,75 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T089/empty-mobile.jpg"
         ],
         "summary": "DashboardTest15PASS192assert/build399ms PASS. Before5+1 card445/row351 action-textgap134.5; aftercard442/180, gap0. CUA375/768/1024/1440+long/mixed/empty/menuKeyboard/markContacted/focus PASS, independent source/geometry/screenshotQA PASS. No backend/schema/dependency/operatorDB/push/deploy."
+      }
+    },
+    {
+      "id": "T090",
+      "title": "Seragamkan pencarian dan pagination semua daftar index",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "fullstack",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md \u00a720.3 D-53",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "11 daftar SQL dan koleksi virtual; jaga isolasi tenant dan agregat laporan.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Perubahan listing lintas Livewire dan controller dengan QA regresi.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "app/Livewire/**",
+        "app/Http/Controllers/Platform/PlatformController.php",
+        "resources/views/**",
+        "resources/css/**",
+        "tests/Feature/**",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T090/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "11 index memiliki pencarian, 20 baris per halaman, jumlah hasil dan pagination konsisten; pencarian/filter mengembalikan halaman awal, urutan stabil, hasil kosong jelas.",
+        "Aksi existing, scope tenant dan akses tetap; total laporan tidak bergantung halaman; ringkasan utama tidak dibatasi pencarian transaksi.",
+        "Pemeriksaan page2/search/reset/tenant/CRUD dan browser desktop/HP serta QA independen PASS; no push/deploy."
+      ],
+      "verification_plan": [
+        "Feature tests dengan >20 fixture per daftar, filter dan tenantlain; browser pencarian dan navigasi desktop/HP; build dan QA independen."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T090/README.md",
+        "revision": "sha256:f68e052bc637fc5448ac23bd7ec36ffadc511dab0c9a48e63d6429613ae9de3e",
+        "checked_revision": "sha256:f68e052bc637fc5448ac23bd7ec36ffadc511dab0c9a48e63d6429613ae9de3e",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T090/README.md",
+          "docs/evidence/T090/source-manifest.json",
+          "docs/evidence/T090/independent-qa.md",
+          "docs/evidence/T090/browser-checks.json",
+          "docs/evidence/T090/desktop-page2.jpg",
+          "docs/evidence/T090/mobile-pagination.jpg",
+          "docs/evidence/T090/platform-search-page2.jpg",
+          "docs/evidence/T090/platform-mobile.jpg"
+        ],
+        "summary": "11 index pagination20/search seragam. Regression282PASS1guardedMySQLskip3100assert; independent6PASS126assert/source26hash/visualPASS. CUA10Livewire+platform desktop1280/HP375,page2/search/reset/querystring,total/report preserved. Build386ms/Pint/viewcache/diffcheckPASS. No schema/deps/operatorDB/push/deploy."
       }
     }
   ]

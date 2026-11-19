@@ -48,7 +48,7 @@ class Index extends Component
             ->when($this->status !== '', fn ($query) => $query->where('status', $this->status))
             ->when($search !== '', fn ($query) => $query->where(fn ($query) => $query
                 ->where('number', 'like', '%'.$search.'%')->orWhere('customer_name', 'like', '%'.$search.'%')->orWhere('customer_phone', 'like', '%'.$phone.'%')))
-            ->orderByDesc('id')->paginate(30);
+            ->orderByDesc('id')->paginate(20);
 
         return view('livewire.tts.index', compact('orders', 'user'))->layout('layouts.app', ['title' => 'Servis']);
     }

@@ -83,8 +83,9 @@
                 </div>
             </section>
             <section class="detail-panel report-transactions" aria-labelledby="report-transactions">
-                <div class="section-head"><h2 id="report-transactions"><x-ui.icon name="receipt" />Transaksi</h2><span class="meta">{{ count($rows) }} transaksi</span></div>
+                <div class="section-head"><h2 id="report-transactions"><x-ui.icon name="receipt" />Transaksi</h2><span class="meta">{{ $rows->total() }} transaksi</span></div>
                 <p class="small muted report-filter-hint">Filter jenis, metode, dan bank hanya berlaku untuk daftar transaksi ini.</p>
+                <x-ui.index-search label="Cari transaksi" placeholder="Cari nomor atau keterangan transaksi" :total="$rows->total()" unit="transaksi" wire:model.live.debounce.300ms="search" />
                 <div class="report-transactions-toolbar">
                 <div class="tabs" role="group" aria-label="Jenis transaksi">
                     @foreach(['semua' => 'Semua', 'servis' => 'Servis', 'jual' => 'Penjualan', 'keluar' => 'Pengeluaran'] as $value => $label)<button type="button" wire:click="$set('type', '{{ $value }}')" aria-pressed="{{ $type === $value ? 'true' : 'false' }}">{{ $label }}</button>@endforeach
@@ -99,7 +100,8 @@
                         <tr wire:key="report-{{ $row['key'] }}"><td class="act"><button type="button" class="btn sm report-detail" id="report-view-{{ $row['key'] }}" wire:click="$set('detail', '{{ $row['key'] }}')" aria-label="Rincian {{ $row['number'] }}"><x-ui.icon name="eye" /></button></td><td class="desktop-only">{{ \Carbon\CarbonImmutable::parse($row['date'])->translatedFormat('j M') }}</td><td class="report-number">@if($row['url'])<a href="{{ $row['url'] }}">{{ $row['number'] }}</a>@else{{ $row['number'] }}@endif</td><td class="desktop-only">{{ ['servis' => 'Servis', 'jual' => 'Penjualan', 'keluar' => 'Pengeluaran'][$row['type']] }}</td><td class="report-description">{{ $row['description'] }}@if($row['type'] !== 'keluar')<span class="small muted">{{ $row['type'] === 'servis' && $row['amount'] === '0' ? 'Gratis' : \App\Support\Payment::label($row['payment_method'], $row['payment_bank']) }}</span>@endif<span class="mobile-only small muted">{{ \Carbon\CarbonImmutable::parse($row['date'])->format('d/m/Y') }} · {{ ['servis' => 'Servis', 'jual' => 'Penjualan', 'keluar' => 'Pengeluaran'][$row['type']] }}</span></td><td class="n report-amount">{{ $displayMoney($row['amount']) }}</td><td class="n desktop-only">{{ $displayMoney($row['cost']) }}</td><td class="n desktop-only">{{ $displayMoney($row['profit']) }}</td></tr>
                     @empty<tr><td colspan="8" class="report-empty"><div class="empty"><strong>Tidak ada transaksi</strong><p>Ubah tanggal atau jenis transaksi.</p></div></td></tr>@endforelse
                 </tbody><tfoot><tr><td colspan="5">Total {{ $type === 'semua' ? 'semua transaksi' : ['servis' => 'servis', 'jual' => 'penjualan', 'keluar' => 'pengeluaran'][$type] }}</td><td class="n desktop-only">{{ $displayMoney($totals['amount']) }}</td><td class="n mobile-only">{{ $type === 'semua' ? 'Laba bersih ' : '' }}{{ $displayMoney($type === 'semua' ? $totals['profit'] : $totals['amount']) }}</td><td class="n desktop-only">{{ $displayMoney($totals['cost']) }}</td><td class="n desktop-only">{{ $type === 'semua' ? 'Laba bersih ' : '' }}{{ $displayMoney($totals['profit']) }}</td></tr></tfoot></table>
-                <p class="small muted report-note">Jumlah pengeluaran bertanda minus. Laba total seluruh transaksi sama dengan laba bersih.</p>
+                {{ $rows->onEachSide(1)->links('components.ui.pagination', ['livewire' => true]) }}
+                <p class="small muted report-note">Jumlah pengeluaran bertanda minus. Total tabel mencakup seluruh hasil pencarian dan filter, bukan hanya halaman ini.</p>
             </section>
         </div>
         @if($selected)

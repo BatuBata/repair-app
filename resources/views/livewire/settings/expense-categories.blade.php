@@ -17,7 +17,7 @@
         </form>
     @else
         <p class="small muted" style="margin:16px 0">Kategori bawaan hanya bisa diaktifkan/nonaktifkan. Kategori tambahan bisa diedit dan dihapus. Pengaturan toko lain serta pengeluaran lama tetap sama.</p>
-        <div class="field" style="max-width:560px;margin:16px 0"><label for="expense-category-search">Cari kategori pengeluaran</label><input class="input" id="expense-category-search" type="search" wire:model.live="search" placeholder="Cari nama kategori"></div>
+        <x-ui.index-search label="Cari kategori" placeholder="Cari nama kategori" :total="$categories->total()" unit="kategori" wire:model.live.debounce.300ms="search" />
         <table class="table"><thead><tr><th class="act">Aksi</th><th>Nama kategori</th><th>Jenis</th><th>Status</th></tr></thead><tbody>
             @forelse($categories as $category)
                 <tr wire:key="expense-category-{{ $category['name'] }}"><td class="act"><x-ui.row-actions :id="'expense-category-actions-'.($loop->index)" :label="$category['name']">
@@ -33,5 +33,6 @@
                 <tr><td colspan="4"><div class="empty">Kategori tidak ditemukan.</div></td></tr>
             @endforelse
         </tbody></table>
+    {{ $categories->onEachSide(1)->links('components.ui.pagination', ['livewire' => true]) }}
     @endif
 </div>

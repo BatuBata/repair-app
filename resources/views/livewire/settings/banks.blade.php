@@ -17,7 +17,8 @@
         </form>
     @else
         <p class="small muted" style="margin:16px 0">Bank bawaan hanya bisa diaktifkan/nonaktifkan. Bank tambahan bisa diedit dan dihapus. Pengaturan toko lain serta pembayaran lama tetap sama.</p>
-        <table class="table"><thead><tr><th class="act">Aksi</th><th>Nama bank</th><th>Jenis</th><th>Status</th></tr></thead><tbody>
+        <x-ui.index-search label="Cari bank" placeholder="Cari nama bank" :total="$banks->total()" unit="bank" wire:model.live.debounce.300ms="search" />
+    <table class="table"><thead><tr><th class="act">Aksi</th><th>Nama bank</th><th>Jenis</th><th>Status</th></tr></thead><tbody>
             @foreach($banks as $bank)
                 <tr wire:key="bank-{{ $bank['name'] }}"><td class="act"><x-ui.row-actions :id="'bank-actions-'.($loop->index)" :label="$bank['name']">
                     @if($bank['is_default'])
@@ -30,5 +31,6 @@
                 </x-ui.row-actions></td><td class="c-who">{{ $bank['name'] }}</td><td class="c-meta">{{ $bank['is_default'] ? 'Bawaan' : 'Tambahan toko' }}</td><td class="c-st"><span class="pill">{{ $bank['is_active'] ? 'Aktif' : 'Nonaktif' }}</span></td></tr>
             @endforeach
         </tbody></table>
+    {{ $banks->onEachSide(1)->links('components.ui.pagination', ['livewire' => true]) }}
     @endif
 </div>

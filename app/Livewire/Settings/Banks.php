@@ -7,12 +7,16 @@ use App\Models\User;
 use App\Support\Payment;
 use App\Support\TenantContext;
 use Illuminate\Contracts\View\View;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Validation\Rule;
 use Livewire\Attributes\Locked;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Banks extends Component
 {
+    use WithPagination;
+
     #[Locked]
     public ?int $bankId = null;
 
@@ -20,6 +24,13 @@ class Banks extends Component
     public bool $editing = false;
 
     public string $name = '';
+
+    public string $search = '';
+
+    public function updatedSearch(): void
+    {
+        $this->resetPage();
+    }
 
     public function boot(): void
     {
@@ -65,6 +76,7 @@ class Banks extends Component
         $bank = $this->bankId === null ? new Bank : $this->customBank($this->bankId);
         $bank->fill($data)->save();
         $this->cancel();
+        $this->resetPage();
         session()->flash('bank_status', 'Bank berhasil disimpan.');
     }
 
@@ -89,6 +101,7 @@ class Banks extends Component
     {
         User::activeAccount(admin: true);
         $this->customBank($id)->delete();
+        $this->resetPage();
         session()->flash('bank_status', 'Bank tambahan dihapus. Pembayaran lama tetap tersimpan.');
     }
 
@@ -107,7 +120,11 @@ class Banks extends Component
         $defaults = collect(Payment::BANKS)->map(fn ($name) => ['id' => null, 'name' => $name, 'is_default' => true, 'is_active' => $configured->firstWhere('name', $name)->is_active ?? true]);
         $custom = $configured->reject(fn ($bank) => $bank->isDefault())->map(fn ($bank) => ['id' => $bank->id, 'name' => $bank->name, 'is_default' => false, 'is_active' => $bank->is_active]);
 
-        return view('livewire.settings.banks', ['banks' => $defaults->concat($custom)])
+        $rows = $defaults->concat($custom)->filter(fn ($row) => str_contains(mb_strtolower($row['name']), mb_strtolower(trim($this->search))))->values();
+        $page = $this->getPage();
+        $banks = new LengthAwarePaginator($rows->forPage($page, 20)->values(), $rows->count(), 20, $page);
+
+        return view('livewire.settings.banks', compact('banks'))
             ->layout('layouts.app', ['title' => 'Bank']);
     }
 }

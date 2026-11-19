@@ -7,12 +7,16 @@ use App\Services\Reports\Report;
 use App\Support\Payment;
 use Brick\Math\BigInteger;
 use Illuminate\Contracts\View\View;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
+    use WithPagination;
+
     public string $from;
 
     public string $to;
@@ -26,6 +30,8 @@ class Index extends Component
     public int $chartPage = 0;
 
     public ?string $detail = null;
+
+    public string $search = '';
 
     public function boot(): void
     {
@@ -51,13 +57,15 @@ class Index extends Component
             default => $today->startOfMonth()->toDateString(),
         };
         $this->chartPage = 0;
+        $this->resetPage();
         $this->detail = null;
     }
 
     public function updated(string $property): void
     {
         User::activeAccount(admin: true);
-        if (in_array($property, ['from', 'to', 'type', 'payment_method', 'payment_bank'], true)) {
+        if (in_array($property, ['from', 'to', 'type', 'payment_method', 'payment_bank', 'search'], true)) {
+            $this->resetPage();
             $this->chartPage = 0;
             $this->detail = null;
         }
@@ -94,11 +102,16 @@ class Index extends Component
             if ($this->payment_bank !== 'semua' && $row['payment_bank'] !== $this->payment_bank) {
                 continue;
             }
+            if (trim($this->search) !== '' && ! str_contains(mb_strtolower($row['number'].' '.$row['description']), mb_strtolower(trim($this->search)))) {
+                continue;
+            }
             $rows[] = $row;
             foreach ($totals as $key => $total) {
                 $totals[$key] = (string) BigInteger::of($total)->plus($row[$key]);
             }
         }
+
+        $rows = new LengthAwarePaginator(array_slice($rows, ($this->getPage() - 1) * 20, 20), count($rows), 20, $this->getPage());
 
         return view('livewire.reports.index', ['report' => $report, 'rows' => $rows, 'totals' => $totals, 'selected' => $selected, 'filterErrors' => $filters->errors(), 'paymentMethods' => Payment::methodOptions(all: true), 'paymentBanks' => $paymentBanks])->layout('layouts.app', ['title' => 'Laporan']);
     }

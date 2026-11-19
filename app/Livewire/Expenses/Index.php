@@ -12,9 +12,12 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Livewire\Attributes\Locked;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
+    use WithPagination;
+
     #[Locked]
     public ?int $expenseId = null;
 
@@ -43,9 +46,23 @@ class Index extends Component
         $this->to = now()->toDateString();
     }
 
+    public string $search = '';
+
+    public function updatedSearch(): void
+    {
+        $this->resetPage();
+    }
+
     public function boot(): void
     {
         User::activeAccount(admin: true);
+    }
+
+    public function updated(string $property): void
+    {
+        if (in_array($property, ['from', 'to'], true)) {
+            $this->resetPage();
+        }
     }
 
     public function create(): void
@@ -104,6 +121,7 @@ class Index extends Component
             }
         });
         $this->resetForm();
+        $this->resetPage();
         session()->flash('expense-status', 'Pengeluaran berhasil disimpan.');
     }
 
@@ -128,6 +146,7 @@ class Index extends Component
             $this->findExpense($this->deleteId)->delete();
         });
         $this->deleteId = null;
+        $this->resetPage();
         session()->flash('expense-status', 'Pengeluaran berhasil dihapus.');
     }
 
@@ -172,7 +191,7 @@ class Index extends Component
             'to.after_or_equal' => 'Sampai tanggal harus sama atau setelah Dari tanggal.',
             'to.before_or_equal' => 'Sampai tanggal terlalu akhir.',
         ], ['from' => 'Dari tanggal', 'to' => 'Sampai tanggal']);
-        $query = Expense::query();
+        $query = Expense::query()->when(trim($this->search) !== '', fn ($query) => $query->where(fn ($query) => $query->where('description', 'like', '%'.trim($this->search).'%')->orWhere('category', 'like', '%'.trim($this->search).'%')));
         if ($filters->fails()) {
             $query->whereRaw('1 = 0');
         } else {
@@ -180,7 +199,7 @@ class Index extends Component
         }
 
         return view('livewire.expenses.index', [
-            'expenses' => (clone $query)->orderByDesc('spent_on')->orderByDesc('id')->get(),
+            'expenses' => (clone $query)->orderByDesc('spent_on')->orderByDesc('id')->paginate(20),
             'total' => (clone $query)->sum('amount'),
             'filterErrors' => $filters->errors(),
             'categories' => $this->categoryNames(),

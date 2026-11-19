@@ -92,6 +92,7 @@ class Index extends Component
         $customer = $this->customerId === null ? new Customer : Customer::findOrFail($this->customerId);
         $customer->fill(['name' => $this->name, 'phone' => $this->customer_phone, 'address' => $this->address])->save();
         $this->cancel();
+        $this->resetPage();
         session()->flash('customer_status', 'Pelanggan berhasil disimpan.');
     }
 
@@ -102,7 +103,7 @@ class Index extends Component
         return view('livewire.customers.index', [
             'customers' => Customer::query()->where(function ($query) {
                 $query->where('name', 'like', '%'.$this->search.'%')->orWhere('phone', 'like', '%'.$this->search.'%');
-            })->orderBy('name')->paginate(20),
+            })->orderBy('name')->orderBy('id')->paginate(20),
         ])->layout('layouts.app', ['title' => 'Pelanggan']);
     }
 }

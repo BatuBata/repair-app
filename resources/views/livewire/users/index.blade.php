@@ -9,7 +9,8 @@
     @endif
     @if($mode === 'list')
         @error('is_active')<p class="error-text" role="alert">{{ $message }}</p>@enderror
-        <table class="table"><thead><tr><th class="act">Aksi</th><th>Username</th><th>Nama</th><th>Peran</th><th>Status</th></tr></thead><tbody>
+        <x-ui.index-search label="Cari pengguna" placeholder="Cari nama atau username" :total="$users->total()" unit="pengguna" wire:model.live.debounce.300ms="search" />
+    <table class="table"><thead><tr><th class="act">Aksi</th><th>Username</th><th>Nama</th><th>Peran</th><th>Status</th></tr></thead><tbody>
         @forelse($users as $account)
             <tr wire:key="user-{{ $account->id }}"><td class="act">{{-- Menu shared berpindah ke body; panggil komponen berdasarkan ID agar aksi tetap terhubung. --}}<x-ui.row-actions :id="'user-actions-'.$account->id" :label="$account->name">
                 <button type="button" role="menuitem" onclick="Livewire.find(@js($this->getId())).edit({{ $account->id }})"><x-ui.icon name="settings" />Ubah pengguna</button>
@@ -20,6 +21,7 @@
             <tr><td colspan="5"><div class="empty">Belum ada pengguna.</div></td></tr>
         @endforelse
         </tbody></table>
+    {{ $users->onEachSide(1)->links('components.ui.pagination', ['livewire' => true]) }}
         <div class="actionbar"><button class="btn primary" type="button" wire:click="create">Tambah pengguna</button></div>
     @else
         <form class="form" wire:submit="save" novalidate>

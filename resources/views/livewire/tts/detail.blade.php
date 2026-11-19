@@ -6,6 +6,8 @@
 <div class="tts-detail">
     <style>
         .tts-detail { overflow-wrap:anywhere; }
+        .tts-detail .act-btn { background:var(--primary); color:var(--primary-ink); border-color:var(--primary); }
+        .tts-detail .act-btn:hover,.tts-detail .act-btn[aria-expanded="true"] { background:var(--primary-hover); }
         .tts-detail .obj-head,.tts-detail .support-actions { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
         .tts-detail h1 { font:500 26px/34px var(--mono); }
         .tts-detail .title-row { margin-bottom:20px; align-items:center; }

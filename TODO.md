@@ -97,6 +97,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T075 | QA panel pengecekan ringkas | tester / 6.1-sol | easy / low | T074 | — | done |
 | T076 | Aksi dokumen TTS di menu titik tiga | developer / 6.1-sol | easy / low | — | — | done |
 | T077 | QA menu dokumen TTS | tester / 6.1-sol | easy / low | T076 | — | done |
+| T078 | Tombol titik tiga detail TTS hitam | developer / 6.1-sol | easy / low | — | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -179,9 +180,9 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "state": "stopped",
       "allowed_tasks": [],
       "stop_after_tasks": [
-        "T077"
+        "T078"
       ],
-      "source_ref": "User19Nov2026 D-44 menu dokumen dan ikon T076/T077 selesai main lokal, QA PASS; berhenti tanpa push/deploy.",
+      "source_ref": "User19Nov2026 tombol titik tiga hitam T078 selesai main lokal, review dan browserPASS; no push/deploy.",
       "phase_history": [
         {
           "state": "paused",
@@ -7215,6 +7216,65 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T076/mobile-menu.jpg"
         ],
         "summary": "Independent5PASS122assert admin/tech/success guards/routes/icons/IDs; coordinator CUA1440/375 keyboard/icons/44px PASS. No push/deploy."
+      }
+    },
+    {
+      "id": "T078",
+      "title": "Tombol titik tiga detail TTS hitam",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "DESIGN.md",
+        "User19Nov2026: ubah button titik tiga menjadi warna hitam"
+      ],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "low",
+      "uncertainty": "low",
+      "triage_reason": "Tiga view dengan akses menu dibedakan role/sukses.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Alur domain dan migrasi status existing lintas caller.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "resources/views/livewire/tts/detail.blade.php",
+        "TODO.md",
+        "docs/evidence/T078/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Tombol titik tiga detail TTS hitam/ikon putih; hover/open tetap kontras; desktop/mobile dan fallback terjangkau.",
+        "CSS terlokalisasi tanpa mengubah ukuran/aksi/halaman lain; browser dan review independen; tanpa push/deploy."
+      ],
+      "verification_plan": [
+        "Browserdesktop/HP computedcolor/menuopen; independent2ruleCSSreview, no redundanttests/build."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T078/README.md",
+        "revision": "sha256:f648980a6eecdd693308e9b667f67f6d19936dc599d6d5d0423b87cb35f833c3",
+        "checked_revision": "sha256:f648980a6eecdd693308e9b667f67f6d19936dc599d6d5d0423b87cb35f833c3",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T078/README.md",
+          "docs/evidence/T078/independent-qa.md",
+          "docs/evidence/T078/source-manifest.json",
+          "docs/evidence/T078/mobile.jpg"
+        ],
+        "summary": "Two scopedCSSrules; independentreviewPASS, CUA1440/375 colors/open/Escape/sizingPASS. No fullsuite/build for coloronly. No push/deploy."
       }
     }
   ]

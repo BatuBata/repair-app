@@ -10,6 +10,7 @@ use App\Support\Payment;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
 
 final class ManageServiceOrder
@@ -22,25 +23,56 @@ final class ManageServiceOrder
         return ServiceOrder::query()->whereKey($id)->lockForUpdate()->firstOrFail();
     }
 
-    public function assign(mixed $id, mixed $technicianId): void
+    public function assign(mixed $id, mixed $technicianId, mixed $stage = 'dikerjakan'): void
     {
-        DB::transaction(function () use ($id, $technicianId) {
+        DB::transaction(function () use ($id, $technicianId, $stage) {
             $order = $this->locked($id);
-            if (! in_array($order->getAttribute('status'), [ServiceOrderStatus::Diterima, ServiceOrderStatus::Dikerjakan], true)) {
+            if (! in_array($order->getAttribute('status'), [ServiceOrderStatus::Diterima, ServiceOrderStatus::Pengecekan, ServiceOrderStatus::Dikerjakan], true)) {
                 throw ValidationException::withMessages(['status' => 'Teknisi hanya dapat ditetapkan sebelum nota terbit.']);
             }
-            $data = Validator::make(['technician_id' => $technicianId], ['technician_id' => ['required', 'integer', 'min:1']])->validate();
+            $data = Validator::make(['technician_id' => $technicianId, 'assignment_stage' => $stage], ['technician_id' => ['required', 'integer', 'min:1'], 'assignment_stage' => ['required', Rule::in(['pengecekan', 'dikerjakan'])]])->validate();
             $technician = User::query()->whereKey($data['technician_id'])->where('role', UserRole::Teknisi)->where('is_active', true)->lockForUpdate()->first();
             if (! $technician) {
                 throw ValidationException::withMessages(['technician_id' => 'Pilih teknisi yang aktif.']);
             }
-            if ($order->getAttribute('status') === ServiceOrderStatus::Dikerjakan && $order->technician_id === $technician->id) {
+            if ($order->getAttribute('status') !== ServiceOrderStatus::Diterima && $order->technician_id === $technician->id) {
                 return;
             }
+            $changes = [];
             if ($order->getAttribute('status') === ServiceOrderStatus::Diterima) {
-                $order->getAttribute('status')->assertTransitionTo(ServiceOrderStatus::Dikerjakan, UserRole::Admin);
+                $next = ServiceOrderStatus::from($data['assignment_stage']);
+                $order->getAttribute('status')->assertTransitionTo($next, UserRole::Admin);
+                $changes = ['status' => $next, $next === ServiceOrderStatus::Pengecekan ? 'inspection_started_at' : 'work_started_at' => CarbonImmutable::now('Asia/Makassar')];
             }
-            $order->update(['technician_id' => $technician->id, 'status' => ServiceOrderStatus::Dikerjakan, 'assigned_at' => CarbonImmutable::now('Asia/Makassar')]);
+            $order->update([...$changes, 'technician_id' => $technician->id, 'assigned_at' => CarbonImmutable::now('Asia/Makassar')]);
+        }, 5);
+    }
+
+    /** @param array<string, mixed> $input */
+    public function saveInspection(mixed $id, array $input): void
+    {
+        DB::transaction(function () use ($id, $input) {
+            $order = $this->locked($id);
+            if ($order->getAttribute('status') !== ServiceOrderStatus::Pengecekan) {
+                throw ValidationException::withMessages(['status' => 'Hasil cek hanya dapat diubah saat Pengecekan.']);
+            }
+            $data = Validator::make($input, [
+                'inspection_result' => ['required', 'string', 'max:4000'],
+                'action_plan' => ['required', 'string', 'max:4000'],
+            ], ['required' => ':attribute wajib diisi.', 'string' => ':attribute harus berupa teks.', 'max' => ':attribute maksimal :max karakter.'], ['inspection_result' => 'Hasil pengecekan', 'action_plan' => 'Rencana tindakan'])->validate();
+            $order->update(['inspection_result' => trim($data['inspection_result']), 'action_plan' => trim($data['action_plan'])]);
+        }, 5);
+    }
+
+    public function startWork(mixed $id): void
+    {
+        DB::transaction(function () use ($id) {
+            $order = $this->locked($id);
+            $order->getAttribute('status')->assertTransitionTo(ServiceOrderStatus::Dikerjakan, UserRole::Admin);
+            if ($order->getAttribute('status') !== ServiceOrderStatus::Pengecekan || ! $order->technician_id) {
+                throw ValidationException::withMessages(['status' => 'Mulai pengerjaan hanya tersedia setelah teknisi ditetapkan untuk pengecekan.']);
+            }
+            $order->update(['status' => ServiceOrderStatus::Dikerjakan, 'work_started_at' => CarbonImmutable::now('Asia/Makassar')]);
         }, 5);
     }
 

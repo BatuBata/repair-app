@@ -8,6 +8,7 @@ use Illuminate\Validation\ValidationException;
 enum ServiceOrderStatus: string
 {
     case Diterima = 'diterima';
+    case Pengecekan = 'pengecekan';
     case Dikerjakan = 'dikerjakan';
     case Selesai = 'selesai';
     case Diambil = 'diambil';
@@ -16,7 +17,8 @@ enum ServiceOrderStatus: string
     public function canTransitionTo(self $next): bool
     {
         return match ($this) {
-            self::Diterima => in_array($next, [self::Dikerjakan, self::Batal], true),
+            self::Diterima => in_array($next, [self::Pengecekan, self::Dikerjakan, self::Batal], true),
+            self::Pengecekan => in_array($next, [self::Dikerjakan, self::Batal], true),
             self::Dikerjakan => in_array($next, [self::Selesai, self::Batal], true),
             self::Selesai => $next === self::Diambil,
             self::Diambil, self::Batal => false,

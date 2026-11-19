@@ -1,0 +1,23 @@
+{
+  "base": "1fc6fb14c70d6dde84c0043a96ab5f15b5cb51e7",
+  "revision": "sha256:9f1cd601a0ed6ad3e0433dabaad63a0c2503a6e36c6a8f3ad2a986378e5b7bb0",
+  "files": {
+    "app/Actions/ServiceOrders/ManageServiceOrder.php": "437560c6bd90516e7c19cdb090359554ca8d6147a4915488cb8968afc28babd3",
+    "app/Enums/ServiceOrderStatus.php": "09b593bcf452fbde3edd59d9857c0d07be81c209ab5fd12c35ba46eda842e559",
+    "app/Http/Controllers/TrackingController.php": "3e7d6421dd23de35529a4c6d60e827de6e6167148462bfc979e8b8882a2340f7",
+    "app/Livewire/Dashboard/Index.php": "49acbea6687223ff892d0b1b70c4baf66cf233b8097762cb0e516fff4d13d2ba",
+    "app/Livewire/Tts/Detail.php": "d89ae36de3b19b468600270eed8dbd3700ffa9dbadb78aaed6aac3cc53f00bed",
+    "app/Models/ServiceOrder.php": "4d720af6e1b96b056bded711f34c06a7492730bb0c3108d1b266d0667a375e8e",
+    "app/Support/WhatsApp.php": "8559cbdc8ce517e3509e831ad5cf6c263926057bfd89fc99e1ed267883cbbbff",
+    "database/migrations/2026_11_19_000000_add_optional_inspection.php": "858b3dcc69667ca721205cef1df14f46a105de4a3ab387af6343045d2200033e",
+    "resources/css/layout.css": "b25d4796c2a82a79ab90f872540a0ea100c53b99d171abd9729fd83d24217c2c",
+    "resources/views/livewire/dashboard/index.blade.php": "617507321691eba8e41d69f8491df43daae33789730d4a97f04e38fa82c019bb",
+    "resources/views/livewire/tts/admin-actions.blade.php": "c0683e91594e3bedb0de1506579d9e05b9e47aded58c368cbd8420612b2b8e10",
+    "resources/views/livewire/tts/detail.blade.php": "0d71f9016e4374b0e0ed1c16172694587bfc037966b26ffcd553dfd2e1c80509",
+    "resources/views/livewire/tts/index.blade.php": "9401542be69e70ff3bf1145338d8e39b5d35a2d35cb1d70674f3186917aa686c",
+    "resources/views/tracking/show.blade.php": "e08cabbf9e1b6c278bf591b51f25e03fa38552d506c040384efb351ccea03f23",
+    "tests/Feature/Domain/DomainTest.php": "28e891bee800219c5e1c552ee46d32d5548d70c340866e297368913f70ebb05f",
+    "tests/Feature/Invoice/InspectionTest.php": "2780035775a527876a1e0e630d15cca30e6aaffed46c461419423232b082fc6f",
+    "tests/Feature/Invoice/InvoiceTest.php": "c805acdc0f66dacc4694077071292612e48480e35fecdeebe04d7a3fadb4b88f"
+  }
+}

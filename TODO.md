@@ -83,6 +83,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T061 | QA independen bank per toko | tester / 6.1-sol | medium / medium | T060 | — | done |
 | T062 | Rekap pembayaran, diskon servis dan WA tidak dapat diperbaiki | developer / 6.1-sol | medium / high | — | — | done |
 | T063 | QA independen tiga revisi transaksi servis | tester / 6.1-sol | medium / high | T062 | — | done |
+| T064 | Pengecekan opsional sebelum pengerjaan dan hasil cek via WA | developer / 6.1-sol | medium / high | — | — | done |
+| T065 | QA independen pengecekan opsional | tester / 6.1-sol | medium / high | T064 | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -158,14 +160,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:fb8f2ce66c0a6600690816d013b4ad53b13da859dfd68aa6a270bb03863727eb",
+    "prd_revision": "sha256:122943d02c7e05ac365a1b5a18a6d5edbe5d7a923b64cafc0cf3a2218f12646b",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
-      "stop_after_tasks": ["T063"],
-      "source_ref": "User18Nov2026: tiga revisi selesai lokal T062/T063, QA independen PASS. Tanggal transaksi existing. Berhenti tanpa push/deploy sesuai instruksi; Goal lama tetap selesai.",
+      "stop_after_tasks": ["T065"],
+      "source_ref": "User19Nov2026: T064/T065 alur pengecekan opsional selesai main lokal dan QA PASS; migrasi aditif lokal untuk8006 selesai, tanpa push/deploy. Berhenti sesuai batas user; Goal lama tetap selesai.",
       "phase_history": [
         {
           "state": "paused",
@@ -6385,6 +6387,126 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T062/README.md"
         ],
         "summary": "Native t063_revisions_qa31tests471assert PASS, migration legacy default0/preserve, money bounds/date/tenant/WA/privacy/correction. Coordinator browser390/1280 save/freecollect+PDFactual PASS. No push/deploy, MySQL/printer/WAactual notrun."
+      }
+    },
+    {
+      "id": "T064",
+      "title": "Pengecekan opsional sebelum pengerjaan dan hasil cek via WA",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "backend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-38",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "high",
+      "uncertainty": "low",
+      "triage_reason": "Status domain baru memerlukan kompatibilitas enum DB, caller UI dan izin tenant/admin.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Alur domain dan migrasi status existing lintas caller.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "app/**",
+        "resources/**",
+        "database/migrations/2026_11_19_000000_add_optional_inspection.php",
+        "tests/**",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T064/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Admin menetapkan teknisi dengan Pengecekan atau langsung Dikerjakan; reassign tidak mengubah tahap, legacy tetap.",
+        "Hasil cek/rencana wajib saat simpan, maks4000, simpan+tautan WA memakai nilai terbaru; persetujuan di luar sistem.",
+        "Mulai pengerjaan admin hanya dari Pengecekan, nota tidak boleh terbit saat pengecekan; batal existing tersedia.",
+        "Daftar, dashboard, timeline dan tracking mengenali tahap; catatan privat tidak bocor di tracking; admin/tenant guard tetap.",
+        "Migrasi menambah kolom nullable dan memperluas enum tanpa mengubah data lama; tidak push/deploy."
+      ],
+      "verification_plan": [
+        "SQLite fullsuite + tes alur/WA/tenant/status/legacy migration; PHPStan/Pint/build; browser HP/desktop dua jalur; QA independen."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T064/README.md",
+        "revision": "sha256:9f1cd601a0ed6ad3e0433dabaad63a0c2503a6e36c6a8f3ad2a986378e5b7bb0",
+        "checked_revision": "1fc6fb1 + local T064 A1",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T064/README.md",
+          "docs/evidence/T064/source-manifest.json"
+        ],
+        "summary": "263PASS1concurrencySKIP2805assert;6new70assert, Pint/PHPStan/build PASS, isolated realMySQL enum/legacy/downup PASS, browser390/1280 two flows PASS. No push/deploy, T065 independent QA pending."
+      }
+    },
+    {
+      "id": "T065",
+      "title": "QA independen pengecekan opsional",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "integration",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-38"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "high",
+      "uncertainty": "low",
+      "triage_reason": "Cegah regresi status dan izin, migrasi dan WA salah tahap.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "QA backend pembayaran dan tenant independen.",
+      "depends_on": {
+        "hard": [
+          "T064"
+        ],
+        "contracts": []
+      },
+      "write_scope": [],
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Admin menetapkan teknisi dengan Pengecekan atau langsung Dikerjakan; reassign tidak mengubah tahap, legacy tetap.",
+        "Hasil cek/rencana wajib saat simpan, maks4000, simpan+tautan WA memakai nilai terbaru; persetujuan di luar sistem.",
+        "Mulai pengerjaan admin hanya dari Pengecekan, nota tidak boleh terbit saat pengecekan; batal existing tersedia.",
+        "Daftar, dashboard, timeline dan tracking mengenali tahap; catatan privat tidak bocor di tracking; admin/tenant guard tetap.",
+        "Migrasi menambah kolom nullable dan memperluas enum tanpa mengubah data lama; tidak push/deploy."
+      ],
+      "verification_plan": [
+        "Source terpin + tes independen legacy/status transitions, role/tenant/stale actions/WA; bukti UI coordinator."
+      ],
+      "qa_for": "T064",
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T064/independent-qa.md",
+        "revision": "sha256:9f1cd601a0ed6ad3e0433dabaad63a0c2503a6e36c6a8f3ad2a986378e5b7bb0",
+        "checked_revision": "sha256:9f1cd601a0ed6ad3e0433dabaad63a0c2503a6e36c6a8f3ad2a986378e5b7bb0",
+        "inputs": {
+          "T064": "sha256:9f1cd601a0ed6ad3e0433dabaad63a0c2503a6e36c6a8f3ad2a986378e5b7bb0"
+        },
+        "evidence": [
+          "docs/evidence/T064/independent-qa.md",
+          "docs/evidence/T064/README.md",
+          "docs/evidence/T064/source-manifest.json"
+        ],
+        "summary": "Native t065_inspection_qa50tests580assert PASS; pin17/17. Role/tenant/stale/WA latest vs receipt/legacy5states tested independently. Browser390/1280 and isolatedMySQL migration developer PASS. Local additive migration repair_app DONE,8006 restarted. No push/deploy; MariaDB/physical/actualWA notrun."
       }
     }
   ]

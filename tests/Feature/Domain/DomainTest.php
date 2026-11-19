@@ -85,7 +85,7 @@ class DomainTest extends TestCase
 
     public function test_exact_status_graph_and_admin_authorization(): void
     {
-        $edges = ['diterima' => ['dikerjakan', 'batal'], 'dikerjakan' => ['selesai', 'batal'], 'selesai' => ['diambil']];
+        $edges = ['diterima' => ['pengecekan', 'dikerjakan', 'batal'], 'pengecekan' => ['dikerjakan', 'batal'], 'dikerjakan' => ['selesai', 'batal'], 'selesai' => ['diambil']];
         foreach (ServiceOrderStatus::cases() as $from) {
             foreach (ServiceOrderStatus::cases() as $to) {
                 $allowed = in_array($to->value, $edges[$from->value] ?? [], true);

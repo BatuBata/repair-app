@@ -134,6 +134,7 @@ img, svg { display: block; max-width: 100%; }
 /* ---------- Pills (status) ---------- */
 .pill { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: 999px; font-size: var(--fs-small); font-weight: 500; white-space: nowrap; flex: none; background: var(--pill-neutral-bg); color: var(--pill-neutral-ink); }
 .st-diterima { background: var(--pill-info-bg); color: var(--pill-info-ink); }
+.st-pengecekan { background: var(--pill-info-bg); color: var(--pill-info-ink); }
 .st-dikerjakan { background: var(--pill-warning-bg); color: var(--pill-warning-ink); }
 .st-selesai { background: var(--pill-positive-bg); color: var(--pill-positive-ink); }
 .st-diambil { background: var(--pill-neutral-bg); color: var(--pill-neutral-ink); }
@@ -231,6 +232,8 @@ section + section.block { margin-top: 40px; }
 
 /* Track (tahapan servis), selalu di posisi dan skala yang sama */
 .track { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; list-style: none; margin: 0; padding: 0; }
+.track.has-inspection { grid-template-columns:repeat(5,minmax(0,1fr)); }
+@media(max-width:639.98px) { .track.has-inspection { grid-template-columns:repeat(3,minmax(0,1fr)); row-gap:16px; } }
 .track li { display: grid; gap: 6px; align-content: start; font-size: var(--fs-small); color: var(--faint); }
 .track li::before { content: ""; height: 4px; border-radius: 2px; background: var(--active); }
 .track li.done::before, .track li.now::before { background: var(--accent); }

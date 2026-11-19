@@ -223,15 +223,15 @@ class Index extends Component
         $revenue = ['total' => self::rupiah($daily['revenue']), 'service' => self::rupiah($daily['service']), 'sales' => self::rupiah($daily['sales'])];
         $chart = $this->chart($month);
         $lane = [];
-        foreach (['diterima', 'dikerjakan', 'selesai', 'diambil'] as $status) {
+        foreach (['diterima', 'pengecekan', 'dikerjakan', 'selesai', 'diambil'] as $status) {
             $query = ServiceOrder::query()->where('status', $status);
             if ($status === 'diambil') {
                 $query->whereDate('picked_up_on', '>=', $today->startOfMonth()->toDateString())->whereDate('picked_up_on', '<=', $today->toDateString());
             }
             $count = $query->count();
-            $tags = $query->orderBy('created_at')->limit(3)->get(['number', 'created_at', 'assigned_at', 'invoiced_on', 'picked_up_on'])->map(function ($order) use ($today, $status) {
+            $tags = $query->orderBy('created_at')->limit(3)->get(['number', 'created_at', 'assigned_at', 'inspection_started_at', 'work_started_at', 'invoiced_on', 'picked_up_on'])->map(function ($order) use ($today, $status) {
                 $date = match ($status) {
-                    'dikerjakan' => $order->assigned_at, 'selesai' => $order->invoiced_on, 'diambil' => $order->picked_up_on, default => $order->created_at
+                    'pengecekan' => $order->inspection_started_at, 'dikerjakan' => $order->work_started_at ?? $order->assigned_at, 'selesai' => $order->invoiced_on, 'diambil' => $order->picked_up_on, default => $order->created_at
                 };
                 $age = $date ? max(0, (int) CarbonImmutable::parse($date)->startOfDay()->diffInDays($today)) : 0;
 

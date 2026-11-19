@@ -2,7 +2,7 @@
     <style>.tts-list { overflow-wrap:anywhere; } .tts-list .c-id { white-space:nowrap; } .tts-list .tabs button.active { color:var(--text); font-weight:500; } .tts-list .tabs button.active::after { content:""; position:absolute; left:0; right:0; bottom:-1px; height:2px; background:var(--accent); } .tts-list .pagination { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:24px; } @media(max-width:1023.98px) { .tts-list .tabs button { min-height:44px; min-width:44px; } .tts-list .c-id a { display:inline-flex; align-items:center; min-height:44px; } .tts-list .c-st { align-self:center; } }</style>
     <div class="title-row"><div><h1>Servis</h1><p class="sub">Tanda terima servis</p></div><a class="btn primary" href="{{ route('tts.create') }}"><x-ui.icon name="plus" />Buat TTS</a></div>
     <div class="tabs" aria-label="Status servis">
-        @foreach(['' => 'Semua', 'diterima' => 'Diterima', 'dikerjakan' => 'Dikerjakan', 'selesai' => 'Selesai', 'diambil' => 'Diambil', 'batal' => 'Batal'] as $value => $label)
+        @foreach(['' => 'Semua', 'diterima' => 'Diterima', 'pengecekan' => 'Pengecekan', 'dikerjakan' => 'Dikerjakan', 'selesai' => 'Selesai', 'diambil' => 'Diambil', 'batal' => 'Batal'] as $value => $label)
             <button type="button" wire:click="$set('status', '{{ $value }}')" class="{{ $status === $value ? 'active' : '' }}" aria-pressed="{{ $status === $value ? 'true' : 'false' }}">{{ $label }}</button>
         @endforeach
     </div>

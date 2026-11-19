@@ -84,9 +84,10 @@
 @php
     $status = $order->status->value;
     $statusLabel = ucfirst($status);
-    $stagePositions = ['diterima' => 0, 'dikerjakan' => 1, 'selesai' => 2, 'diambil' => 3];
+    $stagePositions = ['diterima' => 0, 'pengecekan' => 1, 'dikerjakan' => 2, 'selesai' => 3, 'diambil' => 4];
     $headline = match($status) {
         'diterima' => 'Barang sudah kami terima',
+        'pengecekan' => 'Barang sedang dalam pengecekan',
         'dikerjakan' => 'Servis sedang dikerjakan',
         'selesai' => $order->unrepairable ? 'Pemeriksaan servis telah selesai' : 'Servis selesai dan siap diambil',
         'diambil' => 'Barang sudah diambil',
@@ -94,20 +95,22 @@
     };
     $summary = match($status) {
         'diterima' => 'Barang Anda sudah tercatat dan menunggu penanganan teknisi.',
-        'dikerjakan' => 'Teknisi sedang memeriksa dan menangani barang Anda.',
+        'pengecekan' => 'Teknisi memeriksa kerusakan dan tindakan yang diperlukan. Toko akan menghubungi Anda untuk membahas perbaikan.',
+        'dikerjakan' => 'Teknisi sedang melakukan perbaikan barang Anda.',
         'selesai' => $order->unrepairable ? 'Barang tidak dapat diperbaiki dan dapat diambil di toko.' : 'Barang Anda sudah selesai dikerjakan dan dapat diambil di toko.',
         'diambil' => $order->unrepairable ? 'Barang yang tidak dapat diperbaiki sudah diserahkan.' : 'Barang yang selesai diservis sudah diserahkan.',
         'batal' => 'Pengerjaan untuk tanda terima ini telah dibatalkan.',
     };
     $nextTitle = match($status) {
         'diterima' => 'Menunggu penanganan',
+        'pengecekan' => 'Menunggu hasil pengecekan',
         'dikerjakan' => 'Sedang dalam penanganan',
         'selesai' => 'Silakan ambil di toko',
         'diambil' => 'Servis telah selesai',
         'batal' => 'Pengerjaan dihentikan',
     };
     $nextCopy = match($status) {
-        'diterima', 'dikerjakan' => 'Status pada halaman ini akan diperbarui mengikuti proses servis.',
+        'diterima', 'pengecekan', 'dikerjakan' => 'Status pada halaman ini akan diperbarui mengikuti proses servis.',
         'selesai' => 'Saat mengambil, sebutkan nomor TTS atau tunjukkan struk Anda.',
         'diambil' => 'Simpan nota Anda untuk informasi servis dan garansi.',
         'batal' => 'Hubungi toko jika Anda memerlukan informasi lebih lanjut.',
@@ -122,8 +125,8 @@
         <div class="status-meta"><span class="label">Tanda terima servis</span><x-ui.status :status="$statusLabel" /></div>
         <h1 id="tracking-title">{{ $order->number }}</h1>
         <p class="lead"><strong>{{ $headline }}.</strong> {{ $summary }}</p>
-        <ol class="track" aria-label="Tahap servis">
-            @foreach(['diterima' => ['Diterima', $order->created_at], 'dikerjakan' => ['Dikerjakan', $order->assigned_at], 'selesai' => ['Selesai', $order->invoiced_on], 'diambil' => ['Diambil', $order->picked_up_on]] as $stage => [$label, $date])
+        <ol class="track {{ $order->inspection_started_at ? 'has-inspection' : '' }}" aria-label="Tahap servis">
+            @foreach(['diterima' => ['Diterima', $order->created_at], ...($order->inspection_started_at ? ['pengecekan' => ['Pengecekan', $order->inspection_started_at]] : []), 'dikerjakan' => ['Dikerjakan', $order->work_started_at ?? ($order->inspection_started_at ? null : $order->assigned_at)], 'selesai' => ['Selesai', $order->invoiced_on], 'diambil' => ['Diambil', $order->picked_up_on]] as $stage => [$label, $date])
                 <li class="{{ $status === $stage ? 'now' : (($status === 'batal' && $date) || ($status !== 'batal' && $stagePositions[$stage] < ($stagePositions[$status] ?? -1)) ? 'done' : '') }}">{{ $label }}@if($date)<time>{{ $date->translatedFormat('j M') }}</time>@endif</li>
             @endforeach
         </ol>

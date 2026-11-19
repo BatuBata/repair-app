@@ -17,6 +17,8 @@
         .dashboard-page .dashboard-section-head p { margin-top:2px; color:var(--muted); font-size:var(--fs-small); }
         .dashboard-page .stage-line,.dashboard-page .panel-title { display:flex; align-items:center; gap:8px; }
         .dashboard-page .stage-line .icon { width:18px; height:18px; color:var(--muted); }
+        .dashboard-page .lane { grid-template-columns:repeat(5,minmax(0,1fr)); }
+        @media(max-width:1023.98px) { .dashboard-page .lane { grid-template-columns:repeat(2,minmax(0,1fr)); } .dashboard-page .lane > a:nth-child(odd) { border-left:0; } .dashboard-page .lane > a:nth-child(n+3) { border-top:1px solid var(--border); } .dashboard-page .lane > a:last-child { grid-column:1 / -1; } }
         .dashboard-page .lane > a:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
         .dashboard-page .cancelled { display:inline-flex; flex:0 0 auto; align-items:center; min-height:44px; gap:8px; color:var(--muted); white-space:nowrap; overflow-wrap:normal; }
         .dashboard-page .cancelled .icon { width:16px; height:16px; }
@@ -67,12 +69,12 @@
     @if(session('dashboard-status'))<p class="notice" role="status">{{ session('dashboard-status') }}</p>@endif
     @if($errors->any())<div class="notice" role="alert">@foreach($errors->all() as $error)<p>{{ $error }}</p>@endforeach</div>@endif
     <dl class="dashboard-summary" aria-label="Ringkasan hari ini">
-        <div><x-ui.icon name="clock" /><dt class="summary-label">Perlu tindakan</dt><dd class="summary-value">{{ ($counts['diterima'] ?? 0) + ($counts['selesai'] ?? 0) }}</dd><dd class="summary-note">Belum ditangani atau siap diserahkan</dd></div>
+        <div><x-ui.icon name="clock" /><dt class="summary-label">Perlu tindakan</dt><dd class="summary-value">{{ ($counts['diterima'] ?? 0) + ($counts['pengecekan'] ?? 0) + ($counts['selesai'] ?? 0) }}</dd><dd class="summary-note">Perlu teknisi, pengecekan, atau penyerahan</dd></div>
         <div><x-ui.icon name="clipboard-list" /><dt class="summary-label">TTS masuk hari ini</dt><dd class="summary-value">{{ $incoming }}</dd><dd class="summary-note">Sejak pukul 00.00 WITA</dd></div>
         <div><x-ui.icon name="wallet" /><dt class="summary-label">Omzet hari ini</dt><dd class="summary-value money">@foreach(explode('.', $revenue['total']) as $part){{ $part }}@unless($loop->last).<wbr>@endunless@endforeach</dd><dd class="summary-note">Servis {{ $revenue['service'] }} · Penjualan {{ $revenue['sales'] }}</dd></div>
     </dl>
     <section aria-labelledby="h-lane"><header class="dashboard-section-head"><div><h2 id="h-lane">Alur servis</h2><p>Pilih status untuk melihat pekerjaan yang perlu diteruskan.</p></div><a class="cancelled" href="{{ route('tts.index', ['status' => 'batal']) }}"><x-ui.icon name="ban" />Batal <span class="num">{{ $counts['batal'] ?? 0 }}</span></a></header><div class="lane">
-        @foreach(['diterima' => ['Belum ada teknisi', 'perlu ditetapkan', 'user'], 'dikerjakan' => ['Dikerjakan', 'dalam penanganan', 'wrench'], 'selesai' => ['Siap diambil', 'belum diserahkan', 'package-check'], 'diambil' => ['Diambil bulan ini', 'total '.$counts->get('diambil', 0).' diserahkan', 'circle-check']] as $status => [$label, $note, $icon])
+        @foreach(['diterima' => ['Belum ada teknisi', 'perlu ditetapkan', 'user'], 'pengecekan' => ['Pengecekan', 'cek dan hubungi pelanggan', 'search'], 'dikerjakan' => ['Dikerjakan', 'dalam penanganan', 'wrench'], 'selesai' => ['Siap diambil', 'belum diserahkan', 'package-check'], 'diambil' => ['Diambil bulan ini', 'total '.$counts->get('diambil', 0).' diserahkan', 'circle-check']] as $status => [$label, $note, $icon])
             <a href="{{ route('tts.index', ['status' => $status]) }}"><span class="stage-line"><x-ui.icon :name="$icon" /><span class="stage">{{ $label }}</span></span><strong class="count">{{ $lane[$status]['count'] }}</strong><span class="note">{{ $note }}</span><span class="tags">@foreach($lane[$status]['tags'] as $tag)<span @class(['tag', 'late' => $tag['age'] >= 2 && $status !== 'diambil'])><b>{{ $tag['suffix'] }}</b>{{ $tag['age'] === 0 ? 'hari ini' : $tag['age'].' hari' }}</span>@endforeach</span></a>
         @endforeach
     </div></section>

@@ -125,7 +125,7 @@ class InvoiceTest extends TestCase
         $other = $this->order($status);
         try {
             $action->cancel($other->id, 'Customer tidak jadi');
-            $this->assertContains($status, ['diterima', 'dikerjakan']);
+            $this->assertContains($status, ['diterima', 'pengecekan', 'dikerjakan']);
             $this->assertSame('batal', $other->fresh()->status->value);
             $this->assertSame('Customer tidak jadi', $other->fresh()->cancel_reason);
             $this->assertNotNull($other->fresh()->cancelled_at);
@@ -136,7 +136,7 @@ class InvoiceTest extends TestCase
                 $this->assertSame('Customer tidak jadi', $other->fresh()->cancel_reason);
             }
         } catch (ValidationException $e) {
-            $this->assertNotContains($status, ['diterima', 'dikerjakan']);
+            $this->assertNotContains($status, ['diterima', 'pengecekan', 'dikerjakan']);
         }
     }
 

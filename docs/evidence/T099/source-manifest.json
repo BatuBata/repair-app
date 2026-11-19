@@ -1,0 +1,5 @@
+{
+  "resources/views/components/ui/index-search.blade.php": "ff7f1b1cab69357d1e658bcb0e43102af5e8657eda7e5e4ce541c922b1b6892c",
+  "resources/views/livewire/reports/index.blade.php": "479d72ef5b63659ea90771327f672d2547a16318b3a3da6da51ff1c76517bf4b",
+  "tests/Feature/Reports/ReportsTest.php": "0115739496d2b0930b0e394ae75aa930f88db4f5d1d4a4e7e0f325b94511c792"
+}

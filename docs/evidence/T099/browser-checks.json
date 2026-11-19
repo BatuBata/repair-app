@@ -1,0 +1,34 @@
+[
+  {
+    "header": "50 transaksi",
+    "scrollWidth": 1280,
+    "searchCounts": 0,
+    "visibleCountLabels": 1,
+    "width": 1280,
+    "stage": "all"
+  },
+  {
+    "header": "4 transaksi",
+    "scrollWidth": 1280,
+    "searchCounts": 0,
+    "visibleCountLabels": 1,
+    "width": 1280,
+    "stage": "transfer"
+  },
+  {
+    "header": "4 transaksi",
+    "scrollWidth": 375,
+    "searchCounts": 0,
+    "visibleCountLabels": 1,
+    "width": 375,
+    "stage": "mobile-transfer"
+  },
+  {
+    "header": "0 transaksi",
+    "scrollWidth": 375,
+    "searchCounts": 0,
+    "visibleCountLabels": 1,
+    "width": 375,
+    "stage": "search-empty"
+  }
+]

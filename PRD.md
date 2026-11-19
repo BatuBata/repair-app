@@ -715,6 +715,8 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 
 | D-61 | Setelah rilis T096 selesai, perbaiki jarak filter metode/bank terhadap tabel Transaksi laporan dan susunan responsif yang berubah berantakan saat Transfer bank; verifikasi desktop/HP, kemudian push/deploy target existing | User melaporkan dua screenshot dan meminta dikerjakan hingga selesai lalu push/deploy | User | 20 Nov 2026; tanpa mengubah perhitungan/filter laporan |
 
+| D-62 | Jumlah transaksi pada bagian Transaksi laporan hanya ditampilkan di sebelah judul, hapus hitungan duplikat pada baris pencarian; pencarian/filter/pagination tetap | User meminta satu hitungan saja di sebelah judul | User | 20 Nov 2026; main lokal tanpa push/deploy |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

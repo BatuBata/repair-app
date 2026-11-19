@@ -17,7 +17,10 @@ use App\Models\User;
 use App\Services\Reports\Report;
 use App\Support\TenantContext;
 use Carbon\CarbonImmutable;
+use DOMDocument;
+use DOMXPath;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\DB;
 use Livewire\Livewire;
 use Tests\TestCase;
@@ -58,6 +61,28 @@ class ReportsTest extends TestCase
     private function expense(string $date = '2026-11-11', int $amount = 15000, string $category = 'bensin'): void
     {
         Expense::create(['spent_on' => $date, 'amount' => $amount, 'category' => $category, 'created_by' => $this->admin->id]);
+    }
+
+    public function test_transaction_count_appears_once_in_header_and_optional_search_count_keeps_zero(): void
+    {
+        $this->order();
+        $this->sale();
+        $view = Livewire::test(Index::class)->set('from', '2026-11-11')->set('to', '2026-11-11');
+        foreach ([[2, ''], [0, 'no-matching-transaction']] as [$total, $search]) {
+            $view->set('search', $search);
+            $html = $view->html();
+            $this->assertSame(1, substr_count(strip_tags($html), $total.' transaksi'));
+            $document = new DOMDocument;
+            $document->loadHTML($html, LIBXML_NOERROR | LIBXML_NOWARNING);
+            $headers = (new DOMXPath($document))->query('//h2[@id="report-transactions"]/following-sibling::span');
+            $this->assertSame(1, $headers->length);
+            $this->assertSame($total.' transaksi', trim($headers->item(0)->textContent));
+        }
+        $zero = Blade::render('<x-ui.index-search label="Cari barang" placeholder="Cari" :total="0" unit="barang" />');
+        $this->assertStringContainsString('0 barang', $zero);
+        $this->assertStringContainsString('class="total"', $zero);
+        $withoutCount = Blade::render('<x-ui.index-search label="Cari barang" placeholder="Cari" />');
+        $this->assertStringNotContainsString('class="total"', $withoutCount);
     }
 
     public function test_prd_sample_and_restocks_are_information_only(): void

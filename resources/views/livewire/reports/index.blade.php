@@ -85,7 +85,7 @@
             <section class="detail-panel report-transactions" aria-labelledby="report-transactions">
                 <div class="section-head"><h2 id="report-transactions"><x-ui.icon name="receipt" />Transaksi</h2><span class="meta">{{ $rows->total() }} transaksi</span></div>
                 <p class="small muted report-filter-hint">Filter jenis, metode, dan bank hanya berlaku untuk daftar transaksi ini.</p>
-                <x-ui.index-search label="Cari transaksi" placeholder="Cari nomor atau keterangan transaksi" :total="$rows->total()" unit="transaksi" wire:model.live.debounce.300ms="search" />
+                <x-ui.index-search label="Cari transaksi" placeholder="Cari nomor atau keterangan transaksi" wire:model.live.debounce.300ms="search" />
                 <div class="report-transactions-toolbar">
                 <div class="tabs" role="group" aria-label="Jenis transaksi">
                     @foreach(['semua' => 'Semua', 'servis' => 'Servis', 'jual' => 'Penjualan', 'keluar' => 'Pengeluaran'] as $value => $label)<button type="button" wire:click="$set('type', '{{ $value }}')" aria-pressed="{{ $type === $value ? 'true' : 'false' }}">{{ $label }}</button>@endforeach

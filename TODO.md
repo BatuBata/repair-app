@@ -118,6 +118,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T096 | Tampilkan pengambilan TTS Batal pada daftar Servis | developer / 6.1-sol | easy / low | — | — | done |
 | T097 | Rilis keterangan pengambilan pada daftar Servis | integrator / 6.1-sol | medium / low | T096 | — | done |
 | T098 | Perbaiki tata letak filter Transaksi laporan dan rilis | integrator / 6.1-sol | medium / low | T097 | — | done |
+| T099 | Hapus jumlah transaksi duplikat pada pencarian laporan | developer / 6.1-sol | easy / low | — | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -193,14 +194,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:b9e1d0b0a672074e7937a8b3204e1eebef13dfe6ff2a1d35ab6d75b729a47c5c",
+    "prd_revision": "sha256:f61e470ed773328ce255060e2958ad5cf6f07faf78dc30008445913b5c0a79e6",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
-      "state": "stopped",
-      "allowed_tasks": [],
-      "stop_after_tasks": ["T098"],
-      "source_ref": "D61 selesai: filter laporan160d49c localQA+CI/deploy44564621738+independentserverQA PASS; stop setelah rilis.",
+      "state": "running",
+      "allowed_tasks": ["T099"],
+      "stop_after_tasks": ["T099"],
+      "source_ref": "User20Nov2026 D62 satuhitungantransaksi disebelahjudul, mainlokal tanpa push/deploy.",
       "phase_history": [
         {
           "state": "paused",
@@ -8655,6 +8656,69 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T098/postdeploy-independent.json"
         ],
         "summary": "CSS4linefix: filters2col desktop/tablet1colHP,24pxtablegap;desktopall/transferstable68pxbefore68\u2192148. CUA375/768/1024/1280/1440/longbank/keyboard/empty/reset/page2 nooverflow/netunchanged.14localPASS233assert+independentvisualPASS. Main160d49c CI/deploy44564621738SUCCESS298PASS3436assert32.68s/Pint177/PHPStan0/20deploysafety. Independentserverexactmarker/receipt/CSS+compiledview/DBready/maintenanceabsent/HTTPS200TLSPASS. No backend/schema/deps/operatorwrites."
+      }
+    },
+    {
+      "id": "T099",
+      "title": "Hapus jumlah transaksi duplikat pada pencarian laporan",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md \u00a720.3 D-62",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "low",
+      "uncertainty": "low",
+      "triage_reason": "View memakai sharedsearch yang selalu mencetakcount; jadikan countopsional tanpa memengaruhi10callerexisting.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Perubahan template kecil, opsional countsharedcomponent dan regresi render.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "resources/views/components/ui/index-search.blade.php",
+        "resources/views/livewire/reports/index.blade.php",
+        "tests/Feature/Reports/ReportsTest.php",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T099/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Hitungantransaksi terlihat tepatsekali disebelahjudul,berubahmengikutisearch/filter termasuk0hasil; barispencariantidakcount.",
+        "10indexlain tetapmemilikicount termasuk0; search/filter/pagination tetapberjalan; testtarget/QAindependenPASS, no backend/schema/deps/push/deploy."
+      ],
+      "verification_plan": [
+        "Reports+IndexPaginationtests,focusedcount2/0/renderoptionalcount, sourcereviewbrowserfixture;Pint/diff;tanpabuilduangtidakperlu."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T099/README.md",
+        "revision": "sha256:cf070fe54349b2d6d577c56ee675fc7dd572da6ae52e46e422b5c372fb43cd4a",
+        "checked_revision": "sha256:cf070fe54349b2d6d577c56ee675fc7dd572da6ae52e46e422b5c372fb43cd4a",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T099/README.md",
+          "docs/evidence/T099/source-manifest.json",
+          "docs/evidence/T099/independent-qa.md",
+          "docs/evidence/T099/browser-checks.json",
+          "docs/evidence/T099/desktop.jpg"
+        ],
+        "summary": "Optionalsharedsearchcount;Reportcountonlyheader updates50/4/0 once,other10counts incl0 preserved.14regressionPASS233assert+independent1PASS9assert;3hash/source/desktop/DOMmobileQA PASS,Pint/diffPASS. No backend/schema/deps/operatorDB/push/deploy."
       }
     }
   ]

@@ -1,0 +1,13 @@
+{
+  "base": "7320a61eec8c150daceee3a98bca461b8932b124",
+  "revision": "sha256:d7c83aff89c3f05c8a075c308a1efdc754ead4bf38703d2b68471a06f1b33656",
+  "files": {
+    "app/Actions/ServiceOrders/ManageServiceOrder.php": "d72e1f3b374c6e46dfad18c18ab7e1cbe3a8bd5248e658e4fbcdd4a074ac926e",
+    "app/Http/Controllers/TrackingController.php": "faa69ba091e5f754fc0b0416978885ccc80c0fb6a6657cab9d89be02120e38ca",
+    "app/Livewire/Tts/Detail.php": "9bddac0b89ca3b1097f33ae0ef2fbb5ac1581041dcaa3f899cd7f2355bd3ab8d",
+    "app/Models/ServiceOrder.php": "affb74e45e427c8f9571f04e38a261b07f4f55d5ae264b528a90da3af489b79a",
+    "app/Support/WhatsApp.php": "a6da78855149bff53be9ee90c89f59a5ab472acd918bd8a32052b793e47f3745",
+    "resources/views/livewire/tts/detail.blade.php": "e8d35ef8ac4138f4bf3922d81f20d87e33b9978e2d462feb28bf0ddb8b731d90",
+    "tests/Feature/Invoice/InspectionTest.php": "8b064075df24fa4f5e6e773e9059d5ef4e57b8c96f10190db52a29d271204d90"
+  }
+}

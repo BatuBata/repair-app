@@ -57,10 +57,9 @@ final class ManageServiceOrder
                 throw ValidationException::withMessages(['status' => 'Hasil cek hanya dapat diubah saat Pengecekan.']);
             }
             $data = Validator::make($input, [
-                'inspection_result' => ['required', 'string', 'max:4000'],
-                'action_plan' => ['required', 'string', 'max:4000'],
-            ], ['required' => ':attribute wajib diisi.', 'string' => ':attribute harus berupa teks.', 'max' => ':attribute maksimal :max karakter.'], ['inspection_result' => 'Hasil pengecekan', 'action_plan' => 'Rencana tindakan'])->validate();
-            $order->update(['inspection_result' => trim($data['inspection_result']), 'action_plan' => trim($data['action_plan'])]);
+                'inspection_result' => ['required', 'string', 'max:8100'],
+            ], ['required' => ':attribute wajib diisi.', 'string' => ':attribute harus berupa teks.', 'max' => ':attribute maksimal :max karakter.'], ['inspection_result' => 'Hasil pengecekan & rencana tindakan'])->validate();
+            $order->update(['inspection_result' => trim($data['inspection_result']), 'action_plan' => null]);
         }, 5);
     }
 

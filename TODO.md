@@ -85,6 +85,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T063 | QA independen tiga revisi transaksi servis | tester / 6.1-sol | medium / high | T062 | — | done |
 | T064 | Pengecekan opsional sebelum pengerjaan dan hasil cek via WA | developer / 6.1-sol | medium / high | — | — | done |
 | T065 | QA independen pengecekan opsional | tester / 6.1-sol | medium / high | T064 | — | done |
+| T066 | Satu catatan hasil pengecekan dan rencana tindakan | developer / 6.1-sol | medium / medium | — | — | done |
+| T067 | QA independen catatan pengecekan tunggal | tester / 6.1-sol | medium / medium | T066 | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -160,14 +162,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:122943d02c7e05ac365a1b5a18a6d5edbe5d7a923b64cafc0cf3a2218f12646b",
+    "prd_revision": "sha256:b939d0796a8d67f16e2613ef74b1f50bfeecbf7a0e98d09b5f3c7b6310609c78",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
-      "stop_after_tasks": ["T065"],
-      "source_ref": "User19Nov2026: T064/T065 alur pengecekan opsional selesai main lokal dan QA PASS; migrasi aditif lokal untuk8006 selesai, tanpa push/deploy. Berhenti sesuai batas user; Goal lama tetap selesai.",
+      "stop_after_tasks": ["T067"],
+      "source_ref": "User19Nov2026: T066/T067 satu input hasilcek/rencana selesai dan QA PASS, berhenti tanpa push/deploy; tidak ada migrasi baru.",
       "phase_history": [
         {
           "state": "paused",
@@ -6507,6 +6509,125 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T064/source-manifest.json"
         ],
         "summary": "Native t065_inspection_qa50tests580assert PASS; pin17/17. Role/tenant/stale/WA latest vs receipt/legacy5states tested independently. Browser390/1280 and isolatedMySQL migration developer PASS. Local additive migration repair_app DONE,8006 restarted. No push/deploy; MariaDB/physical/actualWA notrun."
+      }
+    },
+    {
+      "id": "T066",
+      "title": "Satu catatan hasil pengecekan dan rencana tindakan",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "backend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-39",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Form tunggal harus mempertahankan isi dua kolom lama dan WA terbaru tanpa merubah izin.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Alur domain dan migrasi status existing lintas caller.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "app/Models/ServiceOrder.php",
+        "app/Actions/ServiceOrders/ManageServiceOrder.php",
+        "app/Livewire/Tts/Detail.php",
+        "app/Support/WhatsApp.php",
+        "app/Http/Controllers/TrackingController.php",
+        "resources/views/livewire/tts/detail.blade.php",
+        "tests/Feature/Invoice/InspectionTest.php",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T066/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Satu textarea gabungan, satu catatan detail/WA; satu isian cukup untuk save/send.",
+        "Legacy kedua kolom tergabung dan utuh saat mount/save/reload/detail/WA; tidak ada migrasi/backfill.",
+        "Validasi8100/required/XSS, role/tenant dan status guard tetap; tidak push/deploy."
+      ],
+      "verification_plan": [
+        "Inspection/Tracking/Tenant selective tests, Pint/PHPStan, browser390/1280 dan QA independen."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T066/README.md",
+        "revision": "sha256:d7c83aff89c3f05c8a075c308a1efdc754ead4bf38703d2b68471a06f1b33656",
+        "checked_revision": "sha256:d7c83aff89c3f05c8a075c308a1efdc754ead4bf38703d2b68471a06f1b33656",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T066/README.md",
+          "docs/evidence/T066/source-manifest.json"
+        ],
+        "summary": "15tests230assert/Pint/PHPStan0 PASS; satu inputan dan WA tunggal, legacy retained without migration. QA T067 pending."
+      }
+    },
+    {
+      "id": "T067",
+      "title": "QA independen catatan pengecekan tunggal",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "integration",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-39"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Cegah hilangnya rencana lama atau isi WA setelah form digabung.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "QA backend pembayaran dan tenant independen.",
+      "depends_on": {
+        "hard": [
+          "T066"
+        ],
+        "contracts": []
+      },
+      "write_scope": [],
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Satu textarea gabungan, satu catatan detail/WA; satu isian cukup untuk save/send.",
+        "Legacy kedua kolom tergabung dan utuh saat mount/save/reload/detail/WA; tidak ada migrasi/backfill.",
+        "Validasi8100/required/XSS, role/tenant dan status guard tetap; tidak push/deploy."
+      ],
+      "verification_plan": [
+        "Review pin/callers + edge legacy panjang/parsial dan save/send satu isian; tidak fullsuite ulang."
+      ],
+      "qa_for": "T066",
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T066/independent-qa.md",
+        "revision": "sha256:d7c83aff89c3f05c8a075c308a1efdc754ead4bf38703d2b68471a06f1b33656",
+        "checked_revision": "sha256:d7c83aff89c3f05c8a075c308a1efdc754ead4bf38703d2b68471a06f1b33656",
+        "inputs": {
+          "T066": "sha256:d7c83aff89c3f05c8a075c308a1efdc754ead4bf38703d2b68471a06f1b33656"
+        },
+        "evidence": [
+          "docs/evidence/T066/independent-qa.md",
+          "docs/evidence/T066/README.md",
+          "docs/evidence/T066/source-manifest.json"
+        ],
+        "summary": "Independent6tests104assert PASS; long/partiallegacy/read/save/reload/WA latest/bounds/tenant/guards. Pin7/7 unchanged. Coordinator browser390/1280 PASS. No push/deploy, no migration/operatorDB/actualWA."
       }
     }
   ]

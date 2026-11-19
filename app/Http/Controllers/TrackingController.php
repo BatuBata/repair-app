@@ -36,9 +36,9 @@ class TrackingController extends Controller
         $storeName = StoreSetting::query()->value('name') ?: app(TenantContext::class)->tenant()->name;
         $link = rtrim(config('app.url'), '/').'/t/'.$order->tracking_token;
         if ($request->boolean('inspection')) {
-            abort_unless(filled($order->inspection_result) && filled($order->action_plan), 422, 'Simpan hasil pengecekan dan rencana tindakan terlebih dahulu.');
+            abort_unless($order->inspectionNotes() !== '', 422, 'Simpan hasil pengecekan dan rencana tindakan terlebih dahulu.');
 
-            return redirect()->away(WhatsApp::url($order->customer_phone, WhatsApp::inspectionMessage($order->customer_name, $order->number, $order->inspection_result, $order->action_plan, $link, $storeName)));
+            return redirect()->away(WhatsApp::url($order->customer_phone, WhatsApp::inspectionMessage($order->customer_name, $order->number, $order->inspectionNotes(), $link, $storeName)));
         }
         $message = $order->invoiced_on
             ? WhatsApp::invoiceMessage($order->customer_name, $order->number, $order->items()->get(['qty', 'price'])->sum(fn ($item) => $item->qty * $item->price) - $order->discount, $order->warranty_days && $order->warranty_until ? Carbon::parse($order->warranty_until)->format('d M Y') : null, $link, $storeName, $order->unrepairable)

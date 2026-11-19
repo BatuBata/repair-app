@@ -29,8 +29,6 @@ class Detail extends Component
 
     public string $inspection_result = '';
 
-    public string $action_plan = '';
-
     public string $picked_up_on = '';
 
     public string $cancel_reason = '';
@@ -50,8 +48,7 @@ class Detail extends Component
         $this->success = request()->route()?->getName() === 'tts.success';
         $order = ServiceOrder::query()->findOrFail($id);
         $this->technician_id = (string) $order->technician_id;
-        $this->inspection_result = $order->inspection_result ?? '';
-        $this->action_plan = $order->action_plan ?? '';
+        $this->inspection_result = $order->inspectionNotes();
         $this->payment_method = $order->payment_method ?: 'cash';
         $this->payment_bank = $order->payment_bank ?: '';
         $this->picked_up_on = now('Asia/Makassar')->toDateString();
@@ -67,7 +64,7 @@ class Detail extends Component
     public function saveInspection(): void
     {
         $this->resetValidation();
-        app(ManageServiceOrder::class)->saveInspection($this->orderId, $this->only(['inspection_result', 'action_plan']));
+        app(ManageServiceOrder::class)->saveInspection($this->orderId, $this->only(['inspection_result']));
         session()->flash('tts-status', 'Hasil pengecekan berhasil disimpan.');
         $this->redirectRoute('tts.show', ['id' => $this->orderId]);
     }
@@ -82,7 +79,7 @@ class Detail extends Component
     public function sendInspection(): void
     {
         $this->resetValidation();
-        app(ManageServiceOrder::class)->saveInspection($this->orderId, $this->only(['inspection_result', 'action_plan']));
+        app(ManageServiceOrder::class)->saveInspection($this->orderId, $this->only(['inspection_result']));
         $this->redirectRoute('tts.whatsapp', ['id' => $this->orderId, 'inspection' => 1]);
     }
 

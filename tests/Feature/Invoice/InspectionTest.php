@@ -56,8 +56,9 @@ class InspectionTest extends TestCase
         $this->assertNull($order->work_started_at);
         $this->get(route('invoice.edit', $order->id))->assertForbidden();
         $this->context();
-        Livewire::test(Detail::class, ['id' => $order->id])->set('inspection_result', ' Baterai drop & konektor longgar ')->set('action_plan', "Ganti baterai\nUji pengisian")->call('sendInspection')->assertHasNoErrors()->assertRedirect(route('tts.whatsapp', ['id' => $order->id, 'inspection' => 1]));
-        $this->assertSame('Baterai drop & konektor longgar', $order->fresh()->inspection_result);
+        Livewire::test(Detail::class, ['id' => $order->id])->set('inspection_result', " Baterai drop & konektor longgar\nGanti baterai\nUji pengisian ")->call('sendInspection')->assertHasNoErrors()->assertRedirect(route('tts.whatsapp', ['id' => $order->id, 'inspection' => 1]));
+        $this->assertSame("Baterai drop & konektor longgar\nGanti baterai\nUji pengisian", $order->fresh()->inspection_result);
+        $this->assertNull($order->fresh()->action_plan);
         $wa = $this->get(route('tts.whatsapp', ['id' => $order->id, 'inspection' => 1]))->assertRedirect();
         $message = rawurldecode($wa->headers->get('Location'));
         $this->assertStringContainsString('Baterai drop & konektor longgar', $message);
@@ -104,8 +105,8 @@ class InspectionTest extends TestCase
         $action = app(ManageServiceOrder::class);
         $action->assign($order->id, $this->technician->id, 'pengecekan');
         $form = Livewire::test(Detail::class, ['id' => $order->id]);
-        $form->call('sendInspection')->assertHasErrors(['inspection_result', 'action_plan']);
-        $form->set('inspection_result', str_repeat('x', 4001))->set('action_plan', 'Ganti baterai')->call('saveInspection')->assertHasErrors('inspection_result');
+        $form->call('sendInspection')->assertHasErrors(['inspection_result']);
+        $form->set('inspection_result', str_repeat('x', 8101))->call('saveInspection')->assertHasErrors('inspection_result');
         $this->get(route('tts.whatsapp', ['id' => $order->id, 'inspection' => 1]))->assertStatus(422);
         $this->context();
         $form->set('inspection_result', '<script>alert(1)</script>')->call('saveInspection')->assertHasNoErrors();
@@ -151,9 +152,28 @@ class InspectionTest extends TestCase
         $this->context();
         $component = Livewire::test(Detail::class, ['id' => $order->id]);
         $component->call('startWork')->assertForbidden();
-        Livewire::test(Detail::class, ['id' => $order->id])->set('inspection_result', 'Hasil')->set('action_plan', 'Rencana')->call('saveInspection')->assertForbidden();
+        Livewire::test(Detail::class, ['id' => $order->id])->set('inspection_result', 'Hasil dan rencana')->call('saveInspection')->assertForbidden();
         $this->get(route('tts.whatsapp', ['id' => $order->id, 'inspection' => 1]))->assertForbidden();
         $this->assertSame('pengecekan', $order->fresh()->status->value);
+    }
+
+    public function test_legacy_two_fields_are_merged_without_loss_in_form_detail_and_wa(): void
+    {
+        $order = $this->order();
+        app(ManageServiceOrder::class)->assign($order->id, $this->technician->id, 'pengecekan');
+        $order->update(['inspection_result' => 'Baterai drop', 'action_plan' => 'Ganti baterai']);
+        $notes = "Baterai drop\n\nRencana tindakan:\nGanti baterai";
+        $component = Livewire::test(Detail::class, ['id' => $order->id])->assertSet('inspection_result', $notes);
+        $this->assertSame(1, substr_count($component->html(), '<textarea'));
+        $wa = $this->get(route('tts.whatsapp', ['id' => $order->id, 'inspection' => 1]));
+        $this->assertStringContainsString($notes, rawurldecode($wa->headers->get('Location')));
+        $this->context();
+        $component->call('saveInspection')->assertHasNoErrors();
+        $this->assertSame($notes, $order->fresh()->inspection_result);
+        $this->assertNull($order->fresh()->action_plan);
+        Livewire::test(Detail::class, ['id' => $order->id])->assertSet('inspection_result', $notes);
+        app(ManageServiceOrder::class)->startWork($order->id);
+        $this->get(route('tts.show', $order->id))->assertSee('Baterai drop')->assertSee('Ganti baterai');
     }
 
     public function test_migration_preserves_legacy_status_and_refuses_unsafe_rollback(): void

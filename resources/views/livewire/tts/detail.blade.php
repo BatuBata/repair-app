@@ -37,17 +37,16 @@
                 </dl></section>
                 @unless($success)<section class="blk"><div class="section-head"><h2>Riwayat</h2></div><ol class="timeline" style="margin-top:12px">@if($order->assigned_at)<li><strong>Ditetapkan ke {{ $order->technician?->name ?? '—' }}</strong><time>{{ $order->assigned_at->format('d M Y, H.i') }}</time></li>@endif<li><strong>TTS dibuat</strong><time>{{ $order->created_at->format('d M Y, H.i') }} · oleh {{ $order->creator->name }}</time></li></ol></section>@endunless
                 @if(!$success && ($order->status->value === 'pengecekan' || filled($order->inspection_result) || filled($order->action_plan)))
-                    <section class="blk" aria-labelledby="inspection-title"><h2 id="inspection-title">Hasil pengecekan</h2>
+                    <section class="blk" aria-labelledby="inspection-title"><h2 id="inspection-title">Hasil pengecekan &amp; rencana tindakan</h2>
                         @if($isAdmin && $order->status->value === 'pengecekan')
-                            <p class="small muted" style="margin-top:8px">Persetujuan pelanggan dilakukan lewat WA. Setelah disetujui, tekan Mulai pengerjaan.</p>
+                            <p class="small muted" style="margin-top:8px">Tuliskan temuan dan tindakan yang disarankan. Setelah pelanggan setuju lewat WA, tekan Mulai pengerjaan.</p>
                             <form class="form" wire:submit="saveInspection" style="margin-top:16px">
-                                <label class="field"><span>Hasil pengecekan</span><textarea class="input" wire:model="inspection_result" rows="4" maxlength="4000" placeholder="Mis. baterai drop dan tidak dapat menyimpan daya" aria-invalid="{{ $errors->has('inspection_result') ? 'true' : 'false' }}"></textarea></label>
-                                <label class="field"><span>Rencana tindakan</span><textarea class="input" wire:model="action_plan" rows="4" maxlength="4000" placeholder="Mis. ganti baterai, lalu uji pengisian dan daya tahan" aria-invalid="{{ $errors->has('action_plan') ? 'true' : 'false' }}"></textarea></label>
+                                <label class="field"><span class="sr-only">Hasil pengecekan &amp; rencana tindakan</span><textarea class="input" wire:model="inspection_result" rows="6" style="min-height:150px" maxlength="8100" placeholder="Mis. baterai drop. Disarankan ganti baterai, lalu uji pengisian dan daya tahan." aria-invalid="{{ $errors->has('inspection_result') ? 'true' : 'false' }}"></textarea></label>
                                 <div class="actions" style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" type="submit" wire:loading.attr="disabled" wire:target="saveInspection,sendInspection">Simpan hasil cek</button><button class="btn" type="button" wire:click="sendInspection" wire:loading.attr="disabled" wire:target="saveInspection,sendInspection">Simpan &amp; kirim WA</button></div>
                             </form>
                         @else
-                            <dl class="kv" style="margin-top:16px"><dt>Hasil cek</dt><dd style="white-space:pre-line">{{ $order->inspection_result ?: 'Belum dicatat' }}</dd><dt>Rencana tindakan</dt><dd style="white-space:pre-line">{{ $order->action_plan ?: 'Belum dicatat' }}</dd></dl>
-                            @if($isAdmin && filled($order->inspection_result) && filled($order->action_plan))<a class="btn" style="margin-top:16px" href="{{ route('tts.whatsapp', ['id' => $order->id, 'inspection' => 1]) }}">Kirim hasil cek via WA</a>@endif
+                            <p style="margin-top:16px;white-space:pre-line">{{ $order->inspectionNotes() ?: 'Belum dicatat' }}</p>
+                            @if($isAdmin && $order->inspectionNotes() !== '')<a class="btn" style="margin-top:16px" href="{{ route('tts.whatsapp', ['id' => $order->id, 'inspection' => 1]) }}">Kirim hasil cek via WA</a>@endif
                         @endif
                     </section>
                 @endif

@@ -16,9 +16,9 @@ final class WhatsApp
         return "Halo {$name}, barang {$item} sudah kami terima dengan nomor {$number}. Cek status: {$link} — {$store}";
     }
 
-    public static function inspectionMessage(string $name, string $number, string $result, string $plan, string $link, string $store): string
+    public static function inspectionMessage(string $name, string $number, string $notes, string $link, string $store): string
     {
-        return "Halo {$name}, berikut hasil pengecekan servis {$number}.\n\nHasil pengecekan:\n{$result}\n\nRencana tindakan:\n{$plan}\n\nMohon konfirmasi apakah perbaikan dapat dilanjutkan. Status: {$link} — {$store}";
+        return "Halo {$name}, berikut hasil pengecekan servis {$number}.\n\nHasil pengecekan & rencana tindakan:\n{$notes}\n\nMohon konfirmasi apakah perbaikan dapat dilanjutkan. Status: {$link} — {$store}";
     }
 
     public static function invoiceMessage(string $name, string $number, int $total, ?string $warrantyUntil, string $link, string $store, bool $unrepairable = false): string

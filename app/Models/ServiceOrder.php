@@ -67,6 +67,16 @@ class ServiceOrder extends Model
         ];
     }
 
+    public function inspectionNotes(): string
+    {
+        $notes = trim($this->inspection_result ?? '');
+        if (filled($this->action_plan)) {
+            $notes .= ($notes !== '' ? "\n\n" : '')."Rencana tindakan:\n".$this->action_plan;
+        }
+
+        return $notes;
+    }
+
     /** @return BelongsTo<Category, $this> */
     public function category(): BelongsTo
     {

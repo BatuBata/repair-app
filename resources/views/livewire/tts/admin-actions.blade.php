@@ -11,6 +11,7 @@
 @if($order->status->value === 'diterima')<button class="btn primary" type="submit" form="assign-technician" wire:loading.attr="disabled" wire:target="assign">Tetapkan teknisi</button>
 @elseif($order->status->value === 'pengecekan')<button class="btn primary" type="button" wire:click="sendInspection" wire:loading.attr="disabled" wire:target="sendInspection,saveInspection,startWork"><span wire:loading.remove wire:target="sendInspection">Simpan &amp; buka WhatsApp</span><span wire:loading wire:target="sendInspection">Menyiapkan WA…</span></button>
 @elseif($order->status->value === 'dikerjakan')<a class="btn primary" href="{{ route('invoice.edit', $order->id) }}">Buat nota</a>
+@elseif($order->status->value === 'batal' && !$order->picked_up_on)<button class="btn primary" type="button" wire:click="collect" wire:loading.attr="disabled" wire:target="collect"><x-ui.icon name="package-check" />Tandai barang diambil</button>
 @elseif($order->status->value === 'selesai')
     @if($needsPayment)<button class="btn primary" type="button" data-open="payment-order">Catat pembayaran</button>
     @else<button class="btn primary" type="submit" form="collect-order" wire:loading.attr="disabled" wire:target="collect">Tandai Diambil</button>@endif

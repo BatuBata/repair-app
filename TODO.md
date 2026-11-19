@@ -113,6 +113,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T091 | Tampilkan alasan dan WA pembatalan TTS | developer / 6.1-sol | easy / medium | — | — | done |
 | T092 | Samakan logo dan subtitle tracking pelanggan | developer / 6.1-sol | easy / low | — | — | done |
 | T093 | Integrasikan dan rilis revisi tertahan ke demo melalui CI/CD | integrator / 6.1-sol | medium / high | T090, T091, T092 | — | done |
+| T094 | Catat pengambilan barang untuk TTS Batal tanpa mengubah status | developer / 6.1-sol | easy / medium | — | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -188,14 +189,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:6d3a095d62b05980f7d2ae987688e05ed8cbd19530b2cc7c8059cf478aa53550",
+    "prd_revision": "sha256:09006877ef26fb7dc878b726f530919362b0b5edb1a2782ad0eb8c4fa313d86a",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
-      "stop_after_tasks": ["T093"],
-      "source_ref": "D56 release3b54261 CI/deploy44555954136 dan independentactualserverQA PASS; stopsetelahrilis, UATfisikbelumdiulang.",
+      "stop_after_tasks": ["T094"],
+      "source_ref": "D57 selesai main lokal independentQA PASS; tanpa push/deploy.",
       "phase_history": [
         {
           "state": "paused",
@@ -8301,6 +8302,79 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T093/postdeploy-independent.json"
         ],
         "summary": "Actual mainpush+CI/deploy44555954136SUCCESS:292PASS3351assert34.48s+20deploysafety,PHPStan0,Pint175files. Servermarker/receipt exact3b54261,4migrationRan/newtypesdefaults verified,maintenanceabsent,HTTPS/up/login/icon/platform200/TLSverifyPASS; independentpostdeploy/sourceparity211filesPASS. Privateenv/data preserved,no seed/reset/keygen/actualtransaction/WAsend/physicalUAT. Backup deferredD22."
+      }
+    },
+    {
+      "id": "T094",
+      "title": "Catat pengambilan barang untuk TTS Batal tanpa mengubah status",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "fullstack",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md \u00a720.3 D-57",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Tambahan cabang pengambilan memakai field existing; jaga status Batal, izin tenant/admin dan tidak masuk laporan.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Perubahan terarah pada action dan views existing tanpa migrasi.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "app/Actions/ServiceOrders/ManageServiceOrder.php",
+        "resources/views/livewire/tts/admin-actions.blade.php",
+        "resources/views/livewire/tts/detail.blade.php",
+        "resources/views/tracking/show.blade.php",
+        "tests/Feature/Invoice/**",
+        "tests/Feature/Tracking/**",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T094/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Admin pada TTS Batal belumdiambil dapat klikTandai barangdiambil tanpaformbaru; picked_up_on hariiniWITA, status Batal danalasan/tanggalbatal tetap; ulangrequesttidakmenimpadate.",
+        "Admin/teknisi readonly dantrackingpublikmenampilkanstatuspengambilandantanggal; tombolhilangsetelahdiambil; noinvoice/payment/pendapatan/dashboardDiambil-countchanges.",
+        "Guardtenant/teknisi/inactive/invalidstates,normalpickupregression,datesWITA/idempotency/reportexclusion teruji; browserHPdesktop danQAindependenPASS; no schema/deps/operatorDB/push/deploy."
+      ],
+      "verification_plan": [
+        "Testtargetcancelpickup status/date/idempotency/tenant/admin/report/tracking +existinginvoice/inspection/dashboard;Pint/PHPStan;CUAdisposablefixturebefore/after1280/375."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T094/README.md",
+        "revision": "sha256:566c56e9c776ed73f1786f5aaa4c0b4f6f958e8bf54eb6d26693c1b12fb93e7d",
+        "checked_revision": "sha256:566c56e9c776ed73f1786f5aaa4c0b4f6f958e8bf54eb6d26693c1b12fb93e7d",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T094/README.md",
+          "docs/evidence/T094/source-manifest.json",
+          "docs/evidence/T094/independent-qa.md",
+          "docs/evidence/T094/browser-checks.json",
+          "docs/evidence/T094/admin-before.jpg",
+          "docs/evidence/T094/admin-after.jpg",
+          "docs/evidence/T094/admin-mobile-before.jpg",
+          "docs/evidence/T094/admin-mobile-after.jpg",
+          "docs/evidence/T094/customer-before.jpg",
+          "docs/evidence/T094/customer-after.jpg",
+          "docs/evidence/T094/customer-mobile-after.jpg"
+        ],
+        "summary": "Canceledpickup viaexistingcollect updatesonlypicked_up_on todayWITA ifnull, staysBatal/noinvoice/payment/revenue, idempotent/tenant/admin.66regressionPASS716assert+independent4casesPASS50finalassert,6hash/visualPASS. PHPStan0/Pint/diffPASS; CUA375actualbutton+1280/375anonymouspublic date/reason nooverflow. No schema/deps/operatorDB/push/deploy."
       }
     }
   ]

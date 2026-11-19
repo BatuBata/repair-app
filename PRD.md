@@ -705,6 +705,8 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 
 | D-56 | Push seluruh revisi main yang ditahan dan deploy ke target demo existing melalui CI/CD D-23; migrasi additive existing dijalankan normal, konfigurasi privat/data toko dipertahankan | User mengatakan push and deploy setelah T092 | User | 19 Nov 2026; target demo-repair-app.scannara.asia D-20 |
 
+| D-57 | TTS Batal dapat ditandai barang sudah diambil melalui tombol admin; memakai picked_up_on existing dengan tanggal hari ini WITA, status tetap Batal, informasi tampil juga pada link pelanggan. Tanpa nota/pembayaran/status/schema baru atau masuk pendapatan | User menyetujui rancangan sederhana pengambilan barang TTS batal | User | 19 Nov 2026; main lokal tanpa push/deploy |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

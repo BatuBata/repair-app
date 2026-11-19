@@ -115,9 +115,9 @@ class InvoiceTest extends TestCase
         $order = $this->order($status);
         try {
             $action->collect($order->id, '2026-11-13', ['payment_method' => 'cash']);
-            $this->assertSame('selesai', $status);
-            $this->assertSame('diambil', $order->fresh()->status->value);
-            $this->assertSame('2026-11-13', $order->fresh()->picked_up_on->toDateString());
+            $this->assertContains($status, ['selesai', 'batal']);
+            $this->assertSame($status === 'batal' ? 'batal' : 'diambil', $order->fresh()->status->value);
+            $this->assertSame($status === 'batal' ? now('Asia/Makassar')->toDateString() : '2026-11-13', $order->fresh()->picked_up_on->toDateString());
         } catch (ValidationException $e) {
             $this->assertNotSame('selesai', $status);
             $this->assertArrayHasKey('status', $e->errors());

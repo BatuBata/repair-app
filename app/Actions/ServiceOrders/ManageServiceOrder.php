@@ -132,6 +132,13 @@ final class ManageServiceOrder
     {
         DB::transaction(function () use ($id, $date, $payment) {
             $order = $this->locked($id);
+            if ($order->getAttribute('status') === ServiceOrderStatus::Batal) {
+                if ($order->picked_up_on === null) {
+                    $order->update(['picked_up_on' => CarbonImmutable::today('Asia/Makassar')]);
+                }
+
+                return;
+            }
             $order->getAttribute('status')->assertTransitionTo(ServiceOrderStatus::Diambil, UserRole::Admin);
             $data = Validator::make(['picked_up_on' => $date], ['picked_up_on' => ['required', 'date_format:Y-m-d', 'after_or_equal:1000-01-01', 'before_or_equal:9999-12-31']], ['*' => 'Isi tanggal diambil yang valid (tahun 1000–9999).'])->validate();
             $changes = ['status' => ServiceOrderStatus::Diambil, 'picked_up_on' => $data['picked_up_on']];

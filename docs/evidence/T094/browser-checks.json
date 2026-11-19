@@ -1,0 +1,22 @@
+[
+  {
+    "buttonCount": 0,
+    "pickup": "Servis dibatalkan\n\nTidak bisa diperbaiki karena modul utama rusak dan suku cadang tidak tersedia.\n\nBarang sudah diambil · 19 Nov 2026",
+    "scrollWidth": 375,
+    "status": "TTS-2611-001\nBatal\n\nMasuk 19 Nov 2026, 23.09 · dicatat oleh Admin QA",
+    "view": "admin-mobile-after",
+    "width": 375
+  },
+  {
+    "details": "Pengerjaan dihentikan\nAlasan pembatalan\nTidak bisa diperbaiki karena modul utama rusak dan suku cadang tidak tersedia.\nPengambilan\nBarang sudah diambil\n19 Nov 2026\n\nHubungi toko jika Anda memerlukan informasi lebih lanjut.",
+    "scrollWidth": 1280,
+    "view": "customer-desktop-after",
+    "width": 1280
+  },
+  {
+    "details": "Pengerjaan dihentikan\nAlasan pembatalan\nTidak bisa diperbaiki karena modul utama rusak dan suku cadang tidak tersedia.\nPengambilan\nBarang sudah diambil\n19 Nov 2026\n\nHubungi toko jika Anda memerlukan informasi lebih lanjut.",
+    "scrollWidth": 375,
+    "view": "customer-mobile-after",
+    "width": 375
+  }
+]

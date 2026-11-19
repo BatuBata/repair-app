@@ -94,6 +94,7 @@
         <section @class(['work-panel', 'inspection-panel' => $stage === 'pengecekan']) aria-labelledby="current-work">
             <h2 id="current-work">{{ match($stage) { 'diterima' => 'Tetapkan teknisi', 'pengecekan' => 'Hasil pengecekan & rencana tindakan', 'dikerjakan' => 'Perbaikan sedang dikerjakan', 'selesai' => 'Barang siap diambil', 'diambil' => 'Servis telah selesai', default => 'Servis dibatalkan' } }}</h2>
             @if($stage !== 'pengecekan')<p class="muted">{{ match($stage) { 'diterima' => 'Pilih teknisi dan tentukan apakah barang perlu diperiksa terlebih dahulu.', 'dikerjakan' => 'Setelah pekerjaan selesai, isi rincian biaya dan terbitkan nota.', 'selesai' => 'Periksa pembayaran sebelum menyerahkan barang kepada pelanggan.', 'diambil' => 'Barang sudah diserahkan kepada pelanggan.', default => $order->cancel_reason ?: 'Pengerjaan untuk TTS ini dihentikan.' } }}</p>@endif
+            @if($stage === 'batal')<p style="margin-top:12px"><strong>{{ $order->picked_up_on ? 'Barang sudah diambil' : 'Barang belum diambil' }}</strong>@if($order->picked_up_on) · {{ $order->picked_up_on->translatedFormat('j M Y') }}@endif</p>@endif
             @if($isAdmin)
                 @if($stage === 'diterima')
                     @include('livewire.tts.technician-form')

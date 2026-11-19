@@ -22,6 +22,8 @@ class Form extends Component
 
     public string $warranty_days = '0';
 
+    public string $discount = '0';
+
     public string $payment_method = 'cash';
 
     public string $payment_bank = '';
@@ -95,14 +97,14 @@ class Form extends Component
     public function save(): void
     {
         User::activeAccount(admin: true);
-        $input = $this->only(['sold_on', 'customer_name', 'customer_phone', 'warranty_days', 'payment_method', 'payment_bank', 'items']);
+        $input = $this->only(['sold_on', 'customer_name', 'customer_phone', 'warranty_days', 'discount', 'payment_method', 'payment_bank', 'items']);
         $input['customer_id'] = $this->customer_id === '' ? null : $this->customer_id;
         $sale = app(CreateSale::class)->handle($input);
         session()->flash('sale-status', 'Penjualan berhasil disimpan.');
         $this->redirectRoute('sales.show', $sale->id);
     }
 
-    protected function previewTotal(): ?int
+    protected function previewSubtotal(): ?int
     {
         $total = 0;
         foreach ($this->items as $row) {
@@ -123,6 +125,15 @@ class Form extends Component
         return $total;
     }
 
+    protected function previewTotal(?int $subtotal): ?int
+    {
+        if ($subtotal === null || Validator::make(['discount' => $this->discount], ['discount' => ['required', 'integer', 'min:0', 'max:'.$subtotal]])->fails()) {
+            return null;
+        }
+
+        return $subtotal - (int) $this->discount;
+    }
+
     public function render(): View
     {
         User::activeAccount(admin: true);
@@ -135,7 +146,9 @@ class Form extends Component
             'items.*.price' => ['present', 'string'],
         ])->validate();
 
-        return view('livewire.sales.form', ['products' => Product::query()->where('is_active', true)->orderBy('name')->get(), 'customers' => Customer::query()->orderBy('name')->get(['id', 'name', 'phone']), 'previewTotal' => $this->previewTotal()])
+        $previewSubtotal = $this->previewSubtotal();
+
+        return view('livewire.sales.form', ['products' => Product::query()->where('is_active', true)->orderBy('name')->get(), 'customers' => Customer::query()->orderBy('name')->get(['id', 'name', 'phone']), 'previewSubtotal' => $previewSubtotal, 'previewTotal' => $this->previewTotal($previewSubtotal)])
             ->layout('layouts.app', ['title' => 'Penjualan baru']);
     }
 }

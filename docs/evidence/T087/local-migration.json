@@ -1,0 +1,9 @@
+{
+    "database": "repair_app",
+    "host": "localhost",
+    "migration": "2026_11_19_020000_add_sale_discount",
+    "legacy_sale_count": 0,
+    "legacy_sales_and_items_identical": true,
+    "legacy_discount_zero": true,
+    "result": "PASS"
+}

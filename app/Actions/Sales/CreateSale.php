@@ -22,7 +22,7 @@ final class CreateSale
     public function handle(array $input): Sale
     {
         User::activeAccount(admin: true);
-        $input += ['payment_method' => 'cash', 'payment_bank' => null];
+        $input += ['payment_method' => 'cash', 'payment_bank' => null, 'discount' => 0];
         $payment = Payment::validate($input);
         $data = Validator::make($input, [
             'customer_id' => ['nullable', 'integer', 'min:1', Rule::exists('customers', 'id')->where('tenant_id', app(TenantContext::class)->id())],
@@ -30,6 +30,7 @@ final class CreateSale
             'customer_name' => ['nullable', 'string', 'max:100'],
             'customer_phone' => ['nullable', 'string', 'max:40'],
             'warranty_days' => ['nullable', 'integer', 'between:0,4294967295'],
+            'discount' => ['required', 'integer', 'min:0', 'max:'.PHP_INT_MAX],
             'items' => ['required', 'array', 'list', 'min:1', 'max:100'],
             'items.*.product_id' => ['required', 'integer', 'min:1', 'max:9223372036854775807', 'distinct'],
             'items.*.qty' => ['required', 'integer', 'between:1,4294967295'],
@@ -43,6 +44,7 @@ final class CreateSale
             'items.max' => 'Maksimal 100 baris barang per penjualan.',
             'items.*.product_id.distinct' => 'Barang yang sama hanya boleh dipilih satu kali. Gabungkan jumlahnya.',
             'customer_name.max' => 'Nama customer maksimal 100 karakter.',
+            'discount.*' => 'Diskon harus berupa rupiah bulat dari 0 sampai subtotal barang.',
         ], ['sold_on' => 'Tanggal jual', 'customer_name' => 'Nama customer', 'customer_phone' => 'Nomor HP', 'warranty_days' => 'Hari garansi', 'items' => 'Barang', 'items.*.product_id' => 'Barang', 'items.*.qty' => 'Jumlah', 'items.*.price' => 'Harga jual'])->validate();
         if (! empty($data['customer_id'])) {
             $customer = Customer::query()->whereKey($data['customer_id'])->firstOrFail();
@@ -95,6 +97,9 @@ final class CreateSale
                 $items[] = ['product_id' => $product->id, 'product_name' => $product->name, 'qty' => $qty, 'price' => $price, 'cost' => $product->cost_price];
                 $product->update(['stock' => $product->stock - $qty]);
             }
+            if ((int) $data['discount'] > $totalPrice) {
+                throw ValidationException::withMessages(['discount' => 'Diskon tidak boleh melebihi subtotal barang.']);
+            }
             if ($customer === null && $data['customer_name'] !== null && $data['customer_phone'] !== null) {
                 $customer = Customer::firstOrCreate(['phone' => $data['customer_phone']], ['name' => $data['customer_name']]);
             }
@@ -106,6 +111,7 @@ final class CreateSale
                 'customer_name' => $data['customer_name'],
                 'customer_phone' => $data['customer_phone'],
                 'warranty_days' => $days,
+                'discount' => (int) $data['discount'],
                 'warranty_until' => $days > 0 ? $soldOn->addDays($days)->toDateString() : null,
                 ...$payment,
                 'paid_at' => $createdAt,

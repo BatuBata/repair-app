@@ -1,0 +1,18 @@
+{
+  "base": "a971de1250989e3c5bedbf374428693a1694529b",
+  "revision": "sha256:413a891252ba49709041388c769f03edd98b96f065a7f7f946597746829a6266",
+  "files": {
+    "app/Actions/Sales/CreateSale.php": "e5145e7997172b6523a1453185fb2ed43386614c76d02524899e69b35f74ebc8",
+    "app/Livewire/Dashboard/Index.php": "4b58d069beb81ce0146dba300a36fd69f7b18df81b73552789586eaf576b851e",
+    "app/Livewire/Sales/Form.php": "3a6a5e1c35275df4c4b3245de2e8a4860d8b9165fd16d09168685364db668b2d",
+    "app/Models/Sale.php": "7ea1f493b49d3ac310c00a9e1f3ddacb389e01706f7286604848cfe532516d4e",
+    "app/Services/Documents/Document.php": "d95a0d36ee1e4e18a99484426d87021b51b0b50c8f2fd09728ce6f63bddf19d1",
+    "app/Services/Reports/Report.php": "53ac82f7fadf651820336b25c0686c8679183f4e457381c7c8365e75b95fbfdd",
+    "database/migrations/2026_11_19_020000_add_sale_discount.php": "e913358679a782c8ef4bd72d0c6b9e2290b5671944ec090a645cb95dd497ffa5",
+    "resources/views/livewire/sales/form.blade.php": "95400811b506c3009a3bf4e7ce7ee906d9206ff1c4b9dc631bca9ff272e44a7d",
+    "resources/views/livewire/sales/index.blade.php": "e53f419645d9e5b1be39f2e8deb7109f7a8965788e68791b1cc6cfa2b477d5b4",
+    "resources/views/livewire/sales/show.blade.php": "e2f179d1b24957956ac09074167853f3670f372a1bc23da91fc9c455e6573b78",
+    "resources/views/livewire/sales/styles.blade.php": "048042f628add84c92b90242a03c1a20dcb26dc72599d8b2b0442190f25db7f4",
+    "tests/Feature/Sales/SaleDiscountTest.php": "ccec97a1dc97bd228d8049ace18360e1f82955df8b6b9ccc4f0c8fa9e7fbe4a2"
+  }
+}

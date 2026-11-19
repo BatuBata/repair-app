@@ -1,7 +1,8 @@
 <div class="sales-page record-detail">
     @include('livewire.sales.styles')
     @include('livewire.detail-styles')
-    @php($totalPrice = $sale->items->sum(fn ($item) => $item->subtotalPrice()))
+    @php($subtotalPrice = $sale->items->sum(fn ($item) => $item->subtotalPrice()))
+    @php($totalPrice = $subtotalPrice - $sale->discount)
     @php($totalCost = $sale->items->sum(fn ($item) => $item->subtotalCost()))
     <a class="crumb" href="{{ route('sales.index') }}"><x-ui.icon name="arrow-left" />Penjualan</a>
     <header class="title-row"><div>
@@ -28,6 +29,7 @@
             </tbody></table>
         </section>
         <aside class="detail-panel" aria-labelledby="sale-summary-title"><h2 id="sale-summary-title">Ringkasan penjualan</h2>
+            @if($sale->discount > 0)<dl class="detail-totals sale-discount-breakdown"><div><dt>Subtotal barang</dt><dd>Rp{{ number_format($subtotalPrice, 0, ',', '.') }}</dd></div><div><dt>Diskon</dt><dd>−Rp{{ number_format($sale->discount, 0, ',', '.') }}</dd></div></dl>@endif
             <dl class="detail-total"><dt>Total penjualan</dt><dd>Rp{{ number_format($totalPrice, 0, ',', '.') }}</dd></dl>
             <dl class="detail-totals"><div><dt>Total modal</dt><dd>Rp{{ number_format($totalCost, 0, ',', '.') }}</dd></div><div><dt>Laba kotor</dt><dd>Rp{{ number_format($totalPrice - $totalCost, 0, ',', '.') }}</dd></div></dl>
             <div class="detail-warranty"><h3>Garansi</h3><p>{{ $sale->warranty_days ? $sale->warranty_days.' hari · berlaku sampai '.$sale->warranty_until->format('d/m/Y') : 'Tanpa garansi' }}</p></div>

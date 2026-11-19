@@ -1,0 +1,1 @@
+{"tool":"phpunit","result":"failed","tests":8,"passed":7,"assertions":173,"failed":1,"failure":"Form test reused an invalid-submit Livewire error bag after valid redirect. Test lifecycle corrected to use a fresh component for the successful submit; no application source fix required."}

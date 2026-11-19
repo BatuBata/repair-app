@@ -19,10 +19,12 @@ use Illuminate\Validation\Rule;
  * @property ?string $payment_bank
  * @property ?CarbonImmutable $paid_at
  */
-#[Fillable(['number', 'sold_on', 'customer_id', 'customer_name', 'customer_phone', 'warranty_days', 'warranty_until', 'warranty_contacted_at', 'payment_method', 'payment_bank', 'paid_at', 'created_by'])]
+#[Fillable(['number', 'sold_on', 'customer_id', 'customer_name', 'customer_phone', 'warranty_days', 'warranty_until', 'warranty_contacted_at', 'discount', 'payment_method', 'payment_bank', 'paid_at', 'created_by'])]
 class Sale extends Model
 {
     use BelongsToTenant;
+
+    protected $attributes = ['discount' => 0];
 
     protected static function booted(): void
     {
@@ -33,6 +35,7 @@ class Sale extends Model
                 'customer_id' => ['nullable', 'integer', Rule::exists('customers', 'id')->where('tenant_id', $tenantId)],
                 'created_by' => ['required', Rule::exists('users', 'id')->where('tenant_id', $tenantId)],
                 'warranty_days' => ['nullable', 'integer', 'min:0', 'max:4294967295'],
+                'discount' => ['required', 'integer', 'min:0', 'max:'.PHP_INT_MAX],
             ])->validate();
             if ($model->customer_phone !== null) {
                 $model->customer_phone = PhoneNumber::normalize($model->customer_phone);
@@ -46,6 +49,7 @@ class Sale extends Model
         return [
             'sold_on' => 'immutable_date',
             'warranty_days' => 'integer',
+            'discount' => 'integer',
             'warranty_until' => 'immutable_date',
             'warranty_contacted_at' => 'immutable_datetime',
             'paid_at' => 'immutable_datetime',

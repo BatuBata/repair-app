@@ -57,12 +57,12 @@ class Document
     /** @return array<string, mixed> */
     public function sale(int $id): array
     {
-        $sale = Sale::query()->select(['id', 'number', 'sold_on', 'customer_name', 'customer_phone', 'warranty_days', 'warranty_until'])->findOrFail($id);
+        $sale = Sale::query()->select(['id', 'number', 'sold_on', 'customer_name', 'customer_phone', 'warranty_days', 'warranty_until', 'discount'])->findOrFail($id);
         $items = $sale->items()->orderBy('id')->get(['product_name', 'qty', 'price'])->map(fn ($item) => (object) ['description' => $item->product_name, 'qty' => $item->qty, 'price' => $item->price]);
 
         return ['kind' => 'Penjualan', 'number' => $sale->number, 'date' => $sale->sold_on, 'invoiceDate' => null,
             'customer' => $sale->customer_name, 'phone' => $sale->customer_phone, 'item' => null, 'complaint' => null, 'technician' => null,
-            'items' => $items, 'warrantyDays' => $sale->warranty_days, 'warrantyUntil' => $sale->warranty_until, 'unrepairable' => false, 'qr' => null, 'public' => false];
+            'items' => $items, 'discount' => $sale->discount, 'warrantyDays' => $sale->warranty_days, 'warrantyUntil' => $sale->warranty_until, 'unrepairable' => false, 'qr' => null, 'public' => false];
     }
 
     /** @param array<string, mixed> $data */

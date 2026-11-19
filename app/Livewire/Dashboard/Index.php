@@ -130,6 +130,16 @@ class Index extends Component
             $days[$day]['invoices'] = $days[$day]['invoices']->plus(1);
         }
 
+        foreach (Sale::query()->whereDate('sold_on', '>=', $start)->whereDate('sold_on', '<=', $end)->select(['sold_on', 'discount'])->cursor() as $sale) {
+            $day = substr($sale->getRawOriginal('sold_on'), 0, 10);
+            if (! isset($days[$day])) {
+                throw new \LogicException('Tanggal penjualan di luar rentang dashboard.');
+            }
+            foreach (['revenue', 'profit', 'sales', 'sales_profit'] as $key) {
+                $days[$day][$key] = $days[$day][$key]->minus($sale->discount);
+            }
+        }
+
         return $days;
     }
 

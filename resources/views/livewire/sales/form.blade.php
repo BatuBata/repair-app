@@ -38,7 +38,9 @@
         </div>
         <aside class="detail-panel sale-checkout" aria-labelledby="sale-summary-title">
             <h2 id="sale-summary-title">Ringkasan penjualan</h2>
-            <dl class="detail-total"><dt>Total sementara</dt><dd>{{ $previewTotal === null ? 'Periksa isian' : 'Rp'.number_format($previewTotal, 0, ',', '.') }}</dd></dl>
+            <dl class="detail-totals"><div><dt>Subtotal barang</dt><dd>{{ $previewSubtotal === null ? 'Periksa isian' : 'Rp'.number_format($previewSubtotal, 0, ',', '.') }}</dd></div></dl>
+            <div class="sale-discount"><x-ui.money name="discount" label="Diskon" :value="$discount" x-on:input="$wire.set('discount', $el.value.replace(/\D/g, ''))" aria-invalid="{{ $errors->has('discount') ? 'true' : 'false' }}" aria-describedby="discount-hint discount-error" /><p class="small muted" id="discount-hint">Isi 0 jika tanpa diskon. Maksimal sebesar subtotal.</p>@error('discount')<p class="error-text" id="discount-error">{{ $message }}</p>@enderror</div>
+            <dl class="detail-total"><dt>Total bayar</dt><dd>{{ $previewTotal === null ? 'Periksa isian' : 'Rp'.number_format($previewTotal, 0, ',', '.') }}</dd></dl>
             <div class="sale-transaction-fields">
                 <div><x-ui.field name="sold_on" label="Tanggal jual" type="date" :value="$sold_on" wire:model="sold_on" aria-invalid="{{ $errors->has('sold_on') ? 'true' : 'false' }}" aria-describedby="sold_on-error" />@error('sold_on')<p class="error-text" id="sold_on-error">{{ $message }}</p>@enderror</div>
                 <div><x-ui.field name="warranty_days" label="Garansi (hari)" wire:model="warranty_days" inputmode="numeric" aria-invalid="{{ $errors->has('warranty_days') ? 'true' : 'false' }}" aria-describedby="warranty_days-hint warranty_days-error" /><p class="small muted" id="warranty_days-hint">0 = tanpa garansi. Garansi memerlukan nomor HP.</p>@error('warranty_days')<p class="error-text" id="warranty_days-error">{{ $message }}</p>@enderror</div>

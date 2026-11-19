@@ -1,0 +1,1 @@
+Evidence script first run failed before database connection: reused T086 bootstrap referenced Kernel alias before import. Corrected bootstrap to fully-qualified Console Kernel; no database mutation occurred.

@@ -106,6 +106,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T084 | Ringkas banner dan tombol tutup melingkar | developer / 6.1-sol | easy / low | — | — | done |
 | T085 | Rombak form tambah penjualan | developer / 6.1-sol | easy / low | — | — | done |
 | T086 | Master kategori pengeluaran per toko | developer / 6.1-sol | medium / medium | — | — | done |
+| T087 | Diskon nominal tambah penjualan dan output akhir | developer / 6.1-sol | medium / medium | — | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -181,14 +182,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:694c5cc5fd3c16dc9b1d55c777c36bbe44e4fd12cfaefc2727b65206f2d4a25f",
+    "prd_revision": "sha256:4db083ee0259dc63e7303bd03cddaca81ed59b86a61a92d50540441646aae1d2",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
-      "stop_after_tasks": ["T085", "T086"],
-      "source_ref": "User19Nov2026 D48/D49 selesai mainlokal, QA independen PASS, migrasi lokal diterapkan; tanpa push/deploy.",
+      "stop_after_tasks": ["T087"],
+      "source_ref": "User19Nov2026 D50 selesai mainlokal, QA independen PASS dan migrasilokal diterapkan; tanpa push/deploy.",
       "phase_history": [
         {
           "state": "paused",
@@ -7798,6 +7799,85 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T086/local-migration.json"
         ],
         "summary": "Master pertenant/defaulttoggle/customCRUD snapshot preserved. Developer66tests920assert PASS, independent4tests10assert PASS, MySQLactualmigration20baseline unchanged. CUA1440/375 PASS; localrepair_app onlynewmigrationPASS; prod untouched. Integrated275cases all required pass afterDatePickerTest correction, guardedMySQLconcurrency skipped. No push/deploy."
+      }
+    },
+    {
+      "id": "T087",
+      "title": "Diskon nominal tambah penjualan dan output akhir",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "backend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-50",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Nilai uang baru harus konsisten di penyimpanan dan seluruh output.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Validasi uang, rollback stok dan agregasi laporan lintas tenant.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "app/Actions/Sales/CreateSale.php",
+        "app/Models/Sale.php",
+        "app/Livewire/Sales/Form.php",
+        "app/Livewire/Dashboard/Index.php",
+        "app/Services/Reports/Report.php",
+        "app/Services/Documents/Document.php",
+        "resources/views/livewire/sales/**",
+        "database/migrations/*sale_discount*",
+        "tests/Feature/Sales/**",
+        "docs/evidence/T087/**",
+        "DESIGN.md",
+        "PRD.md",
+        "TODO.md"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Diskon nominal rupiah0–subtotal, default0; form totalbayar bereaksi saat harga/jumlah/diskon berubah, errorinline dan fokus.",
+        "Server reject negative/fraction/too-large/overflow atomically; stock/cost unchanged except normal sale; fullsubtotal discount allowed.",
+        "All financialoutputs list/detail/nota/PDF/report/dashboard/payment summaries use nettotal, without changing lineunitprice/cost.",
+        "Additivecolumn default0 oldrows preserved, tenant/authexisting; independentQA/testsmigration/browser. No push/deploy."
+      ],
+      "verification_plan": [
+        "Targeted salesdiscount cases invalid/overflow/zero/legacy/delete/tenant; report/dashboard/docHTMLPDF; migration preservingolddata/MySQL actual; CUA subtotal-discount-final desktop/HP; independentQA."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T087/README.md",
+        "revision": "sha256:413a891252ba49709041388c769f03edd98b96f065a7f7f946597746829a6266",
+        "checked_revision": "sha256:413a891252ba49709041388c769f03edd98b96f065a7f7f946597746829a6266",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T087/README.md",
+          "docs/evidence/T087/source-manifest.json",
+          "docs/evidence/T087/independent-qa.md",
+          "docs/evidence/T087/A1/HANDOFF.md",
+          "docs/evidence/T087/A1/mysql-proof.json",
+          "docs/evidence/T087/integration-checks.json",
+          "docs/evidence/T087/browser.md",
+          "docs/evidence/T087/discount-desktop.jpg",
+          "docs/evidence/T087/discount-error-mobile.jpg",
+          "docs/evidence/T087/discount-detail-mobile.jpg",
+          "docs/evidence/T087/discount-receipt.jpg",
+          "docs/evidence/T087/local-migration.json"
+        ],
+        "summary": "Fullsuite283cases282PASS1guardedSKIP3100assert/build446ms PASS. Developer53tests708assert/MySQL20baseline unchanged PASS. Independent1case19assert+actualA5/thermalPDFtext PASS. CUA1440/375 partial/full/invaliddiscount/save/output PASS. Localrepair_app migrationonlynewpath60msPASS, prod untouched. No push/deploy."
       }
     }
   ]

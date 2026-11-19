@@ -34,6 +34,9 @@
     .sale-create .sale-line:last-of-type { border-bottom:0; padding-bottom:0; }
     .sale-create .sale-line .remove .btn { width:36px; padding:0; }
     .sale-create .sale-checkout { margin-top:0; }
+    .sale-create .sale-discount { margin:12px 0 16px; }
+    .sale-create .sale-discount .small { margin-top:6px; }
+    .sales-page .sale-discount-breakdown { margin-bottom:16px; }
     .sale-create .sale-transaction-fields { display:grid; gap:16px; }
     .sale-create .sale-transaction-fields .small { margin-top:6px; }
     .sale-create .sale-payment { margin-top:20px; padding-top:16px; border-top:1px solid var(--border); }

@@ -1,0 +1,15 @@
+{
+  "full_suite": {
+    "tool": "phpunit",
+    "result": "passed",
+    "tests": 283,
+    "passed": 282,
+    "assertions": 3100,
+    "duration_ms": 15422,
+    "skipped": 1
+  },
+  "build": "PASS446ms",
+  "guarded_skip": "Existing MySQL concurrency test not enabled; task actual MySQL migration proof separate in A1/mysql-proof.json.",
+  "browser": "IsolatedSQLite1440/375 see browser.md",
+  "push_deploy": false
+}

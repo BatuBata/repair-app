@@ -691,6 +691,8 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 
 | D-49 | Master kategori pengeluaran mengikuti Bank: empat kategori bawaan existing hanya aktif/nonaktif per toko; tambahan toko dapat dibuat/diubah/dihapus. Pilihan input baru hanya kategori aktif milik toko. Transaksi lama mempertahankan nama kategori snapshot ketika master diubah/dihapus; data lama tidak diubah. Perlu migrasi perluasan enum kategori ke string dan tabel konfigurasi tenant; tanpa kategori bertingkat/modul laporan baru | User meminta master kategori pengeluaran setelah form penjualan | User | 19 Nov 2026; main lokal tanpa push/deploy; migrasi dalam scope fitur |
 
+| D-50 | Tambah penjualan memiliki satu diskon nominal rupiah per transaksi, default0, valid0–subtotal dan boleh membuat total0. Subtotal barang/harga perunit/modal/stok tetap; totalbayar/laba/list/detail/nota/cetak/PDF/dashboard/laporan/metodebank memakai nilai akhir. Transaksi lama discount0 tanpa backfill. Satu kolom sales.discount, tanpa persen/diskon perbarang/kupon/alur baru | User meminta diskon di tambah penjualan | User | 19 Nov 2026; main lokal tanpa push/deploy; migrasi aditif dalam scope |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

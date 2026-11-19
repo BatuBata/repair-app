@@ -42,6 +42,9 @@ class Report
             foreach ($sale->items as $item) {
                 $lines[] = ['description' => $item->product_name, 'qty' => (string) $item->qty, 'amount' => (string) BigInteger::of($item->qty)->multipliedBy($item->price), 'cost' => (string) BigInteger::of($item->qty)->multipliedBy($item->cost)];
             }
+            if ($sale->discount > 0) {
+                $lines[] = ['description' => 'Diskon', 'qty' => '1', 'amount' => (string) -$sale->discount, 'cost' => '0'];
+            }
             $rows[] = $this->transaction('jual', $sale->id, CarbonImmutable::parse((string) $sale->getRawOriginal('sold_on'))->toDateString(), $sale->number, $sale->customer_name ?: 'Penjualan langsung', $lines, route('sales.show', $sale->id), $sale->payment_method, $sale->payment_bank);
         }
         $expenseTotal = BigInteger::zero();

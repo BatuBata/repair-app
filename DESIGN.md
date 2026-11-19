@@ -580,3 +580,5 @@ Semua banner hasil aksi memakai satu komponen notice, dengan jarak bawah 20px te
 ## Form tambah penjualan — 19 November 2026
 
 Gunakan panel terbuka seperti detail: pelanggan dan barang di area utama; total, tanggal, garansi, pembayaran dan simpan dalam ringkasan di kanan desktop. HP bertumpuk dan simpan memakai bilah aksi existing. Isian tetap dapat diedit, tanpa langkah/disclosure baru; baris barang HP memakai pemisah tipis tanpa kartu bertingkat.
+
+Diskon penjualan memakai satu isian rupiah di ringkasan form, di antara subtotal barang dan total bayar. Total akhir mengikuti diskon tanpa mengubah harga per unit. Detail/nota menampilkan subtotal dan diskon jika nilainya lebih dari nol; tanpa pilihan persen atau kupon.

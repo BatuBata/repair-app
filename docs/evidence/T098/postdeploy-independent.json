@@ -1,0 +1,16 @@
+{
+  "verdict": "pass",
+  "target": "https://demo-repair-app.scannara.asia",
+  "revision": "160d49c96d7e6430e1564fd24498c26663aa6e87",
+  "github_run": "https://github.com/BatuBata/repair-app/actions/runs/44564621738",
+  "release_match": true,
+  "receipt": {"revision":"160d49c96d7e6430e1564fd24498c26663aa6e87","status":"pass","utc":"2026-11-19T16:21:00Z"},
+  "maintenance": false,
+  "database_ready": true,
+  "reviewed_css_hash_matches": true,
+  "margin24_grid412_mobile_one_column": true,
+  "compiled_matching_report_styles": 1,
+  "https": [{"path":"/up","status":200,"ssl_verify_result":0},{"path":"/login","status":200,"ssl_verify_result":0},{"path":"/icons/repair-app-192.png","status":200,"ssl_verify_result":0}],
+  "operator_login_or_business_writes": false,
+  "credentials_or_customer_rows_inspected": false
+}

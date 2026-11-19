@@ -15,3 +15,5 @@ Reproduksi nyata fixtureSQLite terpisah `/private/tmp/repair-t098.sqlite`,25sale
 ## Rilis
 
 User telah mengizinkan push/deploy pada permintaan yang sama. Workflow/sourceSHA/receipt/QAserverreadonly akan dicatat setelah rilis aktual; dokumenpersiapan ini tidakmengklaimdeploymentPASS. Tidaklogin/menulisDBoperator,memilihbankpadatransaksipelanggan,mengirimWA,atau uji printer/perangkatfisik. BackupD22tetapditunda.
+
+Hasil rilis aktual: main160d49c96d7e6430e1564fd24498c26663aa6e87 berhasil dipush; GitHub44564621738CI/deploySUCCESS,298PASS3436assert32.68s,Pint177file/PHPStan0/20deploysafety. ReceiptDEPLOYEDexactSHA UTC16:21:00,HTTPShealth/loginPASS. Receipt dan hasil read-onlytarget tersimpan github-run.json/ci-checks.log/deploy-checks.log/deploy-receipt.json/independent-qa.md/postdeploy-independent.json. Tidak ada migrasi atau transaksi pelanggan untuk verifikasi.

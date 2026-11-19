@@ -1,0 +1,25 @@
+{
+  "domain": "https://demo-repair-app.scannara.asia",
+  "path": "/var/www/demo-repair-app/current",
+  "authorization": "User20Nov2026 perbaiki filter laporan setelahselesaiT097,lalupushanddeploy;D61",
+  "revision": "160d49c96d7e6430e1564fd24498c26663aa6e87",
+  "previous_revision": "87bd477da3fe88378b086bb84601b81fa5a8a8e3",
+  "workflow": "https://github.com/BatuBata/repair-app/actions/runs/44564621738",
+  "run_id": 44564621738,
+  "completed_at": "2026-11-19T16:21:05Z",
+  "ci": "success",
+  "deploy": "success",
+  "ci_tests": {
+    "passed": 298,
+    "assertions": 3436,
+    "duration_seconds": 32.68,
+    "deployment_safety_cases": 20
+  },
+  "runtime_files_changed": 1,
+  "new_migrations": 0,
+  "predeploy_source_pin": "sha256:305f0b019501343b5ded3c5449b600543280187d2c5071e4679da19a2f2e79f0",
+  "post_deploy_evidence": "postdeploy-independent.json",
+  "operator_business_writes": false,
+  "post_deploy": "pass",
+  "runtime_css_verified": true
+}

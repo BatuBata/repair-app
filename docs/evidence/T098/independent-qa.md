@@ -15,6 +15,13 @@ Bukti visual/geometry coordinator diperiksa independen: seluruh screenshot befor
 
 Pemeriksaan coordinator digunakan kembali tanpa suite duplikat: Reports+IndexPagination **14 PASS,233 assertions,2263ms**; Pint dirty/diff PASS. Tidak membuat tes yang hanya menyalin aturan CSS. Source dan bukti tampilan memenuhi scope; tidak ditemukan cacat tersisa.
 
-## Pascadeploy
+## Pascadeploy — PASS
 
-Menunggu coordinator commit/push dan CI/deployment selesai sebelum pemeriksaan target read-only. Tidak menguji produksi/operatorDB, login atau transaksi pelanggan pada fase lokal. Build aset tidak diulang karena perubahan hanya CSS inline Blade existing, tanpa sumber aset/utility baru.
+Pemeriksaan independen dilakukan sesudah coordinator mengonfirmasi [CI/deploy44564621738](https://github.com/BatuBata/repair-app/actions/runs/44564621738) sukses. Target nyata `muzib@202.10.40.165:/var/www/demo-repair-app/current`, revision `160d49c96d7e6430e1564fd24498c26663aa6e87`; hasil aktual dalam `postdeploy-independent.json`.
+
+- Bytes CSS commit target dibandingkan dengan manifest QA di atas: identik. Hash berkas server juga identik dengan bytes `git show` target.
+- SSH BatchMode + PHP8.3 hanya-baca: `.release-revision` dan `last-success.json` tepat SHA target, receipt pass `2026-11-19T16:21:00Z`; maintenance aplikasi/deployment tidak ada. Bootstrap dan `SELECT 1` berhasil.
+- Source server dan satu compiled view styles memuat margin bawah24px, grid412px/tidak menyusut dan satu kolomHP<640px. Cache view rilis telah memuat perubahan yang diperiksa.
+- `/usr/bin/curl` sistem dengan verifikasi TLS aktif: `/up`, `/login`, `/icons/repair-app-192.png` HTTP200 dan `ssl_verify_result=0` semuanya.
+
+Tidak login/menguji filter pada akun produksi, membaca data pelanggan/token/environment, membuat transaksi atau menguji perangkat fisik. Perilaku/tampilan memakai QA fixture lokal pada source identik; target produksi diperiksa read-only. Tidak mengulang suite, schema atau hash luas yang tidak terdampak. Tidak ada cacat tersisa pada scope ini.

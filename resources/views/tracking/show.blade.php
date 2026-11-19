@@ -11,7 +11,7 @@
         body.public { min-height:100svh; background:var(--ground); }
         .pub-head { width:min(920px,calc(100% - 32px)); min-height:72px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px; }
         .pub-brand { display:flex; align-items:center; gap:10px; min-width:0; }
-        .pub-brand svg { width:26px; height:26px; color:var(--accent); flex:none; }
+        .pub-brand .brand-mark { width:26px; height:26px; color:var(--accent); flex:none; }
         .pub-brand strong { display:block; font-weight:600; line-height:20px; }
         .pub-brand span,.pub-context { color:var(--muted); font-size:var(--fs-small); }
         .public .sheet { width:min(920px,calc(100% - 32px)); max-width:none; margin:0 auto 24px; padding:0; overflow:hidden; }
@@ -117,7 +117,7 @@
     };
 @endphp
 <header class="pub-head">
-    <div class="pub-brand"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 5h16a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-3a2 2 0 0 0 0-4V7a2 2 0 0 1 2-2z"/><path d="M15.5 6.5v11" stroke="#fff" stroke-width="1.5" stroke-dasharray="1.6 1.9" stroke-linecap="round"/></svg><div><strong>{{ $storeName }}</strong><span>Servis Elektronik</span></div></div>
+    <div class="pub-brand"><x-ui.mark /><div><strong>{{ $storeName }}</strong><span>Status servis</span></div></div>
     <span class="pub-context">Status servis customer</span>
 </header>
 <main class="sheet state">

@@ -111,6 +111,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T089 | Rapikan daftar siap diserahkan dan garansi dashboard | developer / 6.1-sol | easy / low | — | — | done |
 | T090 | Seragamkan pencarian dan pagination semua daftar index | developer / 6.1-sol | medium / medium | — | — | done |
 | T091 | Tampilkan alasan dan WA pembatalan TTS | developer / 6.1-sol | easy / medium | — | — | done |
+| T092 | Samakan logo dan subtitle tracking pelanggan | developer / 6.1-sol | easy / low | — | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -186,14 +187,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:352434f150b914d5493ab135f2efafb68ac0550947e2e7244b715359132dc130",
+    "prd_revision": "sha256:269246ccd5402f80a2d4121be9e1cd2a112296be8d1f4e7564c180e8e54b53d5",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
-      "stop_after_tasks": ["T091"],
-      "source_ref": "D54 selesai main lokal dengan QA independen PASS; tanpa push/deploy.",
+      "stop_after_tasks": ["T092"],
+      "source_ref": "D55 selesai main lokal dengan independentQA PASS; tanpa push/deploy.",
       "phase_history": [
         {
           "state": "paused",
@@ -8163,6 +8164,69 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T091/customer-mobile.jpg"
         ],
         "summary": "TTS batal WA cancellation priority+savedreason public escaped;10regressionPASS133assert+independent3PASS78assert,5hash andvisualQA PASS. CUA actualfixturecancel+anonymouscustomer1280/375nooverflow; build406ms/Pint/diffcheckPASS. No schema/newstatus/operatorDB/push/deploy/actualWAsend."
+      }
+    },
+    {
+      "id": "T092",
+      "title": "Samakan logo dan subtitle tracking pelanggan",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md \u00a720.3 D-55",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "low",
+      "uncertainty": "low",
+      "triage_reason": "Header tracking masih SVG tiket dan subtitle hardcoded lama; ganti memakai komponen existing.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Perubahan template terbatas tanpa logika backend.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "resources/views/tracking/show.blade.php",
+        "tests/Feature/Tracking/TrackingTest.php",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T092/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Tracking memakai x-ui.mark/assetRepairApp bounded24-26px termasuk sebelumCSS selesai; subtitleStatusservis, nama toko tenant tetap.",
+        "Testracking dan browserHPdesktop sertaQAindependen PASS; no backend/schema/deps/push/deploy."
+      ],
+      "verification_plan": [
+        "TrackingTest; browserfixture1280/375 ceklogo loaded/naturalwidth/displayedsize, nama/subtitle; independentreview."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T092/README.md",
+        "revision": "sha256:fec898f36d86fb559d97964c554e3afb74043cd3a5c3846780fb32110a3bc2d3",
+        "checked_revision": "sha256:fec898f36d86fb559d97964c554e3afb74043cd3a5c3846780fb32110a3bc2d3",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T092/README.md",
+          "docs/evidence/T092/source-manifest.json",
+          "docs/evidence/T092/independent-qa.md",
+          "docs/evidence/T092/browser-checks.json",
+          "docs/evidence/T092/customer-desktop.jpg",
+          "docs/evidence/T092/customer-mobile.jpg"
+        ],
+        "summary": "SharedRepairApplogo+neutralStatusservis; tenantname unchanged. Tracking5PASS129assert/Pint/diffcheckPASS; CUA1280/375/reload loadedPNG26x26 explicit24attrs,nooverflow; independent2hash/visualPASS. No backend/schema/deps/buildrepeat/push/deploy."
       }
     }
   ]

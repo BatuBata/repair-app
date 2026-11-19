@@ -1,0 +1,4 @@
+{
+  "resources/views/tracking/show.blade.php": "a688f2002f21241a00f7de42a199590b5e0519f9c1c268f50d874dac7809b953",
+  "tests/Feature/Tracking/TrackingTest.php": "c4278d270aae6881586d06e37311256152b97c6e873c63e375b4b6fcdb9ff40c"
+}

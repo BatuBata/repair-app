@@ -34,6 +34,7 @@ class TrackingTest extends TestCase
         $this->get('/t/short')->assertNotFound();
         $initial = $this->get('/t/'.$order->tracking_token)->assertOk()->assertHeader('X-Robots-Tag', 'noindex')
             ->assertHeader('Cache-Control', 'no-store, private')->assertSee('Tanda terima servis')->assertSee('Rincian barang')->assertSee('Menunggu penanganan')
+            ->assertSee('/icons/repair-app-192.png', false)->assertSee('Status servis')->assertDontSee('Servis Elektronik')
             ->assertSee('Diterima')->assertSee('Layar rusak')->assertDontSee('081234567890')->assertDontSee('6281234567890')->assertDontSee('Alamat Rahasia')->assertDontSee('Total');
         $this->assertLessThan(strpos($initial->getContent(), 'Rincian barang'), strpos($initial->getContent(), 'Tanda terima servis'));
         app(TenantContext::class)->set(Tenant::findOrFail(1));

@@ -1,0 +1,16 @@
+# T077 — QA independen menu dokumen TTS
+
+**PASS terarah**, 19 November 2026. Input T076, base `a730f70eacc9ade22bee63f9e856999b47e7ea2a`, checked revision `sha256:5bd894b904f16d80e06804e2b707b2bdc2c748c01284aba6689e0805f5d75c0b`. Ketiga hash berkas pada `source-manifest.json` dan Git HEAD diperiksa kembali setelah tes: identik.
+
+Tester membaca AGENTS.md, PRD D-44, kontrak T076/T077, skill Project Delivery bagian QA, dan Ponytail **full** dari `/Users/muzib/.codex/plugins/cache/ponytail/ponytail/5.3.3/skills/ponytail/SKILL.md`. Model diwariskan runtime; tidak mengklaim `model_hint` sebagai model efektif. Tester tidak mengubah kode produk atau ledger.
+
+## Pemeriksaan aktual
+
+- Review tiga view beserta pemanggil, komponen `ui.row-actions`/`ui.icon`, `layout.js`, CSS menu, route dokumen dan controller. Aksi dokumen memakai komponen dan ikon existing (`printer`, `download`, `file-text`); sprite menyediakan semua simbol. Header dan actionbar admin memakai ID berbeda; cabang `primaryOnly` tidak membuat menu tambahan. Teknisi dan halaman sukses memperoleh menu khusus dokumen. Tombol dokumen sidebar/CSS lama dihapus. WA mempertahankan kondisi serta route existing, dengan ikon `message-circle`.
+- `/opt/homebrew/opt/php@8.3/bin/php vendor/bin/phpunit --configuration phpunit.xml /private/tmp/T077MenuTest.php`: **4 tes, 93 assertions PASS** (412 ms), log `/private/tmp/T077-menu-test.log`. Fixture sintetis menggunakan `RefreshDatabase` pada SQLite `:memory:`. Render HTTP admin/detail, teknisi/detail, admin/sukses dan teknisi/sukses semuanya 200. DOM diperiksa untuk route/label/ikon setiap dokumen dalam menu, PDF A5 hanya admin, menu dokumen pada sukses/teknisi tanpa item admin, semua ID unik dan kontrol ARIA tepat, sidebar tanpa tiga link lama, serta WA admin tetap ada dengan ikon. Admin detail memiliki dua menu untuk desktop/actionbar; konteks lain satu. Pemeriksaan awal berhenti karena XPath tester menggunakan prefix `wire:` tanpa namespace; diperbaiki pada script tester saja sebelum hasil PASS, bukan cacat produk.
+- `/opt/homebrew/opt/php@8.3/bin/php vendor/bin/phpunit --configuration phpunit.xml tests/Feature/Documents/DocumentTest.php --filter test_documents_obey_roles_and_public_invoice_gate`: **1 tes, 29 assertions PASS** (523 ms), log `/private/tmp/T077-route-test.log`. Teknisi dapat membuka struk/unduh PDF struk tetapi PDF A5 mendapat 403; admin dapat membuka ketiga target. Gate invoice publik dan akun nonaktif pada kasus existing tetap lulus.
+- Tester melihat screenshot koordinator `desktop-menu.jpg` (1440 px) dan `mobile-menu.jpg` (375 px): tiga pilihan dokumen beserta ikon terbaca, menu desktop/HP utuh dan menu HP berada di atas actionbar. Koordinator melaporkan CUA ArrowDown dari Ubah data ke Cetak struk, Escape menutup menu, lebar dokumen HP 375 px dan tinggi item 44 px PASS. Interaksi CUA dilakukan koordinator, bukan diklaim sebagai eksekusi tester.
+
+Tidak ditemukan temuan yang menghalangi perubahan D-44. Scope ini memeriksa perubahan tiga view; bukan matriks seluruh status/domain.
+
+Tidak menjalankan ulang suite penuh/build, browser tambahan, HP/printer nyata, database operator/MySQL, Git push atau deployment. Risiko tersisa: penerimaan perangkat fisik dan seluruh domain di luar perubahan menu tidak dibuktikan oleh QA ini.

@@ -42,8 +42,6 @@
         .tts-detail .support-section > h2 { font-size:15px; line-height:24px; font-weight:600; margin-bottom:12px; }
         .tts-detail .handler-card .support-section { padding-top:16px; border-top:1px solid var(--border); }
         .tts-detail .handler-card .support-section .form { margin:0; }
-        .tts-detail .document-links { display:grid; grid-template-columns:1fr; gap:10px; }
-        .tts-detail .document-links .btn { min-height:44px; min-width:0; }
         .tts-detail .support-actions .btn { width:100%; }
         .tts-detail .assignment-choices { display:grid; grid-template-columns:1fr; gap:12px; border:0; padding:0; margin:0; }
         .tts-detail .assignment-choices legend { font-weight:500; margin-bottom:8px; }
@@ -61,7 +59,6 @@
             .tts-detail .service-layout { grid-template-columns:1fr; gap:20px; }
             .tts-detail .work-panel { margin:0; padding:18px; }
             .tts-detail .approval-next { align-items:flex-start; flex-direction:column; }
-            .tts-detail .document-links { grid-template-columns:repeat(2,minmax(0,1fr)); }
             .tts-detail .overview-block { padding:18px; }
         }
         @media(max-width:639.98px) {
@@ -75,7 +72,7 @@
         @if($success)<p class="muted">Tanda terima tersimpan</p>@endif
         <div class="obj-head"><h1>{{ $order->number }}</h1><x-ui.status :status="ucfirst($stage)" /></div>
         <p class="summary-line">Masuk {{ $order->created_at->format('d M Y, H.i') }} · dicatat oleh {{ $order->creator->name }}</p>
-    </div>@if(!$success && $isAdmin)<div class="desktop-only">@include('livewire.tts.admin-actions', ['placement' => 'header', 'menuOnly' => true])</div>@endif</header>
+    </div>@if(!$success && $isAdmin)<div class="desktop-only">@include('livewire.tts.admin-actions', ['placement' => 'header', 'menuOnly' => true])</div>@else<x-ui.row-actions id="tts-document-actions" :label="$order->number">@include('livewire.tts.document-actions')</x-ui.row-actions>@endif</header>
     @if(session('tts-status'))<p class="notice" role="status">{{ session('tts-status') }}</p>@endif
     @if($errors->any())<div class="notice" role="alert" x-init="$nextTick(() => $el.closest('.tts-detail').querySelector('[aria-invalid=true]')?.focus())">@foreach($errors->all() as $error)<p>{{ $error }}</p>@endforeach</div>@endif
 
@@ -124,8 +121,8 @@
     @if(!$success && ($stage !== 'pengecekan' || !$isAdmin) && $order->inspectionNotes() !== '')<section class="support-section"><h2>Hasil pengecekan &amp; rencana tindakan</h2><p class="support-body" style="white-space:pre-line">{{ $order->inspectionNotes() }}</p></section>@endif
     </div><aside class="service-side"><section class="handler-card"><h2><x-ui.icon name="wrench" />Penanganan servis</h2><span class="fact-label">Teknisi</span><p class="handler-name">{{ $order->technician?->name ?? 'Belum ditetapkan' }}</p>@if($order->assigned_at)<p class="small muted">Ditetapkan {{ $order->assigned_at->format('d M Y, H.i') }}</p>@endif
     @if(!$success && $isAdmin && in_array($stage,['pengecekan','dikerjakan'],true))<section class="support-section" aria-label="Ganti teknisi"><div class="support-body">@include('livewire.tts.technician-form')</div></section>@endif
-    </section>    <section class="support-section"><h2>Dokumen &amp; komunikasi</h2><div class="support-body document-links"><a class="btn" href="{{ route('tts.print',$order->id) }}">Cetak struk</a><a class="btn" href="{{ route('tts.receipt.pdf',$order->id) }}">PDF struk</a>@if($isAdmin)<a class="btn" href="{{ route('tts.pdf',$order->id) }}">PDF A5</a>@endif</div></section>
-    @if($isAdmin && ($success || $stage !== 'pengecekan'))<div class="support-actions" style="margin-top:20px">@if($order->invoiced_on)<a class="btn" href="{{ route('tts.whatsapp',$order->id) }}">WA nota</a>@elseif(!$success && $order->inspectionNotes() !== '')<a class="btn" href="{{ route('tts.whatsapp',['id'=>$order->id,'inspection'=>1]) }}">WA hasil pengecekan</a>@else<a class="btn" href="{{ route('tts.whatsapp',$order->id) }}">WA tanda terima</a>@endif</div>@endif
+    </section>
+    @if($isAdmin && ($success || $stage !== 'pengecekan'))<div class="support-actions" style="margin-top:20px">@if($order->invoiced_on)<a class="btn" href="{{ route('tts.whatsapp',$order->id) }}"><x-ui.icon name="message-circle" />WA nota</a>@elseif(!$success && $order->inspectionNotes() !== '')<a class="btn" href="{{ route('tts.whatsapp',['id'=>$order->id,'inspection'=>1]) }}"><x-ui.icon name="message-circle" />WA hasil pengecekan</a>@else<a class="btn" href="{{ route('tts.whatsapp',$order->id) }}"><x-ui.icon name="message-circle" />WA tanda terima</a>@endif</div>@endif
     </aside></div>
     @if(!$success && $isAdmin)<div class="actionbar">@include('livewire.tts.admin-actions',['placement'=>'mobile'])</div>@endif
     @if($isAdmin && ! $success && in_array($order->status->value, ['diterima', 'pengecekan', 'dikerjakan'], true))

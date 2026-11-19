@@ -679,6 +679,8 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 
 | D-43 | Panel hasil pengecekan diringkas: satu judul merangkap label aksesibel, catatan tiga baris yang tetap dapat diperbesar, petunjuk singkat dan jarak tombol lebih rapat. Seluruh isi detail tetap terbuka dan aksi simpan/WA/mulai tetap existing | User menerima susunan detail TTS tetapi panel satu isian terlalu besar | User | 19 Nov 2026; main lokal, tanpa push/deploy |
 
+| D-44 | Cetak struk, PDF struk dan PDF A5 dipindahkan ke menu titik tiga detail TTS; tiap pilihan memakai ikon existing. Akses dokumen pada halaman sukses dan teknisi tetap tersedia dengan guard PDF A5 admin, WA existing tetap jelas | User meminta tiga tombol dokumen dipindah ke titik tiga dan diberi ikon | User | 19 Nov 2026; main lokal tanpa push/deploy |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

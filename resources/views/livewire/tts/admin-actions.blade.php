@@ -3,6 +3,7 @@
     <a role="menuitem" href="{{ route('tts.edit', $order->id) }}"><x-ui.icon name="pencil" />Ubah data TTS</a>
     @if(in_array($order->status->value, ['selesai', 'diambil'], true))<a role="menuitem" href="{{ route('invoice.edit', $order->id) }}"><x-ui.icon name="receipt" />Koreksi nota</a>@endif
     @if($financial && $financial['price'] > 0 && in_array($order->status->value, ['selesai', 'diambil'], true))<button role="menuitem" type="button" data-open="payment-order"><x-ui.icon name="circle-check" />{{ $order->paid_at ? 'Ubah pembayaran' : 'Catat pembayaran' }}</button>@endif
+    @include('livewire.tts.document-actions')
     @if(in_array($order->status->value, ['diterima', 'pengecekan', 'dikerjakan'], true))<button role="menuitem" class="danger" type="button" data-open="cancel-order"><x-ui.icon name="ban" />Batalkan TTS</button>@endif
 </x-ui.row-actions>
 @endunless

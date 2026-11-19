@@ -95,6 +95,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T073 | QA independen detail TTS terbuka | tester / 6.1-sol | medium / medium | T072 | — | done |
 | T074 | Ringkas panel hasil pengecekan | developer / 6.1-sol | easy / low | — | — | done |
 | T075 | QA panel pengecekan ringkas | tester / 6.1-sol | easy / low | T074 | — | done |
+| T076 | Aksi dokumen TTS di menu titik tiga | developer / 6.1-sol | easy / low | — | — | done |
+| T077 | QA menu dokumen TTS | tester / 6.1-sol | easy / low | T076 | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -170,16 +172,16 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:ed7ff8cf993f9b6e5068d276d15ea3eda6bca0a92fb974634d2aa17895a83bb6",
+    "prd_revision": "sha256:5a05f1e2fdae88b85eecb933833c0306d828168594d4a240e947fb9457536b53",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
       "stop_after_tasks": [
-        "T075"
+        "T077"
       ],
-      "source_ref": "User19Nov2026 D-43 panel pengecekan ringkas T074/T075 selesai main lokal, QA PASS; berhenti tanpa push/deploy.",
+      "source_ref": "User19Nov2026 D-44 menu dokumen dan ikon T076/T077 selesai main lokal, QA PASS; berhenti tanpa push/deploy.",
       "phase_history": [
         {
           "state": "paused",
@@ -7097,6 +7099,122 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T074/desktop.jpg"
         ],
         "summary": "QA3PASS104assert labels/errors/save/roles/neighbors; coordinator CUA desktop1440/HP375 and actualsavePASS. No push/deploy."
+      }
+    },
+    {
+      "id": "T076",
+      "title": "Aksi dokumen TTS di menu titik tiga",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-44",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "low",
+      "uncertainty": "low",
+      "triage_reason": "Tiga view dengan akses menu dibedakan role/sukses.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Alur domain dan migrasi status existing lintas caller.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "resources/views/livewire/tts/detail.blade.php",
+        "resources/views/livewire/tts/admin-actions.blade.php",
+        "resources/views/livewire/tts/document-actions.blade.php",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T076/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Tiga aksi dokumen berada di menu titik tiga existing, masing-masing ikon visible dan label; blok tombol lama dihapus.",
+        "Desktop/mobile, admin/teknisi/sukses tetap punya akses dokumen sesuai guardexisting, PDF A5 hanya admin; tanpa aksi admin pada teknisi/sukses.",
+        "Route/status/menu keyboard/ID tetap benar; tanpa dependency/schema/push/deploy."
+      ],
+      "verification_plan": [
+        "TTS+Inspection tests; browser desktop/mobile menu icons keyboard; independent render guards."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T076/README.md",
+        "revision": "sha256:5bd894b904f16d80e06804e2b707b2bdc2c748c01284aba6689e0805f5d75c0b",
+        "checked_revision": "sha256:5bd894b904f16d80e06804e2b707b2bdc2c748c01284aba6689e0805f5d75c0b",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T076/README.md",
+          "docs/evidence/T076/source-manifest.json"
+        ],
+        "summary": "Targeted27PASS250assert; tigaaksi dipindah ke existingmenu; fallback tech/success terjaga. Browser/independentQA pending. No push/deploy."
+      }
+    },
+    {
+      "id": "T077",
+      "title": "QA menu dokumen TTS",
+      "kind": "qa",
+      "responsible_role": "tester",
+      "work_type": "integration",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-44"
+      ],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "low",
+      "uncertainty": "low",
+      "triage_reason": "Review seluruh state/role/action target sesudah susunan diubah.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "QA backend pembayaran dan tenant independen.",
+      "depends_on": {
+        "hard": [
+          "T076"
+        ],
+        "contracts": []
+      },
+      "write_scope": [],
+      "shared_resources": [],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Tiga aksi dokumen berada di menu titik tiga existing, masing-masing ikon visible dan label; blok tombol lama dihapus.",
+        "Desktop/mobile, admin/teknisi/sukses tetap punya akses dokumen sesuai guardexisting, PDF A5 hanya admin; tanpa aksi admin pada teknisi/sukses.",
+        "Route/status/menu keyboard/ID tetap benar; tanpa dependency/schema/push/deploy."
+      ],
+      "verification_plan": [
+        "Review dan render admin desktop/mobile, tech/success guards, route/icons/uniqueIDs."
+      ],
+      "qa_for": "T076",
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T076/independent-qa.md",
+        "revision": "sha256:5bd894b904f16d80e06804e2b707b2bdc2c748c01284aba6689e0805f5d75c0b",
+        "checked_revision": "sha256:5bd894b904f16d80e06804e2b707b2bdc2c748c01284aba6689e0805f5d75c0b",
+        "inputs": {
+          "T076": "sha256:5bd894b904f16d80e06804e2b707b2bdc2c748c01284aba6689e0805f5d75c0b"
+        },
+        "evidence": [
+          "docs/evidence/T076/independent-qa.md",
+          "docs/evidence/T076/source-manifest.json",
+          "docs/evidence/T076/desktop-menu.jpg",
+          "docs/evidence/T076/mobile-menu.jpg"
+        ],
+        "summary": "Independent5PASS122assert admin/tech/success guards/routes/icons/IDs; coordinator CUA1440/375 keyboard/icons/44px PASS. No push/deploy."
       }
     }
   ]

@@ -1,0 +1,9 @@
+{
+  "base": "a730f70eacc9ade22bee63f9e856999b47e7ea2a",
+  "revision": "sha256:5bd894b904f16d80e06804e2b707b2bdc2c748c01284aba6689e0805f5d75c0b",
+  "files": {
+    "resources/views/livewire/tts/detail.blade.php": "307c3b7f1b71c68b1d0ca268b02c24e5175648db445edb5ef65441c4c992aece",
+    "resources/views/livewire/tts/admin-actions.blade.php": "b5c8b74d16b5bb9fba710f981dca7840a0e525e87197d241597d5cc152f28cc9",
+    "resources/views/livewire/tts/document-actions.blade.php": "05c086d3418e45d36e436d5642a73d31ba64abe96e12480ed64e1cfeb4d99a72"
+  }
+}

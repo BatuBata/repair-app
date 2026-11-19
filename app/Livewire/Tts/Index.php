@@ -43,7 +43,7 @@ class Index extends Component
             $phone = '62'.substr($phone, 1);
         }
         $orders = ServiceOrder::query()
-            ->select(['id', 'number', 'customer_name', 'customer_phone', 'category_id', 'item_description', 'complaint', 'status', 'created_by', 'technician_id', 'created_at'])
+            ->select(['id', 'number', 'customer_name', 'customer_phone', 'category_id', 'item_description', 'complaint', 'status', 'picked_up_on', 'created_by', 'technician_id', 'created_at'])
             ->with(['category:id,name', 'technician:id,name'])
             ->when($this->status !== '', fn ($query) => $query->where('status', $this->status))
             ->when($search !== '', fn ($query) => $query->where(fn ($query) => $query

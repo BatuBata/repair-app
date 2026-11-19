@@ -1,0 +1,53 @@
+[
+  {
+    "rows": [
+      {
+        "customer": "QA Citra\nBarang sudah diambil",
+        "status": "Batal"
+      },
+      {
+        "customer": "QA Budi\nBarang belum diambil",
+        "status": "Batal"
+      },
+      {
+        "customer": "QA Andi",
+        "status": "Diterima"
+      }
+    ],
+    "scrollWidth": 1280,
+    "width": 1280
+  },
+  {
+    "rows": [
+      {
+        "customer": "QA Citra\nBarang sudah diambil",
+        "status": "Batal"
+      },
+      {
+        "customer": "QA Budi\nBarang belum diambil",
+        "status": "Batal"
+      },
+      {
+        "customer": "QA Andi",
+        "status": "Diterima"
+      }
+    ],
+    "scrollWidth": 375,
+    "width": 375
+  },
+  {
+    "rows": [
+      {
+        "customer": "QA Citra\nBarang sudah diambil",
+        "status": "Batal"
+      },
+      {
+        "customer": "QA Budi\nBarang belum diambil",
+        "status": "Batal"
+      }
+    ],
+    "scrollWidth": 375,
+    "view": "mobile-batal",
+    "width": 375
+  }
+]

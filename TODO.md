@@ -115,6 +115,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T093 | Integrasikan dan rilis revisi tertahan ke demo melalui CI/CD | integrator / 6.1-sol | medium / high | T090, T091, T092 | — | done |
 | T094 | Catat pengambilan barang untuk TTS Batal tanpa mengubah status | developer / 6.1-sol | easy / medium | — | — | done |
 | T095 | Rilis pengambilan TTS Batal melalui CI/CD | integrator / 6.1-sol | medium / medium | T094 | — | done |
+| T096 | Tampilkan pengambilan TTS Batal pada daftar Servis | developer / 6.1-sol | easy / low | — | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -190,14 +191,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:4b0cded9fd12e30b79fb9f77a117c22a1189e3281561afb38852bbf4660a3aaa",
+    "prd_revision": "sha256:8a18636ad53ac49c399c310251db674a96b03d808633529cd8b8d20d4337c801",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
-      "stop_after_tasks": ["T095"],
-      "source_ref": "D58 selesai: main029003e CI/deploy44559835155 dan independentserverQA PASS; stop setelah rilis.",
+      "stop_after_tasks": ["T096"],
+      "source_ref": "D59 selesai main lokal independentQA PASS; tanpa push/deploy.",
       "phase_history": [
         {
           "state": "paused",
@@ -8443,6 +8444,72 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T095/postdeploy-independent.json"
         ],
         "summary": "Main029003e pushed/deployedCI44559835155SUCCESS.296PASS3402assert30.80s/Pint176files/PHPStan0/20deploysafety. Independentactualmarker/receipt exact,maintenanceabsent,DBready,pendingmigration0,4runtimehashmatch/featureguard+UIpresent,HTTPSup/login/icon200TLSverified. No schema/privateenv/operatorbusinesswrites/actualpickup/physicalUAT."
+      }
+    },
+    {
+      "id": "T096",
+      "title": "Tampilkan pengambilan TTS Batal pada daftar Servis",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md \u00a720.3 D-59",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "low",
+      "uncertainty": "low",
+      "triage_reason": "Tambah field existing ke SELECT list dan keterangan khususBatal; jaga layoutHP tanpa melebarkan kolomstatus.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Perubahan query/view kecil dengan QA akses data dan layout.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "app/Livewire/Tts/Index.php",
+        "resources/views/livewire/tts/index.blade.php",
+        "tests/Feature/Tts/**",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T096/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "DaftarSemua/tabBatal/search/page berikut menampilkan sudah/belumdiambil sesuaipicked_up_on hanyaTTSBatal;statusBatal tetap danTTSnormal tidakmendapatlabeltambahan.",
+        "Keteranganringkas dibawahnamapelanggan tidakmerusaknomor/status/action/pagination atauoverflowHP375/desktop1280; aksesadmin/teknisi dantenanttetap.",
+        "Targettests+QAindependen/browserPASS; no schema/deps/operatorDB/push/deploy."
+      ],
+      "verification_plan": [
+        "Featuretestmixed canceledpicked/unpicked/normal,role/tenant/filter/search;Tts+IndexPaginationregression;CUAfixtureHPdesktop;independentreview."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T096/README.md",
+        "revision": "sha256:15d10ebd586288e8d4a5a35a82840ea728ab696550ae3333083d944b7f3c9aed",
+        "checked_revision": "sha256:15d10ebd586288e8d4a5a35a82840ea728ab696550ae3333083d944b7f3c9aed",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T096/README.md",
+          "docs/evidence/T096/source-manifest.json",
+          "docs/evidence/T096/independent-qa.md",
+          "docs/evidence/T096/browser-checks.json",
+          "docs/evidence/T096/desktop.jpg",
+          "docs/evidence/T096/mobile.jpg",
+          "docs/evidence/T096/mobile-batal.jpg"
+        ],
+        "summary": "ServisBatal shows barang sudah/belumdiambil beneathcustomername basedexistingpicked_up_on; badgeBatal/normalrows/filter/paging unchanged.25regressionPASS291assert+independent2PASS34assert;3hash/source/visualQA PASS. CUA1280/375 mixed/search/tabBatal nooverflow, Pint/diffPASS. No schema/deps/newfilter/operatorDB/push/deploy."
       }
     }
   ]

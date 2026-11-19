@@ -100,6 +100,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T078 | Tombol titik tiga detail TTS hitam | developer / 6.1-sol | easy / low | — | — | done |
 | T079 | Selaraskan detail penjualan pelanggan dan restok dengan TTS | developer / 6.1-sol | medium / medium | — | — | done |
 | T080 | QA independen keseragaman detail menu | tester / 6.1-sol | medium / medium | T079 | — | done |
+| T081 | Ringkas TTS diambil dan pindahkan catatan ke penanganan | developer / 6.1-sol | easy / low | — | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -182,9 +183,9 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
       "state": "stopped",
       "allowed_tasks": [],
       "stop_after_tasks": [
-        "T080"
+        "T081"
       ],
-      "source_ref": "User19Nov2026 D-45 tiga detail existing mengikuti acuan TTS T079/T080 selesai main lokal; QA PASS, no push/deploy. Penerimaan visual3halaman baru oleh owner belum diasumsikan.",
+      "source_ref": "User19Nov2026 TTS carddiambil/nota/catatan T081 selesai mainlokal dengan independentQA+CUA PASS; no push/deploy.",
       "phase_history": [
         {
           "state": "paused",
@@ -7400,6 +7401,71 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T079/stock-bottom-375.jpg"
         ],
         "summary": "Independent6PASS234assert snapshot/totals/pagination20x2/legacy/errors/save/inactive/roletenant; reviewed final9viewports andemptylong. Coordinator50PASS623assert/CUA interactions PASS. No push/deploy."
+      }
+    },
+    {
+      "id": "T081",
+      "title": "Ringkas TTS diambil dan pindahkan catatan ke penanganan",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-42, D-44",
+        "User19Nov2026 dua screenshot20.30: hapuscardselesai, Lihatnota sebalahKoreksi, catatan bawahPenanganan"
+      ],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "low",
+      "uncertainty": "low",
+      "triage_reason": "Tiga view dengan akses menu dibedakan role/sukses.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Alur domain dan migrasi status existing lintas caller.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "resources/views/livewire/tts/detail.blade.php",
+        "resources/views/livewire/tts/admin-actions.blade.php",
+        "resources/views/livewire/invoice/published.blade.php",
+        "TODO.md",
+        "docs/evidence/T081/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "TahapDiambil tanpa kartu selesai/nominalduplikat; Lihatnota satu kali di headerNota sebelahKoreksi denganikon, HP tetapmuat.",
+        "Catatanreadonly tampil di sidebar tepatdibawahPenanganan tanpa duplikat; editorchecking tetap danrole/tenant/payment/stage guards unchanged.",
+        "Primary lama/barHPkosong padaDiambil dihapus, menuheaderHP tetaptersedia; teknisicollected takmembocorkan uang dan takmenyisakan kolomkosong.",
+        "Targetedtest/browserevidence dan independentscopereview, tanpa schema/domain/push/deploy."
+      ],
+      "verification_plan": [
+        "Invoice/TTS/tenant63tests; CUAcollected1440/375 + read-onlynotes; independentrender collected/selesai/checking/tech/success routesguard."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T081/README.md",
+        "revision": "sha256:39d4fce58c7bf94d0f6ea583d001ff486db8b1651908d2df007afcf7f67665be",
+        "checked_revision": "sha256:39d4fce58c7bf94d0f6ea583d001ff486db8b1651908d2df007afcf7f67665be",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T081/README.md",
+          "docs/evidence/T081/independent-qa.md",
+          "docs/evidence/T081/source-manifest.json",
+          "docs/evidence/T081/desktop.jpg",
+          "docs/evidence/T081/mobile-note.jpg",
+          "docs/evidence/T081/mobile-notes-bottom.jpg"
+        ],
+        "summary": "63PASS556assert and independent6contexts/1test58assertPASS; CUA1440/375 noteactionsadjacent and notesbelowhandlerPASS. No push/deploy."
       }
     }
   ]

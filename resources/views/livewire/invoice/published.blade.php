@@ -1,10 +1,12 @@
 <section class="blk invoice-published" aria-labelledby="invoice-data">
     <style>
+        .invoice-published .section-head { flex-wrap:wrap; align-items:center; gap:12px; }
+        .invoice-published .invoice-actions { display:flex; gap:8px; flex-wrap:wrap; }
         .invoice-published { container-type:inline-size; } .invoice-published .totals .grand dd { font-size:clamp(16px,calc(160cqi / var(--amount-length)),28px); white-space:nowrap; }
         .invoice-published .table .c-meta, .invoice-published .table .n { white-space:nowrap; }
         @media(max-width:1023.98px) { .invoice-published .table tbody tr { grid-template-columns:minmax(0,1fr) auto; } .invoice-published .table .c-who, .invoice-published .table .c-what { grid-column:1 / -1; } .invoice-published .table .c-meta { grid-column:1; } .invoice-published .table .c-amt { grid-column:2; } }
     </style>
-    <div class="section-head"><h2 id="invoice-data">Nota servis</h2><a class="btn" href="{{ route('invoice.edit', $order->id) }}">Koreksi nota</a></div>
+    <div class="section-head"><h2 id="invoice-data">Nota servis</h2><div class="invoice-actions">@if($order->status->value === 'diambil')<a class="btn primary" href="{{ route('tts.print', $order->id) }}"><x-ui.icon name="eye" />Lihat nota</a>@endif<a class="btn" href="{{ route('invoice.edit', $order->id) }}"><x-ui.icon name="pencil" />Koreksi nota</a></div></div>
     <dl class="kv" style="margin:16px 0"><dt>Tanggal nota</dt><dd>{{ $order->invoiced_on->format('d M Y') }}</dd><dt>Pembayaran</dt><dd>{{ $financial && $financial['price'] === 0 ? 'Gratis' : ($order->paid_at ? 'Lunas · '.\App\Support\Payment::label($order->payment_method, $order->payment_bank) : 'Belum dibayar') }}@if($order->paid_at)<span class="small muted"> · {{ $order->paid_at->format('d M Y, H.i') }}</span>@endif</dd><dt>Garansi</dt><dd>{{ $order->warranty_days ? $order->warranty_days.' hari · sampai '.$order->warranty_until?->format('d M Y') : 'Tanpa garansi' }}</dd>@if($order->unrepairable)<dt>Kondisi</dt><dd>Tidak dapat diperbaiki</dd>@endif</dl>
     @if($financial)
         <table class="table"><thead><tr><th>Deskripsi</th><th class="n">Qty</th><th class="n">Harga jual</th><th class="n">Modal</th></tr></thead><tbody>@foreach($financial['rows'] as $line)<tr><td class="c-who">{{ $line['description'] }} <span class="sub">{{ ucfirst($line['type']) }}</span></td><td class="c-meta">{{ $line['qty'] }} ×</td><td class="c-amt n">Rp{{ number_format($line['price'], 0, ',', '.') }}</td><td class="c-what n">Modal Rp{{ number_format($line['cost'], 0, ',', '.') }}</td></tr>@endforeach</tbody></table>

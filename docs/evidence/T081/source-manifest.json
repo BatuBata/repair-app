@@ -1,0 +1,9 @@
+{
+  "base": "3a8ed3ee0d7c5bb245a3e97dd44703f18f3204cf",
+  "revision": "sha256:39d4fce58c7bf94d0f6ea583d001ff486db8b1651908d2df007afcf7f67665be",
+  "files": {
+    "resources/views/livewire/tts/detail.blade.php": "b94692d656eefaa2d3f08f03613f849dc75c9a89156e9ba05623a0c26c870434",
+    "resources/views/livewire/tts/admin-actions.blade.php": "da7e24b2ccc6cffec3994d4321d441a7868d7d5d3ff8ac1903b0ea4f2903f232",
+    "resources/views/livewire/invoice/published.blade.php": "a61a761193368ae2284dcd7570a897778a006a1213da25878e9c6be121a2656b"
+  }
+}

@@ -14,6 +14,6 @@
 @elseif($order->status->value === 'selesai')
     @if($needsPayment)<button class="btn primary" type="button" data-open="payment-order">Catat pembayaran</button>
     @else<button class="btn primary" type="submit" form="collect-order" wire:loading.attr="disabled" wire:target="collect">Tandai Diambil</button>@endif
-@elseif($order->status->value === 'diambil')<a class="btn primary" href="{{ route('tts.print', $order->id) }}">Lihat nota</a>@endif
+@endif
 
 @endunless

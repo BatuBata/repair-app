@@ -26,6 +26,8 @@
         .tts-detail .service-progress h2 { font-size:13px; font-weight:500; color:var(--muted); margin-bottom:10px; }
         .tts-detail .service-layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(270px,320px); gap:24px; align-items:start; }
         .tts-detail .service-main,.tts-detail .service-side { min-width:0; }
+        .tts-detail .service-layout.readonly-complete { grid-template-columns:minmax(0,1fr); }
+        .tts-detail .service-main > .invoice-section:first-child { margin-top:0; }
         .tts-detail .work-panel { margin:0 0 20px; padding:24px; border:1px solid var(--border); border-radius:var(--radius-card); background:var(--raised); }
         .tts-detail .work-panel h2 { font-size:18px; line-height:26px; font-weight:600; }
         .tts-detail .work-panel > .muted { margin-top:6px; }
@@ -74,7 +76,7 @@
         @if($success)<p class="muted">Tanda terima tersimpan</p>@endif
         <div class="obj-head"><h1>{{ $order->number }}</h1><x-ui.status :status="ucfirst($stage)" /></div>
         <p class="summary-line">Masuk {{ $order->created_at->format('d M Y, H.i') }} · dicatat oleh {{ $order->creator->name }}</p>
-    </div>@if(!$success && $isAdmin)<div class="desktop-only">@include('livewire.tts.admin-actions', ['placement' => 'header', 'menuOnly' => true])</div>@else<x-ui.row-actions id="tts-document-actions" :label="$order->number">@include('livewire.tts.document-actions')</x-ui.row-actions>@endif</header>
+    </div>@if(!$success && $isAdmin)<div @class(['desktop-only' => $stage !== 'diambil'])>@include('livewire.tts.admin-actions', ['placement' => 'header', 'menuOnly' => true])</div>@else<x-ui.row-actions id="tts-document-actions" :label="$order->number">@include('livewire.tts.document-actions')</x-ui.row-actions>@endif</header>
     @if(session('tts-status'))<p class="notice" role="status">{{ session('tts-status') }}</p>@endif
     @if($errors->any())<div class="notice" role="alert" x-init="$nextTick(() => $el.closest('.tts-detail').querySelector('[aria-invalid=true]')?.focus())">@foreach($errors->all() as $error)<p>{{ $error }}</p>@endforeach</div>@endif
 
@@ -83,12 +85,12 @@
         <div class="overview-block"><h2><x-ui.icon name="user" />Pelanggan</h2><p class="overview-value">{{ $order->customer_name }}</p><p class="customer-phone">{{ $order->customer_phone }}</p><p class="customer-address" style="white-space:pre-line">{{ $order->customer_address ?: 'Alamat belum dicatat' }}</p>@if(!$isAdmin && $canEdit)<a class="btn" style="margin-top:12px" href="{{ route('tts.edit',$order->id) }}">Ubah TTS</a>@endif</div>
     </section>
     @unless($success)<section class="service-progress" aria-labelledby="service-progress-title"><h2 id="service-progress-title">Proses servis</h2><div class="support-body"><ol class="track {{ $order->inspection_started_at ? 'has-inspection' : '' }}" aria-label="Tahap servis">@foreach(['diterima' => ['Diterima',$order->created_at], ...($order->inspection_started_at ? ['pengecekan'=>['Pengecekan',$order->inspection_started_at]] : []), 'dikerjakan'=>['Dikerjakan',$order->work_started_at ?? ($order->inspection_started_at ? null : $order->assigned_at)], 'selesai'=>['Selesai',$order->invoiced_on], 'diambil'=>['Diambil',$order->picked_up_on]] as $key=>[$label,$date])<li class="{{ $key === $stage ? 'now' : ($date ? 'done' : '') }}">{{ $label }}@if($date)<time>{{ $date->format('d M Y') }}</time>@endif</li>@endforeach</ol></div></section>@endunless
-    <div class="service-layout"><div class="service-main">
+    <div @class(['service-layout', 'readonly-complete' => $stage === 'diambil' && !$isAdmin])><div class="service-main">
     @if($success)
         <section class="work-panel"><h2>Tanda terima siap dibagikan</h2><p class="muted">Berikan struk kepada pelanggan. Penetapan teknisi dapat dilanjutkan dari detail TTS.</p>
             <div class="receipt-actions"><a class="btn primary" href="{{ route('tts.show', $order->id) }}">Lihat TTS</a><a class="btn" href="{{ route('tts.create') }}">Buat TTS lagi</a></div>
         </section>
-    @else
+    @elseif($stage !== 'diambil')
         <section @class(['work-panel', 'inspection-panel' => $stage === 'pengecekan']) aria-labelledby="current-work">
             <h2 id="current-work">{{ match($stage) { 'diterima' => 'Tetapkan teknisi', 'pengecekan' => 'Hasil pengecekan & rencana tindakan', 'dikerjakan' => 'Perbaikan sedang dikerjakan', 'selesai' => 'Barang siap diambil', 'diambil' => 'Servis telah selesai', default => 'Servis dibatalkan' } }}</h2>
             @if($stage !== 'pengecekan')<p class="muted">{{ match($stage) { 'diterima' => 'Pilih teknisi dan tentukan apakah barang perlu diperiksa terlebih dahulu.', 'dikerjakan' => 'Setelah pekerjaan selesai, isi rincian biaya dan terbitkan nota.', 'selesai' => 'Periksa pembayaran sebelum menyerahkan barang kepada pelanggan.', 'diambil' => 'Barang sudah diserahkan kepada pelanggan.', default => $order->cancel_reason ?: 'Pengerjaan untuk TTS ini dihentikan.' } }}</p>@endif
@@ -120,13 +122,13 @@
     @endif
 
     @if(!$success && $isAdmin && $order->invoiced_on)<section class="support-section invoice-section"><div class="support-body">@include('livewire.invoice.published')</div></section>@endif
-    @if(!$success && ($stage !== 'pengecekan' || !$isAdmin) && $order->inspectionNotes() !== '')<section class="support-section"><h2>Hasil pengecekan &amp; rencana tindakan</h2><p class="support-body" style="white-space:pre-line">{{ $order->inspectionNotes() }}</p></section>@endif
     </div><aside class="service-side"><section class="handler-card"><h2><x-ui.icon name="wrench" />Penanganan servis</h2><span class="fact-label">Teknisi</span><p class="handler-name">{{ $order->technician?->name ?? 'Belum ditetapkan' }}</p>@if($order->assigned_at)<p class="small muted">Ditetapkan {{ $order->assigned_at->format('d M Y, H.i') }}</p>@endif
     @if(!$success && $isAdmin && in_array($stage,['pengecekan','dikerjakan'],true))<section class="support-section" aria-label="Ganti teknisi"><div class="support-body">@include('livewire.tts.technician-form')</div></section>@endif
     </section>
+    @if(!$success && ($stage !== 'pengecekan' || !$isAdmin) && $order->inspectionNotes() !== '')<section class="support-section handler-card"><h2>Hasil pengecekan &amp; rencana tindakan</h2><p class="support-body" style="white-space:pre-line">{{ $order->inspectionNotes() }}</p></section>@endif
     @if($isAdmin && ($success || $stage !== 'pengecekan'))<div class="support-actions" style="margin-top:20px">@if($order->invoiced_on)<a class="btn" href="{{ route('tts.whatsapp',$order->id) }}"><x-ui.icon name="message-circle" />WA nota</a>@elseif(!$success && $order->inspectionNotes() !== '')<a class="btn" href="{{ route('tts.whatsapp',['id'=>$order->id,'inspection'=>1]) }}"><x-ui.icon name="message-circle" />WA hasil pengecekan</a>@else<a class="btn" href="{{ route('tts.whatsapp',$order->id) }}"><x-ui.icon name="message-circle" />WA tanda terima</a>@endif</div>@endif
     </aside></div>
-    @if(!$success && $isAdmin)<div class="actionbar">@include('livewire.tts.admin-actions',['placement'=>'mobile'])</div>@endif
+    @if(!$success && $isAdmin && $stage !== 'diambil')<div class="actionbar">@include('livewire.tts.admin-actions',['placement'=>'mobile'])</div>@endif
     @if($isAdmin && ! $success && in_array($order->status->value, ['diterima', 'pengecekan', 'dikerjakan'], true))
         <dialog id="cancel-order" class="sheet-dialog" wire:ignore.self><div class="dialog-body"><h2>Batalkan {{ $order->number }}?</h2><p class="muted">TTS yang dibatalkan tidak masuk laporan dan tidak bisa diaktifkan lagi.</p><form class="form" wire:submit="cancel"><div class="field"><label for="cancel_reason">Alasan <span class="opt">opsional</span></label><input class="input" id="cancel_reason" wire:model="cancel_reason" maxlength="500" placeholder="Masukkan alasan pembatalan"></div><div class="dialog-actions"><button class="btn ghost" type="button" data-close>Kembali</button><button class="btn danger" type="submit" wire:loading.attr="disabled" wire:target="cancel">Batalkan TTS</button></div></form></div></dialog>
     @endif

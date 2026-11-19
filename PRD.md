@@ -703,6 +703,8 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 
 | D-55 | Header link pelanggan memakai komponen logo Repair App yang sama dengan aplikasi; hapus asumsi jenis toko dari teks tetap Servis Elektronik, ganti Status servis; nama toko tetap sesuai tenant | User menemukan logo lama dan menanyakan asal subtitle | User | 19 Nov 2026; main lokal tanpa push/deploy |
 
+| D-56 | Push seluruh revisi main yang ditahan dan deploy ke target demo existing melalui CI/CD D-23; migrasi additive existing dijalankan normal, konfigurasi privat/data toko dipertahankan | User mengatakan push and deploy setelah T092 | User | 19 Nov 2026; target demo-repair-app.scannara.asia D-20 |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

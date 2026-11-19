@@ -36,7 +36,7 @@ class TrackingController extends Controller
         $order = ServiceOrder::query()->select(['id', 'number', 'customer_name', 'customer_phone', 'category_id', 'item_description', 'inspection_result', 'action_plan', 'status', 'cancel_reason', 'invoiced_on', 'discount', 'unrepairable', 'warranty_days', 'warranty_until', 'tracking_token'])->with('category:id,name')->findOrFail($id);
         $storeName = StoreSetting::query()->value('name') ?: app(TenantContext::class)->tenant()->name;
         $link = rtrim(config('app.url'), '/').'/t/'.$order->tracking_token;
-        if ($order->status === ServiceOrderStatus::Batal) {
+        if ($order->getAttribute('status') === ServiceOrderStatus::Batal) {
             return redirect()->away(WhatsApp::url($order->customer_phone, WhatsApp::cancellationMessage($order->customer_name, $order->number, $order->cancel_reason, $link, $storeName)));
         }
         if ($request->boolean('inspection')) {

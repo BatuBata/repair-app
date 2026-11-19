@@ -112,6 +112,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T090 | Seragamkan pencarian dan pagination semua daftar index | developer / 6.1-sol | medium / medium | — | — | done |
 | T091 | Tampilkan alasan dan WA pembatalan TTS | developer / 6.1-sol | easy / medium | — | — | done |
 | T092 | Samakan logo dan subtitle tracking pelanggan | developer / 6.1-sol | easy / low | — | — | done |
+| T093 | Integrasikan dan rilis revisi tertahan ke demo melalui CI/CD | integrator / 6.1-sol | medium / high | T090, T091, T092 | — | pending |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -187,14 +188,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:269246ccd5402f80a2d4121be9e1cd2a112296be8d1f4e7564c180e8e54b53d5",
+    "prd_revision": "sha256:6d3a095d62b05980f7d2ae987688e05ed8cbd19530b2cc7c8059cf478aa53550",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
-      "state": "stopped",
-      "allowed_tasks": [],
-      "stop_after_tasks": ["T092"],
-      "source_ref": "D55 selesai main lokal dengan independentQA PASS; tanpa push/deploy.",
+      "state": "running",
+      "allowed_tasks": ["T093"],
+      "stop_after_tasks": ["T093"],
+      "source_ref": "User19Nov2026 D56 push and deploy semua revisi tertahan ke target existing.",
       "phase_history": [
         {
           "state": "paused",
@@ -8228,6 +8229,58 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         ],
         "summary": "SharedRepairApplogo+neutralStatusservis; tenantname unchanged. Tracking5PASS129assert/Pint/diffcheckPASS; CUA1280/375/reload loadedPNG26x26 explicit24attrs,nooverflow; independent2hash/visualPASS. No backend/schema/deps/buildrepeat/push/deploy."
       }
+    },
+    {
+      "id": "T093",
+      "title": "Integrasikan dan rilis revisi tertahan ke demo melalui CI/CD",
+      "kind": "integration",
+      "responsible_role": "integrator",
+      "work_type": "release",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md \u00a720.3 D-56",
+        "PRD.md \u00a720.3 D-23"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "high",
+      "uncertainty": "low",
+      "triage_reason": "21 commit tertahan termasuk4migrasi; pin sumber, tunggu CI/CD dan QA server nyata tanpa seed/reset.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Integrasi/release dan verifikasi data/identitas target.",
+      "depends_on": {
+        "hard": [
+          "T090",
+          "T091",
+          "T092"
+        ],
+        "contracts": []
+      },
+      "write_scope": [
+        "app/Http/Controllers/TrackingController.php",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T093/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Candidate lolosPint/PHPStan/CI full termasukMariaDBdan deploysafety; gunakanCI/CD existing exactmain, noreset/seed/APPKEY/envchanges.",
+        "TargetHTTPS/up/login200,release-revision exactdeployedcommit dan migrationstatus4tambahanRan, newcolumns/types metadata tanpaPHI.",
+        "QAindependen postdeployread-only version/health/marker/featuresafety PASS; bukti aktual disimpan; tidak melakukantransaksi/WA/printer nyata."
+      ],
+      "verification_plan": [
+        "PreflightremoteSHA/maintenanceidle,staticchecks+targetenumtest; pushmainwatchGitHubCI/deploy; read-onlySSHmarker/migrations/schema,HTTPpublicsmoke danQAindependent."
+      ],
+      "status": "pending",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": null
     }
   ]
 }

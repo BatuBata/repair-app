@@ -110,6 +110,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T088 | Rombak laporan dengan panel terbuka | developer / 6.1-sol | medium / low | — | — | done |
 | T089 | Rapikan daftar siap diserahkan dan garansi dashboard | developer / 6.1-sol | easy / low | — | — | done |
 | T090 | Seragamkan pencarian dan pagination semua daftar index | developer / 6.1-sol | medium / medium | — | — | done |
+| T091 | Tampilkan alasan dan WA pembatalan TTS | developer / 6.1-sol | easy / medium | — | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -185,14 +186,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:f509653c78171eec44475cb863caad86653f5d53b18778fedf9a86275ad621c9",
+    "prd_revision": "sha256:352434f150b914d5493ab135f2efafb68ac0550947e2e7244b715359132dc130",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
-      "stop_after_tasks": ["T090"],
-      "source_ref": "User19Nov2026 D53 selesai lokal main, independentQA PASS; tanpa push/deploy.",
+      "stop_after_tasks": ["T091"],
+      "source_ref": "D54 selesai main lokal dengan QA independen PASS; tanpa push/deploy.",
       "phase_history": [
         {
           "state": "paused",
@@ -8094,6 +8095,74 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T090/platform-mobile.jpg"
         ],
         "summary": "11 index pagination20/search seragam. Regression282PASS1guardedMySQLskip3100assert; independent6PASS126assert/source26hash/visualPASS. CUA10Livewire+platform desktop1280/HP375,page2/search/reset/querystring,total/report preserved. Build386ms/Pint/viewcache/diffcheckPASS. No schema/deps/operatorDB/push/deploy."
+      }
+    },
+    {
+      "id": "T091",
+      "title": "Tampilkan alasan dan WA pembatalan TTS",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "fullstack",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md \u00a720.3 D-54",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Perbaikan pemilihan pesan WA dan field publik yang diminta user; jaga escaping dan tenant.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Perbaikan lintas controller/helper/Blade terbatas, tanpa schema atau status baru.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "app/Http/Controllers/TrackingController.php",
+        "app/Support/WhatsApp.php",
+        "resources/views/livewire/tts/detail.blade.php",
+        "resources/views/tracking/show.blade.php",
+        "tests/Feature/Tracking/**",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T091/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Admin TTS batal melihat WA pembatalan; pesan memuat nomor, alasan bila ada dan linktracking, tanpa meminta persetujuan perbaikan; URLinspectionlama tetappesanbatal.",
+        "Trackingpublik menampilkan alasan tersimpan hanya saatbatal dengan escaping/wrapping; alasan kosong tetapgeneric; PII/modal/biaya internal tetap tidakterbuka.",
+        "Alur WA tanda terima/hasilcek/nota dan guardtenant/admin tetap; testtarget/browserHPdesktop/QAindependen PASS; no push/deploy."
+      ],
+      "verification_plan": [
+        "Featuretest cancellation WA/plainencoding/XSS/blankreason/statuspriority/security regression; browserfixturecancelled detail+tracking375/1280; independentsourcereview."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T091/README.md",
+        "revision": "sha256:8f96583ca3ee8459024f02d255131e3b8adfc0dbdc94d313125cee8a174e3a71",
+        "checked_revision": "sha256:8f96583ca3ee8459024f02d255131e3b8adfc0dbdc94d313125cee8a174e3a71",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T091/README.md",
+          "docs/evidence/T091/source-manifest.json",
+          "docs/evidence/T091/independent-qa.md",
+          "docs/evidence/T091/browser-checks.json",
+          "docs/evidence/T091/admin-cancelled.jpg",
+          "docs/evidence/T091/customer-desktop.jpg",
+          "docs/evidence/T091/customer-mobile.jpg"
+        ],
+        "summary": "TTS batal WA cancellation priority+savedreason public escaped;10regressionPASS133assert+independent3PASS78assert,5hash andvisualQA PASS. CUA actualfixturecancel+anonymouscustomer1280/375nooverflow; build406ms/Pint/diffcheckPASS. No schema/newstatus/operatorDB/push/deploy/actualWAsend."
       }
     }
   ]

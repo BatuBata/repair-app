@@ -152,7 +152,7 @@
                 <p class="notice warranty"><x-ui.icon name="shield-check" /><span>@if($order->warranty_until && $order->warranty_days) Garansi {{ $order->warranty_days }} hari, berlaku sampai <strong>{{ $order->warranty_until->translatedFormat('j M Y') }}</strong>. @else Tidak ada garansi. @endif</span></p>
                 @if(\Illuminate\Support\Facades\Route::has('tracking.pdf'))<a class="btn primary block download" href="{{ route('tracking.pdf', $order->tracking_token) }}"><x-ui.icon name="download" />Unduh nota PDF</a>@endif
             @else
-                <div class="next-step"><x-ui.icon :name="$status === 'batal' ? 'ban' : 'clock'" /><h2 id="next-heading">{{ $nextTitle }}</h2><p>{{ $nextCopy }}</p></div>
+                <div class="next-step"><x-ui.icon :name="$status === 'batal' ? 'ban' : 'clock'" /><h2 id="next-heading">{{ $nextTitle }}</h2>@if($status === 'batal' && trim((string) $order->cancel_reason) !== '')<dl class="detail-list"><div><dt>Alasan pembatalan</dt><dd class="complaint">{{ $order->cancel_reason }}</dd></div></dl>@endif<p>{{ $nextCopy }}</p></div>
             @endif
         </section>
     </div>

@@ -21,6 +21,14 @@ final class WhatsApp
         return "Halo {$name}, berikut hasil pengecekan servis {$number}.\n\nHasil pengecekan & rencana tindakan:\n{$notes}\n\nMohon konfirmasi apakah perbaikan dapat dilanjutkan. Status: {$link} — {$store}";
     }
 
+    public static function cancellationMessage(string $name, string $number, ?string $reason, string $link, string $store): string
+    {
+        $reason = trim($reason ?? '');
+        $reasonLine = $reason !== '' ? "\n\nAlasan pembatalan: {$reason}" : '';
+
+        return "Halo {$name}, servis {$number} dibatalkan.{$reasonLine}\n\nCek status: {$link} — {$store}";
+    }
+
     public static function invoiceMessage(string $name, string $number, int $total, ?string $warrantyUntil, string $link, string $store, bool $unrepairable = false): string
     {
         $amount = 'Rp'.number_format($total, 0, ',', '.').($total === 0 ? ' (Gratis)' : '');

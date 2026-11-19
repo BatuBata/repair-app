@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Enums\ExpenseCategory;
 use App\Models\Concerns\BelongsToTenant;
 use App\Support\TenantContext;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
@@ -24,6 +23,7 @@ class Expense extends Model
             abort_if($model->exists && ((int) $model->tenant_id !== $tenantId || (int) $model->getRawOriginal('tenant_id') !== $tenantId), 404);
             Validator::make($model->getAttributes(), [
                 'created_by' => ['required', Rule::exists('users', 'id')->where('tenant_id', $tenantId)],
+                'category' => ['required', 'string', 'max:50', Rule::in([...ExpenseCategory::activeNames(), ...($model->exists ? [$model->getRawOriginal('category')] : [])])],
                 'amount' => ['required', 'integer', 'min:1', 'max:4294967295'],
             ])->validate();
         });
@@ -34,7 +34,6 @@ class Expense extends Model
     {
         return [
             'spent_on' => 'immutable_date',
-            'category' => ExpenseCategory::class,
             'amount' => 'integer',
         ];
     }

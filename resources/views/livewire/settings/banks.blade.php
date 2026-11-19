@@ -8,7 +8,7 @@
     <div class="title-row"><div><h1>{{ $editing ? ($bankId ? 'Edit bank' : 'Tambah bank') : 'Bank' }}</h1><p class="sub">Atur bank pembayaran untuk toko ini.</p></div>
         @unless($editing)<button class="btn primary" type="button" wire:click="create">Tambah bank</button>@endunless
     </div>
-    <nav class="settings-nav" aria-label="Pengaturan"><a href="{{ route('settings.store') }}">Toko</a><a href="{{ route('settings.categories') }}">Kategori</a><a href="{{ route('settings.banks') }}" aria-current="page">Bank</a><a href="{{ route('users.index') }}">Pengguna</a></nav>
+    <nav class="settings-nav" aria-label="Pengaturan"><a href="{{ route('settings.store') }}">Toko</a><a href="{{ route('settings.categories') }}">Kategori</a><a href="{{ route('settings.banks') }}" aria-current="page">Bank</a><a href="{{ route('settings.expense-categories') }}">Kategori pengeluaran</a><a href="{{ route('users.index') }}">Pengguna</a></nav>
     @if(session('bank_status'))<x-ui.notice type="success">{{ session('bank_status') }}</x-ui.notice>@endif
     @if($editing)
         <form class="form" wire:submit="save" style="max-width:560px" novalidate>

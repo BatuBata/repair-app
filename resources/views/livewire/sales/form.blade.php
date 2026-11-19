@@ -1,8 +1,13 @@
-<div class="sales-page">
+<div class="sales-page record-detail sale-create">
     @include('livewire.sales.styles')
-    <div class="title-row"><div><h1>Penjualan baru</h1><p class="sub">Stok berkurang setelah penjualan disimpan</p></div></div>
+    @include('livewire.detail-styles')
+    <a class="crumb" href="{{ route('sales.index') }}"><x-ui.icon name="arrow-left" />Penjualan</a>
+    <header class="title-row"><div><h1>Penjualan baru</h1><p class="sub">Pilih barang, isi pembeli bila perlu, lalu simpan penjualan.</p></div></header>
     @if($errors->any())<x-ui.notice type="error" x-init="$nextTick(() => $root.querySelector('[aria-invalid=true]')?.focus())">Periksa kembali isian di bawah.</x-ui.notice>@endif
-    <form class="sales-form" wire:submit="save" novalidate>
+    <form class="sales-form sale-create-layout" wire:submit="save" novalidate>
+        <div class="sale-create-main">
+            <section class="detail-panel" aria-labelledby="sale-customer-title">
+                <h2 id="sale-customer-title"><x-ui.icon name="user" />Pelanggan <span class="small muted">opsional</span></h2>
         <div wire:key="sale-customer-{{ $customer_id ?: 'new' }}">
             <x-ui.search-select name="customer_id" label="Cari pelanggan terdaftar" :options="$customers->map(fn ($customer) => ['value' => $customer->id, 'label' => $customer->name.' · '.$customer->phone])" :value="$customer_id" placeholder="Cari nama atau nomor HP pelanggan" wire:model.live="customer_id" :invalid="$errors->has('customer_id')" describedby="customer_id-error" />
             @error('customer_id')<p class="error-text" id="customer_id-error">{{ $message }}</p>@enderror
@@ -13,11 +18,12 @@
             @endif
         </div>
         <div class="customer-fields">
-            @foreach(['sold_on' => ['Tanggal jual', 'date'], 'customer_name' => ['Nama customer (opsional)', 'text'], 'customer_phone' => ['Nomor HP / WhatsApp (opsional)', 'tel'], 'warranty_days' => ['Garansi (hari, 0 = tanpa garansi)', 'text']] as $field => [$label, $type])
-                <div><x-ui.field :name="$field" :label="$label" :type="$type" :value="$field === 'sold_on' ? $sold_on : ''" wire:model="{{ $field }}" :disabled="$customer_id !== '' && in_array($field, ['customer_name', 'customer_phone'])" inputmode="{{ $field === 'warranty_days' ? 'numeric' : ($field === 'customer_phone' ? 'tel' : 'text') }}" aria-invalid="{{ $errors->has($field) ? 'true' : 'false' }}" aria-describedby="{{ $field }}-error" />@error($field)<p class="error-text" id="{{ $field }}-error">{{ $message }}</p>@enderror</div>
+            @foreach(['customer_name' => ['Nama pelanggan (opsional)', 'text'], 'customer_phone' => ['Nomor HP / WhatsApp (opsional)', 'tel']] as $field => [$label, $type])
+                <div><x-ui.field :name="$field" :label="$label" :type="$type" wire:model="{{ $field }}" :disabled="$customer_id !== '' && in_array($field, ['customer_name', 'customer_phone'])" inputmode="{{ $type === 'tel' ? 'tel' : 'text' }}" aria-invalid="{{ $errors->has($field) ? 'true' : 'false' }}" aria-describedby="{{ $field }}-error" />@error($field)<p class="error-text" id="{{ $field }}-error">{{ $message }}</p>@enderror</div>
             @endforeach
         </div>
-        <section aria-labelledby="sale-lines-title"><div class="line-heading"><h2 id="sale-lines-title">Barang dijual</h2><button class="btn" type="button" wire:click="addItem">Tambah barang</button></div>
+            </section>
+        <section class="detail-panel" aria-labelledby="sale-lines-title"><div class="line-heading"><h2 id="sale-lines-title"><x-ui.icon name="package" />Barang dijual</h2><button class="btn" type="button" wire:click="addItem"><x-ui.icon name="plus" />Tambah barang</button></div>
             @error('items')<p class="error-text">{{ $message }}</p>@enderror
             @foreach($items as $index => $row)
                 <div class="sale-line" wire:key="sale-item-{{ $index }}">
@@ -29,9 +35,18 @@
             @endforeach
             @if($products->isEmpty())<x-ui.notice type="warning">Belum ada barang aktif. <a class="btn ghost" href="{{ route('stock.create') }}">Tambah barang stok</a></x-ui.notice>@endif
         </section>
-        <section aria-labelledby="sale-payment-title"><div class="section-head"><h2 id="sale-payment-title">Pembayaran</h2></div><x-payment-fields :method="$payment_method" :bank="$payment_bank" prefix="sale" /></section>
-        <div class="sale-summary"><div class="summary-line total"><span>Total sementara</span><strong>{{ $previewTotal === null ? 'Periksa isian' : 'Rp'.number_format($previewTotal, 0, ',', '.') }}</strong></div><p class="sub">Garansi memerlukan nomor HP. Penjualan yang sudah disimpan tidak dapat diubah; hapus lalu buat ulang bila ada koreksi.</p></div>
-        <div class="form-actions"><a class="btn ghost" href="{{ route('sales.index') }}">Batal</a><button class="btn primary desktop-only" type="submit" wire:loading.attr="disabled" wire:target="save"><span wire:loading.remove wire:target="save">Simpan penjualan</span><span wire:loading wire:target="save">Menyimpan…</span></button></div>
-        <div class="actionbar"><button class="btn primary" type="submit" wire:loading.attr="disabled" wire:target="save"><span wire:loading.remove wire:target="save">Simpan penjualan</span><span wire:loading wire:target="save">Menyimpan…</span></button></div>
+        </div>
+        <aside class="detail-panel sale-checkout" aria-labelledby="sale-summary-title">
+            <h2 id="sale-summary-title">Ringkasan penjualan</h2>
+            <dl class="detail-total"><dt>Total sementara</dt><dd>{{ $previewTotal === null ? 'Periksa isian' : 'Rp'.number_format($previewTotal, 0, ',', '.') }}</dd></dl>
+            <div class="sale-transaction-fields">
+                <div><x-ui.field name="sold_on" label="Tanggal jual" type="date" :value="$sold_on" wire:model="sold_on" aria-invalid="{{ $errors->has('sold_on') ? 'true' : 'false' }}" aria-describedby="sold_on-error" />@error('sold_on')<p class="error-text" id="sold_on-error">{{ $message }}</p>@enderror</div>
+                <div><x-ui.field name="warranty_days" label="Garansi (hari)" wire:model="warranty_days" inputmode="numeric" aria-invalid="{{ $errors->has('warranty_days') ? 'true' : 'false' }}" aria-describedby="warranty_days-hint warranty_days-error" /><p class="small muted" id="warranty_days-hint">0 = tanpa garansi. Garansi memerlukan nomor HP.</p>@error('warranty_days')<p class="error-text" id="warranty_days-error">{{ $message }}</p>@enderror</div>
+            </div>
+            <section class="sale-payment" aria-labelledby="sale-payment-title"><h2 id="sale-payment-title">Pembayaran</h2><x-payment-fields :method="$payment_method" :bank="$payment_bank" prefix="sale" /></section>
+            <p class="small muted sale-save-hint">Stok berkurang saat disimpan. Penjualan tersimpan tidak dapat diubah; untuk koreksi, hapus lalu buat ulang.</p>
+        <div class="form-actions sale-save"><button class="btn primary desktop-only" type="submit" wire:loading.attr="disabled" wire:target="save"><span wire:loading.remove wire:target="save"><span class="sale-save-label"><x-ui.icon name="check" />Simpan penjualan</span></span><span wire:loading wire:target="save">Menyimpan…</span></button><a class="btn ghost" href="{{ route('sales.index') }}">Batal</a></div>
+        <div class="actionbar"><button class="btn primary" type="submit" wire:loading.attr="disabled" wire:target="save"><span wire:loading.remove wire:target="save"><span class="sale-save-label"><x-ui.icon name="check" />Simpan penjualan</span></span><span wire:loading wire:target="save">Menyimpan…</span></button></div>
+        </aside>
     </form>
 </div>

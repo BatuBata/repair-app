@@ -576,3 +576,7 @@ Aksi cetak, unduh, ubah atau hapus yang tersedia dikumpulkan di menu titik tiga 
 ## Pesan hasil aksi — 19 November 2026
 
 Semua banner hasil aksi memakai satu komponen notice, dengan jarak bawah 20px terhadap kartu/form berikutnya. Berhasil memakai hijau, error merah, peringatan kuning, dan informasi biru dari token yang sudah ada. Revisi user berikutnya merampingkan banner: satu pesan dengan ikon, garis tipis dan tombol × melingkar di kanan; label jenis tersedia untuk pembaca layar. Area tekan tombol tutup 44px meskipun lingkaran visualnya lebih kecil. Menutup pesan tidak mengubah data/isian; pesan hasil aksi berikutnya boleh muncul kembali. Error tetap diumumkan sebagai alert dan fokus validasi yang sudah ada dipertahankan. Pesan singkat di bawah input tetap berdekatan dengan inputnya.
+
+## Form tambah penjualan — 19 November 2026
+
+Gunakan panel terbuka seperti detail: pelanggan dan barang di area utama; total, tanggal, garansi, pembayaran dan simpan dalam ringkasan di kanan desktop. HP bertumpuk dan simpan memakai bilah aksi existing. Isian tetap dapat diedit, tanpa langkah/disclosure baru; baris barang HP memakai pemisah tipis tanpa kartu bertingkat.

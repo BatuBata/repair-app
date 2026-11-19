@@ -1,0 +1,21 @@
+{
+  "task": "T086",
+  "candidate": "A1",
+  "base_revision": "0a441173228990701959eff4e1ae5dcbae541306",
+  "files": {
+    "app/Models/ExpenseCategory.php": "5591efdffdf6b695eb5bdddefd0761682131257ef3f23dbe9fa9a651c7061aad",
+    "app/Models/Expense.php": "7f6f80683d972fc6561c7786052edd7b928d9d9198d4bf74f331036d5520826c",
+    "app/Livewire/Settings/ExpenseCategories.php": "2920d8f84f30bcd342e60d89dc776f29b94baaeec494a0f547ae96273ef0825a",
+    "app/Livewire/Expenses/Index.php": "db2e18f7f9b570602e5a37ff1bcbf957025f51304ce17f23d85c61c480f90d55",
+    "resources/views/livewire/settings/expense-categories.blade.php": "1b9b483500903f3f4e2163ac9d6ea7000cccf5e657e6eeee46ddf5b395d16140",
+    "resources/views/livewire/settings/banks.blade.php": "26f50461bd27d28fb606716cfd5bcadae5bae1a3b3dc7971807dd005634fd095",
+    "resources/views/livewire/settings/categories.blade.php": "6c81acea3dead87c2968b94a4094eb8962ee34838738454f836d72525f21b15e",
+    "resources/views/livewire/settings/store.blade.php": "d957642fcc8f68b9ae5bdbe5e2c5bca2f40320d6ffe8cff15a75ac648984a8dd",
+    "resources/views/livewire/expenses/index.blade.php": "d5b27c9bbf9f60073d9d6b4dfb33214081d12ac75d1e5bbcddaa7562cbdcc566",
+    "routes/modules/settings.php": "13ad6dc4951072e109ed921fcc6acfe75a1b839d02066206767bc752b390c615",
+    "database/migrations/2026_11_19_010000_create_expense_categories.php": "5374bf6ffe41c5160f2bd66265b476de1e3a5771f56994921bd310cad3c3d6a4",
+    "tests/Feature/Expenses/ExpenseCategoriesMigrationTest.php": "7b8472da90242c34d3227abfd7610a71e9a041f62f5ae79a4307423f09088d41",
+    "tests/Feature/Settings/ExpenseCategoriesTest.php": "6d8d536050a6ba4b89165ca1232de8ef1e362d05eda3f3387ef90204320869b7",
+    "docs/evidence/T086/A1/mysql-proof.php": "796ead333bc93cb46d23a77695d0d06380967381e80fb74642fb58987f9afa77"
+  }
+}

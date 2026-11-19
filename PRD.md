@@ -687,6 +687,10 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 
 | D-47 | Banner tetap berwarna semantik tetapi lebih ringkas, tanpa judul tambahan/garis tebal, dan memiliki tombol × melingkar untuk menutup pesan saat ini. Penutupan hanya tampilan; isian, validasi, dan data tetap, pesan aksi berikutnya tetap muncul | User menilai pesan D-46 terlalu berlebihan dan meminta tombol circular × | User | 19 Nov 2026; main lokal tanpa push/deploy |
 
+| D-48 | Form tambah penjualan mengikuti konsep detail terbuka: kelompok pelanggan dan barang di area utama, ringkasan total/tanggal/garansi/pembayaran/simpan di samping desktop dan bertumpuk di HP. Tetap form tambah, semua isian/validasi/search/datepicker/aksi stok existing; tanpa alur baru | User meminta rombak tambah penjualan memakai konsep detail yang disukai | User | 19 Nov 2026; main lokal, jangan push/deploy |
+
+| D-49 | Master kategori pengeluaran mengikuti Bank: empat kategori bawaan existing hanya aktif/nonaktif per toko; tambahan toko dapat dibuat/diubah/dihapus. Pilihan input baru hanya kategori aktif milik toko. Transaksi lama mempertahankan nama kategori snapshot ketika master diubah/dihapus; data lama tidak diubah. Perlu migrasi perluasan enum kategori ke string dan tabel konfigurasi tenant; tanpa kategori bertingkat/modul laporan baru | User meminta master kategori pengeluaran setelah form penjualan | User | 19 Nov 2026; main lokal tanpa push/deploy; migrasi dalam scope fitur |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

@@ -38,7 +38,7 @@ class DatePickerTest extends TestCase
         $this->assertFalse($views->contains(fn (string $source) => preg_match('/<input[^>]*type="date"/', $source) === 1));
         $this->assertSame(5, $views->sum(fn (string $source) => substr_count($source, '<x-ui.date-picker')));
 
-        $this->assertStringContainsString("'sold_on' => ['Tanggal jual', 'date']", $views->first(fn (string $source, string $path) => str_ends_with($path, '/sales/form.blade.php')));
+        $this->assertStringContainsString('name="sold_on" label="Tanggal jual" type="date"', $views->first(fn (string $source, string $path) => str_ends_with($path, '/sales/form.blade.php')));
         $this->assertStringContainsString('name="entry_date" label="Tanggal masuk" type="date"', $views->first(fn (string $source, string $path) => str_ends_with($path, '/stock/restock.blade.php')));
 
         $field = file_get_contents(resource_path('views/components/ui/field.blade.php'));

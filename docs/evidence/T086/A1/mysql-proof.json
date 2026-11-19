@@ -1,0 +1,121 @@
+{
+    "result": "PASS",
+    "mysql_version": "8.0.31",
+    "database": "repair_app_test",
+    "fixture_tables": [
+        "t086_a1_3e3a8e_tenants",
+        "t086_a1_3e3a8e_expenses",
+        "t086_a1_3e3a8e_expense_categories"
+    ],
+    "fixture_tables_removed": true,
+    "legacy_fixture_rows": 4,
+    "baseline_tables": {
+        "cache": {
+            "count": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "schema_sha256": "4dde97a02377e7ffe3ea75813a95d0cc7c6bbc468f971037da60cfc9f0fd7d36"
+        },
+        "cache_locks": {
+            "count": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "schema_sha256": "90c1a0a46e8d6003025d9a050addad32f23a8df03db14cb4d933dc4f193632bc"
+        },
+        "categories": {
+            "count": 11,
+            "sha256": "d8c3ea94d17a71628f91e2c54502deea9afa39c96f1526f3de5d333805f1264d",
+            "schema_sha256": "06d68e750684d201e1944572e1bbaad91fc8529aa62d14e53e0dc92e69a5c0f1"
+        },
+        "expenses": {
+            "count": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "schema_sha256": "2829056d887c1861779e66609beb50b2c3d12dd38a6c2f6c6d99338358a27ed8"
+        },
+        "failed_jobs": {
+            "count": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "schema_sha256": "beea5793adcb6a02c9a821dcbbaf04d5a9b1c11173f9a6bedbd026092816845d"
+        },
+        "job_batches": {
+            "count": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "schema_sha256": "b64fe8b7f8a5e4d028e84ab064a9aa5bea139fcf2f11ade733b5d2b74fce30cf"
+        },
+        "jobs": {
+            "count": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "schema_sha256": "09d81d120b5b7b5d7f884e7e4b0ce65ebf8c96d99dd454a68fdc58dfbdad9145"
+        },
+        "migrations": {
+            "count": 6,
+            "sha256": "19909d2207cabb6e2f7a48a9a9bc82e74e3b8dd1b6d54b23d32edcafeafbc285",
+            "schema_sha256": "5f8c8f8f12f89b37601c4383e2ceb158eb74cb65d60e48caccbf432ac9366089"
+        },
+        "number_sequences": {
+            "count": 6,
+            "sha256": "8eddc4b46b02cdf617cd29d646cfe1251fc238746ef0809a4a55394b7b86600d",
+            "schema_sha256": "bb1e12a2865064326c0812d1fd827a35ef4796b4d3cf4c19c7efe3a600a0f16e"
+        },
+        "passkeys": {
+            "count": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "schema_sha256": "387395b9ac74af506301621812892745046219d3ddb0b53213d5ee0dc56696d3"
+        },
+        "password_reset_tokens": {
+            "count": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "schema_sha256": "05e0f2ad8737891a4c8408f5d0dc4acfff4dfc39252cfe947f9c095e949de606"
+        },
+        "products": {
+            "count": 3,
+            "sha256": "2ce7c26382ba901e3eb73d5819e8d6a9f94209a9b6a5ce7ee38688a6596581ef",
+            "schema_sha256": "6d3967b7bb1b9d72aa053165650ee4463888a818a945aee69b373477c26cf308"
+        },
+        "sale_items": {
+            "count": 3,
+            "sha256": "dfbff9ad60509c2b6f56677c107b9e2de49e3f7f6ed5cbc06c7fc1eb56b4e7de",
+            "schema_sha256": "6f6d2c59fbf28bc7118de9af473bfb10738a60dd6203b1cf1e7880d4892a3f8a"
+        },
+        "sales": {
+            "count": 11,
+            "sha256": "14b97aab85c2ce8910b4653c4a90317884e7192867cc49536f9a69c3b23ef3c7",
+            "schema_sha256": "80fa16c436243e605032d64bc23809389dfb8902cf6c444ac8d4a43421c6dea5"
+        },
+        "service_order_items": {
+            "count": 2,
+            "sha256": "82f67f6638310fc504d2a3b9726beb45c9d63be78e8c76b47dea6e827d3f72af",
+            "schema_sha256": "9fabaa6ce1e9124a039f87a2c63c096e0fa5cc128325f668e3ea1a8a980831bc"
+        },
+        "service_orders": {
+            "count": 12,
+            "sha256": "2434041ec82919c66a23109075c95a25817d4f70069188aae4bd2f4d015e1f39",
+            "schema_sha256": "123e3a11a241eed57611402c021d498e675e4ca3111c739d4a8f5216e49e8069"
+        },
+        "sessions": {
+            "count": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "schema_sha256": "58b2a9e2a2c0d24888b14ab3af6a3b3dc61fa33359ec886aa32266108679c49a"
+        },
+        "stock_entries": {
+            "count": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "schema_sha256": "c38950642cd2c5f144f489cb775d750c9e6a46ebcd05f6b3766159d50096710a"
+        },
+        "store_settings": {
+            "count": 1,
+            "sha256": "a2aab5d9c43bb91ba13bc175f5329dfb921bc967a3d5c6bd10e15c6b41bb9358",
+            "schema_sha256": "1f368363c6b186f0d063bbb54c7ab5e97497a31e24ed3b747044e0ebb5f5243a"
+        },
+        "users": {
+            "count": 9,
+            "sha256": "cbe72c988c1319629d9e65a0ea363e363f2d2f2a6b9b550ed7aa655580ef7c5a",
+            "schema_sha256": "6120ad751c887be7f8863d16e2d3258185b7b1648380d997659149ed63779594"
+        }
+    },
+    "checks": [
+        "Actual migration widened ENUM to varchar(50); all 4 legacy rows byte-identical.",
+        "New tenant category configuration and 50-character custom snapshot accepted; no legacy backfill.",
+        "Unsafe narrowing rollback blocked before changing expense rows or category table.",
+        "Safe rollback and reapply preserve every legacy field.",
+        "All pre-existing tables, row counts, row hashes and schema hashes unchanged; only 3 owned fixture tables created/dropped."
+    ]
+}

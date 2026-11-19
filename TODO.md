@@ -104,6 +104,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T082 | Seragamkan banner feedback seluruh menu | developer / 6.1-sol | medium / medium | — | — | done |
 | T083 | QA independen banner feedback bersama | tester / 6.1-sol | medium / medium | T082 | — | done |
 | T084 | Ringkas banner dan tombol tutup melingkar | developer / 6.1-sol | easy / low | — | — | done |
+| T085 | Rombak form tambah penjualan | developer / 6.1-sol | easy / low | — | — | done |
+| T086 | Master kategori pengeluaran per toko | developer / 6.1-sol | medium / medium | — | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -179,14 +181,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:a16b7707836fca9766747bf8cf3bdf31c21087111a93bfdfdb18d1ae249be7d0",
+    "prd_revision": "sha256:694c5cc5fd3c16dc9b1d55c777c36bbe44e4fd12cfaefc2727b65206f2d4a25f",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
-      "stop_after_tasks": ["T084"],
-      "source_ref": "User19Nov2026 koreksi ukuran X T084 selesai lokal dengan review independen PASS; tanpa push/deploy.",
+      "stop_after_tasks": ["T085", "T086"],
+      "source_ref": "User19Nov2026 D48/D49 selesai mainlokal, QA independen PASS, migrasi lokal diterapkan; tanpa push/deploy.",
       "phase_history": [
         {
           "state": "paused",
@@ -7654,6 +7656,148 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T084/independent-qa.md"
         ],
         "summary": "User size correction: CSS circle28→18px, hitarea44px retained. Build386msPASS and independent diff reviewPASS; behavior unchanged from4cf8a27. No browser/backend suite rerun, push or deploy."
+      }
+    },
+    {
+      "id": "T085",
+      "title": "Rombak form tambah penjualan",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-48",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "low",
+      "uncertainty": "low",
+      "triage_reason": "Rombak form tambah penjualan",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Tampilan terbatas existing.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "resources/views/livewire/sales/form.blade.php",
+        "resources/views/livewire/sales/styles.blade.php",
+        "DESIGN.md",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T085/**",
+        "tests/Feature/DatePickerTest.php"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Form tambah terbuka dengan kelompok pelanggan/barang dan ringkasan transaksi yang rapi, mengikuti detail existing.",
+        "Semua binding/validasi/disabled/load/save/search/customer/date/payment tetap; desktop dan HP tidak overflow.",
+        "Build, sales/customer tests, browser desktop/mobile dan independent QA; tanpa push/deploy."
+      ],
+      "verification_plan": [
+        "Build, targetedSales/Customer tests; isolatedSQLite browser create/change/remove/customer/payment/errors/save; independent review."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T085/README.md",
+        "revision": "sha256:9fff0a4c325d26b99976578d029b2d9a55c1b3658e096882481d2c2e53f55380",
+        "checked_revision": "sha256:9fff0a4c325d26b99976578d029b2d9a55c1b3658e096882481d2c2e53f55380",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T085/README.md",
+          "docs/evidence/T085/source-manifest.json",
+          "docs/evidence/T085/independent-qa.md",
+          "docs/evidence/T085/form-desktop.jpg",
+          "docs/evidence/T085/form-1280.jpg",
+          "docs/evidence/T085/items-mobile.jpg",
+          "docs/evidence/T085/bank-mobile.jpg",
+          "docs/evidence/T085/integration-checks.json"
+        ],
+        "summary": "Open createform desktop/HP PASS, customer/item/date/payment/save CUA syntheticfixture PASS. Independent source/screenshot review PASS. Integrated273PASS1guardedSKIP1brittletestFAIL; adapted existingDatePickerTest+2PASS recheck resolves failure. FinalbuildPASS438ms. No push/deploy."
+      }
+    },
+    {
+      "id": "T086",
+      "title": "Master kategori pengeluaran per toko",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "backend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-49",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "medium",
+      "uncertainty": "low",
+      "triage_reason": "Master kategori pengeluaran per toko",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Schema dan isolasi tenant kategori dinamis.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "app/Models/ExpenseCategory.php",
+        "app/Enums/ExpenseCategory.php",
+        "app/Models/Expense.php",
+        "app/Livewire/Settings/ExpenseCategories.php",
+        "app/Livewire/Expenses/Index.php",
+        "resources/views/livewire/settings/**",
+        "resources/views/livewire/expenses/index.blade.php",
+        "routes/modules/settings.php",
+        "database/migrations/*expense_categories*",
+        "tests/Feature/**",
+        "docs/evidence/T086/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Default bensin/konsumsi/gaji/lainnya hanya toggle per tenant; custom CRUD+toggle admin, isolation dan guard direct actions.",
+        "Input expense menerima aktif toko saja, edit historical dapat mempertahankan kategori lama; transaksi/report lama tetap terbaca setelah rename/delete/nonaktif.",
+        "Migration preserving existingrows enum→string dan tabelkonfigurasi tenant; no destructive resets; MySQLcompat evidence; independent QA.",
+        "Nav settings/categorysearch tersedia, rows actionleft icons dan error/loading existing; no push/deploy."
+      ],
+      "verification_plan": [
+        "Targeted expense/settings/tenancy/report tests, migration existingdata SQLite/MySQL controlled fixture, browser CRUD/toggle isolation independent QA."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T086/A1/HANDOFF.md",
+        "revision": "sha256:cf55fb8b034de853649d2d87169cf07ba809ac1fd486ee62cc49c6702f7ce1ac",
+        "checked_revision": "sha256:cf55fb8b034de853649d2d87169cf07ba809ac1fd486ee62cc49c6702f7ce1ac",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T086/A1/HANDOFF.md",
+          "docs/evidence/T086/A1/source-manifest.json",
+          "docs/evidence/T086/A1/mysql-proof.json",
+          "docs/evidence/T086/independent-qa.md",
+          "docs/evidence/T086/browser.md",
+          "docs/evidence/T086/categories-desktop.jpg",
+          "docs/evidence/T086/categories-mobile.jpg",
+          "docs/evidence/T086/history-preserved.jpg",
+          "docs/evidence/T086/local-migration.json"
+        ],
+        "summary": "Master pertenant/defaulttoggle/customCRUD snapshot preserved. Developer66tests920assert PASS, independent4tests10assert PASS, MySQLactualmigration20baseline unchanged. CUA1440/375 PASS; localrepair_app onlynewmigrationPASS; prod untouched. Integrated275cases all required pass afterDatePickerTest correction, guardedMySQLconcurrency skipped. No push/deploy."
       }
     }
   ]

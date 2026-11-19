@@ -1,0 +1,9 @@
+{
+    "database": "repair_app",
+    "host": "localhost",
+    "migration": "2026_11_19_010000_create_expense_categories",
+    "legacy_expense_count": 0,
+    "legacy_expense_rows_identical": true,
+    "expense_categories_count": 0,
+    "result": "PASS"
+}

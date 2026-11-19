@@ -2,8 +2,8 @@
 
 namespace App\Livewire\Expenses;
 
-use App\Enums\ExpenseCategory;
 use App\Models\Expense;
+use App\Models\ExpenseCategory;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Carbon;
@@ -63,7 +63,7 @@ class Index extends Component
         $this->resetForm();
         $this->expenseId = $expense->id;
         $this->spent_on = Carbon::parse((string) $expense->getRawOriginal('spent_on'))->toDateString();
-        $this->category = ExpenseCategory::from((string) $expense->getRawOriginal('category'))->value;
+        $this->category = $expense->category;
         $this->description = $expense->description ?? '';
         $this->amount = (string) $expense->amount;
         $this->mode = 'edit';
@@ -82,7 +82,7 @@ class Index extends Component
         $this->description = trim($this->description);
         $data = $this->validate([
             'spent_on' => ['required', 'date_format:Y-m-d', 'after_or_equal:1000-01-01', 'before_or_equal:9999-12-31'],
-            'category' => ['required', Rule::enum(ExpenseCategory::class)],
+            'category' => ['required', 'string', 'max:50', Rule::in($this->categoryNames())],
             'description' => ['nullable', 'string', 'max:255'],
             'amount' => ['required', 'integer', 'min:1', 'max:4294967295'],
         ], [
@@ -90,7 +90,7 @@ class Index extends Component
             'spent_on.date_format' => 'Tanggal pengeluaran harus menggunakan format YYYY-MM-DD.',
             'spent_on.after_or_equal' => 'Tanggal pengeluaran terlalu awal.',
             'spent_on.before_or_equal' => 'Tanggal pengeluaran terlalu akhir.',
-            'category.required' => 'Kategori wajib dipilih.', 'category.enum' => 'Kategori pengeluaran tidak valid.',
+            'category.required' => 'Kategori wajib dipilih.', 'category.in' => 'Pilih kategori pengeluaran yang aktif di toko ini.',
             'description.string' => 'Keterangan harus berupa teks.', 'description.max' => 'Keterangan maksimal 255 karakter.',
             'amount.required' => 'Nominal wajib diisi.', 'amount.integer' => 'Nominal harus berupa bilangan bulat.',
             'amount.min' => 'Nominal harus lebih dari 0.', 'amount.max' => 'Nominal melebihi batas penyimpanan.',
@@ -138,6 +138,17 @@ class Index extends Component
         return Expense::query()->whereKey($valid['id'])->firstOrFail();
     }
 
+    /** @return list<string> */
+    private function categoryNames(): array
+    {
+        $names = ExpenseCategory::activeNames();
+        if ($this->mode === 'edit') {
+            $names[] = $this->findExpense($this->expenseId)->category;
+        }
+
+        return array_values(array_unique($names));
+    }
+
     private function resetForm(): void
     {
         $this->reset(['expenseId', 'spent_on', 'category', 'description', 'amount']);
@@ -172,7 +183,7 @@ class Index extends Component
             'expenses' => (clone $query)->orderByDesc('spent_on')->orderByDesc('id')->get(),
             'total' => (clone $query)->sum('amount'),
             'filterErrors' => $filters->errors(),
-            'categories' => ExpenseCategory::cases(),
+            'categories' => $this->categoryNames(),
             'deleteExpense' => $this->deleteId ? $this->findExpense($this->deleteId) : null,
         ])->layout('layouts.app', ['title' => 'Pengeluaran']);
     }

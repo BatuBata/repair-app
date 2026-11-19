@@ -1,0 +1,7 @@
+# T086 — browser coordinator dan integrasi
+
+CUAfixtureSQLite /private/tmp/repair-t064.sqlite, server8193. Migrasi baru10.26msPASS tanpareset; operatorDB/prod tidakdisentuh. Desktop1440: kategori bawaanmenu bensin hanyaNonaktifkan; toggle→Nonaktif. TambahListrikuji→Aktif, mastercreate/savePASS. Inputpengeluaran searchListrik→pilih; nominal15000 save→expense1. RenameListrikuji→Utilitasuji lalu nonaktifcustomPASS. Listpengeluaran tetapListrikuji Rp15000, bukanrenamedlabel. Createexpense baru hanyaKonsumsi/Gaji/Lainnya; bensin/Utilitas nonaktif tidakmuncul. HP375 docwidth375; nav/table/actions/successbannerutuh; categories-mobile.jpg. Desktopcategories-desktop.jpg danhistory-preserved.jpg. Tidak testdelete lewatbrowser (model/Livewiretests worker danindependen membuktikan), tidak sentuhdataoperator/WA/print. Serverfixture berhenti, tabditutup, viewportreset.
+
+Integratedsuite275cases:273PASS1SKIP1FAIL (hanyaDatePickerTest literalmappinglama); testsnapshotadaptedkeexplicitdatefield, rerunfile2PASS21assert. Failureasli disimpan /private/tmp/repair-t085-t086-suite.log. FinalbuildPASS /private/tmp/repair-t085-t086-final-build.log. SourcebackendfreezefinalhanyaPHPDoc setelahtests, tidakmengubahperilaku. QAindependen danmanifestA1sebagai sumberpenerimaan. Tidakpush/deploy.
+
+QAindependen PASS4supplementaltests10assert; lihat independent-qa.md. SetelahQA, guarded migrate lokal repair_app pathhanyamigrasibaru PASS93.32ms, tabelkategori0baris (defaultvirtual), existingexpenses0baris tetapidentik; local-migration.json. TanpaprodDB/push/deploy.

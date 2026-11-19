@@ -1,0 +1,7 @@
+{
+  "base": "48d9feee42a7dd22e954c19b6689814e9d998806",
+  "revision": "sha256:df232169dfb2f8131ed9d8946e9abef00e73a1fdca1cf2cd55952e239cb75dfa",
+  "files": {
+    "resources/views/livewire/dashboard/index.blade.php": "12024d2c413df74adace586c6ac36f3053825c46eaddc31add2cac89faefcb05"
+  }
+}

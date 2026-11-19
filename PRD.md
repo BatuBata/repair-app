@@ -695,6 +695,8 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 
 | D-51 | Rombak tampilan laporan mengikuti panel terbuka detail/tambahpenjualan: periode tersendiri, laba bersih menonjol dengan rincian laba rugi, grafik harian, metode/bank, lalu transaksi terfilter. Tetap layar laporan baca-saja; filter tanggal berlaku semua ringkasan, filter jenis/metode/bank hanya daftar existing. Semua data/perhitungan/izin/rincian/grafik/paging/empty/error tetap; tanpa fitur atau dependency baru | User meminta rombak laporan memakai konsep layar yang sudah disukai | User | 19 Nov 2026; main lokal, tanpa push/deploy |
 
+| D-52 | Perbaiki dua daftar dashboard Siap diserahkan dan Garansi perlu dihubungi: kartu mengikuti isi, baris tidak ditarik memenuhi kartu sebelah, tombolaksi dan teks sejajar atas; nama/keterangan panjang tetap terbaca HP/desktop. Menu existing diberi ikon tanpa mengubah aksi/data/izin | User menerima laporan dan melaporkan dashboard berantakan pada dua panel melalui screenshot | User | 19 Nov 2026; main lokal tanpa push/deploy |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

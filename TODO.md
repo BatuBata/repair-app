@@ -108,6 +108,7 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T086 | Master kategori pengeluaran per toko | developer / 6.1-sol | medium / medium | — | — | done |
 | T087 | Diskon nominal tambah penjualan dan output akhir | developer / 6.1-sol | medium / medium | — | — | done |
 | T088 | Rombak laporan dengan panel terbuka | developer / 6.1-sol | medium / low | — | — | done |
+| T089 | Rapikan daftar siap diserahkan dan garansi dashboard | developer / 6.1-sol | easy / low | — | — | done |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -183,14 +184,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:a2609e35565285b1b0bcbb515ffa199ab633939420ce59178dd0726f2704860d",
+    "prd_revision": "sha256:fae0dbc456ed91122078d02c296fc74af56c901e9eeb8f9f4b034a8f9f96af8a",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
       "state": "stopped",
       "allowed_tasks": [],
-      "stop_after_tasks": ["T088"],
-      "source_ref": "User19Nov2026 D51 laporan selesai lokal dengan QA independen finalA2PASS; tanpa push/deploy.",
+      "stop_after_tasks": ["T089"],
+      "source_ref": "User19Nov2026 D52 dashboard selesai lokal dengan independentQA PASS; tanpa push/deploy.",
       "phase_history": [
         {
           "state": "paused",
@@ -7955,6 +7956,74 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
           "docs/evidence/T088/large-negative-mobile.jpg"
         ],
         "summary": "Targeted21tests344assertPASS/build420ms/source-lint0FAIL0WARN. Independent1test21assert+bindings/screenshots PASS. A1zero-widthtable1024FAIL preserved; A2listmode<=1199+autoheight/pagernowrap CUA1440/768/375/1024/1100+filters/date/error/empty/dialog/tooltip/pager/large-negative PASS. No backend/schema/deps/push/deploy; operatorDB untouched."
+      }
+    },
+    {
+      "id": "T089",
+      "title": "Rapikan daftar siap diserahkan dan garansi dashboard",
+      "kind": "implementation",
+      "responsible_role": "developer",
+      "work_type": "frontend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md §20.3 D-52",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "easy",
+      "risk": "low",
+      "uncertainty": "low",
+      "triage_reason": "Root CSSgrid/flexstretch membuat satu rowgaransi mengikuti tinggidaftar tetangga.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Perbaikan visual terbatas satuBlade memakai komponenexisting.",
+      "depends_on": {
+        "hard": [],
+        "contracts": []
+      },
+      "write_scope": [
+        "resources/views/livewire/dashboard/index.blade.php",
+        "DESIGN.md",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T089/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "5backlog+1garansi: tiaprowintrinsik, action/text sejajar atas, tidakadajarakratusanpx; kartuikutisi.",
+        "Nama/keteranganpanjang serta0/1/manyitems responsif375/768/1024/1440; headercounts/actionleftmenu/links/markcontacted tetap.",
+        "No backend/data/operator/schema/deps changes; menuexistingicons; Dashboardtests/build/browser+independentQA; no push/deploy."
+      ],
+      "verification_plan": [
+        "FreshSQLitedisposablefixture5ready1warranty before/after geometry+screenshots, mixedsale/service+longnames, menukeyboard/focus andempty; DashboardTest/build+independentreview."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T089/README.md",
+        "revision": "sha256:df232169dfb2f8131ed9d8946e9abef00e73a1fdca1cf2cd55952e239cb75dfa",
+        "checked_revision": "sha256:df232169dfb2f8131ed9d8946e9abef00e73a1fdca1cf2cd55952e239cb75dfa",
+        "inputs": {},
+        "evidence": [
+          "docs/evidence/T089/README.md",
+          "docs/evidence/T089/source-manifest.json",
+          "docs/evidence/T089/independent-qa.md",
+          "docs/evidence/T089/geometry.json",
+          "docs/evidence/T089/before-desktop.jpg",
+          "docs/evidence/T089/after-desktop.jpg",
+          "docs/evidence/T089/after-mobile.jpg",
+          "docs/evidence/T089/mixed-mobile.jpg",
+          "docs/evidence/T089/empty-warranty.jpg",
+          "docs/evidence/T089/empty-mobile.jpg"
+        ],
+        "summary": "DashboardTest15PASS192assert/build399ms PASS. Before5+1 card445/row351 action-textgap134.5; aftercard442/180, gap0. CUA375/768/1024/1440+long/mixed/empty/menuKeyboard/markContacted/focus PASS, independent source/geometry/screenshotQA PASS. No backend/schema/dependency/operatorDB/push/deploy."
       }
     }
   ]

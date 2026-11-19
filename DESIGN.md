@@ -586,3 +586,5 @@ Diskon penjualan memakai satu isian rupiah di ringkasan form, di antara subtotal
 ## Laporan — 19 November 2026
 
 Laporan tetap layar baca-saja: periode global di panel atas, laba bersih menjadi angka utama dalam rincian laba rugi, grafik omzet di sampingnya, lalu pembayaran/metode/bank dan transaksi. Panel memakai token detail existing. Filter jenis/metode/bank berada di panel transaksi dengan keterangan cakupannya; ringkasan tetap mengikuti tanggal. Data0/negatif/besar, error/loading, diagram dan rincian tetap terbuka/tersedia, tanpa aksi simpan atau modul baru.
+
+Dua daftar tindakan Beranda memakai tinggi kartu dan baris sesuai isi, sejajar atas. Jangan meregangkan satu baris garansi agar setinggi backlog tetangga; tombol titik tiga44px tetap di kiri, isi teks sejajar awal tombol dan membungkus wajar. Menu aksi existing berikon.

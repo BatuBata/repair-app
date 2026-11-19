@@ -1,0 +1,134 @@
+[
+  {
+    "doc": 1024,
+    "panels": [
+      {
+        "height": 542,
+        "name": "Siap diserahkan",
+        "rows": [
+          {
+            "delta": 0,
+            "overflow": false
+          },
+          {
+            "delta": 0,
+            "overflow": false
+          },
+          {
+            "delta": 0,
+            "overflow": false
+          },
+          {
+            "delta": 0,
+            "overflow": false
+          },
+          {
+            "delta": 0,
+            "overflow": false
+          }
+        ],
+        "width": 411.1640625
+      },
+      {
+        "height": 276,
+        "name": "Garansi perlu dihubungi",
+        "rows": [
+          {
+            "delta": 0,
+            "overflow": false
+          }
+        ],
+        "width": 286.8359375
+      }
+    ],
+    "width": 1024
+  },
+  {
+    "doc": 768,
+    "panels": [
+      {
+        "height": 444,
+        "name": "Siap diserahkan",
+        "rows": [
+          {
+            "delta": 0,
+            "overflow": false
+          },
+          {
+            "delta": 0,
+            "overflow": false
+          },
+          {
+            "delta": 0,
+            "overflow": false
+          },
+          {
+            "delta": 0,
+            "overflow": false
+          },
+          {
+            "delta": 0,
+            "overflow": false
+          }
+        ],
+        "width": 720
+      },
+      {
+        "height": 156,
+        "name": "Garansi perlu dihubungi",
+        "rows": [
+          {
+            "delta": 0,
+            "overflow": false
+          }
+        ],
+        "width": 720
+      }
+    ],
+    "width": 768
+  },
+  {
+    "doc": 375,
+    "panels": [
+      {
+        "height": 544,
+        "name": "Siap diserahkan",
+        "rows": [
+          {
+            "delta": 0,
+            "overflow": false
+          },
+          {
+            "delta": 0,
+            "overflow": false
+          },
+          {
+            "delta": 0,
+            "overflow": false
+          },
+          {
+            "delta": 0,
+            "overflow": false
+          },
+          {
+            "delta": 0,
+            "overflow": false
+          }
+        ],
+        "width": 343
+      },
+      {
+        "height": 228,
+        "name": "Garansi perlu dihubungi",
+        "rows": [
+          {
+            "delta": 0,
+            "overflow": false
+          }
+        ],
+        "width": 343
+      }
+    ],
+    "width": 375
+  }
+]

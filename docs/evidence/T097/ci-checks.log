@@ -1,0 +1,5 @@
+ci	Run CI Checks	2026-11-19T16:06:38.0457068Z     PASS   ......................................................... 177 files  
+ci	Run CI Checks	2026-11-19T16:06:42.0143629Z  [OK] No errors                                                                 
+ci	Run CI Checks	2026-11-19T16:07:12.0146275Z   Tests:    298 passed (3436 assertions)
+ci	Run CI Checks	2026-11-19T16:07:12.0146940Z   Duration: 29.76s
+ci	Test deployment safety	2026-11-19T16:07:12.6356850Z PASS: 20 deployment safety cases

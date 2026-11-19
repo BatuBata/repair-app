@@ -14,7 +14,7 @@
 .reports-page .report-net { margin:16px 0 8px; padding-bottom:12px; }
 .reports-page .report-net dd { font-size:28px; line-height:36px; overflow-wrap:anywhere; }
 .reports-page .report-net.is-negative dd { color:var(--negative); }
-.reports-page .report-transactions-toolbar { display:flex; flex-wrap:wrap; align-items:end; justify-content:space-between; gap:16px; margin:16px 0; }
+.reports-page .report-transactions-toolbar { display:flex; flex-wrap:wrap; align-items:end; justify-content:space-between; gap:16px; margin:16px 0 24px; }
 .reports-page .report-transactions-toolbar .tabs { margin:0; width:auto; flex:1; min-width:300px; }
 .reports-page .report-filter-hint { margin-top:6px; }
 .reports-page .report-note { margin-top:8px; }
@@ -23,8 +23,8 @@
 .reports-page .statement dd { margin:0; text-align:right; min-width:0; overflow-wrap:normal; }
 .reports-page .statement dt { flex-shrink:0; max-width:55%; }
 .reports-page .report-transactions { min-width:0; }
-.reports-page .report-payment-filters { display:flex; flex-wrap:wrap; gap:12px; margin:0; }
-.reports-page .report-payment-filters .field { width:min(200px,100%); }
+.reports-page .report-payment-filters { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:0; width:412px; max-width:100%; flex-shrink:0; }
+.reports-page .report-payment-filters .field { width:100%; min-width:0; }
 .reports-page .tabs button[aria-pressed=true] { color:var(--text); font-weight:500; border-bottom:2px solid var(--accent); }
 .reports-page .report-table { table-layout:fixed; width:100%; }
 .reports-page .report-table .act { width:44px; }
@@ -85,6 +85,7 @@
 .reports-page .statement .statement-long dd { width:100%; font-size:16px; line-height:24px; }
 .reports-page .statement .final dd { margin-left:auto; }
 }
+@media(max-width:639.98px) { .reports-page .report-payment-filters { grid-template-columns:minmax(0,1fr); } }
 @media(max-width:1199.98px) {
 .reports-page .report-table .desktop-only { display:none; }
 .reports-page .report-table thead { display:none; }

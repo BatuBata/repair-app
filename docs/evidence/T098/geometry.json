@@ -1,0 +1,443 @@
+{
+  "before": [
+    {
+      "filters": [
+        {
+          "rect": {
+            "bottom": 380,
+            "height": 68,
+            "left": 1018.5,
+            "right": 1218,
+            "top": 312,
+            "width": 199.5,
+            "x": 1018.5,
+            "y": 312
+          },
+          "width": "199.5px"
+        }
+      ],
+      "gap": 16,
+      "stage": "before-all",
+      "tabs": {
+        "bottom": 380,
+        "height": 41,
+        "left": 282,
+        "right": 1002.5,
+        "top": 339,
+        "width": 720.5,
+        "x": 282,
+        "y": 339
+      },
+      "toolbar": {
+        "bottom": 380,
+        "height": 68,
+        "left": 282,
+        "right": 1218,
+        "top": 312,
+        "width": 936,
+        "x": 282,
+        "y": 312
+      },
+      "width": 1280
+    },
+    {
+      "filters": [
+        {
+          "rect": {
+            "bottom": 197,
+            "height": 68,
+            "left": 807,
+            "right": 1007,
+            "top": 129,
+            "width": 200,
+            "x": 807,
+            "y": 129
+          },
+          "width": "200px"
+        },
+        {
+          "rect": {
+            "bottom": 277,
+            "height": 68,
+            "left": 807,
+            "right": 1007,
+            "top": 209,
+            "width": 200,
+            "x": 807,
+            "y": 209
+          },
+          "width": "200px"
+        }
+      ],
+      "gap": 16,
+      "stage": "before-transfer",
+      "tabs": {
+        "bottom": 277,
+        "height": 41,
+        "left": 282,
+        "right": 791,
+        "top": 236,
+        "width": 509,
+        "x": 282,
+        "y": 236
+      },
+      "toolbar": {
+        "bottom": 277,
+        "height": 148,
+        "left": 282,
+        "right": 1218,
+        "top": 129,
+        "width": 936,
+        "x": 282,
+        "y": 129
+      },
+      "width": 1280
+    }
+  ],
+  "after": [
+    {
+      "filters": [
+        {
+          "height": 68,
+          "label": "Metode pembayaran",
+          "relativeTop": 0,
+          "width": 200,
+          "x": 966
+        }
+      ],
+      "net": "Rp350.000",
+      "rows": 20,
+      "scrollWidth": 1440,
+      "tableGap": 24,
+      "toolbarHeight": 68,
+      "width": 1440,
+      "stage": "after-all"
+    },
+    {
+      "filters": [
+        {
+          "height": 68,
+          "label": "Metode pembayaran",
+          "relativeTop": 0,
+          "width": 200,
+          "x": 966
+        },
+        {
+          "height": 68,
+          "label": "Bank",
+          "relativeTop": 0,
+          "width": 200,
+          "x": 1178
+        }
+      ],
+      "net": "Rp350.000",
+      "rows": 4,
+      "scrollWidth": 1440,
+      "tableGap": 24,
+      "toolbarHeight": 68,
+      "width": 1440,
+      "stage": "after-transfer"
+    },
+    {
+      "filters": [
+        {
+          "height": 68,
+          "label": "Metode pembayaran",
+          "relativeTop": 0,
+          "width": 200,
+          "x": 806
+        }
+      ],
+      "net": "Rp350.000",
+      "rows": 20,
+      "scrollWidth": 1280,
+      "tableGap": 24,
+      "toolbarHeight": 68,
+      "width": 1280,
+      "stage": "after-all"
+    },
+    {
+      "filters": [
+        {
+          "height": 68,
+          "label": "Metode pembayaran",
+          "relativeTop": 0,
+          "width": 200,
+          "x": 806
+        },
+        {
+          "height": 68,
+          "label": "Bank",
+          "relativeTop": 0,
+          "width": 200,
+          "x": 1018
+        }
+      ],
+      "net": "Rp350.000",
+      "rows": 4,
+      "scrollWidth": 1280,
+      "tableGap": 24,
+      "toolbarHeight": 68,
+      "width": 1280,
+      "stage": "after-transfer"
+    },
+    {
+      "filters": [
+        {
+          "height": 68,
+          "label": "Metode pembayaran",
+          "relativeTop": 57,
+          "width": 200,
+          "x": 282
+        }
+      ],
+      "net": "Rp350.000",
+      "rows": 20,
+      "scrollWidth": 1024,
+      "tableGap": 24,
+      "toolbarHeight": 125,
+      "width": 1024,
+      "stage": "after-all"
+    },
+    {
+      "filters": [
+        {
+          "height": 68,
+          "label": "Metode pembayaran",
+          "relativeTop": 57,
+          "width": 200,
+          "x": 282
+        },
+        {
+          "height": 68,
+          "label": "Bank",
+          "relativeTop": 57,
+          "width": 200,
+          "x": 494
+        }
+      ],
+      "net": "Rp350.000",
+      "rows": 4,
+      "scrollWidth": 1024,
+      "tableGap": 24,
+      "toolbarHeight": 125,
+      "width": 1024,
+      "stage": "after-transfer"
+    },
+    {
+      "filters": [
+        {
+          "height": 80,
+          "label": "Metode pembayaran",
+          "relativeTop": 61,
+          "width": 335,
+          "x": 43
+        }
+      ],
+      "net": "Rp350.000",
+      "rows": 20,
+      "scrollWidth": 768,
+      "tableGap": 24,
+      "toolbarHeight": 141,
+      "width": 768,
+      "stage": "after-all"
+    },
+    {
+      "filters": [
+        {
+          "height": 80,
+          "label": "Metode pembayaran",
+          "relativeTop": 61,
+          "width": 335,
+          "x": 43
+        },
+        {
+          "height": 80,
+          "label": "Bank",
+          "relativeTop": 61,
+          "width": 335,
+          "x": 390
+        }
+      ],
+      "net": "Rp350.000",
+      "rows": 4,
+      "scrollWidth": 768,
+      "tableGap": 24,
+      "toolbarHeight": 141,
+      "width": 768,
+      "stage": "after-transfer"
+    },
+    {
+      "filters": [
+        {
+          "height": 80,
+          "label": "Metode pembayaran",
+          "relativeTop": 61,
+          "width": 305,
+          "x": 35
+        }
+      ],
+      "net": "Rp350.000",
+      "rows": 20,
+      "scrollWidth": 375,
+      "tableGap": 24,
+      "toolbarHeight": 141,
+      "width": 375,
+      "stage": "after-all"
+    },
+    {
+      "filters": [
+        {
+          "height": 80,
+          "label": "Metode pembayaran",
+          "relativeTop": 61,
+          "width": 305,
+          "x": 35
+        },
+        {
+          "height": 80,
+          "label": "Bank",
+          "relativeTop": 153,
+          "width": 305,
+          "x": 35
+        }
+      ],
+      "net": "Rp350.000",
+      "rows": 4,
+      "scrollWidth": 375,
+      "tableGap": 24,
+      "toolbarHeight": 233,
+      "width": 375,
+      "stage": "after-transfer"
+    },
+    {
+      "filters": [
+        {
+          "height": 80,
+          "label": "Metode pembayaran",
+          "relativeTop": 61,
+          "width": 305,
+          "x": 35
+        },
+        {
+          "height": 80,
+          "label": "Bank",
+          "relativeTop": 153,
+          "width": 305,
+          "x": 35
+        }
+      ],
+      "net": "Rp350.000",
+      "rows": 3,
+      "scrollWidth": 375,
+      "tableGap": 24,
+      "toolbarHeight": 233,
+      "width": 375,
+      "stage": "after-bank-bca-keyboard"
+    },
+    {
+      "filters": [
+        {
+          "height": 80,
+          "label": "Metode pembayaran",
+          "relativeTop": 61,
+          "width": 305,
+          "x": 35
+        },
+        {
+          "height": 80,
+          "label": "Bank",
+          "relativeTop": 153,
+          "width": 305,
+          "x": 35
+        }
+      ],
+      "net": "Rp350.000",
+      "rows": 1,
+      "scrollWidth": 375,
+      "tableGap": 24,
+      "toolbarHeight": 233,
+      "width": 375,
+      "stage": "after-long-bank-keyboard"
+    },
+    {
+      "filters": [
+        {
+          "height": 80,
+          "label": "Metode pembayaran",
+          "relativeTop": 61,
+          "width": 305,
+          "x": 35
+        }
+      ],
+      "net": "Rp350.000",
+      "rows": 1,
+      "scrollWidth": 375,
+      "tableGap": 24,
+      "toolbarHeight": 141,
+      "width": 375,
+      "stage": "after-qris-empty"
+    },
+    {
+      "filters": [
+        {
+          "height": 80,
+          "label": "Metode pembayaran",
+          "relativeTop": 61,
+          "width": 305,
+          "x": 35
+        }
+      ],
+      "net": "Rp350.000",
+      "rows": 20,
+      "scrollWidth": 375,
+      "tableGap": 24,
+      "toolbarHeight": 141,
+      "width": 375,
+      "stage": "after-method-reset"
+    },
+    {
+      "filters": [
+        {
+          "height": 80,
+          "label": "Metode pembayaran",
+          "relativeTop": 61,
+          "width": 305,
+          "x": 35
+        }
+      ],
+      "net": "Rp350.000",
+      "rows": 20,
+      "scrollWidth": 375,
+      "tableGap": 24,
+      "toolbarHeight": 141,
+      "width": 375,
+      "stage": "page2-before-method"
+    },
+    {
+      "filters": [
+        {
+          "height": 80,
+          "label": "Metode pembayaran",
+          "relativeTop": 61,
+          "width": 305,
+          "x": 35
+        },
+        {
+          "height": 80,
+          "label": "Bank",
+          "relativeTop": 153,
+          "width": 305,
+          "x": 35
+        }
+      ],
+      "net": "Rp350.000",
+      "rows": 4,
+      "scrollWidth": 375,
+      "tableGap": 24,
+      "toolbarHeight": 233,
+      "width": 375,
+      "stage": "transfer-resets-page"
+    }
+  ]
+}

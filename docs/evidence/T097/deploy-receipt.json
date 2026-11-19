@@ -1,0 +1,23 @@
+{
+  "domain": "https://demo-repair-app.scannara.asia",
+  "path": "/var/www/demo-repair-app/current",
+  "revision": "87bd477da3fe88378b086bb84601b81fa5a8a8e3",
+  "previous_revision": "029003eb7075fc33b8b3789510511fe5402ebad4",
+  "authorization": "User20Nov2026 push and deploy T096;D60",
+  "workflow": "https://github.com/BatuBata/repair-app/actions/runs/44562204381",
+  "run_id": 44562204381,
+  "completed_at": "2026-11-19T16:08:36Z",
+  "ci": "success",
+  "deploy": "success",
+  "post_deploy": "pass",
+  "ci_tests": {
+    "passed": 298,
+    "assertions": 3436,
+    "duration_seconds": 29.76,
+    "deployment_safety_cases": 20
+  },
+  "new_migrations": 0,
+  "runtime_source_files_verified": 2,
+  "evidence": "postdeploy-independent.json",
+  "operator_business_writes": false
+}

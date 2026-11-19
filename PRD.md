@@ -711,6 +711,10 @@ Belum diverifikasi: dukungan render SVG/QR di dompdf dan cara cetak ke printer t
 
 | D-59 | Daftar Servis menampilkan Barang sudah diambil atau Barang belum diambil khusus TTS Batal memakai picked_up_on existing; keterangan ringkas di bawah nama pelanggan, tanpa status/filter/schema baru | User meminta melihat informasi pengambilan TTS batal tanpa membuka detail satu per satu | User | 20 Nov 2026; main lokal tanpa push/deploy |
 
+| D-60 | Push/deploy T096 keterangan pengambilan pada daftar Servis ke target existing melalui CI/CD D-23 | User mengatakan push and deploy setelah T096 | User | 20 Nov 2026; target demo D-20/D-23 |
+
+| D-61 | Setelah rilis T096 selesai, perbaiki jarak filter metode/bank terhadap tabel Transaksi laporan dan susunan responsif yang berubah berantakan saat Transfer bank; verifikasi desktop/HP, kemudian push/deploy target existing | User melaporkan dua screenshot dan meminta dikerjakan hingga selesai lalu push/deploy | User | 20 Nov 2026; tanpa mengubah perhitungan/filter laporan |
+
 ### 20.4 Validasi diagram
 
 | Diagram | Bagian | Renderer/versi | Revisi PRD | Hasil parse | Hasil render | Catatan visual |

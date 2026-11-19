@@ -116,6 +116,8 @@ python3 ~/.agents/skills/project-delivery/scripts/validate_todo.py TODO.md --wri
 | T094 | Catat pengambilan barang untuk TTS Batal tanpa mengubah status | developer / 6.1-sol | easy / medium | — | — | done |
 | T095 | Rilis pengambilan TTS Batal melalui CI/CD | integrator / 6.1-sol | medium / medium | T094 | — | done |
 | T096 | Tampilkan pengambilan TTS Batal pada daftar Servis | developer / 6.1-sol | easy / low | — | — | done |
+| T097 | Rilis keterangan pengambilan pada daftar Servis | integrator / 6.1-sol | medium / low | T096 | — | done |
+| T098 | Perbaiki tata letak filter Transaksi laporan dan rilis | integrator / 6.1-sol | medium / low | T097 | — | pending |
 <!-- END GENERATED VIEW -->
 
 ## Alur dan gelombang kerja
@@ -191,14 +193,14 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
   "project": {
     "id": "repair-app",
     "prd_file": "PRD.md",
-    "prd_revision": "sha256:8a18636ad53ac49c399c310251db674a96b03d808633529cd8b8d20d4337c801",
+    "prd_revision": "sha256:b9e1d0b0a672074e7937a8b3204e1eebef13dfe6ff2a1d35ab6d75b729a47c5c",
     "max_workers": 2,
     "max_implementation_attempts": 2,
     "execution": {
-      "state": "stopped",
-      "allowed_tasks": [],
-      "stop_after_tasks": ["T096"],
-      "source_ref": "D59 selesai main lokal independentQA PASS; tanpa push/deploy.",
+      "state": "running",
+      "allowed_tasks": ["T098"],
+      "stop_after_tasks": ["T098"],
+      "source_ref": "User20Nov2026 D61 perbaiki filter laporan setelahT097, kerjakan sampai selesai lalu push/deploy.",
       "phase_history": [
         {
           "state": "paused",
@@ -8511,6 +8513,124 @@ Berlaku untuk semua task kecuali kontrak task menyatakan lain. Brief worker menc
         ],
         "summary": "ServisBatal shows barang sudah/belumdiambil beneathcustomername basedexistingpicked_up_on; badgeBatal/normalrows/filter/paging unchanged.25regressionPASS291assert+independent2PASS34assert;3hash/source/visualQA PASS. CUA1280/375 mixed/search/tabBatal nooverflow, Pint/diffPASS. No schema/deps/newfilter/operatorDB/push/deploy."
       }
+    },
+    {
+      "id": "T097",
+      "title": "Rilis keterangan pengambilan pada daftar Servis",
+      "kind": "integration",
+      "responsible_role": "integrator",
+      "work_type": "release",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md \u00a720.3 D-60",
+        "PRD.md \u00a720.3 D-23"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "low",
+      "uncertainty": "low",
+      "triage_reason": "Dua file query/view teruji tanpa schema/aset baru; periksa exactversion dan QAserverreadonly.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Integrasi/release dan verifikasi data/identitas target.",
+      "depends_on": {
+        "hard": [
+          "T096"
+        ],
+        "contracts": []
+      },
+      "write_scope": [
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T097/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Exactmain87bd477da3fe88378b086bb84601b81fa5a8a8e3 dipush; CI lengkap/deployPASS tanpa reset/seed/privateenv/key/schema baru.",
+        "Servermarker/receipt exactSHA,maintenanceabsent,HTTPShealth/login200; independentremotehash2filequery/view matchcandidate danfieldpicked_up_on+labelhanyaBatal terbukti; tanpa transaksi pelanggan."
+      ],
+      "verification_plan": [
+        "Reuse QA T096 pinnedsource; preflightidle; pushmainwatchCI/deploy; independentreadonlySSHparity+HTTPS;receiptactual."
+      ],
+      "status": "done",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": {
+        "verdict": "pass",
+        "artifact_ref": "docs/evidence/T097/deploy-receipt.json",
+        "revision": "87bd477da3fe88378b086bb84601b81fa5a8a8e3",
+        "checked_revision": "87bd477da3fe88378b086bb84601b81fa5a8a8e3",
+        "inputs": {
+          "T096": "sha256:15d10ebd586288e8d4a5a35a82840ea728ab696550ae3333083d944b7f3c9aed"
+        },
+        "evidence": [
+          "https://github.com/BatuBata/repair-app/actions/runs/44562204381",
+          "docs/evidence/T097/README.md",
+          "docs/evidence/T097/github-run.json",
+          "docs/evidence/T097/ci-checks.log",
+          "docs/evidence/T097/deploy-checks.log",
+          "docs/evidence/T097/deploy-receipt.json",
+          "docs/evidence/T097/independent-qa.md",
+          "docs/evidence/T097/postdeploy-independent.json"
+        ],
+        "summary": "Main87bd477 pushed/deployed44562204381SUCCESS.298PASS3436assert29.76s/Pint177/PHPStan0/20deploysafety. Independentmarker/receipt exact,2runtimehash+field/hintsPASS,maintenanceabsent,DBready,HTTPS200TLSverified. No schema/operatorbusinesswrites."
+      }
+    },
+    {
+      "id": "T098",
+      "title": "Perbaiki tata letak filter Transaksi laporan dan rilis",
+      "kind": "integration",
+      "responsible_role": "integrator",
+      "work_type": "frontend",
+      "deliverable_id": null,
+      "prd_refs": [
+        "PRD.md \u00a720.3 D-61",
+        "DESIGN.md"
+      ],
+      "priority": "must",
+      "difficulty": "medium",
+      "risk": "low",
+      "uncertainty": "low",
+      "triage_reason": "Susunan flex intrinsik filter membungkus dan menarik tabs saat bankmuncul; ganti layout responsif terarah tanpa logikabaru.",
+      "model_hint": "gpt-6.1-sol",
+      "model_reason": "Integrasi/release dan verifikasi data/identitas target.",
+      "depends_on": {
+        "hard": [
+          "T097"
+        ],
+        "contracts": []
+      },
+      "write_scope": [
+        "resources/views/livewire/reports/styles.blade.php",
+        "resources/views/livewire/reports/index.blade.php",
+        "PRD.md",
+        "TODO.md",
+        "docs/evidence/T098/**"
+      ],
+      "shared_resources": [
+        {
+          "name": "branch:main",
+          "mode": "exclusive"
+        }
+      ],
+      "conflicts_with": [],
+      "parallel_candidates": [],
+      "acceptance_criteria": [
+        "Filtermetode+bank sejajar desktop/tablet, tersusunHP; kemunculanBank tidakmenariktab/membuatgapberlebihan; jaraknyata ketabel minimal24px; dropdown/focus tidakterpotong.",
+        "Jenis/search/method/bank/reset/pagination danringkasan/footertotal existing tetapbenar, nama/bankpanjang dan0/manyrows responsif375/768/1024/1280/1440.",
+        "Targetreporttests/browserbeforeafter+QAindependenPASS; commit/pushmain existingCI/deployPASS dan independenttargetread-onlyexactversion/health/sourcePASS; no backend/schema/deps/operatorbusinesswrites."
+      ],
+      "verification_plan": [
+        "Reproducefixturebeforetransfer/geometry;CSSminimal afterstates/methodbank/searchkeyboard/dropdown mobileanddesktop;existingReport+IndexPaginationregression/Pint;independentQA; actualCI/deploy+postdeploy."
+      ],
+      "status": "pending",
+      "workspace": "/Users/muzib/.codex/worktrees/v1-stock/repair-app",
+      "result": null
     }
   ]
 }
